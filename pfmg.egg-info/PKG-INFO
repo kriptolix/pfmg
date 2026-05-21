@@ -1,0 +1,16 @@
+Metadata-Version: 2.4
+Name: pfmg
+Version: 0.1.0
+Summary: Python Flatpak Manifest Resolver — modern replacement for flatpak-pip-generator
+License: MIT
+Requires-Python: >=3.11
+Description-Content-Type: text/markdown
+Requires-Dist: typer>=0.12
+Requires-Dist: rich>=13
+Requires-Dist: pyyaml>=6
+Requires-Dist: tomli>=2.0; python_version < "3.11"
+Requires-Dist: packaging>=24
+Requires-Dist: requests>=2.31
+Provides-Extra: dev
+Requires-Dist: pytest>=8; extra == "dev"
+Requires-Dist: pytest-cov; extra == "dev"
