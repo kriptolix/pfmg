@@ -53,7 +53,7 @@ import re
 
 import yaml
 
-# from pfmg.data.mappings import MAPPINGS
+
 from pfmg.utils.logging import get_logger
 
 logger = get_logger(__name__)
@@ -86,7 +86,64 @@ class ModulesImporter:
     # Public API
     # ------------------------------------------------------------------
 
-    def import_from(self, modules_dir: Path, dry_run: bool = False) -> ImportReport:
+    def import_from(
+    self,
+    directory: Path,    
+    dry_run: bool = False
+    ) -> ImportReport:
+        """
+        Scans for *.json, *.yaml, *.yml and attempts to parse each as a
+        Flatpak manifest or a shared module. Files that don't look like any
+        of these two are silently ignored.
+        """
+        patterns = (
+            ["**/*.json", "**/*.yaml", "**/*.yml"]            
+        )
+
+        report = ImportReport()
+
+        seen: set[str] = set()
+
+        for pattern in patterns:
+            for p in sorted(directory.glob(pattern)):
+                key = str(p.resolve())
+
+                if key in seen:
+                    continue
+
+                seen.add(key)
+
+                try:
+                    data = self._load(p)
+                except Exception:
+                    continue
+
+                if not isinstance(data, dict):
+                    continue
+
+                # Manifesto Flatpak
+                if "modules" in data:
+                    modules = data.get("modules", [])
+
+                    if isinstance(modules, list):
+                        for module in modules:
+                            self.import_module(module)
+
+                    continue
+
+                # Possível módulo separado
+                if _looks_like_module(data):
+                    self.import_module(data)
+        
+        logger.info(
+            "modules import: %d scanned, %d imported, "
+            "%d skipped (existing), %d skipped (no source)",
+            report.scanned, report.imported,
+            report.skipped_existing, report.skipped_no_source,
+        )
+        return report
+
+    def import_from_old(self, modules_dir: Path, dry_run: bool = False) -> ImportReport:
         """
         Scan modules_dir recursively and import all module files found.
 
@@ -138,12 +195,8 @@ class ModulesImporter:
                 if not dry_run:
                     self.recipes_dir.mkdir(parents=True, exist_ok=True)
                     recipe_path.write_text(
-                        yaml.dump(
-                            recipe,
-                            default_flow_style=False,
-                            allow_unicode=True,
-                            sort_keys=False,
-                        )
+                        json.dumps(recipe, ensure_ascii=False, indent=2),
+                        encoding="utf-8",
                     )
                     existing.add(recipe_id)   # prevent duplicates within the same run
 
@@ -158,11 +211,49 @@ class ModulesImporter:
             report.skipped_existing, report.skipped_no_source,
         )
         return report
+    
+    def import_module(self, mod: dict) -> Optional[Path]:
+        """
+        Import a single module dict as a recipe. Returns the path of the
+        created recipe, or None if skipped.
+        """
+        name = mod.get("name", "")
+        recipe_id = _normalise_id(name)
+
+        if (self.recipes_dir / f"{recipe_id}.yaml").exists():
+            logger.debug("Skipping %s — recipe already exists", recipe_id)
+            return None
+
+        source = self._extract_source(mod)
+        if not source:
+            logger.debug("Skipping %s — no archive source", recipe_id)
+            return None
+
+        recipe = self._build_recipe(recipe_id, name, mod, source)
+
+        version = recipe.get("version")
+        suffix = version if version else "unknown"
+        filename = f'{recipe["id"]}-{suffix}'
+
+        recipe_path = self.recipes_dir / f"{filename}.yaml"
+        self.recipes_dir.mkdir(parents=True, exist_ok=True)
+        recipe_path.write_text(
+            json.dumps(recipe, ensure_ascii=False, indent=2),
+            encoding="utf-8",
+        )
+        logger.info("Created recipe: %s", recipe_path)
+        return recipe_path
 
     # ------------------------------------------------------------------
     # Internal
     # ------------------------------------------------------------------
-
+    @staticmethod
+    def _load(path: Path) -> dict:
+        text = path.read_text(encoding="utf-8")
+        if path.suffix in (".yaml", ".yml"):
+            return yaml.safe_load(text) or {}
+        return json.loads(text) 
+    
     @staticmethod
     def _load_modules(path: Path) -> list[dict]:
         """

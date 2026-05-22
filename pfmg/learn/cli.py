@@ -22,9 +22,8 @@ from rich.console import Console
 from rich.table import Table
 from rich import print as rprint
 
-from pfmg.learn.analyzer import ManifestAnalyzer
+
 from pfmg.learn.importer import ModulesImporter
-from pfmg.learn.exporter import Exporter, ExportReport
 from pfmg.learn.inspector import Prober, _is_extension, _base_sdk_from_extension
 from pfmg.utils.logging import get_logger
 
@@ -283,11 +282,10 @@ def cmd_stats(
         return len(list(directory.glob(glob)))
 
     rprint(f"\n[bold]pfmg repository stats[/bold] ({repo_root.resolve()})")
-    rprint(f"  recipes/native/   : {_count(repo_root/'recipes'/'native',  '*.yaml')}")
-    rprint(f"  recipes/python/   : {_count(repo_root/'recipes'/'python',  '*.yaml')}")
-    rprint(f"  sdk-profiles      : {_count(repo_root/'pfmg'/'data'/'sdk-profiles', '**/*.toml')}")
-    rprint(f"  extension-profiles: {_count(repo_root/'pfmg'/'data'/'extension-profiles', '*.toml')}")
-    rprint(f"  native-hints      : {_count(repo_root/'pfmg'/'data'/'native-hints', '*.toml')}")
+    rprint(f"  recipes/native/   : {_count(repo_root/'recipes'/'native',  '*.json')}")
+    rprint(f"  recipes/python/   : {_count(repo_root/'recipes'/'python',  '*.json')}")
+    rprint(f"  sdk-profiles      : {_count(repo_root/'pfmg'/'data'/'sdk-profiles', '*.json')}")
+    rprint(f"  ext-profiles      : {_count(repo_root/'pfmg'/'data'/'ext-profiles', '*.json')}")    
     rprint("")
     rprint("  [dim]Note: extensions are data (extension-profiles/), not recipes.[/dim]")
 
