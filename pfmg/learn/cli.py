@@ -5,7 +5,6 @@ All commands write directly to recipes/ and data/ — no knowledge graph.
 Export is the default behavior for every command.
 
 Commands:
-  pfmg learn analyzer <path>  — analyze a manifest file or directory
   pfmg learn import   — import modules from a shared-modules clone
   pfmg learn inspect    — probe all default SDKs and extensions
   pfmg learn list         — list available sdk-profile TOMLs
@@ -40,88 +39,16 @@ _DEFAULT_REPO_ROOT = Path(".")
 
 
 # ---------------------------------------------------------------------------
-# Shared helper: analysis → recipes
-# ---------------------------------------------------------------------------
-
-def _analyses_to_recipes(analyses, repo_root: Path, dry_run: bool) -> ExportReport:
-    """Convert ManifestAnalysis objects directly to recipe files."""
-    exporter = Exporter(analyses, repo_root)
-    return exporter.export(dry_run=dry_run)
-
-
-def _print_export_report(report: ExportReport, dry_run: bool) -> None:
-    if not any(report.created + report.updated):
-        rprint("[dim]No new recipe files.[/dim]")
-        return
-    label = "Would write" if dry_run else "Written"
-    for c in report.created:
-        rprint(f"  [green]create[/green]  {c.path}  [dim]{c.reason}[/dim]")
-    for c in report.updated:
-        rprint(f"  [yellow]update[/yellow]  {c.path}  [dim]{c.reason}[/dim]")
-
-
-# ---------------------------------------------------------------------------
-# pfmg learn manifest
-# ---------------------------------------------------------------------------
-
-@learn_app.command("analyze")
-def cmd_manifest(
-    target: Path = typer.Argument(
-        ...,
-        help="Manifest file (JSON/YAML) or directory to scan recursively",
-    ),
-    repo_root: Path = typer.Option(_DEFAULT_REPO_ROOT, "--repo-root", "-r"),
-    no_export: bool = typer.Option(False, "--no-export"),
-    dry_run: bool = typer.Option(False, "--dry-run"),
-    recursive: bool = typer.Option(True, "--recursive/--no-recursive"),
-):
-    """
-    Analyze a Flatpak manifest file or directory and extract native recipes.
-
-    Accepts a single JSON/YAML manifest or a directory (scanned recursively).
-    Writes extracted native module recipes to recipes/native/.
-    """
-    analyzer = ManifestAnalyzer()
-
-    if target.is_dir():
-        analyses = analyzer.analyze_directory(target, recursive=recursive)
-        rprint(f"\nFound [bold]{len(analyses)}[/bold] manifests in {target}")
-    elif target.is_file():
-        analysis = analyzer.analyze(target)
-        analyses = [analysis] if analysis else []
-    else:
-        rprint(f"[red]Not found: {target}[/red]")
-        raise typer.Exit(1)
-
-    if not analyses:
-        rprint("[yellow]No manifests found.[/yellow]")
-        raise typer.Exit()
-
-    # Quick summary
-    total_native = sum(len(a.native_modules) for a in analyses)
-    total_python = sum(len(a.python_packages) for a in analyses)
-    rprint(f"  Native modules : {total_native}")
-    rprint(f"  Python packages: {total_python}")
-
-    if not no_export:
-        rprint("\n[bold]Exporting recipes...[/bold]")
-        exporter = Exporter(analyses, repo_root)
-        report = exporter.export(dry_run=dry_run)
-        _print_export_report(report, dry_run)
-
-
-# ---------------------------------------------------------------------------
-# pfmg learn shared-modules
+# pfmg learn import
 # ---------------------------------------------------------------------------
 
 @learn_app.command("import")
-def cmd_shared_modules(
+def cmd_import_modules(
     modules_dir: Path = typer.Argument(
         ...,
         help="Path to a cloned shared-modules repo or any dir with module JSON files",
     ),
-    repo_root: Path = typer.Option(_DEFAULT_REPO_ROOT, "--repo-root", "-r"),
-    dry_run: bool = typer.Option(False, "--dry-run"),
+    repo_root: Path = typer.Option(_DEFAULT_REPO_ROOT, "--repo-root", "-r"),    
     verbose: bool = typer.Option(False, "--verbose", "-v"),
 ):
     """
@@ -138,7 +65,7 @@ def cmd_shared_modules(
     importer = ModulesImporter(repo_root=repo_root)
 
     with console.status("[bold green]Scanning modules..."):
-        report = importer.import_from(modules_dir, dry_run=dry_run)
+        report = importer.import_from(modules_dir)
 
     rprint(f"\n[bold]shared-modules import[/bold]")
     rprint(f"  Scanned           : {report.scanned}")
@@ -147,9 +74,9 @@ def cmd_shared_modules(
     rprint(f"  Skipped (no src)  : {report.skipped_no_source}")
 
     if report.created:
-        rprint(f"\n[bold]{'Would create' if dry_run else 'Created'} {len(report.created)} recipe(s):[/bold]")
+        rprint(f"\n[bold]{'Would create' 'Created'} {len(report.created)} recipe(s):[/bold]")
         for p in report.created:
-            rprint(f"  [green]{'(dry)' if dry_run else ''}[/green] {p}")
+            rprint(f"  [green]{'(dry)' ''}[/green] {p}")
 
     if report.errors:
         rprint(f"\n[red]{len(report.errors)} error(s):[/red]")
@@ -162,7 +89,7 @@ def cmd_shared_modules(
 # ---------------------------------------------------------------------------
 
 @learn_app.command("inspect")
-def cmd_probe(
+def cmd_import(
     target: str = typer.Argument(
         ...,
         help="SDK or Extension ID. Extensions (containing .Extension.) are detected automatically.",
@@ -204,14 +131,13 @@ def cmd_probe(
     if _is_extension(target):
 
         
-        _cmd_probe_ext(target, target_version, output_dir, 
+        _cmd_import_ext(target, target_version, output_dir, 
                        no_cleanup=no_cleanup, prober=prober)
         return
     
-    _cmd_probe_sdk(target, target_version, output_dir, no_cleanup=no_cleanup, prober=prober)
-        
-
-def _cmd_probe_sdk(
+    _cmd_import_sdk(target, target_version, output_dir, no_cleanup=no_cleanup, prober=prober)
+ 
+def _cmd_import_sdk(
     sdk: str ,
     sdk_version: str,
     output_dir: Optional[Path],    
@@ -234,7 +160,7 @@ def _cmd_probe_sdk(
         rprint(f"[bold red]Failed[/bold red]: {result.error}")
         raise typer.Exit(1)
 
-def _cmd_probe_ext(
+def _cmd_import_ext(
     ext: str,
     ext_version: str,
     output_dir: Optional[Path],        

@@ -61,6 +61,13 @@ logger = get_logger(__name__)
 # Module name → pkgconfig name(s) — for modules whose pkg-config name
 # differs from the directory/module name.
 
+from enum import Enum
+
+
+class ImportResult(Enum):    
+    ALREADY_EXISTS = "already_exists"
+    INVALID_SOURCE = "invalid_source"
+
 @dataclass
 class ImportReport:
     """Summary of a modules import run."""
@@ -88,8 +95,7 @@ class ModulesImporter:
 
     def import_from(
     self,
-    directory: Path,    
-    dry_run: bool = False
+    directory: Path,
     ) -> ImportReport:
         """
         Scans for *.json, *.yaml, *.yml and attempts to parse each as a
@@ -100,7 +106,7 @@ class ModulesImporter:
             ["**/*.json", "**/*.yaml", "**/*.yml"]            
         )
 
-        report = ImportReport()
+        report = ImportReport()        
 
         seen: set[str] = set()
 
@@ -126,83 +132,43 @@ class ModulesImporter:
                     modules = data.get("modules", [])
 
                     if isinstance(modules, list):
-                        for module in modules:
-                            self.import_module(module)
+                         for index, module in enumerate(modules):
+
+                            if len(modules) == 1 or index == len(modules) - 1:
+                                continue                            
+
+                            result = self.import_module(module)
+                            report.scanned += 1
+
+                            if result == ImportResult.ALREADY_EXISTS:
+                                report.skipped_existing += 1
+                                continue
+
+                            if result == ImportResult.INVALID_SOURCE:
+                                report.skipped_no_source += 1
+                                continue
+                            
+                            report.created.append(result)
+                            report.imported += 1
 
                     continue
 
                 # Possível módulo separado
                 if _looks_like_module(data):
-                    self.import_module(data)
-        
-        logger.info(
-            "modules import: %d scanned, %d imported, "
-            "%d skipped (existing), %d skipped (no source)",
-            report.scanned, report.imported,
-            report.skipped_existing, report.skipped_no_source,
-        )
-        return report
+                    
+                    result = self.import_module(data)
+                    report.scanned += 1
 
-    def import_from_old(self, modules_dir: Path, dry_run: bool = False) -> ImportReport:
-        """
-        Scan modules_dir recursively and import all module files found.
+                    if result == ImportResult.ALREADY_EXISTS:
+                        report.skipped_existing += 1
+                        continue
 
-        Args:
-            modules_dir: Path to the modules repository root or
-                         any directory containing module JSON files.
-            dry_run:     If True, report what would happen without writing.
-        """
-        report = ImportReport()
-        existing = {p.stem for p in self.recipes_dir.glob("*.yaml")} if self.recipes_dir.exists() else set()
-
-        for json_path in sorted(modules_dir.rglob("*.json")):
-            modules = self._load_modules(json_path)
-            if not modules:
-                continue
-
-            for mod in modules:
-                report.scanned += 1
-                name = mod.get("name", "")                
-
-                # Normalise name for use as recipe id
-                recipe_id = _normalise_id(name)
-
-                if recipe_id in existing:
-                    report.skipped_existing += 1
-                    logger.debug("Skipping %s — recipe already exists", recipe_id)
-                    continue
-
-                source = self._extract_source(mod)
-                if not source:
-                    report.skipped_no_source += 1
-                    logger.debug("Skipping %s — no archive source", recipe_id)
-                    continue
-
-                recipe = self._build_recipe(recipe_id, name, mod, source)
-                
-                version = recipe.get("version")
-
-                if version:
-                    suffix = version
-                else:
-                    sha256 = recipe["source"].get("sha256", "")
-                    suffix = sha256[:8] if sha256 else "unknown"
-
-                filename = f'{recipe["id"]}-{suffix}'
-
-                recipe_path = self.recipes_dir / f"{filename}.yaml"
-
-                if not dry_run:
-                    self.recipes_dir.mkdir(parents=True, exist_ok=True)
-                    recipe_path.write_text(
-                        json.dumps(recipe, ensure_ascii=False, indent=2),
-                        encoding="utf-8",
-                    )
-                    existing.add(recipe_id)   # prevent duplicates within the same run
-
-                report.created.append(recipe_path)
-                report.imported += 1
-                logger.info("%s recipe: %s", "Would create" if dry_run else "Created", recipe_path)
+                    if result == ImportResult.INVALID_SOURCE:
+                        report.skipped_no_source += 1
+                        continue
+                    
+                    report.created.append(result)
+                    report.imported += 1
 
         logger.info(
             "modules import: %d scanned, %d imported, "
@@ -211,8 +177,8 @@ class ModulesImporter:
             report.skipped_existing, report.skipped_no_source,
         )
         return report
-    
-    def import_module(self, mod: dict) -> Optional[Path]:
+
+    def import_module(self, mod: dict) -> ImportResult | Path:
         """
         Import a single module dict as a recipe. Returns the path of the
         created recipe, or None if skipped.
@@ -222,20 +188,19 @@ class ModulesImporter:
 
         if (self.recipes_dir / f"{recipe_id}.yaml").exists():
             logger.debug("Skipping %s — recipe already exists", recipe_id)
-            return None
+            return ImportResult.ALREADY_EXISTS
 
         source = self._extract_source(mod)
         if not source:
             logger.debug("Skipping %s — no archive source", recipe_id)
-            return None
+            return ImportResult.INVALID_SOURCE
 
-        recipe = self._build_recipe(recipe_id, name, mod, source)
+        recipe = self._build_recipe(recipe_id, mod, source)
 
-        version = recipe.get("version")
-        suffix = version if version else "unknown"
-        filename = f'{recipe["id"]}-{suffix}'
+        version = recipe["header"]["version"]        
+        filename = f'{recipe_id}-{version}'
 
-        recipe_path = self.recipes_dir / f"{filename}.yaml"
+        recipe_path = self.recipes_dir / f"{filename}.json"
         self.recipes_dir.mkdir(parents=True, exist_ok=True)
         recipe_path.write_text(
             json.dumps(recipe, ensure_ascii=False, indent=2),
@@ -281,55 +246,30 @@ class ModulesImporter:
         return []
 
     @staticmethod
-    def _extract_source(mod: dict) -> Optional[dict]:
-        """Return the first archive source entry, or None."""
-        for src in mod.get("sources", []):
-            if isinstance(src, dict) and src.get("type") == "archive":
-                url = src.get("url", "")
-                sha256 = src.get("sha256", "")
-                if url:
-                    return {"url": url, "sha256": sha256}
-        return None
+    def _extract_source(mod: dict) -> list[dict]:
+        return [
+            src.copy()
+            for src in mod.get("sources", [])
+            if isinstance(src, dict) and src.get("url")
+        ]
 
     @staticmethod
     def _build_recipe(
-        recipe_id: str,
-        original_name: str,
+        recipe_id: str,        
         mod: dict,
-        source: dict,
-    ) -> dict:
-        buildsystem = mod.get("buildsystem", "autotools")
-        config_opts = mod.get("config-opts", [])
-        cleanup = mod.get("cleanup", ["/include", "/lib/pkgconfig"])
+        source: list,
+    ) -> dict:        
 
-        version = re.search(r'(?:^|[/_-])v?(\d+(?:\.\d+)+)', source["url"])
-        version = version.group(1) if version else None
+        version = re.search(r'(?:^|[/_-])v?(\d+(?:\.\d+)+)', source[0]["url"])
+        version = version.group(1) if version else "unknown"
 
         recipe: dict = {
-            "id": recipe_id,
-        }
-
-        if version:
-            recipe["version"] = version
-
-        recipe["name"] = original_name
-        recipe["buildsystem"] = buildsystem
-
-        if config_opts:
-            recipe["config-opts"] = config_opts
-
-        recipe.update({            
-            "source": {
-                "type": "archive",
-                "url": source["url"],
+            "header":{
+                "id": recipe_id,
+                "version": version,
             },
-        })
-
-        if source.get("sha256"):
-            recipe["source"]["sha256"] = source["sha256"]        
-
-        if cleanup:
-            recipe["cleanup"] = cleanup
+            "module": mod               
+        }        
 
         return recipe
 
