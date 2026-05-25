@@ -105,7 +105,7 @@ class NativeRecipe:
 class PythonRecipe:
     """
     Describes the native dependencies of a Python package.
-    Lives in data/pip-recipes/<pkg>-<version>.json.
+    Lives in recipes/python/<pkg>.yaml.
     """
     id: str                                    # canonical PyPI name
     pypi_name: str = ""
@@ -143,7 +143,7 @@ class SDKCapability:
     Describes what a single Flatpak runtime/SDK/extension provides.
 
     Populated from:
-      - static profile files (data/sdk-profiles/<id>.<version>.json)
+      - static profile files (data/sdk-profiles/<id>/<version>.toml)
       - live probing via flatpak info + pkg-config (when available)
     """
     # identity
@@ -219,7 +219,7 @@ class ExtensionProfile:
     """
     Describes a single Flatpak SDK Extension and everything it provides.
 
-    Profiles live at data/ext-profiles/<shortname>.<version>.json.
+    Profiles live at data/extension-profiles/<ext-id>.toml.
     The extension_id is the full Flatpak ref, e.g.:
       org.freedesktop.Sdk.Extension.rust-stable
     """
@@ -327,13 +327,6 @@ class SandboxProbeReport:
     missing_native_libs: list[str] = field(default_factory=list)
     missing_headers: list[str] = field(default_factory=list)
     missing_pkgconfig: list[str] = field(default_factory=list)
-
-    # Generated Flatpak module dicts, keyed by package name.
-    # Populated by BuildSandboxProber for packages that probed successfully.
-    modules: dict[str, dict] = field(default_factory=dict)
-
-    # Names of packages for which a module was successfully generated.
-    successful_packages: list[str] = field(default_factory=list)
 
     # High-level verdicts
     sdk_sufficient: bool = True

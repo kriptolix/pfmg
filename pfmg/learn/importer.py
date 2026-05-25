@@ -1,72 +1,28 @@
 """
-pfmg.learn.importer (ok)
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-ModulesImporter — imports individual Flatpak module JSON files from a
-local directory.
-
-Unlike full manifests, modules files contain a single module object
-(or a list of modules) without the surrounding app-id/runtime envelope:
-
-  {
-    "name": "libusb",
-    "buildsystem": "autotools",
-    "config-opts": ["--disable-static", "--disable-udev"],
-    "sources": [
-      {
-        "type": "archive",
-        "url": "https://github.com/libusb/libusb/archive/v1.0.21.tar.gz",
-        "sha256": "..."
-      }
-    ],
-    "cleanup": ["/include", "/lib/pkgconfig"]
-  }
-
-Or a list at the top level (some files export an array of modules):
-
-  [
-    { "name": "libfoo", ... },
-    { "name": "libbar", ... }
-  ]
-
-This importer:
-  1. Recursively scans a directory for *.json files
-  2. Identifies files that are modules (has "name" + ("sources" or "buildsystem"))
-  3. Converts each module into a NativeRecipe YAML and writes it to recipes/native/
-  4. Skips files that already have a recipe to avoid overwriting curated content
-
-The output is directly usable by pfmg's RecipeDB — no knowledge graph step needed.
-
-Usage (standalone)::
-
-    importer = ModulesImporter(repo_root=Path("."))
-    report = importer.import_from(Path("/path/to/modules"))
-    for r in report.created:
-        print("Created:", r)
+pfmg.learn.importer
+~~~~~~~~~~~~~~~~~~~~
+ModulesImporter — imports modules from individual Flatpak module or Flatpak
+manifests (JSON or YAML) from a local directory and writes them as recipe
+JSON files under data/nat-recipes/ or data/pip-recipes/.
 """
 from __future__ import annotations
 
-import json
-from dataclasses import dataclass, field
-from pathlib import Path
-from typing import Optional
 import re
+from dataclasses import dataclass, field
+from enum import Enum
+from pathlib import Path
 
-import yaml
-
-
+from pfmg.utils.io import load_json_or_yaml, write_json
+from pfmg.utils.text import normalise_id
 from pfmg.utils.logging import get_logger
 
 logger = get_logger(__name__)
 
-# Module name → pkgconfig name(s) — for modules whose pkg-config name
-# differs from the directory/module name.
 
-from enum import Enum
-
-
-class ImportResult(Enum):    
+class ImportResult(Enum):
     ALREADY_EXISTS = "already_exists"
     INVALID_SOURCE = "invalid_source"
+
 
 @dataclass
 class ImportReport:
@@ -81,94 +37,64 @@ class ImportReport:
 
 class ModulesImporter:
     """
-    Converts modules JSON files into pfmg recipe YAML files.
+    Converts Flatpak module JSON/YAML files into pfmg recipe JSON files.
 
     Completely standalone — no pipeline or knowledge graph dependency.
+
+    Recipe files are written to:
+      <repo_root>/data/nat-recipes/  — for native builds
+      <repo_root>/data/pip-recipes/  — for pip-installed Python packages
     """
 
     def __init__(self, repo_root: Path):
-        self.recipes_dir = repo_root / "recipes" / "native"
+        self.nat_recipes_dir = repo_root / "data" / "nat-recipes"
+        self.pip_recipes_dir = repo_root / "data" / "pip-recipes"
 
     # ------------------------------------------------------------------
     # Public API
     # ------------------------------------------------------------------
 
-    def import_from(
-    self,
-    directory: Path,
-    ) -> ImportReport:
+    def import_from(self, directory: Path) -> ImportReport:
         """
-        Scans for *.json, *.yaml, *.yml and attempts to parse each as a
-        Flatpak manifest or a shared module. Files that don't look like any
-        of these two are silently ignored.
+        Scan *directory* recursively for *.json / *.yaml / *.yml files and
+        attempt to parse each as a Flatpak manifest or a standalone module.
+
+        Files that don't match either shape are silently skipped.
         """
-        patterns = (
-            ["**/*.json", "**/*.yaml", "**/*.yml"]            
-        )
-
-        report = ImportReport()        
-
+        report = ImportReport()
         seen: set[str] = set()
 
-        for pattern in patterns:
+        for pattern in ("**/*.json", "**/*.yaml", "**/*.yml"):
             for p in sorted(directory.glob(pattern)):
                 key = str(p.resolve())
-
                 if key in seen:
                     continue
-
                 seen.add(key)
 
                 try:
-                    data = self._load(p)
-                except Exception:
+                    data = load_json_or_yaml(p)
+                except Exception as exc:
+                    logger.debug("Could not load %s: %s", p, exc)
                     continue
 
                 if not isinstance(data, dict):
                     continue
 
-                # Manifesto Flatpak
+                # Full Flatpak manifest — import all modules except the last
+                # (the last module is the application itself, not a dependency)
                 if "modules" in data:
                     modules = data.get("modules", [])
-
                     if isinstance(modules, list):
-                         for index, module in enumerate(modules):
-
+                        for index, module in enumerate(modules):
+                            # Skip the last module (the app target itself)
                             if len(modules) == 1 or index == len(modules) - 1:
-                                continue                            
-
-                            result = self.import_module(module)
-                            report.scanned += 1
-
-                            if result == ImportResult.ALREADY_EXISTS:
-                                report.skipped_existing += 1
                                 continue
-
-                            if result == ImportResult.INVALID_SOURCE:
-                                report.skipped_no_source += 1
-                                continue
-                            
-                            report.created.append(result)
-                            report.imported += 1
-
+                            self._process_module(module, report)
                     continue
 
-                # Possível módulo separado
+                # Possible standalone module file
                 if _looks_like_module(data):
-                    
-                    result = self.import_module(data)
-                    report.scanned += 1
-
-                    if result == ImportResult.ALREADY_EXISTS:
-                        report.skipped_existing += 1
-                        continue
-
-                    if result == ImportResult.INVALID_SOURCE:
-                        report.skipped_no_source += 1
-                        continue
-                    
-                    report.created.append(result)
-                    report.imported += 1
+                    self._process_module(data, report)
 
         logger.info(
             "modules import: %d scanned, %d imported, "
@@ -178,114 +104,103 @@ class ModulesImporter:
         )
         return report
 
-    def import_module(self, mod: dict) -> ImportResult | Path:
+    def import_module(self, mod: dict) -> "ImportResult | Path":
         """
-        Import a single module dict as a recipe. Returns the path of the
-        created recipe, or None if skipped.
+        Import a single module dict as a recipe.
+
+        Returns the path of the created recipe file, or an ImportResult
+        enum value if the module was skipped.
         """
         name = mod.get("name", "")
-        recipe_id = _normalise_id(name)
+        recipe_id = normalise_id(name)
 
-        if (self.recipes_dir / f"{recipe_id}.yaml").exists():
+        category = _classify_module(mod)
+        dest_dir = self.pip_recipes_dir if category == "python" else self.nat_recipes_dir
+
+        # Check for any existing recipe with this id (any version)
+        existing = list(dest_dir.glob(f"{recipe_id}-*.json"))
+        if existing:
             logger.debug("Skipping %s — recipe already exists", recipe_id)
             return ImportResult.ALREADY_EXISTS
 
-        source = self._extract_source(mod)
-        if not source:
-            logger.debug("Skipping %s — no archive source", recipe_id)
+        sources = _extract_sources(mod)
+        if not sources:
+            logger.debug("Skipping %s — no archive source with URL", recipe_id)
             return ImportResult.INVALID_SOURCE
 
-        recipe = self._build_recipe(recipe_id, mod, source)
+        version = _extract_version(sources[0].get("url", ""))
 
-        version = recipe["header"]["version"]        
-        filename = f'{recipe_id}-{version}'
+        recipe = {
+            "header": {
+                "id": recipe_id,
+                "version": version,
+                "type": category,
+            },
+            "module": mod,
+        }
 
-        recipe_path = self.recipes_dir / f"{filename}.json"
-        self.recipes_dir.mkdir(parents=True, exist_ok=True)
-        recipe_path.write_text(
-            json.dumps(recipe, ensure_ascii=False, indent=2),
-            encoding="utf-8",
-        )
+        filename = f"{recipe_id}-{version}.json"
+        recipe_path = dest_dir / filename
+        write_json(recipe_path, recipe, mkdir=True)
         logger.info("Created recipe: %s", recipe_path)
         return recipe_path
 
     # ------------------------------------------------------------------
     # Internal
     # ------------------------------------------------------------------
-    @staticmethod
-    def _load(path: Path) -> dict:
-        text = path.read_text(encoding="utf-8")
-        if path.suffix in (".yaml", ".yml"):
-            return yaml.safe_load(text) or {}
-        return json.loads(text) 
-    
-    @staticmethod
-    def _load_modules(path: Path) -> list[dict]:
-        """
-        Load a JSON file and return a list of module dicts.
-        Handles both single-module objects and top-level arrays.
-        """
-        try:
-            data = json.loads(path.read_text(encoding="utf-8"))
-        except Exception as exc:
-            logger.debug("Could not parse %s: %s", path, exc)
-            return []
 
-        if isinstance(data, list):
-            # Top-level array of modules
-            return [m for m in data if isinstance(m, dict) and _looks_like_module(m)]
+    def _process_module(self, module: dict, report: ImportReport) -> None:
+        """Helper that updates *report* after calling import_module."""
+        report.scanned += 1
+        result = self.import_module(module)
 
-        if isinstance(data, dict):
-            if _looks_like_module(data):
-                return [data]
-            # Some files wrap a module in a {"modules": [...]} envelope
-            inner = data.get("modules", [])
-            if isinstance(inner, list):
-                return [m for m in inner if isinstance(m, dict) and _looks_like_module(m)]
-
-        return []
-
-    @staticmethod
-    def _extract_source(mod: dict) -> list[dict]:
-        return [
-            src.copy()
-            for src in mod.get("sources", [])
-            if isinstance(src, dict) and src.get("url")
-        ]
-
-    @staticmethod
-    def _build_recipe(
-        recipe_id: str,        
-        mod: dict,
-        source: list,
-    ) -> dict:        
-
-        version = re.search(r'(?:^|[/_-])v?(\d+(?:\.\d+)+)', source[0]["url"])
-        version = version.group(1) if version else "unknown"
-
-        recipe: dict = {
-            "header":{
-                "id": recipe_id,
-                "version": version,
-            },
-            "module": mod               
-        }        
-
-        return recipe
+        if result == ImportResult.ALREADY_EXISTS:
+            report.skipped_existing += 1
+        elif result == ImportResult.INVALID_SOURCE:
+            report.skipped_no_source += 1
+        else:
+            report.created.append(result)
+            report.imported += 1
 
 
 # ---------------------------------------------------------------------------
-# Helpers
+# Module-level helpers
 # ---------------------------------------------------------------------------
+
+_PIP_PATTERN = re.compile(
+    r'\b(?:python(?:3)?\s+-m\s+)?pip(?:3)?\s+install\b',
+    re.IGNORECASE,
+)
+
+
+def _classify_module(mod: dict) -> str:
+    """Return "python" if the module uses pip install, otherwise "native"."""
+    for command in mod.get("build-commands", []):
+        if _PIP_PATTERN.search(command):
+            return "python"
+    return "native"
+
+
+def _extract_sources(mod: dict) -> list[dict]:
+    """Return all sources that have a URL."""
+    return [
+        s.copy()
+        for s in mod.get("sources", [])
+        if isinstance(s, dict) and s.get("url")
+    ]
+
+
+def _extract_version(url: str) -> str:
+    """Extract a semver-style version from a URL, falling back to 'unknown'."""
+    m = re.search(r'(?:^|[/_-])v?(\d+(?:\.\d+)+)', url)
+    return m.group(1) if m else "unknown"
+
 
 def _looks_like_module(data: dict) -> bool:
-    """Return True if the dict looks like a Flatpak module (not a full manifest)."""
+    """Return True if *data* looks like a Flatpak module (not a full manifest)."""
     has_name = bool(data.get("name"))
-    has_build = bool(data.get("buildsystem") or data.get("sources") or data.get("build-commands"))
+    has_build = bool(
+        data.get("buildsystem") or data.get("sources") or data.get("build-commands")
+    )
     no_appid = "app-id" not in data and "id" not in data
     return has_name and has_build and no_appid
-
-
-def _normalise_id(name: str) -> str:
-    """Convert a module name to a safe recipe id."""
-    return name.lower().replace(" ", "-").replace("_", "-")

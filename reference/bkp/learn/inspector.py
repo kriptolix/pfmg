@@ -1,49 +1,50 @@
 """
-pfmg.learn.inspector
+pfmg.learn.inspector (ok)
 ~~~~~~~~~~~~~~~~~~~~~
-Prober — downloads a Flatpak SDK or extension locally, inspects its
+Inspector — downloads a Flatpak SDK or extension locally, inspects its
 contents (pkg-config, shared libraries, executables), generates a static
-profile JSON, and then optionally removes the downloaded SDK.
+profile JSON, and then removes the downloaded SDK to free disk space.
 
 Runs on any machine with flatpak installed.
 
 Workflow:
   1. `flatpak install <sdk-id>//<version>` (if not already installed)
-  2. Enter a build environment via `flatpak build-init` + `flatpak build`
+  2. Enter a shell via `flatpak run --command=sh --devel <sdk-id>`
+     via `flatpak build-init` + `flatpak build`
   3. Execute introspection commands:
        pkg-config --list-all
        find /usr/lib -name '*.so*' -type f
        ls /usr/bin /usr/lib/sdk/*/bin
-  4. Parse output → ProbeResult
-  5. Write to data/sdk-profiles/ or data/ext-profiles/
-  6. Optionally leave the SDK installed (--nocleanup)
+  4. Parse output → SDKCapability
+  5. Write to data/sdk-profiles or data/ext-profiles
+  6. Optionally not uninstall the SDK or extension
 
 Usage:
-    pfmg learn inspect org.freedesktop.Sdk --sdk-version 24.08
-    pfmg learn inspect org.freedesktop.Sdk.Extension.node24 --sdk-version 25.08
+
+    pfmg learn sdk probe --sdk org.freedesktop.Sdk --sdk-version 24.08
+    pfmg learn sdk probe --sdk org.gnome.Sdk --sdk-version 48 --cleanup
+    pfmg learn sdk list-available
 """
 from __future__ import annotations
 
 import re
 import shutil
 import subprocess
-import tempfile
+import json
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Optional
 
-from pfmg.sandbox.runner import SandboxRunner
-from pfmg.utils.io import write_json
+from reference.bkp.sandbox import SandboxRunner
 from pfmg.utils.logging import get_logger
 
 logger = get_logger(__name__)
 
-_DATA_DIR         = Path(__file__).parent.parent / "data"
-_SDK_PROFILES_DIR = _DATA_DIR / "sdk-profiles"
-_EXT_PROFILES_DIR = _DATA_DIR / "ext-profiles"
+_SDK_PROFILES_DIR = Path(__file__).parent.parent / "data" / "sdk-profiles"
+_EXT_PROFILES_DIR = Path(__file__).parent.parent / "data" / "ext-profiles"
 
 # ---------------------------------------------------------------------------
-# Introspection scripts run inside the SDK
+# Introspection script run inside the SDK
 # ---------------------------------------------------------------------------
 
 _INTROSPECT_SH = r"""
@@ -57,17 +58,13 @@ ls /usr/bin /usr/local/bin 2>/dev/null | sort -u
 echo '=== DONE ==='
 """
 
-# Not a raw string: {mount} is substituted by .format() at call time.
-# {{print $1}} becomes {print $1} after .format(), which is valid awk.
-_EXT_INTROSPECT_SH_TEMPLATE = """
+_EXT_INTROSPECT_SH_TEMPLATE = r"""
 EXT_PATH={mount}
-echo '=== EXT_MOUNT_CHECK ==='
-ls "$EXT_PATH" 2>/dev/null || echo "MOUNT_MISSING: $EXT_PATH"
 echo '=== EXT_EXECUTABLES ==='
 ls "$EXT_PATH/bin" 2>/dev/null | sort -u
 echo '=== EXT_PKGCONFIG ==='
-PC_PATH="$EXT_PATH/lib/pkgconfig:$EXT_PATH/lib64/pkgconfig:$EXT_PATH/share/pkgconfig"
-PKG_CONFIG_PATH="$PC_PATH" pkg-config --list-all 2>/dev/null | awk '{{print $1}}' | sort -u
+pkg-config --with-path="$EXT_PATH/lib/pkgconfig" --list-all 2>/dev/null \
+  | awk '{{print $1}}' | sort -u
 echo '=== EXT_LIBRARIES ==='
 find "$EXT_PATH/lib" "$EXT_PATH/lib64" -name '*.so*' -type f 2>/dev/null \
   | sed 's|.*/||' | sort -u
@@ -76,11 +73,11 @@ echo '=== DONE ==='
 
 
 # ---------------------------------------------------------------------------
-# Module-level helpers (also imported by learn.py CLI)
+# Module-level helpers
 # ---------------------------------------------------------------------------
 
 def _is_extension(ref_id: str) -> bool:
-    """Return True if *ref_id* is a Flatpak SDK Extension (not a base SDK)."""
+    """Return True if ref_id is a Flatpak SDK Extension (not a base SDK)."""
     return ".Extension." in ref_id
 
 
@@ -88,10 +85,9 @@ def _base_sdk_from_extension(ext_id: str) -> str:
     """
     Derive the base SDK id from an extension id.
 
-    Examples::
-
-        org.freedesktop.Sdk.Extension.node24  → org.freedesktop.Sdk
-        org.gnome.Sdk.Extension.rust-stable   → org.gnome.Sdk
+    Examples:
+      org.freedesktop.Sdk.Extension.node24  → org.freedesktop.Sdk
+      org.gnome.Sdk.Extension.rust-stable   → org.gnome.Sdk
     """
     if ".Extension." in ext_id:
         return ext_id.rsplit(".Extension.", 1)[0]
@@ -114,29 +110,26 @@ class ProbeResult:
 
 
 # ---------------------------------------------------------------------------
-# Prober
+# SDKProber
 # ---------------------------------------------------------------------------
 
 class Prober:
     """
-    Downloads a Flatpak SDK or extension, introspects it, and writes a static
-    profile JSON to data/sdk-profiles/ or data/ext-profiles/.
+    Downloads a Flatpak SDK, introspects it, and writes a static profile.
 
     Standalone — no pfmg.pipeline dependency.
     """
 
     def __init__(
         self,
-        output_dir: Optional[Path] = None,
-        no_cleanup: bool = False,
+        output_dir: Optional[Path] = None,       # default: built-in sdk-profiles dir        
+        no_cleanup: bool = False,              # uninstall after probing
     ):
         self.sdk_output_dir = output_dir or _SDK_PROFILES_DIR
         self.ext_output_dir = output_dir or _EXT_PROFILES_DIR
+        self.previous_installed = None
         self.no_cleanup = no_cleanup
         self._flatpak = shutil.which("flatpak")
-        # Tracks whether the SDK/extension was already installed before probing
-        # so we only uninstall what we installed ourselves.
-        self._installed_by_us: set[str] = set()
 
     # ------------------------------------------------------------------
     # Public API
@@ -146,60 +139,69 @@ class Prober:
         return bool(self._flatpak)
 
     def probe_sdk(self, sdk_id: str, sdk_version: str) -> ProbeResult:
-        """Probe a single SDK and write its profile."""
+        """
+        Probe a single SDK and write its profile.        
+        """        
+
         result = ProbeResult(sdk_id=sdk_id, sdk_version=sdk_version)
 
         if not self._flatpak:
             result.error = "flatpak not found"
             return result
 
-        ref = f"{sdk_id}//{sdk_version}"
         if not self._is_installed(sdk_id, sdk_version):
-            logger.info("Installing %s ...", ref)
-            if not self._install(sdk_id, sdk_version):
-                result.error = f"flatpak install failed for {ref}"
+            logger.info("Installing %s//%s ...", sdk_id, sdk_version)
+            ok = self._install(sdk_id, sdk_version)
+            
+            if not ok:
+                result.error = f"flatpak install failed for {sdk_id}//{sdk_version}"
                 return result
-            self._installed_by_us.add(ref)
+            self.previous_installed = False
 
         output = self._run_in_sdk(sdk_id, sdk_version, _INTROSPECT_SH)
         if output is None:
-            result.error = f"introspection failed for {ref}"
+            result.error = f"introspection failed for {sdk_id}//{sdk_version}"
             return result
 
         result = self._parse_sdk_output(output, sdk_id, sdk_version)
         self._write_sdk_profile(result, sdk_id, sdk_version)
 
-        if not self.no_cleanup and ref in self._installed_by_us:
+        if not self.no_cleanup and self.previous_installed is False:
             self._uninstall(sdk_id, sdk_version)
 
         return result
 
-    def probe_ext(self, ext_id: str, sdk_version: str) -> ProbeResult:
+    def probe_ext(self, ext_id: str, sdk_version: str,) -> ProbeResult:
         """
-        Probe a Flatpak SDK extension and write/update its profile JSON.
+        Probe a Flatpak SDK extension and write/update its profile TOML.
 
-        The base SDK is derived automatically from the extension id.
+        The extension must be installed on the host (or auto_install=True).
+        The base SDK is derived from the extension id if not given:
+          org.freedesktop.Sdk.Extension.node24 → org.freedesktop.Sdk
         """
+
         result = ProbeResult(sdk_id=ext_id, sdk_version=sdk_version)
 
         if not self._flatpak:
             result.error = "flatpak not found"
             return result
 
+        # Derive base SDK from extension id
         sdk = _base_sdk_from_extension(ext_id)
         logger.info("Using base SDK: %s for extension %s", sdk, ext_id)
 
-        ext_ref = f"{ext_id}//{sdk_version}"
+        # Install extension if needed
         if not self._is_installed(ext_id, sdk_version):
-            logger.info("Installing extension %s ...", ext_ref)
-            if not self._install(ext_id, sdk_version):
+            logger.info("Installing extension %s//%s ...", ext_id, sdk_version)
+            ok = self._install(ext_id, sdk_version)
+            if not ok:
                 result.error = (
-                    f"flatpak install failed for {ext_ref}. "
-                    f"Try: flatpak install flathub {ext_ref}"
+                    f"flatpak install failed for {ext_id}//{sdk_version}. "
+                    f"Try: flatpak install flathub {ext_id}//{sdk_version}"
                 )
                 return result
-            self._installed_by_us.add(ext_ref)
 
+        # Verify base SDK is available for build-init
         if not self._is_installed(sdk, sdk_version):
             result.error = (
                 f"Base SDK {sdk}//{sdk_version} is not installed. "
@@ -207,6 +209,8 @@ class Prober:
             )
             return result
 
+        # Derive mount path: last segment of extension id
+        # e.g. org.freedesktop.Sdk.Extension.node24 → node24 → /usr/lib/sdk/node24
         short_name = ext_id.split(".")[-1]
         mount = f"/usr/lib/sdk/{short_name}"
         script = _EXT_INTROSPECT_SH_TEMPLATE.format(mount=mount)
@@ -215,14 +219,17 @@ class Prober:
         if output is None:
             result.error = (
                 f"Extension introspection failed for {ext_id}. "
-                f"Verify the extension is installed: flatpak info {ext_id}"
+                f"Verify the extension is installed: "
+                f"flatpak info {ext_id}//{sdk_version}"
             )
             return result
 
         result = self._parse_ext_output(output, ext_id, sdk_version, mount)
-        self._write_ext_profile(result, ext_id, sdk_version, mount)
 
-        if not self.no_cleanup and ext_ref in self._installed_by_us:
+        # Write a new profile TOML (or update existing one)
+        self._write_ext_profile(result, ext_id, sdk_version, mount)
+        
+        if not self.no_cleanup and self.previous_installed is False:
             self._uninstall(ext_id, sdk_version)
 
         return result
@@ -232,14 +239,16 @@ class Prober:
         sdk_list: list[tuple[str, str]],
         ext_list: list[tuple[str, str]],
     ) -> list[ProbeResult]:
-        """Probe all SDKs and extensions in the given lists."""
+        """Probe all SDKs and extensions in the default lists."""
         results: list[ProbeResult] = []
-        for sdk_id, version in sdk_list:
+        for sdk_id, version in (sdk_list):
             logger.info("Probing SDK: %s//%s", sdk_id, version)
             results.append(self.probe_sdk(sdk_id, version))
-        for ext_id, version in ext_list:
+
+        for ext_id, version in (ext_list ):
             logger.info("Probing extension: %s//%s", ext_id, version)
             results.append(self.probe_ext(ext_id, version))
+
         return results
 
     # ------------------------------------------------------------------
@@ -278,9 +287,18 @@ class Prober:
         extra_extensions: Optional[list[str]] = None,
     ) -> Optional[str]:
         """
-        Run a shell script inside the SDK via SandboxRunner.
+        Run a shell script inside the SDK via SandboxRunner (flatpak build-init
+        + flatpak build).  The script is passed via stdin so host/sandbox path
+        mismatches are avoided entirely — see SandboxRunner.run() for details.
+
         Returns stdout on success, None on failure.
         """
+        import tempfile
+
+        # Derive the Platform ref from the SDK id by replacing the trailing
+        # "Sdk" component:
+        #   org.freedesktop.Sdk  → org.freedesktop.Platform
+        #   org.gnome.Sdk        → org.gnome.Platform
         parts = sdk_id.split(".")
         platform = ".".join(
             "Platform" if (p == "Sdk" and i == len(parts) - 1) else p
@@ -348,17 +366,15 @@ class Prober:
                 result.executables.append(line)
         return result
 
-    @classmethod
+    @staticmethod
     def _parse_ext_output(
-        cls, output: str, ext_id: str, sdk_version: str, mount: str
+        output: str, ext_id: str, sdk_version: str, mount: str
     ) -> ProbeResult:
         result = ProbeResult(sdk_id=ext_id, sdk_version=sdk_version, success=True)
         section = None
         for line in output.splitlines():
             line = line.strip()
-            if line == "=== EXT_MOUNT_CHECK ===":
-                section = "mount_check"
-            elif line == "=== EXT_EXECUTABLES ===":
+            if line == "=== EXT_EXECUTABLES ===":
                 section = "exes"
             elif line == "=== EXT_PKGCONFIG ===":
                 section = "pc"
@@ -366,16 +382,6 @@ class Prober:
                 section = "libs"
             elif line == "=== DONE ===":
                 break
-            elif line and section == "mount_check":
-                if "MOUNT_MISSING" in line:
-                    logger.warning(
-                        "Extension mount not present in sandbox: %s\n"
-                        "  The extension may not be installed for the correct arch/version.\n"
-                        "  Try: flatpak install flathub %s//%s",
-                        line, ext_id, sdk_version,
-                    )
-                else:
-                    logger.debug("Extension mount OK — contents: %s", line[:120])
             elif line and section == "exes":
                 result.executables.append(line)
             elif line and section == "pc":
@@ -387,46 +393,69 @@ class Prober:
     # ------------------------------------------------------------------
     # Profile writers
     # ------------------------------------------------------------------
-
+    
     def _write_ext_profile(
-        self, result: ProbeResult, ext_id: str, sdk_version: str, mount: str
+    self, result, ext_id: str, sdk_version: str, mount: str
     ) -> Path:
-        """Write (or overwrite) an extension profile JSON."""
+        """
+        Write a new extension profile JSON file.
+        Does not overwrite existing profiles.
+        """
+
         safe_name = f"{ext_id.split('.')[-1]}.{sdk_version}"
+
+        existing = list(self.ext_output_dir.glob(f"*{safe_name}*.json"))
+        if existing:
+            logger.debug(
+                "Extension profile already exists at %s — skipping create",
+                existing[0]
+            )
+            return existing[0]
+
+        self.ext_output_dir.mkdir(parents=True, exist_ok=True)
+
         profile_path = self.ext_output_dir / f"{safe_name}.json"
+
         data = {
-            "extension_id":         ext_id,
-            "display_name":         safe_name,
-            "mount_path":           mount,
+            "extension_id": ext_id,
+            "display_name": safe_name,            
+            "mount_path": mount,           
             "provides_executables": sorted(result.executables),
-            "provides_pkgconfig":   sorted(result.pkgconfig),
-            "provides_libraries":   sorted(result.libraries),
+            "provides_pkgconfig": sorted(result.pkgconfig),
+            "provides_libraries": sorted(result.libraries),
             "env": {
                 "PATH": f"{mount}/bin:$PATH"
-            },
+            }
         }
-        write_json(profile_path, data, mkdir=True)
+
+        profile_path.write_text(
+            json.dumps(data, indent=2, ensure_ascii=False) + "\n"
+        )
+
         logger.info("Wrote extension profile: %s", profile_path)
         return profile_path
 
     def _write_sdk_profile(
-        self, result: ProbeResult, sdk_id: str, sdk_version: str
+        self, result, sdk_id: str, sdk_version: str
     ) -> Path:
-        """Write (or overwrite) an SDK profile JSON."""
-        # Use second-to-last component for the filename, e.g. "Sdk" from
-        # "org.freedesktop.Sdk" → file is "freedesktop.24.08.json"
-        parts = sdk_id.split(".")
-        short = parts[-2] if len(parts) >= 2 else parts[-1]
-        safe_id = f"{short}.{sdk_version}"
+
+        safe_id = f"{sdk_id.split('.')[-2]}.{sdk_version}"
+
+        self.sdk_output_dir.mkdir(parents=True, exist_ok=True)
 
         profile_path = self.sdk_output_dir / f"{safe_id}.json"
+
         data = {
-            "sdk_id":      result.sdk_id,
+            "sdk_id": result.sdk_id,
             "sdk_version": result.sdk_version,
-            "pkgconfig":   sorted(result.pkgconfig),
-            "libraries":   sorted(result.libraries),
+            "pkgconfig": sorted(result.pkgconfig),
+            "libraries": sorted(result.libraries),
             "executables": sorted(result.executables),
         }
-        write_json(profile_path, data, mkdir=True)
+
+        profile_path.write_text(
+            json.dumps(data, indent=2, ensure_ascii=False) + "\n"
+        )
+
         logger.info("Wrote SDK profile: %s", profile_path)
         return profile_path

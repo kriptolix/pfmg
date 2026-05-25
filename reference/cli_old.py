@@ -13,11 +13,11 @@ from rich import print as rprint
 from pfmg import __version__
 from pfmg.pipeline import Pipeline
 from pfmg.recipes.db import RecipeDB
-from pfmg.resolvers.sdk_capability import SDKCapabilityResolver, SDKQuery
-from pfmg.resolvers.sdk_extension import SDKExtensionResolver
-from pfmg.resolvers.native_dependency import NativeDependencyAnalyzer
+from reference.resolvers.sdk_capability import SDKCapabilityResolver, SDKQuery
+from reference.resolvers.sdk_extension import SDKExtensionResolver
+from reference.resolvers.native_dependency import NativeDependencyAnalyzer
 from pfmg.sandbox.probe import BuildSandboxProber
-from pfmg.learn.cli import learn_app
+from pfmg.learn.learn import learn_app
 from pfmg.utils.logging import get_logger
 
 logger = get_logger(__name__)
@@ -112,7 +112,7 @@ def add(
         os.environ["pfmg_LOG_LEVEL"] = "DEBUG"
 
     from pfmg.recipes.db import RecipeDB
-    from pfmg.resolvers.sdk_capability import SDKCapabilityResolver, SDKQuery
+    from reference.resolvers.sdk_capability import SDKCapabilityResolver, SDKQuery
 
     recipe_db = RecipeDB()
     sdk_resolver = SDKCapabilityResolver(
@@ -231,7 +231,7 @@ def _check_sdk_provides(
     pc_names: list[str],
 ) -> tuple[list[str], list[str]]:
     """Return (satisfied, unsatisfied) pkgconfig names."""
-    from pfmg.resolvers.sdk_capability import SDKQuery
+    from reference.resolvers.sdk_capability import SDKQuery
     satisfied, unsatisfied = [], []
     for pc in pc_names:
         report = sdk_resolver.resolve([SDKQuery(pc, "pkgconfig")])
@@ -291,7 +291,7 @@ def _run_probe(
     Returns None if flatpak is not available.
     """
     from pfmg.sandbox.probe import BuildSandboxProber
-    from pfmg.models import ResolvedPackage, BuildBackend
+    from reference.bkp.models import ResolvedPackage, BuildBackend
     from pfmg.recipes.db import RecipeDB
 
     prober = BuildSandboxProber(
@@ -506,7 +506,7 @@ def recipes_show(
 @sdk_app.command("list")
 def sdk_list():
     """List all built-in SDK profiles available offline."""
-    from pfmg.resolvers.sdk_capability import _BUILTIN_PROFILES_DIR
+    from reference.resolvers.sdk_capability import _BUILTIN_PROFILES_DIR
     profiles = sorted(_BUILTIN_PROFILES_DIR.glob("**/*.toml"))
     if not profiles:
         rprint("[yellow]No built-in profiles found.[/yellow]")
@@ -644,7 +644,7 @@ def sdk_probe(
 @ext_app.command("list")
 def ext_list():
     """List all available SDK Extension profiles."""
-    from pfmg.resolvers.sdk_extension import _BUILTIN_EXTENSION_PROFILES_DIR
+    from reference.resolvers.sdk_extension import _BUILTIN_EXTENSION_PROFILES_DIR
     resolver = SDKExtensionResolver()
     profiles = resolver.profiles()
     if not profiles:
@@ -715,8 +715,8 @@ def ext_check(
     Determine which SDK Extensions are required for a set of packages.
     Packages can be bare names; native deps are inferred from the hints DB.
     """
-    from pfmg.models import ResolvedPackage, BuildBackend
-    from pfmg.models import SourceType
+    from reference.bkp.models import ResolvedPackage, BuildBackend
+    from reference.bkp.models import SourceType
 
     analyzer = NativeDependencyAnalyzer()
     # Build minimal ResolvedPackage stubs
