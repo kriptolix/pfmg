@@ -3,6 +3,7 @@ pfmg/__init__.py
 pfmg/cli.py
 pfmg/errors.py
 pfmg/models.py
+pfmg/module.py
 pfmg/probe.py
 pfmg/resolvers.py
 pfmg.egg-info/PKG-INFO

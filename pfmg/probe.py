@@ -488,14 +488,17 @@ class BuildSandboxProber:
         return runner.run(cmd, timeout=self._command_timeout)
 
     def _try_import(self, pkg: ResolvedPackage, runner: SandboxRunner):
-        """Attempt to import the package inside the sandbox."""
         import_name = _derive_import_name(pkg.name)
-        script = (
-            f"PYTHONPATH={_INSTALL_TARGET} python3 -c \""
-            f"import {import_name}; "
-            f"v = getattr({import_name}, '__version__', 'unknown'); "
-            f"print('IMPORT_OK', v)\""
-        )
+        # Heredoc evita todos os problemas de quoting: o Python recebe o script
+        # exatamente como escrito, sem interferência do sh.
+        script = "\n".join([
+            f"export PYTHONPATH={_INSTALL_TARGET}:$PYTHONPATH",
+            f"python3 << 'PYEOF'",
+            f"import {import_name}",
+            f"v = getattr({import_name}, '__version__', 'unknown')",
+            f"print('IMPORT_OK', v)",
+            f"PYEOF",
+        ])
         return runner.run(script, timeout=self._command_timeout)
 
     def _run_ldd(self, pkg: ResolvedPackage, runner: SandboxRunner):
