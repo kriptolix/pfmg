@@ -19,15 +19,20 @@ the host. PATH is prepended per extension via --env=.
 """
 from __future__ import annotations
 
+import json
 import os
+import re
 import shutil
 import subprocess
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Optional
+from typing import Optional, TYPE_CHECKING
 
 from pfmg.utils.io import sh_quote
 from pfmg.utils.logging import get_logger
+
+if TYPE_CHECKING:
+    from pfmg.models import FlatpakManifest
 
 logger = get_logger(__name__)
 
@@ -89,6 +94,7 @@ class SandboxRunner:
         self.runtime_version = runtime_version
         self.sdk_extensions = sdk_extensions or []
         self.timeout = timeout
+        self._build_timeout = 600
         self.extra_env = extra_env or {}
         self._flatpak = shutil.which("flatpak")
         self._initialised = False
@@ -181,6 +187,78 @@ class SandboxRunner:
         """Convenience: run pip inside the sandbox venv."""
         return self.run(f"/app/venv/bin/pip {pip_args}", timeout=timeout)
 
+    def build_manifest(
+        self,
+        manifest: "FlatpakManifest",
+        state_dir: Optional[Path] = None,
+        repo_dir: Optional[Path] = None,
+        timeout: Optional[int] = None,
+    ) -> RunResult:
+        """
+        Serialise *manifest* to a temporary JSON file and run
+        ``flatpak run org.flatpak.Builder`` against it.
+
+        This is the canonical way to validate that a generated module actually
+        builds inside a real Flatpak environment — the builder resolves sources,
+        runs build-commands, and reports any missing native dependency, header,
+        or pkg-config entry via stderr in a format that parse_errors understands.
+
+        Parameters
+        ----------
+        manifest:
+            The FlatpakManifest to build.  Should contain only the module(s)
+            being tested; no finish-args needed for a test build.
+        state_dir:
+            Directory for flatpak-builder's cache/state.  A temporary
+            directory is used when not provided.
+        repo_dir:
+            Output OSTree repo directory.  A temporary directory is used when
+            not provided.
+        timeout:
+            Override the runner's default timeout (in seconds).  Module builds
+            that compile native extensions may need more time than the default.
+        """
+        if not self._flatpak:
+            return RunResult(
+                command="flatpak run org.flatpak.Builder",
+                stdout="",
+                stderr="flatpak not found",
+                exit_code=127,
+            )
+
+        # Directories must be reachable inside the flatpak-builder sandbox.
+        # bubblewrap does not mount /tmp from the host, but always exposes the
+        # user's home directory, so we place everything under ~/.cache/pfmg.
+        safe_name = re.sub(r"[^a-zA-Z0-9_.-]", "_", manifest.app_id)
+        base = Path.home() / ".cache" / "pfmg" / f"builder-{safe_name}"
+        _state_dir    = state_dir or base / "state"
+        _repo_dir     = repo_dir  or base / "repo"
+        manifest_path = base / "manifest.json"
+
+        base.mkdir(parents=True, exist_ok=True)
+        _state_dir.mkdir(parents=True, exist_ok=True)
+        _repo_dir.mkdir(parents=True, exist_ok=True)
+
+        manifest_path.write_text(
+            _manifest_to_json(manifest),
+            encoding="utf-8",
+        )
+        logger.debug("Test manifest written to %s", manifest_path)
+
+        cmd = [
+            self._flatpak, "run", "org.flatpak.Builder",
+            "--ccache",
+            "--force-clean",
+            "--disable-updates",
+            f"--state-dir={_state_dir}",
+            str(_repo_dir),
+            str(manifest_path),
+        ]
+        logger.info("Building test manifest for %s", manifest.app_id)
+        result = self._exec(cmd, timeout=timeout or self._build_timeout)
+        shutil.rmtree(base, ignore_errors=True)
+        return result
+
     def teardown(self) -> None:
         """Remove the build directory."""
         if self.build_dir.exists():
@@ -255,3 +333,62 @@ class SandboxRunner:
                 stderr=f"flatpak not found: {cmd[0]}",
                 exit_code=127,
             )
+
+
+# ---------------------------------------------------------------------------
+# Manifest serialisation
+# ---------------------------------------------------------------------------
+
+def _manifest_to_json(manifest: "FlatpakManifest") -> str:
+    """
+    Serialise a FlatpakManifest dataclass to a JSON string suitable for
+    flatpak-builder.
+
+    FlatpakModule uses snake_case field names (build_commands, build_options)
+    while the JSON format requires kebab-case (build-commands, build-options).
+    FlatpakSource fields map directly to JSON keys of the same name.
+    """
+    def _source(src) -> dict:
+        d: dict = {"type": src.type}
+        if src.url:          d["url"]           = src.url
+        if src.sha256:       d["sha256"]         = src.sha256
+        if src.path:         d["path"]           = src.path
+        if src.dest_filename:d["dest-filename"]  = src.dest_filename
+        if src.branch:       d["branch"]         = src.branch
+        if src.commit:       d["commit"]         = src.commit
+        if src.tag:          d["tag"]            = src.tag
+        return d
+
+    def _module(mod) -> dict:
+        d: dict = {
+            "name":       mod.name,
+            "buildsystem": mod.buildsystem,
+        }
+        if mod.build_commands:
+            d["build-commands"] = mod.build_commands
+        if mod.config_opts:
+            d["config-opts"] = mod.config_opts
+        if mod.build_options:
+            d["build-options"] = mod.build_options
+        if mod.cleanup:
+            d["cleanup"] = mod.cleanup
+        if mod.sources:
+            d["sources"] = [_source(s) for s in mod.sources]
+        if mod.modules:
+            d["modules"] = [_module(m) for m in mod.modules]
+        return d
+
+    doc: dict = {
+        "app-id":          manifest.app_id,
+        "runtime":         manifest.runtime,
+        "runtime-version": manifest.runtime_version,
+        "sdk":             manifest.sdk,
+    }
+    if manifest.sdk_extensions:
+        doc["sdk-extensions"] = manifest.sdk_extensions
+    if manifest.finish_args:
+        doc["finish-args"] = manifest.finish_args
+    if manifest.modules:
+        doc["modules"] = [_module(m) for m in manifest.modules]
+
+    return json.dumps(doc, indent=2, ensure_ascii=False) + "\n"

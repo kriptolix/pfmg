@@ -69,6 +69,7 @@ def cmd_probe_run(
     use_uv: bool = typer.Option(True, "--uv/--pip", help="Use uv (default) or pip."),
     keep: bool = typer.Option(False, "--keep", help="Keep the sandbox work directory."),
     verbose: bool = typer.Option(False, "--verbose", "-v"),
+    raw_output: bool = typer.Option(False, "--raw-output", "-r", help="Print raw sandbox stdout/stderr."),
 ):
     """
     Probe one or more Python packages inside a real Flatpak build sandbox.
@@ -149,13 +150,14 @@ def cmd_probe_run(
         if items:
             rprint(f"[yellow]{label}:[/yellow] {', '.join(items)}")
 
-    # Always print raw sandbox output when something went wrong — even if the
-    # error parser didn't recognise the failure pattern, the raw output tells
-    # the user exactly what happened.
-    has_failure = not report.build_possible or not report.sdk_sufficient or report.errors
-    if has_failure and (report.stdout.strip() or report.stderr.strip()):
+    # Raw sandbox output — only shown when explicitly requested via --raw-output.
+    # Use --raw-output to inspect the full flatpak-builder stderr when the
+    # structured error table doesn't explain the failure.
+    if raw_output and (report.stdout.strip() or report.stderr.strip()):
         rprint("\n[bold]Raw sandbox output:[/bold]")
         _print_sandbox_output(report.stdout, report.stderr)
+
+    has_failure = not report.build_possible or not report.sdk_sufficient or report.errors
 
     if report.errors:
         rprint("\n[bold]Resolving errors against local dataset...[/bold]")

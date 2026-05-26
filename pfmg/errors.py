@@ -71,6 +71,40 @@ _P_PIP_NOT_FOUND = re.compile(
     re.IGNORECASE,
 )
 
+# pip build-time missing Python dep:
+#   "ModuleNotFoundError: No module named 'pybind11'"  inside a pip subprocess
+#   (different from a runtime ImportError — the package itself couldn't be built)
+_P_BUILD_DEP_MISSING = re.compile(
+    r"ModuleNotFoundError: No module named\s+'?(?P<mod>[^'\";\s]+)'?",
+    re.IGNORECASE,
+)
+
+# pip BackendUnavailable — build backend module could not be imported:
+#   "BackendUnavailable: Cannot import 'mesonpy'"
+#   "BackendUnavailable: Cannot import 'setuptools'"
+#   Full path variant: "pip._vendor.pyproject_hooks._impl.BackendUnavailable: Cannot import 'X'"
+_P_BACKEND_UNAVAILABLE = re.compile(
+    r"BackendUnavailable:\s*Cannot import\s+'?(?P<mod>[^'\";\s]+)'?",
+    re.IGNORECASE,
+)
+
+# pip build backend subprocess failure — covers cases where the backend exists
+# but fails at import time with an arbitrary exception:
+#   "Failed to import build backend 'mesonpy'"
+#   "error: Failed to load PEP 517 backend"
+_P_BACKEND_FAILED = re.compile(
+    r"(?:Failed to (?:import|load)(?: build backend| PEP 517 backend)?\s*'?(?P<mod>[^'\";\s]+)'?)",
+    re.IGNORECASE,
+)
+
+# flatpak-builder module-level failure:
+#   "Error: module python3-pillow: Child process exited with code 1"
+#   (localised — match the invariant English prefix + module name)
+_P_FLATPAK_MODULE_FAILED = re.compile(
+    r"Error:\s+module\s+(?P<module>[^:]+):\s+",
+    re.IGNORECASE,
+)
+
 # Meson "Dependency X not found"
 _P_MESON_DEP = re.compile(
     r"Dependency\s+(?P<dep>\S+)\s+found:\s+NO",
@@ -171,13 +205,72 @@ def parse_errors(
                 raw_line=m.group(0).strip(),
             ))
 
+    # Build-time missing Python dep — ModuleNotFoundError inside a pip
+    # subprocess (metadata generation, setup.py, etc.).  Must run BEFORE
+    # _P_IMPORT_ERROR so the same text is classified as MISSING_PYTHON_PKG
+    # and the import-error handler skips it via the `seen` guard.
+    for m in _P_BUILD_DEP_MISSING.finditer(combined):
+        mod = m.group("mod").strip().split(".")[0]
+        if mod:
+            _add(SandboxError(
+                error_type=SandboxErrorType.MISSING_PYTHON_PKG,
+                missing=mod,
+                source="stderr",
+                context=context,
+                raw_line=m.group(0).strip(),
+            ))
+
+    # Build backend unavailable — pip could not import the backend module.
+    # Same classification as a missing build dep: the package needs to be
+    # added as a python3-<backend> module before this one in the manifest.
+    for m in _P_BACKEND_UNAVAILABLE.finditer(combined):
+        mod = m.group("mod").strip().split(".")[0]
+        if mod:
+            _add(SandboxError(
+                error_type=SandboxErrorType.MISSING_PYTHON_PKG,
+                missing=mod,
+                source="stderr",
+                context=context,
+                raw_line=m.group(0).strip(),
+            ))
+
+    # Build backend subprocess failure — backend exists but failed at import.
+    for m in _P_BACKEND_FAILED.finditer(combined):
+        mod = m.group("mod")
+        if mod:
+            mod = mod.strip().split(".")[0]
+            _add(SandboxError(
+                error_type=SandboxErrorType.MISSING_PYTHON_PKG,
+                missing=mod,
+                source="stderr",
+                context=context,
+                raw_line=m.group(0).strip(),
+            ))
+
     for m in _P_IMPORT_ERROR.finditer(combined):
         mod = m.group("mod").strip().split(".")[0]  # top-level module only
-        if mod:
+        # Skip if already captured as a build-time missing dep — same
+        # ModuleNotFoundError pattern, different root cause and classification.
+        if mod and (SandboxErrorType.MISSING_PYTHON_PKG.value, mod.lower()) not in seen:
             _add(SandboxError(
                 error_type=SandboxErrorType.IMPORT_ERROR,
                 missing=mod,
                 source="import",
+                context=context,
+                raw_line=m.group(0).strip(),
+            ))
+
+    # flatpak-builder top-level module failure line — tells us which module
+    # failed when the specific error was already captured above.
+    for m in _P_FLATPAK_MODULE_FAILED.finditer(combined):
+        module_name = m.group("module").strip()
+        # Only add if no more specific error was recorded for this module.
+        key = (SandboxErrorType.BUILD_FAILURE.value, module_name.lower())
+        if key not in seen:
+            _add(SandboxError(
+                error_type=SandboxErrorType.BUILD_FAILURE,
+                missing=module_name,
+                source="stderr",
                 context=context,
                 raw_line=m.group(0).strip(),
             ))

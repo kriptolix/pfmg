@@ -29,7 +29,6 @@ Cache strategy:
 from __future__ import annotations
 
 import json
-import re
 import shutil
 import tempfile
 from pathlib import Path
@@ -38,6 +37,9 @@ from typing import Optional
 import yaml
 
 from pfmg.models import (
+    FlatpakManifest,
+    FlatpakModule,
+    FlatpakSource,
     ResolvedPackage,
     ResolutionResult,
     SandboxError,
@@ -448,32 +450,37 @@ class BuildSandboxProber:
         else:
             logger.info("Skipping module for %s: blocking native errors", pkg.name)
 
-        # --- 5. Import test (informational) ---
-        # Runs after module generation so a failed import never suppresses output.
-        import_result = self._try_import(pkg, runner)
-        report.stdout += import_result.stdout
-        report.stderr += import_result.stderr
+        # --- 5. Build test ---
+        # Run the generated module through flatpak-builder to catch errors that
+        # a silent pip install hides: missing compilers, headers, native libs.
+        # Only runs when a module was actually generated (no blocking errors).
+        # Errors are informational — they refine the report but do not change
+        # build_possible (ldd + pkgconfig already set that verdict above).
+        if not has_blocking:
+            build_result = self._try_build_module(pkg, module_dict, runner)
+            report.stdout += build_result.stdout
+            report.stderr += build_result.stderr
 
-        if not import_result.succeeded:
-            import_errors = parse_errors(
-                import_result.stderr,
-                import_result.stdout,
-                context=f"{pkg.name} import",
-            )
-            if not import_errors:
-                import_errors = [SandboxError(
-                    error_type=SandboxErrorType.IMPORT_ERROR,
-                    missing=pkg.name,
-                    source="import",
-                    context=f"{pkg.name} import",
-                    raw_line=import_result.stderr[-200:].strip(),
-                )]
-            report.errors.extend(import_errors)
-            _apply_errors_to_report(report, import_errors)
-            logger.info(
-                "Import check failed for %s (informational): %s",
-                pkg.name, import_result.stderr[-120:].strip(),
-            )
+            if not build_result.succeeded:
+                build_errors = parse_errors(
+                    build_result.stderr,
+                    build_result.stdout,
+                    context=f"{pkg.name} build-test",
+                )
+                if not build_errors:
+                    build_errors = [SandboxError(
+                        error_type=SandboxErrorType.BUILD_FAILURE,
+                        missing=pkg.name,
+                        source="stderr",
+                        context=f"{pkg.name} build-test",
+                        raw_line=build_result.stderr[-400:].strip(),
+                    )]
+                report.errors.extend(build_errors)
+                _apply_errors_to_report(report, build_errors)
+                logger.info(
+                    "Build test failed for %s: %s",
+                    pkg.name, build_result.stderr[-120:].strip(),
+                )
 
     # ------------------------------------------------------------------
     # Internal — individual probe actions
@@ -486,17 +493,6 @@ class BuildSandboxProber:
             _UV_INSTALL_CMD if self._use_uv else _PIP_INSTALL_CMD
         ).format(target=_INSTALL_TARGET, spec=spec)
         return runner.run(cmd, timeout=self._command_timeout)
-
-    def _try_import(self, pkg: ResolvedPackage, runner: SandboxRunner):
-        """Attempt to import the package inside the sandbox."""
-        import_name = _derive_import_name(pkg.name)
-        script = (
-            f"PYTHONPATH={_INSTALL_TARGET} python3 -c \""
-            f"import {import_name}; "
-            f"v = getattr({import_name}, '__version__', 'unknown'); "
-            f"print('IMPORT_OK', v)\""
-        )
-        return runner.run(script, timeout=self._command_timeout)
 
     def _run_ldd(self, pkg: ResolvedPackage, runner: SandboxRunner):
         """
@@ -511,6 +507,36 @@ class BuildSandboxProber:
         if not result.stdout.strip() or "=== LDD" not in result.stdout:
             return None
         return result
+
+    def _try_build_module(
+        self,
+        pkg: ResolvedPackage,
+        module_dict: dict,
+        runner: SandboxRunner,
+    ) -> RunResult:
+        """
+        Validate a generated module by building it inside a real Flatpak
+        environment via ``flatpak run org.flatpak.Builder``.
+
+        A minimal FlatpakManifest containing only the module under test is
+        serialised to a temporary JSON file and passed to the builder.  This
+        catches errors that silent pip installs hide — missing compilers,
+        headers, native libraries — because the builder runs the full
+        build-commands pipeline and reports every failure via stderr in the
+        same format that parse_errors already understands.
+
+        Returns the RunResult from the builder invocation.
+        """
+        flatpak_module = _module_dict_to_flatpak(module_dict)
+        manifest = FlatpakManifest(
+            app_id=f"org.pfmg.Test.{pkg.name}",
+            runtime=self.runtime,
+            runtime_version=self.runtime_version,
+            sdk=self.sdk,
+            sdk_extensions=self.sdk_extensions,
+            modules=[flatpak_module],
+        )
+        return runner.build_manifest(manifest, timeout=self._build_timeout)
 
     # ------------------------------------------------------------------
     # Internal — output serialisation
@@ -532,3 +558,40 @@ class BuildSandboxProber:
             path = output_dir / f"{name}.json"
         path.write_text(content, encoding="utf-8")
         return path
+
+
+# ---------------------------------------------------------------------------
+# Helpers
+# ---------------------------------------------------------------------------
+
+def _module_dict_to_flatpak(module_dict: dict) -> FlatpakModule:
+    """
+    Convert a module dict produced by build_pip_module() into a FlatpakModule
+    dataclass suitable for FlatpakManifest.
+
+    build_pip_module uses kebab-case keys (build-commands, x-checker-data)
+    and plain dicts for sources.  FlatpakModule uses snake_case fields and
+    FlatpakSource dataclasses.  This function bridges the two.
+    """
+    sources: list[FlatpakSource] = []
+    for s in module_dict.get("sources", []):
+        sources.append(FlatpakSource(
+            type=s.get("type", "file"),
+            url=s.get("url"),
+            sha256=s.get("sha256"),
+            path=s.get("path"),
+            dest_filename=s.get("dest-filename"),
+            branch=s.get("branch"),
+            commit=s.get("commit"),
+            tag=s.get("tag"),
+        ))
+
+    return FlatpakModule(
+        name=module_dict.get("name", ""),
+        buildsystem=module_dict.get("buildsystem", "simple"),
+        build_commands=module_dict.get("build-commands", []),
+        sources=sources,
+        cleanup=module_dict.get("cleanup", []),
+        build_options=module_dict.get("build-options", {}),
+        config_opts=module_dict.get("config-opts", []),
+    )
