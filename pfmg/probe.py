@@ -77,53 +77,10 @@ find "$SITE/{pkg_dir}" -name '*.so*' -type f 2>/dev/null | while read so; do
 done
 """
 
-# ---------------------------------------------------------------------------
-# Package-name → import-name resolution
-# ---------------------------------------------------------------------------
-
-_IMPORT_NAME_OVERRIDES: dict[str, str] = {
-    "pillow":                  "PIL",
-    "pil":                     "PIL",
-    "scikit-learn":            "sklearn",
-    "scikit-image":            "skimage",
-    "scikit-build":            "skbuild",
-    "opencv-python":           "cv2",
-    "opencv-python-headless":  "cv2",
-    "python-dateutil":         "dateutil",
-    "beautifulsoup4":          "bs4",
-    "pyyaml":                  "yaml",
-    "protobuf":                "google.protobuf",
-    "grpcio":                  "grpc",
-    "mysqlclient":             "MySQLdb",
-    "psycopg2-binary":         "psycopg2",
-    "pyzmq":                   "zmq",
-    "pygame":                  "pygame",
-    "pyserial":                "serial",
-    "pycairo":                 "cairo",
-    "pygobject":               "gi",
-    "python-magic":            "magic",
-    "python-dotenv":           "dotenv",
-    "typing-extensions":       "typing_extensions",
-    "importlib-metadata":      "importlib_metadata",
-}
-
-
-def _derive_import_name(pkg_name: str) -> str:
-    """
-    Best-effort derivation of the Python import name from a PyPI package name.
-
-    Resolution order:
-      1. Explicit override table (_IMPORT_NAME_OVERRIDES)
-      2. Normalise: lower-case, hyphens → underscores
-    """
-    key = pkg_name.lower()
-    return _IMPORT_NAME_OVERRIDES.get(key, key.replace("-", "_"))
-
-
 def _pkg_dir_name(pkg_name: str) -> str:
     """Return the likely directory name under site-packages for ldd scanning."""
     key = pkg_name.lower()
-    return _IMPORT_NAME_OVERRIDES.get(key, key.replace("-", "_"))
+    return key 
 
 
 # ---------------------------------------------------------------------------

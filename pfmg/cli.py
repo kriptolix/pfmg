@@ -203,7 +203,7 @@ def cmd_probe_errors(
 
       pfmg probe errors build-stderr.txt --stdout build-stdout.txt
     """
-    from pfmg.sandbox.errors import parse_errors
+    from pfmg.errors import parse_errors
 
     if not stderr_file.exists():
         rprint(f"[red]File not found: {stderr_file}[/red]")
