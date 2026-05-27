@@ -32,7 +32,7 @@ from pfmg.utils.io import sh_quote
 from pfmg.utils.logging import get_logger
 
 if TYPE_CHECKING:
-    from pfmg.models import FlatpakManifest
+    from pfmg.utils.models import FlatpakManifest
 
 logger = get_logger(__name__)
 
@@ -58,22 +58,7 @@ class RunResult:
 
 class SandboxRunner:
     """
-    Manages a `flatpak build` sandbox session.
-
-    Usage::
-
-        runner = SandboxRunner(
-            build_dir=Path("/tmp/pfmg-probe"),
-            sdk="org.freedesktop.Sdk",
-            runtime="org.freedesktop.Platform",
-            runtime_version="24.08",
-        )
-        if not runner.is_available():
-            # flatpak not installed
-            ...
-        runner.init()               # flatpak build-init
-        result = runner.run("python3 --version")
-        result = runner.run("pkg-config --list-all")
+    Manages a `flatpak build` sandbox session.    
     """
 
     APP_ID = "org.pfmg.TestSandbox"
@@ -88,6 +73,7 @@ class SandboxRunner:
         timeout: int = _DEFAULT_TIMEOUT,
         extra_env: Optional[dict[str, str]] = None,
     ):
+        
         self.build_dir = build_dir
         self.sdk = sdk
         self.runtime = runtime
@@ -133,6 +119,7 @@ class SandboxRunner:
             self.runtime,
             self.runtime_version,
         ]
+
         logger.info("Initialising sandbox: %s", " ".join(str(c) for c in cmd))
         result = self._exec(cmd)
 
@@ -173,19 +160,27 @@ class SandboxRunner:
             str(self.build_dir),
             "/usr/bin/sh",
         ]
+
         logger.debug("Sandbox run: %s", shell_command[:120])
-        return self._exec(cmd, stdin_data=shell_command, timeout=timeout)
+
+        execution = self._exec(cmd, stdin_data=shell_command, timeout=timeout)
+        return execution
 
     def run_python(self, python_command: str, timeout: Optional[int] = None) -> RunResult:
         """Convenience: run a Python one-liner inside the sandbox venv."""
-        return self.run(
+        
+        command = self.run(
             f"/app/venv/bin/python -c {sh_quote(python_command)}",
             timeout=timeout,
         )
 
+        return command
+
     def run_pip(self, pip_args: str, timeout: Optional[int] = None) -> RunResult:
         """Convenience: run pip inside the sandbox venv."""
-        return self.run(f"/app/venv/bin/pip {pip_args}", timeout=timeout)
+
+        command = self.run(f"/app/venv/bin/pip {pip_args}", timeout=timeout)
+        return command
 
     def build_manifest(
         self,
@@ -243,6 +238,7 @@ class SandboxRunner:
             _manifest_to_json(manifest),
             encoding="utf-8",
         )
+        
         logger.debug("Test manifest written to %s", manifest_path)
 
         cmd = [
@@ -254,9 +250,11 @@ class SandboxRunner:
             str(_repo_dir),
             str(manifest_path),
         ]
+        
         logger.info("Building test manifest for %s", manifest.app_id)
         result = self._exec(cmd, timeout=timeout or self._build_timeout)
         shutil.rmtree(base, ignore_errors=True)
+        
         return result
 
     def teardown(self) -> None:
@@ -281,6 +279,7 @@ class SandboxRunner:
             return []
 
         paths: list[str] = []
+
         for ext_id in self.sdk_extensions:
             short = ext_id.split(".")[-1]
             paths.append(f"/usr/lib/sdk/{short}/bin")
@@ -296,6 +295,7 @@ class SandboxRunner:
         stdin_data: Optional[str] = None,
         timeout: Optional[int] = None,
     ) -> RunResult:
+        
         env = dict(os.environ)
         env.update(self.extra_env)
         env.pop("DISPLAY", None)   # avoid X11 errors in headless environments
@@ -309,23 +309,27 @@ class SandboxRunner:
                 text=True,
                 timeout=timeout or self.timeout,
             )
+
             return RunResult(
                 command=" ".join(str(c) for c in cmd),
                 stdout=proc.stdout,
                 stderr=proc.stderr,
                 exit_code=proc.returncode,
             )
+        
         except subprocess.TimeoutExpired:
             logger.warning(
                 "Sandbox command timed out after %ds: %s",
                 timeout or self.timeout, cmd,
             )
+
             return RunResult(
                 command=" ".join(str(c) for c in cmd),
                 stdout="",
                 stderr=f"TIMEOUT after {timeout or self.timeout}s",
                 exit_code=-1,
             )
+        
         except FileNotFoundError:
             return RunResult(
                 command=" ".join(str(c) for c in cmd),

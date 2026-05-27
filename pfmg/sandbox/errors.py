@@ -17,7 +17,7 @@ from __future__ import annotations
 
 import re
 
-from pfmg.models import SandboxError, SandboxErrorType
+from pfmg.utils.models import SandboxError, SandboxErrorType
 
 # ---------------------------------------------------------------------------
 # Compiled patterns
@@ -80,8 +80,7 @@ _P_BUILD_DEP_MISSING = re.compile(
 )
 
 # pip BackendUnavailable — build backend module could not be imported:
-#   "BackendUnavailable: Cannot import 'mesonpy'"
-#   "BackendUnavailable: Cannot import 'setuptools'"
+#   "BackendUnavailable: Cannot import 'mesonpy'"   
 #   Full path variant: "pip._vendor.pyproject_hooks._impl.BackendUnavailable: Cannot import 'X'"
 _P_BACKEND_UNAVAILABLE = re.compile(
     r"BackendUnavailable:\s*Cannot import\s+'?(?P<mod>[^'\";\s]+)'?",

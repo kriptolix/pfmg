@@ -1,5 +1,5 @@
 """
-pfmg.resolvers
+pfmg.resolve.resolvers
 ~~~~~~~~~~~~~~~
 Matches SandboxErrors produced by the probe phase against the local dataset
 of SDK profiles, extension profiles, and recipes, and returns actionable
@@ -65,7 +65,7 @@ from enum import Enum
 from pathlib import Path
 from typing import Optional
 
-from pfmg.models import SandboxError, SandboxErrorType
+from pfmg.utils.models import SandboxError, SandboxErrorType
 from pfmg.utils.io import load_json_or_yaml
 from pfmg.utils.logging import get_logger
 from pfmg.utils.text import normalise_lib, normalise_pkg

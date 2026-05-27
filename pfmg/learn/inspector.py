@@ -1,11 +1,9 @@
 """
 pfmg.learn.inspector
 ~~~~~~~~~~~~~~~~~~~~~
-Prober — downloads a Flatpak SDK or extension locally, inspects its
+Inspector — downloads a Flatpak SDK or extension locally, inspects its
 contents (pkg-config, shared libraries, executables), generates a static
 profile JSON, and then optionally removes the downloaded SDK.
-
-Runs on any machine with flatpak installed.
 
 Workflow:
   1. `flatpak install <sdk-id>//<version>` (if not already installed)
@@ -19,12 +17,11 @@ Workflow:
   6. Optionally leave the SDK installed (--nocleanup)
 
 Usage:
-    pfmg learn inspect org.freedesktop.Sdk --sdk-version 24.08
-    pfmg learn inspect org.freedesktop.Sdk.Extension.node24 --sdk-version 25.08
+    pfmg inspect org.freedesktop.Sdk --sdk-version 24.08
+    pfmg inspect org.freedesktop.Sdk.Extension.node24 --sdk-version 25.08
 """
 from __future__ import annotations
 
-import re
 import shutil
 import subprocess
 import tempfile
@@ -35,6 +32,7 @@ from typing import Optional
 from pfmg.sandbox.runner import SandboxRunner
 from pfmg.utils.io import write_json
 from pfmg.utils.logging import get_logger
+from pfmg.utils.text import base_sdk_from_extension
 
 logger = get_logger(__name__)
 
@@ -74,30 +72,6 @@ find "$EXT_PATH/lib" "$EXT_PATH/lib64" -name '*.so*' -type f 2>/dev/null \
 echo '=== DONE ==='
 """
 
-
-# ---------------------------------------------------------------------------
-# Module-level helpers (also imported by learn.py CLI)
-# ---------------------------------------------------------------------------
-
-def _is_extension(ref_id: str) -> bool:
-    """Return True if *ref_id* is a Flatpak SDK Extension (not a base SDK)."""
-    return ".Extension." in ref_id
-
-
-def _base_sdk_from_extension(ext_id: str) -> str:
-    """
-    Derive the base SDK id from an extension id.
-
-    Examples::
-
-        org.freedesktop.Sdk.Extension.node24  → org.freedesktop.Sdk
-        org.gnome.Sdk.Extension.rust-stable   → org.gnome.Sdk
-    """
-    if ".Extension." in ext_id:
-        return ext_id.rsplit(".Extension.", 1)[0]
-    return ext_id
-
-
 # ---------------------------------------------------------------------------
 # Probe result
 # ---------------------------------------------------------------------------
@@ -119,10 +93,8 @@ class ProbeResult:
 
 class Prober:
     """
-    Downloads a Flatpak SDK or extension, introspects it, and writes a static
-    profile JSON to data/sdk-profiles/ or data/ext-profiles/.
-
-    Standalone — no pfmg.pipeline dependency.
+    Downloads a Flatpak SDK or extension, if needed, introspects it, and writes a static
+    profile JSON to data/sdk-profiles/ or data/ext-profiles/.    
     """
 
     def __init__(
@@ -186,7 +158,7 @@ class Prober:
             result.error = "flatpak not found"
             return result
 
-        sdk = _base_sdk_from_extension(ext_id)
+        sdk = base_sdk_from_extension(ext_id)
         logger.info("Using base SDK: %s for extension %s", sdk, ext_id)
 
         ext_ref = f"{ext_id}//{sdk_version}"
@@ -219,7 +191,7 @@ class Prober:
             )
             return result
 
-        result = self._parse_ext_output(output, ext_id, sdk_version, mount)
+        result = self._parse_ext_output(output, ext_id, sdk_version)
         self._write_ext_profile(result, ext_id, sdk_version, mount)
 
         if not self.no_cleanup and ext_ref in self._installed_by_us:
@@ -233,6 +205,7 @@ class Prober:
         ext_list: list[tuple[str, str]],
     ) -> list[ProbeResult]:
         """Probe all SDKs and extensions in the given lists."""
+
         results: list[ProbeResult] = []
         for sdk_id, version in sdk_list:
             logger.info("Probing SDK: %s//%s", sdk_id, version)
@@ -348,10 +321,8 @@ class Prober:
                 result.executables.append(line)
         return result
 
-    @classmethod
-    def _parse_ext_output(
-        cls, output: str, ext_id: str, sdk_version: str, mount: str
-    ) -> ProbeResult:
+    @staticmethod
+    def _parse_ext_output(output: str, ext_id: str, sdk_version: str) -> ProbeResult:
         result = ProbeResult(sdk_id=ext_id, sdk_version=sdk_version, success=True)
         section = None
         for line in output.splitlines():
@@ -413,7 +384,7 @@ class Prober:
         self, result: ProbeResult, sdk_id: str, sdk_version: str
     ) -> Path:
         """Write (or overwrite) an SDK profile JSON."""
-        # Use second-to-last component for the filename, e.g. "Sdk" from
+        
         # "org.freedesktop.Sdk" → file is "freedesktop.24.08.json"
         parts = sdk_id.split(".")
         short = parts[-2] if len(parts) >= 2 else parts[-1]

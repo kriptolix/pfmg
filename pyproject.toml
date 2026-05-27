@@ -12,10 +12,10 @@ license = { text = "MIT" }
 dependencies = [
     "typer>=0.12",
     "rich>=13",
-    "pyyaml>=6",
-    "tomli>=2.0; python_version < '3.11'",
+    "pyyaml>=6",    
     "packaging>=24",
     "requests>=2.31",
+    "uv>=0.1.1"
 ]
 
 [project.optional-dependencies]

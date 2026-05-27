@@ -1,5 +1,5 @@
 """
-pfmg.models — shared data models for the entire pipeline.
+pfmg.utils.models — shared data models for the entire pipeline.
 """
 from __future__ import annotations
 
@@ -7,19 +7,6 @@ from dataclasses import dataclass, field
 from enum import Enum
 from typing import Optional
 
-
-class BuildBackend(str, Enum):
-    SETUPTOOLS = "setuptools"
-    MATURIN = "maturin"
-    MESON_PYTHON = "meson-python"
-    SETUPTOOLS_RUST = "setuptools-rust"
-    SCIKIT_BUILD = "scikit-build"
-    SCIKIT_BUILD_CORE = "scikit-build-core"
-    FLIT = "flit"
-    PDM = "pdm-backend"
-    HATCH = "hatchling"
-    POETRY = "poetry"
-    UNKNOWN = "unknown"
 
 class SourceType(str, Enum):
     WHEEL = "wheel"
@@ -31,15 +18,13 @@ class ResolvedPackage:
 
     name: str
     version: str
-    wheel_available: bool = False
-    build_backend: BuildBackend = BuildBackend.UNKNOWN
+    wheel_available: bool = False    
     requires_native: bool = False
     # direct or transitive
     is_direct: bool = False
     # sha256 of the chosen source (wheel or sdist)
     source_hash: Optional[str] = None
-    source_url: Optional[str] = None
-    source_type: Optional[SourceType] = None
+    source_url: Optional[str] = None    
     # native libraries this package needs (populated by NativeDependencyAnalyzer in Phase 2)
     native_deps: list[str] = field(default_factory=list)
     # sdk extensions this package needs (populated by SDKExtensionResolver in Phase 2)
@@ -79,23 +64,8 @@ class FlatpakManifest:
     modules: list[FlatpakModule] = field(default_factory=list)
     finish_args: list[str] = field(default_factory=list)
 
-@dataclass
-class ResolutionResult:
-    """Final output of the full resolver pipeline."""
-
-    packages: list[ResolvedPackage] = field(default_factory=list)
-    # packages that need native recipes
-    unresolved_natives: list[str] = field(default_factory=list)
-    # recipes found in local DB
-    native_recipes: list[NativeRecipe] = field(default_factory=list)
-    # sdk-extension ids for manifest sdk-extensions field
-    required_extensions: list[str] = field(default_factory=list)
-    # full ExtensionMatch objects (populated by SDKExtensionResolver)
-    extension_matches: list["ExtensionMatch"] = field(default_factory=list)
-    lockfile_hash: Optional[str] = None
-
 # ---------------------------------------------------------------------------
-# Phase 3 — Build Sandbox Prober types
+# Build Sandbox Prober types
 # ---------------------------------------------------------------------------
 
 class SandboxErrorType(str, Enum):
@@ -122,7 +92,7 @@ class SandboxProbeReport:
     """
     Full report produced by BuildSandboxProber.probe().
 
-    Answers the five questions from spec §18.5:
+    Answers the five questions:
       1. quais dependências Python faltam
       2. quais libs nativas estão ausentes
       3. se o SDK atual é suficiente

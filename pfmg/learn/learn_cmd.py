@@ -18,16 +18,13 @@ from rich.console import Console
 from rich import print as rprint
 
 from pfmg.learn.importer import ModulesImporter
-from pfmg.learn.inspector import Prober, _is_extension, _base_sdk_from_extension
+from pfmg.learn.inspector import Prober 
 from pfmg.utils.logging import get_logger
+from pfmg.utils.text import is_extension
 
 logger = get_logger(__name__)
 
-learn_app = typer.Typer(
-    name="learn",
-    help="Mine manifests and import recipes without a CI environment.",
-    rich_markup_mode="rich",
-)
+
 console = Console()
 
 _DEFAULT_REPO_ROOT = Path(".")
@@ -37,11 +34,10 @@ _DEFAULT_REPO_ROOT = Path(".")
 # pfmg learn import
 # ---------------------------------------------------------------------------
 
-@learn_app.command("import")
-def cmd_import_modules(
+def cmd_import(
     modules_dir: Path = typer.Argument(
         ...,
-        help="Path to a cloned shared-modules repo or any dir with module JSON/YAML files",
+        help="Path to modules repo or any dir with module JSON/YAML files",
     ),
     repo_root: Path = typer.Option(_DEFAULT_REPO_ROOT, "--repo-root", "-r"),
     verbose: bool = typer.Option(False, "--verbose", "-v"),
@@ -81,7 +77,6 @@ def cmd_import_modules(
 # pfmg learn inspect
 # ---------------------------------------------------------------------------
 
-@learn_app.command("inspect")
 def cmd_inspect(
     target: str = typer.Argument(
         ...,
@@ -103,10 +98,10 @@ def cmd_inspect(
     Auto-detects base SDKs vs extensions from the ID:
 
       # Base SDK:
-      pfmg learn inspect org.freedesktop.Sdk --sdk-version 24.08
+      pfmg inspect org.freedesktop.Sdk --sdk-version 24.08
 
       # Extension (auto-routed):
-      pfmg learn inspect org.freedesktop.Sdk.Extension.node24 --sdk-version 25.08
+      pfmg inspect org.freedesktop.Sdk.Extension.node24 --sdk-version 25.08
 
     Requires flatpak to be installed.  For extensions the base SDK must also
     be installed.
@@ -121,14 +116,14 @@ def cmd_inspect(
         rprint("[red]flatpak not found. Install with your package manager.[/red]")
         raise typer.Exit(1)
 
-    if _is_extension(target):
+    if is_extension(target):
         _cmd_inspect_ext(target, target_version, prober)
     else:
         _cmd_inspect_sdk(target, target_version, prober)
 
 
 def _cmd_inspect_sdk(sdk: str, sdk_version: str, prober: Prober) -> None:
-    with console.status(f"[bold green]Probing {sdk}..."):
+    with console.status(f"[bold green]Inspecting {sdk}..."):
         result = prober.probe_sdk(sdk, sdk_version)
 
     if result.success:
@@ -144,7 +139,7 @@ def _cmd_inspect_sdk(sdk: str, sdk_version: str, prober: Prober) -> None:
 
 
 def _cmd_inspect_ext(ext: str, ext_version: str, prober: Prober) -> None:
-    with console.status(f"[bold green]Probing {ext}..."):
+    with console.status(f"[bold green]Inspecting {ext}..."):
         result = prober.probe_ext(ext, ext_version)
 
     if result.success:
@@ -160,7 +155,6 @@ def _cmd_inspect_ext(ext: str, ext_version: str, prober: Prober) -> None:
 # pfmg learn stats
 # ---------------------------------------------------------------------------
 
-@learn_app.command("stats")
 def cmd_stats(
     repo_root: Path = typer.Option(_DEFAULT_REPO_ROOT, "--repo-root", "-r"),
 ):

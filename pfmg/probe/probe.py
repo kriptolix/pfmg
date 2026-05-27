@@ -1,7 +1,6 @@
 """
-pfmg.sandbox.probe
+pfmg.probe.probe
 ~~~~~~~~~~~~~~~~~~~
-BuildSandboxProber — Phase 3 core component.
 
 Orchestrates the full sandbox probe sequence for a set of Python packages:
 
@@ -15,7 +14,7 @@ Orchestrates the full sandbox probe sequence for a set of Python packages:
        f. Attempt ``python -c "import <pkg>"`` inside the sandbox (informational)
   3. Collate all errors into a SandboxProbeReport with high-level verdicts
 
-Module generation (step 2e) is delegated to ``pfmg.sandbox.module.build_pip_module``
+Module generation (step 2e) is delegated to ``pfmg.probe.module.build_pip_module``
 which fully mirrors flatpak-pip-generator (transitive deps, sdist swap, VCS sources).
 
 The prober skips gracefully when:
@@ -32,24 +31,27 @@ import json
 import shutil
 import tempfile
 from pathlib import Path
-from typing import Optional
+from typing import Optional, TYPE_CHECKING
 
 import yaml
 
-from pfmg.models import (
+from pfmg.utils.models import (
     FlatpakManifest,
     FlatpakModule,
     FlatpakSource,
-    ResolvedPackage,
-    ResolutionResult,
+    ResolvedPackage,    
     SandboxError,
     SandboxErrorType,
     SandboxProbeReport,
 )
-from pfmg.errors import parse_errors
-from pfmg.module import build_pip_module
+
 from pfmg.sandbox.runner import SandboxRunner
+from pfmg.sandbox.errors import parse_errors
+from pfmg.probe.module import build_pip_module
 from pfmg.utils.logging import get_logger
+
+if TYPE_CHECKING:
+    from pfmg.sandbox.runner import RunResult
 
 logger = get_logger(__name__)
 
@@ -189,15 +191,7 @@ class BuildSandboxProber:
         finally:
             if self._owned_work_dir and not self._keep_work_dir:
                 shutil.rmtree(self._owned_work_dir, ignore_errors=True)
-                self._owned_work_dir = None
-
-    def probe_result(
-        self,
-        result: ResolutionResult,
-        work_dir: Optional[Path] = None,
-    ) -> SandboxProbeReport:
-        """Convenience: probe all packages in a ResolutionResult."""
-        return self.probe(result.packages, work_dir=work_dir)
+                self._owned_work_dir = None    
 
     def write_modules(
         self,

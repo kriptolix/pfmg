@@ -1,5 +1,5 @@
 """
-pfmg.sandbox.module
+pfmg.probe.module
 ~~~~~~~~~~~~~~~~~~~~
 Flatpak module generation from Python packages.
 
@@ -33,7 +33,7 @@ from typing import Optional, TYPE_CHECKING
 from pfmg.utils.logging import get_logger
 
 if TYPE_CHECKING:
-    from pfmg.models import ResolvedPackage
+    from pfmg.utils.models import ResolvedPackage
 
 logger = get_logger(__name__)
 

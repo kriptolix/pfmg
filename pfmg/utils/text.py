@@ -43,3 +43,21 @@ def normalise_lib(name: str) -> str:
     name = re.sub(r"\.so.*$", "", name)   # drop .so and everything after
     name = re.sub(r"-\d+$", "", name)     # drop trailing version number
     return name.lower()
+
+def is_extension(ref_id: str) -> bool:
+    """Return True if *ref_id* is a Flatpak SDK Extension (not a base SDK)."""
+    return ".Extension." in ref_id
+
+
+def base_sdk_from_extension(ext_id: str) -> str:
+    """
+    Derive the base SDK id from an extension id.
+
+    Examples::
+
+        org.freedesktop.Sdk.Extension.node24  → org.freedesktop.Sdk
+        org.gnome.Sdk.Extension.rust-stable   → org.gnome.Sdk
+    """
+    if ".Extension." in ext_id:
+        return ext_id.rsplit(".Extension.", 1)[0]
+    return ext_id
