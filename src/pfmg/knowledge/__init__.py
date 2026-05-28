@@ -4,12 +4,12 @@ pfmg.learn — standalone learning and import system.
 Mines Flathub, imports shared-modules, probes SDKs, and writes
 results directly into data.
 """
-from pfmg.learn.importer import ModulesImporter, ImportReport
-from pfmg.learn.inspector import Prober, ProbeResult
+from src.pfmg.knowledge.importer import ModulesImporter, ImportReport
+from src.pfmg.knowledge.inspector import RuntimeInspector, InspectionResult
 
 __all__ = [
     "ModulesImporter",
     "ImportReport",
-    "Prober",
-    "ProbeResult",
+    "RuntimeInspector",
+    "InspectionResult",
 ]

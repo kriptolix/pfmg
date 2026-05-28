@@ -10,9 +10,9 @@ from rich.table import Table
 from rich.syntax import Syntax
 from rich import print as rprint
 
-from pfmg import __version__
-from pfmg.learn.learn_cmd import cmd_import, cmd_inspect, cmd_stats 
-from pfmg.utils.logging import get_logger
+from src.pfmg import __version__
+from src.pfmg.commands import cmd_import, cmd_inspect, cmd_stats
+from src.pfmg.utils.logging import get_logger
 
 logger = get_logger(__name__)
 
@@ -28,7 +28,7 @@ app.command("import")(cmd_import)
 
 app.command("inspec")(cmd_inspect)
 
-app.command("stats")(cmd_stats)
+app.command("report")(cmd_stats)
 
 # ---------------------------------------------------------------------------
 # pfmg version
@@ -83,8 +83,8 @@ def cmd_generate(
     if verbose:
         os.environ["PFMG_LOG_LEVEL"] = "DEBUG"
 
-    from pfmg.probe.probe import BuildSandboxProber
-    from pfmg.utils.models import ResolvedPackage
+    from src.pfmg.generation.prober import BuildSandboxProber
+    from src.pfmg.utils.models import ResolvedPackage
 
     resolved: list[ResolvedPackage] = []
     for spec in packages:
@@ -198,7 +198,7 @@ def cmd_probe_errors(
 
       pfmg probe errors build-stderr.txt --stdout build-stdout.txt
     """
-    from pfmg.sandbox.errors import parse_errors
+    from src.pfmg.sandbox.parser import parse_errors
 
     if not stderr_file.exists():
         rprint(f"[red]File not found: {stderr_file}[/red]")
@@ -263,8 +263,8 @@ def _print_sandbox_output(stdout: str, stderr: str) -> None:
     rprint("[dim]───────────────────────────────────────────[/dim]")
 
 def _print_suggestions(errors) -> None:
-    from pfmg.resolve.resolvers import ProfileIndex, resolve
-    from pfmg.resolve.resolver_cmd import render_suggestions 
+    from src.pfmg.resolution.resolvers import ProfileIndex, resolve
+    from src.pfmg.resolution.resolver_cmd import render_suggestions 
 
     render_suggestions(resolve(errors, ProfileIndex()))
 

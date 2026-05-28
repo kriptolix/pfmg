@@ -16,7 +16,7 @@ from rich.table import Table
 from rich.syntax import Syntax
 from rich import print as rprint
 
-from pfmg.utils.logging import get_logger
+from src.pfmg.utils.logging import get_logger
 
 logger = get_logger(__name__)
 
@@ -45,7 +45,7 @@ def cmd_resolve_search(
       pfmg search libz  --kind nat
       pfmg search clang --kind ext --module
     """
-    from pfmg.resolve.resolvers import ProfileIndex, ProviderKind
+    from src.pfmg.resolution.resolvers import ProfileIndex, ProviderKind
 
     index = ProfileIndex()
     found = False
@@ -153,8 +153,8 @@ def cmd_resolve_errors(
       pfmg resolve errors numpy pillow --type python
       pfmg resolve errors clang --module
     """
-    from pfmg.resolve.resolvers import ProfileIndex, resolve
-    from pfmg.utils.models import SandboxError, SandboxErrorType
+    from src.pfmg.resolution.resolvers import ProfileIndex, resolve
+    from src.pfmg.utils.models import SandboxError, SandboxErrorType
 
     _TYPE_MAP = {
         "native":     SandboxErrorType.MISSING_NATIVE_DEP,
@@ -217,7 +217,7 @@ def cmd_resolve_list(
       pfmg resolve list --kind nat
       pfmg resolve list --kind pip --limit 100
     """
-    from pfmg.resolve.resolvers import ProfileIndex
+    from src.pfmg.resolution.resolvers import ProfileIndex
 
     index = ProfileIndex()
 
@@ -260,7 +260,7 @@ def _list_recipes(recipes, title: str, limit: int) -> None:
     console.print(t)
 
 def render_suggestions(suggestions, show_module: bool = False) -> None:
-    from pfmg.resolve.resolvers import ProviderKind
+    from src.pfmg.resolution.resolvers import ProviderKind
 
     if not suggestions:
         rprint("[yellow]No resolutions found in local dataset.[/yellow]")

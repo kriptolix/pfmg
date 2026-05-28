@@ -6,7 +6,7 @@ permitir rodar com --require= coisa1, coisa2, etc para poder testar a resoluçã
 
 modulo exibido no terminal pode ver truncado, deve conter texto avisando que pode estar truncado e para usar o --outptdir para salvar completo
 
-alterar o comando basico de pfmg probe run para pfmg resolve
+adciionar src em cima de pfmg
 
 libs de teste
 
@@ -15,3 +15,5 @@ Pillow — depende de libjpeg, libpng, zlib, libtiff, headers de imagem
 lxml — depende de libxml2 e libxslt com headers
 psycopg2 — depende de libpq (PostgreSQL client)
 pygit2 — depende de libgit2
+
+

@@ -12,9 +12,9 @@ from dataclasses import dataclass, field
 from enum import Enum
 from pathlib import Path
 
-from pfmg.utils.io import load_json_or_yaml, write_json
-from pfmg.utils.text import normalise_id
-from pfmg.utils.logging import get_logger
+from src.pfmg.utils.io import load_json_or_yaml, write_json
+from src.pfmg.utils.text import normalise_id
+from src.pfmg.utils.logging import get_logger
 
 logger = get_logger(__name__)
 
@@ -162,7 +162,6 @@ class ModulesImporter:
             report.created.append(result)
             report.imported += 1
 
-
 # ---------------------------------------------------------------------------
 # Module-level helpers
 # ---------------------------------------------------------------------------
@@ -172,14 +171,12 @@ _PIP_PATTERN = re.compile(
     re.IGNORECASE,
 )
 
-
 def _classify_module(mod: dict) -> str:
     """Return "python" if the module uses pip install, otherwise "native"."""
     for command in mod.get("build-commands", []):
         if _PIP_PATTERN.search(command):
             return "python"
     return "native"
-
 
 def _extract_sources(mod: dict) -> list[dict]:
     """Return all sources that have a URL."""
@@ -189,12 +186,10 @@ def _extract_sources(mod: dict) -> list[dict]:
         if isinstance(s, dict) and s.get("url")
     ]
 
-
 def _extract_version(url: str) -> str:
     """Extract a semver-style version from a URL, falling back to 'unknown'."""
     m = re.search(r'(?:^|[/_-])v?(\d+(?:\.\d+)+)', url)
     return m.group(1) if m else "unknown"
-
 
 def _looks_like_module(data: dict) -> bool:
     """Return True if *data* looks like a Flatpak module (not a full manifest)."""

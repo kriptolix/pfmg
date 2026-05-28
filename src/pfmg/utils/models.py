@@ -7,11 +7,6 @@ from dataclasses import dataclass, field
 from enum import Enum
 from typing import Optional
 
-
-class SourceType(str, Enum):
-    WHEEL = "wheel"
-    SDIST = "sdist"
-
 @dataclass
 class ResolvedPackage:
     """A single resolved Python package with all metadata needed for Flatpak manifest generation."""

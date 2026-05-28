@@ -30,10 +30,10 @@ import urllib.request
 from collections import OrderedDict
 from typing import Optional, TYPE_CHECKING
 
-from pfmg.utils.logging import get_logger
+from src.pfmg.utils.logging import get_logger
 
 if TYPE_CHECKING:
-    from pfmg.utils.models import ResolvedPackage
+    from src.pfmg.utils.models import ResolvedPackage
 
 logger = get_logger(__name__)
 

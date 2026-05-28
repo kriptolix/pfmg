@@ -35,7 +35,7 @@ from typing import Optional, TYPE_CHECKING
 
 import yaml
 
-from pfmg.utils.models import (
+from src.pfmg.utils.models import (
     FlatpakManifest,
     FlatpakModule,
     FlatpakSource,
@@ -45,13 +45,13 @@ from pfmg.utils.models import (
     SandboxProbeReport,
 )
 
-from pfmg.sandbox.runner import SandboxRunner
-from pfmg.sandbox.errors import parse_errors
-from pfmg.probe.module import build_pip_module
-from pfmg.utils.logging import get_logger
+from src.pfmg.sandbox.runner import SandboxRunner
+from src.pfmg.sandbox.parser import parse_errors
+from src.pfmg.generation.collector import build_pip_module
+from src.pfmg.utils.logging import get_logger
 
 if TYPE_CHECKING:
-    from pfmg.sandbox.runner import RunResult
+    from src.pfmg.sandbox.runner import RunResult
 
 logger = get_logger(__name__)
 
