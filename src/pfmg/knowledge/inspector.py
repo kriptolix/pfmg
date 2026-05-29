@@ -29,10 +29,10 @@ from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Optional
 
-from src.pfmg.sandbox.runner import SandboxRunner
-from src.pfmg.utils.io import write_json
-from src.pfmg.utils.logging import get_logger
-from src.pfmg.utils.text import base_sdk_from_extension
+from pfmg.sandbox.runner import SandboxRunner
+from pfmg.utils.io import write_json
+from pfmg.utils.logging import get_logger
+from pfmg.utils.text import base_sdk_from_extension
 
 logger = get_logger(__name__)
 
@@ -79,7 +79,10 @@ echo '=== DONE ==='
 @dataclass
 class InspectionResult:
     sdk_id: str
-    sdk_version: str
+    sdk_version: str          # version of the base SDK (e.g. "24.08")
+    ext_version: Optional[str] = None  # own version of the extension when it
+                                       # differs from sdk_version (e.g. "1.6");
+                                       # None means the extension uses sdk_version
     pkgconfig: list[str] = field(default_factory=list)
     libraries: list[str] = field(default_factory=list)
     executables: list[str] = field(default_factory=list)
@@ -168,7 +171,11 @@ class RuntimeInspector:
           3. Falls back to ``org.freedesktop.Sdk`` as a last resort.
         """
         effective_ext_version = ext_version or sdk_version
-        result = InspectionResult(sdk_id=ext_id, sdk_version=effective_ext_version)
+        result = InspectionResult(
+            sdk_id=ext_id,
+            sdk_version=sdk_version,        # base SDK version, used for profile naming
+            ext_version=ext_version,        # own version (None when equal to sdk_version)
+        )
 
         if not self._flatpak:
             result.error = "flatpak not found"
@@ -199,7 +206,34 @@ class RuntimeInspector:
         mount = f"/usr/lib/sdk/{short_name}"
         script = _EXT_INTROSPECT_SH_TEMPLATE.format(mount=mount)
 
-        output = self._run_in_sdk(sdk, sdk_version, script, extra_extensions=[ext_id])
+        # When the extension has its own version (e.g. gcc8//1.6 with SDK//25.08),
+        # flatpak build-init rejects --sdk-extension because it looks for the
+        # extension at the *runtime* version and won't find it.  We work around
+        # this by discovering the real install path on the host and passing it
+        # as a --bind-mount to every `flatpak build` call instead.
+        ext_mount_overrides: dict[str, str] = {}
+        if effective_ext_version != sdk_version:
+            host_path = self._get_ext_install_path(ext_id, effective_ext_version)
+            if not host_path:
+                result.error = (
+                    f"Could not determine install path for {ext_ref}. "
+                    f"Verify with: flatpak info --show-location {ext_ref}"
+                )
+                return result
+            ext_mount_overrides[mount] = host_path
+            logger.info(
+                "Extension %s has independent version %s; "
+                "will bind-mount host path %s → sandbox %s",
+                ext_id, effective_ext_version, host_path, mount,
+            )
+
+        output = self._run_in_sdk(
+            sdk,
+            sdk_version,
+            script,
+            extra_extensions=[] if ext_mount_overrides else [ext_id],
+            ext_mount_overrides=ext_mount_overrides,
+        )
         if output is None:
             result.error = (
                 f"Extension introspection failed for {ext_id}. "
@@ -207,8 +241,9 @@ class RuntimeInspector:
             )
             return result
 
-        result = self._parse_ext_output(output, ext_id, effective_ext_version)
-        self._write_ext_profile(result, ext_id, effective_ext_version, mount)
+        result = self._parse_ext_output(output, ext_id, sdk_version)
+        result.ext_version = ext_version
+        self._write_ext_profile(result, ext_id, sdk_version, mount)
 
         if not self.no_cleanup and ext_ref in self._installed_by_us:
             self._uninstall(ext_id, effective_ext_version)
@@ -243,6 +278,39 @@ class RuntimeInspector:
     # ------------------------------------------------------------------
     # Base-SDK resolution
     # ------------------------------------------------------------------
+
+    def _get_ext_install_path(self, ext_id: str, ext_version: str) -> Optional[str]:
+        """
+        Return the host filesystem path where the extension's files are mounted.
+
+        ``flatpak info --show-location`` returns the deploy directory
+        (e.g. /var/lib/flatpak/runtime/<id>/x86_64/<ver>/active).
+        The actual SDK files live under ``<deploy>/files``, which is what
+        flatpak bind-mounts inside the sandbox at ``/usr/lib/sdk/<name>``.
+        """
+        result = subprocess.run(
+            [self._flatpak, "info", "--show-location",
+             f"{ext_id}//{ext_version}"],
+            capture_output=True, timeout=10, text=True,
+        )
+        if result.returncode != 0:
+            logger.warning(
+                "flatpak info --show-location failed for %s//%s: %s",
+                ext_id, ext_version, result.stderr.strip(),
+            )
+            return None
+
+        deploy_dir = result.stdout.strip()
+        files_path = Path(deploy_dir) / "files"
+        if files_path.exists():
+            return str(files_path)
+
+        # Some builds put files directly in the deploy dir — fall back.
+        logger.debug(
+            "Expected files/ subdir not found under %s, using deploy dir directly",
+            deploy_dir,
+        )
+        return deploy_dir
 
     def _resolve_base_sdk(self, ext_id: str, ext_version: str) -> str:
         """Return the base SDK id for an extension.
@@ -333,6 +401,7 @@ class RuntimeInspector:
         sdk_version: str,
         script: str,
         extra_extensions: Optional[list[str]] = None,
+        ext_mount_overrides: Optional[dict[str, str]] = None,
     ) -> Optional[str]:
         """
         Run a shell script inside the SDK via SandboxRunner.
@@ -359,6 +428,7 @@ class RuntimeInspector:
                 runtime=platform,
                 runtime_version=sdk_version,
                 sdk_extensions=extra_extensions or [],
+                ext_mount_overrides=ext_mount_overrides or {},
             )
 
             init_result = runner.init()
@@ -452,6 +522,8 @@ class RuntimeInspector:
         data = {
             "extension_id":         ext_id,
             "display_name":         safe_name,
+            "sdk_version":          sdk_version,
+            "ext_version":          result.ext_version or sdk_version,
             "mount_path":           mount,
             "provides_executables": sorted(result.executables),
             "provides_pkgconfig":   sorted(result.pkgconfig),

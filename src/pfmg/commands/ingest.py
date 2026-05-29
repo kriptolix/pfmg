@@ -3,7 +3,7 @@ from pathlib import Path
 from rich.console import Console
 from rich import print as rprint
 
-from src.pfmg.knowledge.importer import ModulesImporter
+from pfmg.knowledge.importer import ModulesImporter
 
 console = Console()
 

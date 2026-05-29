@@ -1,0 +1,26 @@
+{
+  "header": {
+    "id": "libusb",
+    "version": "1.0.21",
+    "type": "native"
+  },
+  "module": {
+    "name": "libusb",
+    "buildsystem": "autotools",
+    "config-opts": [
+      "--disable-static",
+      "--disable-udev"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/libusb/libusb/archive/v1.0.21.tar.gz",
+        "sha256": "651834352489191566"
+      }
+    ],
+    "cleanup": [
+      "/include",
+      "/lib/pkgconfig"
+    ]
+  }
+}

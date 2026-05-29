@@ -1,5 +1,5 @@
 """
-pfmg.probe.probe
+pfmg.generation.prober
 ~~~~~~~~~~~~~~~~~~~
 
 Orchestrates the full sandbox probe sequence for a set of Python packages:
@@ -14,7 +14,7 @@ Orchestrates the full sandbox probe sequence for a set of Python packages:
        f. Attempt ``python -c "import <pkg>"`` inside the sandbox (informational)
   3. Collate all errors into a SandboxProbeReport with high-level verdicts
 
-Module generation (step 2e) is delegated to ``pfmg.probe.module.build_pip_module``
+Module generation (step 2e) is delegated to ``pfmg.generation.collector.build_pip_module``
 which fully mirrors flatpak-pip-generator (transitive deps, sdist swap, VCS sources).
 
 The prober skips gracefully when:
@@ -35,7 +35,7 @@ from typing import Optional, TYPE_CHECKING
 
 import yaml
 
-from src.pfmg.utils.models import (
+from pfmg.utils.models import (
     FlatpakManifest,
     FlatpakModule,
     FlatpakSource,
@@ -45,13 +45,13 @@ from src.pfmg.utils.models import (
     SandboxProbeReport,
 )
 
-from src.pfmg.sandbox.runner import SandboxRunner
-from src.pfmg.sandbox.parser import parse_errors
-from src.pfmg.generation.collector import build_pip_module
-from src.pfmg.utils.logging import get_logger
+from pfmg.sandbox.runner import SandboxRunner
+from pfmg.sandbox.parser import parse_errors
+from pfmg.generation.collector import build_pip_module
+from pfmg.utils import get_logger, is_available
 
 if TYPE_CHECKING:
-    from src.pfmg.sandbox.runner import RunResult
+    from pfmg.sandbox.runner import RunResult
 
 logger = get_logger(__name__)
 
@@ -118,18 +118,6 @@ class BuildSandboxProber:
     """
     Probes a set of Python packages inside a real Flatpak build environment.
 
-    Usage::
-
-        prober = BuildSandboxProber(
-            runtime="org.freedesktop.Platform",
-            runtime_version="24.08",
-            sdk="org.freedesktop.Sdk",
-        )
-        report = prober.probe(packages)
-        if report.ran:
-            for err in report.errors:
-                print(err)
-
     After a successful probe, ``report.modules`` contains ready-to-use
     Flatpak module dicts.  Call ``prober.write_modules(report, output_dir)``
     to persist them as JSON (or YAML) files.
@@ -138,7 +126,7 @@ class BuildSandboxProber:
     def __init__(
         self,
         runtime: str = "org.freedesktop.Platform",
-        runtime_version: str = "24.08",
+        runtime_version: str = "25.08",
         sdk: str = "org.freedesktop.Sdk",
         sdk_extensions: Optional[list[str]] = None,
         work_dir: Optional[Path] = None,
@@ -170,11 +158,7 @@ class BuildSandboxProber:
 
     # ------------------------------------------------------------------
     # Public API
-    # ------------------------------------------------------------------
-
-    def is_available(self) -> bool:
-        """Return True if flatpak is available on the host."""
-        return shutil.which("flatpak") is not None
+    # ------------------------------------------------------------------    
 
     def probe(
         self,
@@ -229,7 +213,7 @@ class BuildSandboxProber:
         report = SandboxProbeReport(probed_packages=[p.name for p in packages])
 
         # --- preflight ---
-        if not self.is_available():
+        if not is_available():
             report.ran = False
             report.skip_reason = (
                 "flatpak not found. "

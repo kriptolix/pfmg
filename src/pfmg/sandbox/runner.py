@@ -28,11 +28,11 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Optional, TYPE_CHECKING
 
-from src.pfmg.utils.io import sh_quote
-from src.pfmg.utils.logging import get_logger
+from pfmg.utils.io import sh_quote
+from pfmg.utils.logging import get_logger
 
 if TYPE_CHECKING:
-    from src.pfmg.utils.models import FlatpakManifest
+    from pfmg.utils.models import FlatpakManifest
 
 logger = get_logger(__name__)
 
@@ -72,6 +72,7 @@ class SandboxRunner:
         sdk_extensions: Optional[list[str]] = None,
         timeout: int = _DEFAULT_TIMEOUT,
         extra_env: Optional[dict[str, str]] = None,
+        ext_mount_overrides: Optional[dict[str, str]] = None,
     ):
         
         self.build_dir = build_dir
@@ -84,6 +85,13 @@ class SandboxRunner:
         self.extra_env = extra_env or {}
         self._flatpak = shutil.which("flatpak")
         self._initialised = False
+        # Mount overrides for extensions whose version differs from the SDK's.
+        # Keys are sandbox mount points (e.g. /usr/lib/sdk/gcc8),
+        # values are host paths (from flatpak info --show-location).
+        # These extensions are NOT declared via --sdk-extension in build-init
+        # because flatpak would reject them (version mismatch); instead they
+        # are bind-mounted directly in every `flatpak build` call.
+        self.ext_mount_overrides: dict[str, str] = ext_mount_overrides or {}
 
     # ------------------------------------------------------------------
     # Public API
@@ -108,7 +116,15 @@ class SandboxRunner:
             shutil.rmtree(self.build_dir)
         self.build_dir.mkdir(parents=True, exist_ok=True)
 
-        ext_flags = [f"--sdk-extension={e}" for e in self.sdk_extensions]
+        # Extensions handled via bind-mount (independent version) must NOT be
+        # declared in build-init — flatpak would reject them due to version mismatch.
+        # We match by the short name (last component of the extension ID).
+        _override_short_names = {Path(k).name for k in self.ext_mount_overrides}
+        ext_flags = [
+            f"--sdk-extension={e}"
+            for e in self.sdk_extensions
+            if e.split(".")[-1] not in _override_short_names
+        ]
 
         cmd = [
             self._flatpak, "build-init",
@@ -151,12 +167,17 @@ class SandboxRunner:
 
         env_args = self._extension_env_args()
 
+        bind_args = [
+            f"--bind-mount={mount_point}={host_path}"
+            for mount_point, host_path in self.ext_mount_overrides.items()
+        ]
+
         cmd = [
             self._flatpak, "build",
             "--with-appdir",
             "--allow=devel",
             "--share=network",
-        ] + env_args + [
+        ] + env_args + bind_args + [
             str(self.build_dir),
             "/usr/bin/sh",
         ]
@@ -273,16 +294,24 @@ class SandboxRunner:
         Build the ``--env=`` args for ``flatpak build`` to activate extensions.
 
         Prepend each extension's bin/ directory to PATH inside the sandbox.
-        Extensions are mounted automatically by flatpak when installed on the host.
+        Extensions declared via --sdk-extension are mounted automatically by
+        flatpak; extensions declared via ext_mount_overrides are bind-mounted
+        manually, but their bin/ paths still need to be added to PATH here.
         """
-        if not self.sdk_extensions:
-            return []
-
         paths: list[str] = []
 
         for ext_id in self.sdk_extensions:
             short = ext_id.split(".")[-1]
             paths.append(f"/usr/lib/sdk/{short}/bin")
+
+        # Also add bin/ for bind-mounted extensions (mount point is the key).
+        for mount_point in self.ext_mount_overrides:
+            bin_path = f"{mount_point}/bin"
+            if bin_path not in paths:
+                paths.append(bin_path)
+
+        if not paths:
+            return []
 
         # List /usr/bin and /bin explicitly — $PATH is NOT expanded by flatpak
         # --env= inside bubblewrap; the variable would be passed as a literal string.

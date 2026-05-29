@@ -1,5 +1,5 @@
 """
-pfmg.probe.module
+pfmg.generation.collector
 ~~~~~~~~~~~~~~~~~~~~
 Flatpak module generation from Python packages.
 
@@ -30,10 +30,10 @@ import urllib.request
 from collections import OrderedDict
 from typing import Optional, TYPE_CHECKING
 
-from src.pfmg.utils.logging import get_logger
+from pfmg.utils.logging import get_logger
 
 if TYPE_CHECKING:
-    from src.pfmg.utils.models import ResolvedPackage
+    from pfmg.utils.models import ResolvedPackage
 
 logger = get_logger(__name__)
 
@@ -150,9 +150,7 @@ def collect_pip_download(
     extra_index_args: Optional[list[str]] = None,
 ) -> dict[str, dict]:
     """
-    Run ``pip download`` for *pkg_spec* and return one source entry per file.
-
-    Steps performed (mirroring flatpak-pip-generator):
+    Run ``pip download`` for *pkg_spec* and return one source entry per file.    
 
       1. ``pip download <spec>`` fetches the package and all transitive deps.
       2. Arch-specific wheels are replaced by the corresponding sdist so the

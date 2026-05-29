@@ -4,8 +4,8 @@ from typing import Optional
 from rich.console import Console
 from rich import print as rprint
 
-from src.pfmg.knowledge.inspector import RuntimeInspector
-from src.pfmg.utils.text import is_extension
+from pfmg.knowledge.inspector import RuntimeInspector
+from pfmg.utils import is_extension
 
 console = Console()
 

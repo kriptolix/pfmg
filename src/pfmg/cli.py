@@ -10,9 +10,9 @@ from rich.table import Table
 from rich.syntax import Syntax
 from rich import print as rprint
 
-from src.pfmg import __version__
-from src.pfmg.commands import cmd_import, cmd_inspect, cmd_stats
-from src.pfmg.utils.logging import get_logger
+from pfmg import __version__
+from pfmg.commands import cmd_import, cmd_inspect, cmd_stats
+from pfmg.utils import get_logger, is_available
 
 logger = get_logger(__name__)
 
@@ -83,8 +83,8 @@ def cmd_generate(
     if verbose:
         os.environ["PFMG_LOG_LEVEL"] = "DEBUG"
 
-    from src.pfmg.generation.prober import BuildSandboxProber
-    from src.pfmg.utils.models import ResolvedPackage
+    from pfmg.generation.prober import BuildSandboxProber
+    from pfmg.utils.models import ResolvedPackage
 
     resolved: list[ResolvedPackage] = []
     for spec in packages:
@@ -103,7 +103,7 @@ def cmd_generate(
         use_uv=use_uv,
     )
 
-    if not prober.is_available():
+    if not is_available():
         rprint("[red]flatpak not found. Install with your package manager.[/red]")
         raise typer.Exit(1)
 
@@ -198,7 +198,7 @@ def cmd_probe_errors(
 
       pfmg probe errors build-stderr.txt --stdout build-stdout.txt
     """
-    from src.pfmg.sandbox.parser import parse_errors
+    from pfmg.sandbox.parser import parse_errors
 
     if not stderr_file.exists():
         rprint(f"[red]File not found: {stderr_file}[/red]")
@@ -263,8 +263,8 @@ def _print_sandbox_output(stdout: str, stderr: str) -> None:
     rprint("[dim]───────────────────────────────────────────[/dim]")
 
 def _print_suggestions(errors) -> None:
-    from src.pfmg.resolution.resolvers import ProfileIndex, resolve
-    from src.pfmg.resolution.resolver_cmd import render_suggestions 
+    from pfmg.resolution.resolvers import ProfileIndex, resolve
+    from pfmg.resolution.resolver_cmd import render_suggestions 
 
     render_suggestions(resolve(errors, ProfileIndex()))
 

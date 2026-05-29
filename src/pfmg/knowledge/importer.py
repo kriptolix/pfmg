@@ -12,9 +12,9 @@ from dataclasses import dataclass, field
 from enum import Enum
 from pathlib import Path
 
-from src.pfmg.utils.io import load_json_or_yaml, write_json
-from src.pfmg.utils.text import normalise_id
-from src.pfmg.utils.logging import get_logger
+from pfmg.utils.io import load_json_or_yaml, write_json
+from pfmg.utils.text import normalise_id
+from pfmg.utils.logging import get_logger
 
 logger = get_logger(__name__)
 
@@ -47,8 +47,9 @@ class ModulesImporter:
     """
 
     def __init__(self, repo_root: Path):
-        self.nat_recipes_dir = repo_root / "data" / "nat-recipes"
-        self.pip_recipes_dir = repo_root / "data" / "pip-recipes"
+        data = repo_root / "src" / "pfmg" / "data"
+        self.nat_recipes_dir = data / "nat-recipes"
+        self.pip_recipes_dir = data / "pip-recipes"
 
     # ------------------------------------------------------------------
     # Public API
@@ -135,6 +136,7 @@ class ModulesImporter:
                 "id": recipe_id,
                 "version": version,
                 "type": category,
+                "build_requires": [],
             },
             "module": mod,
         }

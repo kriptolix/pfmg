@@ -1,4 +1,4 @@
-from src.pfmg.sandbox.errors import (
+from pfmg.sandbox.errors import (
     SandboxError, SandboxErrorType,
     _P_BACKEND_FAILED, _P_BACKEND_UNAVAILABLE, _P_BUILD_DEP_MISSING,
     _P_CMAKE_NOT_FOUND, _P_FLATPAK_MODULE_FAILED, _P_IMPORT_ERROR,

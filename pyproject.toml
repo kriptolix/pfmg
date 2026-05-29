@@ -24,6 +24,9 @@ dev = ["pytest>=8", "pytest-cov"]
 [project.scripts]
 pfmg = "pfmg.cli:app"
 
+[tool.setuptools]
+package-dir = {"" = "src"}
+
 [tool.setuptools.packages.find]
-where = ["."]
+where = ["src"]
 include = ["pfmg*"]

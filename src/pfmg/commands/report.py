@@ -14,9 +14,9 @@ def cmd_stats(
             return 0
         return len(list(directory.glob(glob)))
 
-    data = (repo_root / "pfmg" / "data").resolve()
+    data = (repo_root / "src" / "pfmg" / "data").resolve() 
     
-    rprint(f"\n[bold]pfmg repository stats[/bold] ({repo_root.resolve()})")
+    rprint(f"\n[bold]pfmg repository stats[/bold] ({data})")
     rprint(f"  data/nat-recipes/  : {_count(data / 'nat-recipes',  '*.json')}")
     rprint(f"  data/pip-recipes/  : {_count(data / 'pip-recipes',  '*.json')}")
     rprint(f"  data/sdk-profiles/ : {_count(data / 'sdk-profiles', '*.json')}")

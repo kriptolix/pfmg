@@ -65,10 +65,10 @@ from enum import Enum
 from pathlib import Path
 from typing import Optional
 
-from src.pfmg.utils.models import SandboxError, SandboxErrorType
-from src.pfmg.utils.io import load_json_or_yaml
-from src.pfmg.utils.logging import get_logger
-from src.pfmg.utils.text import normalise_lib, normalise_pkg
+from pfmg.utils.models import SandboxError, SandboxErrorType
+from pfmg.utils.io import load_json_or_yaml
+from pfmg.utils.logging import get_logger
+from pfmg.utils.text import normalise_lib, normalise_pkg
 
 logger = get_logger(__name__)
 
