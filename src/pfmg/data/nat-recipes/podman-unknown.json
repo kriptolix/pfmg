@@ -1,0 +1,31 @@
+{
+  "header": {
+    "id": "podman",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "podman",
+    "buildsystem": "simple",
+    "build-commands": [
+      "make PREFIX=${FLATPAK_DEST} podman-remote",
+      "install -Dm755 bin/podman-remote -t ${FLATPAK_DEST}/bin/"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/containers/podman.git",
+        "tag": "v5.8.1",
+        "commit": "c6077f645788743258a1a749f8005b4fb3cbe533",
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://api.github.com/repos/containers/podman/releases/latest",
+          "tag-query": ".tag_name",
+          "timestamp-query": ".published_at",
+          "version-query": "$tag | sub(\"^v\"; \"\")"
+        }
+      }
+    ]
+  }
+}

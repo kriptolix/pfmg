@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-traitlets",
+    "version": "5.14.3",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-traitlets",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"traitlets==5.14.3\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/00/c0/8f5d070730d7836adc9c9b6408dec68c6ced86b304a9b26a14df072a6e8c/traitlets-5.14.3-py3-none-any.whl",
+        "sha256": "b74e89e397b1ed28cc831db7aea759ba6640cb3de13090ca145426688ff1ac4f"
+      }
+    ]
+  }
+}

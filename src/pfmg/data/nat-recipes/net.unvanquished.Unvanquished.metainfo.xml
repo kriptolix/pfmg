@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Copyright 2021-2026 Antoine Fontaine <antoinefontaine@posteo.net>
+Copyright 2021-2025 Thomas Debesse <dev@illwieckz.net>
+-->
+
+<component type="desktop-application">
+  <id>net.unvanquished.Unvanquished</id>
+  <metadata_license>CC-BY-SA-3.0</metadata_license>
+  <project_license>MIT AND GPL-3.0-or-later AND Zlib AND BSD-3-Clause</project_license>
+  <developer_name>Unvanquished Development</developer_name>
+  <name>Unvanquished</name>
+  <summary>Fast paced, first person strategy game</summary>
+  <summary xml:lang="fr">Jeu de stratégie frénétique à la première personne</summary>
+
+  <description>
+    <p>
+      Unvanquished is a real-time strategy game played as a first-person
+      shooter where evolving aliens and heavily armed humans fight for
+      their survival.
+    </p>
+    <p xml:lang="fr">
+      Unvanquished est un jeu de stratégie en temps réel se jouant à la
+      première personne, où des extraterrestres évolutifs et des humains
+      lourdement armés se battent pour leur survie.
+    </p>
+
+    <p>
+      Become a marine, handle your big weapon and dress that
+      impressive exoskeleton to save the human race like a boss. Or if
+      you prefer, be a monstrous beast and save those cute grangers
+      from those two-legged invaders who only know how to turn
+      beautiful organic equilibrium into lifeless machines and dead
+      concreted worlds.
+
+      Unvanquished is an actively maintained evolution of the Tremulous game,
+      based on the Dæmon game engine with 20 years of development added to
+      the Tremulous gameplay and the Quake 3 engine.
+    </p>
+    <p xml:lang="fr">
+      Devenez un soldat, prenez en main votre gros flingue et enfilez cet
+      exosquelette impressionnant pour sauver l'humanité comme un chef.
+      Ou, si vous préférez, incarnez une bête monstrueuse et sauvez ces
+      adorables grangers de ces envahisseurs bipèdes qui ne savent que
+      transformer de magnifiques équilibres organiques en machines sans
+      vie et en mondes bétonnés et morts.
+    </p>
+
+    <p>
+      Unvanquished is an actively maintained evolution of the Tremulous game,
+      based on the Dæmon game engine, result of 20 years of development added
+      to the Tremulous gameplay and the Quake 3 engine.
+    </p>
+    <p xml:lang="fr">
+      Unvanquished est une évolution activement mantenue du jeu Tremulous,
+      fondée sur le moteur de jeu Dæmon, fruit de 20 ans de développement ajouté
+      au gameplay de Tremulous et au moteur de Quake 3.
+    </p>
+  </description>
+
+  <launchable type="desktop-id">net.unvanquished.Unvanquished.desktop</launchable>
+
+  <screenshots>
+    <screenshot type="default">
+      <image type="source">https://unvanquished.net/wp-content/uploads/2021/06/20210619-143221-002.unvanquished-0.52.1-battlesuit-facing-tyrant.jpg</image>
+      <caption>A mighty Tyrant facing a fearless battlesuit in Parpax.</caption>
+      <caption xml:lang="fr">Un puissant Tyrant affrontant une vaillante armure de combat dans Parpax.</caption>
+    </screenshot>
+    <screenshot>
+      <image type="source">https://unvanquished.net/wp-content/uploads/2021/05/20210504-082658-002.unvanquished-0.52-human-builder.jpg</image>
+      <caption>First person view of an human builder building a turret in Perseus.</caption>
+      <caption xml:lang="fr">Vue à la première personne d'un constructeur humain bâtissant une tourelle dans Perseus.</caption>
+    </screenshot>
+    <screenshot>
+      <image type="source">https://unvanquished.net/wp-content/uploads/2021/06/20200909-025733-002.unvanquished-rocket-missile.jpg</image>
+      <caption>A rocket passing by the viewer, launched by a rocket pod in Platform 23.</caption>
+      <caption xml:lang="fr">Une rocker passant devant le spectateur, lancée par une nacelle dans Platform 23.</caption>
+    </screenshot>
+    <screenshot>
+      <image type="source">https://unvanquished.net/wp-content/uploads/2021/05/20210504-081116-002.unvanquished-0.52-alien-team.jpg</image>
+      <caption>Family photo of all alien player classes in Platform 23.</caption>
+      <caption xml:lang="fr">Photo de famille de toutes les classes de joueur extraterrestre dans Plateform 23.</caption>
+    </screenshot>
+    <screenshot>
+      <image type="source">https://unvanquished.net/wp-content/uploads/2021/06/20200909-001900-002.unvanquished-lasgun-weapon.jpg</image>
+      <caption>First person view of an human soldier carrying a lasgun in Vega.</caption>
+      <caption xml:lang="fr">Vue à la première personne d'un soldat humain portant un lasgun dans Vega.</caption>
+    </screenshot>
+    <screenshot>
+      <image type="source">https://unvanquished.net/wp-content/uploads/2021/05/20210504-083923-002.unvanquished-0.52-alien-builder.jpg</image>
+      <caption>First person view of an alien builder wallwalking in Antares.</caption>
+      <caption xml:lang="fr">Vue à la première personne d'un constructeur extraterrestre marchant sur les murs dans Antares.</caption>
+    </screenshot>
+    <screenshot>
+      <image type="source">https://unvanquished.net/wp-content/uploads/2021/05/20210504-072808-002.unvanquished-0.52-human-team.jpg</image>
+      <caption>Human players wearing all kinds of armours and various weapons in Forlorn.</caption>
+      <caption xml:lang="fr">Joueurs humains portant toutes sortes d'armures et diverses armes dans Forlorn.</caption>
+    </screenshot>
+  </screenshots>
+
+  <url type="homepage">https://unvanquished.net</url>
+  <url type="bugtracker">https://bugs.unvanquished.net</url>
+  <url type="help">https://wiki.unvanquished.net</url>
+
+  <releases>
+    <release version="0.56.2" date="2026-05-12">
+      <description>
+        <p>
+          This updates enables the build point vampire mode by default, brings nicer rockets, fixes model rendering bugs, and improve compatibility with more hardware.
+        </p>
+      </description>
+      <url>https://unvanquished.net/unvanquished-0-56-2-quality/</url>
+    </release>
+    <release version="0.56.1" date="2026-03-25">
+      <description>
+        <p>
+          This updates brings new rendering features, buxfixes and performance improvements. One of the most notable graphical change is the introduction of linear blending rendering for maps that support it. We also included antialiasing in the render with MSAA and FXAA implementations. Additionally, this release includes many performance improvements for old and new hardware and buxfixes to the graphics, sound system and user interface.
+        </p>
+      </description>
+      <url>https://unvanquished.net/unvanquished-0-56-we-deliver/</url>
+    </release>
+    <release version="0.55.5" date="2025-09-28">
+      <description>
+        <p>
+          This update improves the fogging, makes possible to bind the mouse wheel in the menus,
+          fixes toggled rotating doors, enables Wayland and upgrades to SDL3.
+        </p>
+      </description>
+      <url>https://unvanquished.net/unvanquished-0-55-5-polishing-it/</url>
+    </release>
+    <release version="0.55.4" date="2025-05-26">
+      <description>
+        <p>
+          This update fixes a bug disconnecting people from servers when some maps
+          were loaded, improve some visuals and brings better shader compilation times.
+        </p>
+      </description>
+      <url>https://unvanquished.net/unvanquished-0-55-4-spring-cleaning/</url>
+    </release>
+    <release version="0.55.3" date="2025-04-15">
+      <description>
+        <p>
+          This update brings the vampire mode, new command and vsay menus,
+          along other improvements and bugfixes.
+        </p>
+      </description>
+      <url>https://unvanquished.net/unvanquished-0-55-3-tonemapped-vampires/</url>
+    </release>
+    <release version="0.55.2" date="2024-12-15">
+      <description>
+        <p>
+          This update makes bots able to use the jetpack and brings a bunch
+          of bugfixes. It is now possible to use the curses console interface.
+        </p>
+      </description>
+      <url>https://unvanquished.net/unvanquished-0-55-2-bots-in-the-sky/</url>
+    </release>
+    <release version="0.55.1" date="2024-11-03">
+      <description>
+        <p>
+          This update brings better bots, improvements for the user interface,
+          and bugfixes for maps and the rendering of specific textures and fog.
+        </p>
+      </description>
+      <url>https://unvanquished.net/unvanquished-0-55-1-lets-polish-it/</url>
+    </release>
+    <release version="0.55.0" date="2024-10-20">
+      <description>
+        <p>
+          This update brings translations, and many engine improvements:
+          new features, bugfixes, compatibility with the large amount
+          of community maps and performance improvement.
+        </p>
+      </description>
+      <url>https://unvanquished.net/unvanquished-0-55-awesomeness-has-arrived/</url>
+    </release>
+    <release version="0.54.1" date="2023-12-10">
+      <description>
+        <p>
+          This update brings better bots, translations, more performance,
+          featured servers…
+        </p>
+      </description>
+      <url>https://unvanquished.net/unvanquished-0-54-1-is-here/</url>
+    </release>
+    <release version="0.54.0" date="2023-01-30">
+      <description>
+        <p>
+          This update brings automatic server-side navigation mesh generation
+          and many fixes and improvements.
+        </p>
+      </description>
+      <url>https://unvanquished.net/unvanquished-0-54-armed-and-dangerous/</url>
+    </release>
+    <release version="0.53.2" date="2022-09-04">
+      <description>
+        <p>
+          This update fixes rendering issues with legacy Tremulous maps,
+          restores the granger slow blob, and the regression preventing to
+          type Unicode characters in chat is now gone!
+        </p>
+      </description>
+      <url>https://unvanquished.net/unvanquished-0-53-2-refinements/</url>
+    </release>
+    <release version="0.53.1" date="2022-08-04">
+      <description>
+        <p>
+          This update fixes the unexpected disconnection bug, restores modified
+          gravity in maps and makes some text more readable.
+        </p>
+      </description>
+      <url>https://unvanquished.net/unvanquished-0-53-beta-what-a-milestone/</url>
+    </release>
+    <release version="0.53.0" date="2022-07-31">
+      <description>
+        <p>
+          This large update comes with HUD improvements, better bots,
+          updated Parpax map and many bug fixes.
+        </p>
+      </description>
+      <url>https://unvanquished.net/unvanquished-0-53-beta-what-a-milestone/</url>
+    </release>
+    <release version="0.52.1" date="2021-06-20">
+      <description>
+        <p>
+          This update brings some bug fixes and marks the first point release
+          in Unvanquished 0.52 beta development cycle.
+        </p>
+      </description>
+      <url>https://unvanquished.net/unvanquished-0-52-1-better-freer-stronger/</url>
+    </release>
+    <release version="0.52.0" date="2021-05-14">
+      <description>
+        <p>
+          The first beta release, coming after years of continuous work
+          both on the engine and the game itself.
+        </p>
+      </description>
+      <url>https://unvanquished.net/unvanquished-0-52-beta-is-there/</url>
+    </release>
+  </releases>
+
+  <recommends>
+    <memory>3072</memory> <!-- 3GiB RAM -->
+  </recommends>
+
+  <requires>
+    <control>pointing</control>
+    <control>keyboard</control>
+  </requires>
+
+  <content_rating type="oars-1.1">
+    <content_attribute id="violence-fantasy">moderate</content_attribute>
+    <content_attribute id="violence-realistic">moderate</content_attribute>
+    <content_attribute id="violence-bloodshed">mild</content_attribute>
+    <content_attribute id="social-chat">intense</content_attribute>
+  </content_rating>
+
+  <provides>
+    <binary>unvanquished</binary>
+  </provides>
+</component>

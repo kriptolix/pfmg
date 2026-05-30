@@ -1,0 +1,37 @@
+{
+  "header": {
+    "id": "python3-superqt",
+    "version": "0.7.6",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-superqt",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"superqt==0.7.6\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/69/76/37c0ccd5ab968a6a438f9c623aeecc84c202ab2fabc6a8fd927580c15b5a/QtPy-2.4.3-py3-none-any.whl",
+        "sha256": "72095afe13673e017946cc258b8d5da43314197b741ed2890e563cf384b51aa1"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/20/12/38679034af332785aac8774540895e234f4d07f7545804097de4b666afd8/packaging-25.0-py3-none-any.whl",
+        "sha256": "29572ef2b1f17581046b3a2227d5c611fb25ec70ca1ba8554b24b0e69331a484"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/ac/60/b86845ddd057a307b92b7f5866f9e5e12bb5a471e087d71b481d68792c7f/superqt-0.7.6-py3-none-any.whl",
+        "sha256": "6961833acd67df62b12918ded9945c5e7b17d75452c0159a121d799d65e2f0c2"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/b5/00/d631e67a838026495268c2f6884f3711a15a9a2a96cd244fdaea53b823fb/typing_extensions-4.14.1-py3-none-any.whl",
+        "sha256": "d1e1e3b58374dc93031d6eda2420a48ea44a36c2b4766a4fdeb3710755731d76"
+      }
+    ]
+  }
+}

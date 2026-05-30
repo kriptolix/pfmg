@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "squirrelsql",
+    "version": "4.8.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "squirrelsql",
+    "buildsystem": "simple",
+    "build-commands": [
+      "mkdir -p /app/squirrelsql",
+      "cp -r * /app/squirrelsql"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/squirrel-sql-client/squirrel-sql-stable-releases/releases/download/4.8.0-a_plainzip/squirrelsql-4.8.0-optional.zip",
+        "dest-filename": "squirrelsql-optional.zip",
+        "sha256": "b707867f3b8b207c6317c8ce2a05d62c46f010a5f11d57398d99f5a1885bbde0"
+      }
+    ]
+  }
+}

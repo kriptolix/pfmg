@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "noto-font-cjk-regular",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "noto-font-cjk-regular",
+    "buildsystem": "simple",
+    "build-commands": [
+      "mkdir -p /app/share/fonts",
+      "install -D NotoSansCJK-Regular.ttc /app/share/fonts/"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://noto-website-2.storage.googleapis.com/pkgs/NotoSansCJK-Regular.ttc.zip",
+        "sha256": "32d03afb0b1109fa75a96f89dfc118015283a5343f2216ee4b3757c19992f75d"
+      }
+    ]
+  }
+}

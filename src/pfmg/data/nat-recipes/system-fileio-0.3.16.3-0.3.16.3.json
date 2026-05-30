@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "system-fileio-0.3.16.3",
+    "version": "0.3.16.3",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "system-fileio-0.3.16.3",
+    "only-arches": [
+      "x86_64"
+    ],
+    "buildsystem": "simple",
+    "build-commands": [
+      "ghc -threaded --make Setup",
+      "./Setup configure --prefix=/app",
+      "./Setup build",
+      "./Setup install"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "sha256": "3175707cb322c65760fa2eb2ab17327f251c8294ad688efc6258e82328830491",
+        "url": "https://hackage.haskell.org/package/system-fileio-0.3.16.3/system-fileio-0.3.16.3.tar.gz"
+      }
+    ]
+  }
+}

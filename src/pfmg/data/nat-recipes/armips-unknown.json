@@ -1,0 +1,26 @@
+{
+  "header": {
+    "id": "armips",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "armips",
+    "buildsystem": "cmake-ninja",
+    "no-make-install": true,
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release"
+    ],
+    "post-install": [
+      "install -Dm755 armips /app/bin/armips"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/Kingcom/armips.git",
+        "commit": "0febea0aecee2e2186529f0bbd180b06ce7e275c"
+      }
+    ]
+  }
+}

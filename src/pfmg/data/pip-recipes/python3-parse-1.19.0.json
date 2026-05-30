@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-parse",
+    "version": "1.19.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-parse",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"parse\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/89/a1/82ce536be577ba09d4dcee45db58423a180873ad38a2d014d26ab7b7cb8a/parse-1.19.0.tar.gz",
+        "sha256": "9ff82852bcb65d139813e2a5197627a94966245c897796760a3a2a8eb66f020b"
+      }
+    ]
+  }
+}

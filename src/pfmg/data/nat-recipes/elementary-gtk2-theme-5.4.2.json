@@ -1,0 +1,26 @@
+{
+  "header": {
+    "id": "elementary-gtk2-theme",
+    "version": "5.4.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "elementary-gtk2-theme",
+    "// NOTE": "This is used by Elementary OS",
+    "buildsystem": "meson",
+    "cleanup": [
+      "/share/themes/elementary/gtk-3.0",
+      "/share/themes/elementary/plank",
+      "/share/plank",
+      "/share/metainfo"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/elementary/stylesheet/archive/5.4.2.tar.gz",
+        "sha256": "3bc37723daf4ce0b7c9ce4c125ef0055affe8d6654981388ec87d4a23a1ae0ec"
+      }
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "firejail",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "firejail",
+    "buildsystem": "autotools",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/netblue30/firejail.git",
+        "tag": "0.9.80",
+        "commit": "13604ce28418d1584a5ffc8eca4ac85522fef3b6",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^([\\d.]+)$"
+        }
+      }
+    ]
+  }
+}

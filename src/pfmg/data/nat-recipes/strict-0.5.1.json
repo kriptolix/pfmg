@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "strict",
+    "version": "0.5.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "strict",
+    "buildsystem": "simple",
+    "builddir": false,
+    "build-commands": [
+      "echo '#! /usr/bin/env runhaskell' >Setup.txt",
+      "echo '> import Distribution.Simple' >>Setup.txt",
+      "echo '> main = defaultMain' >>Setup.txt",
+      "ln -s Setup.txt Setup.lhs || true",
+      "runhaskell Setup configure --prefix=/app",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "sources": [
+      {
+        "sha256": "77719280c2a86312e748227bfa732eeaae0e7df48d57acc3c2e5b7b07afe2f8b",
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/strict-0.5.1/strict-0.5.1.tar.gz"
+      },
+      {
+        "dest-filename": "strict.cabal",
+        "sha256": "58c373b7c7748cbb4a5a6c8c15073f99a1c10a9a9bb6894ac33f43a5cdb901f2",
+        "type": "file",
+        "url": "https://hackage.haskell.org/package/strict-0.5.1/revision/1.cabal"
+      }
+    ]
+  }
+}

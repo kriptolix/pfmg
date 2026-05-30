@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "dosfstools",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "dosfstools",
+    "buildsystem": "autotools",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/dosfstools/dosfstools.git",
+        "commit": "697f7692c951173c1b732901e13f72bd3182d575"
+      }
+    ],
+    "post-install": [
+      "mv /app/sbin/mkfs.fat /app/bin/mkfs.fat",
+      "rm /app/sbin/fatlabel",
+      "rm /app/sbin/fsck.fat"
+    ]
+  }
+}

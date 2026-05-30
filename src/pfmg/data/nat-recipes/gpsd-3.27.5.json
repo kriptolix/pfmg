@@ -1,0 +1,52 @@
+{
+  "header": {
+    "id": "gpsd",
+    "version": "3.27.5",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "gpsd",
+    "modules": [
+      {
+        "name": "scons",
+        "buildsystem": "simple",
+        "sources": [
+          {
+            "type": "archive",
+            "url": "http://download.sourceforge.net/scons/scons-3.1.2.tar.gz",
+            "sha256": "7801f3f62f654528e272df780be10c0e9337e897650b62ddcee9f39fde13f8fb"
+          }
+        ],
+        "build-commands": [
+          "python3 setup.py install --prefix=/app"
+        ],
+        "cleanup": [
+          "*"
+        ]
+      }
+    ],
+    "buildsystem": "simple",
+    "builddir": true,
+    "build-commands": [
+      "scons prefix=/app",
+      "find . -name 'libgps.so' -exec install -Dm755 {} /app/lib/libgps.so \\;",
+      "install -Dm644 include/gps.h /app/include/gps.h",
+      "install -Dm644 include/libgps.h /app/include/libgps.h",
+      "install -Dm644 include/libgpsmm.h /app/include/libgpsmm.h"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.savannah.gnu.org/releases/gpsd/gpsd-3.27.5.tar.gz",
+        "sha256": "409873f5048462ef1ac413a51ab35caa8b50b31be62b3347bee1cc2994e7c649",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 6846,
+          "stable-only": true,
+          "url-template": "https://download.savannah.gnu.org/releases/gpsd/gpsd-$version.tar.gz"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "header": {
+    "id": "libcsys",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libcsys",
+    "buildsystem": "cmake-ninja",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://gitlab.com/cubocore/libcsys.git",
+        "commit": "de841ad0eb9bedda8122d98c092ba58324e048b4",
+        "tag": "v5.0.1"
+      }
+    ]
+  }
+}

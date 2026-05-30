@@ -1,0 +1,54 @@
+{
+  "header": {
+    "id": "java",
+    "version": "10.0.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "java",
+    "buildsystem": "autotools",
+    "no-parallel-make": true,
+    "config-opts": [
+      "--with-boot-jdk=/usr/lib/sdk/openjdk9/jvm/openjdk-9",
+      "--with-jvm-variants=server",
+      "--with-version-build=13",
+      "--with-version-pre=",
+      "--with-version-opt=",
+      "--with-debug-level=release",
+      "--with-native-debug-symbols=internal",
+      "--enable-unlimited-crypto",
+      "--with-zlib=system",
+      "--with-libjpeg=system",
+      "--with-giflib=system",
+      "--with-libpng=system",
+      "--with-lcms=system",
+      "--with-stdc++lib=dynamic",
+      "--with-extra-cxxflags=-O2 -g -Wno-error -std=gnu++98 -fno-delete-null-pointer-checks -fno-lifetime-dse",
+      "--with-extra-cflags=-O2 -g -fstack-protector-strong -Wno-error -fno-delete-null-pointer-checks -fno-lifetime-dse -fpermissive",
+      "--with-extra-ldflags=-Wl,-z,relro -Wl,-z,now",
+      "--disable-javac-server",
+      "--disable-warnings-as-errors"
+    ],
+    "make-args": [
+      "JAVAC_FLAGS=-g",
+      "LOG=trace",
+      "WARNINGS_ARE_ERRORS=-Wno-error",
+      "CFLAGS_WARNINGS_ARE_ERRORS=-Wno-error",
+      "images"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://src.fedoraproject.org/repo/pkgs/java-openjdk/jdk-updates-jdk10u-jdk-10.0.2+13.tar.xz/sha512/e5de419cec42e376ce341126c64370211cb09f326cdfafc64cec52640d2a2780f3ee705d51b6d025af6ca74c1525ed8d4a9d9afbe5b45f9709dd4d2242f1af08/jdk-updates-jdk10u-jdk-10.0.2+13.tar.xz",
+        "sha512": "e5de419cec42e376ce341126c64370211cb09f326cdfafc64cec52640d2a2780f3ee705d51b6d025af6ca74c1525ed8d4a9d9afbe5b45f9709dd4d2242f1af08"
+      },
+      {
+        "type": "shell",
+        "commands": [
+          "chmod a+x configure"
+        ]
+      }
+    ]
+  }
+}

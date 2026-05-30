@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "pyopenssl",
+    "version": "26.2.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "pyOpenSSL",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --prefix=/app py[Oo]pen[Ss][Ss][Ll]*.whl"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/73/b8/a0e2790ae249d6f38c9f66de7a211621a7ab2650217bcd04e1262f578a56/pyopenssl-26.2.0-py3-none-any.whl",
+        "sha256": "4f9d971bc5298b8bc1fab282803da04bf000c755d4ad9d99b52de2569ca19a70",
+        "x-checker-data": {
+          "type": "pypi",
+          "name": "pyOpenSSL",
+          "packagetype": "bdist_wheel"
+        }
+      }
+    ]
+  }
+}

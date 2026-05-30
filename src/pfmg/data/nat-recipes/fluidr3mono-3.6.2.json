@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "fluidr3mono",
+    "version": "3.6.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "FluidR3Mono",
+    "buildsystem": "simple",
+    "build-commands": [
+      "install -D -m 644 -t $FLATPAK_DEST/share/soundfonts FluidR3Mono_GM.sf3",
+      "ln -s $FLATPAK_DEST/share/soundfonts/{FluidR3Mono_GM,default-GM}.sf3"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://github.com/musescore/MuseScore/raw/3.6.2/share/sound/FluidR3Mono_GM.sf3",
+        "sha256": "2aacd036d7058d40a371846ef2f5dc5f130d648ab3837fe2626591ba49a71254"
+      }
+    ]
+  }
+}

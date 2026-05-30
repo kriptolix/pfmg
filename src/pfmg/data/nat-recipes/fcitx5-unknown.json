@@ -1,0 +1,41 @@
+{
+  "header": {
+    "id": "fcitx5",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "fcitx5",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DUSE_SYSTEMD=Off",
+      "-DUSE_FLATPAK_ICON=On",
+      "-DENABLE_TEST=Off"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/fcitx/fcitx5",
+        "tag": "5.1.19",
+        "commit": "e4c11948599a53cf12ae6286a86d7e36a4229a16"
+      },
+      {
+        "type": "file",
+        "url": "https://download.fcitx-im.org/data/en_dict-20121020.tar.gz",
+        "sha256": "c44a5d7847925eea9e4d2d04748d442cd28dd9299a0b572ef7d91eac4f5a6ceb",
+        "dest": "src/modules/spell"
+      },
+      {
+        "type": "file",
+        "path": "fcitx5.sh"
+      }
+    ],
+    "post-install": [
+      "install -d /app/addons",
+      "mv /app/bin/fcitx5{,-bin}",
+      "install -m755 fcitx5.sh /app/bin/fcitx5"
+    ]
+  }
+}

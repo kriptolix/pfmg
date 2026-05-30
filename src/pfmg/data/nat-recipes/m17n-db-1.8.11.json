@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "m17n-db",
+    "version": "1.8.11",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "m17n-db",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download-mirror.savannah.gnu.org/releases/m17n/m17n-db-1.8.11.tar.gz",
+        "sha256": "b5791f38e66d0a452730331e027ac9b52d5c43c6d8709289db640069f68487f4",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 1869,
+          "stable-only": true,
+          "url-template": "https://download-mirror.savannah.gnu.org/releases/m17n/m17n-db-${version}.tar.gz"
+        }
+      }
+    ]
+  }
+}

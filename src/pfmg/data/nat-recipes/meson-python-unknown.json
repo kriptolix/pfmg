@@ -1,0 +1,20 @@
+{
+  "header": {
+    "id": "meson-python",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "meson-python",
+    "buildsystem": "meson",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/mesonbuild/meson-python",
+        "tag": "0.18.0",
+        "commit": "e094949f466ae69043fcec3ec68b41ace900ed97"
+      }
+    ]
+  }
+}

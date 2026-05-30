@@ -1,0 +1,29 @@
+{
+  "header": {
+    "id": "gtkmdeditor",
+    "version": "0.2.3",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "gtkmdeditor",
+    "buildsystem": "simple",
+    "build-options": {
+      "env": {
+        "CARGO_HOME": "/run/build/gtkmdeditor/cargo"
+      }
+    },
+    "build-commands": [
+      "CARGO_FLAGS=--offline make build",
+      "make install PREFIX=/app"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/johan-bjareholt/gtkmdeditor/archive/refs/tags/v0.2.3.tar.gz",
+        "sha256": "5ac12dc6b814f4f290010082735b1ed441a4f7514cd5bbfd712adcd544bdac9f"
+      },
+      "gtkmdeditor-cargo-deps.json"
+    ]
+  }
+}

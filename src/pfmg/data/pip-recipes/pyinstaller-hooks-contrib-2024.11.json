@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "pyinstaller-hooks-contrib",
+    "version": "2024.11",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "pyinstaller-hooks-contrib",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=/app \"pyinstaller-hooks-contrib==2024.11\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/64/af/965f81a65f4d9bcb337dd0e87845fd2e081c4ab5a1c0b3e0cf20abeac423/pyinstaller_hooks_contrib-2024.11-py3-none-any.whl",
+        "sha256": "2781d121a1ee961152ba7287a262c65a1078da30c9ef7621cb8c819326884fd5"
+      }
+    ]
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "header": {
+    "id": "nlohmann-json",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "nlohmann-json",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DJSON_BuildTests=false"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/nlohmann/json",
+        "tag": "v3.12.0",
+        "commit": "55f93686c01528224f448c19128836e7df245f72",
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://api.github.com/repos/nlohmann/json/releases/latest",
+          "tag-query": ".tag_name",
+          "version-query": "$tag | sub(\"^jq-\"; \"\")",
+          "timestamp-query": ".published_at"
+        }
+      }
+    ]
+  }
+}

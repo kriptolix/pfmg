@@ -1,0 +1,48 @@
+{
+  "header": {
+    "id": "mpv",
+    "version": "1.0.8",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "mpv",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --prefix=/app mpv-*.whl"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/f4/cf/0d5f52753366ecf2c3d763e331dcda54b0f20a1a8e52b175feb9c625399d/mpv-1.0.8-py3-none-any.whl",
+        "sha256": "dcf77f612e3f5ce49bd89393f37d286de7ac290db6b0800f1fdcfe0aeb5ba9b8",
+        "x-checker-data": {
+          "type": "pypi",
+          "packagetype": "bdist_wheel",
+          "name": "mpv"
+        }
+      }
+    ],
+    "modules": [
+      {
+        "name": "PyOpenGL",
+        "buildsystem": "simple",
+        "build-commands": [
+          "pip3 install --prefix=/app pyopengl-*.whl"
+        ],
+        "sources": [
+          {
+            "type": "file",
+            "url": "https://files.pythonhosted.org/packages/de/e4/1ba6f44e491c4eece978685230dde56b14d51a0365bc1b774ddaa94d14cd/pyopengl-3.1.10-py3-none-any.whl",
+            "sha256": "794a943daced39300879e4e47bd94525280685f42dbb5a998d336cfff151d74f",
+            "x-checker-data": {
+              "type": "pypi",
+              "packagetype": "bdist_wheel",
+              "name": "PyOpenGL"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

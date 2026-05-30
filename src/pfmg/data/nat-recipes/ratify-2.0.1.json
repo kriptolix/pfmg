@@ -1,0 +1,29 @@
+{
+  "header": {
+    "id": "ratify",
+    "version": "2.0.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "ratify",
+    "cleanup": [
+      "/include",
+      "/lib/girepository-1.0",
+      "/lib/pkgconfig"
+    ],
+    "buildsystem": "meson",
+    "config-opts": [
+      "-Dintrospection=disabled",
+      "-Dgtk_doc=disabled",
+      "-Dvapi=disabled"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/ptomato/ratify/releases/download/v2.0.1/ratify-2.0.1.tar.xz",
+        "sha256": "19f44b6711a1e160614b5ae88e33caa511c128e1768e6277e18e892919a181dd"
+      }
+    ]
+  }
+}

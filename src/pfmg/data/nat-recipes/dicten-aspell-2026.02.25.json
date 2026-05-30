@@ -1,0 +1,29 @@
+{
+  "header": {
+    "id": "dicten-aspell",
+    "version": "2026.02.25",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "dictEn-aspell",
+    "buildsystem": "simple",
+    "build-commands": [
+      "./configure",
+      "make datadir=/app/share/dicts dictdir=/app/share/dicts",
+      "make datadir=/app/share/dicts dictdir=/app/share/dicts install"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://ftp.gnu.org/gnu/aspell/dict/en/aspell6-en-2026.02.25-0.tar.bz2",
+        "sha256": "77a5cb437c45d1115f3b593802c20651d8c93803ed1073278dc1a1240016f10d",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 7838,
+          "url-template": "https://ftp.gnu.org/gnu/aspell/dict/en/aspell6-en-$version.tar.bz2"
+        }
+      }
+    ]
+  }
+}

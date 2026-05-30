@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "unbound",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "unbound",
+    "buildsystem": "autotools",
+    "config-opts": [
+      "--without-pyunbound",
+      "--without-pythonmodule",
+      "--with-libevent=no",
+      "--with-pthreads",
+      "--with-libunbound-only"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/NLnetLabs/unbound.git",
+        "tag": "release-1.17.1",
+        "commit": "90831af981221bbce1cd7b15055562336760e484"
+      }
+    ]
+  }
+}

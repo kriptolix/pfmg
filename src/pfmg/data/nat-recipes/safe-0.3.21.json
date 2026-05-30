@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "safe",
+    "version": "0.3.21",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "safe",
+    "buildsystem": "simple",
+    "builddir": false,
+    "build-commands": [
+      "echo '#! /usr/bin/env runhaskell' >Setup.txt",
+      "echo '> import Distribution.Simple' >>Setup.txt",
+      "echo '> main = defaultMain' >>Setup.txt",
+      "ln -s Setup.txt Setup.lhs || true",
+      "runhaskell Setup configure --prefix=/app",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "sources": [
+      {
+        "sha256": "2c81fea42bbe79ec488774043c1ec54f30efba059df9a4f3681ce83d85007f01",
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/safe-0.3.21/safe-0.3.21.tar.gz"
+      },
+      {
+        "dest-filename": "safe.cabal",
+        "sha256": "b928ea1645876788155b38ce85c7e46d157a1bb41d2b05f5770b13d60bc6a3f7",
+        "type": "file",
+        "url": "https://hackage.haskell.org/package/safe-0.3.21/revision/1.cabal"
+      }
+    ]
+  }
+}

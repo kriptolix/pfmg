@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "mpvqt",
+    "version": "1.1.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "mpvqt",
+    "buildsystem": "cmake-ninja",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.kde.org/stable/mpvqt/mpvqt-1.1.1.tar.xz",
+        "sha256": "bdd1ea69338cf3017f628a886218b8c185ca24e8257f03207a3cf1bbb51e3d32",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 370634,
+          "stable-only": true,
+          "url-template": "https://download.kde.org/stable/mpvqt/mpvqt-$version.tar.xz"
+        }
+      }
+    ]
+  }
+}

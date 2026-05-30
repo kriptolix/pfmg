@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-glob2",
+    "version": "0.7",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-glob2",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"glob2\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/d7/a5/bbbc3b74a94fbdbd7915e7ad030f16539bfdc1362f7e9003b594f0537950/glob2-0.7.tar.gz",
+        "sha256": "85c3dbd07c8aa26d63d7aacee34fa86e9a91a3873bc30bf62ec46e531f92ab8c"
+      }
+    ]
+  }
+}

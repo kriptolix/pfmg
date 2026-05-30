@@ -1,0 +1,107 @@
+{
+  "header": {
+    "id": "python-syndom",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python-syndom",
+    "buildsystem": "meson",
+    "config-opts": [
+      "-DTO_JSON_BINARY=false",
+      "-DPYTHON_BINDINGS=true",
+      "-DHTML_SUPPORT=true"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://gitlab.com/gabmus/syndication-domination",
+        "commit": "75920321062d682437f3fb0319dad227d8b18f6c"
+      }
+    ],
+    "modules": [
+      {
+        "name": "boost",
+        "buildsystem": "simple",
+        "sources": [
+          {
+            "type": "archive",
+            "url": "https://downloads.sourceforge.net/boost/boost/1.80.0/boost_1_80_0.tar.bz2",
+            "sha256": "1e19565d82e43bc59209a168f5ac899d3ba471d55c7610c677d4ccf2c9c500c0"
+          }
+        ],
+        "build-commands": [
+          "./bootstrap.sh --prefix=/app --with-libraries=locale,filesystem,system,date_time,regex,program_options",
+          "./b2 headers",
+          "./b2 -j$FLATPAK_BUILDER_N_JOBS install variant=release cxxstd=17 --layout=system"
+        ]
+      },
+      {
+        "name": "pybind11",
+        "buildsystem": "cmake",
+        "config-opts": [
+          "-DBUILD_TESTING=false"
+        ],
+        "sources": [
+          {
+            "type": "archive",
+            "url": "https://github.com/pybind/pybind11/archive/refs/tags/v2.10.3.tar.gz",
+            "sha256": "5d8c4c5dda428d3a944ba3d2a5212cb988c2fae4670d58075a5a49075a6ca315"
+          }
+        ]
+      },
+      {
+        "name": "python-pybind11",
+        "buildsystem": "simple",
+        "build-commands": [
+          "python3 setup.py build",
+          "python3 setup.py install --prefix=/app --root=/"
+        ],
+        "sources": [
+          {
+            "type": "archive",
+            "url": "https://github.com/pybind/pybind11/archive/refs/tags/v2.10.3.tar.gz",
+            "sha256": "5d8c4c5dda428d3a944ba3d2a5212cb988c2fae4670d58075a5a49075a6ca315"
+          }
+        ]
+      },
+      {
+        "name": "pugixml",
+        "buildsystem": "cmake",
+        "sources": [
+          {
+            "type": "git",
+            "url": "https://github.com/zeux/pugixml",
+            "tag": "v1.13"
+          }
+        ]
+      },
+      {
+        "name": "tidy",
+        "buildsystem": "cmake",
+        "sources": [
+          {
+            "type": "git",
+            "url": "https://github.com/htacg/tidy-html5",
+            "tag": "5.8.0"
+          }
+        ]
+      },
+      {
+        "name": "fmt",
+        "buildsystem": "cmake",
+        "config-opts": [
+          "-DCMAKE_POSITION_INDEPENDENT_CODE=ON"
+        ],
+        "sources": [
+          {
+            "type": "archive",
+            "url": "https://github.com/fmtlib/fmt/archive/refs/tags/9.1.0.tar.gz",
+            "sha256": "5dea48d1fcddc3ec571ce2058e13910a0d4a6bab4cc09a809d8b1dd1c88ae6f2"
+          }
+        ]
+      }
+    ]
+  }
+}

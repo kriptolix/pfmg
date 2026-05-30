@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "python3-nanopb",
+    "version": "0.4.9.1",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-nanopb",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"nanopb==0.4.9.1\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/7f/46/6f8f5681fbe546945b9aca566866d3738c8328d4f6e6086191043be451f0/nanopb-0.4.9.1-py2.py3-none-any.whl",
+        "sha256": "9bd159eb50e7568b49dc3051839f346f9a2408454cddfc4cf100ab95470a73d4"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/ba/25/7c72c307aafc96fa87062aa6291d9f7c94836e43214d43722e86037aac02/protobuf-6.33.5.tar.gz",
+        "sha256": "6ddcac2a081f8b7b9642c09406bc6a4290128fce5f471cddd165960bb9119e5c"
+      }
+    ]
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "header": {
+    "id": "haskell-unordered-containers",
+    "version": "0.2.19.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "haskell-unordered-containers",
+    "buildsystem": "simple",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/unordered-containers-0.2.19.1/unordered-containers-0.2.19.1.tar.gz",
+        "sha256": "1b27bec5e0d522b27a6029ebf4c4a6d40acbc083c787008e32fb55c4b1d128d2",
+        "x-checker-data": {
+          "type": "html",
+          "url": "https://www.stackage.org/lts-21",
+          "version-pattern": ">unordered-containers-([\\d.]+)<",
+          "url-template": "https://hackage.haskell.org/package/unordered-containers-$version/unordered-containers-$version.tar.gz"
+        }
+      },
+      {
+        "type": "shell",
+        "commands": [
+          "sed -i '/\\btemplate-haskell\\b/ s/< *2\\.19/<3/' *.cabal"
+        ]
+      }
+    ],
+    "build-commands": [
+      "runhaskell Setup configure --prefix=/app --extra-lib-dirs=/app/lib",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "cleanup": [
+      "*"
+    ]
+  }
+}

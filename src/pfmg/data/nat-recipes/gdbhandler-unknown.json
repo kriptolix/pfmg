@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "gdbhandler",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "gdbhandler",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/manisandro/GdbCrashHandler.git",
+        "tag": "0.3.0",
+        "commit": "e1399f877e98382178855604c26aaf69c22fdbc9"
+      }
+    ]
+  }
+}

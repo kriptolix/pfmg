@@ -1,0 +1,36 @@
+{
+  "header": {
+    "id": "bdw-gc",
+    "version": "8.2.12",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "bdw-gc",
+    "buildsystem": "autotools",
+    "config-opts": [
+      "--disable-debug",
+      "--disable-docs",
+      "--disable-dependency-tracking",
+      "--disable-silent-rules",
+      "--enable-shared",
+      "--disable-static"
+    ],
+    "build-options": {
+      "cflags": "-fPIC -O2 -DNDEBUG"
+    },
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/ivmai/bdwgc/archive/refs/tags/v8.2.12.tar.gz",
+        "sha256": "d09001f45dabf1c29a5df3e63020a4bab5ad4aad69137bb07100c717e2ecba0b",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 17108,
+          "stable-only": true,
+          "url-template": "https://github.com/ivmai/bdwgc/archive/refs/tags/v$version.tar.gz"
+        }
+      }
+    ]
+  }
+}

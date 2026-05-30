@@ -11,8 +11,8 @@ from rich.syntax import Syntax
 from rich import print as rprint
 
 from pfmg import __version__
-from pfmg.commands import cmd_import, cmd_inspect, cmd_stats
-from pfmg.utils import get_logger, is_available
+from pfmg.commands import cmd_import, cmd_inspect, cmd_stats, cmd_search
+from pfmg.utils.logging import get_logger
 
 logger = get_logger(__name__)
 
@@ -26,7 +26,9 @@ console = Console()
 
 app.command("import")(cmd_import)
 
-app.command("inspec")(cmd_inspect)
+app.command("inspect")(cmd_inspect)
+
+app.command("search")(cmd_search)
 
 app.command("report")(cmd_stats)
 
@@ -55,6 +57,14 @@ def cmd_generate(
     sdk_extensions: Optional[list[str]] = typer.Option(
         None, "--extension", "-e",
         help="SDK extension IDs to activate (repeat for multiple).",
+    ),
+    build_deps: Optional[list[str]] = typer.Option(
+        None, "--build-dep", "-b",
+        help=(
+            "PyPI package name of a build-time dependency not resolvable "
+            "automatically (repeat for multiple). "
+            "Example: --build-dep meson-python --build-dep ninja"
+        ),
     ),
     output_dir: Optional[Path] = typer.Option(
         None, "--output-dir", "-o",
@@ -99,11 +109,12 @@ def cmd_generate(
         runtime=runtime,
         runtime_version=sdk_version,
         sdk_extensions=sdk_extensions or [],
+        build_deps=build_deps or [],
         keep_work_dir=keep,
         use_uv=use_uv,
     )
 
-    if not is_available():
+    if not prober.is_available():
         rprint("[red]flatpak not found. Install with your package manager.[/red]")
         raise typer.Exit(1)
 
@@ -119,6 +130,13 @@ def cmd_generate(
     rprint(f"  SDK sufficient   : {'[green]yes[/green]' if report.sdk_sufficient else '[red]no[/red]'}")
     rprint(f"  Build possible   : {'[green]yes[/green]' if report.build_possible else '[red]no[/red]'}")
     rprint(f"  Modules generated: {len(report.modules)}")
+
+    # Show auto-resolved build deps so the user knows what was found
+    resolved_bdeps = getattr(report, "resolved_build_deps", {})
+    if resolved_bdeps:
+        rprint(f"\n[bold cyan]Auto-resolved build dependencies:[/bold cyan]")
+        for import_name, pypi_name in resolved_bdeps.items():
+            rprint(f"  [cyan]{import_name}[/cyan] → [green]{pypi_name}[/green]  (added as module above {pkg_label})")
 
     if report.errors:
         rprint(f"\n[bold red]Errors ({len(report.errors)}):[/bold red]")

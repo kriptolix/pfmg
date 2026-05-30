@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "openvdb",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "openvdb",
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "config-opts": [
+      "-DOPENVDB_CORE_STATIC:BOOL=OFF",
+      "-DOPENVDB_BUILD_BINARIES:BOOL=OFF"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/AcademySoftwareFoundation/openvdb.git",
+        "tag": "v13.0.0",
+        "commit": "7c03e1f084873cd1b3422c7ff7aec6ee681b3b38"
+      }
+    ]
+  }
+}

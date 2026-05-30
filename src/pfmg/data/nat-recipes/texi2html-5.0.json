@@ -1,0 +1,30 @@
+{
+  "header": {
+    "id": "texi2html",
+    "version": "5.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "texi2html",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.savannah.gnu.org/releases/texi2html/texi2html-5.0.tar.gz",
+        "sha256": "e60edd2a9b8399ca615c6e81e06fa61946ba2f2406c76cd63eb829c91d3a3d7d",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 4957,
+          "stable-only": true,
+          "url-template": "https://download.savannah.gnu.org/releases/texi2html/texi2html-$version.tar.gz"
+        }
+      },
+      {
+        "type": "shell",
+        "commands": [
+          "cp -p /usr/share/automake-*/config.{sub,guess} ."
+        ]
+      }
+    ]
+  }
+}

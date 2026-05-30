@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "visualization.waveform",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "visualization.waveform",
+    "buildsystem": "cmake-ninja",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/xbmc/visualization.waveform",
+        "commit": "9309e28bf6bdfe3a6a5a2debc7accdd9a97ceda5"
+      }
+    ],
+    "build-options": {
+      "no-debuginfo": true,
+      "cflags": "-g0",
+      "cxxflags": "-g0"
+    },
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release"
+    ]
+  }
+}

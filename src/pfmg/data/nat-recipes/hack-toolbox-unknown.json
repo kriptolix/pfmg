@@ -1,0 +1,21 @@
+{
+  "header": {
+    "id": "hack-toolbox",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "hack-toolbox",
+    "buildsystem": "meson",
+    "run-tests": false,
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/endlessm/hack-toolbox-app.git",
+        "branch": "eos5",
+        "commit": "651ec78f2d907bef37c2e04f67ccebd7afc073da"
+      }
+    ]
+  }
+}

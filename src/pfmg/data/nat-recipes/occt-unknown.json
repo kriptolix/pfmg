@@ -1,0 +1,31 @@
+{
+  "header": {
+    "id": "occt",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "OCCT",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DBUILD_MODULE_ApplicationFramework=OFF",
+      "-DBUILD_MODULE_DataExchange=ON",
+      "-DBUILD_MODULE_Draw=OFF",
+      "-DBUILD_MODULE_FoundationClasses=OFF",
+      "-DBUILD_MODULE_ModelingAlgorithms=OFF",
+      "-DBUILD_MODULE_ModelingData=OFF",
+      "-DBUILD_MODULE_Visualization=OFF",
+      "-DBUILD_DOC_Overview=OFF",
+      "-DCMAKE_CXX_FLAGS=-fpermissive",
+      "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/Open-Cascade-SAS/OCCT.git",
+        "tag": "V7_8_1"
+      }
+    ]
+  }
+}

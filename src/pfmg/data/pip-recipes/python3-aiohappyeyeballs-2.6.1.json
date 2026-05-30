@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-aiohappyeyeballs",
+    "version": "2.6.1",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-aiohappyeyeballs",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --prefix=/app aiohappyeyeballs-2.6.1-py3-none-any.whl"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/0f/15/5bf3b99495fb160b63f95972b81750f18f7f4e02ad051373b669d17d44f2/aiohappyeyeballs-2.6.1-py3-none-any.whl",
+        "sha256": "f349ba8f4b75cb25c99c5c2d84e997e485204d2902a9597802b0371f09331fb8"
+      }
+    ]
+  }
+}

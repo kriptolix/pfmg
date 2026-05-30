@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "getxbook",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "getxbook",
+    "buildsystem": "simple",
+    "build-commands": [
+      "make PREFIX=$FLATPAK_DEST install"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://git.njw.name/getxbook.git",
+        "commit": "b14f62f36939e0c14f12d4a823c9b1d701420cd4",
+        "disable-shallow-clone": true
+      }
+    ]
+  }
+}

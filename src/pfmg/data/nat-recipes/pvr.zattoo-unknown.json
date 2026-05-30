@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "pvr.zattoo",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "pvr.zattoo",
+    "buildsystem": "cmake-ninja",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/rbuehlma/pvr.zattoo",
+        "commit": "f131b8d36cd1603204ea4b3ee5bc8dc31d3c36e7"
+      }
+    ],
+    "build-options": {
+      "no-debuginfo": true,
+      "cflags": "-g0",
+      "cxxflags": "-g0"
+    },
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release"
+    ]
+  }
+}

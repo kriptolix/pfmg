@@ -1,0 +1,34 @@
+{
+  "header": {
+    "id": "orc",
+    "version": "0.4.34",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "orc",
+    "buildsystem": "meson",
+    "build-options": {
+      "env": {
+        "LIBRARY_PATH": "/app/lib"
+      }
+    },
+    "config-opts": [
+      "-Dbenchmarks=disabled",
+      "-Dexamples=disabled",
+      "-Dgtk_doc=disabled",
+      "-Dtests=disabled"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://gstreamer.freedesktop.org/src/orc/orc-0.4.34.tar.xz",
+        "sha256": "8f47abb3f097171e44eb807adcdabd860fba2effd37d8d3c4fbd5f341cadd41f"
+      }
+    ],
+    "post-install": [
+      "mv /app/include/orc-0.4/orc /app/include/",
+      "mv /app/include/orc-0.4/orc-test /app/include/"
+    ]
+  }
+}

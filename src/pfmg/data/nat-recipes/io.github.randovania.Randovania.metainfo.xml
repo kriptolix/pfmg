@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.randovania.Randovania</id>
+  <name>Randovania</name>
+  <summary>A randomizer platform for a multitude of games</summary>
+  <metadata_license>CC-BY-SA-3.0</metadata_license>
+  <project_license>GPL-3.0-only</project_license>
+  <content_rating type="oars-1.0">
+    <content_attribute id="social-chat">moderate</content_attribute>
+  </content_rating>
+  <developer_name>Randovania Team</developer_name>
+  <description>
+    <p>
+      Randovania is a program for randomizing multiple aspects of several games, making a fresh experience out of the familiar.
+    </p>
+    <p>
+      Depending on the game, users can randomize where items appear, how areas connect to each other, and more. And after things are changed, Randovania checks each randomized game to make sure it's beatable. Experienced players can also turn up the difficulty by making glitches and unintended tricks potentially required to win. (Randovania will not expect players to use glitches to win otherwise.)
+    </p>
+  </description>
+  <launchable type="desktop-id">io.github.randovania.Randovania.desktop</launchable>
+  <url type="homepage">https://randovania.org/</url>
+  <url type="donation">https://opencollective.com/randovania</url>
+  <url type="bugtracker">https://github.com/randovania/randovania/issues</url>
+  <url type="help">https://randovania.org/guides/</url>
+  <url type="contribute">https://github.com/randovania/randovania/blob/main/CONTRIBUTING.md</url>
+  <url type="vcs-browser">https://github.com/randovania/randovania</url>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://raw.githubusercontent.com/flathub/io.github.randovania.Randovania/9e3afe1bb982115601b8b72dad52d60135f47328/screenshots/main-page.png</image>
+      <caption>The games tab, listing all supported games</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/flathub/io.github.randovania.Randovania/9e3afe1bb982115601b8b72dad52d60135f47328/screenshots/game-intro.png</image>
+      <caption>The intro tab for Metroid Fusion</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/flathub/io.github.randovania.Randovania/9e3afe1bb982115601b8b72dad52d60135f47328/screenshots/game-presets.png</image>
+      <caption>The presets tab for Metroid Fusion</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/flathub/io.github.randovania.Randovania/9e3afe1bb982115601b8b72dad52d60135f47328/screenshots/game-details.png</image>
+      <caption>The Game Details window, showing a generated Metroid Fusion game</caption>
+    </screenshot>
+  </screenshots>
+  <releases>
+    <release version="10.7.0" date="2026-05-02">
+      <description></description>
+    </release>
+    <release version="10.6.0" date="2026-03-31">
+      <description/>
+    </release>
+    <release version="10.5.0" date="2026-03-02">
+      <description/>
+    </release>
+    <release version="10.4.0" date="2026-02-01">
+      <description/>
+    </release>
+    <release version="10.3.2" date="2025-11-05">
+      <description/>
+    </release>
+    <release version="10.3.1" date="2025-11-01">
+      <description/>
+    </release>
+    <release version="10.2.0" date="2025-10-02">
+      <description/>
+    </release>
+    <release version="10.1.0" date="2025-09-02">
+      <description/>
+    </release>
+    <release version="10.0.1" date="2025-08-03">
+      <description/>
+    </release>
+    <release version="10.0.0" date="2025-08-01">
+      <description/>
+    </release>
+    <release version="9.3.1" date="2025-07-05">
+      <description/>
+    </release>
+    <release version="9.3.0" date="2025-07-02">
+      <description/>
+    </release>
+    <release version="9.2.0" date="2025-06-02">
+      <description/>
+    </release>
+    <release version="9.1.1" date="2025-05-06">
+      <description/>
+    </release>
+    <release version="9.1.0" date="2025-05-01">
+      <description/>
+    </release>
+    <release version="9.0.1" date="2025-04-08">
+      <description/>
+    </release>
+    <release version="9.0.0" date="2025-04-02">
+      <description/>
+    </release>
+    <release version="8.9.0" date="2025-02-02">
+      <description/>
+    </release>
+    <release version="8.8.0" date="2025-01-02">
+      <description/>
+    </release>
+    <release version="8.7.1" date="2024-12-06">
+      <description/>
+    </release>
+    <release version="8.7.0" date="2024-12-02">
+      <description/>
+    </release>
+    <release version="8.6.1" date="2024-11-05">
+      <description/>
+    </release>
+    <release version="8.5.0" date="2024-10-01">
+      <description/>
+    </release>
+    <release version="8.4.0" date="2024-09-04">
+      <description/>
+    </release>
+    <release version="8.3.0" date="2024-08-02">
+      <description/>
+    </release>
+    <release version="8.2.1" date="2024-07-05">
+      <description/>
+    </release>
+    <release version="8.2.0" date="2024-07-03">
+      <description/>
+    </release>
+    <release version="8.1.1" date="2024-06-08">
+      <description/>
+    </release>
+    <release version="8.1.0" date="2024-06-04">
+      <description/>
+    </release>
+    <release version="8.0.0" date="2024-05-01"/>
+    <release version="7.5.0" date="2024-04-01"/>
+    <release version="7.4.0" date="2024-03-07"/>
+    <release version="7.3.0" date="2024-02-07"/>
+    <release version="7.2.0" date="2024-01-05"/>
+    <release version="7.1.1" date="2023-12-26"/>
+    <release version="7.1.0" date="2023-12-05"/>
+    <release version="7.0.0" date="2023-11-04"/>
+    <release version="6.4.0" date="2023-10-04"/>
+    <release version="6.3.0" date="2023-10-02"/>
+    <release version="6.2.0" date="2023-09-01"/>
+    <release version="6.1.1" date="2023-08-07"/>
+    <release version="6.1.0" date="2023-08-02"/>
+    <release version="6.0.1" date="2023-07-05"/>
+    <release version="5.8.0" date="2023-06-08"/>
+    <release version="5.7.0" date="2023-05-05"/>
+    <release version="5.6.0" date="2023-04-02"/>
+    <release version="5.5.1" date="2023-02-28"/>
+    <release version="5.4.1" date="2023-02-16"/>
+    <release version="5.4.0" date="2023-02-06"/>
+  </releases>
+</component>

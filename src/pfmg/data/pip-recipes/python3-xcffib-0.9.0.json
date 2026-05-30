@@ -1,0 +1,47 @@
+{
+  "header": {
+    "id": "python3-xcffib",
+    "version": "0.9.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-xcffib",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} xcffib"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/6b/34/415834bfdafca3c5f451532e8a8d9ba89a21c9743a0c59fbd0205c7f9426/six-1.15.0.tar.gz",
+        "sha256": "30639c035cdb23534cd4aa2dd52c3bf48f06e5f4a941509c8bafd8ce11080259"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/05/54/3324b0c46340c31b909fcec598696aaec7ddc8c18a63f2db352562d3354c/cffi-1.14.0.tar.gz",
+        "sha256": "2d384f4a127a15ba701207f7639d94106693b6cd64173d6c8988e2c25f3ac2b6"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/ae/e7/d9c3a176ca4b02024debf82342dab36efadfc5776f9c8db077e8f6e71821/pycparser-2.20-py2.py3-none-any.whl",
+        "sha256": "7582ad22678f0fcd81102833f60ef8d0e57288b6b5fb00323d101be910e35705"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/0f/86/e19659527668d70be91d0369aeaa055b4eb396b0f387a4f92293a20035bd/pycparser-2.20.tar.gz",
+        "sha256": "2d475327684562c3a96cc71adf7dc8c4f0565175cf86b6d7a404ff4c771f15f0"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/fc/35/101babf6c90faf3e785e3b0fa4f5010a0fd6d20ec8f5d9395f0560263452/xcffib-0.9.0.tar.gz",
+        "sha256": "2c16eb113387cef49ffb63856ae4de65949c9c19a4adec9e45b0c6c5fbf603e4"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/ee/ff/48bde5c0f013094d729fe4b0316ba2a24774b3ff1c52d924a8a4cb04078a/six-1.15.0-py2.py3-none-any.whl",
+        "sha256": "8b74bedcbbbaca38ff6d7491d76f2b06b3592611af620f8426e82dddb04a5ced"
+      }
+    ]
+  }
+}

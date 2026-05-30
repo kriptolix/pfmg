@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "jasmine-gjs",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "jasmine-gjs",
+    "buildsystem": "meson",
+    "sources": [
+      {
+        "type": "git",
+        "tag": "3.10.1",
+        "commit": "0b419384c7446ae74cd2fac295b9db5a18ce4ab1",
+        "url": "https://github.com/ptomato/jasmine-gjs.git"
+      }
+    ],
+    "cleanup": [
+      "*"
+    ]
+  }
+}

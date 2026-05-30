@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "cppunit",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "cppunit",
+    "buildsystem": "autotools",
+    "config-opts": [
+      "--disable-static",
+      "--enable-shared"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://git.libreoffice.org/cppunit",
+        "tag": "cppunit-1.15.1",
+        "commit": "7e1c90fa717eb2253ca1901d4065f06b2469cfa2"
+      }
+    ],
+    "cleanup": [
+      "*"
+    ]
+  }
+}

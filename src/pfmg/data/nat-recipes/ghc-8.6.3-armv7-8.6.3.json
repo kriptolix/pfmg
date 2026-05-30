@@ -1,0 +1,29 @@
+{
+  "header": {
+    "id": "ghc-8.6.3-armv7",
+    "version": "8.6.3",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "build-commands": [
+      "mkdir -p /app/lib",
+      "ln -s /lib/arm-linux-gnueabihf/libtinfo.so /app/lib/libtinfo.so.5",
+      "./configure --prefix=/app",
+      "make install"
+    ],
+    "buildsystem": "simple",
+    "cleanup": [],
+    "name": "ghc-8.6.3-armv7",
+    "only-arches": [
+      "arm"
+    ],
+    "sources": [
+      {
+        "sha256": "559246ee220bd34e6af0a8ab0d5eeb5bfcc84796ac0ce2115f43f2dc30ad69e3",
+        "type": "archive",
+        "url": "https://github.com/commercialhaskell/ghc/releases/download/ghc-8.6.3-release/ghc-8.6.3-armv7-deb8-linux.tar.xz"
+      }
+    ]
+  }
+}

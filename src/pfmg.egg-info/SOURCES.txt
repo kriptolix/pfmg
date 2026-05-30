@@ -13,6 +13,7 @@ src/pfmg/commands/__init__.py
 src/pfmg/commands/ingest.py
 src/pfmg/commands/inspect.py
 src/pfmg/commands/report.py
+src/pfmg/commands/search.py
 src/pfmg/generation/__init__.py
 src/pfmg/generation/collector.py
 src/pfmg/generation/prober.py
@@ -29,5 +30,6 @@ src/pfmg/sandbox/runner.py
 src/pfmg/utils/__init__.py
 src/pfmg/utils/io.py
 src/pfmg/utils/logging.py
+src/pfmg/utils/miscellaneous.py
 src/pfmg/utils/models.py
 src/pfmg/utils/text.py

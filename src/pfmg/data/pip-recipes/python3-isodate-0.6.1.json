@@ -1,0 +1,31 @@
+{
+  "header": {
+    "id": "python3-isodate",
+    "version": "0.6.1",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-isodate",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"isodate==0.6.1\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/b6/85/7882d311924cbcfc70b1890780763e36ff0b140c7e51c110fc59a532f087/isodate-0.6.1-py2.py3-none-any.whl",
+        "sha256": "0751eece944162659049d35f4f549ed815792b38793f07cf73381c1c87cbed96"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/b7/ce/149a00dd41f10bc29e5921b496af8b574d8413afcd5e30dfa0ed46c2cc5e/six-1.17.0-py2.py3-none-any.whl",
+        "sha256": "4721f391ed90541fddacab5acf947aa0d3dc7d27b2e1e8eda2be8970586c3274"
+      }
+    ],
+    "cleanup": [
+      "/bin",
+      "/share/man/man1"
+    ]
+  }
+}

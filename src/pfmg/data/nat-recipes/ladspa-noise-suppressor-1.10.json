@@ -1,0 +1,30 @@
+{
+  "header": {
+    "id": "ladspa-noise-suppressor",
+    "version": "1.10",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "ladspa-noise-suppressor",
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "config-opts": [
+      "-DBUILD_LV2_PLUGIN=OFF",
+      "-DBUILD_VST_PLUGIN=OFF"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/werman/noise-suppression-for-voice/archive/refs/tags/v1.10.tar.gz",
+        "sha256": "6e0c11aeb8392891750b0243c2ba695dab07654bf3f4e01adbed927b36cc690a",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 326607,
+          "stable-only": true,
+          "url-template": "https://github.com/werman/noise-suppression-for-voice/archive/refs/tags/v$version.tar.gz"
+        }
+      }
+    ]
+  }
+}

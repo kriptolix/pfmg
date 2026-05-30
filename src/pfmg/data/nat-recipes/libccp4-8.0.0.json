@@ -1,0 +1,46 @@
+{
+  "header": {
+    "id": "libccp4",
+    "version": "8.0.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libccp4",
+    "buildsystem": "autotools",
+    "config-opts": [
+      "--disable-fortran",
+      "--disable-debug",
+      "--disable-docs",
+      "--disable-dependency-tracking",
+      "--disable-silent-rules",
+      "--enable-shared",
+      "--disable-static",
+      "--disable-Werror"
+    ],
+    "build-options": {
+      "cflags": "-O2 -fPIC -fno-strict-aliasing -DNDEBUG",
+      "cxxflags": "-O2 -fPIC -fno-strict-aliasing -DNDEBUG"
+    },
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://www2.mrc-lmb.cam.ac.uk/personal/pemsley/coot/dependencies/libccp4-8.0.0.tar.gz",
+        "sha256": "cb813ae86612a0866329deab7cee96eac573d81be5b240341d40f9ad5322ff2d",
+        "x-checker-data": {
+          "type": "html",
+          "url": "https://www2.mrc-lmb.cam.ac.uk/personal/pemsley/coot/dependencies/",
+          "version-pattern": "libccp4-([\\d\\.]+)\\.tar\\.gz",
+          "url-template": "https://www2.mrc-lmb.cam.ac.uk/personal/pemsley/coot/dependencies/libccp4-$version.tar.gz"
+        }
+      },
+      {
+        "type": "shell",
+        "commands": [
+          "cd ccp4 && if ! grep -q '^#include <stdlib.h>' library_utils.c; then sed -i '1i \\#include <stdlib.h>' library_utils.c; fi",
+          "cd ccp4 && sed -i -E 's/^[[:space:]]*int[[:space:]]+putenv[[:space:]]*\\([^;]*\\)[[:space:]]*;/extern int putenv(char *);/' library_utils.c"
+        ]
+      }
+    ]
+  }
+}

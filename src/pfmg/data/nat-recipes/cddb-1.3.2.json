@@ -1,0 +1,39 @@
+{
+  "header": {
+    "id": "cddb",
+    "version": "1.3.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "cddb",
+    "buildsystem": "autotools",
+    "build-options": {
+      "cflags": "-Wno-incompatible-pointer-types"
+    },
+    "config-opts": [
+      "--disable-static"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://downloads.sourceforge.net/sourceforge/libcddb/libcddb-1.3.2.tar.bz2",
+        "sha256": "35ce0ee1741ea38def304ddfe84a958901413aa829698357f0bee5bb8f0a223b"
+      },
+      {
+        "type": "script",
+        "commands": [
+          "autoreconf -fiv"
+        ],
+        "dest-filename": "autogen.sh"
+      },
+      {
+        "type": "shell",
+        "commands": [
+          "cp /usr/share/autoconf/build-aux/config.sub .",
+          "cp /usr/share/autoconf/build-aux/config.guess ."
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,154 @@
+{
+  "header": {
+    "id": "gedit",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "gedit",
+    "buildsystem": "meson",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://gitlab.gnome.org/World/gedit/gedit.git",
+        "tag": "50.0",
+        "commit": "25d0bf0c3c40b0866fc23ec875f0af6c67f728ef",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^50\\.\\d+$"
+        }
+      }
+    ],
+    "modules": [
+      {
+        "name": "gspell",
+        "buildsystem": "meson",
+        "config-opts": [
+          "-Dgspell_app=false",
+          "-Dgobject_introspection=false",
+          "-Dvapi=false",
+          "-Dgtk_doc=false",
+          "-Dtests=false",
+          "-Dinstall_tests=false"
+        ],
+        "sources": [
+          {
+            "type": "git",
+            "url": "https://gitlab.gnome.org/GNOME/gspell.git",
+            "tag": "1.14.3",
+            "commit": "4781a91e2fa81f56f47b206cc1755d4053dc4d06",
+            "x-checker-data": {
+              "type": "git",
+              "tag-pattern": "^1\\.\\d+\\.\\d+$"
+            }
+          }
+        ]
+      },
+      {
+        "name": "libgedit-gfls",
+        "buildsystem": "meson",
+        "config-opts": [
+          "-Dgtk_doc=false",
+          "-Dtests=false"
+        ],
+        "sources": [
+          {
+            "type": "git",
+            "url": "https://gitlab.gnome.org/World/gedit/libgedit-gfls.git",
+            "tag": "0.4.0",
+            "commit": "b292896adfb1c371aa8db0819f4754ff3bf4a848",
+            "x-checker-data": {
+              "type": "git",
+              "tag-pattern": "^0\\.4\\.\\d+$"
+            }
+          }
+        ]
+      },
+      {
+        "name": "libgedit-amtk",
+        "buildsystem": "meson",
+        "config-opts": [
+          "-Dgtk_doc=false",
+          "-Dtests=false"
+        ],
+        "sources": [
+          {
+            "type": "git",
+            "url": "https://gitlab.gnome.org/World/gedit/libgedit-amtk.git",
+            "tag": "5.10.0",
+            "commit": "8420fb89b340e33576a50f3ee2d69df417b16e5a",
+            "x-checker-data": {
+              "type": "git",
+              "tag-pattern": "^5\\.10\\.\\d+$"
+            }
+          }
+        ]
+      },
+      {
+        "name": "libpeas",
+        "buildsystem": "meson",
+        "config-opts": [
+          "-Dlua51=false",
+          "-Dpython3=false",
+          "-Ddemos=false",
+          "-Dglade_catalog=false"
+        ],
+        "sources": [
+          {
+            "type": "archive",
+            "url": "https://download.gnome.org/sources/libpeas/1.38/libpeas-1.38.1.tar.xz",
+            "sha256": "e82fd328adcac1aba34b64136bdfcbbacf2b3258a8bc4e5f480a72502a611ae9",
+            "x-checker-data": {
+              "type": "gnome",
+              "versions": {
+                "<": "1.39"
+              },
+              "name": "libpeas"
+            }
+          }
+        ]
+      },
+      {
+        "name": "libgedit-gtksourceview",
+        "buildsystem": "meson",
+        "config-opts": [
+          "-Dgtk_doc=false",
+          "-Dtests=false"
+        ],
+        "sources": [
+          {
+            "type": "git",
+            "url": "https://gitlab.gnome.org/World/gedit/libgedit-gtksourceview.git",
+            "tag": "299.7.0",
+            "commit": "9fb56b0afed2d03fb9b166c9273530321e044377",
+            "x-checker-data": {
+              "type": "git",
+              "tag-pattern": "^299\\.7\\.\\d+$"
+            }
+          }
+        ]
+      },
+      {
+        "name": "libgedit-tepl",
+        "buildsystem": "meson",
+        "config-opts": [
+          "-Dgtk_doc=false",
+          "-Dtests=false"
+        ],
+        "sources": [
+          {
+            "type": "git",
+            "url": "https://gitlab.gnome.org/World/gedit/libgedit-tepl.git",
+            "tag": "6.14.0",
+            "commit": "d60f7ded17b52ea42091c073ea81090e91f38620",
+            "x-checker-data": {
+              "type": "git",
+              "tag-pattern": "^6\\.14\\.\\d+$"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "header": {
+    "id": "python3-chardet",
+    "version": "5.1.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-chardet",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"chardet\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/74/8f/8fc49109009e8d2169d94d72e6b1f4cd45c13d147ba7d6170fb41f22b08f/chardet-5.1.0-py3-none-any.whl",
+        "sha256": "362777fb014af596ad31334fde1e8c327dfdb076e1960d1694662d46a6917ab9",
+        "x-checker-data": {
+          "type": "pypi",
+          "name": "chardet",
+          "packagetype": "bdist_wheel"
+        }
+      }
+    ],
+    "cleanup": [
+      "/bin",
+      "/share/man/man1"
+    ]
+  }
+}

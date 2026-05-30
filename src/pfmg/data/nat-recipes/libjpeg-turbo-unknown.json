@@ -1,0 +1,39 @@
+{
+  "header": {
+    "id": "libjpeg-turbo",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libjpeg-turbo",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DCMAKE_SKIP_RPATH=1",
+      "-DENABLE_STATIC=0",
+      "-DENABLE_SHARED=1",
+      "-DWITH_JPEG8=1",
+      "-DWITH_TURBOJPEG=0",
+      "-DCMAKE_INSTALL_LIBDIR=/app/lib"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/libjpeg-turbo/libjpeg-turbo.git",
+        "tag": "3.1.4",
+        "commit": "e352b02f794f701407b39af08576035ba3360d60",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^([\\d\\.]+)$"
+        }
+      }
+    ],
+    "cleanup": [
+      "/bin/*",
+      "/include",
+      "/share",
+      "/lib/cmake",
+      "/lib/pkgconfig"
+    ]
+  }
+}

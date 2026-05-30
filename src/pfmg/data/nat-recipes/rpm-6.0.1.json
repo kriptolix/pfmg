@@ -1,0 +1,39 @@
+{
+  "header": {
+    "id": "rpm",
+    "version": "6.0.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "rpm",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DENABLE_TESTSUITE=OFF",
+      "-DWITH_AUDIT=OFF",
+      "-DENABLE_PYTHON=OFF",
+      "-DWITH_DBUS=OFF",
+      "-DWITH_ARCHIVE=ON",
+      "-DWITH_SEQUOIA=OFF"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/rpm-software-management/rpm/archive/refs/tags/rpm-6.0.1-release.tar.gz",
+        "sha256": "9796904971f186dd908d001f8d36bbed5436e5b9bc9c9eb98f7e1357ccb2a98d",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 15204,
+          "stable-only": true,
+          "url-template": "https://github.com/rpm-software-management/rpm/archive/refs/tags/rpm-$version.tar.gz"
+        }
+      },
+      {
+        "type": "patch",
+        "paths": [
+          "patches/rpm-disable-docs.patch"
+        ]
+      }
+    ]
+  }
+}

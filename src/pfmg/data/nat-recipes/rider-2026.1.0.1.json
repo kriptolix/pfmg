@@ -1,0 +1,78 @@
+{
+  "header": {
+    "id": "rider",
+    "version": "2026.1.0.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "rider",
+    "buildsystem": "simple",
+    "build-commands": [
+      "unzip rider_logos.zip",
+      "install -D apply_extra /app/bin/apply_extra",
+      "install -D -m644 rider_logos/icon-rider.svg ${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/${FLATPAK_ID}.svg",
+      "install -D -m644 -t ${FLATPAK_DEST}/share/applications/ ${FLATPAK_ID}.desktop",
+      "install -D -m644 -t ${FLATPAK_DEST}/share/metainfo/ ${FLATPAK_ID}.metainfo.xml",
+      "cat idea.properties | tee -a ${FLATPAK_DEST}/bin/idea.properties"
+    ],
+    "sources": [
+      {
+        "type": "extra-data",
+        "url": "https://download.jetbrains.com/rider/JetBrains.Rider-2026.1.0.1.tar.gz",
+        "sha256": "9a8232b134ecabb69ba507cd87505ce4f93a550809213e9eadbc87b145dfd796",
+        "filename": "rider.tar.gz",
+        "only-arches": [
+          "x86_64"
+        ],
+        "x-checker-data": {
+          "type": "jetbrains",
+          "code": "RD",
+          "is-main-source": true
+        },
+        "size": 2097562020
+      },
+      {
+        "type": "extra-data",
+        "url": "https://download.jetbrains.com/rider/JetBrains.Rider-2026.1.0.1-aarch64.tar.gz",
+        "sha256": "d2012658e6f00a2a37681aa6521daee5a7563b77c5255f2e1705134f7d4ab0c2",
+        "filename": "rider.tar.gz",
+        "only-arches": [
+          "aarch64"
+        ],
+        "x-checker-data": {
+          "type": "jetbrains",
+          "code": "RD",
+          "is-main-source": true
+        },
+        "size": 2082600231
+      },
+      {
+        "type": "file",
+        "path": "com.jetbrains.Rider.desktop"
+      },
+      {
+        "type": "file",
+        "path": "com.jetbrains.Rider.metainfo.xml"
+      },
+      {
+        "type": "script",
+        "commands": [
+          "mkdir rider/",
+          "tar -xzf rider.tar.gz --directory=rider/ --strip-components=1",
+          "rm rider.tar.gz"
+        ],
+        "dest-filename": "apply_extra"
+      },
+      {
+        "type": "file",
+        "sha256": "894d2776d31ac722a2958f4dfd549652b4ea2c1615aafd403cdd7a3277e02850",
+        "url": "https://resources.jetbrains.com/storage/products/rider/docs/rider_logos.zip"
+      },
+      {
+        "type": "file",
+        "path": "idea.properties"
+      }
+    ]
+  }
+}

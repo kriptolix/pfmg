@@ -1,0 +1,148 @@
+{
+  "header": {
+    "id": "monero-gui",
+    "version": "0.18.4.7",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "monero-gui",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DWITH_DESKTOP_ENTRY=OFF",
+      "-DWITH_UPDATER=OFF"
+    ],
+    "build-options": {
+      "arch": {
+        "aarch64": {
+          "config-opts": [
+            "-DARCH=armv8-a",
+            "-DBUILD_TAG=linux-armv8"
+          ]
+        },
+        "x86_64": {
+          "config-opts": [
+            "-DARCH=default"
+          ]
+        }
+      }
+    },
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://downloads.getmonero.org/gui/monero-gui-source-v0.18.4.7.tar.bz2",
+        "sha256": "03597136cd418b63d9f2866be874662dc74604299987de50d19ac1af6ba52af1",
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://api.github.com/repos/monero-project/monero-gui/releases/latest",
+          "version-query": ".tag_name",
+          "url-query": "\"https://downloads.getmonero.org/gui/monero-gui-source-\" + $version + \".tar.bz2\""
+        }
+      },
+      {
+        "type": "file",
+        "path": "extra/org.getmonero.Monero.desktop"
+      },
+      {
+        "type": "file",
+        "path": "extra/org.getmonero.Monero.metainfo.xml"
+      }
+    ],
+    "post-install": [
+      "install -Dpm644 org.getmonero.Monero.desktop $FLATPAK_DEST/share/applications/$FLATPAK_ID.desktop",
+      "install -Dpm644 org.getmonero.Monero.metainfo.xml $FLATPAK_DEST/share/metainfo/$FLATPAK_ID.metainfo.xml",
+      "for x in 16 24 32 48 64 96 128 256; do install -Dpm644 images/appicons/${x}x${x}.png $FLATPAK_DEST/share/icons/hicolor/${x}x${x}/apps/$FLATPAK_ID.png; done"
+    ],
+    "modules": [
+      {
+        "name": "boost",
+        "buildsystem": "simple",
+        "build-commands": [
+          "./bootstrap.sh --prefix=$FLATPAK_DEST --with-libraries=chrono,date_time,filesystem,locale,program_options,regex,serialization,system,thread",
+          "./b2 headers",
+          "./b2 -j$FLATPAK_BUILDER_N_JOBS install variant=release --layout=system"
+        ],
+        "sources": [
+          {
+            "type": "archive",
+            "url": "https://archives.boost.io/release/1.88.0/source/boost_1_88_0.tar.gz",
+            "sha256": "3621533e820dcab1e8012afd583c0c73cf0f77694952b81352bf38c1488f9cb4"
+          }
+        ]
+      },
+      {
+        "name": "protobuf",
+        "sources": [
+          {
+            "type": "archive",
+            "url": "https://github.com/protocolbuffers/protobuf/releases/download/v21.3/protobuf-cpp-3.21.3.tar.gz",
+            "sha256": "c98a4f17ed57e9e4dafc4a52e76ee012f9a6a13750488b20b4c370a3eb1561fc"
+          }
+        ]
+      },
+      {
+        "name": "libunbound",
+        "config-opts": [
+          "--with-libunbound-only"
+        ],
+        "sources": [
+          {
+            "type": "archive",
+            "url": "https://nlnetlabs.nl/downloads/unbound/unbound-1.25.0.tar.gz",
+            "sha256": "062a6eda723fe2f041bee4079b76981569f1d12e066bbd74800242fc1ebddec7",
+            "x-checker-data": {
+              "type": "html",
+              "url": "https://nlnetlabs.nl/downloads/unbound/",
+              "pattern": "(unbound-([\\d\\.]+)\\.tar\\.gz)"
+            }
+          }
+        ]
+      },
+      {
+        "name": "libsodium",
+        "sources": [
+          {
+            "type": "archive",
+            "url": "https://github.com/jedisct1/libsodium/releases/download/1.0.22-RELEASE/libsodium-1.0.22.tar.gz",
+            "sha256": "adbdd8f16149e81ac6078a03aca6fc03b592b89ef7b5ed83841c086191be3349",
+            "x-checker-data": {
+              "type": "json",
+              "url": "https://api.github.com/repos/jedisct1/libsodium/releases/latest",
+              "version-query": ".name",
+              "url-query": ".assets | map(select(.name==\"libsodium-\\($version).tar.gz\")) | first | .browser_download_url"
+            }
+          }
+        ]
+      },
+      {
+        "name": "hidapi",
+        "buildsystem": "cmake-ninja",
+        "config-opts": [
+          "-DCMAKE_BUILD_TYPE=Release"
+        ],
+        "sources": [
+          {
+            "type": "archive",
+            "url": "https://github.com/libusb/hidapi/archive/hidapi-0.15.0.tar.gz",
+            "sha256": "5d84dec684c27b97b921d2f3b73218cb773cf4ea915caee317ac8fc73cef8136"
+          }
+        ]
+      },
+      {
+        "name": "libzmq",
+        "config-opts": [
+          "--with-libsodium",
+          "--disable-Werror"
+        ],
+        "sources": [
+          {
+            "type": "archive",
+            "url": "https://github.com/zeromq/libzmq/releases/download/v4.3.5/zeromq-4.3.5.tar.gz",
+            "sha256": "6653ef5910f17954861fe72332e68b03ca6e4d9c7160eb3a8de5a5a913bfab43"
+          }
+        ]
+      }
+    ]
+  }
+}

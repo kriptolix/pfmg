@@ -1,0 +1,39 @@
+{
+  "header": {
+    "id": "swift",
+    "version": "5.10.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "swift",
+    "buildsystem": "simple",
+    "sources": [
+      {
+        "type": "archive",
+        "only-arches": [
+          "x86_64"
+        ],
+        "url": "https://download.swift.org/swift-5.10.1-release/amazonlinux2/swift-5.10.1-RELEASE/swift-5.10.1-RELEASE-amazonlinux2.tar.gz",
+        "sha256": "2a430fde80c558875507808d9bfcb1afe39effaa683c14b3c72d6b84380de267"
+      },
+      {
+        "type": "archive",
+        "only-arches": [
+          "aarch64"
+        ],
+        "url": "https://download.swift.org/swift-5.10.1-release/amazonlinux2-aarch64/swift-5.10.1-RELEASE/swift-5.10.1-RELEASE-amazonlinux2-aarch64.tar.gz",
+        "sha256": "d5de792679ab9ba1336377ab941b7550ce0b9f5d0f65ee228b80e811de2f308b"
+      },
+      {
+        "type": "file",
+        "path": "org.freedesktop.Sdk.Extension.swift5.metainfo.xml"
+      }
+    ],
+    "build-commands": [
+      "mkdir -p /usr/lib/sdk/swift5",
+      "cp -R usr/* /usr/lib/sdk/swift5",
+      "install -Dm644 org.freedesktop.Sdk.Extension.swift5.metainfo.xml $FLATPAK_DEST/share/metainfo/org.freedesktop.Sdk.Extension.swift5.metainfo.xml"
+    ]
+  }
+}

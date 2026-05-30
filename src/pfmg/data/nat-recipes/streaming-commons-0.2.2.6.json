@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "streaming-commons",
+    "version": "0.2.2.6",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "streaming-commons",
+    "buildsystem": "simple",
+    "builddir": false,
+    "build-commands": [
+      "echo '#! /usr/bin/env runhaskell' >Setup.txt",
+      "echo '> import Distribution.Simple' >>Setup.txt",
+      "echo '> main = defaultMain' >>Setup.txt",
+      "ln -s Setup.txt Setup.lhs || true",
+      "runhaskell Setup configure --prefix=/app",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "sources": [
+      {
+        "sha256": "0180958a882eb0f6262b812fe886c2b1b8285474b5b958f814ae4f05409fbf79",
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/streaming-commons-0.2.2.6/streaming-commons-0.2.2.6.tar.gz"
+      },
+      {
+        "dest-filename": "streaming-commons.cabal",
+        "sha256": "d5c6fb99efd4e71bdb0351d55f2d87e16c11880f42998e39363eb63f057ae24b",
+        "type": "file",
+        "url": "https://hackage.haskell.org/package/streaming-commons-0.2.2.6/revision/1.cabal"
+      }
+    ]
+  }
+}

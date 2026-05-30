@@ -1,0 +1,26 @@
+{
+  "header": {
+    "id": "greenfoot",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "greenfoot",
+    "buildsystem": "simple",
+    "build-commands": [
+      "unzip greenfoot-dist.jar -d dist",
+      "mkdir -p /app/greenfoot",
+      "cp -r dist/* /app/greenfoot",
+      "for size in 32 48 256; do install -Dm644 /app/greenfoot/lib/images/greenfoot-icon-${size}.png /app/share/icons/hicolor/${size}x${size}/apps/org.greenfoot.Greenfoot.png; done"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://www.greenfoot.org/download/files/Greenfoot-generic-382.jar",
+        "dest-filename": "Greenfoot-generic-382.zip",
+        "sha256": "3796b015a1fe420bf76315478415dda1b4d3e0ae7eb7a4e32bc8f6dcb7de6633"
+      }
+    ]
+  }
+}

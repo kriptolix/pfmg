@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "python3-parse-type",
+    "version": "0.6.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-parse-type",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"parse-type\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/89/a1/82ce536be577ba09d4dcee45db58423a180873ad38a2d014d26ab7b7cb8a/parse-1.19.0.tar.gz",
+        "sha256": "9ff82852bcb65d139813e2a5197627a94966245c897796760a3a2a8eb66f020b"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/48/05/c7887ecb0adaab604bb4f7ced908ce0120b20abe588823dfca173ed407ab/parse_type-0.6.0-py2.py3-none-any.whl",
+        "sha256": "c148e88436bd54dab16484108e882be3367f44952c649c9cd6b82a7370b650cb"
+      }
+    ]
+  }
+}

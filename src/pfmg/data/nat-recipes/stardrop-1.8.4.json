@@ -1,0 +1,29 @@
+{
+  "header": {
+    "id": "stardrop",
+    "version": "1.8.4",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "Stardrop",
+    "buildsystem": "simple",
+    "build-commands": [
+      "install-sdk.sh",
+      "dotnet publish -c Release --source ./nuget-sources Stardrop/Stardrop.csproj --self-contained true",
+      "cp -r --remove-destination /run/build/Stardrop/Stardrop/bin/Release/linux-*/publish/* /app/bin/"
+    ],
+    "sources": [
+      "nuget-sources.json",
+      {
+        "type": "archive",
+        "url": "https://github.com/Adda0/Stardrop/archive/refs/tags/v1.8.4-beta.2-custom_adda.3.tar.gz",
+        "sha256": "27842763ae075f0383e9043b1c3ead6375319d1cfd252fe4a21888831d14633b"
+      },
+      {
+        "type": "file",
+        "path": "global.json"
+      }
+    ]
+  }
+}

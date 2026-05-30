@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "materia-nord",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "Materia-nord",
+    "buildsystem": "simple",
+    "build-commands": [
+      "mkdir -pm 755 /usr/share/runtime/share/themes/Materia-nord/",
+      "cp -r index.theme gtk-* /usr/share/runtime/share/themes/Materia-nord/"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://tildegit.org/mcha/materia-nord/archive/a8fe5f6d33f89e87f554b4f14e0142d71ff428d1.tar.gz",
+        "sha256": "9226c4cb0fde78e48224014e2d68177528833816cc0d06b194d11f32d9213495"
+      }
+    ]
+  }
+}

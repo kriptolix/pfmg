@@ -1,0 +1,33 @@
+{
+  "header": {
+    "id": "bc",
+    "version": "1.08.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "bc",
+    "build-options": {
+      "no-debuginfo": true
+    },
+    "buildsystem": "autotools",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://ftp.gnu.org/gnu/bc/bc-1.08.2.tar.gz",
+        "mirror-urls": [
+          "https://mirrors.kernel.org/gnu/bc/bc-1.07.1.tar.gz",
+          "https://mirrors.ocf.berkeley.edu/gnu/bc/bc-1.07.1.tar.gz",
+          "https://ftpmirror.gnu.org/gnu/bc/bc-1.07.1.tar.gz"
+        ],
+        "sha256": "ae470fec429775653e042015edc928d07c8c3b2fc59765172a330d3d87785f86",
+        "x-checker-data": {
+          "type": "html",
+          "url": "https://ftp.gnu.org/gnu/bc/",
+          "version-pattern": "bc-(\\d\\.\\d+\\.?\\d*).tar.gz",
+          "url-template": "https://ftp.gnu.org/gnu/bc/bc-$version.tar.gz"
+        }
+      }
+    ]
+  }
+}

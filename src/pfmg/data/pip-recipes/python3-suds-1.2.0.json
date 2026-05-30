@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-suds",
+    "version": "1.2.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-suds",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"suds\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/c4/43/658bd1825a5f58c1182269eaa6165084d8d95e031cd7e34a2a1bcf773579/suds-1.2.0-py3-none-any.whl",
+        "sha256": "2cf8ed43ed8a0df350027c741f5295d6be8443d4e820cb36f2c17b033e331d5b"
+      }
+    ]
+  }
+}

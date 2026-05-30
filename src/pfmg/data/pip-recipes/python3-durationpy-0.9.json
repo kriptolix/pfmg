@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-durationpy",
+    "version": "0.9",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-durationpy",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"durationpy==0.9\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/4c/a3/ac312faeceffd2d8f86bc6dcb5c401188ba5a01bc88e69bed97578a0dfcd/durationpy-0.9-py3-none-any.whl",
+        "sha256": "e65359a7af5cedad07fb77a2dd3f390f8eb0b74cb845589fa6c057086834dd38"
+      }
+    ]
+  }
+}

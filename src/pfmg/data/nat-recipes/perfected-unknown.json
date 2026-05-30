@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "perfected",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "perfected",
+    "buildsystem": "cmake-ninja",
+    "no-make-install": true,
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+    ],
+    "post-install": [
+      "install -Dm 755 perfected.so /app/lib/dhewm3",
+      "install -Dm 755 perfected_roe.so /app/lib/dhewm3"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/dhewm/dhewm3-sdk",
+        "commit": "20a7240238f9dcd4864e841343550b18605ac34a"
+      }
+    ]
+  }
+}

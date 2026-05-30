@@ -1,0 +1,37 @@
+{
+  "header": {
+    "id": "python3-wiremapper",
+    "version": "1.19.1",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-wiremapper",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} cobs dbus-python pycairo pockethernet"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/51/51/cf3bc0f9fef43bd55813fa9f8cc58f55ad3f95fc7f470b3a7b4c434fd79a/cobs-1.1.3.tar.gz",
+        "sha256": "ae3319b5704d9269d1ca60787d2e5b79322bb9f440215ea086b986ed8d2a8405"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/62/7e/d4fb56a1695fa65da0c8d3071855fa5408447b913c58c01933c2f81a269a/dbus-python-1.2.16.tar.gz",
+        "sha256": "11238f1d86c995d8aed2e22f04a1e3779f0d70e587caffeab4857f3c662ed5a4"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/e8/9d/c8be300fc6b1298559d37a071c3833b0b251e0fff334d2e4c408d5789162/pycairo-1.19.1.tar.gz",
+        "sha256": "2c143183280feb67f5beb4e543fd49990c28e7df427301ede04fc550d3562e84"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/32/d5/ab3f0d2ee5f45073171e9b0433db33160912b7bf85cc48f25bc4c674ae05/pockethernet-0.7.0-py3-none-any.whl",
+        "sha256": "a2a04634609f2ff4869523b29d8ab3ffc59a1f32bcd4d1d60c0644443dccc87d"
+      }
+    ]
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "header": {
+    "id": "tldr",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "tldr",
+    "buildsystem": "simple",
+    "build-commands": [
+      "mkdir -p ${FLATPAK_DEST}/share/io.github.shonebinu.Brief/tldr-data",
+      "rm pages.en",
+      "mv pages pages.en",
+      "python3 generate_commands_index.py",
+      "cp -r pages.* ${FLATPAK_DEST}/share/io.github.shonebinu.Brief/tldr-data",
+      "cp commands.json ${FLATPAK_DEST}/share/io.github.shonebinu.Brief/tldr-data"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/tldr-pages/tldr.git",
+        "commit": "a76d677d042e37d81a6b4bf133835e9f18e10c96"
+      },
+      {
+        "type": "file",
+        "path": "./generate_commands_index.py"
+      }
+    ]
+  }
+}

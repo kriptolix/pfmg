@@ -1,0 +1,41 @@
+{
+  "header": {
+    "id": "purr-data",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "purr-data",
+    "buildsystem": "autotools",
+    "subdir": "pd/src",
+    "config-opts": [
+      "--disable-portaudio",
+      "--enable-alsa",
+      "--disable-oss",
+      "--enable-jack"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/agraef/purr-data/",
+        "tag": "2.20.1",
+        "commit": "fb224e0396cfa448c038038f25b19e19839ff069",
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://api.github.com/repos/agraef/purr-data/releases/latest",
+          "tag-query": ".tag_name",
+          "version-query": "$tag",
+          "is-main-source": true
+        }
+      },
+      {
+        "type": "patch",
+        "paths": [
+          "patch/gnu-make-parallel.patch",
+          "patch/no-rsync-during-install.patch"
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "header": {
+    "id": "jellyfin-web",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "jellyfin-web",
+    "disabled": false,
+    "buildsystem": "simple",
+    "build-options": {
+      "append-path": "/usr/lib/sdk/node22/bin"
+    },
+    "build-commands": [
+      "npm ci --no-audit --offline --cache=$FLATPAK_BUILDER_BUILDDIR/flatpak-node/npm-cache",
+      "npm run build:production --offline --cache=$FLATPAK_BUILDER_BUILDDIR/flatpak-node/npm-cache",
+      "mkdir -p $FLATPAK_DEST/bin/jellyfin-web",
+      "cp -r dist/* $FLATPAK_DEST/bin/jellyfin-web"
+    ],
+    "sources": [
+      "npm-generated-sources.json",
+      {
+        "type": "git",
+        "url": "https://github.com/jellyfin/jellyfin-web.git",
+        "commit": "6b6d7e5996b26a2f4191b37369b3283e2a0d36bb",
+        "tag": "v10.11.8",
+        "x-checker-data": {
+          "is-main-source": true,
+          "type": "git",
+          "tag-pattern": "^v([\\d.]+)$",
+          "versions": {
+            "<": "v10.12.0"
+          }
+        }
+      }
+    ]
+  }
+}

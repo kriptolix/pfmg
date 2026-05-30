@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "libimagequant",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libimagequant",
+    "builddir": true,
+    "buildsystem": "meson",
+    "config-opts": [
+      "--libdir=lib",
+      "--buildtype=release"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/lovell/libimagequant.git",
+        "tag": "v2.4.1",
+        "commit": "4e82d9492db228a7a2057c442f7a6eb40508a0eb"
+      }
+    ]
+  }
+}

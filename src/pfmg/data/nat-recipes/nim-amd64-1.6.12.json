@@ -1,0 +1,31 @@
+{
+  "header": {
+    "id": "nim-amd64",
+    "version": "1.6.12",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "nim_amd64",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://nim-lang.org/download/nim-1.6.12-linux_x64.tar.xz",
+        "sha256": "6b22894d0db974e10bd271217ce7f01a5fcd0b37cb3ea9d539734cb46f2cac75",
+        "dest": "nim_sdk_amd64"
+      }
+    ],
+    "buildsystem": "simple",
+    "only-arches": [
+      "x86_64"
+    ],
+    "cleanup": [
+      "*"
+    ],
+    "build-commands": [
+      "mkdir -p /app/lib/sdk/nim",
+      "cp -r nim_sdk_amd64/* /app/lib/sdk/nim",
+      "chmod -R 755 /app/lib/sdk/nim/bin"
+    ]
+  }
+}

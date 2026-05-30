@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "gdus++",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "gdus++",
+    "buildsystem": "meson",
+    "config-opts": [
+      "-Dwerror=false"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://codeberg.org/OpenVPN/gdbuspp.git",
+        "tag": "v3"
+      }
+    ]
+  }
+}

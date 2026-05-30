@@ -1,0 +1,30 @@
+{
+  "header": {
+    "id": "tigervnc",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "tigervnc",
+    "disabled": false,
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/KangLin/tigervnc.git",
+        "commit": "e65dd4121630693d311d1445cdc2a6074c5a5295"
+      }
+    ],
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "config-opts": [
+      "-DBUILD_VIEWER=OFF",
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
+    ],
+    "cleanup": [
+      "/bin",
+      "/lib/*.so*"
+    ]
+  }
+}

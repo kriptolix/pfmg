@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "setuptools-scm",
+    "version": "8.1.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "setuptools_scm",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=/app \"setuptools_scm==8.1.0\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/a0/b9/1906bfeb30f2fc13bb39bf7ddb8749784c05faadbd18a21cf141ba37bff2/setuptools_scm-8.1.0-py3-none-any.whl",
+        "sha256": "897a3226a6fd4a6eb2f068745e49733261a21f70b1bb28fce0339feb978d9af3"
+      }
+    ]
+  }
+}

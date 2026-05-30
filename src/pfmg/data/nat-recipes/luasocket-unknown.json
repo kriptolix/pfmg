@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "luasocket",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "luasocket",
+    "buildsystem": "simple",
+    "build-commands": [
+      "make LUAV=5.1 linux",
+      "make install-unix INSTALL_TOP=${FLATPAK_DEST} INSTALL_TOP_CDIR=${FLATPAK_DEST}/lib/lua/5.1/ INSTALL_TOP_LDIR=${FLATPAK_DEST}/share/lua/5.1/"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/lunarmodules/luasocket",
+        "tag": "v3.1.0",
+        "commit": "95b7efa9da506ef968c1347edf3fc56370f0deed"
+      }
+    ]
+  }
+}

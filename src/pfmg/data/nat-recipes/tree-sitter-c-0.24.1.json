@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "tree-sitter-c",
+    "version": "0.24.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "tree-sitter-c",
+    "buildsystem": "simple",
+    "build-commands": [
+      "mkdir -p /app/lib/nvim/parser",
+      "cc -shared -fPIC src/parser.c -I src -o /app/lib/nvim/parser/c.so"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/tree-sitter/tree-sitter-c/archive/v0.24.1.tar.gz",
+        "sha256": "25dd4bb3dec770769a407e0fc803f424ce02c494a56ce95fedc525316dcf9b48"
+      }
+    ]
+  }
+}

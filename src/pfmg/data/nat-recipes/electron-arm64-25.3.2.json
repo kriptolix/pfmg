@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "electron-arm64",
+    "version": "25.3.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "electron-arm64",
+    "only-arches": [
+      "aarch64"
+    ],
+    "buildsystem": "simple",
+    "build-commands": [
+      "mkdir -p ${FLATPAK_DEST}/bin/resources",
+      "cp *.so  ${FLATPAK_DEST}/bin",
+      "cp *.bin ${FLATPAK_DEST}/bin",
+      "cp *.dat ${FLATPAK_DEST}/bin",
+      "cp *.pak ${FLATPAK_DEST}/bin",
+      "cp electron ${FLATPAK_DEST}/bin/",
+      "cp -r resources/ ${FLATPAK_DEST}/bin/"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/electron/electron/releases/download/v25.3.2/electron-v25.3.2-linux-arm64.zip",
+        "sha512": "24e06513df2357266ff3f169291eb12d2265f2cbc2c8509833389aea3e62d0f60da6295f3233bc5423e4fdcbc807e47ecabeadd50f332909b92b36593e18c72f",
+        "strip-components": 0
+      }
+    ]
+  }
+}

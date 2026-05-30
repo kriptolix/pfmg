@@ -1,0 +1,36 @@
+{
+  "header": {
+    "id": "wireshark",
+    "version": "4.6.5",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "wireshark",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release"
+    ],
+    "cleanup": [
+      "/include",
+      "/share/man",
+      "/lib/pkgconfig"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://1.eu.dl.wireshark.org/src/all-versions/wireshark-4.6.5.tar.xz",
+        "sha256": "b5322538b20fa3e0bf004be83c534a42937d442be3f960d01b4e1f0db6c50386",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 5137,
+          "url-template": "https://1.eu.dl.wireshark.org/src/all-versions/wireshark-$version.tar.xz"
+        }
+      },
+      {
+        "type": "patch",
+        "path": "0001-Mention-that-data-capture-isn-t-possible.patch"
+      }
+    ]
+  }
+}

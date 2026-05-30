@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "qhotkey",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "qhotkey",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DBUILD_SHARED_LIBS=ON",
+      "-DQT_DEFAULT_MAJOR_VERSION=6"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/Skycoder42/QHotkey.git",
+        "commit": "6c0e98492c59206139f8490706aadeb8ed033057"
+      }
+    ]
+  }
+}

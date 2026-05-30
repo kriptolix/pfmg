@@ -1,0 +1,33 @@
+{
+  "header": {
+    "id": "python3-qh3",
+    "version": "1.5.6",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-qh3",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"qh3==1.5.6\""
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/01/b8/41e849d7164b6ba1a61f66c6687008d750ee8b605a194a444197a7151d85/qh3-1.5.6-cp37-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "sha256": "692722cd545bcc6c8d6de3ac58ea875f7f43e2cb014be64e267511e8d16bafcd",
+        "only-arches": [
+          "x86_64"
+        ]
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/7a/bc/5942a9189f1452744eeacff89ade2d58a312f11c5a1dd57c183bbd86c9c7/qh3-1.5.6-cp37-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl",
+        "sha256": "1842aa5440b8c94a392202aa19e3593a597fe1e808950de00602bf7d46f6f8a3",
+        "only-arches": [
+          "aarch64"
+        ]
+      }
+    ]
+  }
+}

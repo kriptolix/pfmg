@@ -1,0 +1,33 @@
+{
+  "header": {
+    "id": "snowball",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "snowball",
+    "buildsystem": "simple",
+    "build-commands": [
+      "make -j4",
+      "install -Dm644 include/libstemmer.h /app/include/libstemmer.h",
+      "cp -d libstemmer.so.* -t /app/lib/",
+      "install -Dm644 libstemmer.so /app/lib/libstemmer.so"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/snowballstem/snowball.git",
+        "tag": "v3.0.1"
+      },
+      {
+        "type": "patch",
+        "path": "patches/snowball_build-options.diff"
+      },
+      {
+        "type": "patch",
+        "path": "patches/snowball_shared-library.diff"
+      }
+    ]
+  }
+}

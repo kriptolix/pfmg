@@ -1,0 +1,29 @@
+{
+  "header": {
+    "id": "qtutilities",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "qtutilities",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE:STRING=Release",
+      "-DQT_PACKAGE_PREFIX:STRING='Qt6'",
+      "-DBUILTIN_TRANSLATIONS:BOOL=ON"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/Martchus/qtutilities.git",
+        "tag": "v6.21.0",
+        "commit": "0a58e1bb9b854c1a0fb70655a31a4636aecdd31c",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^v([\\d.]+)$"
+        }
+      }
+    ]
+  }
+}

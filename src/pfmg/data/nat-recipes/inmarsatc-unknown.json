@@ -1,0 +1,19 @@
+{
+  "header": {
+    "id": "inmarsatc",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "inmarsatc",
+    "buildsystem": "cmake-ninja",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/cropinghigh/inmarsatc.git",
+        "commit": "cda1242e79981d71cd8608e971c8dbc691942b10"
+      }
+    ]
+  }
+}

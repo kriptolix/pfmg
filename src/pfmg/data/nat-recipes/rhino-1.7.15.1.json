@@ -1,0 +1,30 @@
+{
+  "header": {
+    "id": "rhino",
+    "version": "1.7.15.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "rhino",
+    "buildsystem": "simple",
+    "build-commands": [
+      "install -Dpm644 -t \"${FLATPAK_DEST}/lib/ext/\" rhino-engine-*.jar"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://repo1.maven.org/maven2/org/mozilla/rhino-engine/1.7.15.1/rhino-engine-1.7.15.1.jar",
+        "sha256": "10a5f3b84d0d7a021b1b179a0ffbae0802cc3dabff32d31ae22b4e7df07d0bcb",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 229008,
+          "versions": {
+            "<": "1.8.0"
+          },
+          "url-template": "https://repo1.maven.org/maven2/org/mozilla/rhino-engine/$version/rhino-engine-$version.jar"
+        }
+      }
+    ]
+  }
+}

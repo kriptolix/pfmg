@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "lgi",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "lgi",
+    "buildsystem": "meson",
+    "config-opts": [
+      "-Dtests=false"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/pavouk/lgi.git",
+        "commit": "95418635aa8151a516d43166227ea2b9d4c4403f"
+      }
+    ]
+  }
+}

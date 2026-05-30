@@ -1,0 +1,92 @@
+{
+  "header": {
+    "id": "mangohud",
+    "version": "0.8.3",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "MangoHud",
+    "buildsystem": "meson",
+    "build-options": {
+      "prefix": "/app/lib/extensions/vulkan/MangoHud",
+      "libdir": "/app/lib/extensions/vulkan/MangoHud/lib/x86_64-linux-gnu",
+      "prepend-path": "/app/lib/extensions/vulkan/MangoHud/bin",
+      "prepend-pkg-config-path": "/app/lib/extensions/vulkan/MangoHud/lib/x86_64-linux-gnu/pkgconfig",
+      "ldflags": "-Wl,-rpath=/app/lib/extensions/vulkan/MangoHud/lib/x86_64-linux-gnu",
+      "env": {
+        "FLATPAK_LIBDIR": "/app/lib/extensions/vulkan/MangoHud/lib/x86_64-linux-gnu",
+        "C_INCLUDE_PATH": "/app/lib/extensions/vulkan/MangoHud/include",
+        "CPLUS_INCLUDE_PATH": "/app/lib/extensions/vulkan/MangoHud/include"
+      }
+    },
+    "cleanup": [
+      "/include",
+      "/share/cmake",
+      "/share/doc",
+      "/share/man",
+      "/share/pkgconfig",
+      "/lib/*/pkgconfig",
+      "/lib/*/cmake",
+      "/lib/*/*.a",
+      "/lib/*/*.la"
+    ],
+    "config-opts": [
+      "-Dmangoapp=true",
+      "-Dappend_libdir_mangohud=false",
+      "-Dmangoplot=disabled"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/flightlessmango/MangoHud/releases/download/v0.8.3/MangoHud-v0.8.3-Source.tar.xz",
+        "sha256": "e810ac73163468533ddb7c74b681f1de4992a3d785dce294fee9933ec8956b05"
+      }
+    ],
+    "modules": [
+      {
+        "name": "libNVCtrl",
+        "buildsystem": "simple",
+        "no-autogen": true,
+        "no-make-install": true,
+        "build-commands": [
+          "make",
+          "install -d /app/lib/extensions/vulkan/MangoHud/lib/x86_64-linux-gnu",
+          "cp -a libXNVCtrl.so* /app/lib/extensions/vulkan/MangoHud/lib/x86_64-linux-gnu",
+          "install -d /app/lib/extensions/vulkan/MangoHud/include/NVCtrl",
+          "install -D *.h /app/lib/extensions/vulkan/MangoHud/include/NVCtrl"
+        ],
+        "subdir": "src/libXNVCtrl",
+        "sources": [
+          {
+            "type": "archive",
+            "archive-type": "tar",
+            "url": "https://api.github.com/repos/NVIDIA/nvidia-settings/tarball/refs/tags/470.63.01",
+            "sha256": "0ede63515851d85ac0d1ed5f00e355f539968e6d1fd226120a27b2c66c3575de"
+          },
+          {
+            "type": "patch",
+            "path": "patches/libxnvctrl_so_0.patch"
+          }
+        ]
+      },
+      {
+        "name": "glfw",
+        "buildsystem": "cmake-ninja",
+        "config-opts": [
+          "-DGLFW_BUILD_EXAMPLES=BOOL=OFF",
+          "-DGLFW_BUILD_TESTS=BOOL=OFF",
+          "-DGLFW_BUILD_DOCS=BOOL=OFF"
+        ],
+        "sources": [
+          {
+            "type": "git",
+            "url": "https://github.com/glfw/glfw.git",
+            "tag": "3.4",
+            "commit": "7b6aead9fb88b3623e3b3725ebb42670cbe4c579"
+          }
+        ]
+      }
+    ]
+  }
+}

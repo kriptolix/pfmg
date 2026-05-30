@@ -1,0 +1,65 @@
+{
+  "header": {
+    "id": "shadps4-qtlauncher",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "shadps4-qtlauncher",
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "build-options": {
+      "append-path": "/usr/lib/sdk/llvm21/bin",
+      "prepend-ld-library-path": "/usr/lib/sdk/llvm21/lib"
+    },
+    "config-opts": [
+      "-DENABLE_UPDATER=OFF",
+      "-DHIDE_VERSION_MANAGER=ON",
+      "-DCMAKE_C_COMPILER=clang",
+      "-DCMAKE_CXX_COMPILER=clang++",
+      "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
+      "-DCMAKE_INTERPROCEDURAL_OPTIMIZATION_RELWITHDEBINFO=ON"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/shadps4-emu/shadps4-qtlauncher.git",
+        "tag": "v224",
+        "commit": "92bdc40eef82a7a3ee241c35ba961d11a902dd8e",
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://api.github.com/repos/shadps4-emu/shadps4-qtlauncher/releases/latest",
+          "tag-query": ".tag_name",
+          "version-query": ".tag_name | sub(\"^v\"; \"\")"
+        }
+      },
+      {
+        "type": "patch",
+        "path": "patches/net.shadps4.shadps4-qtlauncher.fix-segfault.patch"
+      },
+      {
+        "type": "file",
+        "path": "dist/versions.json"
+      },
+      {
+        "type": "file",
+        "path": "dist/qt_ui.ini"
+      },
+      {
+        "type": "script",
+        "dest-filename": "net.shadps4.shadPS4.sh",
+        "commands": [
+          "for i in {0..9}; do\n  if [[ ! -S \"${XDG_RUNTIME_DIR}/discord-ipc-$i\" ]]; then\n    ln -sf {app/com.discordapp.Discord,$XDG_RUNTIME_DIR}/discord-ipc-$i\n  fi\ndone\nmkdir -p \"${XDG_DATA_HOME}/shadPS4QtLauncher/\"\nfor config_file in versions.json qt_ui.ini; do\n  if [[ ! -f ${XDG_DATA_HOME}/shadPS4QtLauncher/${config_file} ]]; then\n    echo \"Installing default ${config_file}...\"\n    cp /app/etc/default/shadps4/${config_file} ${XDG_DATA_HOME}/shadPS4QtLauncher/\n  fi\ndone\nshadPS4QtLauncher \"$@\"\n"
+        ]
+      }
+    ],
+    "post-install": [
+      "mv /app/share/applications/net.shadps4.shadps4-qtlauncher.desktop /app/share/applications/${FLATPAK_ID}.desktop",
+      "desktop-file-edit --set-key=Exec --set-value=${FLATPAK_ID}.sh /app/share/applications/${FLATPAK_ID}.desktop",
+      "install -D -m755 -t /app/bin/ ${FLATPAK_BUILDER_BUILDDIR}/${FLATPAK_ID}.sh",
+      "install -D -m644 -t /app/etc/default/shadps4 ${FLATPAK_BUILDER_BUILDDIR}/versions.json",
+      "install -D -m644 -t /app/etc/default/shadps4 ${FLATPAK_BUILDER_BUILDDIR}/qt_ui.ini"
+    ]
+  }
+}

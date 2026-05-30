@@ -1,0 +1,30 @@
+{
+  "header": {
+    "id": "gstreamer-plugins-bad",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "gstreamer-plugins-bad",
+    "buildsystem": "meson",
+    "config-opts": [
+      "--libdir=lib",
+      "--wrap-mode=nodownload",
+      "-Dauto_features=disabled",
+      "-Dx265=enabled",
+      "-Dgpl=enabled",
+      "-Dsvtav1=enabled"
+    ],
+    "subdir": "subprojects/gst-plugins-bad",
+    "sources": [
+      {
+        "type": "git",
+        "tag": "1.26.10",
+        "url": "https://gitlab.freedesktop.org/gstreamer/gstreamer.git",
+        "commit": "bfdc62185e243d3633aa916187a566d03a587792",
+        "disable-submodules": true
+      }
+    ]
+  }
+}

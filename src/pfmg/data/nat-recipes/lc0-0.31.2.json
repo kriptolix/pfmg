@@ -1,0 +1,36 @@
+{
+  "header": {
+    "id": "lc0",
+    "version": "0.31.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "lc0",
+    "buildsystem": "meson",
+    "config-opts": [
+      "-Dopenblas=true",
+      "-Dopenblas_libdirs=/app/lib",
+      "-Dgtest=false",
+      "-Db_lto=true",
+      "-Dopencl=false"
+    ],
+    "post-install": [
+      "mkdir -p /app/bin/Engines/lc0",
+      "mv /app/bin/lc0 /app/bin/Engines/lc0/"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/LeelaChessZero/lc0/archive/refs/tags/v0.31.2.zip",
+        "sha256": "229273ad25a4948dbd6aa3c0162dc87f19e8e763f3c0ebdc2536cd97039172a8"
+      },
+      {
+        "type": "archive",
+        "dest": "./libs/lczero-common/",
+        "url": "https://github.com/LeelaChessZero/lczero-common/archive/refs/heads/master.zip",
+        "sha256": "ce33de444bf17f8c99dd1f4880cae0f29113197022b174435f94428e15d2e51c"
+      }
+    ]
+  }
+}

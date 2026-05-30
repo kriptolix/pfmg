@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=1.5
+Name=Unvanquished
+Comment=FPS/RTS Game - Aliens vs. Humans
+Terminal=false
+Type=Application
+Exec=unvanquished -connect %u
+MimeType=x-scheme-handler/unv
+Categories=Game;ActionGame;StrategyGame;Shooter;
+Icon=net.unvanquished.Unvanquished
+SingleMainWindow=true
+PrefersNonDefaultGPU=true
+Keywords=3d;aliens;daemon;fps;idtech;multiplayer;opengl;q3;q3a;quake;rts;shooter;strategy;tremulous;

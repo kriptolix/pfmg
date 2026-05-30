@@ -1,0 +1,29 @@
+{
+  "header": {
+    "id": "libebml",
+    "version": "1.4.5",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libebml",
+    "builddir": true,
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
+      "-DBUILD_SHARED_LIBS=ON",
+      "-DCMAKE_POSITION_INDEPENDENT_CODE=ON"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://dl.matroska.org/downloads/libebml/libebml-1.4.5.tar.xz",
+        "sha256": "4971640b0592da29c2d426f303e137a9b0b3d07e1b81d069c1e56a2f49ab221b"
+      },
+      {
+        "type": "patch",
+        "path": "libvlc/cmake-min-version.patch"
+      }
+    ]
+  }
+}

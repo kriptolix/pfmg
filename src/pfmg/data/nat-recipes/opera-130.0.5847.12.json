@@ -1,0 +1,59 @@
+{
+  "header": {
+    "id": "opera",
+    "version": "130.0.5847.12",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "opera",
+    "buildsystem": "simple",
+    "build-commands": [
+      "bsdtar --to-stdout -xf opera.deb 'data.tar*' | bsdtar -xf - --strip-components=4 --include='./usr/lib/x86_64-linux-gnu/opera-stable'",
+      "mv opera-stable ${FLATPAK_DEST}/opera",
+      "install -Dm 644 cobalt.ini ${FLATPAK_DEST}/etc",
+      "install -Dm 644 ${FLATPAK_ID}.metainfo.xml ${FLATPAK_DEST}/share/metainfo/${FLATPAK_ID}.metainfo.xml",
+      "install -Dm 644 ${FLATPAK_ID}.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop",
+      "install -Dm 644 Opera_2015_icon.svg ${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/${FLATPAK_ID}.svg",
+      "install -Dm 755 opera.sh ${FLATPAK_DEST}/bin/opera"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "dest-filename": "opera.deb",
+        "only-arches": [
+          "x86_64"
+        ],
+        "url": "https://get.geo.opera.com/pub/opera/desktop/130.0.5847.12/linux/opera-stable_130.0.5847.12_amd64.deb",
+        "sha256": "436928a8e792f4140e411791f9e8d6e5650e1597914027dd678750df0b7df350",
+        "x-checker-data": {
+          "is-main-source": true,
+          "type": "anitya",
+          "project-id": 7242,
+          "stable-only": true,
+          "url-template": "https://get.geo.opera.com/pub/opera/desktop/$version/linux/opera-stable_${version}_amd64.deb"
+        }
+      },
+      {
+        "type": "file",
+        "path": "cobalt.ini"
+      },
+      {
+        "type": "file",
+        "path": "com.opera.Opera.metainfo.xml"
+      },
+      {
+        "type": "file",
+        "path": "Opera_2015_icon.svg"
+      },
+      {
+        "type": "file",
+        "path": "com.opera.Opera.desktop"
+      },
+      {
+        "type": "file",
+        "path": "opera.sh"
+      }
+    ]
+  }
+}

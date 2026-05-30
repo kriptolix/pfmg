@@ -1,0 +1,33 @@
+{
+  "header": {
+    "id": "asunder",
+    "version": "3.0.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "asunder",
+    "buildsystem": "autotools",
+    "config-opts": [
+      "--prefix=/app"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "http://littlesvr.ca/asunder/releases/asunder-3.0.2.tar.bz2",
+        "sha256": "b71341d746ccf56aa77b1785c6af81aa641d084ac3d34b78beb537618848b64b",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 124,
+          "url-template": "http://littlesvr.ca/asunder/releases/asunder-$version.tar.bz2"
+        }
+      }
+    ],
+    "post-install": [
+      "install -Dm 644 ./asunder.desktop -t /app/share/applications/",
+      "install -Dm 644 ./pixmaps/asunder.png -t /app/share/icons/hicolor/128x128/apps/",
+      "install -Dm 644 ./pixmaps/asunder.svg -t /app/share/icons/hicolor/scalable/apps/",
+      "desktop-file-edit --set-key=Keywords --set-value='Extract;Compact;Disc;' /app/share/applications/asunder.desktop"
+    ]
+  }
+}

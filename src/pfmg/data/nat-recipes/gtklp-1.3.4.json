@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "gtklp",
+    "version": "1.3.4",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "gtklp",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://downloads.sourceforge.net/project/gtklp/gtklp/1.3.4/gtklp-1.3.4.src.tar.gz",
+        "sha256": "be07609042595fa932034e3b2d7038cef33901ec0863fcedbb5188acb6b53bab"
+      },
+      {
+        "type": "patch",
+        "path": "patches/gtklp/FixGtklpForNewGcc.patch"
+      }
+    ]
+  }
+}

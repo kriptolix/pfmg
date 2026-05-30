@@ -1,0 +1,31 @@
+{
+  "header": {
+    "id": "r2dec",
+    "version": "6.0.7",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "r2dec",
+    "buildsystem": "meson",
+    "build-options": {
+      "cflags": "-O3"
+    },
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/wargio/r2dec-js/releases/download/6.0.7/r2dec-6.0.7-src-with-deps.zip",
+        "archive-type": "zip",
+        "sha256": "198f01c778832b969566d9604d98cce2cb38f1dba6a8a473a3991db8f6c7a65a",
+        "strip-components": 0,
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://api.github.com/repos/wargio/r2dec-js/releases/latest",
+          "timestamp-query": ".published_at",
+          "version-query": ".tag_name",
+          "url-query": ".assets[] | select(.name | endswith(\"-src-with-deps.zip\")) | .browser_download_url"
+        }
+      }
+    ]
+  }
+}

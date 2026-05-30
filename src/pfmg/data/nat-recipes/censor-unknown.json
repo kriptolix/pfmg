@@ -1,0 +1,21 @@
+{
+  "header": {
+    "id": "censor",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "censor",
+    "builddir": true,
+    "buildsystem": "meson",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://codeberg.org/censor/Censor.git",
+        "tag": "v0.7.1",
+        "commit": "5abe35224733033320c9b04a21c8fc1b4c039fa7"
+      }
+    ]
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "header": {
+    "id": "cdrkit",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "cdrkit",
+    "buildsystem": "cmake-ninja",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/Distrotech/cdrkit",
+        "commit": "7b4bb72389ea5ea3ecc94545036dcff4728ec38a"
+      },
+      {
+        "type": "patch",
+        "path": "genisoimage-extern.patch"
+      },
+      {
+        "type": "patch",
+        "path": "cdrkit-build-fix.patch"
+      },
+      {
+        "type": "patch",
+        "path": "cdrkit-add-cmake_minimum_required.patch"
+      }
+    ]
+  }
+}

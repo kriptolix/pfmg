@@ -1,0 +1,31 @@
+{
+  "header": {
+    "id": "apachedirectorystudio",
+    "version": "2.0.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "ApacheDirectoryStudio",
+    "buildsystem": "simple",
+    "build-commands": [
+      "mv ApacheDirectoryStudio /app",
+      "install -D /app/ApacheDirectoryStudio/features/org.apache.directory.studio.ldapbrowser.feature_*/studio.png /app/share/icons/hicolor/128x128/apps/org.apache.directory.studio.png",
+      "mkdir -p /app/bin",
+      "ln -s /app/ApacheDirectoryStudio/ApacheDirectoryStudio /app/bin/ApacheDirectoryStudio"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://dlcdn.apache.org/directory/studio/2.0.0.v20210717-M17/ApacheDirectoryStudio-2.0.0.v20210717-M17-linux.gtk.x86_64.tar.gz",
+        "sha256": "24764eff94ad3a257a899d34f9933276af0d201fba9017d6737558b2ffd5eda7",
+        "strip-components": 0,
+        "x-checker-data": {
+          "type": "html",
+          "url": "https://directory.apache.org/studio/download/download-linux.html",
+          "pattern": "<a href=\"(https://dlcdn.apache.org/directory/studio/([^/]+)/ApacheDirectoryStudio-[^\"]+-linux.gtk.x86_64.tar.gz)\">\n"
+        }
+      }
+    ]
+  }
+}

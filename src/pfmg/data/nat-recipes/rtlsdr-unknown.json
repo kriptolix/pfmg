@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "rtlsdr",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "rtlsdr",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DDETACH_KERNEL_DRIVER=ON"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/steve-m/librtlsdr.git",
+        "commit": "ae0dd6d4f09088d13500a854091b45ad281ca4f0"
+      }
+    ]
+  }
+}

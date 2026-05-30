@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-zope.dottedname",
+    "version": "6.1",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-zope.dottedname",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"zope.dottedname==6.1\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/4a/88/b5bfd2d609c17114a9f13c48cd8b6be3a4917b03c9bde7fa2f926bcb3d79/zope_dottedname-6.1-py3-none-any.whl",
+        "sha256": "74286c52f0861b5b0967a9172fee8c0391360709cd9e7e2f4ea2df54ec8b5293"
+      }
+    ]
+  }
+}

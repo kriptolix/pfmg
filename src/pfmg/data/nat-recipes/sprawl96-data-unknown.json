@@ -1,0 +1,26 @@
+{
+  "header": {
+    "id": "sprawl96-data",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "sprawl96-data",
+    "buildsystem": "simple",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://drive.usercontent.google.com/download?export=download&confirm=yes&id=1ip_KFlA8BFRMbnvuOvTl2V_B-HOcqEHc",
+        "dest-filename": "sprawl96.zip",
+        "sha256": "94c4be7b94c91e8b7683b6a50a40585be7eadd2440dd361ab14d0e79fb20e76e"
+      }
+    ],
+    "build-commands": [
+      "mkdir -p /app/bin/sprawl/music",
+      "install -vm644 -t /app/bin/sprawl/ pak0.pak sprawl.pak sprawl.dat",
+      "install -vm644 -t /app/bin/sprawl/music music/*",
+      "mv /app/bin/sprawl/pak0.pak /app/bin/sprawl/pak2.pak"
+    ]
+  }
+}

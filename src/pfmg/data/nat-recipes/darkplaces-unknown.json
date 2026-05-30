@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "darkplaces",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "darkplaces",
+    "buildsystem": "simple",
+    "build-commands": [
+      "make sdl-release",
+      "install -Dm755 darkplaces-sdl /app/bin/darkplaces"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/DarkPlacesEngine/DarkPlaces.git",
+        "commit": "d93f9c4292039354a2b8d40d11bc386891e55fe5"
+      }
+    ]
+  }
+}

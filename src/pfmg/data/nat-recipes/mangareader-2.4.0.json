@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "mangareader",
+    "version": "2.4.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "mangareader",
+    "buildsystem": "cmake-ninja",
+    "post-install": [
+      "install -Dm644 -t /app/share/licenses/${FLATPAK_ID} LICENSES/*"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/g-fb/mangareader/archive/refs/tags/2.4.0.tar.gz",
+        "sha256": "8c19856110256702563dd1e7513878a4fc4212390b409e7030c7a604f8745834"
+      }
+    ]
+  }
+}

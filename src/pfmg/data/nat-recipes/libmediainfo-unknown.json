@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "libmediainfo",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libmediainfo",
+    "cleanup": [
+      "/bin",
+      "/include",
+      "/lib/pkgconfig"
+    ],
+    "subdir": "Project/GNU/Library",
+    "config-opts": [
+      "--enable-shared",
+      "--disable-static"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "commit": "a475e4ee71901e0f377688024c128e1634f180e1",
+        "url": "https://github.com/MediaArea/MediaInfoLib.git"
+      }
+    ]
+  }
+}

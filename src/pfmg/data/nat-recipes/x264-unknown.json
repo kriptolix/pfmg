@@ -1,0 +1,26 @@
+{
+  "header": {
+    "id": "x264",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "x264",
+    "config-opts": [
+      "--disable-cli",
+      "--enable-shared"
+    ],
+    "cleanup": [
+      "/include"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://code.videolan.org/videolan/x264.git",
+        "branch": "master",
+        "commit": "5585eafe31c2299163dcb206e05e18be7dd93098"
+      }
+    ]
+  }
+}

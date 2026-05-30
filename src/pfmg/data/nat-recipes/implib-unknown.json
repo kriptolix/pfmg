@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "implib",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "implib",
+    "buildsystem": "simple",
+    "build-commands": [
+      "install -d $FLATPAK_DEST/lib\nmkdir build\ncd build\nimplib() {\n  LIBFILE=$(basename $1)\n  LIBNAME=$(basename $1 .so)\n  ../implib-gen.py -q $1\n  gcc $CFLAGS -c -o $LIBFILE.tramp.o $LIBFILE.tramp.S\n  gcc $CFLAGS -c -o $LIBFILE.init.o $LIBFILE.init.c\n  ar rcs $FLATPAK_DEST/lib/$LIBNAME.a $LIBFILE.tramp.o $LIBFILE.init.o\n}\nimplib /usr/lib/$FLATPAK_ARCH-linux-gnu/libgtk-3.so\nimplib /usr/lib/$FLATPAK_ARCH-linux-gnu/libgdk-3.so\n"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/yugr/Implib.so.git",
+        "commit": "ecf7bb51a92a0fb16834c5b698570ab25f9f1d21"
+      }
+    ],
+    "cleanup": [
+      "*"
+    ]
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "header": {
+    "id": "old-locale-1.0.0.7",
+    "version": "1.0.0.7",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "old-locale-1.0.0.7",
+    "only-arches": [
+      "x86_64"
+    ],
+    "buildsystem": "simple",
+    "build-commands": [
+      "sed -i 's/base >= 4\\.2 \\&\\& < 4\\.9/base >= 4\\.2 \\&\\& < 5/' old-locale.cabal",
+      "ghc -threaded --make Setup",
+      "./Setup configure --prefix=/app",
+      "./Setup build",
+      "./Setup install"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "sha256": "dbaf8bf6b888fb98845705079296a23c3f40ee2f449df7312f7f7f1de18d7b50",
+        "url": "https://hackage.haskell.org/package/old-locale-1.0.0.7/old-locale-1.0.0.7.tar.gz"
+      }
+    ]
+  }
+}

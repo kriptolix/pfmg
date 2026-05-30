@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "upscayl-ncnn",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "upscayl-ncnn",
+    "buildsystem": "simple",
+    "build-commands": [
+      "install -Dm755 upscayl-bin -t /app/bin"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/upscayl/upscayl-ncnn/releases/download/20240601-103425/upscayl-bin-20240601-103425-linux.zip",
+        "sha256": "6dad58da39547d64753470ef5a24c4094ce1085b9cb81dabf7e44bd3b7a807a4"
+      }
+    ]
+  }
+}

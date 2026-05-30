@@ -1,0 +1,86 @@
+{
+  "header": {
+    "id": "llvm",
+    "version": "11.1.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "llvm",
+    "buildsystem": "cmake-ninja",
+    "subdir": "llvm",
+    "builddir": true,
+    "build-options": {
+      "arch": {
+        "aarch64": {
+          "config-opts": [
+            "-DFFI_INCLUDE_DIR=/usr/lib/aarch64-linux-gnu/libffi-3.2.1/include",
+            "-DLLVM_DEFAULT_TARGET_TRIPLE=aarch64-unknown-linux-gnu",
+            "-DLLVM_TARGETS_TO_BUILD='AArch64'"
+          ]
+        },
+        "x86_64": {
+          "config-opts": [
+            "-DFFI_INCLUDE_DIR=/usr/lib/x86_64-linux-gnu/libffi-3.2.1/include",
+            "-DLLVM_DEFAULT_TARGET_TRIPLE=x86_64-unknown-linux-gnu",
+            "-DLLVM_TARGETS_TO_BUILD='X86;AMDGPU;NVPTX'"
+          ]
+        }
+      },
+      "cflags": "-g0",
+      "cxxflags": "-g0",
+      "env": {
+        "CC": "clang",
+        "CXX": "clang++"
+      },
+      "ldflags": "-fuse-ld=lld"
+    },
+    "config-opts": [
+      "-DLLVM_ENABLE_PROJECTS='clang;clang-tools-extra;compiler-rt;lld;lldb'",
+      "-DLLVM_ENABLE_ASSERTIONS:BOOL=OFF",
+      "-DBUILD_SHARED_LIBS:BOOL=OFF",
+      "-DLLVM_BUILD_LLVM_DYLIB:BOOL=ON",
+      "-DLLVM_LINK_LLVM_DYLIB:BOOL=ON",
+      "-DCLANG_LINK_CLANG_DYLIB=ON",
+      "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
+      "-DLLVM_LIBDIR_SUFFIX=''",
+      "-DLLVM_ENABLE_LIBCXX:BOOL=OFF",
+      "-DLLVM_ENABLE_ZLIB:BOOL=ON",
+      "-DLLVM_ENABLE_FFI:BOOL=ON",
+      "-DLLVM_ENABLE_RTTI:BOOL=ON",
+      "-DLLVM_INCLUDE_TESTS:BOOL=OFF",
+      "-DLLVM_INCLUDE_EXAMPLES:BOOL=OFF",
+      "-DLLVM_INCLUDE_UTILS:BOOL=ON",
+      "-DLLVM_INSTALL_UTILS:BOOL=ON",
+      "-DLLVM_INCLUDE_DOCS:BOOL=OFF",
+      "-DLLVM_ENABLE_DOXYGEN:BOOL=OFF",
+      "-DLLVM_BUILD_EXTERNAL_COMPILER_RT:BOOL=ON",
+      "-DLLVM_BINUTILS_INCDIR=/usr/include",
+      "-DLLVM_INSTALL_TOOLCHAIN_ONLY:BOOL=OFF",
+      "-DCMAKE_C_FLAGS_RELWITHDEBINFO='-DNDEBUG'",
+      "-DCMAKE_CXX_FLAGS_RELWITHDEBINFO='-DNDEBUG'"
+    ],
+    "cleanup": [
+      "libLLVM*.a"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/llvm/llvm-project/releases/download/llvmorg-11.1.0/llvm-project-11.1.0.src.tar.xz",
+        "sha256": "74d2529159fd118c3eac6f90107b5611bccc6f647fdea104024183e8d5e25831"
+      },
+      {
+        "type": "patch",
+        "path": "patches/llvm/llvm-fix-tsan-build.patch"
+      },
+      {
+        "type": "patch",
+        "path": "patches/llvm/llvm-shared-tablegen.patch"
+      },
+      {
+        "type": "patch",
+        "path": "patches/llvm/llvm-fix-cmake-warning-standalone-compiler-rt-builds.patch"
+      }
+    ]
+  }
+}

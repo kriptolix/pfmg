@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "zix",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "zix",
+    "buildsystem": "meson",
+    "build-options": {
+      "no-debuginfo": true
+    },
+    "config-opts": [
+      "-Dbenchmarks=disabled",
+      "-Dtests=disabled",
+      "-Ddefault_library=static",
+      "-Ddocs=disabled"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://gitlab.com/drobilla/zix",
+        "commit": "50c73ad346fb63eb6d057dcc7d1351c95e12e83d",
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://gitlab.com/api/v4/projects/drobilla%2Fzix/repository/commits/main",
+          "commit-query": ".id",
+          "version-query": ".short_id",
+          "timestamp-query": ".committed_date"
+        }
+      }
+    ]
+  }
+}

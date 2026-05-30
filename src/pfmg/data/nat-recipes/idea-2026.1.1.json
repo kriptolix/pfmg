@@ -1,0 +1,69 @@
+{
+  "header": {
+    "id": "idea",
+    "version": "2026.1.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "idea",
+    "build-commands": [
+      "cp -a idea-*/* ${FLATPAK_DEST}",
+      "cat idea.properties >> ${FLATPAK_DEST}/bin/idea.properties",
+      "install -Dm644 -t ${FLATPAK_DEST}/share/applications/ ${FLATPAK_ID}.desktop",
+      "install -Dm644 -t ${FLATPAK_DEST}/share/metainfo/ ${FLATPAK_ID}.metainfo.xml",
+      "install -Dm644 -t ${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/ ${FLATPAK_ID}.svg"
+    ],
+    "buildsystem": "simple",
+    "sources": [
+      {
+        "type": "archive",
+        "strip-components": 0,
+        "only-arches": [
+          "aarch64"
+        ],
+        "sha256": "7aab7c3a656d42d1b8a605115c79cc98186cb070aba3e84b7391155d90ee1cb6",
+        "url": "https://github.com/JetBrains/intellij-community/releases/download/idea/2026.1.1/idea-2026.1.1-aarch64.tar.gz",
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://api.github.com/repos/JetBrains/intellij-community/releases",
+          "version-query": "first(.[] | select(.tag_name | test(\"^idea/\"))).tag_name | sub(\"^idea/\"; \"\")",
+          "url-query": "first(.[] | select(.tag_name | test(\"^idea/\"))).assets[] | select(.name==\"idea-\" + $version + \"-aarch64.tar.gz\") | .browser_download_url",
+          "is-main-source": true
+        }
+      },
+      {
+        "type": "archive",
+        "strip-components": 0,
+        "only-arches": [
+          "x86_64"
+        ],
+        "sha256": "025253053e90f196a98df066561896e920c0cb1e768e391002bd7d47cbcfaa15",
+        "url": "https://github.com/JetBrains/intellij-community/releases/download/idea/2026.1.1/idea-2026.1.1.tar.gz",
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://api.github.com/repos/JetBrains/intellij-community/releases",
+          "version-query": "first(.[] | select(.tag_name | test(\"^idea/\"))).tag_name | sub(\"^idea/\"; \"\")",
+          "url-query": "first(.[] | select(.tag_name | test(\"^idea/\"))).assets[] | select(.name==\"idea-\" + $version + \".tar.gz\") | .browser_download_url",
+          "is-main-source": true
+        }
+      },
+      {
+        "type": "file",
+        "path": "com.jetbrains.IntelliJ-IDEA-Community.desktop"
+      },
+      {
+        "type": "file",
+        "path": "com.jetbrains.IntelliJ-IDEA-Community.metainfo.xml"
+      },
+      {
+        "type": "file",
+        "path": "idea.properties"
+      },
+      {
+        "type": "file",
+        "path": "com.jetbrains.IntelliJ-IDEA-Community.svg"
+      }
+    ]
+  }
+}

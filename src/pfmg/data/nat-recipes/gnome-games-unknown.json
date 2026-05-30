@@ -1,0 +1,19 @@
+{
+  "header": {
+    "id": "gnome-games",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "gnome-games",
+    "buildsystem": "meson",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://gitlab.gnome.org/GNOME/gnome-games.git",
+        "commit": "7b4066c9b28490f1a1f1fae7c20efed49064baa0"
+      }
+    ]
+  }
+}

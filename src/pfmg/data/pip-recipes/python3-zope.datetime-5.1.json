@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-zope.datetime",
+    "version": "5.1",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-zope.datetime",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"zope.datetime==5.1\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/04/bf/45470b506fb87eaeab3abdd2515f652757ab7ec0bf98ce5184a019cbdfd8/zope.datetime-5.1-py3-none-any.whl",
+        "sha256": "6c1e3f991c9a618cd454575fe4b938c8397e363f46b31123a04276ca942ac2f9"
+      }
+    ]
+  }
+}

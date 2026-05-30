@@ -1,0 +1,50 @@
+{
+  "header": {
+    "id": "musepack",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "musepack",
+    "build-options": {
+      "cflags": "-Wno-incompatible-pointer-types"
+    },
+    "config-opts": [
+      "--disable-shared"
+    ],
+    "cleanup": [
+      "/bin/mpc2sv8",
+      "/bin/mpccut",
+      "/bin/wavcmp"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://files.musepack.net/source/musepack_src_r475.tar.gz",
+        "sha256": "a4b1742f997f83e1056142d556a8c20845ba764b70365ff9ccf2e3f81c427b2b",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 21865,
+          "url-template": "https://files.musepack.net/source/musepack_src_r$version.tar.gz"
+        }
+      },
+      {
+        "type": "patch",
+        "path": "patches/musepack_src_r475-const.patch"
+      },
+      {
+        "type": "shell",
+        "commands": [
+          "touch include/config.h.in",
+          "head -n 34 configure.in >> configure.ac",
+          "echo \"AM_CONDITIONAL([HAVE_VISIBILITY], [false])\" >> configure.ac",
+          "echo \"AC_CHECK_LIB([m],[cos])\" >> configure.ac",
+          "tail -n 18 configure.in >> configure.ac",
+          "rm configure.in",
+          "autoreconf -i"
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "hyperplay",
+    "version": "0.31.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "hyperplay",
+    "buildsystem": "simple",
+    "build-commands": [
+      "mkdir hyperplay",
+      "tar -xJf hyperplay*.tar.xz -C hyperplay --strip-components=1",
+      "mv hyperplay /app/bin/hyperplay",
+      "install -D hyperplay-run -t /app/bin"
+    ],
+    "sources": [
+      {
+        "type": "script",
+        "dest-filename": "hyperplay-run",
+        "commands": [
+          "for i in {0..9}; do",
+          "test -S $XDG_RUNTIME_DIR/discord-ipc-$i || ln -sf {app/com.discordapp.Discord,$XDG_RUNTIME_DIR}/discord-ipc-$i;",
+          "done",
+          "zypak-wrapper /app/bin/hyperplay/hyperplay \"$@\""
+        ]
+      },
+      {
+        "type": "file",
+        "url": "https://github.com/HyperPlay-Gaming/hyperplay-desktop-client/releases/download/v0.31.0/hyperplay-0.31.0.tar.xz",
+        "sha512": "16387a2ea017b43c0f47422085a0075e8f09c05abcb724e9f07d2a7522454dfe6614b5df51ad687b7d513fae75ef6cab4506f2612d95e8fe8eae413e9550e217"
+      }
+    ]
+  }
+}

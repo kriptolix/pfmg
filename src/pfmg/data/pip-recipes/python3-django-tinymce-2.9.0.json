@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-django-tinymce",
+    "version": "2.9.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-django-tinymce",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"django-tinymce<3\""
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/f9/aa/05569735ef149da1c3d79ecf1b863651bacb3ce1032ab1a2b28441f63ef8/django_tinymce-2.9.0-py2.py3-none-any.whl",
+        "sha256": "cdce6b66520f6ae468ceb7390ec6cb56720bf543dcf212423290544d20715031"
+      }
+    ]
+  }
+}

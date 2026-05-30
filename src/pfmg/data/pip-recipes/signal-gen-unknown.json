@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "signal-gen",
+    "version": "unknown",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "signal_gen",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --prefix=/app --no-deps .",
+      "mv /app/bin/signalgen /app/bin/signal-gen",
+      "ln -s /app/bin/signal-gen /app/bin/shm-modbus-signal-gen"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "tag": "v1.0.2",
+        "commit": "ae911cceebaedfd4d6acab0a9f66d237ea79e3e8",
+        "url": "https://github.com/SHMModbus/shm-modbus-signal-gen.git"
+      }
+    ]
+  }
+}

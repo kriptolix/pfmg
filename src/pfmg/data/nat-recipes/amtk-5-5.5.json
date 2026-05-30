@@ -1,0 +1,19 @@
+{
+  "header": {
+    "id": "amtk-5",
+    "version": "5.5",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "amtk-5",
+    "buildsystem": "meson",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.gnome.org/sources/amtk/5.5/amtk-5.5.1.tar.xz",
+        "sha256": "ec896dd017e2c1436852e5e60970fcd0830bd12148d57cc1bdc0d93826bddb9c"
+      }
+    ]
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "header": {
+    "id": "librime",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "librime",
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DBUILD_TEST=Off",
+      "-DENABLE_LOGGING=Off"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/rime/librime",
+        "tag": "1.16.1",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 228902,
+          "stable-only": true,
+          "tag-template": "${version}"
+        },
+        "commit": "de4700e9f6b75b109910613df907965e3cbe0567"
+      },
+      {
+        "type": "git",
+        "url": "https://github.com/lotem/librime-octagram.git",
+        "commit": "dfcc15115788c828d9dd7b4bff68067d3ce2ffb8",
+        "dest": "plugins/librime-octagram"
+      },
+      {
+        "type": "git",
+        "url": "https://github.com/hchunhui/librime-lua",
+        "commit": "e3912a4b3ac2c202d89face3fef3d41eb1d7fcd6",
+        "dest": "plugins/librime-lua"
+      },
+      {
+        "type": "git",
+        "url": "https://github.com/rime/librime-charcode",
+        "commit": "55e7f563e999802d41a13ba02657c1be4b2011b4",
+        "dest": "plugins/librime-charcode"
+      },
+      {
+        "type": "git",
+        "url": "https://github.com/lotem/librime-proto",
+        "commit": "657a923cd4c333e681dc943e6894e6f6d42d25b4",
+        "dest": "plugins/librime-proto"
+      },
+      {
+        "type": "git",
+        "url": "https://github.com/rime/librime-predict",
+        "commit": "920bd41ebf6f9bf6855d14fbe80212e54e749791",
+        "dest": "plugins/librime-predict"
+      }
+    ]
+  }
+}

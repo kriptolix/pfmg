@@ -1,0 +1,39 @@
+{
+  "header": {
+    "id": "lua54",
+    "version": "5.4.8",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "lua54",
+    "cleanup": [
+      "/include",
+      "/man",
+      "/share"
+    ],
+    "no-autogen": true,
+    "make-args": [
+      "MYCFLAGS=-fPIC",
+      "linux"
+    ],
+    "make-install-args": [
+      "INSTALL_TOP=/app"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://www.lua.org/ftp/lua-5.4.8.tar.gz",
+        "sha256": "4f18ddae154e793e46eeab727c59ef1c0c0c2b744e7b94219710d76f530629ae",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 1847,
+          "url-template": "https://www.lua.org/ftp/lua-$version.tar.gz",
+          "versions": {
+            "<": "5.5"
+          }
+        }
+      }
+    ]
+  }
+}

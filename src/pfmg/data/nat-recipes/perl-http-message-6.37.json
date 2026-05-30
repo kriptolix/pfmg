@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "perl-http-message",
+    "version": "6.37",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "perl-http-message",
+    "buildsystem": "simple",
+    "build-commands": [
+      "perl Makefile.PL",
+      "make install DESTDIR=`pwd`/INST INSTALLSITELIB=/SITELIB",
+      "mkdir -p $FLATPAK_DEST/share/perl5/",
+      "cp -fr ./INST/SITELIB/* $FLATPAK_DEST/share/perl5/"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://cpan.metacpan.org/authors/id/O/OA/OALDERS/HTTP-Message-6.37.tar.gz",
+        "sha256": "0e59da0a85e248831327ebfba66796314cb69f1bfeeff7a9da44ad766d07d802"
+      }
+    ]
+  }
+}

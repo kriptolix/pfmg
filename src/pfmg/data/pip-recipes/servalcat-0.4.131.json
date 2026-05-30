@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "servalcat",
+    "version": "0.4.131",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "servalcat",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install . \\\n  --verbose \\\n  --no-deps \\\n  --no-index \\\n  --no-build-isolation \\\n  --prefix=${FLATPAK_DEST} \\\n  --config-settings=\"cmake.args=-Dnanobind_DIR=/app/lib/python3.13/site-packages/nanobind/cmake\"\n"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://files.pythonhosted.org/packages/7c/a9/f3eec5dcbd05385ff9941660c3d4894c643c1ee68d3d20f1fbb52d9c65ee/servalcat-0.4.131.tar.gz",
+        "sha256": "d4300bfba939b0f3592c71b905c8d9cb398ed4bdc4069e4f1c3ac0c6bef06eb0",
+        "x-checker-data": {
+          "type": "pypi",
+          "name": "servalcat"
+        }
+      },
+      {
+        "type": "shell",
+        "commands": [
+          "rm -rf eigen/"
+        ]
+      }
+    ]
+  }
+}

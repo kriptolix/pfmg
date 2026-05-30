@@ -1,0 +1,34 @@
+{
+  "header": {
+    "id": "flatpak-builder",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "flatpak-builder",
+    "buildsystem": "meson",
+    "config-opts": [
+      "--prefix=/app",
+      "--libdir=lib",
+      "-Ddocs=disabled",
+      "-Dtests=false",
+      "-Dinstalled_tests=false",
+      "-Dfuse=2"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/flathub-infra/flatpak-builder.git",
+        "commit": "70421c1586e9046470c9a788fa3f3390d5431248",
+        "disable-submodules": true
+      },
+      {
+        "type": "git",
+        "url": "https://github.com/GNOME/libglnx.git",
+        "commit": "ccea836b799256420788c463a638ded0636b1632",
+        "dest": "subprojects/libglnx"
+      }
+    ]
+  }
+}

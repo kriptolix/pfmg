@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-pycurl",
+    "version": "7.45.7",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-pycurl",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"pycurl\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/e3/3d/01255f1cde24401f54bb3727d0e5d3396b67fc04964f287d5d473155f176/pycurl-7.45.7.tar.gz",
+        "sha256": "9d43013002eab2fd6d0dcc671cd1e9149e2fc1c56d5e796fad94d076d6cb69ef"
+      }
+    ]
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "header": {
+    "id": "python3-statsmodels",
+    "version": "0.14.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-statsmodels",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"statsmodels\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/78/23/f78fd8311e0f710fe1d065d50b92ce0057fe877b8ed7fd41b28ad6865bfc/numpy-1.26.1.tar.gz",
+        "sha256": "c8c6c72d4a9f831f328efb1312642a1cafafaa88981d9ab76368d50d07d93cbe"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/ec/1a/610693ac4ee14fcdf2d9bf3c493370e4f2ef7ae2e19217d7a237ff42367d/packaging-23.2-py3-none-any.whl",
+        "sha256": "8c491190033a9af7e1d931d0b5dacc2ef47509b34dd0de67ed209b5203fc88c7"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/3a/6e/6c9c197ec2da861ea8c9c6848f0f887b7563f16e607bc6a35506af677f30/pandas-2.1.2.tar.gz",
+        "sha256": "52897edc2774d2779fbeb6880d2cfb305daa0b1a29c16b91f531a18918a6e0f3"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/2a/e4/b3263b0e353f2be7b14f044d57874490c9cef1798a435f038683acea5c98/patsy-0.5.3-py2.py3-none-any.whl",
+        "sha256": "7eb5349754ed6aa982af81f636479b1b8db9d5b1a6e957a6016ec0534b5c86b7"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/36/7a/87837f39d0296e723bb9b62bbb257d0355c7f6128853c78955f57342a56d/python_dateutil-2.8.2-py2.py3-none-any.whl",
+        "sha256": "961d03dc3453ebbc59dbdea9e4e11c5651520a876d0f4db161e8674aae935da9"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/32/4d/aaf7eff5deb402fd9a24a1449a8119f00d74ae9c2efa79f8ef9994261fc2/pytz-2023.3.post1-py2.py3-none-any.whl",
+        "sha256": "ce42d816b81b68506614c11e8937d3aa9e41007ceb50bfdcb0749b921bf646c7"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/39/7b/9f265b7f074195392e893a5cdc66116c2f7a31fd5f3d9cceff661ec6df82/scipy-1.11.3.tar.gz",
+        "sha256": "bba4d955f54edd61899776bad459bf7326e14b9fa1c552181f0479cc60a568cd"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/13/a3/a8bf1c9e6d0193f854d9a79cb86a65dac0866de64051ff96e35bc7ecedfe/statsmodels-0.14.0.tar.gz",
+        "sha256": "6875c7d689e966d948f15eb816ab5616f4928706b180cf470fd5907ab6f647a4"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/d5/fb/a79efcab32b8a1f1ddca7f35109a50e4a80d42ac1c9187ab46522b2407d7/tzdata-2023.3-py2.py3-none-any.whl",
+        "sha256": "7e65763eef3120314099b6939b5546db7adce1e7d6f2e179e3df563c70511eda"
+      }
+    ]
+  }
+}

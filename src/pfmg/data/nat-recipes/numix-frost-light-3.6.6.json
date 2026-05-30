@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "numix-frost-light",
+    "version": "3.6.6",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "Numix-Frost-Light",
+    "buildsystem": "simple",
+    "build-commands": [
+      "install -dm755 /usr/share/runtime/share/themes/Numix-Frost-Light/gtk-3.0",
+      "cp -aL share/themes/Numix-Frost-Light/gtk-3.20/* /usr/share/runtime/share/themes/Numix-Frost-Light/gtk-3.0"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "http://mirrors.antergos.com/antergos/x86_64/numix-frost-themes-3.6.6-1-any.pkg.tar.xz",
+        "sha256": "39ddbda79594ca6a930153c0f1cf19ab9d501b5d906d407f7a0d9ac37dbfb0b2"
+      }
+    ]
+  }
+}

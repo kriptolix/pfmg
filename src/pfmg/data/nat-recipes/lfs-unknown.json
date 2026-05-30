@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "lfs",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "lfs",
+    "no-autogen": true,
+    "make-args": [
+      "LUA_VERSION=5.5"
+    ],
+    "make-install-args": [
+      "LUA_VERSION=5.5",
+      "PREFIX=/app"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/lunarmodules/luafilesystem",
+        "tag": "v1_9_0",
+        "commit": "a186cca5833691e830ed255e38ace8ff6b870dbf"
+      }
+    ]
+  }
+}

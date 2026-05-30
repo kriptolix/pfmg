@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "zlib-0.6.2",
+    "version": "0.6.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "zlib-0.6.2",
+    "only-arches": [
+      "x86_64"
+    ],
+    "buildsystem": "simple",
+    "build-commands": [
+      "ghc -threaded --make Setup",
+      "./Setup configure --prefix=/app",
+      "./Setup build",
+      "./Setup install"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "sha256": "0dcc7d925769bdbeb323f83b66884101084167501f11d74d21eb9bc515707fed",
+        "url": "https://hackage.haskell.org/package/zlib-0.6.2/zlib-0.6.2.tar.gz"
+      }
+    ]
+  }
+}

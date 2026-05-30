@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "simdutf",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "simdutf",
+    "buildsystem": "cmake-ninja",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/simdutf/simdutf.git",
+        "tag": "v8.0.0",
+        "commit": "7f3757fba1b426e7f583011ba7bc4e700a8fbb1a",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 378662,
+          "tag-template": "v$version"
+        }
+      }
+    ]
+  }
+}

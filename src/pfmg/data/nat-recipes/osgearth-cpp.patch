@@ -1,0 +1,10 @@
+--- osgearth/src/osgEarth/earcut.hpp-orig	2021-12-27 10:51:26.631876559 -0500
++++ osgearth/src/osgEarth/earcut.hpp	2021-12-27 10:51:46.821986863 -0500
+@@ -3,6 +3,7 @@
+ #include <algorithm>
+ #include <cassert>
+ #include <cmath>
++#include <limits>
+ #include <memory>
+ #include <vector>
+ 

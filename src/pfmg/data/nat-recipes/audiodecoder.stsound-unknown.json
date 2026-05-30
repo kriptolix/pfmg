@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "audiodecoder.stsound",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "audiodecoder.stsound",
+    "buildsystem": "cmake-ninja",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/xbmc/audiodecoder.stsound",
+        "commit": "e9fa65c5d4fe7e23c63af8ea06947dedea34b57a"
+      }
+    ],
+    "build-options": {
+      "no-debuginfo": true,
+      "cflags": "-g0",
+      "cxxflags": "-g0"
+    },
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release"
+    ]
+  }
+}

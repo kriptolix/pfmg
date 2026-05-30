@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-pyglm",
+    "version": "2.5.7",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-PyGLM",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"PyGLM==2.5.7\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/a8/93/763c85038d18665b0ebab8cfb7a27fd14f38bdd5ad7e8d4b5aed4bf835bd/PyGLM-2.5.7.tar.gz",
+        "sha256": "38fdff84e6416decffe1c5874632807d58b98c5508cca3579bb2f5332e099fd8"
+      }
+    ]
+  }
+}

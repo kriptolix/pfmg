@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-imagesize",
+    "version": "1.4.1",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-imagesize",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"imagesize==1.4.1\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/ff/62/85c4c919272577931d407be5ba5d71c20f0b616d31a0befe0ae45bb79abd/imagesize-1.4.1-py2.py3-none-any.whl",
+        "sha256": "0d8d18d08f840c19d0ee7ca1fd82490fdc3729b7ac93f49870406ddde8ef8d8b"
+      }
+    ]
+  }
+}

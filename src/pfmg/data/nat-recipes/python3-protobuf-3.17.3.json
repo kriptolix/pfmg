@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-protobuf",
+    "version": "3.17.3",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-protobuf",
+    "buildsystem": "simple",
+    "build-commands": [
+      "python3 setup.py install --prefix=/app --root=/"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://files.pythonhosted.org/packages/3d/64/a3b379cb9c7827ad33c67dcda4c4ad117bdef1b7d68b22a05c963cf4727d/protobuf-3.17.3.tar.gz",
+        "sha256": "72804ea5eaa9c22a090d2803813e280fb273b62d5ae497aaf3553d141c4fdd7b"
+      }
+    ]
+  }
+}

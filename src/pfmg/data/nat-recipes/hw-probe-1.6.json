@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "hw-probe",
+    "version": "1.6",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "hw-probe",
+    "buildsystem": "simple",
+    "build-commands": [
+      "make install DESTDIR=$FLATPAK_DEST prefix=/",
+      "mv $FLATPAK_DEST/bin/hw-probe $FLATPAK_DEST/bin/hw-probe-flatpak",
+      "install -m 777 -D flatpak/hw-probe.sh $FLATPAK_DEST/bin/hw-probe",
+      "install -D flatpak/PERL5_BASE $FLATPAK_DEST/share/PERL5_BASE",
+      "install -D flatpak/hw-probe.appdata.xml $FLATPAK_DEST/share/metainfo/org.linux_hardware.hw-probe.appdata.xml",
+      "install -D flatpak/icon-256x256.png $FLATPAK_DEST/share/icons/hicolor/256x256/apps/org.linux_hardware.hw-probe.png",
+      "install -D flatpak/icon-128x128.png $FLATPAK_DEST/share/icons/hicolor/128x128/apps/org.linux_hardware.hw-probe.png",
+      "install -D flatpak/icon-64x64.png $FLATPAK_DEST/share/icons/hicolor/64x64/apps/org.linux_hardware.hw-probe.png",
+      "install -D flatpak/hw-probe.desktop $FLATPAK_DEST/share/applications/org.linux_hardware.hw-probe.desktop",
+      "install -D flatpak/usb.ids $FLATPAK_DEST/share/usb.ids",
+      "install -D flatpak/pci.ids $FLATPAK_DEST/share/pci.ids"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/linuxhw/build-stuff/releases/download/1.6/hw-probe-1.6-AI.tar.gz",
+        "sha256": "4855a49a42c0ebe4cdadd8fd2217137d6f3643a662ad3b7c1f34a5c1b61859d2"
+      }
+    ]
+  }
+}

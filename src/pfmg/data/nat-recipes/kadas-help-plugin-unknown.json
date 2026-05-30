@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "kadas-help-plugin",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "kadas-help-plugin",
+    "buildsystem": "simple",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/kadas-albireo/kadas-help-plugin.git",
+        "commit": "239085cd8374dc3d733ac1b2996a2ae9e3430346"
+      }
+    ],
+    "build-commands": [
+      "mkdir -p /app/share/kadas/python/plugins/",
+      "cp -r kadas_* /app/share/kadas/python/plugins/"
+    ]
+  }
+}

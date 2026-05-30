@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "python3-ewmh",
+    "version": "0.1.6",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-ewmh",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"ewmh>=0.1.6\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/33/e8/5f65226b2724347642b823b9fe4f35e80aad4fc69e61111977140bc9b633/ewmh-0.1.6.tar.gz",
+        "sha256": "c56b093f7d575181e979bb3a7d15c34065755f811c351ff0a31fede12b09343d"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/fc/b8/ff33610932e0ee81ae7f1269c890f697d56ff74b9f5b2ee5d9b7fa2c5355/python_xlib-0.33-py2.py3-none-any.whl",
+        "sha256": "c3534038d42e0df2f1392a1b30a15a4ff5fdc2b86cfa94f072bf11b10a164398"
+      }
+    ]
+  }
+}

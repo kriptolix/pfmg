@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "html-tidy",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "html-tidy",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DBUILD_SHARED_LIB=OFF",
+      "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/htacg/tidy-html5.git",
+        "commit": "1ca37471b48a3498f985509828cb3cf85ea129f8",
+        "tag": "5.8.0"
+      }
+    ]
+  }
+}

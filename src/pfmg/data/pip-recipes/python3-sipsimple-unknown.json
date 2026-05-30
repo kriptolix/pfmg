@@ -1,0 +1,37 @@
+{
+  "header": {
+    "id": "python3-sipsimple",
+    "version": "unknown",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-sipsimple",
+    "buildsystem": "simple",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/AGProjects/python3-sipsimple",
+        "tag": "5.3.4",
+        "commit": "95ecda8d299d344aba23022310b7832f1e98cb75"
+      },
+      {
+        "type": "file",
+        "url": "https://github.com/pjsip/pjproject/archive/refs/tags/2.11.1.tar.gz",
+        "sha512": "fda8e4bf9d5f34d3940c69414a20f177d09ca79c76753f6597326f8afc72f847dd70df4e1f2c34fae173f5728d5ac1419ed602651c68167c747c40280dbe117e",
+        "dest": "deps",
+        "dest-filename": "2.11.1.tar.gz"
+      },
+      {
+        "type": "git",
+        "url": "https://github.com/wernerd/ZRTPCPP",
+        "commit": "6b3cd8e6783642292bad0c21e3e5e5ce45ff3e03",
+        "dest": "deps/ZRTPCPP"
+      }
+    ],
+    "build-commands": [
+      "AUTOINSTALL=0 bash ./get_dependencies.sh 2.11.1",
+      "pip3 install --verbose --exists-action=i --no-index --prefix=\"${FLATPAK_DEST}\" --no-build-isolation ."
+    ]
+  }
+}

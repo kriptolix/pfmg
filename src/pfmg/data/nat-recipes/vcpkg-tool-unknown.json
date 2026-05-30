@@ -1,0 +1,48 @@
+{
+  "header": {
+    "id": "vcpkg-tool",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "vcpkg-tool",
+    "buildsystem": "cmake-ninja",
+    "build-options": {
+      "no-debuginfo": true
+    },
+    "config-opts": [
+      "-DCMAKE_INSTALL_PREFIX=/app",
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DBUILD_TESTING=OFF",
+      "-DVCPKG_MSVC_ANALYZE=OFF",
+      "-DVCPKG_DEVELOPMENT_WARNINGS=OFF",
+      "-DVCPKG_DEPENDENCY_EXTERNAL_FMT=ON",
+      "-DVCPKG_DEPENDENCY_CMAKERC=ON",
+      "-DVCPKG_LIBCURL_DLSYM=OFF",
+      "-DCMAKE_POLICY_VERSION_MINIMUM=3.5",
+      "-DCMakeRC_DIR=cmake"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/microsoft/vcpkg-tool.git",
+        "tag": "2026-04-08",
+        "commit": "e0612b42ce44e55a0e630f2ee9d3c533a63d8bc1",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 232892,
+          "tag-template": "$version",
+          "stable-only": true
+        }
+      },
+      {
+        "type": "file",
+        "url": "https://github.com/vector-of-bool/cmrc/releases/download/2.0.1/CMakeRC.cmake",
+        "sha256": "f8a595b62885f0dae7de90d1d8f7cce5f1fafa305f175c593444f5c32853a295",
+        "dest": "cmake",
+        "dest-filename": "cmakerc-config.cmake"
+      }
+    ]
+  }
+}

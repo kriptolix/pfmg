@@ -1,0 +1,31 @@
+{
+  "header": {
+    "id": "telepathy-qt",
+    "version": "0.9.8",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "telepathy-qt",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DENABLE_TESTS=OFF",
+      "-DENABLE_EXAMPLES=OFF",
+      "-DENABLE_FARSTREAM=OFF",
+      "-DDISABLE_WERROR=ON"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://telepathy.freedesktop.org/releases/telepathy-qt/telepathy-qt-0.9.8.tar.gz",
+        "sha256": "bf8e2a09060addb80475a4938105b9b41d9e6837999b7a00e5351783857e18ad",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 21206,
+          "stable-only": true,
+          "url-template": "https://telepathy.freedesktop.org/releases/telepathy-qt/telepathy-qt-$version.tar.gz"
+        }
+      }
+    ]
+  }
+}

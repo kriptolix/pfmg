@@ -1,0 +1,30 @@
+{
+  "header": {
+    "id": "scid",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "scid",
+    "buildsystem": "cmake",
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DCMAKE_VERBOSE_MAKEFILE=ON"
+    ],
+    "post-install": [
+      "ln -s /app/scid/scid /app/bin/",
+      "install -Dma+r flatpak/io.github.benini.scid.svg /app/share/icons/hicolor/scalable/apps/io.github.benini.scid.svg",
+      "install -Dma+r flatpak/io.github.benini.scid.desktop /app/share/applications/io.github.benini.scid.desktop",
+      "install -Dma+r flatpak/io.github.benini.scid.appdata.xml /app/share/appdata/io.github.benini.scid.appdata.xml"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/benini/scid.git",
+        "tag": "v5.2.202603",
+        "commit": "ad78554b4678c62652a9f3632d3dc762ae167965"
+      }
+    ]
+  }
+}

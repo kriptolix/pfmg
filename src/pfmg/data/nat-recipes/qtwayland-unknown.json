@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "qtwayland",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "qtwayland",
+    "buildsystem": "qmake",
+    "cleanup": [
+      "/app/bin"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://invent.kde.org/qt/qt/qtwayland.git",
+        "commit": "26d0b4202b9d81527138ce614573e0bc3b528b9d"
+      }
+    ]
+  }
+}

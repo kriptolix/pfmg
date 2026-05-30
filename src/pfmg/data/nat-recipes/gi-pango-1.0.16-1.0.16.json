@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "gi-pango-1.0.16",
+    "version": "1.0.16",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "gi-pango-1.0.16",
+    "only-arches": [
+      "x86_64"
+    ],
+    "buildsystem": "simple",
+    "build-commands": [
+      "ghc -threaded --make Setup",
+      "./Setup configure --prefix=/app",
+      "./Setup build",
+      "./Setup install"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "sha256": "a7bcc68413d7f7479e9b746eacf08b0c29a93b7c8af17005d96607ce090e78f4",
+        "url": "https://hackage.haskell.org/package/gi-pango-1.0.16/gi-pango-1.0.16.tar.gz"
+      }
+    ]
+  }
+}

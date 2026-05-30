@@ -1,0 +1,30 @@
+{
+  "header": {
+    "id": "endless-key-collections",
+    "version": "0.4.4",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "endless-key-collections",
+    "buildsystem": "simple",
+    "build-commands": [
+      "mkdir -p ${FLATPAK_DEST}/share/endless-key",
+      "cp -R collections -t ${FLATPAK_DEST}/share/endless-key"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/endlessm/endless-key-collections/releases/download/v0.4.4/collections.zip",
+        "sha256": "d5678135be6e53cf8b11254902c9f6d8fec1d5268f2ba2f3904554420986502a",
+        "dest": "collections",
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://api.github.com/repos/endlessm/endless-key-collections/releases/latest",
+          "version-query": ".tag_name",
+          "url-query": ".assets[] | select(.name==\"collections.zip\") | .browser_download_url"
+        }
+      }
+    ]
+  }
+}

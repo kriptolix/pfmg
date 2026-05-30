@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "vera-tff",
+    "version": "1.10",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "vera-tff",
+    "buildsystem": "simple",
+    "build-commands": [],
+    "post-install": [
+      "install -Dm644 -t ${FLATPAK_DEST}/share/licenses/vera-ttf COPYRIGHT.TXT",
+      "install -Dm644 -t ${FLATPAK_DEST}/share/fonts/truetype *.ttf"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://ftp.gnome.org/pub/GNOME/sources/ttf-bitstream-vera/1.10/ttf-bitstream-vera-1.10.tar.bz2",
+        "sha256": "db5b27df7bbb318036ebdb75acd3e98f1bd6eb6608fb70a67d478cd243d178dc"
+      }
+    ]
+  }
+}

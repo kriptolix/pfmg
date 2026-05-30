@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "tree-sitter-vim",
+    "version": "0.7.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "tree-sitter-vim",
+    "buildsystem": "simple",
+    "build-commands": [
+      "mkdir -p /app/lib/nvim/parser",
+      "cc -shared -fPIC src/parser.c src/scanner.c -I src -o /app/lib/nvim/parser/vim.so"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/tree-sitter-grammars/tree-sitter-vim/archive/v0.7.0.tar.gz",
+        "sha256": "44eabc31127c4feacda19f2a05a5788272128ff561ce01093a8b7a53aadcc7b2"
+      }
+    ]
+  }
+}

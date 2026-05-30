@@ -1,0 +1,20 @@
+{
+  "header": {
+    "id": "librsync",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "librsync",
+    "buildsystem": "cmake-ninja",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/librsync/librsync.git",
+        "tag": "v2.3.4",
+        "commit": "e364852674780e43d578e4239128ff7014190ed3"
+      }
+    ]
+  }
+}

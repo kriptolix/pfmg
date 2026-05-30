@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "charset-normalizer",
+    "version": "3.4.6",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "charset-normalizer",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --prefix=/app charset_normalizer-*.whl"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/2a/68/687187c7e26cb24ccbd88e5069f5ef00eba804d36dde11d99aad0838ab45/charset_normalizer-3.4.6-py3-none-any.whl",
+        "sha256": "947cf925bc916d90adba35a64c82aace04fa39b46b52d4630ece166655905a69",
+        "x-checker-data": {
+          "type": "pypi",
+          "packagetype": "bdist_wheel",
+          "name": "charset-normalizer"
+        }
+      }
+    ]
+  }
+}

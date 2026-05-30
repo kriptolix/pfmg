@@ -1,0 +1,42 @@
+{
+  "header": {
+    "id": "python3-clean-text",
+    "version": "0.6.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-clean-text",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"clean-text[gpl]\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/be/ea/90e14e807da5a39e5b16789acacd48d63ca3e4f23dfa964a840eeadebb13/Unidecode-1.3.6-py3-none-any.whl",
+        "sha256": "547d7c479e4f377b430dd91ac1275d593308dce0fc464fb2ab7d41f82ec653be"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/34/7f/c99da1cf5b69ed112b3f21029f2cbf37ee4dbffc4607fa0c5601f1991410/clean_text-0.6.0-py3-none-any.whl",
+        "sha256": "4fedb156042f192cdef9ed5324b281465f1116aba96791e9289384a2e6bec4da"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/68/8a/b08dd0b946f0843cba782e3784cd979c33f144e5e7c37fb0162dc47acd43/emoji-1.7.0.tar.gz",
+        "sha256": "65c54533ea3c78f30d0729288998715f418d7467de89ec258a31c0ce8660a1d1"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/e1/1e/bf736f9576a8979752b826b75cbd83663ff86634ea3055a766e2d8ad3ee5/ftfy-6.1.1-py3-none-any.whl",
+        "sha256": "0ffd33fce16b54cccaec78d6ec73d95ad370e5df5a25255c8966a6147bd667ca"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/59/7c/e39aca596badaf1b78e8f547c807b04dae603a433d3e7a7e04d67f2ef3e5/wcwidth-0.2.5-py2.py3-none-any.whl",
+        "sha256": "beb4802a9cebb9144e99086eff703a642a13d6a0052920003a230f3294bbe784"
+      }
+    ]
+  }
+}

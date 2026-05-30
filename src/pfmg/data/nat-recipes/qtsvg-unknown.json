@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "qtsvg",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "qtsvg",
+    "buildsystem": "qmake",
+    "cleanup": [
+      "/bin"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://invent.kde.org/qt/qt/qtsvg.git",
+        "commit": "83296f10ebdb9a666b11dc69f3a148c38b9c425c"
+      }
+    ]
+  }
+}

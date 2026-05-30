@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-manimpango",
+    "version": "0.6.1",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-manimpango",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"manimpango\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/47/55/d360e73eb4d04b102cef399ddebcba486a9b6c1977a26fe710beffd52e95/manimpango-0.6.1.tar.gz",
+        "sha256": "59a00bbf8e99dab5f94341087c88e609fe946e79724627429cf59da84cbd40bf"
+      }
+    ]
+  }
+}

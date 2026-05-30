@@ -1,0 +1,59 @@
+{
+  "header": {
+    "id": "rdm",
+    "version": "2025.2.1.4",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "rdm",
+    "buildsystem": "simple",
+    "build-commands": [
+      "ar x RemoteDesktopManager.deb",
+      "tar -xf data.tar.xz",
+      "rm usr/lib/devolutions/RemoteDesktopManager/libWebView-4.0.so",
+      "mv usr/lib/* ${FLATPAK_DEST}/",
+      "install -D remotedesktopmanager ${FLATPAK_DEST}/bin/remotedesktopmanager"
+    ],
+    "post-install": [
+      "install -Dm644 net.devolutions.RDM.metainfo.xml ${FLATPAK_DEST}/share/metainfo/net.devolutions.RDM.metainfo.xml",
+      "desktop-file-edit --set-key='Icon' --set-value=\"$FLATPAK_ID\" usr/share/applications/com.devolutions.remotedesktopmanager.desktop",
+      "sed -i \"s/com.devolutions.remotedesktopmanager/$FLATPAK_ID/g\" usr/share/mime/packages/*",
+      "for f in $(find usr/share/ -type f -not -path usr/share/metainfo/*); do install -Dm644 \"$f\" `f=${f[@]##usr/} && echo \"${FLATPAK_DEST}/${f/com.devolutions.remotedesktopmanager/$FLATPAK_ID}\"`; done"
+    ],
+    "cleanup": [
+      "control.tar.xz",
+      "data.tar.xz",
+      "debian-binary",
+      "usr"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://cdn.devolutions.net/download/Linux/RDM/2025.2.1.4/RemoteDesktopManager_2025.2.1.4_amd64.deb",
+        "dest-filename": "RemoteDesktopManager.deb",
+        "sha256": "a915e169d5b5c97af6a8849047aeedcca6deb944323b778322d540a877aafcf9",
+        "only-arches": [
+          "x86_64"
+        ]
+      },
+      {
+        "type": "file",
+        "url": "https://cdn.devolutions.net/download/Linux/RDM/2025.2.1.4/RemoteDesktopManager_2025.2.1.4_arm64.deb",
+        "dest-filename": "RemoteDesktopManager.deb",
+        "sha256": "02e6471ccfeba7e033be2f00a249d7d3131eea7a7d1490393914f183264d5975",
+        "only-arches": [
+          "aarch64"
+        ]
+      },
+      {
+        "type": "file",
+        "path": "remotedesktopmanager"
+      },
+      {
+        "type": "file",
+        "path": "net.devolutions.RDM.metainfo.xml"
+      }
+    ]
+  }
+}

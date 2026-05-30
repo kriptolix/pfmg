@@ -1,0 +1,26 @@
+{
+  "header": {
+    "id": "shapefile",
+    "version": "1.6.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "shapefile",
+    "buildsystem": "cmake",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.osgeo.org/shapelib/shapelib-1.6.1.tar.gz",
+        "sha256": "5da90a60e25440f108f4e8e95732bfa83ede13c8e0c2bcf80ae41006cc8ebc20"
+      },
+      {
+        "type": "patch",
+        "paths": [
+          "patches/0021-cmake-Add-guard-for-multiple-inclusions.patch",
+          "patches/0022-cmake-Make-BUILD_TESTING-an-option.patch"
+        ]
+      }
+    ]
+  }
+}

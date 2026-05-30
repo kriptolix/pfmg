@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "tesseract",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "tesseract",
+    "buildsystem": "autotools",
+    "config-opts": [
+      "--disable-static",
+      "--disable-graphics",
+      "--enable-legacy"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/tesseract-ocr/tesseract.git",
+        "tag": "5.5.1"
+      }
+    ]
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "libspacenav",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libspacenav",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/FreeSpacenav/libspnav",
+        "tag": "v1.2",
+        "commit": "d641e5cbbe0d6d2381a2ee8d95c8c7273d005272",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^v([\\d\\.]+)$"
+        }
+      }
+    ]
+  }
+}

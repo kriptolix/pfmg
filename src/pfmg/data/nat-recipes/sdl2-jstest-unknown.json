@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "sdl2-jstest",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "sdl2-jstest",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DBUILD_SDL_JSTEST=OFF",
+      "-DBUILD_SDL2_JSTEST=ON"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://gitlab.com/sdl-jstest/sdl-jstest.git",
+        "commit": "6f7927bfcf9cf0a2cfada54fd6e2ac22d6d9ee86"
+      }
+    ]
+  }
+}

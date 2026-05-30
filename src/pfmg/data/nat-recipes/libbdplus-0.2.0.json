@@ -1,0 +1,40 @@
+{
+  "header": {
+    "id": "libbdplus",
+    "version": "0.2.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libbdplus",
+    "rm-configure": true,
+    "config-opts": [
+      "--with-pic",
+      "--enable-shared",
+      "--disable-static"
+    ],
+    "build-options": {
+      "append-path": "/app/share/vlc/extra/bluray/ant/bin"
+    },
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.videolan.org/videolan/libbdplus/0.2.0/libbdplus-0.2.0.tar.bz2",
+        "sha256": "b93eea3eaef33d6e9155d2c34b068c505493aa5a4936e63274f4342ab0f40a58",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 5563,
+          "url-template": "https://download.videolan.org/videolan/libbdplus/$version/libbdplus-$version.tar.bz2"
+        }
+      },
+      {
+        "type": "patch",
+        "path": "libbdplus-gpg-error.patch"
+      },
+      {
+        "type": "patch",
+        "path": "gcrypt.diff"
+      }
+    ]
+  }
+}

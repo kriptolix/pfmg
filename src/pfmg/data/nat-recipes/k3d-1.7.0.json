@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "k3d",
+    "version": "1.7.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "k3d",
+    "buildsystem": "simple",
+    "build-commands": [
+      "mv -f k3d-linux-amd64 /app/k3d",
+      "chmod 755 /app/k3d"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://github.com/rancher/k3d/releases/download/v1.7.0/k3d-linux-amd64",
+        "sha256": "da9ff31bcf4377fadfb065f4998d347f19de1168a5a553ce2c23b763ee1f6098"
+      }
+    ]
+  }
+}

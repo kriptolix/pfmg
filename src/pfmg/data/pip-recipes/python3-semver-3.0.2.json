@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-semver",
+    "version": "3.0.2",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-semver",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"semver==3.0.2\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/9a/77/0cc7a8a3bc7e53d07e8f47f147b92b0960e902b8254859f4aee5c4d7866b/semver-3.0.2-py3-none-any.whl",
+        "sha256": "b1ea4686fe70b981f85359eda33199d60c53964284e0cfb4977d243e37cf4bf4"
+      }
+    ]
+  }
+}

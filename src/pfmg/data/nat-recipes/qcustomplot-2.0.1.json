@@ -1,0 +1,29 @@
+{
+  "header": {
+    "id": "qcustomplot",
+    "version": "2.0.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "qcustomplot",
+    "buildsystem": "qmake",
+    "cleanup": [
+      "/include"
+    ],
+    "config-opts": [
+      "LIBDIR=/app/lib"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://www.qcustomplot.com/release/2.0.1/QCustomPlot-source.tar.gz",
+        "sha256": "574cee47def3251d080168a23428859214277cb9b6876bcdb9ce9d00b2403fe4"
+      },
+      {
+        "type": "file",
+        "path": "patches/qcustomplot.pro"
+      }
+    ]
+  }
+}

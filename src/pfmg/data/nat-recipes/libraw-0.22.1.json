@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "libraw",
+    "version": "0.22.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libraw",
+    "config-opts": [
+      "--disable-examples",
+      "--disable-jasper",
+      "--disable-static",
+      "--enable-jpeg",
+      "--enable-lcms",
+      "--enable-openmp"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://www.libraw.org/data/LibRaw-0.22.1.tar.gz",
+        "sha256": "a789dc4e2409e2901d93793a4e0b80c7b49d0d97cf6ad71c850eb7616acfd786",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 1709,
+          "stable-only": true,
+          "url-template": "https://www.libraw.org/data/LibRaw-$version.tar.gz"
+        }
+      }
+    ]
+  }
+}

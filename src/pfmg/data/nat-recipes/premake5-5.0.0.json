@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "premake5",
+    "version": "5.0.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "premake5",
+    "buildsystem": "simple",
+    "build-commands": [
+      "cd build/gmake.unix && make config=release",
+      "install -Dm755 -t $FLATPAK_DEST/bin bin/release/premake5",
+      "ln -sf /usr/bin/python3 $FLATPAK_DEST/bin/python"
+    ],
+    "cleanup": [
+      "/bin"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/premake/premake-core/releases/download/v5.0.0-alpha14/premake-5.0.0-alpha14-src.zip",
+        "sha256": "7c9fa4488156625c819dd03f2b48bfd4712fbfabdc2b5768e8c7f52dd7d16608"
+      }
+    ]
+  }
+}

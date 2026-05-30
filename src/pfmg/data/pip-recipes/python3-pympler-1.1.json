@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-pympler",
+    "version": "1.1",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-pympler",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"pympler;\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/79/4f/a6a2e2b202d7fd97eadfe90979845b8706676b41cbd3b42ba75adf329d1f/Pympler-1.1-py3-none-any.whl",
+        "sha256": "5b223d6027d0619584116a0cbc28e8d2e378f7a79c1e5e024f9ff3b673c58506"
+      }
+    ]
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "gmsh",
+    "version": "4.11.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "gmsh",
+    "buildsystem": "cmake",
+    "config-opts": [
+      "-DDEFAULT=0",
+      "-DENABLE_BUILD_LIB=1",
+      "-DENABLE_POST=1",
+      "-DENABLE_PARSER=1"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://gmsh.info/src/gmsh-4.11.1-source.tgz",
+        "sha256": "c5fe1b7cbd403888a814929f2fd0f5d69e27600222a18c786db5b76e8005b365"
+      }
+    ]
+  }
+}

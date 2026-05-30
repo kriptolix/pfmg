@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-hsluv",
+    "version": "5.0.4",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-hsluv",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"hsluv>=5.0.0,<6\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/96/36/5bddefea3d7adf22a64f9aa9701492f8a9fe6948223f5cf2602c22ec9be7/hsluv-5.0.4-py2.py3-none-any.whl",
+        "sha256": "0138bd10038e2ee1b13eecae9a7d49d4ec8c320b1d7eb4f860832c792e3e4567"
+      }
+    ]
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "header": {
+    "id": "jmv",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "jmv",
+    "buildsystem": "simple",
+    "build-commands": [
+      "cd jamovi-compiler && npm install --offline",
+      "mkdir -p /app/lib/jamovi/modules",
+      "mkdir -p   jmv/build/R`/app/bin/jamovi --r-version`-linux",
+      "/app/bin/R CMD INSTALL *.jmv.Rpkg --library=jmv/build/R`/app/bin/jamovi --r-version`-linux --no-docs --no-html --no-data --no-help --no-demo --no-multiarch",
+      "./jamovi-compiler.sh --i18n jmv --update",
+      "./jamovi-compiler.sh --install jmv   --to /app/lib/jamovi/modules --home /app --patch-version --skip-remotes --assume-app-version `cat version`",
+      "./jamovi-compiler.sh --install plots --to /app/lib/jamovi/modules --home /app --patch-version --skip-remotes --assume-app-version `cat version` --rlibs /app/lib/jamovi/modules/jmv/R"
+    ],
+    "build-options": {
+      "env": {
+        "XDG_CACHE_HOME": "../flatpak-node/cache",
+        "npm_config_cache": "../flatpak-node/npm-cache",
+        "npm_config_offline": "true",
+        "R_LIBS": "/app/lib/jamovi/modules/jmv/R"
+      }
+    },
+    "sources": [
+      "jmc-deps-sources.json",
+      "jmv-deps-sources.json",
+      {
+        "type": "git",
+        "url": "https://github.com/jamovi/jamovi.git",
+        "commit": "2146574acee0bf6a0f6b342ece0024147d2515b2"
+      },
+      {
+        "type": "script",
+        "dest-filename": "jamovi-compiler.sh",
+        "commands": [
+          "node jamovi-compiler/index.js --rhome $R_HOME $*"
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "python3-platformdirs",
+    "version": "4.9.6",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-platformdirs",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"platformdirs\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/75/a6/a0a304dc33b49145b21f4808d763822111e67d1c3a32b524a1baf947b6e1/platformdirs-4.9.6-py3-none-any.whl",
+        "sha256": "e61adb1d5e5cb3441b4b7710bea7e4c12250ca49439228cc1021c00dcfac0917",
+        "x-checker-data": {
+          "type": "pypi",
+          "name": "platformdirs",
+          "packagetype": "bdist_wheel"
+        }
+      }
+    ]
+  }
+}

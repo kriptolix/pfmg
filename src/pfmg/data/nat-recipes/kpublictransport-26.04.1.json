@@ -1,0 +1,33 @@
+{
+  "header": {
+    "id": "kpublictransport",
+    "version": "26.04.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "kpublictransport",
+    "config-opts": [
+      "-DBUILD_TESTING=OFF"
+    ],
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.kde.org/stable/release-service/26.04.1/src/kpublictransport-26.04.1.tar.xz",
+        "sha256": "e491c9e6aa85e662412c62ea36895f73bed33600633761dbe8fac14500e777ff",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 8763,
+          "stable-only": true,
+          "url-template": "https://download.kde.org/stable/release-service/$version/src/kpublictransport-$version.tar.xz"
+        }
+      },
+      {
+        "type": "patch",
+        "path": "6ace248b71ea3fe6211a67b3fa0d3452ba59dd4a.diff"
+      }
+    ]
+  }
+}

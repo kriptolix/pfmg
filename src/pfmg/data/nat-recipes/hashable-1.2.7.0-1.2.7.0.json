@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "hashable-1.2.7.0",
+    "version": "1.2.7.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "hashable-1.2.7.0",
+    "only-arches": [
+      "x86_64"
+    ],
+    "buildsystem": "simple",
+    "build-commands": [
+      "ghc -threaded --make Setup",
+      "./Setup configure --prefix=/app",
+      "./Setup build",
+      "./Setup install"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "sha256": "ecb5efc0586023f5a0dc861100621c1dbb4cbb2f0516829a16ebac39f0432abf",
+        "url": "https://hackage.haskell.org/package/hashable-1.2.7.0/hashable-1.2.7.0.tar.gz"
+      }
+    ]
+  }
+}

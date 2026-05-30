@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-jaraco-context",
+    "version": "6.1.2",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-jaraco-context",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"jaraco-context==6.1.2\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/f2/58/bc8954bda5fcda97bd7c19be11b85f91973d67a706ed4a3aec33e7de22db/jaraco_context-6.1.2-py3-none-any.whl",
+        "sha256": "bf8150b79a2d5d91ae48629d8b427a8f7ba0e1097dd6202a9059f29a36379535"
+      }
+    ]
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "header": {
+    "id": "rubymine",
+    "version": "2024.3.5",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "RubyMine",
+    "buildsystem": "simple",
+    "build-commands": [
+      "unzip rubymine_logos.zip",
+      "install -D apply_extra /app/bin/apply_extra",
+      "install -D -m644 rubymine_logos/icon-rubymine.svg ${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/${FLATPAK_ID}.svg",
+      "install -D -m644 -t ${FLATPAK_DEST}/share/applications/ ${FLATPAK_ID}.desktop",
+      "install -D -m644 -t ${FLATPAK_DEST}/share/metainfo/ ${FLATPAK_ID}.metainfo.xml",
+      "cat idea.properties | tee -a ${FLATPAK_DEST}/bin/idea.properties"
+    ],
+    "sources": [
+      {
+        "type": "extra-data",
+        "url": "https://download.jetbrains.com/ruby/RubyMine-2024.3.5.tar.gz",
+        "filename": "rubymine.tar.gz",
+        "sha256": "e5fb7daa24307927cfd329340956b4cae1e0f3bb011841834519c4342428d38b",
+        "size": 1024633234,
+        "only-arches": [
+          "x86_64"
+        ],
+        "x-checker-data": {
+          "type": "jetbrains",
+          "code": "RM",
+          "is-main-source": true
+        }
+      },
+      {
+        "type": "extra-data",
+        "url": "https://download.jetbrains.com/ruby/RubyMine-2024.3.5-aarch64.tar.gz",
+        "filename": "rubymine.tar.gz",
+        "sha256": "72a331a3c04a3d9f8bf30ad0b5009d4634f0fdcf5becd6a9a5cd00a5728cd9d1",
+        "size": 1024294830,
+        "only-arches": [
+          "aarch64"
+        ],
+        "x-checker-data": {
+          "type": "jetbrains",
+          "code": "RM",
+          "is-main-source": true
+        }
+      },
+      {
+        "type": "file",
+        "path": "com.jetbrains.RubyMine.desktop"
+      },
+      {
+        "type": "file",
+        "path": "com.jetbrains.RubyMine.metainfo.xml"
+      },
+      {
+        "type": "script",
+        "commands": [
+          "mkdir rubymine/",
+          "tar -xzf rubymine.tar.gz --directory=rubymine/ --strip-components=1",
+          "rm rubymine.tar.gz"
+        ],
+        "dest-filename": "apply_extra"
+      },
+      {
+        "type": "file",
+        "url": "https://resources.jetbrains.com/storage/products/rubymine/docs/rubymine_logos.zip",
+        "sha256": "5eb661386f1a0b667566b8408a831e6998761bc5c0f9d42c34935684417383e3"
+      },
+      {
+        "type": "file",
+        "path": "idea.properties"
+      }
+    ]
+  }
+}

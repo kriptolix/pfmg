@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "contravariant",
+    "version": "1.5.5",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "contravariant",
+    "buildsystem": "simple",
+    "builddir": false,
+    "build-commands": [
+      "echo '#! /usr/bin/env runhaskell' >Setup.txt",
+      "echo '> import Distribution.Simple' >>Setup.txt",
+      "echo '> main = defaultMain' >>Setup.txt",
+      "ln -s Setup.txt Setup.lhs || true",
+      "runhaskell Setup configure --prefix=/app",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "sources": [
+      {
+        "sha256": "062fd66580d7aad0b5ba93e644ffa7feee69276ef50f20d4ed9f1deb7642dffa",
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/contravariant-1.5.5/contravariant-1.5.5.tar.gz"
+      },
+      {
+        "dest-filename": "contravariant.cabal",
+        "sha256": "470ed0e040e879e2da4af1b2c8f94e199f6135852a8107858d5ae0a95365835f",
+        "type": "file",
+        "url": "https://hackage.haskell.org/package/contravariant-1.5.5/revision/0.cabal"
+      }
+    ]
+  }
+}

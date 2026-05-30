@@ -1,0 +1,41 @@
+{
+  "header": {
+    "id": "kikoplay",
+    "version": "2.0.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "kikoplay",
+    "buildsystem": "simple",
+    "build-options": {
+      "no-debuginfo": true
+    },
+    "build-commands": [
+      "bsdtar --to-stdout -xvf kikoplay.deb data.* | bsdtar -xvf -",
+      "mv usr/share/kikoplay/web usr/bin",
+      "rm -r usr/share/kikoplay",
+      "cp -a usr/* ${FLATPAK_DEST}"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "dest-filename": "kikoplay.deb",
+        "only-arches": [
+          "x86_64"
+        ],
+        "url": "https://github.com/KikoPlayProject/KikoPlay/releases/download/2.0.0/kikoplay-amd64.deb",
+        "sha256": "a3bcbb6c4d92bf453990efd772f9c41c7f76ff5712b798c6732b9bab42361712"
+      },
+      {
+        "type": "file",
+        "dest-filename": "kikoplay.deb",
+        "only-arches": [
+          "aarch64"
+        ],
+        "url": "https://github.com/KikoPlayProject/KikoPlay/releases/download/2.0.0/kikoplay-arm64.deb",
+        "sha256": "25956bdc35f0c99131eabe2ff68d6a4ae5a87457e4e7474bbcc89dbdb0d6a18b"
+      }
+    ]
+  }
+}

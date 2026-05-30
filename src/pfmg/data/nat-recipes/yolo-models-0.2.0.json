@@ -1,0 +1,26 @@
+{
+  "header": {
+    "id": "yolo-models",
+    "version": "0.2.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "yolo-models",
+    "buildsystem": "simple",
+    "build-commands": [
+      "mkdir -p ${FLATPAK_DEST}/share/models/",
+      "install -Dm644 *.onnx ${FLATPAK_DEST}/share/models/",
+      "install -Dm644 coco.names ${FLATPAK_DEST}/share/models/",
+      "for d in *_model; do cp -r \"$d\" ${FLATPAK_DEST}/share/models/; done",
+      "for d in *_model_320; do cp -r \"$d\" ${FLATPAK_DEST}/share/models/; done"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/saeugetier/photobooth-model-zoo/releases/download/v0.2.0/yolo-models-v0.2.0.tar.gz",
+        "sha256": "b76a6927f40c889d0e24a8e063f9c74125bf7349764957951fc8ae94a3e12f87"
+      }
+    ]
+  }
+}

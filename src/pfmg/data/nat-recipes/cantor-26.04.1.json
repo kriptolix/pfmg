@@ -1,0 +1,114 @@
+{
+  "header": {
+    "id": "cantor",
+    "version": "26.04.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "cantor",
+    "buildsystem": "cmake-ninja",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.kde.org/stable/release-service/26.04.1/src/cantor-26.04.1.tar.xz",
+        "sha256": "ce835577baaad9acf438fefd69ffd8da406d9c3f148abee467270f6d8cf96670",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 236341,
+          "stable-only": true,
+          "url-template": "https://download.kde.org/stable/release-service/$version/src/cantor-$version.tar.xz"
+        }
+      }
+    ],
+    "modules": [
+      {
+        "name": "analitza",
+        "buildsystem": "cmake-ninja",
+        "sources": [
+          {
+            "type": "archive",
+            "url": "https://download.kde.org/stable/release-service/26.04.1/src/analitza-26.04.1.tar.xz",
+            "sha256": "c16c038da041b51ad9003b0e381b85f1b894c86caec43c04fde69c7fb5e1c1e6",
+            "x-checker-data": {
+              "type": "anitya",
+              "project-id": 8763,
+              "stable-only": true,
+              "url-template": "https://download.kde.org/stable/release-service/$version/src/analitza-$version.tar.xz"
+            }
+          }
+        ],
+        "modules": [
+          {
+            "name": "eigen",
+            "buildsystem": "cmake-ninja",
+            "builddir": true,
+            "cleanup": [
+              "*"
+            ],
+            "sources": [
+              {
+                "type": "archive",
+                "url": "https://gitlab.com/libeigen/eigen/-/archive/5.0.1/eigen-5.0.1.tar.bz2",
+                "sha256": "e4de6b08f33fd8b8985d2f204381408c660bffa6170ac65b68ae1bd3cd575c0a",
+                "x-checker-data": {
+                  "type": "anitya",
+                  "project-id": 13751,
+                  "stable-only": true,
+                  "url-template": "https://gitlab.com/libeigen/eigen/-/archive/$version/eigen-$version.tar.bz2"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "poppler",
+        "buildsystem": "cmake-ninja",
+        "builddir": true,
+        "config-opts": [
+          "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
+          "-DBUILD_GTK_TESTS=OFF",
+          "-DBUILD_QT5_TESTS=OFF",
+          "-DBUILD_QT6_TESTS=OFF",
+          "-DBUILD_CPP_TESTS=OFF",
+          "-DENABLE_UTILS=OFF",
+          "-DENABLE_CPP=OFF",
+          "-DENABLE_GLIB=OFF",
+          "-DENABLE_QT5=OFF",
+          "-DENABLE_QT6=ON"
+        ],
+        "sources": [
+          {
+            "type": "archive",
+            "url": "https://poppler.freedesktop.org/poppler-26.05.0.tar.xz",
+            "sha256": "6fef27ff04f37db43054c86bcdff6128c9fb1f6af4ef3c8b369a7e9abd68d0bb",
+            "x-checker-data": {
+              "type": "anitya",
+              "project-id": 3686,
+              "stable-only": true,
+              "url-template": "https://poppler.freedesktop.org/poppler-$version.tar.xz"
+            }
+          }
+        ],
+        "modules": [
+          {
+            "name": "boost",
+            "buildsystem": "simple",
+            "build-commands": [
+              "./bootstrap.sh --prefix=/app --with-libraries=system,iostreams,program_options,filesystem,date_time",
+              "./b2 -j $FLATPAK_BUILDER_N_JOBS install"
+            ],
+            "sources": [
+              {
+                "type": "archive",
+                "url": "https://archives.boost.io/release/1.88.0/source/boost_1_88_0.tar.bz2",
+                "sha256": "46d9d2c06637b219270877c9e16155cbd015b6dc84349af064c088e9b5b12f7b"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

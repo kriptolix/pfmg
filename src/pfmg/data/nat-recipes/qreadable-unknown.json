@@ -1,0 +1,19 @@
+{
+  "header": {
+    "id": "qreadable",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "qreadable",
+    "buildsystem": "cmake-ninja",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://invent.kde.org/ccarney/qreadable.git",
+        "tag": "readability-0.6.0"
+      }
+    ]
+  }
+}

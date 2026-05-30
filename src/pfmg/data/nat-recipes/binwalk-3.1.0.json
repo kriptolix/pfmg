@@ -1,0 +1,37 @@
+{
+  "header": {
+    "id": "binwalk",
+    "version": "3.1.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "binwalk",
+    "buildsystem": "simple",
+    "build-options": {
+      "append-path": "/usr/lib/sdk/rust-stable/bin",
+      "env": {
+        "CARGO_HOME": "/run/build/binwalk/cargo"
+      }
+    },
+    "build-commands": [
+      "cargo fetch --locked --offline",
+      "cargo build --release --locked --offline",
+      "install -Dm0755 target/release/binwalk ${FLATPAK_DEST}/bin/binwalk"
+    ],
+    "sources": [
+      "cargo-sources-binwalk.json",
+      {
+        "type": "archive",
+        "url": "https://github.com/ReFirmLabs/binwalk/archive/refs/tags/v3.1.0.tar.gz",
+        "sha256": "06f595719417b70a592580258ed980237892eadc198e02363201abe6ca59e49a",
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://api.github.com/repos/ReFirmLabs/binwalk/releases/latest",
+          "version-query": ".tag_name",
+          "url-query": "\"https://github.com/ReFirmLabs/binwalk/archive/refs/tags/\\($version).tar.gz\""
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "xinput",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "xinput",
+    "buildsystem": "autotools",
+    "cleanup": [
+      "/share/man"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://gitlab.freedesktop.org/xorg/app/xinput.git",
+        "tag": "xinput-1.6.4",
+        "commit": "b6092488058da39754ece13475aab53616397af7"
+      }
+    ]
+  }
+}

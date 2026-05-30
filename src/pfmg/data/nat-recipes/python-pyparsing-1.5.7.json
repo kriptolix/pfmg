@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python-pyparsing",
+    "version": "1.5.7",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python-pyparsing",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip2 install --no-index --find-links=\"file://${PWD}\" --install-option=\"--prefix=${FLATPAK_DEST}\" pyparsing"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/6f/2c/47457771c02a8ff0f302b695e094ec309e30452232bd79198ee94fda689f/pyparsing-1.5.7.tar.gz",
+        "sha256": "646e14f90b3689b005c19ac9b6b390c9a39bf976481849993e277d7380e6e79f"
+      }
+    ]
+  }
+}

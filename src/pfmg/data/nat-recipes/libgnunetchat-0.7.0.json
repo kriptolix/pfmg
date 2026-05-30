@@ -1,0 +1,26 @@
+{
+  "header": {
+    "id": "libgnunetchat",
+    "version": "0.7.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libgnunetchat",
+    "buildsystem": "meson",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://ftp.gnu.org/gnu/gnunet/libgnunetchat-0.7.0.tar.gz",
+        "sha512": "330857bc3e38c2107d70c5ce5d729a1562593b139bc86bf883a5b397f2b33f9ea362e2b6619b35566cb2a646cfc0c5ca71478ff7161cf40410fe52666b828bba",
+        "x-checker-data": {
+          "type": "html",
+          "url": "https://gitlab.com/gnunet-messenger/libgnunetchat/-/tags",
+          "version-pattern": ">v([\\d\\.]+)</a>",
+          "url-template": "https://ftp.gnu.org/gnu/gnunet/libgnunetchat-$version.tar.gz",
+          "is-important": true
+        }
+      }
+    ]
+  }
+}

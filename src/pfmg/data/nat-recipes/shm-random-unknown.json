@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "shm-random",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "SHM_random",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DCLANG_FORMAT=OFF",
+      "-DCOMPILER_WARNINGS=OFF",
+      "-DCLANG_TIDY=OFF",
+      "-DENABLE_TEST=OFF",
+      "-DBUILD_DOC=OFF"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "tag": "v1.4.1",
+        "url": "https://github.com/SHMModbus/shared_mem_random.git",
+        "commit": "092d73077e32699437b8295ffcc37d0345fa745c",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^v([\\d.]+)$"
+        }
+      }
+    ]
+  }
+}

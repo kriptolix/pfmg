@@ -1,0 +1,37 @@
+{
+  "header": {
+    "id": "apcu",
+    "version": "5.1.21",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "apcu",
+    "buildsystem": "autotools",
+    "config-opts": [
+      "--with-php-config=/usr/lib/sdk/php73/bin/php-config"
+    ],
+    "post-install": [
+      "install -Dm755 modules/apcu.so $(php -r 'echo ini_get(\"extension_dir\");')/apcu.so",
+      "install -Dm644 apcu.ini ${PHP_INI_DIR}/conf.d/apcu.ini",
+      "install -Dm644 LICENSE ${FLATPAK_DEST}/share/licenses/apcu/LICENSE"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/krakjoe/apcu/archive/v5.1.21.tar.gz",
+        "sha256": "6406376c069fd8e51cd470bbb38d809dee7affbea07949b2a973c62ec70bd502"
+      },
+      {
+        "type": "file",
+        "path": "apcu.ini"
+      },
+      {
+        "type": "shell",
+        "commands": [
+          "${FLATPAK_DEST}/bin/phpize"
+        ]
+      }
+    ]
+  }
+}

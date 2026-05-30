@@ -1,0 +1,71 @@
+{
+  "header": {
+    "id": "freelens",
+    "version": "1.9.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "freelens",
+    "buildsystem": "simple",
+    "build-commands": [
+      "bsdtar -Oxf freelens.deb 'data.tar.xz' |\n  bsdtar -xf - \\\n    --exclude='./usr/share/doc'\n",
+      "mv opt/Freelens \"${FLATPAK_DEST}/Freelens\"",
+      "install -Dm0755 freelens-launch.sh \"${FLATPAK_DEST}/bin/freelens\"",
+      "for cmd in assume aws doctl gke-gcloud-auth-plugin glab kubelogin swc; do\n  install -Dm0755 host-spawn.sh \"${FLATPAK_DEST}/bin/$cmd\"\ndone\n",
+      "install -Dm0644 usr/share/applications/freelens.desktop \"${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop\"",
+      "for size in 16 22 24 32 36 48 64 72 96 128 192 256 512; do\n  install -Dm0644 usr/share/icons/hicolor/${size}x${size}/apps/freelens.png \"${FLATPAK_DEST}/share/icons/hicolor/${size}x${size}/apps/${FLATPAK_ID}.png\"\ndone\n",
+      "mkdir -p \"${FLATPAK_DEST}/share/metainfo\"",
+      "sed \\\n  -e s/VERSION/$(grep 'release version' usr/share/metainfo/app.freelens.Freelens.metainfo.xml | sed 's/.*version=\"\\([^\"]*\\)\".*/\\1/')/ \\\n  -e s/DATE/$(grep 'release version' usr/share/metainfo/app.freelens.Freelens.metainfo.xml | sed 's/.*date=\"\\([^\"]*\\)\".*/\\1/')/ \\\n  app.freelens.Freelens.metainfo.xml \\\n  > \"${FLATPAK_DEST}/share/metainfo/${FLATPAK_ID}.metainfo.xml\"\n",
+      "sed -i -e \"s/VERSION/$version/\" -e \"s/DATE/$DATE/\" \"${FLATPAK_DEST}/share/metainfo/${FLATPAK_ID}.metainfo.xml\"",
+      "desktop-file-edit --set-key=Exec --set-value='freelens %U' \"${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop\"",
+      "desktop-file-edit --set-key=Icon --set-value=\"${FLATPAK_ID}\" \"${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop\"",
+      "desktop-file-edit --set-key=X-Flatpak-RenamedFrom --set-value='freelens.desktop;' \"${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop\"",
+      "patch-electron-desktop-filename \"${FLATPAK_DEST}/Freelens/resources/app.asar\""
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "dest-filename": "freelens.deb",
+        "url": "https://github.com/freelensapp/freelens/releases/download/v1.9.0/Freelens-1.9.0-linux-amd64.deb",
+        "sha256": "1b1588e487513eb530ab84cbd55a8bfeba6308e058bd5259c9861deccb8acda6",
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://api.github.com/repos/freelensapp/freelens/releases/latest",
+          "version-query": ".tag_name | sub(\"^v\"; \"\")",
+          "url-query": ".assets[] | select(.name==\"Freelens-\" + $version + \"-linux-amd64.deb\") | .browser_download_url"
+        },
+        "only-arches": [
+          "x86_64"
+        ]
+      },
+      {
+        "type": "file",
+        "dest-filename": "freelens.deb",
+        "url": "https://github.com/freelensapp/freelens/releases/download/v1.9.0/Freelens-1.9.0-linux-arm64.deb",
+        "sha256": "98f12fb594c7bb1cd7eee900603acc657daaa7911d58b83e45dd8783eaac8551",
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://api.github.com/repos/freelensapp/freelens/releases/latest",
+          "version-query": ".tag_name | sub(\"^v\"; \"\")",
+          "url-query": ".assets[] | select(.name==\"Freelens-\" + $version + \"-linux-arm64.deb\") | .browser_download_url"
+        },
+        "only-arches": [
+          "aarch64"
+        ]
+      },
+      {
+        "type": "file",
+        "path": "freelens-launch.sh"
+      },
+      {
+        "type": "file",
+        "path": "host-spawn.sh"
+      },
+      {
+        "type": "file",
+        "path": "app.freelens.Freelens.metainfo.xml"
+      }
+    ]
+  }
+}

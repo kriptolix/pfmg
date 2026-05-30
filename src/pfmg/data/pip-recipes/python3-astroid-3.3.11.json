@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-astroid",
+    "version": "3.3.11",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-astroid",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"astroid==3.3.11\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/af/0f/3b8fdc946b4d9cc8cc1e8af42c4e409468c84441b933d037e101b3d72d86/astroid-3.3.11-py3-none-any.whl",
+        "sha256": "54c760ae8322ece1abd213057c4b5bba7c49818853fc901ef09719a60dbf9dec"
+      }
+    ]
+  }
+}

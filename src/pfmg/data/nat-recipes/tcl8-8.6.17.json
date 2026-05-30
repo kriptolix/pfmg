@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "tcl8",
+    "version": "8.6.17",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "tcl8",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://sourceforge.net/projects/tcl/files/Tcl/8.6.17/tcl8.6.17-src.tar.gz",
+        "sha256": "a3903371efcce8a405c5c245d029e9f6850258a60fa3761c4d58995610949b31"
+      }
+    ],
+    "subdir": "unix",
+    "build-options": {
+      "no-debuginfo": true
+    },
+    "post-install": [
+      "make install-private-headers",
+      "ln -v -sf tclsh8.6 ${FLATPAK_DEST}/bin/tclsh",
+      "chmod -v 755 ${FLATPAK_DEST}/lib/libtcl8.6.so"
+    ]
+  }
+}

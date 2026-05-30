@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "objectivelymvc",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "ObjectivelyMVC",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/jdolan/ObjectivelyMVC.git",
+        "commit": "5dbd343a90620617df9dd4ab761dba43e98aadfc"
+      },
+      {
+        "type": "script",
+        "commands": [
+          "autoreconf -fiv"
+        ],
+        "dest-filename": "autogen.sh"
+      }
+    ]
+  }
+}

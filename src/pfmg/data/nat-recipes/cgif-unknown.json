@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "cgif",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "cgif",
+    "buildsystem": "meson",
+    "config-opts": [
+      "--libdir=lib",
+      "--buildtype=release"
+    ],
+    "builddir": true,
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/dloebl/cgif.git",
+        "tag": "v0.5.2",
+        "commit": "48d28fe9f8c3a344b688bb10274447b6bb1bf0c2"
+      }
+    ]
+  }
+}

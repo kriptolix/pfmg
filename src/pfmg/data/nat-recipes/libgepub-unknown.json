@@ -1,0 +1,19 @@
+{
+  "header": {
+    "id": "libgepub",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libgepub",
+    "buildsystem": "meson",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://gitlab.gnome.org/GNOME/libgepub.git",
+        "commit": "323d502507beba4e9f401a74d4303a648fe1788c"
+      }
+    ]
+  }
+}

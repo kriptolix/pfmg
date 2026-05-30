@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "materia-light-compact",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "Materia-light-compact",
+    "buildsystem": "simple",
+    "build-commands": [
+      "mkdir -pm 755 /usr/share/runtime/share/themes/Materia-light-compact/gtk-3.0",
+      "cp src/gtk/3.0/gtk-light-compact.css /usr/share/runtime/share/themes/Materia-light-compact/gtk-3.0/gtk.css",
+      "cp src/gtk/3.0/gtk-dark-compact.css /usr/share/runtime/share/themes/Materia-light-compact/gtk-3.0/gtk-dark.css",
+      "cp -r src/gtk/assets /usr/share/runtime/share/themes/Materia-light-compact/gtk-3.0"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/nana-4/materia-theme/archive/v20191017.tar.gz",
+        "sha256": "ab60f2b79f4b22cefa432d00bae8456e27073d2ba22297da0ea92ac09c994d71"
+      }
+    ]
+  }
+}

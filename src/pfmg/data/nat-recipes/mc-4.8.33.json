@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "mc",
+    "version": "4.8.33",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "mc",
+    "buildsystem": "autotools",
+    "config-opts": [
+      "--with-screen=slang",
+      "--disable-vfs-sftp"
+    ],
+    "post-install": [
+      "mv /app/bin/mc /app/bin/mc.bin",
+      "sed -i 's|/app/bin/mc |/app/bin/mc.bin |g' /app/libexec/mc/mc-wrapper.sh",
+      "printf '%s\\n' '#!/bin/bash' 'unset -f mc 2>/dev/null' '. /app/libexec/mc/mc-wrapper.sh \"$@\"' > /app/bin/mc\n",
+      "chmod 755 /app/bin/mc"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "http://ftp.midnight-commander.org/mc-4.8.33.tar.xz",
+        "sha256": "cae149d42f844e5185d8c81d7db3913a8fa214c65f852200a9d896b468af164c",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 1894,
+          "stable-only": true,
+          "url-template": "http://ftp.midnight-commander.org/mc-$version.tar.xz"
+        }
+      }
+    ]
+  }
+}

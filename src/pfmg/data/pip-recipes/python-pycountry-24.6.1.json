@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python-pycountry",
+    "version": "24.6.1",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python-pycountry",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --disable-pip-version-check --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} --no-build-isolation \"pycountry\""
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/b1/ec/1fb891d8a2660716aadb2143235481d15ed1cbfe3ad669194690b0604492/pycountry-24.6.1-py3-none-any.whl",
+        "sha256": "f1a4fb391cd7214f8eefd39556d740adcc233c778a27f8942c8dca351d6ce06f"
+      }
+    ]
+  }
+}

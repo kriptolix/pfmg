@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "node",
+    "version": "12.13.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "build-options": {
+      "prefix": "/app/local"
+    },
+    "cleanup": [
+      "*"
+    ],
+    "name": "node",
+    "post-install": [
+      "python -m compileall /app/local/lib/node_modules/npm/node_modules/node-gyp"
+    ],
+    "sources": [
+      {
+        "sha512": "a7aa8b1f010ea1df122d9d7b88ee0a9d10e0d79ae2f3d18c706ac6ce36e2e2039c21ea6f3dba3a22a79ed3f6069850a8a3c463dbd64e1e8f4a9dbe8901a89cc8",
+        "type": "archive",
+        "url": "https://nodejs.org/dist/v12.13.0/node-v12.13.0.tar.xz"
+      }
+    ]
+  }
+}

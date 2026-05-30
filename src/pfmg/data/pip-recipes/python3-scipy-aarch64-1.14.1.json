@@ -1,0 +1,31 @@
+{
+  "header": {
+    "id": "python3-scipy-aarch64",
+    "version": "1.14.1",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-scipy-aarch64",
+    "only-arches": [
+      "aarch64"
+    ],
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 debug --verbose",
+      "python3 -m pip install numpy-2.1.1-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl scipy-1.14.1-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl --prefix=${FLATPAK_DEST}"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/9f/8a/76ddef3e621541ddd6984bc24d256a4e3422d036790cbbe449e6cad439ee/numpy-2.1.1-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl",
+        "sha256": "fcd8f556cdc8cfe35e70efb92463082b7f43dd7e547eb071ffc36abc0ca4699b"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/f0/5a/efa92a58dc3a2898705f1dc9dbaf390ca7d4fba26d6ab8cfffb0c72f656f/scipy-1.14.1-cp312-cp312-manylinux_2_17_aarch64.manylinux2014_aarch64.whl",
+        "sha256": "30ac8812c1d2aab7131a79ba62933a2a76f582d5dbbc695192453dae67ad6310"
+      }
+    ]
+  }
+}

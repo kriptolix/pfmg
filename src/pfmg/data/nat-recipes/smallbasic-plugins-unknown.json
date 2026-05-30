@@ -1,0 +1,19 @@
+{
+  "header": {
+    "id": "smallbasic-plugins",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "smallbasic-plugins",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/smallbasic/smallbasic.plugins.git",
+        "tag": "12_32_FLATPAK_3",
+        "commit": "0967b93b86c24901f3ad5638492f0127db894d9c"
+      }
+    ]
+  }
+}

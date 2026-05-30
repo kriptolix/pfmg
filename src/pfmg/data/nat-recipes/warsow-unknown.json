@@ -1,0 +1,56 @@
+{
+  "header": {
+    "id": "warsow",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "warsow",
+    "buildsystem": "cmake",
+    "no-make-install": true,
+    "subdir": "source/source",
+    "config-opts": [
+      "-DQFUSION_GAME=Warsow",
+      "-DUSE_SDL2=ON"
+    ],
+    "build-options": {
+      "cflags": "-fcommon"
+    },
+    "post-install": [
+      "install -Dm0755 build/warsow.* ${FLATPAK_DEST}/bin/warsow",
+      "install -Dm0755 build/wsw_server.* ${FLATPAK_DEST}/bin/warsow-server",
+      "install -Dm0755 build/wswtv_server.* ${FLATPAK_DEST}/bin/warsow-tv-server",
+      "mkdir -p ${FLATPAK_DEST}/share/warsow/libs",
+      "cp build/libs/*.so ${FLATPAK_DEST}/share/warsow/libs",
+      "install -Dm0644 ../../warsow.png ${FLATPAK_DEST}/share/icons/hicolor/256x256/apps/warsow.png",
+      "install -Dm0644 ../../warsow.appdata.xml ${FLATPAK_DEST}/share/appdata/warsow.appdata.xml",
+      "install -Dm0644 ../../warsow.desktop ${FLATPAK_DEST}/share/applications/warsow.desktop"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://warsow.net/warsow_21_sdk.tar.gz",
+        "sha256": "99c88bc08f5e6055d28534de6e84fc204026dda51dc31e22caca1977f199453a"
+      },
+      {
+        "type": "file",
+        "path": "warsow.desktop"
+      },
+      {
+        "type": "file",
+        "path": "warsow.appdata.xml"
+      },
+      {
+        "type": "file",
+        "path": "warsow.png"
+      },
+      {
+        "type": "shell",
+        "commands": [
+          "sed -e \"/fs_basepath =/ s:\\.:${FLATPAK_DEST}/share/warsow:\" -i source/source/qcommon/files.c"
+        ]
+      }
+    ]
+  }
+}

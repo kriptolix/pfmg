@@ -1,0 +1,147 @@
+{
+  "header": {
+    "id": "python3-magic-wormhole",
+    "version": "0.12.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-magic-wormhole",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"magic-wormhole\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/62/d5/5f610ebe421e85889f2e55e33b7f9a6795bd982198517d912eb1c76e1a53/pycparser-2.21-py2.py3-none-any.whl",
+        "sha256": "8ee45429555515e1f6b185e78100aea234072576aa43ab53aefcae078162fca9"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/95/de/214830a981892a3e286c3794f41ae67a4495df1108c3da8a9f62159b9a9d/pyasn1_modules-0.2.8-py2.py3-none-any.whl",
+        "sha256": "a50b808ffeb97cb3601dd25981f6b016cbb3d31fbf57a8b8a87428e6158d0c74"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/62/1e/a94a8d635fa3ce4cfc7f506003548d0a2447ae76fd5ca53932970fe3053f/pyasn1-0.4.8-py2.py3-none-any.whl",
+        "sha256": "39c7e2ec30515947ff4e87fb6f456dfc6e84857d34be479c9d4a4ba4bf46aa5d"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/b1/f0/bbf3a29dbb49118658f6b68d46eb23217b5692c6aad1f2fe38f9d7885f65/autobahn-21.2.1-py2.py3-none-any.whl",
+        "sha256": "41a3a3f89cde48643baf4e105d9491c566295f9abee951379e59121784044b8b"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/ae/58/e0877f58daa69126a5fb325d6df92b20b77431cd281e189c5ec42b722f58/zope.interface-5.4.0.tar.gz",
+        "sha256": "5dba5f530fec3f0988d83b78cc591b58c0b6eb8431a85edd1569a0539a8a5a0e"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/75/e1/932e06004039dd670c9d5e1df0cd606bf46e29a28e65d5bb28e894ea29c9/typing_extensions-4.2.0-py3-none-any.whl",
+        "sha256": "6657594ee297170d19f67d55c05852a874e7eb634f4f753dbd667855e07c1708"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/77/97/001a2b89b07d0a1b17137e0ef33277ad16747a7b8391146bfc880890322b/txaio-22.2.1-py2.py3-none-any.whl",
+        "sha256": "41223af4a9d5726e645a8ee82480f413e5e300dd257db94bc38ae12ea48fb2e5"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/db/99/38622ff95bb740bcc991f548eb46295bba62fcb6e907db1987c4d92edd09/Twisted-22.4.0-py3-none-any.whl",
+        "sha256": "f9f7a91f94932477a9fc3b169d57f54f96c6e74a23d78d9ce54039a7f48928a2"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/93/5a/5e93f280ec7be676b5a57f305350f439d31ced168bca04e6ffa64b575664/service_identity-21.1.0-py2.py3-none-any.whl",
+        "sha256": "f0b0caac3d40627c3c04d7a51b6e06721857a0e10a8775f2d1d7e72901b3a7db"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/85/3a/fe3c98435856a1ed798977981f3da82d2685cf9df97e4d9546340d2b83db/pyOpenSSL-21.0.0-py2.py3-none-any.whl",
+        "sha256": "8935bd4920ab9abfebb07c41a4f58296407ed77f04bd1a92914044b848ba1ed6"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/99/3b/4f80dd10cb716f3a9e22ae88f026d25c47cc3fdf82c2747f3d59c98e4ff1/incremental-21.3.0-py2.py3-none-any.whl",
+        "sha256": "92014aebc6a20b78a8084cdd5645eeaa7f74b8933f70fa3ada2cfbd1e3b54321"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/04/a2/d918dcd22354d8958fe113e1a3630137e0fc8b44859ade3063982eacd2a4/idna-3.3-py3-none-any.whl",
+        "sha256": "84d9dd047ffa80596e0f246e2eab0b391788b0503584e8945f2368256d2735ff"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/6e/aa/8caf6a0a3e62863cbb9dab27135660acba46903b703e224f14f447e57934/hyperlink-21.0.0-py2.py3-none-any.whl",
+        "sha256": "e6b14c37ecb73e89c77d78cdb4c2cc8f3fb59a885c5b3f819ff4ed80f25af1b4"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/d4/85/38715448253404186029c575d559879912eb8a1c5d16ad9f25d35f7c4f4c/cryptography-3.3.2.tar.gz",
+        "sha256": "5a60d3780149e13b7a6ff7ad6526b38846354d11a15e21068e57073e29e19bed"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/b9/65/48c1909d0c0aeae6c10213340ce682db01b48ea900a7d9fce7a7910ff318/constantly-15.1.0-py2.py3-none-any.whl",
+        "sha256": "dd2fa9d6b1a51a83f0d7dd76293d734046aa176e384bf6e33b7e44880eb37c5d"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/00/9e/92de7e1217ccc3d5f352ba21e52398372525765b2e0c4530e6eb2ba9282a/cffi-1.15.0.tar.gz",
+        "sha256": "920f0d66a896c2d99f0adbb391f990a84091179542c205fa53ce5787aff87954"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/a7/22/27582568be639dfe22ddb3902225f91f2f17ceff88ce80e4db396c8986da/PyNaCl-1.5.0.tar.gz",
+        "sha256": "8ac7448f09ab85811607bdd21ec2464495ac8b7c66d146bf545b0f08fb9220ba"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/89/8a/eea987b881522536af2a8fc008214a2bf1ac14b61ae483643165cedbbf35/humanize-4.0.0-py3-none-any.whl",
+        "sha256": "8d86333b8557dacffd4dce1dbe09c81c189e2caf7bb17a970b2212f0f58f10f2"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/c3/be/327e072850db181ce56afd51e26ec7aa5659b18466c709fa5ea2548c935f/hkdf-0.0.3.tar.gz",
+        "sha256": "622a31c634bc185581530a4b44ffb731ed208acf4614f9c795bdd70e77991dca"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/a0/66/c8196ad693d62384d8e800e5bd27434a64c0057fe169b61c69a73f1614a8/click-8.1.2-py3-none-any.whl",
+        "sha256": "24e1a4a9ec5bf6299411369b208c1df2188d9eb8d916302fe6bf03faed227f1e"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/9d/48/76e4bfbac0564b51e9f5c8053404d7e841bf4bccf770615fc574884e3761/txtorcon-22.0.0-py2.py3-none-any.whl",
+        "sha256": "824b5df1977bedabfc1c49c9523b8fa1b7cff11d6fee78015df1ce133685779c"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/dd/83/5f6f3c1a562674d65efc320257bdc0873ec53147835aeef7762fe7585273/Automat-20.2.0-py2.py3-none-any.whl",
+        "sha256": "b6feb6455337df834f6c9962d6ccf771515b7d939bca142b29c20c2376bc6111"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/8a/c4/d15f1e627fff25443ded77ea70a7b5532d6371498f9285d44d62587e209c/tqdm-4.64.0-py2.py3-none-any.whl",
+        "sha256": "74a2cdefe14d11442cedf3ba4e21a3b84ff9a2dbdc6cfae2c34addb2a14a5ea6"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/be/be/7abce643bfdf8ca01c48afa2ddf8308c2308b0c3b239a44e57d020afa0ef/attrs-21.4.0-py2.py3-none-any.whl",
+        "sha256": "2d27e3784d7a565d36ab851fe94887c5eccd6a463168875832a1be79c82828b4"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/92/b8/e1bdd53d1a865f4769769fa2473d8f410622ba21b45d062acaa0cecaa937/spake2-0.8-py2.py3-none-any.whl",
+        "sha256": "ce80705f8516c54364931f3b2c9a917ba001500d7f2fc76a0e8cf3bcaf0e30f7"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/94/a9/55fd5129c18802d334a0dd5380e08ff647a5eddea0dde1ba1360a318e1cf/magic_wormhole-0.12.0-py2.py3-none-any.whl",
+        "sha256": "7c9a8d2a6e89314878dda23efc14c78398f1b6eb80e6c86c895c001c888d086e"
+      }
+    ]
+  }
+}

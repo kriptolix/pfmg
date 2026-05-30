@@ -1,0 +1,33 @@
+{
+  "header": {
+    "id": "numpy",
+    "version": "1.25.1",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "numpy",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"numpy\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "only-arches": [
+          "x86_64"
+        ],
+        "url": "https://files.pythonhosted.org/packages/d0/55/559e6f455a066e12058330377259a106b7fefa41c15dbdb1b71070cec429/numpy-1.25.1-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "sha256": "6c6c9261d21e617c6dc5eacba35cb68ec36bb72adcff0dee63f8fbc899362588"
+      },
+      {
+        "type": "file",
+        "only-arches": [
+          "aarch64"
+        ],
+        "url": "https://files.pythonhosted.org/packages/3c/81/90d13a812268943226a9ca8d4967343f9e273a5d9a1063f8a99736816eba/numpy-1.25.1-cp310-cp310-manylinux_2_17_aarch64.manylinux2014_aarch64.whl",
+        "sha256": "4a90725800caeaa160732d6b31f3f843ebd45d6b5f3eec9e8cc287e30f2805bf"
+      }
+    ]
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "header": {
+    "id": "fitz",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "fitz",
+    "buildsystem": "cmake-ninja",
+    "no-make-install": true,
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+    ],
+    "post-install": [
+      "install -Dm 755 fitz.so /app/lib/dhewm3"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/dhewm/dhewm3-sdk",
+        "commit": "41cfd224f9c3d4ba9b3882aae8c349efa4ae7148"
+      }
+    ]
+  }
+}

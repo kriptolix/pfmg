@@ -1,0 +1,77 @@
+{
+  "header": {
+    "id": "netpbm",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "netpbm",
+    "build-options": {
+      "env": {
+        "CFLAGS_PERSONAL": "-std=gnu17"
+      }
+    },
+    "sources": [
+      {
+        "type": "svn",
+        "url": "https://svn.code.sf.net/p/netpbm/code/advanced",
+        "revision": "3735"
+      },
+      {
+        "type": "patch",
+        "path": "patches/netpbm-security-scripts.patch"
+      },
+      {
+        "type": "patch",
+        "path": "patches/netpbm-security-code.patch",
+        "options": [
+          "--no-backup-if-mismatch"
+        ]
+      },
+      {
+        "type": "patch",
+        "paths": [
+          "patches/netpbm-ppmfadeusage.patch",
+          "patches/netpbm-CVE-2017-2587.patch",
+          "patches/netpbm-python3.patch",
+          "patches/netpbm-time.patch",
+          "patches/netpbm-gcc4.patch",
+          "patches/netpbm-bmptopnm.patch",
+          "patches/netpbm-CAN-2005-2471.patch",
+          "patches/netpbm-xwdfix.patch",
+          "patches/netpbm-multilib.patch",
+          "patches/netpbm-glibc.patch",
+          "patches/netpbm-fiasco-overflow.patch",
+          "patches/netpbm-pamtojpeg2k.patch",
+          "patches/netpbm-libdir-so.patch",
+          "patches/netpbm-10.84.05-unrecognized-option.patch"
+        ]
+      },
+      {
+        "type": "shell",
+        "commands": [
+          "mv \"configure\" \"configure_upstream\";"
+        ]
+      },
+      {
+        "type": "script",
+        "dest-filename": "configure",
+        "commands": [
+          "for i in {1..32}; do echo; done | \"$( dirname \"${0}\" )\"/configure_upstream \"${@}\";"
+        ]
+      },
+      {
+        "type": "script",
+        "dest-filename": "pgmtopbm",
+        "commands": [
+          "pamditherbw \"${@}\" | pamtopnm"
+        ]
+      }
+    ],
+    "post-install": [
+      "mkdir -p \"${PWD}/package\"; PKGDIR=\"${PWD}/package${FLATPAK_DEST}\"; make package pkgdir=\"${PKGDIR}\"; make check pkgdir=\"${PKGDIR}\" ||:; find \"${PKGDIR}/bin/\" -maxdepth 1 -xtype f | xargs -I{} install -p -D -m 0755 '{}' -t \"${FLATPAK_DEST}/bin/\"; find \"${PKGDIR}/lib/\" -maxdepth 1 -xtype f | xargs -I{} install -p -D -m 0755 '{}' -t \"${FLATPAK_DEST}/lib/\"; find \"${PKGDIR}/misc/\" -maxdepth 1 -xtype f | xargs -I{} install -p -D -m 0644 '{}' -t \"${FLATPAK_DEST}/share/netpbm/\";",
+      "rm -f \"${FLATPAK_DEST}/bin/pgmtopbm\" \"${FLATPAK_DEST}/bin/pnmcomp\" ||:; ln -s \"pamcomp\" \"${FLATPAK_DEST}/bin/pnmcomp\"; install -p -D -m 0755 pgmtopbm -t \"${FLATPAK_DEST}/bin/\";"
+    ]
+  }
+}

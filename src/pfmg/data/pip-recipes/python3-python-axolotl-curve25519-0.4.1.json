@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-python-axolotl-curve25519",
+    "version": "0.4.1",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-python-axolotl-curve25519",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install ."
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://files.pythonhosted.org/packages/source/p/python-axolotl-curve25519/python-axolotl-curve25519-0.4.1.post2.tar.gz",
+        "sha256": "0705a66297ebd2f508a60dc94e22881c754301eb81db93963322f6b3bdcb63a3"
+      }
+    ]
+  }
+}

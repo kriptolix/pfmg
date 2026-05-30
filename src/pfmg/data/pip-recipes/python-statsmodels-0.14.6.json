@@ -1,0 +1,26 @@
+{
+  "header": {
+    "id": "python-statsmodels",
+    "version": "0.14.6",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python-statsmodels",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --no-index --find-links=file://${PWD} --prefix=${FLATPAK_DEST} --no-build-isolation ."
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://files.pythonhosted.org/packages/0d/81/e8d74b34f85285f7335d30c5e3c2d7c0346997af9f3debf9a0a9a63de184/statsmodels-0.14.6.tar.gz",
+        "sha256": "4d17873d3e607d398b85126cd4ed7aad89e4e9d89fc744cdab1af3189a996c2a",
+        "x-checker-data": {
+          "type": "pypi",
+          "name": "statsmodels"
+        }
+      }
+    ]
+  }
+}

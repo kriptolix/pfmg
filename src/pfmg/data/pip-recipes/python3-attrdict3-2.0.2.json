@@ -1,0 +1,26 @@
+{
+  "header": {
+    "id": "python3-attrdict3",
+    "version": "2.0.2",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-attrdict3",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"attrdict3\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/9b/a9/c3f5f498295317c8be62bbe5d1adc1a2864db1720b2a0b4a39e0448d51e4/attrdict3-2.0.2.tar.gz",
+        "sha256": "004c171ca1120cc1755701db99d7fa4944afb1e68950434efdaa542513335fe8",
+        "x-checker-data": {
+          "type": "pypi",
+          "name": "attrdict3"
+        }
+      }
+    ]
+  }
+}

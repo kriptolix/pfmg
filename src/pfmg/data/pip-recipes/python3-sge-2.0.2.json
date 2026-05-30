@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "python3-sge",
+    "version": "2.0.2",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-sge",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"sge\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/49/cc/08bba60f00541f62aaa252ce0cfbd60aebd04616c0b9574f755b583e45ae/pygame-2.6.1.tar.gz",
+        "sha256": "56fb02ead529cee00d415c3e007f75e0780c655909aaa8e8bf616ee09c9feb1f"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/b6/4e/693535e888e1eb040a0265e35dbcfff466af8dc928a83cb554e407847d8c/sge-2.0.2.tar.gz",
+        "sha256": "1719ae32e4ac57b491cc10c211489177b4e76ecc2a3220c5eec6572dd9d5e4ae"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/80/6c/9eb6d93ad8b9ac96cba13e6d2f419c316d8fdb91013e12dd478a99501699/uniseg-0.10.1-py3-none-any.whl",
+        "sha256": "74fe3f7b4ee46bbd703a70ea1e5cd28e04f63eee5af9a10388d93316c554e358"
+      }
+    ]
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "adwaita-qt",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "adwaita-qt",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DQT_PLUGINS_DIR=/usr/share/runtime/lib/plugins/Adwaita",
+      "-DCMAKE_INSTALL_PREFIX=/usr/share/runtime/lib/plugins/Adwaita"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/FedoraQt/adwaita-qt.git",
+        "tag": "1.4.2"
+      }
+    ]
+  }
+}

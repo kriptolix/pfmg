@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "snorenotify",
+    "version": "0.7.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "snorenotify",
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "config-opts": [
+      "-DBUILD_settings=OFF",
+      "-DBUILD_daemon=OFF"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.kde.org/stable/snorenotify/0.7.0/src/snorenotify-0.7.0.tar.xz",
+        "sha256": "6d411ba6e31a73db56d298195f8336f66f8fe4fffd64d5fde3f14090e68ee64b"
+      },
+      {
+        "type": "patch",
+        "path": "CMake-satisfy-KDE-runtime-25.08-requirements.patch"
+      }
+    ]
+  }
+}

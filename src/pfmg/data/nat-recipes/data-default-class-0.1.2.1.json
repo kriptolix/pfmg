@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "data-default-class",
+    "version": "0.1.2.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "data-default-class",
+    "buildsystem": "simple",
+    "builddir": false,
+    "build-commands": [
+      "echo '#! /usr/bin/env runhaskell' >Setup.txt",
+      "echo '> import Distribution.Simple' >>Setup.txt",
+      "echo '> main = defaultMain' >>Setup.txt",
+      "ln -s Setup.txt Setup.lhs || true",
+      "runhaskell Setup configure --prefix=/app",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "sources": [
+      {
+        "sha256": "3d85da4b11bc0e7dcd8620c2e31663d443536bc6879686fc6f2159af8f4ce62e",
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/data-default-class-0.1.2.1/data-default-class-0.1.2.1.tar.gz"
+      },
+      {
+        "dest-filename": "data-default-class.cabal",
+        "sha256": "049c7a2589b8b79ab529ae177b81930fc36c75148daab2cd1434302469204ca9",
+        "type": "file",
+        "url": "https://hackage.haskell.org/package/data-default-class-0.1.2.1/revision/0.cabal"
+      }
+    ]
+  }
+}

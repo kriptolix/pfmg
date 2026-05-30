@@ -1,0 +1,93 @@
+{
+  "header": {
+    "id": "python3-ipykernel",
+    "version": "5.1.4",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-ipykernel",
+    "buildsystem": "simple",
+    "build-commands": [
+      "source /app/bin/activate",
+      "pip3 install --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} ipykernel"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/d7/62/d1a5d654b7a21bd3eb99be1b59a608cc18a7a08ed88495457a87c40a0495/ipykernel-5.1.4-py3-none-any.whl",
+        "sha256": "ba8c9e5561f3223fb47ce06ad7925cb9444337ac367341c0c520ffb68ea6d120"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/39/7b/88dbb785881c28a102619d46423cb853b46dbccc70d3ac362d99773a78ce/pexpect-4.8.0-py2.py3-none-any.whl",
+        "sha256": "0b48a55dcb3c05f3329815901ea4fc1537514d6ba867a152b581d69ae3710937"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/ca/ab/872a23e29cec3cf2594af7e857f18b687ad21039c1f9b922fac5b9b142d5/traitlets-4.3.3-py2.py3-none-any.whl",
+        "sha256": "70b4c6a1d9019d7b4f6846832288f86998aa3b9207c6821f3578a6a6a467fe44"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/58/b4/4850a0ccc6f567cc0ebe7060d20ffd4258b8210efadc259da62dc6ed9c65/wcwidth-0.1.8-py2.py3-none-any.whl",
+        "sha256": "8fd29383f539be45b20bd4df0dc29c20ba48654a41e661925e612311e9f3c603"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/01/67/333e2196b70840f411fd819407b4e98aa3150c2bd24c52154a451f912ef2/jedi-0.16.0-py2.py3-none-any.whl",
+        "sha256": "b4f4052551025c6b0b0b193b29a6ff7bdb74c52450631206c262aef9f7159ad2"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/b8/6d/1e3e335e767fc15a2047a008e27df31aa8bcf11c6f3805d03abefc69aa88/ipython-7.12.0-py3-none-any.whl",
+        "sha256": "f6689108b1734501d3b59c84427259fd5ac5141afe2e846cfa8598eb811886c9"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/f5/22/f00412fafc68169054cc623a35c32773f22b403ddbe516c8adfdecf25341/prompt_toolkit-3.0.3-py3-none-any.whl",
+        "sha256": "c93e53af97f630f12f5f62a3274e79527936ed466f038953dfa379d4941f651a"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/ec/bb/3b6c9f604ac40e2a7833bc767bd084035f12febcbd2b62204c5bc30edf97/parso-0.6.1-py2.py3-none-any.whl",
+        "sha256": "951af01f61e6dccd04159042a0706a31ad437864ec6e25d0d7a96a9fbb9b0095"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/8f/b7/f329cfdc75f3d28d12c65980e4469e2fa373f1953f5df6e370e84ea2e875/decorator-4.4.1-py2.py3-none-any.whl",
+        "sha256": "5d19b92a3c8f7f101c8dd86afd86b0f061a8ce4540ab8cd401fa2542756bce6d"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/84/71/c8ca4f5bb1e08401b916c68003acf0a0655df935d74d93bf3f3364b310e0/backcall-0.1.0.tar.gz",
+        "sha256": "38ecd85be2c1e78f77fd91700c76e14667dc21e2713b63876c0eb901196e01e4"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/d1/29/605c2cc68a9992d18dada28206eeada56ea4bd07a239669da41674648b6f/ptyprocess-0.6.0-py2.py3-none-any.whl",
+        "sha256": "d7cc528d76e76342423ca640335bd3633420dc1366f258cb31d05e865ef5ca1f"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/9a/41/220f49aaea88bc6fa6cba8d05ecf24676326156c23b991e80b3f2fc24c77/pickleshare-0.7.5-py2.py3-none-any.whl",
+        "sha256": "9649af414d74d4df115d5d718f82acb59c9d418196b7b4290ed47a12ce62df56"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/fa/bc/9bd3b5c2b4774d5f33b2d544f1460be9df7df2fe42f352135381c347c69a/ipython_genutils-0.2.0-py2.py3-none-any.whl",
+        "sha256": "72dd37233799e619666c9f639a9da83c34013a73e8bbc79a7a6348d93c61fab8"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/65/eb/1f97cb97bfc2390a276969c6fae16075da282f5058082d4cb10c6c5c1dba/six-1.14.0-py2.py3-none-any.whl",
+        "sha256": "8f3cd2e254d8f793e7f3d6d9df77b92252b52637291d0f0da013c76ea2724b6c"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/be/39/32da3184734730c0e4d3fa3b2b5872104668ad6dc1b5a73d8e477e5fe967/Pygments-2.5.2-py2.py3-none-any.whl",
+        "sha256": "2a3fe295e54a20164a9df49c75fa58526d3be48e14aceba6d6b1e8ac0bfd6f1b"
+      }
+    ]
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "header": {
+    "id": "alure",
+    "version": "1.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "alure",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DBUILD_SHARED=ON",
+      "-DBUILD_STATIC=OFF",
+      "-DBUILD_EXAMPLES=OFF"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://ftp.fau.de/gentoo/distfiles/alure-1.2.tar.bz2",
+        "sha256": "465e6adae68927be3a023903764662d64404e40c4c152d160e3a8838b1d70f71"
+      }
+    ],
+    "cleanup": [
+      "/bin/alure*",
+      "/include/AL",
+      "/share/doc/alure",
+      "/lib/pkgconfig/alure*"
+    ]
+  }
+}

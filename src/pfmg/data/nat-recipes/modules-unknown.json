@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "modules",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "Modules",
+    "buildsystem": "simple",
+    "build-commands": [
+      "mkdir /app/Modules",
+      "cp -r * /app/Modules",
+      "echo 'copied module dir'"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://repo.jasp-stats.org/bundles/Flatpak-x86_64/Flatpak-x86_64-ModulesDir-13-05.tar.xz",
+        "sha256": "f02e2718bd928067c8e69e035936f31dffa5163c8a2f6ee2d59d336c08ad7846",
+        "only-arches": [
+          "x86_64"
+        ]
+      },
+      {
+        "type": "archive",
+        "url": "https://repo.jasp-stats.org/bundles/Flatpak-aarch64/Flatpak-aarch64-ModulesDir-21-08.tar.xz",
+        "sha256": "4b7b3b4ded777b7ef54ea1b33cc9d459ca43e2dd688c70efea2199b811df9735",
+        "only-arches": [
+          "aarch64"
+        ]
+      }
+    ]
+  }
+}

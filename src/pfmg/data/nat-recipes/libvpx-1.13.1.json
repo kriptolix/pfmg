@@ -1,0 +1,31 @@
+{
+  "header": {
+    "id": "libvpx",
+    "version": "1.13.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libvpx",
+    "config-opts": [
+      "--enable-runtime-cpu-detect",
+      "--enable-shared",
+      "--disable-static",
+      "--enable-pic",
+      "--disable-install-bins",
+      "--disable-install-docs",
+      "--disable-install-srcs",
+      "--enable-vp8",
+      "--enable-postproc",
+      "--enable-vp9",
+      "--enable-vp9-highbitdepth"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/webmproject/libvpx/archive/refs/tags/v1.13.1.tar.gz",
+        "sha256": "00dae80465567272abd077f59355f95ac91d7809a2d3006f9ace2637dd429d14"
+      }
+    ]
+  }
+}

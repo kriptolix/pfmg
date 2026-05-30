@@ -1,0 +1,29 @@
+{
+  "header": {
+    "id": "lib3mf",
+    "version": "1.8.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "lib3mf",
+    "buildsystem": "cmake",
+    "config-opts": [
+      "-DCMAKE_POLICY_VERSION_MINIMUM=3.5",
+      "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
+      "-DLIB3MF_TESTS=OFF",
+      "-DUSE_INCLUDED_LIBZIP=OFF"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/3MFConsortium/lib3mf/archive/v1.8.1.tar.gz",
+        "sha256": "207dd142c9ca86a4fb1a4b2baadbdf579f35e03f9b8bf5c02dae027da5ae9d17"
+      },
+      {
+        "type": "patch",
+        "path": "patches/lib3mf-build.patch"
+      }
+    ]
+  }
+}

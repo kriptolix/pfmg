@@ -1,0 +1,37 @@
+{
+  "header": {
+    "id": "lpub3d",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "lpub3d",
+    "buildsystem": "qmake",
+    "config-opts": [
+      "QMAKE_LIBDIR=/app/lib",
+      "QMAKE_STRIP=:",
+      "CONFIG+=flp",
+      "CONFIG+=release",
+      "CONFIG-=debug_and_release",
+      "INSTALL_PREFIX=${FLATPAK_DEST}"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "disable-shallow-clone": true,
+        "url": "https://github.com/trevorsandy/lpub3d.git",
+        "commit": "8880540bb81270dbb37972306d1740208813bee9"
+      },
+      {
+        "type": "shell",
+        "commands": [
+          "(if test -f src/${LP3D_UTILS}/update-config-files.sh; then chmod a+x src/${LP3D_UTILS}/update-config-files.sh && cd src && bash ${LP3D_UTILS}/update-config-files.sh mainApp; fi)"
+        ]
+      }
+    ],
+    "post-install": [
+      "cp -a builds/check ${FLATPAK_DEST}/build_staging/ && echo \"Check bundle copied to ${FLATPAK_DEST}/build_staging/check.\""
+    ]
+  }
+}

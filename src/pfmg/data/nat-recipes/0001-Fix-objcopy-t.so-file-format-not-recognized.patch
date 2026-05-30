@@ -1,0 +1,29 @@
+From 0cffb7193a82aeacdc7de529714258f58b6ca47e Mon Sep 17 00:00:00 2001
+From: Richard Hughes <richard@hughsie.com>
+Date: Tue, 14 Apr 2026 14:50:39 +0100
+Subject: [PATCH] Fix objcopy: t.so: file format not recognized
+
+---
+ apps/Makefile | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
+
+diff --git a/apps/Makefile b/apps/Makefile
+index 18980f1..2f73618 100644
+--- a/apps/Makefile
++++ b/apps/Makefile
+@@ -68,9 +68,9 @@ TARGET_RTDRIVERS =
+ 
+ ifneq ($(HAVE_EFI_OBJCOPY),)
+ 
+-FORMAT		:= --target efi-app-$(ARCH)
+-$(TARGET_BSDRIVERS): FORMAT=--target efi-bsdrv-$(ARCH)
+-$(TARGET_RTDRIVERS): FORMAT=--target efi-rtdrv-$(ARCH)
++FORMAT     := --output-target efi-app-$(ARCH)
++$(TARGET_BSDRIVERS): FORMAT=--output-target efi-bsdrv-$(ARCH)
++$(TARGET_RTDRIVERS): FORMAT=--output-target efi-rtdrv-$(ARCH)
+ 
+ else
+ 
+-- 
+2.53.0
+

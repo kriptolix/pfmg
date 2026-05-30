@@ -1,0 +1,40 @@
+{
+  "header": {
+    "id": "sdl-mixer-x",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "SDL_Mixer_X",
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/WohlSoft/SDL-Mixer-X",
+        "commit": "7181c771aa29deaea8bfbe6098613c3a929e9189"
+      }
+    ],
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DUSE_DRFLAC:BOOL=OFF",
+      "-DUSE_GME:BOOL=OFF",
+      "-DUSE_MIDI:BOOL=OFF",
+      "-DUSE_MIDI_ADLMIDI:BOOL=OFF",
+      "-DUSE_MIDI_EDMIDI:BOOL=OFF",
+      "-DUSE_MIDI_FLUIDLITE:BOOL=OFF",
+      "-DUSE_MIDI_OPNMIDI:BOOL=OFF",
+      "-DUSE_MIDI_TIMIDITY:BOOL=OFF",
+      "-DUSE_MODPLUG:BOOL=OFF",
+      "-DUSE_MP3_DRMP3:BOOL=OFF",
+      "-DUSE_OGG_VORBIS:BOOL=ON",
+      "-DUSE_OGG_VORBIS_STB:BOOL=ON",
+      "-DUSE_OPUS:BOOL=OFF",
+      "-DUSE_PXTONE:BOOL=OFF",
+      "-DUSE_SYSTEM_SDL2:BOOL=ON",
+      "-DUSE_WAV:BOOL=OFF",
+      "-DUSE_WAVPACK:BOOL=OFF"
+    ]
+  }
+}

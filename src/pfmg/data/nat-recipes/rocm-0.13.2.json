@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "rocm",
+    "version": "0.13.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "rocm",
+    "buildsystem": "simple",
+    "build-commands": [
+      "cp -rf --remove-destination ./* ${FLATPAK_DEST}/"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/ollama/ollama/releases/download/v0.13.2/ollama-linux-amd64-rocm.tgz",
+        "sha256": "45e1934c1439df5029f046250625deddacf00dceb9f873c44992b8f8ab2d97b5",
+        "strip-components": 0
+      }
+    ]
+  }
+}

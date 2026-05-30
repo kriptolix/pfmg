@@ -1,0 +1,26 @@
+{
+  "header": {
+    "id": "hardcorps",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "hardcorps",
+    "buildsystem": "cmake-ninja",
+    "no-make-install": true,
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+    ],
+    "post-install": [
+      "install -Dm 755 hardcorps.so /app/lib/dhewm3"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/dhewm/dhewm3-sdk",
+        "commit": "d8d797c2481169743a8907c67f161b059f072a26"
+      }
+    ]
+  }
+}

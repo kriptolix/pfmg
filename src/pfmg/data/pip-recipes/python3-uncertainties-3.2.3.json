@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-uncertainties",
+    "version": "3.2.3",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-uncertainties",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"uncertainties\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/8f/5e/f1e1dd319e35e962a4e00b33150a8868b6329cc1d19fd533436ba5488f09/uncertainties-3.2.3-py3-none-any.whl",
+        "sha256": "313353900d8f88b283c9bad81e7d2b2d3d4bcc330cbace35403faaed7e78890a"
+      }
+    ]
+  }
+}

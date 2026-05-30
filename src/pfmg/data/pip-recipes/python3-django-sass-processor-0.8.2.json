@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-django-sass-processor",
+    "version": "0.8.2",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-django-sass-processor",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"django-sass-processor\""
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/02/06/ab99d740df814e418371cbf294436d01c981d9ccf1fa4910a499e452d268/django-sass-processor-0.8.2.tar.gz",
+        "sha256": "9b46a12ca8bdcb397d46fbcc49e6a926ff9f76a93c5efeb23b495419fd01fc7a"
+      }
+    ]
+  }
+}

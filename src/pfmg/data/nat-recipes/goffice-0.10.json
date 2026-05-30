@@ -1,0 +1,31 @@
+{
+  "header": {
+    "id": "goffice",
+    "version": "0.10",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "goffice",
+    "cleanup": [
+      "/include",
+      "/share/gtk-doc",
+      "/lib/pkgconfig"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.gnome.org/sources/goffice/0.10/goffice-0.10.61.tar.xz",
+        "sha256": "558597fd9ca59b93ff562750218d1e7ea8ec3c8d0ed6a5cc096aa715ef909a15",
+        "x-checker-data": {
+          "type": "gnome",
+          "name": "goffice",
+          "versions": {
+            "<": "0.11"
+          },
+          "stable-only": true
+        }
+      }
+    ]
+  }
+}

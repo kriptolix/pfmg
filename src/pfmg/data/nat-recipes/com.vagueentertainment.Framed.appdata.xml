@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop">
+  <id>com.vagueentertainment.Framed</id>
+  <name>Framed</name>
+  <summary>Digital Picture frame for your NFTshowroom art and personal work</summary>
+  <description>
+    <p> Framed turns your computer into a digital picture frame capable of displaying local images as well as images purchased at https:://nftshowroom.com. 
+    
+    Framed is the first application to utilize the Honeycomb back-end service that synchronizes your Hive (used by nftshowroom) account locally for non web-based applications and games.
+    For more information about HoneyComb and its planned features checkout https://peakd.com/hive-123112/@bflanagin/project-honeycomb-hive-for-local-apps-and-games
+    </p>
+  </description>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>MIT</project_license>
+  <url type="homepage">https://github.com/flathub/com.vagueentertainment.Framed</url>
+  <launchable type="desktop-id">com.vagueentertainment.Framed.desktop</launchable>
+  <screenshots>
+    <screenshot type="default">
+      <image type="source">https://raw.githubusercontent.com/flathub/com.vagueentertainment.Framed/be818fc61ec26207c3ef8b23de08c976ab607cd4/screenshot.png</image>
+      <caption>Setup and Frame</caption>
+    </screenshot>
+  </screenshots>
+  <content_rating type="oars-1.1" />
+  <releases>
+    <release version="0.3.5.2" date="2021-08-05"/>
+  </releases>
+  <developer_name>Benjamin Flanagin</developer_name>
+</component>

@@ -1,0 +1,19 @@
+@@ -2,8 +2,8 @@
+ Name=VSCodium - Insiders
+ Comment=Code Editing. Redefined.
+ GenericName=Text Editor
+-Exec=/usr/share/codium-insiders/codium-insiders %F
+-Icon=vscodium-insiders
++Exec=com.vscodium.codium-insiders %F
++Icon=com.vscodium.codium-insiders
+ Type=Application
+ StartupNotify=false
+ StartupWMClass=VSCodium - Insiders
+@@ -22,5 +22,5 @@
+ Name[ru]=Новое пустое окно
+ Name[zh_CN]=新建空窗口
+ Name[zh_TW]=開新空視窗
+-Exec=/usr/share/codium-insiders/codium-insiders --new-window %F
+-Icon=vscodium-insiders
++Exec=com.vscodium.codium-insiders --new-window %F
++Icon=com.vscodium.codium-insiders

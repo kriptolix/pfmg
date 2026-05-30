@@ -1,0 +1,31 @@
+{
+  "header": {
+    "id": "postgres",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "postgres",
+    "buildsystem": "simple",
+    "build-options": {
+      "no-debuginfo": true
+    },
+    "build-commands": [
+      "./configure --prefix=/app/km/app/bin/postgres",
+      "make",
+      "make install",
+      "cd contrib ; make ; make install",
+      "ls /app/km/app/bin/postgres/share/extension/",
+      "rm -Rf /app/km/app/bin/postgres/include"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://git.postgresql.org/git/postgresql.git",
+        "commit": "62d6c7d3df6287f1bd83199c1a746e50d31571a0",
+        "tag": "REL_18_3"
+      }
+    ]
+  }
+}

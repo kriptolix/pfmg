@@ -1,0 +1,58 @@
+{
+  "header": {
+    "id": "gnuradio",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "gnuradio",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DENABLE_DEFAULT=OFF",
+      "-DENABLE_EXAMPLES=OFF",
+      "-DENABLE_TESTING=OFF",
+      "-DENABLE_PYTHON=OFF",
+      "-DENABLE_POSTINSTALL=ON",
+      "-DENABLE_DOXYGEN=OFF",
+      "-DENABLE_MANPAGES=OFF",
+      "-DENABLE_GNURADIO_RUNTIME=ON",
+      "-DENABLE_COMMON_PCH=OFF",
+      "-DENABLE_GR_CTRLPORT=OFF",
+      "-DENABLE_GRC=OFF",
+      "-DENABLE_GR_BLOCKS=ON",
+      "-DENABLE_GR_FEC=OFF",
+      "-DENABLE_GR_FFT=ON",
+      "-DENABLE_GR_FILTER=ON",
+      "-DENABLE_GR_ANALOG=ON",
+      "-DENABLE_GR_DIGITAL=ON",
+      "-DENABLE_GR_DTV=OFF",
+      "-DENABLE_GR_AUDIO=ON",
+      "-DENABLE_GR_CHANNELS=OFF",
+      "-DENABLE_GR_PDU=OFF",
+      "-DENABLE_GR_IIO=ON",
+      "-DENABLE_GR_QTGUI=OFF",
+      "-DENABLE_GR_TRELLIS=OFF",
+      "-DENABLE_GR_UHD=ON",
+      "-DENABLE_UHD_RFNOC=ON",
+      "-DENABLE_GR_UTILS=OFF",
+      "-DENABLE_GR_MODTOOL=OFF",
+      "-DENABLE_GR_BLOCKTOOL=OFF",
+      "-DENABLE_GR_VIDEO_SDL=OFF",
+      "-DENABLE_GR_VOCODER=OFF",
+      "-DENABLE_GR_WAVELET=OFF",
+      "-DENABLE_GR_ZEROMQ=OFF",
+      "-DENABLE_GR_NETWORK=ON",
+      "-DENABLE_GR_SOAPY=ON"
+    ],
+    "builddir": true,
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/gnuradio/gnuradio.git",
+        "tag": "v3.10.12.0",
+        "commit": "ec7a3239645162ffea1925e6f1e6e62bf1349d03"
+      }
+    ]
+  }
+}

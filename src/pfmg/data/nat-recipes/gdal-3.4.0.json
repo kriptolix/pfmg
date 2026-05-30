@@ -1,0 +1,65 @@
+{
+  "header": {
+    "id": "gdal",
+    "version": "3.4.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "gdal",
+    "config-opts": [
+      "--with-python=python3"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.osgeo.org/gdal/3.4.0/gdal-3.4.0.tar.xz",
+        "sha256": "ac7bd2bb9436f3fc38bc7309704672980f82d64b4d57627d27849259b8f71d5c"
+      }
+    ],
+    "modules": [
+      {
+        "name": "swig",
+        "config-opts": [
+          "--without-boost",
+          "--without-pcre",
+          "--without-alllang",
+          "--with-python3"
+        ],
+        "cleanup": [
+          "/bin",
+          "/share/swig"
+        ],
+        "sources": [
+          {
+            "type": "archive",
+            "url": "https://prdownloads.sourceforge.net/swig/swig-3.0.12.tar.gz",
+            "sha256": "7cf9f447ae7ed1c51722efc45e7f14418d15d7a1e143ac9f09a668999f4fc94d"
+          }
+        ]
+      },
+      {
+        "name": "hdf5",
+        "no-autogen": true,
+        "sources": [
+          {
+            "type": "archive",
+            "url": "https://support.hdfgroup.org/ftp/HDF5/releases/hdf5-1.10/hdf5-1.10.6/src/hdf5-1.10.6.tar.bz2",
+            "sha256": "09d6301901685201bb272a73e21c98f2bf7e044765107200b01089104a47c3bd"
+          }
+        ]
+      },
+      {
+        "name": "netcdf",
+        "no-autogen": true,
+        "sources": [
+          {
+            "type": "archive",
+            "url": "https://github.com/Unidata/netcdf-c/archive/v4.7.3.tar.gz",
+            "sha256": "05d064a2d55147b83feff3747bea13deb77bef390cb562df4f9f9f1ce147840d"
+          }
+        ]
+      }
+    ]
+  }
+}

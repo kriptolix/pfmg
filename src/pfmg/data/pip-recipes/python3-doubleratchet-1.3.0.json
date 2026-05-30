@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-doubleratchet",
+    "version": "1.3.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-doubleratchet",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --prefix=/app doubleratchet-1.3.0-py3-none-any.whl"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/8e/50/d5769527876b1b2c2883eeb7307dd1509be1162e55b16799b55b3bd5b7b0/doubleratchet-1.3.0-py3-none-any.whl",
+        "sha256": "a869c81aa175abd9d7cfcf0069a0fa1261116b2ff2684c1ac95a1b83b875b18d"
+      }
+    ]
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "header": {
+    "id": "heroic",
+    "version": "2.21.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "heroic",
+    "buildsystem": "simple",
+    "build-commands": [
+      "chmod +x Heroic-*.AppImage",
+      "./Heroic-*.AppImage --appimage-extract",
+      "mv squashfs-root /app/bin/heroic",
+      "install -D heroic-run -t /app/bin",
+      "patch-electron-desktop-filename ${FLATPAK_DEST}/bin/heroic/resources/app.asar"
+    ],
+    "sources": [
+      {
+        "type": "script",
+        "dest-filename": "heroic-run",
+        "commands": [
+          "for i in {0..9}; do",
+          "test -S $XDG_RUNTIME_DIR/discord-ipc-$i || ln -sf {app/com.discordapp.Discord,$XDG_RUNTIME_DIR}/discord-ipc-$i;",
+          "done",
+          "export TMPDIR=\"$XDG_RUNTIME_DIR/app/$FLATPAK_ID\"",
+          "zypak-wrapper /app/bin/heroic/heroic \"$@\""
+        ]
+      },
+      {
+        "type": "file",
+        "url": "https://github.com/Heroic-Games-Launcher/HeroicGamesLauncher/releases/download/v2.21.0/Heroic-2.21.0-linux-x86_64.AppImage",
+        "sha512": "530b73e4b2f06005cd9d0dcf3326c44b4b1aeaced624edbd6aa55b41f38d2c78903183eaa524cf968b8853c7bc325b77df0790a8dd0ec020085947371831f45c"
+      }
+    ]
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "header": {
+    "id": "axolotl-electron-bundle",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "axolotl-electron-bundle",
+    "buildsystem": "simple",
+    "build-options": {
+      "env": {
+        "npm_config_offline": "true",
+        "npm_config_cache": "/run/build/axolotl-electron-bundle/flatpak-node/npm-cache",
+        "GOBIN": "/app/bin",
+        "GO111MODULE": false,
+        "GOPATH": "/run/build/axolotl-electron-bundle"
+      }
+    },
+    "subdir": "src/github.com/nanu-c/axolotl",
+    "build-commands": [
+      "make build-dependencies-axolotl-web",
+      "make build-axolotl-web",
+      "echo \"$(jq '. + { working_directory_path:\"/app/lib/astibundler\" }' bundler.json)\" > bundler.json",
+      "make build-axolotl-electron-bundle & while [ -e /proc/$! ]; do echo -n \".\"; sleep 100; done",
+      "make install-axolotl-electron-bundle DESTDIR=${FLATPAK_DEST} INSTALL_PREFIX=/bin"
+    ],
+    "sources": [
+      "generated-axolotl-web-sources.0.json",
+      "generated-axolotl-sources.json",
+      {
+        "type": "git",
+        "url": "https://github.com/nanu-c/axolotl",
+        "tag": "v1.6.0",
+        "commit": "e521ab32b5bf315866a17f6844e5339abbc41e79",
+        "dest": "src/github.com/nanu-c/axolotl",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^v([\\d.]+)$"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "header": {
+    "id": "jamovi-electron-app",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "jamovi-electron-app",
+    "buildsystem": "simple",
+    "build-options": {
+      "env": {
+        "XDG_CACHE_HOME": "../flatpak-node/cache",
+        "npm_config_cache": "../flatpak-node/npm-cache",
+        "npm_config_offline": "true"
+      }
+    },
+    "build-commands": [
+      "cp jamovi /app/bin/jamovi",
+      "cd electron && npm install --offline",
+      "cd electron && npm run deploy",
+      "mv electron/default_app.asar /app/bin/resources"
+    ],
+    "sources": [
+      "electron-app-deps-sources.json",
+      {
+        "type": "git",
+        "url": "https://github.com/jamovi/jamovi.git",
+        "commit": "2146574acee0bf6a0f6b342ece0024147d2515b2"
+      },
+      {
+        "type": "script",
+        "dest-filename": "jamovi",
+        "commands": [
+          "#!/bin/bash",
+          "SCRIPT=`realpath $0`",
+          "HERE=`dirname $SCRIPT`",
+          "if [[ \"$1\" == \"--version\" ]]; then",
+          "    cat $HERE/../lib/jamovi/version",
+          "elif [[ \"$1\" == \"--r-version\" ]]; then",
+          "    echo `/app/bin/R --version | sed -n 's|^R version \\([0-9.]\\+\\).*$|\\1|p'`-`/app/bin/R --version | sed -n 's|^Platform: \\([^-]\\+\\).*$|\\1|p'` | sed 's|x86_64|x64|g' | sed 's|aarch64|arm64|g'",
+          "elif [[ \"$1\" == \"-R\" ]]; then",
+          "    shift",
+          "    DOWNLOAD_STATIC_LIBV8=1 UDUNITS2_INCLUDE=/app/share/include UDUNITS2_LIBS=/app/lib /app/bin/R \"$@\"",
+          "else",
+          "    /app/bin/zypak-wrapper /app/bin/electron \"$@\"",
+          "fi"
+        ]
+      }
+    ]
+  }
+}

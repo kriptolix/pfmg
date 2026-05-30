@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-cloudpickle",
+    "version": "3.1.2",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-cloudpickle",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"cloudpickle==3.1.2\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/88/39/799be3f2f0f38cc727ee3b4f1445fe6d5e4133064ec2e4115069418a5bb6/cloudpickle-3.1.2-py3-none-any.whl",
+        "sha256": "9acb47f6afd73f60dc1df93bb801b472f05ff42fa6c84167d25cb206be1fbf4a"
+      }
+    ]
+  }
+}

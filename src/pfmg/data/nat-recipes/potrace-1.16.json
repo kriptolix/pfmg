@@ -1,0 +1,26 @@
+{
+  "header": {
+    "id": "potrace",
+    "version": "1.16",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "potrace",
+    "config-opts": [
+      "--with-libpotrace"
+    ],
+    "build-options": {
+      "env": {
+        "CC": "gcc"
+      }
+    },
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://downloads.sourceforge.net/project/potrace/1.16/potrace-1.16.tar.gz",
+        "sha256": "be8248a17dedd6ccbaab2fcc45835bb0502d062e40fbded3bc56028ce5eb7acc"
+      }
+    ]
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "rarfile",
+    "version": "4.2",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "rarfile",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --prefix=/app rarfile-*.whl"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/62/fc/ab37559419ca36dd8dd317c3a98395ed4dcee2beeb28bf6059b972906727/rarfile-4.2-py3-none-any.whl",
+        "sha256": "8757e1e3757e32962e229cab2432efc1f15f210823cc96ccba0f6a39d17370c9",
+        "x-checker-data": {
+          "type": "pypi",
+          "name": "rarfile",
+          "packagetype": "bdist_wheel"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "pipewire-gobject",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "pipewire-gobject",
+    "buildsystem": "meson",
+    "config-opts": [
+      "-Dwheel=true",
+      "-Dtests=false"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/bhack/pipewire-gobject.git",
+        "tag": "0.3.7",
+        "commit": "1cd6ccc0f5e0d1d62ab8fd42dc9f200a112554f6"
+      }
+    ]
+  }
+}

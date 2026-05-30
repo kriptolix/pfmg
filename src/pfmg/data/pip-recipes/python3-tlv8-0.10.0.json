@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-tlv8",
+    "version": "0.10.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-tlv8",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"tlv8==0.10.0\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/bb/89/6df40b0c5fd9a1c30711f569bd31446f89d1de6d23948b391775f6784d94/tlv8-0.10.0.tar.gz",
+        "sha256": "7930a590267b809952272ac2a27ee81b99ec5191fa2eba08050e0daee4262684"
+      }
+    ]
+  }
+}

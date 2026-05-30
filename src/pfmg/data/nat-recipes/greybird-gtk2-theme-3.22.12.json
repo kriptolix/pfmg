@@ -1,0 +1,30 @@
+{
+  "header": {
+    "id": "greybird-gtk2-theme",
+    "version": "3.22.12",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "greybird-gtk2-theme",
+    "// NOTE": "This is used by many XFCE distros",
+    "buildsystem": "meson",
+    "cleanup": [
+      "/share/themes/Greybird*/xfwm4",
+      "/share/themes/Greybird*/gnome-shell",
+      "/share/themes/Greybird*/gtk-3.0",
+      "/share/themes/Greybird*/metacity-1",
+      "/share/themes/Greybird*/xfce-notify-4.0",
+      "/share/themes/Greybird*/plank",
+      "/share/themes/Greybird*/unity",
+      "/share/themes/Greybird*/*.emerald"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/shimmerproject/Greybird/archive/v3.22.12.tar.gz",
+        "sha256": "410804cd5daca33cbc5c7c4a179f3a334ced87f408e515fc5d9c083a04bec4bc"
+      }
+    ]
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "libscrypt",
+    "version": "1.22",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libscrypt",
+    "buildsystem": "autotools",
+    "no-autogen": true,
+    "make-install-args": [
+      "PREFIX=/app"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/technion/libscrypt/archive/v1.22.tar.gz",
+        "sha256": "a2d30ea16e6d288772791de68be56153965fe4fd4bcd787777618b8048708936"
+      }
+    ]
+  }
+}

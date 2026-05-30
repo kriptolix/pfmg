@@ -1,0 +1,55 @@
+{
+  "header": {
+    "id": "x265-10bit",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "x265-10bit",
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "subdir": "source",
+    "no-make-install": true,
+    "build-options": {
+      "arch": {
+        "x86_64": {
+          "config-opts": [
+            "-DCMAKE_ASM_NASM_FLAGS=-w-macro-params-legacy"
+          ]
+        },
+        "aarch64": {
+          "append-path": "/usr/lib/sdk/llvm21/bin",
+          "prepend-ld-library-path": "/usr/lib/sdk/llvm21/lib",
+          "env": {
+            "CC": "clang",
+            "CXX": "clang++"
+          },
+          "config-opts": [
+            "-DENABLE_ASSEMBLY=OFF"
+          ]
+        }
+      },
+      "cxxflags": "-include cstdint"
+    },
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DENABLE_CLI=OFF",
+      "-DENABLE_HDR10_PLUS=ON",
+      "-DENABLE_PIC=ON",
+      "-DENABLE_SHARED=OFF",
+      "-DEXPORT_C_API=OFF",
+      "-DHIGH_BIT_DEPTH=ON"
+    ],
+    "build-commands": [
+      "install -D libx265.a $FLATPAK_DEST/lib/libx265_main10.a"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://bitbucket.org/multicoreware/x265_git.git",
+        "commit": "78e5ac35c13c5cbccc5933083edceb0d3eaeaa21"
+      }
+    ]
+  }
+}

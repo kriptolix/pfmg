@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "googlemaps",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "googlemaps",
+    "buildsystem": "qmake",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/subsurface/googlemaps",
+        "commit": "fdad408ce0d99b48af80ee9510bc46b5676ca782"
+      },
+      {
+        "type": "shell",
+        "commands": [
+          "sed -i \"s|\\$\\$\\[QT_INSTALL_PLUGINS\\]|/app/lib/plugins|\" googlemaps.pro"
+        ]
+      }
+    ]
+  }
+}

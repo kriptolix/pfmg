@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "tuner",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "tuner",
+    "builddir": true,
+    "buildsystem": "meson",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://altlinux.space/alt-gnome/Tuner.git",
+        "tag": "0.6.7",
+        "commit": "6176491fc7d0866bf434e6b89e0e36e2ba6cc424"
+      }
+    ],
+    "post-install": [
+      "install -d /app/extensions"
+    ]
+  }
+}

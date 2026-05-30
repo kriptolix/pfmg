@@ -1,0 +1,38 @@
+{
+  "header": {
+    "id": "goldwarden-python-ui",
+    "version": "0.3.6",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "goldwarden-python-ui",
+    "buildsystem": "simple",
+    "build-commands": [
+      "mkdir -p /app/bin",
+      "cp -R ./gui/* /app/bin",
+      "chmod +x /app/bin/goldwarden_ui_main.py",
+      "install -D ./gui/com.quexten.Goldwarden.desktop /app/share/applications/com.quexten.Goldwarden.desktop",
+      "install -D ./gui/com.quexten.Goldwarden.svg /app/share/icons/hicolor/scalable/apps/com.quexten.Goldwarden.svg",
+      "install -Dm644 ./com.quexten.Goldwarden.metainfo.xml -t /app/share/metainfo/",
+      "blueprint-compiler batch-compile /app/bin/src/gui/.templates/ /app/bin/src/gui/ /app/bin/src/gui/*.blp"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/quexten/goldwarden/archive/refs/tags/v0.3.6.tar.gz",
+        "sha256": "582068ce9a21dc7703fdc114b08f47490059bffac72d9604b308942aa5b4f210",
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://api.github.com/repos/quexten/goldwarden/releases/latest",
+          "version-query": ".tag_name",
+          "url-query": "\"https://github.com/quexten/goldwarden/archive/refs/tags/\" + .tag_name + \".tar.gz\""
+        }
+      },
+      {
+        "type": "file",
+        "path": "./com.quexten.Goldwarden.metainfo.xml"
+      }
+    ]
+  }
+}

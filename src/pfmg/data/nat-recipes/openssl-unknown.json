@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "openssl",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "openssl",
+    "buildsystem": "simple",
+    "build-commands": [
+      "./config --prefix=/app",
+      "make",
+      "make install"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/openssl/openssl/archive/OpenSSL_1_1_1w.tar.gz",
+        "sha256": "2130e8c2fb3b79d1086186f78e59e8bc8d1a6aedf17ab3907f4cb9ae20918c41"
+      }
+    ],
+    "cleanup": [
+      "/share/doc",
+      "/share/man"
+    ]
+  }
+}

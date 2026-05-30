@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "gi-gdkpixbuf-2.0.16",
+    "version": "2.0.16",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "gi-gdkpixbuf-2.0.16",
+    "only-arches": [
+      "x86_64"
+    ],
+    "buildsystem": "simple",
+    "build-commands": [
+      "ghc -threaded --make Setup",
+      "./Setup configure --prefix=/app",
+      "./Setup build",
+      "./Setup install"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "sha256": "fdbb5f12ecd3a419a345919913e659f90000b38b973ce79fb6e9ba05f5d4166f",
+        "url": "https://hackage.haskell.org/package/gi-gdkpixbuf-2.0.16/gi-gdkpixbuf-2.0.16.tar.gz"
+      }
+    ]
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "header": {
+    "id": "libusb0-compat",
+    "version": "0.1.5",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libusb0-compat",
+    "config-opts": [
+      "--disable-static",
+      "--disable-build-docs",
+      "--with-pic"
+    ],
+    "build-options": {
+      "cflags": "-Wno-error",
+      "cxxflags": "-Wno-error"
+    },
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://downloads.sourceforge.net/libusb/libusb-compat-0.1.5.tar.bz2",
+        "sha256": "404ef4b6b324be79ac1bfb3d839eac860fbc929e6acb1ef88793a6ea328bc55a"
+      },
+      {
+        "type": "patch",
+        "paths": [
+          "patches/libusb0-compat-link-with-znodelete-to-disallow-unloading.patch",
+          "patches/libusb0-compat-revert-use-atexit-to-call-libusb_exit.patch"
+        ]
+      },
+      {
+        "type": "shell",
+        "commands": [
+          "cp -p /usr/share/automake-*/config.{sub,guess} ."
+        ]
+      }
+    ]
+  }
+}

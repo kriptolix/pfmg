@@ -1,0 +1,67 @@
+{
+  "header": {
+    "id": "python3-build-tools",
+    "version": "80.9.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-build-tools",
+    "buildsystem": "simple",
+    "build-commands": [
+      "python3 -m pip install -U --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} wheel setuptools flit-core cffi"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/a3/dc/17031897dae0efacfea57dfd3a82fdd2a2aeb58e0ff71b77b87e44edc772/setuptools-80.9.0-py3-none-any.whl",
+        "sha256": "062d34222ad13e0cc312a4c02d73f059e86a4acbfbdea8f8f76b28c99f306922"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/af/44/31d964a260fcda6bf2f59384231bbf4962ac796a5d36c554162b5411b8db/wheel-0.46.1-py3-none-any.whl",
+        "sha256": "f796f65d72750ccde090663e466d0ca37cd72b62870f7520b96d34cdc07d86d8"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/f2/65/b6ba90634c984a4fcc02c7e3afe523fef500c4980fec67cc27536ee50acf/flit_core-3.12.0-py3-none-any.whl",
+        "sha256": "e7a0304069ea895172e3c7bb703292e992c5d1555dd1233ab7b5621b5b69e62c"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/c8/53/c322bf0486a938ad954a645866b67e978777d79183cf0a042bda6bea11de/cython-3.2.0-cp313-cp313-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl",
+        "sha256": "a9d38cd3aab720d21fa6d6ee168228352f69aea0a95bd4fb84e8879c6ed38fbb"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/cd/48/55d02dba0606768d3450afd088e2bbcd6f8a54977dce041c2c3c1894631c/cython-3.2.0-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_28_x86_64.whl",
+        "sha256": "92b31d0b7b0a49b3d2aa94faaf75d44a03174cff2616b341a8853c919e511d51"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/52/82/01f0b63287cb922e5ba96c5147c30f1e51f541ce91bd178025bb3518b1ba/cython-3.2.0.tar.gz",
+        "sha256": "41fdce8237baee2d961c292ed0386903dfe126f131e450a62de0fd7a5280d4b2"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/78/2d/7fa73dfa841b5ac06c7b8855cfc18622132e365f5b81d02230333ff26e9e/cffi-2.0.0-cp312-cp312-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+        "sha256": "3e17ed538242334bf70832644a32a7aae3d83b57567f9fd60a26257e992b79ba"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/d5/72/12b5f8d3865bf0f87cf1404d8c374e7487dcf097a1c91c436e72e6badd83/cffi-2.0.0-cp312-cp312-manylinux2014_aarch64.manylinux_2_17_aarch64.whl",
+        "sha256": "b21e08af67b8a103c71a250401c78d5e0893beff75e28c53c98f4de42f774062"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/eb/56/b1ba7935a17738ae8453301356628e8147c79dbb825bcbc73dc7401f9846/cffi-2.0.0.tar.gz",
+        "sha256": "44d1b5909021139fe36001ae048dbdde8214afa20200eda0f64c068cac5d5529"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/a0/e3/59cd50310fc9b59512193629e1984c1f95e5c8ae6e5d8c69532ccc65a7fe/pycparser-2.23-py3-none-any.whl",
+        "sha256": "e5c6e8d3fbad53479cab09ac03729e0a9faf2bee3db8208a550daf5af81a5934"
+      }
+    ]
+  }
+}

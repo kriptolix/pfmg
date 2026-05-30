@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "quote-quot",
+    "version": "0.2.1.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "quote-quot",
+    "buildsystem": "simple",
+    "builddir": false,
+    "build-commands": [
+      "echo '#! /usr/bin/env runhaskell' >Setup.txt",
+      "echo '> import Distribution.Simple' >>Setup.txt",
+      "echo '> main = defaultMain' >>Setup.txt",
+      "ln -s Setup.txt Setup.lhs || true",
+      "runhaskell Setup configure --prefix=/app",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "sources": [
+      {
+        "sha256": "67dc25909c5b9bb373c66a9c9c1721d1e73915bd5518f42d1f97b793f42e4df7",
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/quote-quot-0.2.1.0/quote-quot-0.2.1.0.tar.gz"
+      },
+      {
+        "dest-filename": "quote-quot.cabal",
+        "sha256": "c72ce07086062a2877e6446f110bad6bbe8c47708d4f4aaa430730ead05f56e7",
+        "type": "file",
+        "url": "https://hackage.haskell.org/package/quote-quot-0.2.1.0/revision/0.cabal"
+      }
+    ]
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "header": {
+    "id": "libei",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libei",
+    "buildsystem": "meson",
+    "config-opts": [
+      "-Ddocumentation=[]",
+      "-Dtests=disabled",
+      "-Dliboeffis=disabled"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://gitlab.freedesktop.org/libinput/libei",
+        "tag": "1.5.0",
+        "commit": "19b64535408aa47abbc8151bc2c925afd6583851",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^([\\\\d.]+)$"
+        }
+      }
+    ]
+  }
+}

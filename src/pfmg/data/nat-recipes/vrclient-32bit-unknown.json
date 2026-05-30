@@ -1,0 +1,95 @@
+{
+  "header": {
+    "id": "vrclient-32bit",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "vrclient-32bit",
+    "subdir": "vrclient_x64/vrclient_x64",
+    "only-arches": [
+      "x86_64"
+    ],
+    "build-options": {
+      "arch": {
+        "x86_64": {
+          "ldflags": "-L/app/share/steam/compatibilitytools.d/Proton/lib32 -L/app/lib32",
+          "prepend-path": "/app/share/steam/compatibilitytools.d/Proton/bin32",
+          "append-path": "/usr/lib/sdk/toolchain-i386/bin",
+          "env": {
+            "CC": "ccache i686-unknown-linux-gnu-gcc",
+            "CXX": "ccache i686-unknown-linux-gnu-g++",
+            "PKG_CONFIG_PATH": "/app/share/steam/compatibilitytools.d/Proton/lib32/pkgconfig:/app/lib32/pkgconfig:/app/share/pkgconfig:/usr/lib/i386-linux-gnu/pkgconfig:/usr/share/pkgconfig",
+            "LD_RUN_PATH": "/app/share/steam/compatibilitytools.d/Proton/lib32",
+            "FLATPAK_LIBDIR": "/app/share/steam/compatibilitytools.d/Proton/lib32",
+            "FLATPAK_LIBDIR_WINE": "/app/share/steam/compatibilitytools.d/Proton/lib32/wine",
+            "FLATPAK_LIBDIR_WINE_ELF": "/app/share/steam/compatibilitytools.d/Proton/lib32/wine/i386-unix",
+            "FLATPAK_LIBDIR_WINE_PE": "/app/share/steam/compatibilitytools.d/Proton/lib32/wine/i386-windows"
+          },
+          "libdir": "/app/share/steam/compatibilitytools.d/Proton/lib32"
+        }
+      },
+      "config-opts": [
+        "--wine32"
+      ],
+      "make-args": [
+        "CC=winegcc -m32",
+        "CXX=wineg++ -m32"
+      ]
+    },
+    "make-args": [
+      "LIBRARIES=-ldl"
+    ],
+    "config-opts": [
+      "--nosource-fix",
+      "--nolower-include",
+      "--nodlls",
+      "--nomsvcrt",
+      "-L${FLATPAK_LIBDIR}",
+      "-L${FLATPAK_LIBDIR_WINE_ELF}",
+      "-I${FLATPAK_DEST}/include",
+      "-I${FLATPAK_DEST}/include/wine",
+      "-I${FLATPAK_DEST}/include/wine/windows",
+      "-I../../wine/include",
+      "-I../../wine/include/wine",
+      "-I.",
+      "-I..",
+      "--dll",
+      "."
+    ],
+    "build-commands": [
+      "winebuild --dll --fake-module -E vrclient_x64.spec -o vrclient_x64.dll.fake"
+    ],
+    "no-make-install": true,
+    "post-install": [
+      "install -Dm755 vrclient_x64.dll.so ${FLATPAK_LIBDIR_WINE_ELF}/vrclient.dll.so",
+      "install -Dm755 vrclient_x64.dll.fake ${FLATPAK_LIBDIR_WINE_PE}/vrclient.dll"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/ValveSoftware/Proton.git",
+        "tag": "proton-7.0-6",
+        "commit": "c5ad95671cecaf03c4a92500de84b542add585d1",
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://api.github.com/repos/ValveSoftware/Proton/git/refs/tags/proton-",
+          "tag-query": "map(select(.ref | match(\"refs/tags/proton-[0-9].*\"; \"\"))) | last | if .object.type==\"commit\" then . else error(\"not a commit\") end | .ref | sub(\"^refs/tags/\"; \"\")",
+          "version-query": "$tag | sub(\"^proton-\"; \"\")",
+          "commit-query": "map(select(.ref | match(\"refs/tags/proton-[0-9].*\"; \"\"))) | last | .object.sha",
+          "timestamp-data-url": "map(select(.ref | match(\"refs/tags/proton-[0-9].*\"; \"\"))) | last | .object.url",
+          "timestamp-query": ".committer.date",
+          "is-main-source": true,
+          "source-id": "proton-git-0"
+        }
+      },
+      {
+        "type": "file",
+        "path": "winemaker-configure.sh",
+        "dest": "vrclient_x64/vrclient_x64",
+        "dest-filename": "configure"
+      }
+    ]
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "header": {
+    "id": "finecmd",
+    "version": "2.3.3",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "finecmd",
+    "buildsystem": "simple",
+    "build-options": {
+      "append-path": "/usr/lib/sdk/golang/bin",
+      "env": {
+        "GOBIN": "/app/bin"
+      }
+    },
+    "build-commands": [
+      ". /usr/lib/sdk/golang/enable.sh && go install -v ./cmd/fyne"
+    ],
+    "cleanup": [
+      "*"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/fyne-io/fyne/archive/refs/tags/v2.3.3.tar.gz",
+        "sha256": "239ed91d11c986f3be292b73fcfe7e3ffb7a5059dca64e6e928f054e12436b6c"
+      }
+    ]
+  }
+}

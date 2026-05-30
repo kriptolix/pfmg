@@ -1,0 +1,47 @@
+{
+  "header": {
+    "id": "curlshim",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "curlshim",
+    "buildsystem": "simple",
+    "build-commands": [
+      "./curlbind/scripts/linux/build-imp-shim-flatpak.sh",
+      "mkdir -p /app/build/curlshim",
+      "cp -r ./curlbind/out/* /app/build/curlshim"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://gitlab.futo.org/videostreaming/curl-impersonate-builder.git",
+        "commit": "1cc90a5be47ac9d25f879f863811801e6a73e74b"
+      },
+      {
+        "type": "file",
+        "url": "https://github.com/lexiforest/curl-impersonate/releases/download/v1.2.3/libcurl-impersonate-v1.2.3.x86_64-linux-gnu.tar.gz",
+        "sha256": "56fd8d898ec5db120963ab6fa28683771e51204dc346d6f8bc53beebacb1cd4b",
+        "dest-filename": "libcurl-impersonate-linux-gnu.tar.gz",
+        "only-arches": [
+          "x86_64"
+        ]
+      },
+      {
+        "type": "file",
+        "url": "https://github.com/lexiforest/curl-impersonate/releases/download/v1.2.3/libcurl-impersonate-v1.2.3.aarch64-linux-gnu.tar.gz",
+        "sha256": "4fa79a3f0948904e32e69f62f5e1755f467101498718a8bb4c63480be8bfeddb",
+        "dest-filename": "libcurl-impersonate-linux-gnu.tar.gz",
+        "only-arches": [
+          "aarch64"
+        ]
+      },
+      {
+        "type": "file",
+        "path": "build-imp-shim-flatpak.sh",
+        "dest": "curlbind/scripts/linux"
+      }
+    ]
+  }
+}

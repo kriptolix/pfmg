@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-uniseg",
+    "version": "0.10.1",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-uniseg",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"uniseg\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/80/6c/9eb6d93ad8b9ac96cba13e6d2f419c316d8fdb91013e12dd478a99501699/uniseg-0.10.1-py3-none-any.whl",
+        "sha256": "74fe3f7b4ee46bbd703a70ea1e5cd28e04f63eee5af9a10388d93316c554e358"
+      }
+    ]
+  }
+}

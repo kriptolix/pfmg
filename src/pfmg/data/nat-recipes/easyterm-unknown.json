@@ -1,0 +1,50 @@
+{
+  "header": {
+    "id": "easyterm",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "EasyTerm",
+    "buildsystem": "simple",
+    "build-commands": [
+      "python3 setup.py install --prefix=/app --root=/"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/bottlesdevs/EasyTerm",
+        "tag": "1.0.0",
+        "commit": "4ab1f6a14111d05bcca9537bd479e450162e5a40",
+        "x-checker-data": {
+          "type": "git",
+          "is-important": true,
+          "tag-pattern": "^([\\d.]+)$"
+        }
+      }
+    ],
+    "modules": [
+      {
+        "name": "vte",
+        "buildsystem": "meson",
+        "config-opts": [
+          "-Ddocs=false",
+          "-Dvapi=false"
+        ],
+        "sources": [
+          {
+            "type": "git",
+            "url": "https://gitlab.gnome.org/GNOME/vte",
+            "tag": "0.78.0",
+            "commit": "00c99e846bf83536f978b4fe5dc2c8a6983b8a94",
+            "x-checker-data": {
+              "type": "git",
+              "tag-pattern": "^([\\d.]+)$"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

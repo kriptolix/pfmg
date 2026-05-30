@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "gexiv2dependency",
+    "version": "0.14.3",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "gexiv2Dependency",
+    "buildsystem": "meson",
+    "build-options": {
+      "env": [
+        "-PKG_CONFIG_GOBJECT_INTROSPECTION_1_0_GIRDIR=/app/share/gir-1.0",
+        "-PKG_CONFIG_GOBJECT_INTROSPECTION_1_0_TYPELIBDIR=/app/lib/girepository-1.0"
+      ]
+    },
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://gitlab.gnome.org/GNOME/gexiv2/-/archive/gexiv2-0.14.3/gexiv2-gexiv2-0.14.3.tar.gz",
+        "sha256": "5a7ea82effa9c812ac1518a1b4a22a15035d721b0b30cd4b8303228fd5b38e3c"
+      }
+    ]
+  }
+}

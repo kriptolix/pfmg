@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-pytmx",
+    "version": "3.31",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-pytmx",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"pytmx==3.31\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/a3/7a/faf61b0124a6769515a14f8ed118edd2a49a880794215ca8a1ce289e1c50/PyTMX-3.31-py3-none-any.whl",
+        "sha256": "8d572fa8889236879e19351f99f425a0df905105f8503d77470746c386befd05"
+      }
+    ]
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "header": {
+    "id": "netstat",
+    "version": "2.10",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "netstat",
+    "buildsystem": "simple",
+    "build-commands": [
+      "yes '' | make config",
+      "make netstat",
+      "install -m 0755 netstat ${FLATPAK_DEST}/bin"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://sourceforge.net/projects/net-tools/files/net-tools-2.10.tar.xz",
+        "sha256": "b262435a5241e89bfa51c3cabd5133753952f7a7b7b93f32e08cb9d96f580d69",
+        "x-checker-data": {
+          "type": "html",
+          "url": "https://sourceforge.net/projects/net-tools/rss",
+          "pattern": "<link>(https://sourceforge.net/.+/net-tools-([\\d\\.]+\\d).tar.xz)/download</link>"
+        }
+      }
+    ]
+  }
+}

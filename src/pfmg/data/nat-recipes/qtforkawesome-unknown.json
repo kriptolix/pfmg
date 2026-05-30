@@ -1,0 +1,45 @@
+{
+  "header": {
+    "id": "qtforkawesome",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "qtforkawesome",
+    "buildsystem": "cmake-ninja",
+    "build-options": {
+      "arch": {
+        "aarch64": {
+          "env": {
+            "PERL5LIB": "/app/lib/perl5/site_perl/5.42/aarch64-linux-gnu"
+          }
+        },
+        "x86_64": {
+          "env": {
+            "PERL5LIB": "/app/lib/perl5/site_perl/5.42/x86_64-linux-gnu"
+          }
+        }
+      }
+    },
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE:STRING=Release",
+      "-DQT_PACKAGE_PREFIX:STRING=Qt6",
+      "-DBUILTIN_TRANSLATIONS:BOOL=ON",
+      "-DFORK_AWESOME_FONT_FILE=/app/ForkAwesome/forkawesome-webfont.woff2",
+      "-DFORK_AWESOME_ICON_DEFINITIONS=/app/ForkAwesome/icons.yml"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/Martchus/qtforkawesome.git",
+        "tag": "v0.3.2",
+        "commit": "42fe0be74ad6ee075d91f2b96d9bc3eb7717c9d5",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^v([\\d.]+)$"
+        }
+      }
+    ]
+  }
+}

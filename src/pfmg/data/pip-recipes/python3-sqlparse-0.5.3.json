@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-sqlparse",
+    "version": "0.5.3",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-sqlparse",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"sqlparse==0.5.3\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/a9/5c/bfd6bd0bf979426d405cc6e71eceb8701b148b16c21d2dc3c261efc61c7b/sqlparse-0.5.3-py3-none-any.whl",
+        "sha256": "cf2196ed3418f3ba5de6af7e82c694a9fbdbfecccdfc72e281548517081f16ca"
+      }
+    ]
+  }
+}

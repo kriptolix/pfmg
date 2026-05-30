@@ -1,0 +1,21 @@
+{
+  "header": {
+    "id": "notify-sharp",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "notify-sharp",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/hbons/notify-sharp",
+        "commit": "1f56c37349b7750f3fb4cb6ac88ccbaa62c15d30"
+      }
+    ],
+    "config-opts": [
+      "--disable-docs"
+    ]
+  }
+}

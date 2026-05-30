@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "arp",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "arp",
+    "buildsystem": "simple",
+    "build-commands": [
+      "yes \"\" | make arp",
+      "install -Dm755 arp /app/bin/arp"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/ecki/net-tools.git",
+        "tag": "v2.10",
+        "commit": "80d7b95067f1f22fece9537dea6dff53081f4886"
+      }
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "xfont2",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "xfont2",
+    "buildsystem": "autotools",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://gitlab.freedesktop.org/xorg/lib/libxfont.git",
+        "tag": "libXfont2-2.0.6",
+        "commit": "d54aaf2483df6a1f98fadc09004157e657b7f73e",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^libXfont2-([\\d.]+)$"
+        }
+      }
+    ]
+  }
+}

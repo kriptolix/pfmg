@@ -1,0 +1,526 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+    <id>at.vintagestory.VintageStory</id>
+    <launchable type="desktop-id">at.vintagestory.VintageStory.desktop</launchable>
+    <metadata_license>CC0-1.0</metadata_license>
+    <project_license>LicenseRef-proprietary</project_license>
+    <name>Vintage Story</name>
+    <summary>Wilderness survival sandbox game</summary>
+    <description>
+        <p>To play this game, you must purchase an account at
+            https://www.vintagestory.at/.</p>
+        <p>Vintage Story is an uncompromising wilderness survival sandbox game
+            inspired by lovecraftian horror themes. Find yourself in a ruined
+            world reclaimed by nature and permeated by unnerving temporal
+            disturbances. Relive the advent of human civilization, or take your
+            own path.</p>
+    </description>
+    <developer_name>Anego Studios</developer_name>
+    <categories>
+        <category>Game</category>
+    </categories>
+    <content_rating type="oars-1.0">
+        <content_attribute id="violence-cartoon">moderate</content_attribute>
+        <content_attribute id="violence-fantasy">moderate</content_attribute>
+        <content_attribute id="violence-bloodshed">mild</content_attribute>
+        <content_attribute id="social-chat">intense</content_attribute>
+    </content_rating>
+    <url type="homepage">https://www.vintagestory.at/</url>
+    <url type="faq">https://www.vintagestory.at/faq.html/</url>
+    <url type="help">https://wiki.vintagestory.at/</url>
+    <url type="contact">https://www.vintagestory.at/contact/</url>
+    <url type="bugtracker">https://github.com/anegostudios/VintageStory-Issues/issues</url>
+    <screenshots>
+        <screenshot type="default">
+            <image>https://raw.githubusercontent.com/flathub/at.vintagestory.VintageStory/4f0ba1945950b7161c626a9cbd9738c930e85aaf/images/2022-12-29_21-16-00.jpg</image>
+            <caption>A screenshot of the game showing two player figures venturing through the world. Both are turned away from the viewer who can enjoy a cloudy sunset in the hills. One figure looks like a fierce viking warrior holding a torch, the other wears wooden armor and shield.</caption>
+        </screenshot>
+        <screenshot>
+            <image>https://raw.githubusercontent.com/flathub/at.vintagestory.VintageStory/4f0ba1945950b7161c626a9cbd9738c930e85aaf/images/2024-12-04_18-26-09.jpg</image>
+            <caption>A screenshot of the game, showing a rural village at noon. Two houses can be seen standing side by side in front of a stone paved street. A fruit tee completes the serene village scene.</caption>
+        </screenshot>
+        <screenshot>
+            <image>https://raw.githubusercontent.com/flathub/at.vintagestory.VintageStory/4f0ba1945950b7161c626a9cbd9738c930e85aaf/images/2024-12-04_18-20-33.jpg</image>
+            <caption>A screenshot of the game showing the mysterious study of a scholar or clerk. A desk with many strange tools and notes is accompanied by a chair with blue upholstery and many bookshelves.</caption>
+        </screenshot>
+        <screenshot>
+            <image>https://raw.githubusercontent.com/flathub/at.vintagestory.VintageStory/4f0ba1945950b7161c626a9cbd9738c930e85aaf/images/2024-01-16_13-39-14.jpg</image>
+            <caption>A screenshot of the game showing a forfeited workshop or maybe a kitchen. Some things are decayed so it is hard to tell. Many broken shelves, spider webs and rusted pipings complete this ominous scene.</caption>
+        </screenshot>
+        <screenshot>
+            <image>https://raw.githubusercontent.com/flathub/at.vintagestory.VintageStory/4f0ba1945950b7161c626a9cbd9738c930e85aaf/images/2023-04-26_16-48-12.jpg</image>
+            <caption>A screenshot of the game showing a flourishing alpine landscape at past noon. The sun caresses the green and colorful bushes and flowers. A majestic mountain peak can be seen afar, as well as the border of a forest.</caption>
+        </screenshot>
+    </screenshots>
+    <releases>
+        <release version="1.22.2" date="2026-05-03">
+            <description></description>
+        </release>
+        <release version="1.22.1" date="2026-04-29">
+            <description/>
+        </release>
+        <release version="1.22.0" date="2026-04-21">
+            <description>
+                <p>1.22.0 - Fishing, Mechanisms, Metalworking and More!</p>
+            </description>
+            <url>https://www.vintagestory.at/blog.html/news/1220-fishing-mechanisms-metalworking-and-more-r441/</url>
+        </release>
+        <release version="1.21.7" date="2026-04-18">
+            <description/>
+        </release>
+        <release version="1.21.6" date="2025-12-13">
+            <description/>
+        </release>
+        <release version="1.21.5" date="2025-10-14">
+            <description/>
+        </release>
+        <release version="1.21.4" date="2025-10-06">
+            <description/>
+        </release>
+        <release version="1.21.1" date="2025-09-09">
+            <description/>
+        </release>
+        <release version="1.21.0" date="2025-08-25">
+            <description>
+                <p>Story Chapter 2 Redux</p>
+            </description>
+            <url>https://www.vintagestory.at/blog.html/news/v1210-story-chapter-2-redux-stable-r420/</url>
+        </release>
+        <release version="1.20.12" date="2025-06-08">
+            <description>
+                <p>Lore Update: The Journey</p>
+            </description>
+            <url>https://www.vintagestory.at/blog.html/news/v12012-purely-stable-performance-121-update-notice-r410/</url>
+        </release>
+        <release version="1.20.11" date="2025-05-27">
+            <description>
+                <p>Lore Update: The Journey</p>
+            </description>
+            <url>https://www.vintagestory.at/blog.html/news/v12011-purely-performance-r409/</url>
+        </release>
+        <release version="1.20.10" date="2025-05-05">
+            <description>
+                <p>Lore Update: The Journey</p>
+            </description>
+            <url>https://www.vintagestory.at/blog.html/news/v12010-de-annoyance-fixes-r407/</url>
+        </release>
+        <release version="1.20.9" date="2025-04-22">
+            <description>
+                <p>Lore Update: The Journey</p>
+            </description>
+            <url>https://www.vintagestory.at/blog.html/news/1208-rc2-stable-1209-mob-spawn-balancing-item-disappearing-fix-r406/</url>
+        </release>
+        <release version="1.20.7" date="2025-03-26">
+            <description>
+                <p>Lore Update: The Journey</p>
+            </description>
+            <url>https://www.vintagestory.at/blog.html/news/v1207-polishing-fixes-r404/</url>
+        </release>
+        <release version="1.20.6" date="2025-03-20">
+            <description>
+                <p>Lore Update: The Journey</p>
+            </description>
+            <url>https://www.vintagestory.at/blog.html/news/v1206-gameserver-vulnerability-fix-r403/</url>
+        </release>
+        <release version="1.20.5" date="2025-03-18">
+            <description>
+                <p>Lore Update: The Journey</p>
+            </description>
+            <url>https://www.vintagestory.at/blog.html/news/v1205-dos-protections-performance-more-r402/</url>
+        </release>
+        <release version="1.20.4" date="2025-02-11">
+            <description>
+                <p>Lore Update: The Journey</p>
+            </description>
+            <url>https://www.vintagestory.at/blog.html/news/v1204-lore-update-the-journey-r398/</url>
+        </release>
+        <release version="1.20.3" date="2025-01-25">
+            <description>
+                <p>Lore Update: The Journey</p>
+            </description>
+            <url>https://www.vintagestory.at/blog.html/news/v12023-lore-update-the-journey-r396/</url>
+        </release>
+        <release version="1.20.1" date="2025-01-18">
+            <description>
+                <p>Lore Update: The Journey</p>
+            </description>
+            <url>https://www.vintagestory.at/blog.html/news/v1201-lore-update-the-journey-r395/</url>
+        </release>
+        <release version="1.20.0" date="2025-01-17">
+            <description>
+                <p>Lore Update: The Journey</p>
+            </description>
+            <url>https://www.vintagestory.at/blog.html/news/v1200-lore-update-the-journey-r391/</url>
+        </release>
+        <release version="1.19.8" date="2024-05-17">
+            <description>
+                <p>Dot the i's and cross the t's. Just a maintenance patch. Should reduce the amount of server restarts server owners have to do. Fixes a few annoyances.</p>
+            </description>
+            <url>https://www.vintagestory.at/blog.html/news/v1198-dot-the-is-and-cross-the-ts-r386/</url>
+        </release>
+        <release version="1.19.7" date="2024-04-01">
+            <description>
+                <p>Anti-Double-Whammy</p>
+            </description>
+            <url>https://www.vintagestory.at/blog.html/news/v11967-anti-double-whammy-r384/</url>
+        </release>
+        <release version="1.19.6" date="2024-03-31">
+            <description>
+                <p>Anti-Double-Whammy</p>
+            </description>
+            <url>https://www.vintagestory.at/blog.html/news/v1196-anti-double-whammy-r384/</url>
+        </release>
+        <release version="1.19.5" date="2024-03-22">
+            <description>
+                <p>YABATP stable</p>
+            </description>
+            <url>https://www.vintagestory.at/blog.html/news/v1195-yabatp-stable-r383/</url>
+        </release>
+        <release version="1.19.4" date="2024-02-28">
+            <description>
+                <p>Stableified glue!</p>
+            </description>
+            <url>https://www.vintagestory.at/blog.html/news/v1194-stableified-glue-r380/</url>
+        </release>
+        <release version="1.19.3" date="2024-01-26">
+            <description>
+                <p>Dejank Redux - Stablerer</p>
+            </description>
+            <url>https://www.vintagestory.at/blog.html/news/v11923-dejank-redux-stablerer-r376/</url>
+        </release>
+        <release version="1.19.2" date="2024-01-25">
+            <description>
+                <p>Dejank Redux - Stablerer</p>
+            </description>
+            <url>https://www.vintagestory.at/blog.html/news/v1192-dejank-redux-stablerer-r376/</url>
+        </release>
+        <release version="1.19.1" date="2024-01-19">
+            <description>
+                <p>Dejank Redux - Stabler</p>
+            </description>
+            <url>https://www.vintagestory.at/blog.html/news/v1191-dejank-redux-stabler-r375/</url>
+        </release>
+        <release version="1.19.0" date="2024-01-17">
+            <description>
+                <p>Dejank Redux - over 500 individual features, tweaks and fixes.</p>
+            </description>
+            <url>https://www.vintagestory.at/blog.html/news/v1190-dejank-redux-stable-r374/</url>
+        </release>
+        <release version="1.18.15" date="2023-10-10">
+            <description>
+                <p>Fix the game crashing from carving pumpkins.</p>
+            </description>
+            <url>https://www.vintagestory.at/blog.html/news/v1181415-leaky-server-plug-community-meetup-r368/</url>
+        </release>
+        <release version="1.18.14" date="2023-10-03">
+            <description>
+                <p>Fixed slow but accumulating RAM and performance leak on dedicated servers, which required daily restarts to prevent overload on Linux.</p>
+            </description>
+            <url>https://www.vintagestory.at/blog.html/news/v11814-leaky-server-plug-community-meetup-r368/</url>
+        </release>
+        <release version="1.18.13" date="2023-09-20">
+            <description>
+                <p>Fix 2 bugs with the Windows installer</p>
+            </description>
+            <url>https://www.vintagestory.at/blog.html/news/v118111213-leaky-world-reload-plug-r366/</url>
+        </release>
+        <release version="1.18.12" date="2023-09-18">
+            <description>
+                <p>Fix a missing translation entry and also add a new "Direct Mouse Mode" settings for those with mouse speed issues.</p>
+            </description>
+            <url>https://www.vintagestory.at/blog.html/news/v118111213-leaky-world-reload-plug-r366/</url>
+        </release>
+        <release version="1.18.11" date="2023-09-18">
+            <description>
+                <p>Leaky world reload plug</p>
+            </description>
+            <url>https://www.vintagestory.at/blog.html/news/v11811-leaky-world-reload-plug-r366/</url>
+        </release>
+        <release version="1.18.10" date="2023-09-01">
+            <description>
+                <p>Fix an issue with the installers and removed a untested fix.</p>
+            </description>
+            <url>https://www.vintagestory.at/blog.html/news/v118911810-stable-idle-server-ram-saver-r365/</url>
+        </release>
+        <release version="1.18.9" date="2023-09-01">
+            <description>
+                <p>Stable Idle Server RAM Saver</p>
+            </description>
+            <url>https://www.vintagestory.at/blog.html/news/v118911810-stable-idle-server-ram-saver-r365/</url>
+        </release>
+        <release version="1.18.8" date="2023-08-09">
+            <description>
+                <p>net7 migration completed - VS now runs under the .net7 framework, improving overall performance.</p>
+            </description>
+            <url>https://www.vintagestory.at/blog.html/news/v1188-net7-migration-completed-r363/</url>
+        </release>
+        <release version="1.18.7" date="2023-07-23">
+            <description>
+                <p>That'll buff it out - This update contains a number of high priority fixes.</p>
+            </description>
+            <url>https://www.vintagestory.at/blog.html/news/v1187-thatll-buff-it-out-r361/</url>
+        </release>
+        <release version="1.18.6" date="2023-06-28">
+            <description>
+                <p>Stable security patch</p>
+            </description>
+            <url>https://www.vintagestory.at/blog.html/news/v1186-stable-security-patch-r360/</url>
+        </release>
+        <release version="1.18.5" date="2023-05-18">
+            <description>
+                <p>Fix issues isolated to some players</p>
+            </description>
+            <url>https://www.vintagestory.at/blog.html/news/v11841185-security-patch-further-server-perf-tweaks-r357/</url>
+        </release>
+        <release version="1.18.4" date="2023-05-18">
+            <description>
+                <p>
+                    Security patch, further server perf tweaks. There is a
+                    server privileges security issue in 1.18.3 (and earlier game
+                    versions) which can affect especially the admins and other
+                    staff of multiplayer servers.
+                </p>
+            </description>
+            <url>https://www.vintagestory.at/blog.html/news/v11841185-security-patch-further-server-perf-tweaks-r357/</url>
+        </release>
+        <release version="1.18.3" date="2023-05-12">
+            <description>
+                <p>Lore Update: The Resonance Archives - fix a few critical issues</p>
+            </description>
+            <url>https://www.vintagestory.at/blog.html/news/v1182-1183-lore-update-the-resonance-archives-stable-server-perf-tweaks-r356/</url>
+        </release>
+        <release version="1.18.2" date="2023-05-12">
+            <description>
+                <p>Lore Update: The Resonance Archives - stable server perf tweaks</p>
+            </description>
+            <url>https://www.vintagestory.at/blog.html/news/v1182-1183-lore-update-the-resonance-archives-stable-server-perf-tweaks-r356/</url>
+        </release>
+        <release version="1.18.1" date="2023-04-22">
+            <description>
+                <p>Lore Update: The Resonance Archives - Stable(r) release</p>
+            </description>
+            <url>https://www.vintagestory.at/blog.html/news/v1181-lore-update-the-resonance-archives-stabler-release-r353/</url>
+        </release>
+        <release version="1.18.0" date="2023-04-19">
+            <description>
+                <p>Lore Update: The Resonance Archives - Stable release</p>
+            </description>
+            <url>https://www.vintagestory.at/blog.html/news/v1180-lore-update-the-resonance-archives-stable-release-r352/</url>
+        </release>
+        <release version="1.17.12" date="2023-04-17">
+            <description>
+                <p>Fixed game crashing when trying to connect to a password protected server without password. Backported land claim downloading.</p>
+            </description>
+            <url>https://www.vintagestory.at/blog.html/news/v11712-v1180-rc7rc8-lore-update-the-resonance-archives-r351/</url>
+        </release>
+        <release version="1.17.11" date="2023-02-06">
+            <description>
+                <p>Mod compatibility patch and .net7 experimental build</p>
+            </description>
+            <url>https://www.vintagestory.at/blog.html/news/mod-compatibility-patch-and-net7-experimental-build-v11711-and-net7-v11711-r344/</url>
+        </release>
+        <release version="1.17.10" date="2023-01-09">
+            <description>
+                <p>Bonus Bugfix Patch</p>
+            </description>
+            <url>https://www.vintagestory.at/blog.html/news/bonus-bugfix-patch-v11710-r343/</url>
+        </release>
+        <release version="1.17.9" date="2022-10-19">
+            <description>
+                <p>Spooktober update 2</p>
+            </description>
+            <url>https://www.vintagestory.at/blog.html/news/spooktober-update-2-v1179-r336/</url>
+        </release>
+        <release version="1.17.8" date="2022-10-12">
+            <description>
+                <p>Spooktober update</p>
+                <p>fix a texturing issue with pumpkins, fix a crash with chiseled blocks and make the handbook pause toggle-able</p>
+            </description>
+            <url>https://www.vintagestory.at/blog.html/news/spooktober-update-v1177-v1178-r335/</url>
+        </release>
+        <release version="1.17.7" date="2022-10-12">
+            <description>
+                <p>Spooktober update</p>
+            </description>
+            <url>https://www.vintagestory.at/blog.html/news/spooktober-update-v1177-v1178-r335/</url>
+        </release>
+        <release version="1.17.6" date="2022-10-04">
+            <description>
+                <p>Stabler De-Jank and Game Juice Update</p>
+                <p>fix a client crash related to condensers and a dupe bug related to wall leaning tools</p>
+            </description>
+            <url>https://www.vintagestory.at/blog.html/news/stabler-de-jank-and-game-juice-update-1175-1176-r334/</url>
+        </release>
+        <release version="1.17.5" date="2022-10-02">
+            <description>
+                <p>Stabler De-Jank and Game Juice Update</p>
+            </description>
+            <url>https://www.vintagestory.at/blog.html/news/stabler-de-jank-and-game-juice-update-1175-r334/</url>
+        </release>
+        <release version="1.17.4" date="2022-09-20">
+            <description>
+                <p>Stabler De-Jank and Game Juice Update</p>
+            </description>
+            <url>https://www.vintagestory.at/blog.html/news/stabler-de-jank-and-game-juice-update-1174-r333/</url>
+        </release>
+        <release version="1.17.3" date="2022-09-09">
+            <description>
+                <p>Stabler De-Jank and Game Juice Update</p>
+            </description>
+            <url>https://www.vintagestory.at/blog.html/news/stabler-de-jank-and-game-juice-update-1173-r332/</url>
+        </release>
+        <release version="1.17.2" date="2022-09-02">
+            <description>
+                <p>Stabler De-Jank and Game Juice Update</p>
+            </description>
+            <url>https://www.vintagestory.at/blog.html/news/stabler-de-jank-and-game-juice-update-1172-r331/</url>
+        </release>
+        <release version="1.17.1" date="2022-09-01">
+            <description>
+                <p>Stabler De-Jank and Game Juice Update</p>
+            </description>
+            <url>https://www.vintagestory.at/blog.html/news/stabler-de-jank-and-game-juice-update-1171-r330/</url>
+        </release>
+        <release version="1.17.0" date="2022-08-31">
+            <description>
+                <p>Stable De-Jank and Game Juice Update</p>
+            </description>
+            <url>https://www.vintagestory.at/blog.html/news/stable-de-jank-and-game-juice-update-1170-r329/</url>
+        </release>
+        <release version="1.16.5" date="2022-04-13">
+            <description>
+                <p>Fruit tree fix</p>
+            </description>
+            <url>https://www.vintagestory.at/blog.html/news/fruit-tree-fix-v1165-r321/</url>
+        </release>
+        <release version="1.16.4" date="2022-02-26">
+            <description>
+                <p>Homesteading part 2 &amp; Combat update, stabler-er finetune</p>
+            </description>
+            <url>https://www.vintagestory.at/blog.html/news/homesteading-part-2-combat-update-stabler-er-finetune-1164-r319/</url>
+        </release>
+        <release version="1.16.3" date="2022-02-02">
+            <description>
+                <p>Fix multiplayer crash for sleeping in beds</p>
+            </description>
+            <url>https://www.vintagestory.at/blog.html/news/homesteading-part-2-combat-update-stabler-finetune-1162-1163-r315/</url>
+        </release>
+        <release version="1.16.2" date="2022-02-02">
+            <description>
+                <p>Homesteading part 2 &amp; Combat update, stabler finetune</p>
+            </description>
+            <url>https://www.vintagestory.at/blog.html/news/homesteading-part-2-combat-update-stabler-finetune-1162-1163-r315/</url>
+        </release>
+        <release version="1.16.1" date="2022-01-22">
+            <description>
+                <p>Homesteading part 2 &amp; Combat update, stable finetune</p>
+            </description>
+            <url>https://www.vintagestory.at/blog.html/news/homesteading-part-2-combat-update-stable-finetune-1161-r313/</url>
+        </release>
+        <release version="1.16.0" date="2022-01-10">
+            <description>
+                <p>Homesteading part 2 &amp; Combat update</p>
+            </description>
+            <url>https://www.vintagestory.at/blog.html/news/homesteading-part-2-combat-update-stable-1160-r310/</url>
+        </release>
+        <release version="1.15.10" date="2021-11-26">
+            <description>
+                <p>Stabler ground fog patch</p>
+            </description>
+            <url>https://www.vintagestory.at/blog.html/news/stabler-ground-fog-patch-v11510-r302/</url>
+        </release>
+        <release version="1.15.9" date="2021-11-07">
+            <description>
+                <p>Fix a creative mode crash</p>
+            </description>
+            <url>https://www.vintagestory.at/blog.html/news/stable-ground-fog-patch-v1158-1159-r300/</url>
+        </release>
+        <release version="1.15.8" date="2021-11-07">
+            <description>
+                <p>Ground fog patch</p>
+            </description>
+            <url>https://www.vintagestory.at/blog.html/news/stable-ground-fog-patch-v1158-1159-r300/</url>
+        </release>
+        <release version="1.15.7" date="2021-10-13">
+            <description>
+                <p>Homesteading balance and stability patch #6</p>
+            </description>
+        </release>
+        <release version="1.15.6" date="2021-09-24">
+            <description>
+                <p>Homesteading balance and stability patch #3</p>
+            </description>
+            <url>https://www.vintagestory.at/blog.html/news/homesteading-balance-and-stability-patch-3-v1156-r295/</url>
+        </release>
+        <release version="1.15.5" date="2021-08-10">
+            <description>
+                <p>fix a newly introduced crash with chiseled blocks</p>
+            </description>
+            <url>https://www.vintagestory.at/blog.html/news/the-homesteading-update-balance-stable-patch-v1154-1155-r292/</url>
+        </release>
+        <release version="1.15.4" date="2021-08-09">
+            <description>
+                <p>The Homesteading update, balance &amp; stable patch</p>
+            </description>
+            <url>https://www.vintagestory.at/blog.html/news/the-homesteading-update-balance-stable-patch-v1154-r292/</url>
+        </release>
+        <release version="1.15.3" date="2021-07-31">
+            <description>
+                <p>The Homesteading update, balance &amp; stable patch</p>
+            </description>
+            <url>https://www.vintagestory.at/blog.html/news/the-homesteading-update-balance-stable-patch-v1153-r290/</url>
+        </release>
+        <release version="1.15.2" date="2021-07-24">
+            <description>
+                <p>The Homesteading update, stable patch #1</p>
+                <p>Fixes a few major issues, mostly related to multiplayer.</p>
+            </description>
+            <url>https://www.vintagestory.at/blog.html/news/the-homesteading-update-stable-patch-1-v1152-r288/</url>
+        </release>
+        <release version="1.15.1" date="2021-07-16">
+            <description>
+                <p>The Homesteading update</p>
+                <p>Fixes a crash related to panning.</p>
+            </description>
+            <url>https://www.vintagestory.at/forums/topic/5104-the-homesteading-update-v1150/</url>
+        </release>
+        <release version="1.15.0" date="2021-07-16">
+            <description>
+                <p>The Homesteading update</p>
+            </description>
+            <url>https://www.vintagestory.at/forums/topic/5104-the-homesteading-update-v1150/</url>
+        </release>
+        <release version="1.14.10" date="2021-04-16">
+            <description>
+                <p>Vintagehosting</p>
+                <p>Fix a connection issue with Vintagehosting servers</p>
+            </description>
+            <url>https://www.vintagestory.at/forums/topic/4442-vintagehosting-v1149-v11410/</url>
+        </release>
+        <release version="1.14.9" date="2021-04-15">
+            <description>
+                <p>Vintagehosting</p>
+            </description>
+            <url>https://www.vintagestory.at/forums/topic/4442-vintagehosting-v1149-v11410/</url>
+        </release>
+        <release version="1.14.8" date="2021-02-22">
+            <description>
+                <p>New stable, VS Mod DB, v1.15 sneak peek (v1.14.8)</p>
+            </description>
+            <url>https://www.vintagestory.at/blog.html/news/new-stable-vs-mod-db-v115-sneak-peek-v1148-r280/</url>
+        </release>
+        <release version="1.14.7" date="2021-01-19">
+            <description>
+                <p>Wintery Stability Patch (v1.14.6 &amp; 1.14.7)</p>
+            </description>
+            <url>https://www.vintagestory.at/blog.html/news/wintery-stability-patch-v1146-1147-r278/</url>
+        </release>
+    </releases>
+    <keywords>
+        <keyword>vintage story</keyword>
+        <keyword>survival game</keyword>
+        <keyword>eldritch horror</keyword>
+        <keyword>sandbox game</keyword>
+        <keyword>wilderness survival</keyword>
+    </keywords>
+</component>

@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "antiword",
+    "version": "0.37",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "antiword",
+    "buildsystem": "simple",
+    "build-commands": [
+      "make",
+      "cp antiword /app/bin",
+      "cp -r Resources /app/share/antiword"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://web.archive.org/web/20221117105329if_/http://www.winfield.demon.nl/linux/antiword-0.37.tar.gz",
+        "sha256": "8e2c000fcbc6d641b0e6ff95e13c846da3ff31097801e86702124a206888f5ac"
+      }
+    ]
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "header": {
+    "id": "python3-gpgme",
+    "version": "unknown",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-gpgme",
+    "buildsystem": "simple",
+    "build-options": {
+      "env": {
+        "SWIG_LIB": "/app/plugins/openpgp/share/swig/4.3.1"
+      },
+      "prepend-path": "/app/plugins/openpgp/bin:"
+    },
+    "build-commands": [
+      "sed -e 's|, \\\"swig\\\"||' -i pyproject.toml",
+      "autoreconf -fiv",
+      "./configure",
+      "mv src gpg",
+      "pip3 install --no-build-isolation ."
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://dev.gnupg.org/source/gpgmepy.git",
+        "tag": "gpgmepy-2.0.0",
+        "commit": "22e1cd5fdea1f62690fba55cf616bde97c1ac5d3"
+      }
+    ]
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "header": {
+    "id": "samba",
+    "version": "4.24.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "samba",
+    "config-opts": [
+      "--without-json",
+      "--without-ad-dc",
+      "--without-ldap",
+      "--without-ads",
+      "--without-pam"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://samba.org/samba/ftp/stable/samba-4.24.0.tar.gz",
+        "sha256": "1b1e457fd651a612cd08226cc6efd04e5d01e36d918c8b4c4e470e74e86881ea",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 4758,
+          "stable-only": true,
+          "url-template": "https://samba.org/samba/ftp/stable/samba-$version.tar.gz"
+        }
+      }
+    ]
+  }
+}

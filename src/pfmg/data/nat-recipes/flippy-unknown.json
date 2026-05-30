@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "flippy",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "flippy",
+    "buildsystem": "simple",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "http://invpy.com/flippyimages.zip",
+        "sha256": "09ca8543237b42b152e5256e7c996cbff9ca124534abba0cd915fa1c11fe2af2"
+      }
+    ],
+    "build-commands": [
+      "install -Dt /app/share/flippy/ *"
+    ]
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "header": {
+    "id": "python3-alembic",
+    "version": "1.16.5",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-alembic",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"alembic\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/7e/99/7690b6d4034fffd95959cbe0c02de8deb3098cc577c67bb6a24fe5d7caa7/markupsafe-3.0.3.tar.gz",
+        "sha256": "722695808f4b6457b320fdc131280796bdceb04ab50fe1795cd540799ebe1698",
+        "x-checker-data": {
+          "name": "markupsafe",
+          "type": "pypi"
+        }
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/39/4a/4c61d4c84cfd9befb6fa08a702535b27b21fff08c946bc2f6139decbf7f7/alembic-1.16.5-py3-none-any.whl",
+        "sha256": "e845dfe090c5ffa7b92593ae6687c5cb1a101e91fa53868497dbd79847f9dbe3",
+        "x-checker-data": {
+          "name": "alembic",
+          "packagetype": "bdist_wheel",
+          "type": "pypi"
+        }
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/03/b8/704d753a5a45507a7aab61f18db9509302ed3d0a27ac7e0359ec2905b1a6/greenlet-3.2.4.tar.gz",
+        "sha256": "0dca0d95ff849f9a364385f36ab49f50065d76964944638be9691e1832e9f86d",
+        "x-checker-data": {
+          "name": "greenlet",
+          "type": "pypi"
+        }
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/d7/bc/d59b5d97d27229b0e009bd9098cd81af71c2fa5549c580a0a67b9bed0496/sqlalchemy-2.0.43.tar.gz",
+        "sha256": "788bfcef6787a7764169cfe9859fe425bf44559619e1d9f56f5bddf2ebf6f417",
+        "x-checker-data": {
+          "name": "sqlalchemy",
+          "type": "pypi"
+        }
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/18/67/36e9267722cc04a6b9f15c7f3441c2363321a3ea07da7ae0c0707beb2a9c/typing_extensions-4.15.0-py3-none-any.whl",
+        "sha256": "f0fa19c6845758ab08074a0cfa8b7aecb71c999ca73d62883bc25cc018c4e548",
+        "x-checker-data": {
+          "name": "typing_extensions",
+          "packagetype": "bdist_wheel",
+          "type": "pypi"
+        }
+      }
+    ]
+  }
+}

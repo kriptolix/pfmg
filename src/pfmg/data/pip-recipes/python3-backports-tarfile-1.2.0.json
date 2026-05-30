@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-backports-tarfile",
+    "version": "1.2.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-backports-tarfile",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"backports-tarfile==1.2.0\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/b9/fa/123043af240e49752f1c4bd24da5053b6bd00cad78c2be53c0d1e8b975bc/backports.tarfile-1.2.0-py3-none-any.whl",
+        "sha256": "77e284d754527b01fb1e6fa8a1afe577858ebe4e9dad8919e34c862cb399bc34"
+      }
+    ]
+  }
+}

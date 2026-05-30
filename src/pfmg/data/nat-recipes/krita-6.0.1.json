@@ -1,0 +1,50 @@
+{
+  "header": {
+    "id": "krita",
+    "version": "6.0.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "krita",
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "build-options": {
+      "env": {
+        "PYTHONPATH": "/app/lib/python3.13/site-packages"
+      }
+    },
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
+      "-DBUILD_TESTING=FALSE"
+    ],
+    "post-install": [
+      "sed -i '/<p>Krita is the full-featured digital art studio.<\\/p>/i \\    <p>This flatpak is community maintained. Please report Flatpak specific bugs that do not occur on the upstream AppImage at https://github.com/flathub/org.kde.krita/issues.</p>' ${FLATPAK_DEST}/share/metainfo/org.kde.krita.appdata.xml",
+      "cd ${FLATPAK_DEST}/share/applications\nrename krita_ org.kde.krita. krita*.desktop\n",
+      "hicolordir=${FLATPAK_DEST}/share/icons/hicolor\nfor s in 16 22 32 48 64 128 256 512; do\n  mimetypesdir=${hicolordir}/${s}x${s}/mimetypes\n  mv ${mimetypesdir}/application-x-krita.png ${mimetypesdir}/org.kde.krita.application-x-krita.png\ndone\n"
+    ],
+    "cleanup": [
+      "/share/icons/hicolor/1024x1024"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.kde.org/stable/krita/6.0.1/krita-6.0.1.tar.gz",
+        "sha256": "08e75d14c805261fc8228bec16def4705f6e9cfb0191e71bd04cc4c0e182848a",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 10918,
+          "stable-only": true,
+          "url-template": "https://download.kde.org/stable/krita/$version/krita-$version.tar.gz"
+        }
+      },
+      {
+        "type": "patch",
+        "paths": [
+          "patches/krita/krita_dont_use_native_file_chooser.patch",
+          "patches/krita/krita_appdata.patch"
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "header": {
+    "id": "gtk-sharp3",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "gtk-sharp3",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/mono/gtk-sharp.git",
+        "commit": "dadc19cf1b90c5743f2776c675faac990e397a56"
+      }
+    ]
+  }
+}

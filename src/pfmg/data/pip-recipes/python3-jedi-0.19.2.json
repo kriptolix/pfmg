@@ -1,0 +1,37 @@
+{
+  "header": {
+    "id": "python3-jedi",
+    "version": "0.19.2",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-jedi",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --no-index --find-links=\"file://${PWD}\" --prefix=/app jedi"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/source/s/setuptools/setuptools-82.0.1.tar.gz",
+        "sha256": "7d872682c5d01cfde07da7bccc7b65469d3dca203318515ada1de5eda35efbf9"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/source/w/wheel/wheel-0.46.3.tar.gz",
+        "sha256": "e3e79874b07d776c40bd6033f8ddf76a7dad46a7b8aa1b2787a83083519a1803"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/source/p/parso/parso-0.8.6.tar.gz",
+        "sha256": "2b9a0332696df97d454fa67b81618fd69c35a7b90327cbe6ba5c92d2c68a7bfd"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/source/j/jedi/jedi-0.19.2.tar.gz",
+        "sha256": "4770dc3de41bde3966b02eb84fbcf557fb33cce26ad23da12c742fb50ecb11f0"
+      }
+    ]
+  }
+}

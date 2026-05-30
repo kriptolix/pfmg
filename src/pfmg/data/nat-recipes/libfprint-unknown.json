@@ -1,0 +1,31 @@
+{
+  "header": {
+    "id": "libfprint",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libfprint",
+    "buildsystem": "meson",
+    "config-opts": [
+      "-Dudev_hwdb=disabled",
+      "-Dudev_rules=disabled",
+      "-Ddoc=false",
+      "-Dinstalled-tests=false"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://gitlab.freedesktop.org/libfprint/libfprint.git",
+        "tag": "v1.94.8",
+        "commit": "e57bab2f1ef3583158d2e6e2b5bb4182629ebe35",
+        "x-checker-data": {
+          "type": "git",
+          "url": "https://gitlab.freedesktop.org/libfprint/libfprint.git",
+          "tag-pattern": "^v([\\d.]+)$"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "header": {
+    "id": "extras",
+    "version": "2.8.19",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "extras",
+    "buildsystem": "simple",
+    "build-commands": [
+      "install -Dm644 extras/${FLATPAK_ID}.metainfo.xml ${FLATPAK_DEST}/share/metainfo/${FLATPAK_ID}.metainfo.xml",
+      "install -Dm644 extras/${FLATPAK_ID}.svg ${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/${FLATPAK_ID}.svg",
+      "install -Dm644 extras/${FLATPAK_ID}.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://api.github.com/repos/pilas-engine/pilas-engine/tarball/v2.8.19",
+        "sha256": "2df0b2f71acafe6df196594f16b8a416a0de25e0fbfeaee51a7b31c80adc74d8",
+        "archive-type": "tar-gzip",
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://api.github.com/repos/pilas-engine/pilas-engine/releases/latest",
+          "version-query": ".tag_name\n",
+          "url-query": ".tarball_url\n",
+          "versions": {
+            "<": "3.0.0"
+          }
+        }
+      }
+    ]
+  }
+}

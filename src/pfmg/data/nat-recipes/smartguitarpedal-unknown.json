@@ -1,0 +1,58 @@
+{
+  "header": {
+    "id": "smartguitarpedal",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "smartguitarpedal",
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "no-make-install": true,
+    "make-args": [
+      "SmartPedal_VST3"
+    ],
+    "config-opts": [
+      "-DCMAKE_AR=/usr/bin/gcc-ar",
+      "-DCMAKE_NM=/usr/bin/gcc-nm",
+      "-DCMAKE_RANLIB=/usr/bin/gcc-ranlib",
+      "-DCMAKE_BUILD_TYPE=Release"
+    ],
+    "post-install": [
+      "install -d ${FLATPAK_DEST}/vst3",
+      "strip SmartPedal_artefacts/Release/VST3/*.vst3/Contents/*-linux/*.so",
+      "cp -a SmartPedal_artefacts/Release/VST3/*.vst3 ${FLATPAK_DEST}/vst3/"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/GuitarML/SmartGuitarPedal.git",
+        "//": "Because of this https://github.com/flatpak/flatpak-builder/pull/510",
+        "disable-submodules": true,
+        "tag": "v1.5",
+        "commit": "1182756365616a9a39f543eb3ab9c77f47c18c13",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^v([\\d.]+)$"
+        }
+      },
+      {
+        "type": "git",
+        "url": "https://github.com/juce-framework/JUCE.git",
+        "dest": "modules/JUCE",
+        "commit": "965d0ca4be178c4a0000b116d460e15c30311992"
+      },
+      {
+        "type": "git",
+        "url": "https://gitlab.com/libeigen/eigen.git",
+        "dest": "modules/eigen",
+        "commit": "bd393e15c3d8dfa5423652c75921e026bcab83c5"
+      },
+      {
+        "type": "patch",
+        "path": "patches/smartguitarpedal-build.patch"
+      }
+    ]
+  }
+}

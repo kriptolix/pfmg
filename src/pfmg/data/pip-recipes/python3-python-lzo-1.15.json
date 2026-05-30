@@ -1,0 +1,26 @@
+{
+  "header": {
+    "id": "python3-python-lzo",
+    "version": "1.15",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-python-lzo",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"python-lzo\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/a4/8f/60cbc1a57257cd21c9e35217a8bc8713424dc7502df17794d914738df50f/python-lzo-1.15.tar.gz",
+        "sha256": "a57aaa00c5c3a0515dd9f7426ba2cf601767dc19dc023d8b99d4a13b0a327b49",
+        "x-checker-data": {
+          "type": "pypi",
+          "name": "python-lzo"
+        }
+      }
+    ]
+  }
+}

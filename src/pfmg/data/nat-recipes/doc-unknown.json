@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "doc",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "doc",
+    "buildsystem": "simple",
+    "build-commands": [
+      "find . -type f -exec install -D '{}' '/app/share/propelleride/doc/{}' \\;"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/parallaxinc/spin-docs.git",
+        "commit": "9d9159f154cb0ae74fe7733fc3764f933458414d"
+      }
+    ]
+  }
+}

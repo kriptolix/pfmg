@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "jamovi-engine",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "jamovi-engine",
+    "buildsystem": "simple",
+    "build-commands": [
+      "./configure --rhome=/app/lib/R --base-module-path=/app/lib/R/library --rpath=/app/lib/R/library/RInside/lib --rpath=/app/lib/R/lib",
+      "make",
+      "BINDIR='${FLATPAK_DEST}/bin' make install"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/jamovi/jamovi.git",
+        "commit": "2146574acee0bf6a0f6b342ece0024147d2515b2"
+      }
+    ]
+  }
+}

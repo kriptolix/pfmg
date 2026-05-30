@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "krunner",
+    "version": "6.24",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "krunner",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DBUILD_TESTING=OFF"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.kde.org/stable/frameworks/6.24/krunner-6.24.0.tar.xz",
+        "sha256": "5775d7292a31c0ca339b385c18f3716fda5486317423c53809a10d8008ff8e4d",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 8762,
+          "stable-only": true,
+          "url-template": "https://download.kde.org/stable/frameworks/$major.$minor/krunner-$version.tar.xz"
+        }
+      }
+    ]
+  }
+}

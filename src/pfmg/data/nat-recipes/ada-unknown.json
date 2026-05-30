@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "ada",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "ada",
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "config-opts": [
+      "-DBUILD_TESTING=OFF",
+      "-DADA_TOOLS=OFF"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/ada-url/ada.git",
+        "commit": "8d50724a7dea209a05234a445e28f97994b0a5f6",
+        "tag": "v3.4.4",
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://api.github.com/repos/ada-url/ada/releases/latest",
+          "tag-query": ".tag_name",
+          "timestamp-query": ".published_at",
+          "version-query": "$tag | sub(\"^[vV]\"; \"\")"
+        }
+      }
+    ],
+    "cleanup": [
+      "*"
+    ]
+  }
+}

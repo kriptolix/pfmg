@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "typst",
+    "version": "0.13.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "typst",
+    "buildsystem": "simple",
+    "build-options": {
+      "append-path": "/usr/lib/sdk/rust-stable/bin",
+      "env": {
+        "CARGO_HOME": "/run/build/typst/cargo",
+        "CARGO_NET_OFFLINE": "true"
+      }
+    },
+    "build-commands": [
+      "cargo fetch --manifest-path Cargo.toml --verbose",
+      "cargo install --path . --root /app"
+    ],
+    "sources": [
+      "cargo-typst-sources.json",
+      {
+        "type": "archive",
+        "archive-type": "tar-gzip",
+        "url": "https://static.crates.io/crates/typst-cli/typst-cli-0.13.1.crate",
+        "sha256": "a634de7356f417bb09250a926714f87be71777c26e1f62ce640ca2f38debb683"
+      }
+    ]
+  }
+}

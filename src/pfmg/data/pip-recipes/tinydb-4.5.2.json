@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "tinydb",
+    "version": "4.5.2",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "tinydb",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --prefix /app --no-deps tinydb-*.whl"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/c7/a3/130a1949dfcf79915f2fe807947eeb91663d4a0bf8f7f2c0cc8d02d24620/tinydb-4.5.2-py3-none-any.whl",
+        "sha256": "3c5e5c72c98db07e707be4e25f9e135a8a14b96938e4745b1b7187fec523ff58"
+      }
+    ]
+  }
+}

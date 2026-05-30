@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "sass",
+    "version": "1.63.6",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "sass",
+    "buildsystem": "simple",
+    "cleanup": [
+      "*"
+    ],
+    "build-commands": [
+      "install -D -m755 sass ${FLATPAK_DEST}/bin/pysassc",
+      "install -D -m755 src/dart ${FLATPAK_DEST}/bin/src/dart",
+      "install -D -m755 src/sass.snapshot ${FLATPAK_DEST}/bin/src/sass.snapshot"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/sass/dart-sass/releases/download/1.63.6/dart-sass-1.63.6-linux-x64.tar.gz",
+        "sha256": "de6cbea03b18c921c5829030c777321d6c38144035ebccd2ee4deaff9c333ded"
+      }
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "faudio",
+    "version": "24.11",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "faudio",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/FNA-XNA/FAudio/archive/refs/tags/24.11.tar.gz",
+        "sha256": "7aa5fdc762e1abbf4721e793de589eced46eef872ee2b9a03ab79ac81b64082c"
+      }
+    ]
+  }
+}

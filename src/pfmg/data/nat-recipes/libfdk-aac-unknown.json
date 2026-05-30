@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "libfdk-aac",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libfdk-aac",
+    "buildsystem": "autotools",
+    "config-opts": [
+      "--disable-static"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/mstorsjo/fdk-aac.git",
+        "tag": "v2.0.3",
+        "commit": "716f4394641d53f0d79c9ddac3fa93b03a49f278"
+      }
+    ],
+    "x-checker-data": {
+      "type": "git",
+      "tag-pattern": "^v([\\d.]+)$"
+    }
+  }
+}

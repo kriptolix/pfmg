@@ -1,0 +1,20 @@
+{
+  "header": {
+    "id": "qtmqtt",
+    "version": "6.9.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "qtmqtt",
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/qt/qtmqtt/archive/refs/tags/v6.9.2.tar.gz",
+        "sha256": "1d5edb5b78f3b3248211afb3bd98947ebefc0e3acdd2db2f000dcda1a0fb362b"
+      }
+    ]
+  }
+}

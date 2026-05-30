@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "python3-pypandoc",
+    "version": "1.5",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-pypandoc",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"wheel\" --no-build-isolation",
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"pypandoc\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/ed/46/e298a50dde405e1c202e316fa6a3015ff9288423661d7ea5e8f22f589071/wheel-0.36.2.tar.gz",
+        "sha256": "e11eefd162658ea59a60a0f6c7d493a7190ea4b9a85e335b33489d9f17e0245e"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/d6/b7/5050dc1769c8a93d3ec7c4bd55be161991c94b8b235f88bf7c764449e708/pypandoc-1.5.tar.gz",
+        "sha256": "14a49977ab1fbc9b14ef3087dcb101f336851837fca55ca79cf33846cc4976ff"
+      }
+    ]
+  }
+}

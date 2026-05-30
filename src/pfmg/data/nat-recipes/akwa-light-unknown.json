@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "akwa-light",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "Akwa-light",
+    "buildsystem": "simple",
+    "build-commands": [
+      "install -dm755 /usr/share/runtime/share/themes/Akwa-light/gtk-3.0",
+      "cp -a Akwa-light/index.theme /usr/share/runtime/share/themes/Akwa-light/",
+      "cp -a Akwa-light/gtk-3.0/** /usr/share/runtime/share/themes/Akwa-light/gtk-3.0"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/berkiyo/akwa.git"
+      }
+    ]
+  }
+}

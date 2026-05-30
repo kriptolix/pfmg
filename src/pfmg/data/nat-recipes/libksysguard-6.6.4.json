@@ -1,0 +1,29 @@
+{
+  "header": {
+    "id": "libksysguard",
+    "version": "6.6.4",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libksysguard",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DBUILD_TESTING=OFF",
+      "-DENABLE_KAUTH_HELPER=OFF"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.kde.org/stable/plasma/6.6.4/libksysguard-6.6.4.tar.xz",
+        "sha256": "9dd0a5a8d3f12d65351fab8c132365dd65f0f9976d6831598ce30ebbfa291a89",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 8761,
+          "stable-only": true,
+          "url-template": "https://download.kde.org/stable/plasma/$version/libksysguard-$version.tar.xz"
+        }
+      }
+    ]
+  }
+}

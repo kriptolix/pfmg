@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "perl-lwp-mediatypes",
+    "version": "6.02",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "perl-lwp-mediatypes",
+    "buildsystem": "simple",
+    "build-commands": [
+      "perl Makefile.PL",
+      "make install DESTDIR=`pwd`/INST INSTALLSITELIB=/SITELIB",
+      "mkdir -p $FLATPAK_DEST/share/perl5/",
+      "cp -fr ./INST/SITELIB/* $FLATPAK_DEST/share/perl5/"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://cpan.metacpan.org/authors/id/G/GA/GAAS/LWP-MediaTypes-6.02.tar.gz",
+        "sha256": "18790b0cc5f0a51468495c3847b16738f785a2d460403595001e0b932e5db676"
+      }
+    ]
+  }
+}

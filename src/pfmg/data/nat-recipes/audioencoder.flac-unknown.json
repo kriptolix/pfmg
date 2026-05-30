@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "audioencoder.flac",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "audioencoder.flac",
+    "buildsystem": "cmake-ninja",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/xbmc/audioencoder.flac",
+        "commit": "0314966a3dd782dcb46a688d8329443b978e8cc9"
+      }
+    ],
+    "build-options": {
+      "no-debuginfo": true,
+      "cflags": "-g0",
+      "cxxflags": "-g0"
+    },
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release"
+    ]
+  }
+}

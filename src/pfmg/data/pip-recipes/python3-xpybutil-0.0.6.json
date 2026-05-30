@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-xpybutil",
+    "version": "0.0.6",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-xpybutil",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} xpybutil"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/e7/4a/413b385ddc211293fac3151f290e64f6e661855e9188617b26f8ca169b06/xpybutil-0.0.6-py2.py3-none-any.whl",
+        "sha256": "657cad38464e51e2ae0b81eb372b97e00ca60cd64db0a30c46c098d3ddb1d9c5"
+      }
+    ]
+  }
+}

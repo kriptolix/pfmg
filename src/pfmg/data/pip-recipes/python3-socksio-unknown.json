@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-socksio",
+    "version": "unknown",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-socksio",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --no-build-isolation ."
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/sethmlarson/socksio.git",
+        "commit": "b326406915fd98a8185c1c160165c5b8963b30c1"
+      }
+    ]
+  }
+}

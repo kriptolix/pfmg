@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "blaze-builder",
+    "version": "0.4.2.3",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "blaze-builder",
+    "buildsystem": "simple",
+    "builddir": false,
+    "build-commands": [
+      "echo '#! /usr/bin/env runhaskell' >Setup.txt",
+      "echo '> import Distribution.Simple' >>Setup.txt",
+      "echo '> main = defaultMain' >>Setup.txt",
+      "ln -s Setup.txt Setup.lhs || true",
+      "runhaskell Setup configure --prefix=/app",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "sources": [
+      {
+        "sha256": "66291874236b7342adab033e3cddae414a23a2865dfb44095dfc4e0b9d46703b",
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/blaze-builder-0.4.2.3/blaze-builder-0.4.2.3.tar.gz"
+      },
+      {
+        "dest-filename": "blaze-builder.cabal",
+        "sha256": "3f2ff408e858e3ecac30183f98bbb14ce6cf6314c654bd9107e51defd386d5ef",
+        "type": "file",
+        "url": "https://hackage.haskell.org/package/blaze-builder-0.4.2.3/revision/0.cabal"
+      }
+    ]
+  }
+}

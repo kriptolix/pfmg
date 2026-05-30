@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-docopt-ng",
+    "version": "0.9.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-docopt-ng",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"docopt-ng==0.9.0\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/6c/4a/c3b77fc1a24510b08918b43a473410c0168f6e657118807015f1f1edceea/docopt_ng-0.9.0-py3-none-any.whl",
+        "sha256": "bfe4c8b03f9fca424c24ee0b4ffa84bf7391cb18c29ce0f6a8227a3b01b81ff9"
+      }
+    ]
+  }
+}

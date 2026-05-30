@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "gnuchess",
+    "version": "6.3.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "gnuchess",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://ftpmirror.gnu.org/chess/gnuchess-6.3.0.tar.gz",
+        "sha256": "0b37bec2098c2ad695b7443e5d7944dc6dc8284f8d01fcc30bdb94dd033ca23a",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 1206,
+          "url-template": "https://ftpmirror.gnu.org/chess/gnuchess-$version.tar.gz"
+        }
+      }
+    ]
+  }
+}

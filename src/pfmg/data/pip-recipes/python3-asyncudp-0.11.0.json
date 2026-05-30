@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-asyncudp",
+    "version": "0.11.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-asyncudp",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"asyncudp==0.11.0\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/17/fe/77f4a24264e728fd95542e53f026a91249b51d1611087b8c82d3a033ea97/asyncudp-0.11.0-py3-none-any.whl",
+        "sha256": "96d859d86471e3ed30cf9f05cb38e96920156e3a9fe70ee916096ba758ea316e"
+      }
+    ]
+  }
+}

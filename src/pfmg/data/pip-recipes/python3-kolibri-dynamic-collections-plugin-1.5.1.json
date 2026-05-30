@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-kolibri-dynamic-collections-plugin",
+    "version": "1.5.1",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-kolibri-dynamic-collections-plugin",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --target=\"${FLATPAK_DEST}/${PLUGIN_PYTHON_PATH}\" \"kolibri-dynamic-collections-plugin\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/2b/ce/e0be3e81a61fa4efffad02062c7d49a86e79365ab3ddd3874f2137ddbabb/kolibri_dynamic_collections_plugin-1.5.1-py2.py3-none-any.whl",
+        "sha256": "f5eb9ba95ea3f7fd958ac8dc51196a26416881e346d0a5ea0c752a6b08204b50"
+      }
+    ]
+  }
+}

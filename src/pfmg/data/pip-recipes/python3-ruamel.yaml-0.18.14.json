@@ -1,0 +1,38 @@
+{
+  "header": {
+    "id": "python3-ruamel.yaml",
+    "version": "0.18.14",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-ruamel.yaml",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"ruamel.yaml==0.18.14\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/af/6d/6fe4805235e193aad4aaf979160dd1f3c487c57d48b810c816e6e842171b/ruamel.yaml-0.18.14-py3-none-any.whl",
+        "sha256": "710ff198bb53da66718c7db27eec4fbcc9aa6ca7204e4c1df2f282b6fe5eb6b2"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/ec/b0/b850385604334c2ce90e3ee1013bd911aedf058a934905863a6ea95e9eb4/ruamel.yaml.clib-0.2.12-cp312-cp312-manylinux2014_aarch64.whl",
+        "sha256": "943f32bc9dedb3abff9879edc134901df92cfce2c3d5c9348f172f62eb2d771d",
+        "only-arches": [
+          "aarch64"
+        ]
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/44/d0/3f68a86e006448fb6c005aee66565b9eb89014a70c491d70c08de597f8e4/ruamel.yaml.clib-0.2.12-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "sha256": "95c3829bb364fdb8e0332c9931ecf57d9be3519241323c5274bd82f709cebc0c",
+        "only-arches": [
+          "x86_64"
+        ]
+      }
+    ]
+  }
+}

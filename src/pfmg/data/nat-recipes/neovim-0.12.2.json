@@ -1,0 +1,41 @@
+{
+  "header": {
+    "id": "neovim",
+    "version": "0.12.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "neovim",
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+    ],
+    "post-install": [
+      "sed -i \"/<id>$FLATPAK_ID<\\/id>/a \\ \\ <developer_name translatable=\\\"no\\\">Neovim contributors<\\/developer_name>\" ../runtime/nvim.appdata.xml",
+      "sed -i \"/<developer_name/a \\ \\ <url type=\\\"vcs-browser\\\">https://github.com/neovim/neovim</url>\" ../runtime/nvim.appdata.xml",
+      "install -Dm644 ../runtime/nvim.appdata.xml -t /app/share/metainfo",
+      "install -Dm644 ../neovim-mark.svg /app/share/icons/hicolor/scalable/apps/nvim.svg",
+      "desktop-file-edit --set-key=Exec --set-value=\"nvim-wrapper %F\" /app/share/applications/nvim.desktop",
+      "install -d \"${FLATPAK_DEST}/tools\""
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/neovim/neovim/archive/v0.12.2.tar.gz",
+        "sha256": "ef9f58da7d687ed4d1dad9715542bf0dabdeedbfe8089e2ce17fff21b920a268",
+        "x-checker-data": {
+          "is-main-source": true,
+          "type": "anitya",
+          "project-id": 9037,
+          "url-template": "https://github.com/neovim/neovim/archive/v$version.tar.gz"
+        }
+      },
+      {
+        "type": "file",
+        "path": "neovim-mark.svg"
+      }
+    ]
+  }
+}

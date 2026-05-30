@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "modbus-rtu-client-shm",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "Modbus_RTU_client_shm",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DCLANG_FORMAT=OFF",
+      "-DCOMPILER_WARNINGS=OFF",
+      "-DCLANG_TIDY=OFF",
+      "-DENABLE_TEST=OFF"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "tag": "v1.1.0",
+        "url": "https://github.com/SHMModbus/modbus_rtu_client_shm.git",
+        "commit": "d2f51ba07124e47aa9b5dd887321fdca64730256",
+        "disable-shallow-clone": true,
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^v([\\d.]+)$"
+        }
+      }
+    ]
+  }
+}

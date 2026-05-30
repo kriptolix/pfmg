@@ -1,0 +1,26 @@
+{
+  "header": {
+    "id": "vosk-aarch64",
+    "version": "0.3.45",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "vosk-aarch64",
+    "only-arches": [
+      "aarch64"
+    ],
+    "buildsystem": "simple",
+    "build-commands": [
+      "mv vosk-linux-aarch64-0.3.45 /app/vosk"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/alphacep/vosk-api/releases/download/v0.3.45/vosk-linux-aarch64-0.3.45.zip",
+        "sha256": "45e95d37755deb07568e79497d7feba8c03aee5a9e071df29961aa023fd94541",
+        "strip-components": 0
+      }
+    ]
+  }
+}

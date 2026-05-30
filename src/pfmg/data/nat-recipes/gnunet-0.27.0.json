@@ -1,0 +1,26 @@
+{
+  "header": {
+    "id": "gnunet",
+    "version": "0.27.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "gnunet",
+    "buildsystem": "meson",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://ftp.gnu.org/gnu/gnunet/gnunet-0.27.0.tar.gz",
+        "sha512": "e5e17911f48ad2579898a7f119a1faede0ce1a437163f826d3cd02fefe0de6ce254cb514b5b2455270f6f5c474e39aea837a1a062d2ca09a4c002d4f574ac360",
+        "x-checker-data": {
+          "type": "html",
+          "url": "https://gitlab.com/gnunet-messenger/gnunet/-/tags",
+          "version-pattern": ">v([\\d\\.]+)</a>",
+          "url-template": "https://ftp.gnu.org/gnu/gnunet/gnunet-$version.tar.gz",
+          "is-important": true
+        }
+      }
+    ]
+  }
+}

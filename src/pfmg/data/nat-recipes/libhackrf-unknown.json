@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "libhackrf",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libhackrf",
+    "buildsystem": "cmake-ninja",
+    "subdir": "host",
+    "config-opts": [
+      "-DINSTALL_UDEV_RULE=OFF",
+      "-Wno-dev"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/greatscottgadgets/hackrf.git",
+        "tag": "v2026.01.3"
+      }
+    ]
+  }
+}

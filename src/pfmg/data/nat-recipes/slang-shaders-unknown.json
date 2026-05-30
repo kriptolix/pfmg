@@ -1,0 +1,21 @@
+{
+  "header": {
+    "id": "slang-shaders",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "slang-shaders",
+    "make-install-args": [
+      "PREFIX=${FLATPAK_DEST}"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/libretro/slang-shaders.git",
+        "commit": "a2ac00bcd5a44982ecaa6ba6e5b8cc9a9608b1d6"
+      }
+    ]
+  }
+}

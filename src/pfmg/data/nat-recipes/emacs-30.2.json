@@ -1,0 +1,54 @@
+{
+  "header": {
+    "id": "emacs",
+    "version": "30.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "emacs",
+    "buildsystem": "autotools",
+    "config-opts": [
+      "--with-gnutls",
+      "--with-tree-sitter"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://ftp.gnu.org/gnu/emacs/emacs-30.2.tar.xz",
+        "sha256": "b3f36f18a6dd2715713370166257de2fae01f9d38cfe878ced9b1e6ded5befd9"
+      },
+      {
+        "type": "patch",
+        "path": "emacs.desktop-exec-wrapper.patch"
+      },
+      {
+        "type": "patch",
+        "path": "metainfo-releases.patch"
+      },
+      {
+        "type": "patch",
+        "path": "metainfo-launchable.patch"
+      },
+      {
+        "type": "patch",
+        "path": "metainfo-content-rating.patch"
+      },
+      {
+        "type": "patch",
+        "path": "metainfo-screenshot-size.patch"
+      },
+      {
+        "type": "patch",
+        "path": "metainfo-caption-point.patch"
+      }
+    ],
+    "cleanup": [
+      "/include",
+      "/lib/systemd",
+      "/share/icons/hicolor/scalable/apps/emacs.ico",
+      "/share/icons/hicolor/scalable/mimetypes/emacs-document.svg",
+      "/share/icons/hicolor/scalable/mimetypes/emacs-document23.svg"
+    ]
+  }
+}

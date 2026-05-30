@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "gst-plugin-audiofx",
+    "version": "0.14.4",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "gst-plugin-audiofx",
+    "buildsystem": "simple",
+    "build-commands": [
+      "install -Dm755 libgstrsaudiofx.so /app/lib/gstreamer-1.0/libgstrsaudiofx.so"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://github.com/tobagin/karere/releases/download/gst-plugin-audiofx-0.14.4-gnome50/libgstrsaudiofx-x86_64.so",
+        "sha256": "1acb3fe0f4ef712d709d4c557dd9d2949ca3adb749f69c9c9414708e1a138d98",
+        "dest-filename": "libgstrsaudiofx.so",
+        "only-arches": [
+          "x86_64"
+        ]
+      },
+      {
+        "type": "file",
+        "url": "https://github.com/tobagin/karere/releases/download/gst-plugin-audiofx-0.14.4-gnome50/libgstrsaudiofx-aarch64.so",
+        "sha256": "8c199baa76e76fa8a28da0410672a097229de0757547fbd73b4f4136fe501774",
+        "dest-filename": "libgstrsaudiofx.so",
+        "only-arches": [
+          "aarch64"
+        ]
+      }
+    ]
+  }
+}

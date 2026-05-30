@@ -1,0 +1,86 @@
+{
+  "header": {
+    "id": "codium-insiders",
+    "version": "1.112.02603",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "codium-insiders",
+    "buildsystem": "simple",
+    "build-commands": [
+      "install -Dm644 code.svg /app/share/icons/hicolor/scalable/apps/$FLATPAK_ID.svg",
+      "install -Dm644 $FLATPAK_ID.metainfo.xml -t /app/share/metainfo",
+      "ar x codium.deb",
+      "tar xf data.tar.xz",
+      "patch --fuzz=3 usr/share/codium-insiders/resources/app/package.json -i package.json.patch",
+      "mv usr/share/codium-insiders /app/share",
+      "mv /app/share/codium-insiders/codium-insiders /app/share/codium-insiders/$FLATPAK_ID",
+      "patch -u usr/share/applications/codium-insiders.desktop -i codium-insiders.desktop.patch",
+      "patch -u usr/share/applications/codium-insiders-url-handler.desktop -i codium-insiders-url-handler.desktop.patch",
+      "install -Dm644 usr/share/applications/codium-insiders.desktop /app/share/applications/$FLATPAK_ID.desktop",
+      "install -Dm644 usr/share/applications/codium-insiders-url-handler.desktop /app/share/applications/$FLATPAK_ID-url-handler.desktop",
+      "install -Dm644 usr/share/mime/packages/codium-insiders-workspace.xml /app/share/mime/packages/$FLATPAK_ID-workspace.xml",
+      "desktop-file-edit --add-category=\"Utility\" /app/share/applications/$FLATPAK_ID.desktop",
+      "rm -r codium.deb control.tar.* data.tar.xz debian-binary usr *.patch",
+      "mkdir /app/tools"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://github.com/VSCodium/vscodium-insiders/releases/download/1.112.02603-insider/codium-insiders_1.112.02603_amd64.deb",
+        "sha256": "cd27eaab6b5b43fa7e97519e3788d22dcf270b2b2450512c217af63f8f128223",
+        "dest-filename": "codium.deb",
+        "only-arches": [
+          "x86_64"
+        ],
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://api.github.com/repos/VSCodium/vscodium-insiders/releases/latest",
+          "tag-query": ".tag_name",
+          "version-query": ".tag_name",
+          "timestamp-query": ".published_at",
+          "url-query": ".assets[] | select(.name|test(\"codium-insiders_.+_amd64.deb$\")).browser_download_url"
+        }
+      },
+      {
+        "type": "file",
+        "url": "https://github.com/VSCodium/vscodium-insiders/releases/download/1.112.02603-insider/codium-insiders_1.112.02603_arm64.deb",
+        "sha256": "5e2526c14e9a69b7f6ec2e777ac2b84b4cd2d953e8794a3671fbfcd6e2168445",
+        "dest-filename": "codium.deb",
+        "only-arches": [
+          "aarch64"
+        ],
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://api.github.com/repos/VSCodium/vscodium-insiders/releases/latest",
+          "tag-query": ".tag_name",
+          "version-query": ".tag_name",
+          "timestamp-query": ".published_at",
+          "url-query": ".assets[] | select(.name|test(\"codium-insiders_.+_arm64.deb$\")).browser_download_url"
+        }
+      },
+      {
+        "type": "file",
+        "url": "https://raw.githubusercontent.com/VSCodium/vscodium/refs/heads/insider/src/insider/resources/linux/code.svg",
+        "sha256": "ed7c05df676522c7a1922bcff2185bedb9364801b78072b325014b0a26865c53"
+      },
+      {
+        "type": "file",
+        "path": "com.vscodium.codium-insiders.metainfo.xml"
+      },
+      {
+        "type": "file",
+        "path": "patches/package.json.patch"
+      },
+      {
+        "type": "file",
+        "path": "patches/codium-insiders.desktop.patch"
+      },
+      {
+        "type": "file",
+        "path": "patches/codium-insiders-url-handler.desktop.patch"
+      }
+    ]
+  }
+}

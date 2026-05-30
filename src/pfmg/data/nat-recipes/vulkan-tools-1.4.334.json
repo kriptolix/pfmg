@@ -1,0 +1,70 @@
+{
+  "header": {
+    "id": "vulkan-tools",
+    "version": "1.4.334",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "vulkan-tools",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DVULKAN_HEADERS_INSTALL_DIR=/app",
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DBUILD_CUBE=OFF",
+      "-DBUILD_ICD=OFF",
+      "-DBUILD_VULKANINFO=ON"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/KhronosGroup/Vulkan-Tools/archive/v1.4.334/Vulkan-Tools-1.4.334.tar.gz",
+        "sha256": "ae6c8ec78c6ebe2ec7c3034ac99454eaa2e855fe2b3df0ea858c2ba669b7fd83",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 242111,
+          "url-template": "https://github.com/KhronosGroup/Vulkan-Tools/archive/v$version/Vulkan-Tools-$version.tar.gz"
+        }
+      }
+    ],
+    "modules": [
+      {
+        "name": "volk",
+        "buildsystem": "cmake-ninja",
+        "config-opts": [
+          "-DVOLK_INSTALL=ON"
+        ],
+        "sources": [
+          {
+            "type": "archive",
+            "url": "https://github.com/zeux/volk/archive/vulkan-sdk-1.4.328.1.tar.gz",
+            "sha256": "8d6a4092d5de62d0c6290394cf81cf7a99e36875934b1b75d595e76d08fcadd1",
+            "x-checker-data": {
+              "type": "anitya",
+              "project-id": 370476,
+              "url-template": "https://github.com/zeux/volk/archive/vulkan-sdk-$version.tar.gz"
+            }
+          }
+        ],
+        "modules": [
+          {
+            "name": "vulkan-headers",
+            "buildsystem": "cmake-ninja",
+            "sources": [
+              {
+                "type": "archive",
+                "url": "https://github.com/KhronosGroup/Vulkan-Headers/archive/v1.4.334/Vulkan-Headers-v1.4.334.tar.gz",
+                "sha256": "f6b858ed8ff5747a32e7840ba20c565c6477c5c1c171bfc25195ef1730b349cc",
+                "x-checker-data": {
+                  "type": "anitya",
+                  "project-id": 88835,
+                  "url-template": "https://github.com/KhronosGroup/Vulkan-Headers/archive/v$version/Vulkan-Headers-v$version.tar.gz"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

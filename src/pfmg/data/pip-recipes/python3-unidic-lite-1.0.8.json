@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-unidic-lite",
+    "version": "1.0.8",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-unidic-lite",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"unidic-lite==1.0.8\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/55/2b/8cf7514cb57d028abcef625afa847d60ff1ffbf0049c36b78faa7c35046f/unidic-lite-1.0.8.tar.gz",
+        "sha256": "db9d4572d9fdd4d00a97949d4b0741ec480ee05a7e7e2e32f547500dae27b245"
+      }
+    ]
+  }
+}

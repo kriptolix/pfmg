@@ -1,0 +1,30 @@
+{
+  "header": {
+    "id": "dtools",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "dtools",
+    "buildsystem": "simple",
+    "build-commands": [
+      "dmd -O -release ddemangle.d -ofddemangle",
+      "dmd -O -release DustMite/dustmite.d DustMite/splitter.d DustMite/polyhash.d -ofdustmite",
+      "dmd -O -release rdmd.d -ofrdmd",
+      "install -Dsm0755 ddemangle dustmite rdmd /usr/lib/sdk/dmd/bin/"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/dlang/tools.git",
+        "tag": "v2.100.2",
+        "commit": "7ab9a6c650e7c7bdec559c9ef5b73bccfa1f6dbc",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^v([\\d\\.]+)$"
+        }
+      }
+    ]
+  }
+}

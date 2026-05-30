@@ -1,0 +1,37 @@
+{
+  "header": {
+    "id": "gdk-pixbuf",
+    "version": "2.44",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "gdk-pixbuf",
+    "buildsystem": "meson",
+    "config-opts": [
+      "-Dpng=enabled",
+      "-Dtiff=enabled",
+      "-Djpeg=enabled",
+      "-Dgif=enabled",
+      "-Dglycin=disabled",
+      "-Dintrospection=enabled",
+      "-Dman=false",
+      "-Dtests=false",
+      "-Dinstalled_tests=false",
+      "-Dthumbnailer=disabled"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.gnome.org/sources/gdk-pixbuf/2.44/gdk-pixbuf-2.44.6.tar.xz",
+        "sha256": "140c2d0b899fcf853ee92b26373c9dc228dbcde0820a4246693f4328a27466fa",
+        "x-checker-data": {
+          "type": "gnome",
+          "name": "gdk-pixbuf",
+          "version-scheme": "odd-minor-is-unstable",
+          "stable-only": true
+        }
+      }
+    ]
+  }
+}

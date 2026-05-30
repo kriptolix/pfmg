@@ -1,0 +1,53 @@
+{
+  "header": {
+    "id": "mcpelauncher-ui-manifest",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "mcpelauncher-ui-manifest",
+    "buildsystem": "cmake",
+    "build-options": {
+      "arch": {
+        "x86_64": {
+          "cflags": "-DDISABLE_32BIT=1 -DNDEBUG",
+          "cxxflags": "-DDISABLE_32BIT=1 -DNDEBUG"
+        },
+        "arm": {
+          "cflags": "-DNDEBUG",
+          "cxxflags": "-DNDEBUG"
+        },
+        "aarch64": {
+          "cflags": "-DDISABLE_32BIT=1 -DNDEBUG",
+          "cxxflags": "-DDISABLE_32BIT=1 -DNDEBUG"
+        }
+      },
+      "config-opts": [
+        "-DQt5QuickCompiler_FOUND=OFF",
+        "-DLAUNCHER_VERSIONDB_PATH=/app/share/versiondb",
+        "-DLAUNCHER_DISABLE_DEV_MODE=ON",
+        "-DFETCHCONTENT_SOURCE_DIR_GLFW3_EXT=glfw3_ext",
+        "-DLAUNCHER_FLATPAK_CONFIG_URL=https://github.com/flathub/io.mrarm.mcpelauncher/raw/refs/heads/master/io.mrarm.mcpelauncher.json",
+        "-DCMAKE_POLICY_VERSION_MINIMUM=3.5",
+        "-DLAUNCHER_VERSION_NAME=v1.7.4",
+        "-DLAUNCHER_VERSION_CODE=110",
+        "-DLAUNCHER_CHANGE_LOG=<p>Show if selected version is ChromeOS or Android in ChromeOS mode</p><p>Fix latest compatible version for ChromeOS mode</p>",
+        "-DLAUNCHER_VERSIONDB_URL=https://raw.githubusercontent.com/minecraft-linux/mcpelauncher-versiondb/v1.5.x"
+      ]
+    },
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/minecraft-linux/mcpelauncher-ui-manifest.git",
+        "commit": "e0001414ffcbd6dc6b4e929a09c161004262116d"
+      },
+      {
+        "type": "git",
+        "url": "https://github.com/minecraft-linux/glfw",
+        "commit": "562d100f9ad3a3667bb0944afb974bb7af6f0d8c",
+        "dest": "glfw3_ext"
+      }
+    ]
+  }
+}

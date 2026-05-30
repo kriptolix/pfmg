@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-twomemo",
+    "version": "2.1.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-twomemo",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --prefix=/app twomemo-2.1.0-py3-none-any.whl"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/c5/f4/9ce83bc98c6cdf9df88f9a1949cb8d4f34dea7bf0ae7e34a7aebc8382e05/twomemo-2.1.0-py3-none-any.whl",
+        "sha256": "dc799851d85f8badde8632511b5ad1091d9de95588a8d9c4d555764238f17f1a"
+      }
+    ]
+  }
+}

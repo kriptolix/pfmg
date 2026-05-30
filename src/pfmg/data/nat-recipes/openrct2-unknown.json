@@ -1,0 +1,197 @@
+{
+  "header": {
+    "id": "openrct2",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "OpenRCT2",
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "build-options": {
+      "cxxflags": "-Wno-error=restrict"
+    },
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DDOWNLOAD_OBJECTS=OFF",
+      "-DDOWNLOAD_OPENSFX=OFF",
+      "-DDOWNLOAD_OPENMSX=OFF",
+      "-DDOWNLOAD_TITLE_SEQUENCES=OFF",
+      "-DDISABLE_VERSION_CHECKER=ON"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/OpenRCT2/OpenRCT2.git",
+        "tag": "v0.5.0",
+        "commit": "075993c2c6f8a4a5ee5106f6bece678bbdaccc87",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^v([\\d.]+)$",
+          "is-main-source": true
+        }
+      },
+      {
+        "type": "archive",
+        "url": "https://github.com/OpenRCT2/title-sequences/releases/download/v0.4.26/title-sequences.zip",
+        "dest": "data/sequence",
+        "strip-components": 0,
+        "sha256": "dabb9787b1576342fca4dd9f64b3f8cfa04a7e6ce9c2bb9610f47b762905c858",
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://api.github.com/repos/OpenRCT2/title-sequences/releases/latest",
+          "version-query": ".tag_name | sub(\"^v\"; \"\")",
+          "url-query": ".assets[] | select(.name==\"title-sequences.zip\") | .browser_download_url"
+        }
+      },
+      {
+        "type": "archive",
+        "url": "https://github.com/OpenRCT2/objects/releases/download/v1.7.9/objects.zip",
+        "dest": "data/object",
+        "strip-components": 0,
+        "sha256": "55461ed20c6e82f14e9a279cd844654b0264999bb94034d58fa912fdee26ead6",
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://api.github.com/repos/OpenRCT2/objects/releases/latest",
+          "version-query": ".tag_name | sub(\"^v\"; \"\")",
+          "url-query": ".assets[] | select(.name==\"objects.zip\") | .browser_download_url"
+        }
+      },
+      {
+        "type": "archive",
+        "url": "https://github.com/OpenRCT2/OpenSoundEffects/releases/download/v1.0.6/opensound.zip",
+        "dest": "data",
+        "strip-components": 0,
+        "sha256": "06b90f3e19c216752df441d551b26a9e3e1ba7755bdd2102504b73bf993608be",
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://api.github.com/repos/OpenRCT2/OpenSoundEffects/releases/latest",
+          "version-query": ".tag_name | sub(\"^v\"; \"\")",
+          "url-query": ".assets[] | select(.name==\"opensound.zip\") | .browser_download_url"
+        }
+      },
+      {
+        "type": "archive",
+        "url": "https://github.com/OpenRCT2/OpenMusic/releases/download/v1.6.1/openmusic.zip",
+        "dest": "data",
+        "strip-components": 0,
+        "sha256": "994b350d3b180ee1cb9619fe27f7ebae3a1a5232840c4bd47a89f33fa89de1a1",
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://api.github.com/repos/OpenRCT2/OpenMusic/releases/latest",
+          "version-query": ".tag_name | sub(\"^v\"; \"\")",
+          "url-query": ".assets[] | select(.name==\"openmusic.zip\") | .browser_download_url"
+        }
+      }
+    ],
+    "post-install": [
+      "mv ${FLATPAK_DEST}/share/applications/io.openrct2.savegame.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.savegame.desktop",
+      "mv ${FLATPAK_DEST}/share/applications/io.openrct2.scenario.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.scenario.desktop",
+      "mv ${FLATPAK_DEST}/share/applications/io.openrct2.uri.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.uri.desktop",
+      "desktop-file-edit --set-icon=${FLATPAK_ID} ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.savegame.desktop",
+      "desktop-file-edit --set-icon=${FLATPAK_ID} ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.scenario.desktop",
+      "desktop-file-edit --set-icon=${FLATPAK_ID} ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.uri.desktop",
+      "sed -i \"s/<icon name=\\\"openrct2\\\"/<icon name=\\\"${FLATPAK_ID}\\\"/\" ${FLATPAK_DEST}/share/mime/packages/openrct2.xml"
+    ],
+    "modules": [
+      {
+        "name": "libzip",
+        "buildsystem": "cmake-ninja",
+        "config-opts": [
+          "-DCMAKE_BUILD_TYPE=Release"
+        ],
+        "sources": [
+          {
+            "type": "git",
+            "url": "https://github.com/nih-at/libzip.git",
+            "tag": "v1.11.4",
+            "commit": "6f8a0cdd24a0dc6cce9dac4a7679da784ab124ea",
+            "x-checker-data": {
+              "type": "git",
+              "tag-pattern": "^v([\\d.]+)$"
+            }
+          }
+        ]
+      },
+      {
+        "name": "Nlohmann-JSON",
+        "buildsystem": "cmake-ninja",
+        "config-opts": [
+          "-DCMAKE_BUILD_TYPE=Release",
+          "-DJSON_BuildTests=OFF",
+          "-DJSON_MultipleHeaders=ON",
+          "-DJSON_SystemInclude=ON"
+        ],
+        "sources": [
+          {
+            "type": "git",
+            "url": "https://github.com/nlohmann/json.git",
+            "tag": "v3.11.3",
+            "commit": "9cca280a4d0ccf0c08f47a99aa71d1b0e52f8d03",
+            "x-checker-data": {
+              "type": "git",
+              "tag-pattern": "^v(3.11.[\\d.]+)$"
+            }
+          }
+        ]
+      },
+      {
+        "name": "discord-rpc",
+        "buildsystem": "cmake-ninja",
+        "config-opts": [
+          "-DCMAKE_BUILD_TYPE=Release",
+          "-DBUILD_EXAMPLES=OFF",
+          "-DBUILD_SHARED_LIBS=ON"
+        ],
+        "sources": [
+          {
+            "type": "git",
+            "url": "https://github.com/discord/discord-rpc.git",
+            "tag": "v3.4.0",
+            "commit": "e6390c8c4190b59f1cc98bcec688e0037b84974d",
+            "x-checker-data": {
+              "type": "git",
+              "tag-pattern": "^v([\\d.]+)$"
+            }
+          }
+        ],
+        "modules": [
+          {
+            "name": "rapidjson",
+            "buildsystem": "cmake-ninja",
+            "config-opts": [
+              "-DCMAKE_BUILD_TYPE=Release",
+              "-DRAPIDJSON_BUILD_DOC=OFF",
+              "-DRAPIDJSON_BUILD_EXAMPLES=OFF",
+              "-DRAPIDJSON_BUILD_TESTS=OFF"
+            ],
+            "sources": [
+              {
+                "type": "git",
+                "url": "https://github.com/Tencent/rapidjson.git",
+                "tag": "v1.1.0",
+                "commit": "f54b0e47a08782a6131cc3d60f94d038fa6e0a51",
+                "disable-submodules": true,
+                "x-checker-data": {
+                  "type": "git",
+                  "tag-pattern": "^v([\\d.]+)$"
+                }
+              },
+              {
+                "type": "patch",
+                "paths": [
+                  "patches/rapidjson/3b2441b87f99ab65f37b141a7b548ebadb607b96.patch",
+                  "patches/rapidjson/862c39be371278a45a88d4d1d75164be57bb7e2d.patch"
+                ]
+              }
+            ],
+            "cleanup": [
+              "/share/doc"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

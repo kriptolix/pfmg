@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "libev",
+    "version": "4.33",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libev",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://dist.schmorp.de/libev/Attic/libev-4.33.tar.gz",
+        "sha256": "507eb7b8d1015fbec5b935f34ebed15bf346bed04a11ab82b8eee848c4205aea",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 1605,
+          "stable-only": true,
+          "url-template": "https://dist.schmorp.de/libev/Attic/libev-$version.tar.gz"
+        }
+      }
+    ]
+  }
+}

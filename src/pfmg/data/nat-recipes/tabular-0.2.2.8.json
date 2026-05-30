@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "tabular",
+    "version": "0.2.2.8",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "tabular",
+    "buildsystem": "simple",
+    "builddir": false,
+    "build-commands": [
+      "echo '#! /usr/bin/env runhaskell' >Setup.txt",
+      "echo '> import Distribution.Simple' >>Setup.txt",
+      "echo '> main = defaultMain' >>Setup.txt",
+      "ln -s Setup.txt Setup.lhs || true",
+      "runhaskell Setup configure --prefix=/app",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "sources": [
+      {
+        "sha256": "cb7d06eaec7945cd77db2380ed4a9b7a048c5f6abcfba766c328228be033237d",
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/tabular-0.2.2.8/tabular-0.2.2.8.tar.gz"
+      },
+      {
+        "dest-filename": "tabular.cabal",
+        "sha256": "39809f48fe715825f05276aa37ed157ba834208dc78336f34bab6da641308bd2",
+        "type": "file",
+        "url": "https://hackage.haskell.org/package/tabular-0.2.2.8/revision/1.cabal"
+      }
+    ]
+  }
+}

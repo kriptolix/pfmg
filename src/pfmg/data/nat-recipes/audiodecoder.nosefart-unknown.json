@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "audiodecoder.nosefart",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "audiodecoder.nosefart",
+    "buildsystem": "cmake-ninja",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/xbmc/audiodecoder.nosefart",
+        "commit": "5974e7debf59c79259ee0cc3abb2b1ae30c66734"
+      }
+    ],
+    "build-options": {
+      "no-debuginfo": true,
+      "cflags": "-g0",
+      "cxxflags": "-g0"
+    },
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release"
+    ]
+  }
+}

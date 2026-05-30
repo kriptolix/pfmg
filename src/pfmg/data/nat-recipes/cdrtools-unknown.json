@@ -1,0 +1,38 @@
+{
+  "header": {
+    "id": "cdrtools",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "cdrtools",
+    "disabled": true,
+    "rm-configure": true,
+    "no-autogen": true,
+    "build-options": {
+      "env": [
+        {
+          "INS_BASE": "${FLATPAK_DEST}"
+        }
+      ]
+    },
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://codeberg.org/schilytools/schilytools/releases/download/2024-03-21/schily-2024-03-21.tar.bz2",
+        "sha512": "5a9391e2795edcb6776a4a9828abadc1d7cbf014d603bab5dab942d9263eca1a924c16fcc624edf77030a93966b4e6ff926b65d27fe365b5e833cae071550e9b",
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://codeberg.org/api/v1/repos/schilytools/schilytools/releases/latest",
+          "version-query": ".tag_name",
+          "url-query": ".assets[] | select(.name==\"schily-\" + $version +  \".tar.bz2\") | .browser_download_url"
+        }
+      },
+      {
+        "type": "patch",
+        "path": "patch/cdrtools-use-app-dir.patch"
+      }
+    ]
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "ixion",
+    "version": "0.20.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "ixion",
+    "config-opts": [
+      "--with-boost=/app"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://gitlab.com/ixion/ixion/-/archive/0.20.0/ixion-0.20.0.tar.bz2",
+        "sha256": "39e54cd486fed458c2a6e83a5e658d4c2e818862355b33645bb1342449428463",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 6208,
+          "stable-only": true,
+          "url-template": "https://gitlab.com/ixion/ixion/-/archive/$version/ixion-$version.tar.bz2"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "header": {
+    "id": "libvoikko",
+    "version": "4.3.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libvoikko",
+    "buildsystem": "autotools",
+    "config-opts": [
+      "--disable-hfst",
+      "--with-dictionary-path=${FLATPAK_DEST}/voikko"
+    ],
+    "post-install": [
+      "install -d ${FLATPAK_DEST}/voikko/Linux",
+      "cp -L ${FLATPAK_DEST}/lib/libvoikko.so.1 ${FLATPAK_DEST}/voikko/Linux/",
+      "install -d ${FLATPAK_DEST}/pythonpath",
+      "cp python/libvoikko.py ${FLATPAK_DEST}/pythonpath/"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://www.puimula.org/voikko-sources/libvoikko/libvoikko-4.3.1.tar.gz",
+        "sha256": "368240d4cfa472c2e2c43dc04b63e6464a3e6d282045848f420d0f7a6eb09a13"
+      }
+    ]
+  }
+}

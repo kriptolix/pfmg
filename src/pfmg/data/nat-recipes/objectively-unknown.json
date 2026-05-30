@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "objectively",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "Objectively",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/jdolan/Objectively.git",
+        "commit": "8b40fe53a376ba312c0e0df45f40d9d1bb7ff914"
+      },
+      {
+        "type": "script",
+        "commands": [
+          "autoreconf -fiv"
+        ],
+        "dest-filename": "autogen.sh"
+      }
+    ]
+  }
+}

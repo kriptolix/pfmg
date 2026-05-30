@@ -1,0 +1,26 @@
+{
+  "header": {
+    "id": "khtml",
+    "version": "5.115",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "khtml",
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.kde.org/stable/frameworks/5.115/portingAids/khtml-5.115.0.tar.xz",
+        "sha256": "742a9965008d5205e92ece2a574b48f65452b17b8c4ce2176e0c25cc3be8cf60",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 8762,
+          "stable-only": true,
+          "url-template": "https://download.kde.org/stable/frameworks/$major.$minor/portingAids/khtml-$version.tar.xz"
+        }
+      }
+    ]
+  }
+}

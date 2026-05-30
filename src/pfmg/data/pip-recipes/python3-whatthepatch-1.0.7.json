@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-whatthepatch",
+    "version": "1.0.7",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-whatthepatch",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"whatthepatch==1.0.7\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/8e/93/af1d6ccb69ab6b5a00e03fa0cefa563f9862412667776ea15dd4eece3a90/whatthepatch-1.0.7-py3-none-any.whl",
+        "sha256": "1b6f655fd31091c001c209529dfaabbabdbad438f5de14e3951266ea0fc6e7ed"
+      }
+    ]
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "file-embed",
+    "version": "0.0.16.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "file-embed",
+    "buildsystem": "simple",
+    "builddir": false,
+    "build-commands": [
+      "echo '#! /usr/bin/env runhaskell' >Setup.txt",
+      "echo '> import Distribution.Simple' >>Setup.txt",
+      "echo '> main = defaultMain' >>Setup.txt",
+      "ln -s Setup.txt Setup.lhs || true",
+      "runhaskell Setup configure --prefix=/app",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "sources": [
+      {
+        "sha256": "5f18672eff936355557cdd163905451205d7ee22742edac313dd27cf42a3f415",
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/file-embed-0.0.16.0/file-embed-0.0.16.0.tar.gz"
+      },
+      {
+        "dest-filename": "file-embed.cabal",
+        "sha256": "2e8983240c1faae020b4acef6d30f0281f5ec87c2f38736dc1dc5456355e22a5",
+        "type": "file",
+        "url": "https://hackage.haskell.org/package/file-embed-0.0.16.0/revision/0.cabal"
+      }
+    ]
+  }
+}

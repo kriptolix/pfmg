@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-mccabe",
+    "version": "0.7.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-mccabe",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"mccabe==0.7.0\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/27/1a/1f68f9ba0c207934b35b86a8ca3aad8395a3d6dd7921c0686e23853ff5a9/mccabe-0.7.0-py2.py3-none-any.whl",
+        "sha256": "6c2d30ab6be0e4a46919781807b4f0d834ebdd6c6e3dca0bda5a15f863427b6e"
+      }
+    ]
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "header": {
+    "id": "dnssd",
+    "version": "1.2.14",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "dnssd",
+    "buildsystem": "simple",
+    "build-commands": [
+      "chmod u+x dnssd",
+      "cp dnssd /var/tmp"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "only-arches": [
+          "x86_64"
+        ],
+        "url": "https://github.com/q962/dnssd/releases/download/v1.2.14/dnssd-Linux-x86_64",
+        "sha256": "98877a1c57d677169ea8f8b81e6ff95b5404451c7cc43395310449a60113e8c8",
+        "dest-filename": "dnssd"
+      },
+      {
+        "type": "file",
+        "only-arches": [
+          "aarch64"
+        ],
+        "url": "https://github.com/q962/dnssd/releases/download/v1.2.14/dnssd-Linux-aarch64",
+        "sha256": "ef82ab5abea4b5625157b196027c2d3807395e8caa89711206caab59e010ec1e",
+        "dest-filename": "dnssd"
+      }
+    ],
+    "cleanup": [
+      "*"
+    ]
+  }
+}

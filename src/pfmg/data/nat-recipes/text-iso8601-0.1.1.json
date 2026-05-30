@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "text-iso8601",
+    "version": "0.1.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "text-iso8601",
+    "buildsystem": "simple",
+    "builddir": false,
+    "build-commands": [
+      "echo '#! /usr/bin/env runhaskell' >Setup.txt",
+      "echo '> import Distribution.Simple' >>Setup.txt",
+      "echo '> main = defaultMain' >>Setup.txt",
+      "ln -s Setup.txt Setup.lhs || true",
+      "runhaskell Setup configure --prefix=/app",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "sources": [
+      {
+        "sha256": "9dead2b7ceeae40fe0fc060bd54795c32e9926c9d1aebae8f9b9a621fba88202",
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/text-iso8601-0.1.1/text-iso8601-0.1.1.tar.gz"
+      },
+      {
+        "dest-filename": "text-iso8601.cabal",
+        "sha256": "0af50f6d2e8479b9a956c9c612ec270ea09df4c78c88c5b1bdd98066f576d73d",
+        "type": "file",
+        "url": "https://hackage.haskell.org/package/text-iso8601-0.1.1/revision/1.cabal"
+      }
+    ]
+  }
+}

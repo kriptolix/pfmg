@@ -1,0 +1,31 @@
+{
+  "header": {
+    "id": "wine-mono-bin",
+    "version": "7.4.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "wine-mono-bin",
+    "buildsystem": "simple",
+    "build-commands": [
+      "mkdir -p ${FLATPAK_DEST}/share/wine/mono",
+      "cp -a wine-mono-*/ ${FLATPAK_DEST}/share/wine/mono/"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/madewokherd/wine-mono/releases/download/wine-mono-7.4.0/wine-mono-7.4.0-x86.tar.xz",
+        "sha256": "9249ece664bcf2fecb1308ea1d2542c72923df9fe3df891986f137b2266a9ba3",
+        "strip-components": 0,
+        "x-checker-data": {
+          "type": "html",
+          "parent-id": "proton-git-0",
+          "url": "https://github.com/ValveSoftware/Proton/raw/$parent_tag/Makefile.in",
+          "version-pattern": "WINEMONO_VER\\s+:=\\s+(\\d+\\.\\d+\\.\\d+)",
+          "url-template": "https://github.com/madewokherd/wine-mono/releases/download/wine-mono-$version/wine-mono-$version-x86.tar.xz"
+        }
+      }
+    ]
+  }
+}

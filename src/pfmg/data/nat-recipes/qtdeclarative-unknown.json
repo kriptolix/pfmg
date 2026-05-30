@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "qtdeclarative",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "qtdeclarative",
+    "buildsystem": "qmake",
+    "cleanup": [
+      "/bin"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://invent.kde.org/qt/qt/qtdeclarative.git",
+        "commit": "c47f3d7b227c9bc86ca1702ae3291a62c2116cfa"
+      }
+    ]
+  }
+}

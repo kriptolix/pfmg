@@ -1,0 +1,34 @@
+{
+  "header": {
+    "id": "libavc1394",
+    "version": "0.5.4",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libavc1394",
+    "rm-configure": true,
+    "config-opts": [
+      "--disable-static"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://downloads.sourceforge.net/sourceforge/libavc1394/libavc1394-0.5.4.tar.gz",
+        "sha256": "7cb1ff09506ae911ca9860bef4af08c2403f3e131f6c913a2cbd6ddca4215b53",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 1562,
+          "url-template": "https://downloads.sourceforge.net/sourceforge/libavc1394/libavc1394-$version.tar.gz"
+        }
+      },
+      {
+        "type": "script",
+        "commands": [
+          "autoreconf -fiv"
+        ],
+        "dest-filename": "autogen.sh"
+      }
+    ]
+  }
+}

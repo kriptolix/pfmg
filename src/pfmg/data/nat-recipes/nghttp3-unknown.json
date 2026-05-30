@@ -1,0 +1,29 @@
+{
+  "header": {
+    "id": "nghttp3",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "nghttp3",
+    "buildsystem": "cmake",
+    "build-options": {
+      "append-path": "/usr/lib/sdk/llvm21/bin",
+      "prepend-ld-library-path": "/usr/lib/sdk/llvm21/lib"
+    },
+    "config-opts": [
+      "-D CMAKE_C_COMPILER=clang",
+      "-D CMAKE_CXX_COMPILER=clang++",
+      "-D CMAKE_BUILD_TYPE=Release"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/ngtcp2/nghttp3.git",
+        "tag": "v1.15.0",
+        "commit": "d326f4c1eb3f6a780d77793b30e16756c498f913"
+      }
+    ]
+  }
+}

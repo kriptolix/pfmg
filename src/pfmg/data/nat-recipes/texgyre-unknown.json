@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "texgyre",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "texgyre",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "http://www.gust.org.pl/projects/e-foundry/tex-gyre/whole/tg2_501otf.zip",
+        "sha256": "d7f8be5317bec4e644cf16c5abf876abeeb83c43dbec0ccb4eee4516b73b1bbe"
+      }
+    ],
+    "buildsystem": "simple",
+    "build-commands": [
+      "mkdir /app/share/fonts",
+      "install * /app/share/fonts"
+    ]
+  }
+}

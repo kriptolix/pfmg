@@ -1,0 +1,26 @@
+{
+  "header": {
+    "id": "liblastfm-qt6",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "liblastfm-qt6",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DBUILD_TESTS=OFF",
+      "-DCMAKE_CXX_STANDARD=14"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/Mazhoon/liblastfm.git",
+        "commit": "81e8f9dc16a0a18fe9a066d51c2071086326670b"
+      }
+    ],
+    "modules": [
+      "shared-modules/linux-audio/fftw3f.json"
+    ]
+  }
+}

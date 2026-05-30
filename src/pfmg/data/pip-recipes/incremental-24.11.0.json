@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "incremental",
+    "version": "24.11.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "incremental",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --prefix=/app incremental*.whl"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/1d/55/0f4df2a44053867ea9cbea73fc588b03c55605cd695cee0a3d86f0029cb2/incremental-24.11.0-py3-none-any.whl",
+        "sha256": "a34450716b1c4341fe6676a0598e88a39e04189f4dce5dc96f656e040baa10b3",
+        "x-checker-data": {
+          "type": "pypi",
+          "name": "incremental",
+          "packagetype": "bdist_wheel"
+        }
+      }
+    ]
+  }
+}

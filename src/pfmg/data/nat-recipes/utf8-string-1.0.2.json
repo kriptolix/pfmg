@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "utf8-string",
+    "version": "1.0.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "utf8-string",
+    "buildsystem": "simple",
+    "builddir": false,
+    "build-commands": [
+      "echo '#! /usr/bin/env runhaskell' >Setup.txt",
+      "echo '> import Distribution.Simple' >>Setup.txt",
+      "echo '> main = defaultMain' >>Setup.txt",
+      "ln -s Setup.txt Setup.lhs || true",
+      "runhaskell Setup configure --prefix=/app",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "sources": [
+      {
+        "sha256": "ee48deada7600370728c4156cb002441de770d0121ae33a68139a9ed9c19b09a",
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/utf8-string-1.0.2/utf8-string-1.0.2.tar.gz"
+      },
+      {
+        "dest-filename": "utf8-string.cabal",
+        "sha256": "79416292186feeaf1f60e49ac5a1ffae9bf1b120e040a74bf0e81ca7f1d31d3f",
+        "type": "file",
+        "url": "https://hackage.haskell.org/package/utf8-string-1.0.2/revision/0.cabal"
+      }
+    ]
+  }
+}

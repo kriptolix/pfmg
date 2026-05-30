@@ -1,0 +1,39 @@
+{
+  "header": {
+    "id": "hurrycurry-server",
+    "version": "3.1.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "hurrycurry-server",
+    "buildsystem": "simple",
+    "build-options": {
+      "append-path": "/usr/lib/sdk/node20/bin:/usr/lib/sdk/rust-stable/bin",
+      "env": {
+        "HURRYCURRY_DATA_PATH": "/app/share/hurrycurry/data",
+        "HURRYCURRY_DISTRIBUTION": "flatpak"
+      }
+    },
+    "sources": [
+      {
+        "type": "archive",
+        "sha256": "8636475664ca8cf346567189ce9e27b5c58b06d531df5de613d79f086bf64317",
+        "url": "https://codeberg.org/hurrycurry/hurrycurry/archive/v3.1.1-1.tar.gz"
+      },
+      "generated-sources.json"
+    ],
+    "build-commands": [
+      "make all_data JSR=node",
+      "mkdir -p .cargo && cp cargo/config .cargo/config.toml",
+      "cargo --offline fetch --manifest-path Cargo.toml",
+      "cargo build --frozen --release --bin hurrycurry-server",
+      "cargo build --frozen --release --bin hurrycurry-discover",
+      "install -Dm755 target/release/hurrycurry-server /app/bin/hurrycurry-server",
+      "install -Dm755 target/release/hurrycurry-discover /app/bin/hurrycurry-discover",
+      "install -Dm644 -t /app/share/hurrycurry/data data/{tiles,palettes,index}.yaml",
+      "install -Dm644 -t /app/share/hurrycurry/data/recipes data/recipes/*.yaml",
+      "install -Dm644 -t /app/share/hurrycurry/data/maps data/maps/*.yaml"
+    ]
+  }
+}

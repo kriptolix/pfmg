@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "restinio",
+    "version": "0.7.9",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "restinio",
+    "subdir": "dev",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DRESTINIO_EXPLICIT_CPPSTD=20",
+      "-DRESTINIO_TEST=Off",
+      "-DRESTINIO_SAMPLE=Off",
+      "-DRESTINIO_BENCHMARK=Off",
+      "-DRESTINIO_WITH_SOBJECTIZER=Off",
+      "-DRESTINIO_DEP_STANDALONE_ASIO=system",
+      "-DRESTINIO_DEP_LLHTTP=system",
+      "-DRESTINIO_DEP_FMT=system",
+      "-DRESTINIO_DEP_EXPECTED_LITE=system",
+      "-DRESTINIO_DEP_CATCH2=find"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/Stiffstream/restinio/releases/download/v0.7.9/restinio-0.7.9.tar.bz2",
+        "sha256": "4626d76919b281e92eb09da7aa00ab7016aaef9c31e59bb4cb2b56f34b4ba511"
+      }
+    ]
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "header": {
+    "id": "orjson",
+    "version": "3.11.9",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "orjson",
+    "build-options": {
+      "append-path": "/usr/lib/sdk/rust-stable/bin",
+      "env": {
+        "CARGO_HOME": "/run/build/orjson/cargo",
+        "CARGO_NET_OFFLINE": "true",
+        "RUST_BACKTRACE": "1"
+      }
+    },
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=file://${PWD} --prefix=${FLATPAK_DEST} orjson --no-build-isolation"
+    ],
+    "sources": [
+      "cargo-sources-orjson.json",
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/7e/0c/964746fcafbd16f8ff53219ad9f6b412b34f345c75f384ad434ceaadb538/orjson-3.11.9.tar.gz",
+        "sha256": "4fef17e1f8722c11587a6ef18e35902450221da0028e65dbaaa543619e68e48f"
+      }
+    ]
+  }
+}

@@ -1,0 +1,64 @@
+---
+ Makefile                | 4 ++--
+ cc.nift.nsm.appdata.xml | 7 ++++---
+ cc.nift.nsm.desktop     | 5 +----
+ 3 files changed, 7 insertions(+), 9 deletions(-)
+
+diff --git a/Makefile b/Makefile
+index 36b4876..3075bb0 100644
+--- a/Makefile
++++ b/Makefile
+@@ -120,9 +120,9 @@ install:
+ 	install -D LuaJIT/src/luajit ${BINDIR}/luajit
+ 
+ 	install -D nsm ${BINDIR}/nsm
+-	
++
+ 	install -Dm644 cc.nift.nsm.appdata.xml $(prefix)/$(datadir)/appdata/cc.nift.nsm.appdata.xml
+-	install -Dm644 cc.nift.nsm.desktop $(prefix)/$(datadir)/desktop/cc.nift.nsm.desktop
++	install -Dm644 cc.nift.nsm.desktop $(prefix)/$(datadir)/applications/cc.nift.nsm.desktop
+ 	install -Dm644 cc.nift.nsm64.png $(prefix)/$(datadir)/icons/hicolor/64x64/apps/cc.nift.nsm.png
+ 	install -Dm644 cc.nift.nsm128.png $(prefix)/$(datadir)/icons/hicolor/128x128/apps/cc.nift.nsm.png
+ 	install -Dm644 cc.nift.nsm256.png $(prefix)/$(datadir)/icons/hicolor/256x256/apps/cc.nift.nsm.png
+diff --git a/cc.nift.nsm.appdata.xml b/cc.nift.nsm.appdata.xml
+index 23ac8e5..4b0448c 100644
+--- a/cc.nift.nsm.appdata.xml
++++ b/cc.nift.nsm.appdata.xml
+@@ -22,15 +22,16 @@
+ 
+   <url type="homepage">https://nift.dev</url>
+   <url type="bugtracker">https://github.com/nifty-site-manager/nsm-flatpak/issues</url>
++  <url type="vcs-browser">https://github.com/nifty-site-manager/nsm-flatpak</url>
+   <url type="donation">https://nift.dev/support.html</url>
+ 
+   <developer_name>Nick Ham</developer_name>
+   <update_contact>contact_at_n-ham.com</update_contact>
+ 
+-  <icon height="128" width="128">$APPID.png</icon>
+-  <icon height="64" width="64">$APPID.png</icon>
+-
+   <launchable type="desktop-id">cc.nift.nsm.desktop</launchable>
++  <provides>
++    <binary>nsm</binary>
++  </provides>
+   <releases>
+   	<release version="2.4.12" date="2021-04-11" />
+     <release version="2.4.11" date="2021-04-09" />
+diff --git a/cc.nift.nsm.desktop b/cc.nift.nsm.desktop
+index 36f505b..7b4e3cc 100644
+--- a/cc.nift.nsm.desktop
++++ b/cc.nift.nsm.desktop
+@@ -1,10 +1,7 @@
+ [Desktop Entry]
+-Version=v2.4.12
+ Type=Application
+ Terminal=true
+ Name=Nift
+ Exec=nsm
+ Icon=cc.nift.nsm
+-Categories=ConsoleOnly;DeveloperTools;Productivity;Utilities;
+-
+-Name[en_AU]=cc.nift.nsm.desktop
++Categories=ConsoleOnly;Development;Office;Utility;
+--
+libgit2 1.7.2

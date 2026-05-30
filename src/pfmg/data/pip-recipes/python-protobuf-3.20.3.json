@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "python-protobuf",
+    "version": "3.20.3",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python-protobuf",
+    "buildsystem": "simple",
+    "cleanup": [
+      "*"
+    ],
+    "build-commands": [
+      "pip3 install --no-index --no-build-isolation --prefix=\"${FLATPAK_DEST}\" ."
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://files.pythonhosted.org/packages/55/5b/e3d951e34f8356e5feecacd12a8e3b258a1da6d9a03ad1770f28925f29bc/protobuf-3.20.3.tar.gz",
+        "sha256": "2e3427429c9cffebf259491be0af70189607f365c2f41c7c3764af6f337105f2"
+      }
+    ]
+  }
+}

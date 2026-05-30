@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-aiorpcx",
+    "version": "0.18.7",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-aiorpcX",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"aiorpcX==0.18.7\""
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/e7/92/eb92bf3e5ff1df569b99db96fc0b935e71d0aa34445618c822654e92437c/aiorpcX-0.18.7-py3-none-any.whl",
+        "sha256": "7fa48423e1c06cd0ffb7b60f2cca7e819b6cbbf57d4bc8a82944994ef5038f05"
+      }
+    ]
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "vfs.libarchive",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "vfs.libarchive",
+    "buildsystem": "cmake-ninja",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/xbmc/vfs.libarchive",
+        "commit": "d88a5bb4da67f2b9cb3e1a36c498cb4f04953e8b"
+      }
+    ],
+    "build-options": {
+      "no-debuginfo": true,
+      "cflags": "-g0",
+      "cxxflags": "-g0"
+    },
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release"
+    ]
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "header": {
+    "id": "haskell-primitive",
+    "version": "0.8.0.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "haskell-primitive",
+    "buildsystem": "simple",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/primitive-0.8.0.0/primitive-0.8.0.0.tar.gz",
+        "sha256": "5553c21b4a789f9b591eed69e598cc58484c274af29250e517b5a8bcc62b995f",
+        "x-checker-data": {
+          "type": "html",
+          "url": "https://www.stackage.org/lts-21",
+          "version-pattern": ">primitive-([\\d.]+)<",
+          "url-template": "https://hackage.haskell.org/package/primitive-$version/primitive-$version.tar.gz"
+        }
+      },
+      {
+        "type": "shell",
+        "commands": [
+          "echo -e 'import Distribution.Simple\\nmain = defaultMain' > Setup.hs"
+        ]
+      }
+    ],
+    "build-commands": [
+      "runhaskell Setup configure --prefix=/app --extra-lib-dirs=/app/lib",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "cleanup": [
+      "*"
+    ]
+  }
+}

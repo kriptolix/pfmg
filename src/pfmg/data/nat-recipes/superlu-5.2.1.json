@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "superlu",
+    "version": "5.2.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "superlu",
+    "buildsystem": "cmake",
+    "builddir": true,
+    "build-options": {
+      "cflags": "-fpermissive"
+    },
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
+      "-DCMAKE_POSITION_INDEPENDENT_CODE=True",
+      "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/xiaoyeli/superlu/archive/v5.2.1.tar.gz",
+        "sha256": "77582501dedef295eb74e4dc9433e2816d2d8be211eae307379c13d93c65bc71"
+      },
+      {
+        "type": "patch",
+        "paths": [
+          "patches/superlu-proto.patch",
+          "patches/superlu-proto2.patch"
+        ]
+      }
+    ]
+  }
+}

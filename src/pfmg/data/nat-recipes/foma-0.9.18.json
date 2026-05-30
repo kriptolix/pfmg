@@ -1,0 +1,31 @@
+{
+  "header": {
+    "id": "foma",
+    "version": "0.9.18",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "foma",
+    "buildsystem": "simple",
+    "build-commands": [
+      "make",
+      "make install"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://bitbucket.org/mhulden/foma/downloads/foma-0.9.18.tar.gz",
+        "sha256": "cb380f43e86fc7b3d4e43186db3e7cff8f2417e18ea69cc991e466a3907d8cbd"
+      },
+      {
+        "type": "patch",
+        "path": "foma-installpath.patch"
+      },
+      {
+        "type": "patch",
+        "path": "foma-variables.patch"
+      }
+    ]
+  }
+}

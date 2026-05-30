@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "perl-text-patch",
+    "version": "1.8",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "perl-text-patch",
+    "no-autogen": true,
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://search.cpan.org/CPAN/authors/id/C/CA/CADE/Text-Patch-1.8.tar.gz",
+        "sha256": "eaf18e61ba6a3e143846a7cc66f08ce58a0c4fbda92acb31aede25cb3b5c3dcc"
+      },
+      {
+        "type": "file",
+        "path": "perl-MakefilePL-Makefile",
+        "dest-filename": "Makefile"
+      }
+    ]
+  }
+}

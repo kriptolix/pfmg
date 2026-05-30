@@ -1,0 +1,34 @@
+{
+  "header": {
+    "id": "folks",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "folks",
+    "buildsystem": "meson",
+    "config-opts": [
+      "-Dtelepathy_backend=false",
+      "-Dinspect_tool=false",
+      "-Dimport_tool=false",
+      "-Dbluez_backend=false"
+    ],
+    "cleanup": [
+      "/bin",
+      "/share/GConf"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://gitlab.gnome.org/GNOME/folks.git",
+        "tag": "0.15.12",
+        "commit": "b13bf053157213749b8ff6444255a7a71cb5ade4",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^([\\d.]+)$"
+        }
+      }
+    ]
+  }
+}

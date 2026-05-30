@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "jp2a",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "jp2a",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/Talinx/jp2a.git",
+        "commit": "988ec7c519ed4b439c13358726559e53ebbdaf3c"
+      },
+      {
+        "type": "shell",
+        "commands": [
+          "autoreconf -vfi"
+        ]
+      }
+    ]
+  }
+}

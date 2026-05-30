@@ -1,0 +1,31 @@
+{
+  "header": {
+    "id": "gstreamer-vaaapi",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "gstreamer-vaaapi",
+    "buildsystem": "meson",
+    "config-opts": [
+      "--libdir=lib",
+      "--wrap-mode=nodownload",
+      "-Dauto_features=disabled",
+      "-Ddrm=enabled",
+      "-Dwayland=enabled",
+      "-Dx11=enabled",
+      "-Dencoders=enabled"
+    ],
+    "subdir": "subprojects/gstreamer-vaapi",
+    "sources": [
+      {
+        "type": "git",
+        "tag": "1.26.10",
+        "url": "https://gitlab.freedesktop.org/gstreamer/gstreamer.git",
+        "commit": "bfdc62185e243d3633aa916187a566d03a587792",
+        "disable-submodules": true
+      }
+    ]
+  }
+}

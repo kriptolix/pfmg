@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "libkdb3",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libkdb3",
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://invent.kde.org/libraries/kdb.git",
+        "commit": "337c56f84010efdb1189bffae380e80ad97c7b10"
+      },
+      {
+        "type": "patch",
+        "path": "libkdb3-features.patch"
+      }
+    ]
+  }
+}

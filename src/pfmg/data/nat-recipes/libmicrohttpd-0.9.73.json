@@ -1,0 +1,18 @@
+{
+  "header": {
+    "id": "libmicrohttpd",
+    "version": "0.9.73",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libmicrohttpd",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://ftp.gnu.org/gnu/libmicrohttpd/libmicrohttpd-0.9.73.tar.gz",
+        "sha256": "a37b2f1b88fd1bfe74109586be463a434d34e773530fc2a74364cfcf734c032e"
+      }
+    ]
+  }
+}

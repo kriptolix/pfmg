@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "geographiclib",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "geographiclib",
+    "buildsystem": "cmake-ninja",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://git.code.sf.net/p/geographiclib/code",
+        "tag": "r1.50.1"
+      },
+      {
+        "type": "patch",
+        "path": "patches/geographiclib-fixes.patch"
+      }
+    ]
+  }
+}

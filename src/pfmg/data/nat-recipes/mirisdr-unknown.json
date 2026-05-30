@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "mirisdr",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "mirisdr",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/ericek111/libmirisdr-5.git",
+        "commit": "78a874b30a4c3161251b8e12ffb6443f29005eb3"
+      }
+    ]
+  }
+}

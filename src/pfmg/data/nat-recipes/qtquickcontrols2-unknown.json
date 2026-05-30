@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "qtquickcontrols2",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "qtquickcontrols2",
+    "buildsystem": "qmake",
+    "cleanup": [
+      "/bin"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://invent.kde.org/qt/qt/qtquickcontrols2.git",
+        "commit": "5465566a4ad9f6f9758bed304153f0c7fec3437b"
+      }
+    ]
+  }
+}

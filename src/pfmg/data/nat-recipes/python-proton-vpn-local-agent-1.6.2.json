@@ -1,0 +1,50 @@
+{
+  "header": {
+    "id": "python-proton-vpn-local-agent",
+    "version": "1.6.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python-proton-vpn-local-agent",
+    "buildsystem": "simple",
+    "build-commands": [
+      "bsdtar -Oxf python-proton-vpn-local-agent.deb data.tar.xz | bsdtar -xf -",
+      "PYTHON_VERSION=$(python3 -c 'import sys; print(\"{}.{}\".format(*sys.version_info))');\ninstall -Dm755 usr/lib/python3/dist-packages/proton/vpn/local_agent.abi3.so \"${FLATPAK_DEST}/lib/python${PYTHON_VERSION}/site-packages/proton/vpn/local_agent.abi3.so\"\n"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "only-arches": [
+          "x86_64"
+        ],
+        "dest-filename": "python-proton-vpn-local-agent.deb",
+        "url": "https://repo.protonvpn.com/debian/dists/stable/main/binary-amd64/python3-proton-vpn-local-agent_1.6.2_amd64.deb",
+        "sha256": "fa561799484a43e45692d0f6dd512fd43b7b82419dd3ca3bed71df9d6dce2b8a",
+        "x-checker-data": {
+          "type": "debian-repo",
+          "package-name": "python3-proton-vpn-local-agent",
+          "root": "https://repo.protonvpn.com/debian",
+          "dist": "stable",
+          "component": "main"
+        }
+      },
+      {
+        "type": "file",
+        "only-arches": [
+          "aarch64"
+        ],
+        "dest-filename": "python-proton-vpn-local-agent.deb",
+        "url": "https://repo.protonvpn.com/debian/dists/stable/main/binary-arm64/python3-proton-vpn-local-agent_1.6.2_arm64.deb",
+        "sha256": "c81d7b667a279a59d77fd4497fc64e7319183edecf57b277661f003e31a29597",
+        "x-checker-data": {
+          "type": "debian-repo",
+          "package-name": "python3-proton-vpn-local-agent",
+          "root": "https://repo.protonvpn.com/debian",
+          "dist": "stable",
+          "component": "main"
+        }
+      }
+    ]
+  }
+}

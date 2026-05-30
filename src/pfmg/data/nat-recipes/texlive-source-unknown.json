@@ -1,0 +1,53 @@
+{
+  "header": {
+    "id": "texlive-source",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "texlive-source",
+    "builddir": true,
+    "build-options": {
+      "ldflags": "-ldl"
+    },
+    "config-opts": [
+      "--bindir=${FLATPAK_DEST}/bin/${FLATPAK_ARCH}-linux",
+      "--datarootdir=${FLATPAK_DEST}",
+      "--disable-hitex",
+      "--disable-native-texlive-build",
+      "--with-banner-add= - Flatpak",
+      "--without-x",
+      "--with-system-cairo",
+      "--with-system-fontconfig",
+      "--with-system-freetype2",
+      "--with-system-gmp",
+      "--with-system-graphite2",
+      "--with-system-harfbuzz",
+      "--with-system-icu",
+      "--with-system-libpng",
+      "--with-system-pixman",
+      "--with-system-zlib"
+    ],
+    "post-install": [
+      "make texlinks",
+      "install -Dm644 ../texk/tests/TeXLive/* -t ${FLATPAK_DEST}/tlpkg/TeXLive/",
+      "tar -xf ../texlive-extra.tar.gz -C ${FLATPAK_DEST}/tlpkg",
+      "mktexlsr",
+      "fmtutil-sys --no-strict --all"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://ftp.tu-chemnitz.de/pub/tug/historic/systems/texlive/2026/texlive-20260301-source.tar.xz",
+        "sha512": "c2ea189fee82475e3013e5e6d7bdbbeef80fe33d3636b99b35bf7c8d0ff06b48dcc54d12f4c3959a0fc9e24b80f9c4878a417d4b55ef4880ff238aefbcf189a3"
+      },
+      {
+        "type": "file",
+        "url": "https://ftp.tu-chemnitz.de/pub/tug/historic/systems/texlive/2026/texlive-20260301-extra.tar.xz",
+        "sha512": "bde992edb7cbaa119c79bfc73697203dfb6bb7d04488d8e50085c06ebbe241f9ef3d161afb996a814c3d1e35bc2cbfe6a957beb5dfcdcfcc7e0cc827b32c5fc3",
+        "dest-filename": "texlive-extra.tar.gz"
+      }
+    ]
+  }
+}

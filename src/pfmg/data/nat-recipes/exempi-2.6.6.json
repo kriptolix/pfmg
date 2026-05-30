@@ -1,0 +1,30 @@
+{
+  "header": {
+    "id": "exempi",
+    "version": "2.6.6",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "exempi",
+    "config-opts": [
+      "--disable-unittest",
+      "--disable-samples"
+    ],
+    "cleanup": [
+      "/bin"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://libopenraw.freedesktop.org/download/exempi-2.6.6.tar.xz",
+        "sha256": "900fb9957be2095c78e5111b99c49378adac58161a358f52f93c55126f34eb8f",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 767,
+          "url-template": "https://libopenraw.freedesktop.org/download/exempi-$version.tar.xz"
+        }
+      }
+    ]
+  }
+}

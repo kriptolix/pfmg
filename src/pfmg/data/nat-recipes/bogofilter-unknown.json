@@ -1,0 +1,33 @@
+{
+  "header": {
+    "id": "bogofilter",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "bogofilter",
+    "buildsystem": "autotools",
+    "config-opts": [
+      "--disable-rpath",
+      "--with-database=sqlite3"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://git.code.sf.net/p/bogofilter/git",
+        "commit": "db7ac4e79f6d80f924edf5d3bd1179bf68388d27"
+      },
+      {
+        "type": "script",
+        "dest-filename": "autogen.sh",
+        "commands": [
+          "rm -rf README web",
+          "(shopt -s dotglob; mv bogofilter/* .)",
+          "echo \"# Skip for Flatpak build\" > doc/Makefile.am",
+          "autoreconf -fi"
+        ]
+      }
+    ]
+  }
+}

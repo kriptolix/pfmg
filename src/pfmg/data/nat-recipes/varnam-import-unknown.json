@@ -1,0 +1,31 @@
+{
+  "header": {
+    "id": "varnam-import",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "varnam-import",
+    "buildsystem": "simple",
+    "build-options": {
+      "env": [
+        "VARNAM_SUGGESTIONS_DIR=suggestions"
+      ]
+    },
+    "build-commands": [
+      "install -d /app/share/com.varnamproject.Varnam/suggestions",
+      "tar -xf ml.full.tar.gz",
+      "varnamc -s ml --import-learnings-from .",
+      "rm $VARNAM_SUGGESTIONS_DIR/*.learnings-*",
+      "mv $VARNAM_SUGGESTIONS_DIR/* /app/share/com.varnamproject.Varnam/suggestions"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "http://download.savannah.nongnu.org/releases/varnamproject/words/ml.full.tar.gz",
+        "sha256": "b4d7208066a1395b033be5223ffbbc7759aabec6a7a2c60d9297cdd71c56dffd"
+      }
+    ]
+  }
+}

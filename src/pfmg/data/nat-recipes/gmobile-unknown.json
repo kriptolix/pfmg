@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "gmobile",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "gmobile",
+    "buildsystem": "meson",
+    "config-opts": [
+      "-Dexamples=false",
+      "-Dintrospection=false",
+      "-Dgtk_doc=false",
+      "-Dtests=false",
+      "-Dvapi=false",
+      "-Dhwdb=false"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://gitlab.gnome.org/World/Phosh/gmobile.git",
+        "tag": "v0.7.1",
+        "commit": "9c79db9796703747b5256ad352faf1a95d8ee09d",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^v([\\d.]+)$"
+        }
+      }
+    ]
+  }
+}

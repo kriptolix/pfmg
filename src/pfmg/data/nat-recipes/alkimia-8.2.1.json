@@ -1,0 +1,31 @@
+{
+  "header": {
+    "id": "alkimia",
+    "version": "8.2.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "alkimia",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DQT_MAJOR_VERSION=6",
+      "-DBUILD_APPLETS=OFF",
+      "-DBUILD_TESTING=OFF"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.kde.org/stable/alkimia/8.2.1/alkimia-8.2.1.tar.xz",
+        "sha256": "f921410e180e0a5811e1ee2926954920c6576a72b3b65f53791faa6c85fcb689",
+        "x-checker-data": {
+          "is-important": true,
+          "type": "anitya",
+          "project-id": 378759,
+          "stable-only": true,
+          "url-template": "https://download.kde.org/stable/alkimia/$version/alkimia-$version.tar.xz"
+        }
+      }
+    ]
+  }
+}

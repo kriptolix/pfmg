@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "libxmlb",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libxmlb",
+    "buildsystem": "meson",
+    "config-opts": [
+      "-Dbuildtype=release",
+      "-Dintrospection=false",
+      "-Dtests=false",
+      "-Dcli=false",
+      "-Dgtkdoc=false"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/hughsie/libxmlb.git",
+        "commit": "6191220071233972d798b57841d08e4964952a17",
+        "tag": "0.3.11"
+      }
+    ]
+  }
+}

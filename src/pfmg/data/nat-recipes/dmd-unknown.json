@@ -1,0 +1,75 @@
+{
+  "header": {
+    "id": "dmd",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "dmd",
+    "buildsystem": "simple",
+    "build-commands": [
+      "make -C dmd -f posix.mak HOST_DMD=ldmd2 ENABLE_RELEASE=1 INSTALL_DIR=$PWD/stage install",
+      "make -C druntime -f posix.mak HOST_DMD=ldmd2 ENABLE_RELEASE=1 INSTALL_DIR=$PWD/stage install",
+      "make -C phobos -f posix.mak HOST_DMD=ldmd2 ENABLE_RELEASE=1 INSTALL_DIR=$PWD/stage install",
+      "mkdir -p ${FLATPAK_DEST}/bin ${FLATPAK_DEST}/lib ${FLATPAK_DEST}/include/dmd/ ${FLATPAK_DEST}/dmd/",
+      "install -m0755 $PWD/stage/linux/bin64/dmd ${FLATPAK_DEST}/bin",
+      "mv $PWD/stage/linux/lib64/* ${FLATPAK_DEST}/lib",
+      "mv $PWD/stage/src/druntime/import ${FLATPAK_DEST}/include/dmd/druntime",
+      "mv $PWD/stage/src/phobos ${FLATPAK_DEST}/include/dmd/phobos",
+      "mv dmd.conf ${FLATPAK_DEST}/bin"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/dlang/dmd.git",
+        "tag": "v2.100.2",
+        "commit": "316b89f1e3dffcad488c26f56f58c8adfcb84b26",
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://api.github.com/repos/dlang/dmd/git/refs/tags/v",
+          "tag-query": "last | if .object.type==\"tag\" then . else error(\"not a tag\") end | .ref | sub(\"^refs/tags/\"; \"\")",
+          "version-query": "$tag | sub(\"^[vV]\"; \"\")",
+          "commit-data-url": "last | .object.url",
+          "commit-query": ".object.sha",
+          "timestamp-data-url": "last | .object.url",
+          "timestamp-query": ".tagger.date",
+          "is-main-source": true
+        },
+        "dest": "dmd"
+      },
+      {
+        "type": "git",
+        "url": "https://github.com/dlang/druntime.git",
+        "tag": "v2.100.2",
+        "commit": "9b0caec78b95ed06ab3e91403d1d2342207260fa",
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://api.github.com/repos/dlang/druntime/git/refs/tags/v",
+          "tag-query": "last | .ref | sub(\"^refs/tags/\"; \"\")",
+          "version-query": "$tag | sub(\"^[vV]\"; \"\")",
+          "commit-query": "last | .object.sha"
+        },
+        "dest": "druntime"
+      },
+      {
+        "type": "git",
+        "url": "https://github.com/dlang/phobos.git",
+        "tag": "v2.100.2",
+        "commit": "caaf8773b6e8a3ca39aac67bdc2a4a6f10ec2f5e",
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://api.github.com/repos/dlang/phobos/git/refs/tags/v",
+          "tag-query": "last | .ref | sub(\"^refs/tags/\"; \"\")",
+          "version-query": "$tag | sub(\"^[vV]\"; \"\")",
+          "commit-query": "last | .object.sha"
+        },
+        "dest": "phobos"
+      },
+      {
+        "type": "file",
+        "path": "dmd.conf"
+      }
+    ]
+  }
+}

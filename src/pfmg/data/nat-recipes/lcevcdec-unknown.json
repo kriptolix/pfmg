@@ -1,0 +1,21 @@
+{
+  "header": {
+    "id": "lcevcdec",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "LCEVCdec",
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/v-novaltd/LCEVCdec.git",
+        "tag": "4.0.5",
+        "commit": "655f029d0008f00da9c976567ea159437aa86a36"
+      }
+    ]
+  }
+}

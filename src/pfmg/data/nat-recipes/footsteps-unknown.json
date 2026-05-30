@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "footsteps",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "footsteps",
+    "buildsystem": "simple",
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://deponie.yamagi.org/quake2/assets/footsteps.pkz",
+        "sha256": "c9377846711b194f4bc1d848d9d3378ae2f94211f52f1503184dd33db7a6bcd4"
+      }
+    ],
+    "build-commands": [
+      "install -D ./footsteps.pkz /app/bin/baseq2/footsteps.pkz"
+    ]
+  }
+}

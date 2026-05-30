@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "jbig2enc",
+    "version": "0.31",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "jbig2enc",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/agl/jbig2enc/archive/refs/tags/0.31.tar.gz",
+        "sha256": "35c255e44a9b1c4cbe27d2c84594a43d6666645156a2d186ba60f8832566141d",
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://api.github.com/repos/agl/jbig2enc/releases/latest",
+          "version-query": ".tag_name",
+          "url-query": "\"https://github.com/agl/jbig2enc/archive/refs/tags/\" + $version + \".tar.gz\""
+        }
+      }
+    ]
+  }
+}

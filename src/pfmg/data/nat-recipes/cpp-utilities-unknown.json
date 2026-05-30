@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "cpp-utilities",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "cpp-utilities",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/Martchus/cpp-utilities.git",
+        "tag": "v5.34.0",
+        "commit": "3d64b53f58ccc72417eaf7fedf1d3026944ddcb4",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^v([\\d.]+)$"
+        }
+      }
+    ]
+  }
+}

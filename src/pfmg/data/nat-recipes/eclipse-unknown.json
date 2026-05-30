@@ -1,0 +1,48 @@
+{
+  "header": {
+    "id": "eclipse",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "eclipse",
+    "buildsystem": "simple",
+    "build-commands": [
+      "mv eclipse /app",
+      "mkdir -p /app/bin",
+      "ln -s /app/eclipse/eclipse /app/bin",
+      "install -Dm 644 org.eclipse.Committers.desktop /app/share/applications/org.eclipse.Committers.desktop",
+      "install -Dm 644 org.eclipse.Committers.metainfo.xml /app/share/metainfo/org.eclipse.Committers.metainfo.xml",
+      "mkdir -p /app/share/icons/hicolor/32x32/apps",
+      "if [ -f /app/eclipse/plugins/org.eclipse.platform_*/eclipse32.png ] ; then cp -p /app/eclipse/plugins/org.eclipse.platform_*/eclipse32.png /app/share/icons/hicolor/32x32/apps/org.eclipse.Committers.png ; fi",
+      "mkdir -p /app/share/icons/hicolor/64x64/apps",
+      "if [ -f /app/eclipse/plugins/org.eclipse.platform_*/eclipse64.png ] ; then cp -p /app/eclipse/plugins/org.eclipse.platform_*/eclipse64.png /app/share/icons/hicolor/64x64/apps/org.eclipse.Committers.png ; fi",
+      "mkdir -p /app/share/icons/hicolor/128x128/apps",
+      "if [ -f /app/eclipse/plugins/org.eclipse.platform_*/eclipse128.png ] ; then cp -p /app/eclipse/plugins/org.eclipse.platform_*/eclipse128.png /app/share/icons/hicolor/128x128/apps/org.eclipse.Committers.png ; fi",
+      "mkdir -p /app/share/icons/hicolor/256x256/apps",
+      "if [ -f /app/eclipse/plugins/org.eclipse.platform_*/eclipse256.png ] ; then cp -p /app/eclipse/plugins/org.eclipse.platform_*/eclipse256.png /app/share/icons/hicolor/256x256/apps/org.eclipse.Committers.png ; fi",
+      "sed -i -e '/osgi.configuration.area/d' /app/eclipse/eclipse.ini",
+      "echo \"-Dosgi.configuration.area=@user.home/.var/app/org.eclipse.Committers/eclipse/configuration\" >> /app/eclipse/eclipse.ini",
+      "echo \"--patch-module=java.base=/app/eclipse/flatpak-dev-shim.jar\" >> /app/eclipse/eclipse.ini"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.eclipse.org/technology/epp/downloads/release/2020-09/R/eclipse-committers-2020-09-R-linux-gtk-x86_64.tar.gz",
+        "sha512": "21c68434fbd6290e88613b1561644d4b9fd74c64b20b4fa9f45ae62449b8a3d28b0a0b34e97563dd00ea5335a042101ca2bffdde431f738de427fab0b92a6cdf",
+        "strip-components": 0
+      },
+      {
+        "type": "file",
+        "path": "org.eclipse.Committers.desktop",
+        "dest-filename": "org.eclipse.Committers.desktop"
+      },
+      {
+        "type": "file",
+        "path": "org.eclipse.Committers.metainfo.xml",
+        "dest-filename": "org.eclipse.Committers.metainfo.xml"
+      }
+    ]
+  }
+}

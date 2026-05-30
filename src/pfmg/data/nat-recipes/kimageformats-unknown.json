@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "kimageformats",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DKIMAGEFORMATS_HEIF=ON"
+    ],
+    "buildsystem": "cmake-ninja",
+    "name": "KImageFormats",
+    "sources": [
+      {
+        "commit": "ae6b724824fc2fdf71d50dc7ae0052ad1551b25a",
+        "tag": "v5.93.0",
+        "type": "git",
+        "url": "https://invent.kde.org/frameworks/kimageformats.git"
+      }
+    ]
+  }
+}

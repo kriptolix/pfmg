@@ -1,0 +1,29 @@
+{
+  "header": {
+    "id": "libqmi",
+    "version": "1.38.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libqmi",
+    "buildsystem": "meson",
+    "cleanup": [
+      "/bin",
+      "/libexec/qmi-proxy"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://gitlab.freedesktop.org/mobile-broadband/libqmi/-/archive/1.38.0/libqmi-1.38.0.tar.gz",
+        "sha256": "8ee3b3a9002f2b45c825deade85710db006e01674f5f9359d351c192cc926015",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 7307,
+          "stable-only": true,
+          "url-template": "https://gitlab.freedesktop.org/mobile-broadband/libqmi/-/archive/$version/libqmi-$version.tar.gz"
+        }
+      }
+    ]
+  }
+}

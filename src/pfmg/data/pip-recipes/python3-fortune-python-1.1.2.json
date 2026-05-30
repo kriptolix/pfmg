@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-fortune-python",
+    "version": "1.1.2",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-fortune-python",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"fortune-python\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/2b/e9/00d33f62194d30954b101fc382df64c62e4593645d15738cd7bc56d2484c/fortune_python-1.1.2-py3-none-any.whl",
+        "sha256": "5f64f6fb9f4aae1471bd4ce1c65e99582479b6bc43996120c4064f87f08a13bc"
+      }
+    ]
+  }
+}

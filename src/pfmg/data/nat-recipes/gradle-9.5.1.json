@@ -1,0 +1,34 @@
+{
+  "header": {
+    "id": "gradle",
+    "version": "9.5.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "gradle",
+    "buildsystem": "simple",
+    "build-commands": [
+      "unzip -q gradle-bin.zip -d $FLATPAK_DEST",
+      "mv $FLATPAK_DEST/gradle-* $FLATPAK_DEST/gradle",
+      "ln -sr $FLATPAK_DEST/gradle/bin/gradle $FLATPAK_DEST/bin"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://services.gradle.org/distributions/gradle-9.5.1-bin.zip",
+        "dest-filename": "gradle-bin.zip",
+        "sha512": "26d95697a9c50e7e6e39af239b44f68f0e4d671efa6f9a2c24001fbf6b56275eec5df9c772cc8c50cc240fb17574997eb49252aa00cd15f870fc8c282415e73a",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 6088,
+          "stable-only": true,
+          "url-template": "https://services.gradle.org/distributions/gradle-$version-bin.zip"
+        }
+      }
+    ],
+    "cleanup": [
+      "*.bat"
+    ]
+  }
+}

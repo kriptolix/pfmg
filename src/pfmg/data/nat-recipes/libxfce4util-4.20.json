@@ -1,0 +1,30 @@
+{
+  "header": {
+    "id": "libxfce4util",
+    "version": "4.20",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libxfce4util",
+    "cleanup": [
+      "/sbin"
+    ],
+    "config-opts": [
+      "--disable-debug"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://archive.xfce.org/src/xfce/libxfce4util/4.20/libxfce4util-4.20.1.tar.bz2",
+        "sha256": "84bfc4daab9e466193540c3665eee42b2cf4d24e3f38fc3e8d1e0a2bebe3b8f1",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 232001,
+          "stable-only": true,
+          "url-template": "https://archive.xfce.org/src/xfce/libxfce4util/$major.$minor/libxfce4util-$version.tar.bz2"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,648 @@
+From 15cd3008471d0a5bdb4d39d63e581c6f9800f98b Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Hubert=20Figui=C3=A8re?= <hub@figuiere.net>
+Date: Sun, 27 Sep 2020 10:22:18 -0400
+Subject: [PATCH 2/2] Honour $LV2DIR
+
+---
+ Makefile                                 | 3 ++-
+ Makefile.single                          | 3 ++-
+ plugins/mod-caps-AmpVTS.lv2/Makefile     | 3 ++-
+ plugins/mod-caps-AutoFilter.lv2/Makefile | 3 ++-
+ plugins/mod-caps-CEO.lv2/Makefile        | 3 ++-
+ plugins/mod-caps-CabinetIII.lv2/Makefile | 3 ++-
+ plugins/mod-caps-CabinetIV.lv2/Makefile  | 3 ++-
+ plugins/mod-caps-ChorusI.lv2/Makefile    | 3 ++-
+ plugins/mod-caps-Click.lv2/Makefile      | 3 ++-
+ plugins/mod-caps-Compress.lv2/Makefile   | 3 ++-
+ plugins/mod-caps-CompressX2.lv2/Makefile | 3 ++-
+ plugins/mod-caps-Eq10.lv2/Makefile       | 3 ++-
+ plugins/mod-caps-Eq10X2.lv2/Makefile     | 3 ++-
+ plugins/mod-caps-Eq4p.lv2/Makefile       | 3 ++-
+ plugins/mod-caps-EqFA4p.lv2/Makefile     | 3 ++-
+ plugins/mod-caps-Fractal.lv2/Makefile    | 3 ++-
+ plugins/mod-caps-Narrower.lv2/Makefile   | 3 ++-
+ plugins/mod-caps-Noisegate.lv2/Makefile  | 3 ++-
+ plugins/mod-caps-PhaserII.lv2/Makefile   | 3 ++-
+ plugins/mod-caps-Plate.lv2/Makefile      | 3 ++-
+ plugins/mod-caps-PlateX2.lv2/Makefile    | 3 ++-
+ plugins/mod-caps-Saturate.lv2/Makefile   | 3 ++-
+ plugins/mod-caps-Scape.lv2/Makefile      | 3 ++-
+ plugins/mod-caps-Sin.lv2/Makefile        | 3 ++-
+ plugins/mod-caps-Spice.lv2/Makefile      | 3 ++-
+ plugins/mod-caps-SpiceX2.lv2/Makefile    | 3 ++-
+ plugins/mod-caps-ToneStack.lv2/Makefile  | 3 ++-
+ plugins/mod-caps-White.lv2/Makefile      | 3 ++-
+ plugins/mod-caps-Wider.lv2/Makefile      | 3 ++-
+ 29 files changed, 58 insertions(+), 29 deletions(-)
+
+diff --git a/Makefile b/Makefile
+index fa05aab..1f71363 100644
+--- a/Makefile
++++ b/Makefile
+@@ -1,5 +1,6 @@
+ 
+ PREFIX ?= /usr/local
++LV2DIR ?= $(PREFIX)/lib/lv2
+ DESTDIR =
+ 
+ CXXFLAGS += `pkg-config --cflags lv2`
+@@ -65,7 +66,7 @@ install: all
+ 	$(MAKE) install -C plugins/mod-caps-Wider.lv2
+ 
+ uninstall:
+-	-rm -rf $(DESTDIR)$(PREFIX)/lib/lv2/mod-caps-*.lv2/
++	-rm -rf $(DESTDIR)$(LV2DIR)/mod-caps-*.lv2/
+ 
+ clean:
+ 	rm -f *.o dsp/*.o
+diff --git a/Makefile.single b/Makefile.single
+index 8c52bb0..e2baab1 100644
+--- a/Makefile.single
++++ b/Makefile.single
+@@ -1,6 +1,7 @@
+ VERSION = 0.9.26
+ 
+ PREFIX ?= /usr/local
++LV2DIR ?= $(PREFIX)/lib/lv2
+ DESTDIR =
+ 
+ CXX ?= g++
+@@ -30,7 +31,7 @@ OBJECTS = $(SOURCES:.cc=.o)
+ PLUG   = __EFFECT__
+ BUNDLE = mod-caps-$(PLUG).lv2
+ ifndef LV2_DEST
+-LV2DEST = $(PREFIX)/lib/lv2/$(BUNDLE)
++LV2DEST = $(LV2DIR)/$(BUNDLE)
+ else
+ LV2DEST = $(LV2_DEST)/$(BUNDLE)
+ endif
+diff --git a/plugins/mod-caps-AmpVTS.lv2/Makefile b/plugins/mod-caps-AmpVTS.lv2/Makefile
+index d0e62af..8ec80c3 100644
+--- a/plugins/mod-caps-AmpVTS.lv2/Makefile
++++ b/plugins/mod-caps-AmpVTS.lv2/Makefile
+@@ -1,6 +1,7 @@
+ VERSION = 0.9.26
+ 
+ PREFIX ?= /usr/local
++LV2DIR ?= $(PREFIX)/lib/lv2
+ DESTDIR =
+ 
+ CXX ?= g++
+@@ -30,7 +31,7 @@ OBJECTS = $(SOURCES:.cc=.o)
+ PLUG   = AmpVTS
+ BUNDLE = mod-caps-$(PLUG).lv2
+ ifndef LV2_DEST
+-LV2DEST = $(PREFIX)/lib/lv2/$(BUNDLE)
++LV2DEST = $(LV2DIR)/$(BUNDLE)
+ else
+ LV2DEST = $(LV2_DEST)/$(BUNDLE)
+ endif
+diff --git a/plugins/mod-caps-AutoFilter.lv2/Makefile b/plugins/mod-caps-AutoFilter.lv2/Makefile
+index 0b699e4..aae9a83 100644
+--- a/plugins/mod-caps-AutoFilter.lv2/Makefile
++++ b/plugins/mod-caps-AutoFilter.lv2/Makefile
+@@ -1,6 +1,7 @@
+ VERSION = 0.9.26
+ 
+ PREFIX ?= /usr/local
++LV2DIR ?= $(PREFIX)/lib/lv2
+ DESTDIR =
+ 
+ CXX ?= g++
+@@ -30,7 +31,7 @@ OBJECTS = $(SOURCES:.cc=.o)
+ PLUG   = AutoFilter
+ BUNDLE = mod-caps-$(PLUG).lv2
+ ifndef LV2_DEST
+-LV2DEST = $(PREFIX)/lib/lv2/$(BUNDLE)
++LV2DEST = $(LV2DIR)/$(BUNDLE)
+ else
+ LV2DEST = $(LV2_DEST)/$(BUNDLE)
+ endif
+diff --git a/plugins/mod-caps-CEO.lv2/Makefile b/plugins/mod-caps-CEO.lv2/Makefile
+index 0ae2baf..73f70b3 100644
+--- a/plugins/mod-caps-CEO.lv2/Makefile
++++ b/plugins/mod-caps-CEO.lv2/Makefile
+@@ -1,6 +1,7 @@
+ VERSION = 0.9.26
+ 
+ PREFIX ?= /usr/local
++LV2DIR ?= $(PREFIX)/lib/lv2
+ DESTDIR =
+ 
+ CXX ?= g++
+@@ -30,7 +31,7 @@ OBJECTS = $(SOURCES:.cc=.o)
+ PLUG   = CEO
+ BUNDLE = mod-caps-$(PLUG).lv2
+ ifndef LV2_DEST
+-LV2DEST = $(PREFIX)/lib/lv2/$(BUNDLE)
++LV2DEST = $(LV2DIR)/$(BUNDLE)
+ else
+ LV2DEST = $(LV2_DEST)/$(BUNDLE)
+ endif
+diff --git a/plugins/mod-caps-CabinetIII.lv2/Makefile b/plugins/mod-caps-CabinetIII.lv2/Makefile
+index 29df7be..51da3c3 100644
+--- a/plugins/mod-caps-CabinetIII.lv2/Makefile
++++ b/plugins/mod-caps-CabinetIII.lv2/Makefile
+@@ -1,6 +1,7 @@
+ VERSION = 0.9.26
+ 
+ PREFIX ?= /usr/local
++LV2DIR ?= $(PREFIX)/lib/lv2
+ DESTDIR =
+ 
+ CXX ?= g++
+@@ -30,7 +31,7 @@ OBJECTS = $(SOURCES:.cc=.o)
+ PLUG   = CabinetIII
+ BUNDLE = mod-caps-$(PLUG).lv2
+ ifndef LV2_DEST
+-LV2DEST = $(PREFIX)/lib/lv2/$(BUNDLE)
++LV2DEST = $(LV2DIR)/$(BUNDLE)
+ else
+ LV2DEST = $(LV2_DEST)/$(BUNDLE)
+ endif
+diff --git a/plugins/mod-caps-CabinetIV.lv2/Makefile b/plugins/mod-caps-CabinetIV.lv2/Makefile
+index 8e07dba..09a2494 100644
+--- a/plugins/mod-caps-CabinetIV.lv2/Makefile
++++ b/plugins/mod-caps-CabinetIV.lv2/Makefile
+@@ -1,6 +1,7 @@
+ VERSION = 0.9.26
+ 
+ PREFIX ?= /usr/local
++LV2DIR ?= $(PREFIX)/lib/lv2
+ DESTDIR =
+ 
+ CXX ?= g++
+@@ -30,7 +31,7 @@ OBJECTS = $(SOURCES:.cc=.o)
+ PLUG   = CabinetIV
+ BUNDLE = mod-caps-$(PLUG).lv2
+ ifndef LV2_DEST
+-LV2DEST = $(PREFIX)/lib/lv2/$(BUNDLE)
++LV2DEST = $(LV2DIR)/$(BUNDLE)
+ else
+ LV2DEST = $(LV2_DEST)/$(BUNDLE)
+ endif
+diff --git a/plugins/mod-caps-ChorusI.lv2/Makefile b/plugins/mod-caps-ChorusI.lv2/Makefile
+index b2fff5c..a75883c 100644
+--- a/plugins/mod-caps-ChorusI.lv2/Makefile
++++ b/plugins/mod-caps-ChorusI.lv2/Makefile
+@@ -1,6 +1,7 @@
+ VERSION = 0.9.26
+ 
+ PREFIX ?= /usr/local
++LV2DIR ?= $(PREFIX)/lib/lv2
+ DESTDIR =
+ 
+ CXX ?= g++
+@@ -30,7 +31,7 @@ OBJECTS = $(SOURCES:.cc=.o)
+ PLUG   = ChorusI
+ BUNDLE = mod-caps-$(PLUG).lv2
+ ifndef LV2_DEST
+-LV2DEST = $(PREFIX)/lib/lv2/$(BUNDLE)
++LV2DEST = $(LV2DIR)/$(BUNDLE)
+ else
+ LV2DEST = $(LV2_DEST)/$(BUNDLE)
+ endif
+diff --git a/plugins/mod-caps-Click.lv2/Makefile b/plugins/mod-caps-Click.lv2/Makefile
+index 4e170b6..723442e 100644
+--- a/plugins/mod-caps-Click.lv2/Makefile
++++ b/plugins/mod-caps-Click.lv2/Makefile
+@@ -1,6 +1,7 @@
+ VERSION = 0.9.26
+ 
+ PREFIX ?= /usr/local
++LV2DIR ?= $(PREFIX)/lib/lv2
+ DESTDIR =
+ 
+ CXX ?= g++
+@@ -30,7 +31,7 @@ OBJECTS = $(SOURCES:.cc=.o)
+ PLUG   = Click
+ BUNDLE = mod-caps-$(PLUG).lv2
+ ifndef LV2_DEST
+-LV2DEST = $(PREFIX)/lib/lv2/$(BUNDLE)
++LV2DEST = $(LV2DIR)/$(BUNDLE)
+ else
+ LV2DEST = $(LV2_DEST)/$(BUNDLE)
+ endif
+diff --git a/plugins/mod-caps-Compress.lv2/Makefile b/plugins/mod-caps-Compress.lv2/Makefile
+index 213c04a..2de7ca5 100644
+--- a/plugins/mod-caps-Compress.lv2/Makefile
++++ b/plugins/mod-caps-Compress.lv2/Makefile
+@@ -1,6 +1,7 @@
+ VERSION = 0.9.26
+ 
+ PREFIX ?= /usr/local
++LV2DIR ?= $(PREFIX)/lib/lv2
+ DESTDIR =
+ 
+ CXX ?= g++
+@@ -30,7 +31,7 @@ OBJECTS = $(SOURCES:.cc=.o)
+ PLUG   = Compress
+ BUNDLE = mod-caps-$(PLUG).lv2
+ ifndef LV2_DEST
+-LV2DEST = $(PREFIX)/lib/lv2/$(BUNDLE)
++LV2DEST = $(LV2DIR)/$(BUNDLE)
+ else
+ LV2DEST = $(LV2_DEST)/$(BUNDLE)
+ endif
+diff --git a/plugins/mod-caps-CompressX2.lv2/Makefile b/plugins/mod-caps-CompressX2.lv2/Makefile
+index 16690ea..90a00d9 100644
+--- a/plugins/mod-caps-CompressX2.lv2/Makefile
++++ b/plugins/mod-caps-CompressX2.lv2/Makefile
+@@ -1,6 +1,7 @@
+ VERSION = 0.9.26
+ 
+ PREFIX ?= /usr/local
++LV2DIR ?= $(PREFIX)/lib/lv2
+ DESTDIR =
+ 
+ CXX ?= g++
+@@ -30,7 +31,7 @@ OBJECTS = $(SOURCES:.cc=.o)
+ PLUG   = CompressX2
+ BUNDLE = mod-caps-$(PLUG).lv2
+ ifndef LV2_DEST
+-LV2DEST = $(PREFIX)/lib/lv2/$(BUNDLE)
++LV2DEST = $(LV2DIR)/$(BUNDLE)
+ else
+ LV2DEST = $(LV2_DEST)/$(BUNDLE)
+ endif
+diff --git a/plugins/mod-caps-Eq10.lv2/Makefile b/plugins/mod-caps-Eq10.lv2/Makefile
+index aa99df1..fbe0369 100644
+--- a/plugins/mod-caps-Eq10.lv2/Makefile
++++ b/plugins/mod-caps-Eq10.lv2/Makefile
+@@ -1,6 +1,7 @@
+ VERSION = 0.9.26
+ 
+ PREFIX ?= /usr/local
++LV2DIR ?= $(PREFIX)/lib/lv2
+ DESTDIR =
+ 
+ CXX ?= g++
+@@ -30,7 +31,7 @@ OBJECTS = $(SOURCES:.cc=.o)
+ PLUG   = Eq10
+ BUNDLE = mod-caps-$(PLUG).lv2
+ ifndef LV2_DEST
+-LV2DEST = $(PREFIX)/lib/lv2/$(BUNDLE)
++LV2DEST = $(LV2DIR)/$(BUNDLE)
+ else
+ LV2DEST = $(LV2_DEST)/$(BUNDLE)
+ endif
+diff --git a/plugins/mod-caps-Eq10X2.lv2/Makefile b/plugins/mod-caps-Eq10X2.lv2/Makefile
+index 13b3114..9ddec12 100644
+--- a/plugins/mod-caps-Eq10X2.lv2/Makefile
++++ b/plugins/mod-caps-Eq10X2.lv2/Makefile
+@@ -1,6 +1,7 @@
+ VERSION = 0.9.26
+ 
+ PREFIX ?= /usr/local
++LV2DIR ?= $(PREFIX)/lib/lv2
+ DESTDIR =
+ 
+ CXX ?= g++
+@@ -30,7 +31,7 @@ OBJECTS = $(SOURCES:.cc=.o)
+ PLUG   = Eq10X2
+ BUNDLE = mod-caps-$(PLUG).lv2
+ ifndef LV2_DEST
+-LV2DEST = $(PREFIX)/lib/lv2/$(BUNDLE)
++LV2DEST = $(LV2DIR)/$(BUNDLE)
+ else
+ LV2DEST = $(LV2_DEST)/$(BUNDLE)
+ endif
+diff --git a/plugins/mod-caps-Eq4p.lv2/Makefile b/plugins/mod-caps-Eq4p.lv2/Makefile
+index ba2683b..dc19515 100644
+--- a/plugins/mod-caps-Eq4p.lv2/Makefile
++++ b/plugins/mod-caps-Eq4p.lv2/Makefile
+@@ -1,6 +1,7 @@
+ VERSION = 0.9.26
+ 
+ PREFIX ?= /usr/local
++LV2DIR ?= $(PREFIX)/lib/lv2
+ DESTDIR =
+ 
+ CXX ?= g++
+@@ -30,7 +31,7 @@ OBJECTS = $(SOURCES:.cc=.o)
+ PLUG   = Eq4p
+ BUNDLE = mod-caps-$(PLUG).lv2
+ ifndef LV2_DEST
+-LV2DEST = $(PREFIX)/lib/lv2/$(BUNDLE)
++LV2DEST = $(LV2DIR)/$(BUNDLE)
+ else
+ LV2DEST = $(LV2_DEST)/$(BUNDLE)
+ endif
+diff --git a/plugins/mod-caps-EqFA4p.lv2/Makefile b/plugins/mod-caps-EqFA4p.lv2/Makefile
+index fdd2c3f..f262091 100644
+--- a/plugins/mod-caps-EqFA4p.lv2/Makefile
++++ b/plugins/mod-caps-EqFA4p.lv2/Makefile
+@@ -1,6 +1,7 @@
+ VERSION = 0.9.26
+ 
+ PREFIX ?= /usr/local
++LV2DIR ?= $(PREFIX)/lib/lv2
+ DESTDIR =
+ 
+ CXX ?= g++
+@@ -30,7 +31,7 @@ OBJECTS = $(SOURCES:.cc=.o)
+ PLUG   = EqFA4p
+ BUNDLE = mod-caps-$(PLUG).lv2
+ ifndef LV2_DEST
+-LV2DEST = $(PREFIX)/lib/lv2/$(BUNDLE)
++LV2DEST = $(LV2DIR)/$(BUNDLE)
+ else
+ LV2DEST = $(LV2_DEST)/$(BUNDLE)
+ endif
+diff --git a/plugins/mod-caps-Fractal.lv2/Makefile b/plugins/mod-caps-Fractal.lv2/Makefile
+index 7b852b2..77e50b1 100644
+--- a/plugins/mod-caps-Fractal.lv2/Makefile
++++ b/plugins/mod-caps-Fractal.lv2/Makefile
+@@ -1,6 +1,7 @@
+ VERSION = 0.9.26
+ 
+ PREFIX ?= /usr/local
++LV2DIR ?= $(PREFIX)/lib/lv2
+ DESTDIR =
+ 
+ CXX ?= g++
+@@ -30,7 +31,7 @@ OBJECTS = $(SOURCES:.cc=.o)
+ PLUG   = Fractal
+ BUNDLE = mod-caps-$(PLUG).lv2
+ ifndef LV2_DEST
+-LV2DEST = $(PREFIX)/lib/lv2/$(BUNDLE)
++LV2DEST = $(LV2DIR)/$(BUNDLE)
+ else
+ LV2DEST = $(LV2_DEST)/$(BUNDLE)
+ endif
+diff --git a/plugins/mod-caps-Narrower.lv2/Makefile b/plugins/mod-caps-Narrower.lv2/Makefile
+index 3f4fa63..6065f27 100644
+--- a/plugins/mod-caps-Narrower.lv2/Makefile
++++ b/plugins/mod-caps-Narrower.lv2/Makefile
+@@ -1,6 +1,7 @@
+ VERSION = 0.9.26
+ 
+ PREFIX ?= /usr/local
++LV2DIR ?= $(PREFIX)/lib/lv2
+ DESTDIR =
+ 
+ CXX ?= g++
+@@ -30,7 +31,7 @@ OBJECTS = $(SOURCES:.cc=.o)
+ PLUG   = Narrower
+ BUNDLE = mod-caps-$(PLUG).lv2
+ ifndef LV2_DEST
+-LV2DEST = $(PREFIX)/lib/lv2/$(BUNDLE)
++LV2DEST = $(LV2DIR)/$(BUNDLE)
+ else
+ LV2DEST = $(LV2_DEST)/$(BUNDLE)
+ endif
+diff --git a/plugins/mod-caps-Noisegate.lv2/Makefile b/plugins/mod-caps-Noisegate.lv2/Makefile
+index 80b531b..44e8e50 100644
+--- a/plugins/mod-caps-Noisegate.lv2/Makefile
++++ b/plugins/mod-caps-Noisegate.lv2/Makefile
+@@ -1,6 +1,7 @@
+ VERSION = 0.9.26
+ 
+ PREFIX ?= /usr/local
++LV2DIR ?= $(PREFIX)/lib/lv2
+ DESTDIR =
+ 
+ CXX ?= g++
+@@ -30,7 +31,7 @@ OBJECTS = $(SOURCES:.cc=.o)
+ PLUG   = Noisegate
+ BUNDLE = mod-caps-$(PLUG).lv2
+ ifndef LV2_DEST
+-LV2DEST = $(PREFIX)/lib/lv2/$(BUNDLE)
++LV2DEST = $(LV2DIR)/$(BUNDLE)
+ else
+ LV2DEST = $(LV2_DEST)/$(BUNDLE)
+ endif
+diff --git a/plugins/mod-caps-PhaserII.lv2/Makefile b/plugins/mod-caps-PhaserII.lv2/Makefile
+index ad42a9a..54eb458 100644
+--- a/plugins/mod-caps-PhaserII.lv2/Makefile
++++ b/plugins/mod-caps-PhaserII.lv2/Makefile
+@@ -1,6 +1,7 @@
+ VERSION = 0.9.26
+ 
+ PREFIX ?= /usr/local
++LV2DIR ?= $(PREFIX)/lib/lv2
+ DESTDIR =
+ 
+ CXX ?= g++
+@@ -30,7 +31,7 @@ OBJECTS = $(SOURCES:.cc=.o)
+ PLUG   = PhaserII
+ BUNDLE = mod-caps-$(PLUG).lv2
+ ifndef LV2_DEST
+-LV2DEST = $(PREFIX)/lib/lv2/$(BUNDLE)
++LV2DEST = $(LV2DIR)/$(BUNDLE)
+ else
+ LV2DEST = $(LV2_DEST)/$(BUNDLE)
+ endif
+diff --git a/plugins/mod-caps-Plate.lv2/Makefile b/plugins/mod-caps-Plate.lv2/Makefile
+index dc8fac3..d016e3f 100644
+--- a/plugins/mod-caps-Plate.lv2/Makefile
++++ b/plugins/mod-caps-Plate.lv2/Makefile
+@@ -1,6 +1,7 @@
+ VERSION = 0.9.26
+ 
+ PREFIX ?= /usr/local
++LV2DIR ?= $(PREFIX)/lib/lv2
+ DESTDIR =
+ 
+ CXX ?= g++
+@@ -30,7 +31,7 @@ OBJECTS = $(SOURCES:.cc=.o)
+ PLUG   = Plate
+ BUNDLE = mod-caps-$(PLUG).lv2
+ ifndef LV2_DEST
+-LV2DEST = $(PREFIX)/lib/lv2/$(BUNDLE)
++LV2DEST = $(LV2DIR)/$(BUNDLE)
+ else
+ LV2DEST = $(LV2_DEST)/$(BUNDLE)
+ endif
+diff --git a/plugins/mod-caps-PlateX2.lv2/Makefile b/plugins/mod-caps-PlateX2.lv2/Makefile
+index 987b246..fe34bab 100644
+--- a/plugins/mod-caps-PlateX2.lv2/Makefile
++++ b/plugins/mod-caps-PlateX2.lv2/Makefile
+@@ -1,6 +1,7 @@
+ VERSION = 0.9.26
+ 
+ PREFIX ?= /usr/local
++LV2DIR ?= $(PREFIX)/lib/lv2
+ DESTDIR =
+ 
+ CXX ?= g++
+@@ -30,7 +31,7 @@ OBJECTS = $(SOURCES:.cc=.o)
+ PLUG   = PlateX2
+ BUNDLE = mod-caps-$(PLUG).lv2
+ ifndef LV2_DEST
+-LV2DEST = $(PREFIX)/lib/lv2/$(BUNDLE)
++LV2DEST = $(LV2DIR)/$(BUNDLE)
+ else
+ LV2DEST = $(LV2_DEST)/$(BUNDLE)
+ endif
+diff --git a/plugins/mod-caps-Saturate.lv2/Makefile b/plugins/mod-caps-Saturate.lv2/Makefile
+index 08bd0b4..6280783 100644
+--- a/plugins/mod-caps-Saturate.lv2/Makefile
++++ b/plugins/mod-caps-Saturate.lv2/Makefile
+@@ -1,6 +1,7 @@
+ VERSION = 0.9.26
+ 
+ PREFIX ?= /usr/local
++LV2DIR ?= $(PREFIX)/lib/lv2
+ DESTDIR =
+ 
+ CXX ?= g++
+@@ -30,7 +31,7 @@ OBJECTS = $(SOURCES:.cc=.o)
+ PLUG   = Saturate
+ BUNDLE = mod-caps-$(PLUG).lv2
+ ifndef LV2_DEST
+-LV2DEST = $(PREFIX)/lib/lv2/$(BUNDLE)
++LV2DEST = $(LV2DIR)/$(BUNDLE)
+ else
+ LV2DEST = $(LV2_DEST)/$(BUNDLE)
+ endif
+diff --git a/plugins/mod-caps-Scape.lv2/Makefile b/plugins/mod-caps-Scape.lv2/Makefile
+index 54451e8..a132800 100644
+--- a/plugins/mod-caps-Scape.lv2/Makefile
++++ b/plugins/mod-caps-Scape.lv2/Makefile
+@@ -1,6 +1,7 @@
+ VERSION = 0.9.26
+ 
+ PREFIX ?= /usr/local
++LV2DIR ?= $(PREFIX)/lib/lv2
+ DESTDIR =
+ 
+ CXX ?= g++
+@@ -30,7 +31,7 @@ OBJECTS = $(SOURCES:.cc=.o)
+ PLUG   = Scape
+ BUNDLE = mod-caps-$(PLUG).lv2
+ ifndef LV2_DEST
+-LV2DEST = $(PREFIX)/lib/lv2/$(BUNDLE)
++LV2DEST = $(LV2DIR)/$(BUNDLE)
+ else
+ LV2DEST = $(LV2_DEST)/$(BUNDLE)
+ endif
+diff --git a/plugins/mod-caps-Sin.lv2/Makefile b/plugins/mod-caps-Sin.lv2/Makefile
+index 15ae00d..19a06ea 100644
+--- a/plugins/mod-caps-Sin.lv2/Makefile
++++ b/plugins/mod-caps-Sin.lv2/Makefile
+@@ -1,6 +1,7 @@
+ VERSION = 0.9.26
+ 
+ PREFIX ?= /usr/local
++LV2DIR ?= $(PREFIX)/lib/lv2
+ DESTDIR =
+ 
+ CXX ?= g++
+@@ -30,7 +31,7 @@ OBJECTS = $(SOURCES:.cc=.o)
+ PLUG   = Sin
+ BUNDLE = mod-caps-$(PLUG).lv2
+ ifndef LV2_DEST
+-LV2DEST = $(PREFIX)/lib/lv2/$(BUNDLE)
++LV2DEST = $(LV2DIR)/$(BUNDLE)
+ else
+ LV2DEST = $(LV2_DEST)/$(BUNDLE)
+ endif
+diff --git a/plugins/mod-caps-Spice.lv2/Makefile b/plugins/mod-caps-Spice.lv2/Makefile
+index f376a21..d4f89af 100644
+--- a/plugins/mod-caps-Spice.lv2/Makefile
++++ b/plugins/mod-caps-Spice.lv2/Makefile
+@@ -1,6 +1,7 @@
+ VERSION = 0.9.26
+ 
+ PREFIX ?= /usr/local
++LV2DIR ?= $(PREFIX)/lib/lv2
+ DESTDIR =
+ 
+ CXX ?= g++
+@@ -30,7 +31,7 @@ OBJECTS = $(SOURCES:.cc=.o)
+ PLUG   = Spice
+ BUNDLE = mod-caps-$(PLUG).lv2
+ ifndef LV2_DEST
+-LV2DEST = $(PREFIX)/lib/lv2/$(BUNDLE)
++LV2DEST = $(LV2DIR)/$(BUNDLE)
+ else
+ LV2DEST = $(LV2_DEST)/$(BUNDLE)
+ endif
+diff --git a/plugins/mod-caps-SpiceX2.lv2/Makefile b/plugins/mod-caps-SpiceX2.lv2/Makefile
+index 38cdbe1..d2e5bf2 100644
+--- a/plugins/mod-caps-SpiceX2.lv2/Makefile
++++ b/plugins/mod-caps-SpiceX2.lv2/Makefile
+@@ -1,6 +1,7 @@
+ VERSION = 0.9.26
+ 
+ PREFIX ?= /usr/local
++LV2DIR ?= $(PREFIX)/lib/lv2
+ DESTDIR =
+ 
+ CXX ?= g++
+@@ -30,7 +31,7 @@ OBJECTS = $(SOURCES:.cc=.o)
+ PLUG   = SpiceX2
+ BUNDLE = mod-caps-$(PLUG).lv2
+ ifndef LV2_DEST
+-LV2DEST = $(PREFIX)/lib/lv2/$(BUNDLE)
++LV2DEST = $(LV2DIR)/$(BUNDLE)
+ else
+ LV2DEST = $(LV2_DEST)/$(BUNDLE)
+ endif
+diff --git a/plugins/mod-caps-ToneStack.lv2/Makefile b/plugins/mod-caps-ToneStack.lv2/Makefile
+index c5c8b0e..856d2d9 100644
+--- a/plugins/mod-caps-ToneStack.lv2/Makefile
++++ b/plugins/mod-caps-ToneStack.lv2/Makefile
+@@ -1,6 +1,7 @@
+ VERSION = 0.9.26
+ 
+ PREFIX ?= /usr/local
++LV2DIR ?= $(PREFIX)/lib/lv2
+ DESTDIR =
+ 
+ CXX ?= g++
+@@ -30,7 +31,7 @@ OBJECTS = $(SOURCES:.cc=.o)
+ PLUG   = ToneStack
+ BUNDLE = mod-caps-$(PLUG).lv2
+ ifndef LV2_DEST
+-LV2DEST = $(PREFIX)/lib/lv2/$(BUNDLE)
++LV2DEST = $(LV2DIR)/$(BUNDLE)
+ else
+ LV2DEST = $(LV2_DEST)/$(BUNDLE)
+ endif
+diff --git a/plugins/mod-caps-White.lv2/Makefile b/plugins/mod-caps-White.lv2/Makefile
+index ea046c6..71f82f4 100644
+--- a/plugins/mod-caps-White.lv2/Makefile
++++ b/plugins/mod-caps-White.lv2/Makefile
+@@ -1,6 +1,7 @@
+ VERSION = 0.9.26
+ 
+ PREFIX ?= /usr/local
++LV2DIR ?= $(PREFIX)/lib/lv2
+ DESTDIR =
+ 
+ CXX ?= g++
+@@ -30,7 +31,7 @@ OBJECTS = $(SOURCES:.cc=.o)
+ PLUG   = White
+ BUNDLE = mod-caps-$(PLUG).lv2
+ ifndef LV2_DEST
+-LV2DEST = $(PREFIX)/lib/lv2/$(BUNDLE)
++LV2DEST = $(LV2DIR)/$(BUNDLE)
+ else
+ LV2DEST = $(LV2_DEST)/$(BUNDLE)
+ endif
+diff --git a/plugins/mod-caps-Wider.lv2/Makefile b/plugins/mod-caps-Wider.lv2/Makefile
+index 959b2e3..79f4051 100644
+--- a/plugins/mod-caps-Wider.lv2/Makefile
++++ b/plugins/mod-caps-Wider.lv2/Makefile
+@@ -1,6 +1,7 @@
+ VERSION = 0.9.26
+ 
+ PREFIX ?= /usr/local
++LV2DIR ?= $(PREFIX)/lib/lv2
+ DESTDIR =
+ 
+ CXX ?= g++
+@@ -30,7 +31,7 @@ OBJECTS = $(SOURCES:.cc=.o)
+ PLUG   = Wider
+ BUNDLE = mod-caps-$(PLUG).lv2
+ ifndef LV2_DEST
+-LV2DEST = $(PREFIX)/lib/lv2/$(BUNDLE)
++LV2DEST = $(LV2DIR)/$(BUNDLE)
+ else
+ LV2DEST = $(LV2_DEST)/$(BUNDLE)
+ endif
+-- 
+2.26.2
+

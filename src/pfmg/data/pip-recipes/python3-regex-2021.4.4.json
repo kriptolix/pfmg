@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-regex",
+    "version": "2021.4.4",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-regex",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"regex\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/38/3f/4c42a98c9ad7d08c16e7d23b2194a0e4f3b2914662da8bc88986e4e6de1f/regex-2021.4.4.tar.gz",
+        "sha256": "52ba3d3f9b942c49d7e4bc105bb28551c44065f139a65062ab7912bef10c9afb"
+      }
+    ]
+  }
+}

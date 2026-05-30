@@ -1,0 +1,29 @@
+{
+  "header": {
+    "id": "libass",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libass",
+    "cleanup": [
+      "/include",
+      "/lib/pkgconfig"
+    ],
+    "config-opts": [
+      "--disable-static",
+      "--enable-asm",
+      "--enable-harfbuzz",
+      "--enable-fontconfig"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/libass/libass.git",
+        "tag": "0.17.4",
+        "commit": "bbb3c7f1570a4a021e52683f3fbdf74fe492ae84"
+      }
+    ]
+  }
+}

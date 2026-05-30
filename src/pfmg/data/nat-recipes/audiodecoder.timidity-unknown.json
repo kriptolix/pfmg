@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "audiodecoder.timidity",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "audiodecoder.timidity",
+    "buildsystem": "cmake-ninja",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/xbmc/audiodecoder.timidity",
+        "commit": "4247a0bdc16e311f490e7a4f923f4bb2f195c389"
+      }
+    ],
+    "build-options": {
+      "no-debuginfo": true,
+      "cflags": "-g0",
+      "cxxflags": "-g0"
+    },
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release"
+    ]
+  }
+}

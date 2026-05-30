@@ -1,0 +1,13 @@
+diff --git a/Makefile.am b/Makefile.am
+index 2d9a86c..7a2b2fe 100644
+--- a/Makefile.am
++++ b/Makefile.am
+@@ -1419,7 +1419,7 @@ install-data-hook: mo fs-uae.dat
+ 	mkdir -p $(DESTDIR)$(datadir)/icons
+ 	cp -R $(s)/share/icons/* $(DESTDIR)$(datadir)/icons
+ 	mkdir -p $(DESTDIR)$(datadir)/locale
+-	cp -R $(b)/share/locale/* $(DESTDIR)$(datadir)/locale
++#       cp -R $(b)/share/locale/* $(DESTDIR)$(datadir)/locale
+ 	mkdir -p $(DESTDIR)$(datadir)/mime
+ 	cp -R $(s)/share/mime/* $(DESTDIR)$(datadir)/mime
+ 

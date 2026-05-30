@@ -1,0 +1,37 @@
+{
+  "header": {
+    "id": "zita-resampler",
+    "version": "1.6.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "zita-resampler",
+    "buildsystem": "simple",
+    "build-options": {
+      "env": {
+        "PREFIX": "${FLATPAK_DEST}"
+      }
+    },
+    "build-commands": [
+      "make -C source LIBDIR=$PREFIX/lib -j  $FLATPAK_BUILDER_N_JOBS",
+      "make -C source LIBDIR=$PREFIX/lib install"
+    ],
+    "cleanup": [
+      "/include",
+      "*.so",
+      "*.a"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "http://kokkinizita.linuxaudio.org/linuxaudio/downloads/zita-resampler-1.6.2.tar.bz2",
+        "sha256": "233baefee297094514bfc9063e47f848e8138dc7c959d9cd957b36019b98c5d7"
+      },
+      {
+        "type": "patch",
+        "path": "patches/zita-resampler-make.patch"
+      }
+    ]
+  }
+}

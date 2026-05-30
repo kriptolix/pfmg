@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "audio",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "audio",
+    "buildsystem": "simple",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/MUME/audio.git",
+        "tag": "v26.04.0"
+      }
+    ],
+    "build-commands": [
+      "mkdir -p /app/audio",
+      "cp -r . /app/audio/"
+    ]
+  }
+}

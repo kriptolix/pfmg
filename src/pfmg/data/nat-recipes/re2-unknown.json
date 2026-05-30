@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "re2",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "re2",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DCMAKE_POSITION_INDEPENDENT_CODE=ON",
+      "-DRE2_BUILD_TESTING=OFF"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/google/re2.git",
+        "tag": "2024-07-02"
+      }
+    ]
+  }
+}

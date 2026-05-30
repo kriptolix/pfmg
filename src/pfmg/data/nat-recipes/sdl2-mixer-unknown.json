@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "sdl2-mixer",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "SDL2_mixer",
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/libsdl-org/SDL_mixer",
+        "commit": "6103316427a8479e5027e41ab9948bebfc1c3c19",
+        "tag": "release-2.6.3",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^release-([\\d.]+)$"
+        }
+      }
+    ]
+  }
+}

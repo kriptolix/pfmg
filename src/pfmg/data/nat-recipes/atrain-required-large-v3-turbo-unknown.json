@@ -1,0 +1,26 @@
+{
+  "header": {
+    "id": "atrain-required-large-v3-turbo",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "atrain-required-large-v3-turbo",
+    "buildsystem": "simple",
+    "build-commands": [
+      "install -d ${FLATPAK_DEST}/share/atrain-required-models",
+      "cp -a models/large-v3-turbo ${FLATPAK_DEST}/share/atrain-required-models/"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://huggingface.co/datasets/aTrain-core/flatpak_required_models_largev3turbo/resolve/main/large-v3-turbo.tar.zst?download=1",
+        "sha256": "b28bd73e580b1955cc9590f271d9ac2d51f1a44f0673931ee6d13ca2945763aa",
+        "archive-type": "tar-zst",
+        "strip-components": 0,
+        "dest": "models"
+      }
+    ]
+  }
+}

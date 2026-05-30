@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "kissfft",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "kissfft",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DKISSFFT_TOOLS=OFF"
+    ],
+    "cleanup": [
+      "/include",
+      "/lib/cmake",
+      "/lib/pkgconfig"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/mborgerding/kissfft.git",
+        "tag": "131.1.0",
+        "commit": "8f47a67f595a6641c566087bf5277034be64f24d"
+      }
+    ]
+  }
+}

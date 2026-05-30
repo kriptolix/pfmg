@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "hidapi",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "hidapi",
+    "buildsystem": "autotools",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/libusb/hidapi.git",
+        "tag": "hidapi-0.15.0",
+        "commit": "d6b2a974608dec3b76fb1e36c189f22b9cf3650c",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^hidapi-([\\d.]+)$"
+        }
+      }
+    ]
+  }
+}

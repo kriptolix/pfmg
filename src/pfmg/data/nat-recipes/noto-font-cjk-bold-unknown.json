@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "noto-font-cjk-bold",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "noto-font-cjk-bold",
+    "buildsystem": "simple",
+    "build-commands": [
+      "mkdir -p /app/share/fonts",
+      "install -D NotoSansCJK-Bold.ttc /app/share/fonts/"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://noto-website-2.storage.googleapis.com/pkgs/NotoSansCJK-Bold.ttc.zip",
+        "sha256": "3cd895bce6765903b2eefcd90eea6ed372364e66d5b896ea3a594bd3e737eba0"
+      }
+    ]
+  }
+}

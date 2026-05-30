@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "network-uri",
+    "version": "2.6.4.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "network-uri",
+    "buildsystem": "simple",
+    "builddir": false,
+    "build-commands": [
+      "echo '#! /usr/bin/env runhaskell' >Setup.txt",
+      "echo '> import Distribution.Simple' >>Setup.txt",
+      "echo '> main = defaultMain' >>Setup.txt",
+      "ln -s Setup.txt Setup.lhs || true",
+      "runhaskell Setup configure --prefix=/app",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "sources": [
+      {
+        "sha256": "9c188973126e893250b881f20e8811dca06c223c23402b06f7a1f2e995797228",
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/network-uri-2.6.4.2/network-uri-2.6.4.2.tar.gz"
+      },
+      {
+        "dest-filename": "network-uri.cabal",
+        "sha256": "6fffb57373962b5651a2db8b0af732098b3bf029a7ced76a9855615de2026588",
+        "type": "file",
+        "url": "https://hackage.haskell.org/package/network-uri-2.6.4.2/revision/1.cabal"
+      }
+    ]
+  }
+}

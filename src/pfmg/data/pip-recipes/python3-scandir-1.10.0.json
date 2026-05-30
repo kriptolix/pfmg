@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-scandir",
+    "version": "1.10.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-scandir",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} scandir"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/df/f5/9c052db7bd54d0cbf1bc0bb6554362bba1012d03e5888950a4f5c5dadc4e/scandir-1.10.0.tar.gz",
+        "sha256": "4d4631f6062e658e9007ab3149a9b914f3548cb38bfb021c64f39a025ce578ae"
+      }
+    ]
+  }
+}

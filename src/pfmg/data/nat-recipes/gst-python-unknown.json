@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "gst-python",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "gst-python",
+    "buildsystem": "meson",
+    "subdir": "subprojects/gst-python",
+    "config-opts": [
+      "-Dpygi-overrides-dir=/app/lib/python3.13/site-packages/gi/overrides/"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "disable-submodules": true,
+        "url": "https://gitlab.freedesktop.org/gstreamer/gstreamer.git",
+        "tag": "1.24.13"
+      }
+    ]
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "header": {
+    "id": "cryptopp-cmake",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "cryptopp-cmake",
+    "buildsystem": "cmake-ninja",
+    "cleanup": [
+      "*"
+    ],
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=release",
+      "-DCRYPTOPP_SOURCES=src/deps/cryptopp1",
+      "-DCRYPTOPP_BUILD_TESTING=OFF",
+      "-DCRYPTOPP_BUILD_DOCUMENTATION=OFF"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/abdes/cryptopp-cmake/archive/refs/tags/CRYPTOPP_8_9_0.tar.gz",
+        "sha256": "191d69061c56602de1610ebf03b44dcf75636006e7e60ef8105bee6472ec0caf"
+      },
+      {
+        "type": "archive",
+        "url": "https://github.com/weidai11/cryptopp/archive/refs/tags/CRYPTOPP_8_9_0.tar.gz",
+        "sha256": "ab5174b9b5c6236588e15a1aa1aaecb6658cdbe09501c7981ac8db276a24d9ab",
+        "dest": "src/deps/cryptopp1"
+      }
+    ]
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "rclone",
+    "version": "1.73.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "rclone",
+    "buildsystem": "simple",
+    "build-options": {
+      "append-path": "/usr/lib/sdk/golang/bin"
+    },
+    "build-commands": [
+      "go build -mod=vendor .",
+      "install -Dm755 -t /app/bin/ rclone"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/rclone/rclone/archive/refs/tags/v1.73.1.zip",
+        "sha256": "1c338a9617dc4af7bf36730b7dc275b1a7933d04e6414acfb601b61eb59a4036"
+      },
+      "go-sources.yml"
+    ]
+  }
+}

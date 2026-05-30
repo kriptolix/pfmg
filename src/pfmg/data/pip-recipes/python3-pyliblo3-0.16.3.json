@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-pyliblo3",
+    "version": "0.16.3",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-pyliblo3",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"pyliblo3\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/12/18/788fdfa78afc40306bb1ae86ef591c0db51ab2691cd31a5096401ed3bf2f/pyliblo3-0.16.3.tar.gz",
+        "sha256": "b5a43ec8857fefa4db9f007ace1c457479e2b8155ea13c614b2ec54d289ddca2"
+      }
+    ]
+  }
+}

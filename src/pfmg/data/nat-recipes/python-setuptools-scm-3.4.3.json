@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "python-setuptools-scm",
+    "version": "3.4.3",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python-setuptools_scm",
+    "buildsystem": "simple",
+    "build-commands": [
+      "python3 setup.py install --prefix=/app --root=/"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://pypi.io/packages/source/s/setuptools_scm/setuptools_scm-3.4.3.tar.gz",
+        "sha256": "26b8a108783cd88f4b15ff1f0f347d6b476db25d0c226159b835d713f9487320"
+      },
+      {
+        "type": "shell",
+        "commands": [
+          "sed -i 's/if not platform_/if not dirs/' setup.py"
+        ]
+      }
+    ]
+  }
+}

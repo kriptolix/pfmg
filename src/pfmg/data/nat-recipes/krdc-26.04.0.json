@@ -1,0 +1,31 @@
+{
+  "header": {
+    "id": "krdc",
+    "version": "26.04.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "krdc",
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.kde.org/stable/release-service/26.04.0/src/krdc-26.04.0.tar.xz",
+        "sha256": "430dc9e821fc0db7730eadd2306d81531015315a0a194fd0cb3ed6dcdff6489d",
+        "x-checker-data": {
+          "is-main-source": true,
+          "type": "anitya",
+          "project-id": 8763,
+          "stable-only": true,
+          "url-template": "https://download.kde.org/stable/release-service/$version/src/krdc-$version.tar.xz"
+        }
+      }
+    ],
+    "post-install": [
+      "mkdir -p /app/share/icons/hicolor/scalable/apps/",
+      "install -D /usr/share/icons/breeze/apps/48/krdc.svg /app/share/icons/hicolor/scalable/apps/"
+    ]
+  }
+}

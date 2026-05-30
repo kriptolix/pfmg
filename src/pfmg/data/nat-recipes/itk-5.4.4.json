@@ -1,0 +1,39 @@
+{
+  "header": {
+    "id": "itk",
+    "version": "5.4.4",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "ITK",
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE:STRING=Release",
+      "-DBUILD_TESTING:BOOL=OFF",
+      "-DITK_BUILD_DEFAULT_MODULES:BOOL=OFF",
+      "-DITKGroup_Core:BOOL=ON",
+      "-DITKGroup_Filtering:BOOL=ON",
+      "-DITKGroup_Segmentation:BOOL=ON",
+      "-DITKGroup_Nonunit:BOOL=ON",
+      "-DBUILD_EXAMPLES:BOOL=OFF",
+      "-DITK_USE_SYSTEM_ZLIB:BOOL=ON",
+      "-DITK_FORBID_DOWNLOADS:BOOL=ON",
+      "-DITK_LEGACY_REMOVE:BOOL=ON"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/InsightSoftwareConsortium/ITK/archive/refs/tags/v5.4.4.tar.gz",
+        "sha256": "683027617442391220eb79869d71652a54c4b47517ca6ca14d4b01c2583f5a1c",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 223473,
+          "stable-only": true,
+          "url-template": "https://github.com/InsightSoftwareConsortium/ITK/archive/refs/tags/v$version.tar.gz"
+        }
+      }
+    ]
+  }
+}

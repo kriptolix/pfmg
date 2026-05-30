@@ -1,0 +1,24 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index 5453440..a3892b7 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -1,8 +1,6 @@
+-cmake_minimum_required (VERSION 3.0.2)
++cmake_minimum_required (VERSION 3.5)
+ 
+-IF (NOT ${CMAKE_MAJOR_VERSION}.${CMAKE_MINOR_VERSION} LESS 3.1)
+-  cmake_policy(SET CMP0054 OLD)
+-ENDIF ()
++cmake_policy(SET CMP0054 NEW)
+ 
+ # Define Project and Version Numbers
+ # increase major version on every backward-compatibility breaking change of the API
+@@ -26,7 +24,7 @@ if ("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU")
+   add_definitions(-DBUILD_DLL)
+   add_compile_options(-Wall)
+   SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -O2")
+-elseif (${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
++elseif ("${CMAKE_SYSTEM_NAME}" MATCHES "Darwin")
+   # using GCC
+   add_definitions(-DBUILD_DLL)
+   add_compile_options(-Wall) 

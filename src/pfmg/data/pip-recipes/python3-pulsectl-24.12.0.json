@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-pulsectl",
+    "version": "24.12.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-pulsectl",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"pulsectl\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/62/a9/5b119f86dd1a053c55da7d0355fca2ad215bae6f7f4777d46b307a8cc3e9/pulsectl-24.12.0-py2.py3-none-any.whl",
+        "sha256": "13a60be940594f03ead3245b3dfe3aff4a3f9a792af347674bde5e716d4f76d2"
+      }
+    ]
+  }
+}

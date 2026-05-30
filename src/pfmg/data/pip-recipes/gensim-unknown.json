@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "gensim",
+    "version": "unknown",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "Gensim",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --no-build-isolation --prefix=/app ."
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/piskvorky/gensim",
+        "tag": "4.4.0",
+        "commit": "ee2642b4fa26e689ba4595067504668bc7a89016"
+      }
+    ]
+  }
+}

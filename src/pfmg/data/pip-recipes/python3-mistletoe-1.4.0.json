@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "python3-mistletoe",
+    "version": "1.4.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-mistletoe",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --no-index --prefix=${FLATPAK_DEST} mistletoe-1.4.0-py3-none-any.whl"
+    ],
+    "cleanup": [
+      "*"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://github.com/miyuchina/mistletoe/releases/download/v1.4.0/mistletoe-1.4.0-py3-none-any.whl",
+        "sha256": "44a477803861de1237ba22e375c6b617690a31d2902b47279d1f8f7ed498a794"
+      }
+    ]
+  }
+}

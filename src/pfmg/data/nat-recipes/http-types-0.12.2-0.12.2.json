@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "http-types-0.12.2",
+    "version": "0.12.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "build-commands": [
+      "ghc -threaded --make Setup",
+      "./Setup configure --prefix=/app",
+      "./Setup build",
+      "./Setup install"
+    ],
+    "buildsystem": "simple",
+    "cleanup": [],
+    "name": "http-types-0.12.2",
+    "only-arches": [],
+    "sources": [
+      {
+        "sha256": "523102d7ba8923e1b399cfd2a1c821e858146ecd934fc147c3acd0fd2b2f9305",
+        "type": "archive",
+        "url": "https://s3.amazonaws.com/hackage.fpcomplete.com/package/http-types-0.12.2.tar.gz"
+      },
+      {
+        "sha256": "fabf70c7b0da898afeacaccec101cf2738afed7213dd3bd4d43efff63cd22827",
+        "type": "file",
+        "url": "https://raw.githubusercontent.com/commercialhaskell/all-cabal-files/a5f22172fce750e93afa6987320f5c5be62b5670/http-types/0.12.2/http-types.cabal"
+      }
+    ]
+  }
+}

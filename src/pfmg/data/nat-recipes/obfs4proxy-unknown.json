@@ -1,0 +1,31 @@
+{
+  "header": {
+    "id": "obfs4proxy",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "obfs4proxy",
+    "buildsystem": "simple",
+    "build-options": {
+      "append-path": "/usr/lib/sdk/golang/bin",
+      "env": {
+        "GOBIN": "/app/bin/",
+        "GO11MODULE": true,
+        "GOROOT": "/usr/lib/sdk/golang"
+      }
+    },
+    "build-commands": [
+      ". /usr/lib/sdk/golang/enable.sh && go build -mod=vendor -o /app/bin/obfs4proxy ./obfs4proxy"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://gitlab.com/yawning/obfs4.git",
+        "tag": "obfs4proxy-0.0.14"
+      },
+      "obfs4proxy/go.mod.yml"
+    ]
+  }
+}

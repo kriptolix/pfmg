@@ -1,0 +1,20 @@
+{
+  "header": {
+    "id": "ome-common",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "ome-common",
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://gitlab.com/codelibre/ome/ome-common-cpp.git",
+        "commit": "fa4cf3dacc72bd14037f2a48d42fd31bf182da2e"
+      }
+    ]
+  }
+}

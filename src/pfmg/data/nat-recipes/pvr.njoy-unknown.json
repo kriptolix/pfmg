@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "pvr.njoy",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "pvr.njoy",
+    "buildsystem": "cmake-ninja",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/kodi-pvr/pvr.njoy",
+        "commit": "d8898e3ef3a4ff36d50b8a97f57ad9ea798c173f"
+      }
+    ],
+    "build-options": {
+      "no-debuginfo": true,
+      "cflags": "-g0",
+      "cxxflags": "-g0"
+    },
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release"
+    ]
+  }
+}

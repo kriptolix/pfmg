@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "draco",
+    "version": "1.5.7",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "Draco",
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "config-opts": [
+      "-DBUILD_SHARED_LIBS=ON"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/google/draco/archive/refs/tags/1.5.7.tar.gz",
+        "sha256": "bf6b105b79223eab2b86795363dfe5e5356050006a96521477973aba8f036fe1"
+      }
+    ]
+  }
+}

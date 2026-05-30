@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-asttokens",
+    "version": "3.0.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-asttokens",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"asttokens==3.0.0\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/25/8a/c46dcc25341b5bce5472c718902eb3d38600a903b14fa6aeecef3f21a46f/asttokens-3.0.0-py3-none-any.whl",
+        "sha256": "e3078351a059199dd5138cb1c706e6430c05eff2ff136af5eb4790f9d28932e2"
+      }
+    ]
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "header": {
+    "id": "tambourine",
+    "version": "1.5.5",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "tambourine",
+    "buildsystem": "simple",
+    "build-commands": [
+      "tar -xzf tambourine.tar.gz -C /app/",
+      "install -D run.sh /app/bin/run.sh",
+      "mkdir -p /app/lib/ffmpeg",
+      "mkdir -p /app/tambourine/lib/os",
+      "ln -s /usr/lib/x86_64-linux-gnu/libbz2.so.1.0.8 /app/tambourine/lib/os/libbz2.so.1.0",
+      "touch -d \"1970-01-01T00:00:00Z\" /app/tambourine/lib/app/tambourine-*.jar",
+      "cp /app/tambourine/lib/app/tambourine.cfg /app/tambourine/lib/app/tambourine.cfg.bkp",
+      "echo \"java-options=-Xshare:dump\" >> /app/tambourine/lib/app/tambourine.cfg",
+      "echo \"java-options=-XX:SharedClassListFile=tambourine.classlist\" >> /app/tambourine/lib/app/tambourine.cfg",
+      "echo \"java-options=-XX:SharedArchiveFile=/app/tambourine/lib/app/resources/tambourine.jsa\" >> /app/tambourine/lib/app/tambourine.cfg",
+      "/app/tambourine/bin/tambourine",
+      "mv /app/tambourine/lib/app/tambourine.cfg.bkp /app/tambourine/lib/app/tambourine.cfg",
+      "echo \"java-options=-XX:SharedArchiveFile=/app/tambourine/lib/app/resources/tambourine.jsa\" >> /app/tambourine/lib/app/tambourine.cfg"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://github.com/MMarco94/tambourine-music-player/releases/download/v1.5.5/tambourine-amd64.tar.gz",
+        "sha256": "6e6c9b040c02900fee3ad0dedc0adb56b6f3d74857b13f425a839a5c96591f63",
+        "dest-filename": "tambourine.tar.gz",
+        "only-arches": [
+          "x86_64"
+        ]
+      },
+      {
+        "type": "file",
+        "url": "https://github.com/MMarco94/tambourine-music-player/releases/download/v1.5.5/tambourine-arm64.tar.gz",
+        "sha256": "f5aeb0b2db7638aa051e72f4d982bbe60ee4a1fe325a2f810e54bb0891d4c2ab",
+        "dest-filename": "tambourine.tar.gz",
+        "only-arches": [
+          "aarch64"
+        ]
+      },
+      {
+        "type": "file",
+        "path": "run.sh"
+      },
+      {
+        "type": "file",
+        "path": "tambourine.classlist"
+      }
+    ]
+  }
+}

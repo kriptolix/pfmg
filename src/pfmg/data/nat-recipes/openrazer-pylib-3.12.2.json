@@ -1,0 +1,169 @@
+{
+  "header": {
+    "id": "openrazer-pylib",
+    "version": "3.12.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "openrazer-pylib",
+    "no-autogen": true,
+    "make-args": [
+      "PREFIX=/app",
+      "daemon_install",
+      "python_library_install"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/openrazer/openrazer/releases/download/v3.12.2/openrazer-3.12.2.tar.xz",
+        "sha256": "86d65b340837c92fa38f7344cd90f004a23e9b0805581126eed3b70285e6ac61",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 243087,
+          "stable-only": true,
+          "url-template": "https://github.com/openrazer/openrazer/releases/download/v$version/openrazer-$version.tar.xz"
+        }
+      }
+    ],
+    "modules": [
+      {
+        "name": "python3-scikit-build-core",
+        "buildsystem": "simple",
+        "build-commands": [
+          "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"scikit-build-core\" --no-build-isolation"
+        ],
+        "cleanup": [
+          "*"
+        ],
+        "sources": [
+          {
+            "type": "file",
+            "url": "https://files.pythonhosted.org/packages/df/b2/87e62e8c3e2f4b32e5fe99e0b86d576da1312593b39f47d8ceef365e95ed/packaging-26.2-py3-none-any.whl",
+            "sha256": "5fc45236b9446107ff2415ce77c807cee2862cb6fac22b8a73826d0693b0980e",
+            "x-checker-data": {
+              "type": "pypi",
+              "name": "packaging",
+              "packagetype": "bdist_wheel"
+            }
+          },
+          {
+            "type": "file",
+            "url": "https://files.pythonhosted.org/packages/f1/d9/7fb5aa316bc299258e68c73ba3bddbc499654a07f151cba08f6153988714/pathspec-1.1.1-py3-none-any.whl",
+            "sha256": "a00ce642f577bf7f473932318056212bc4f8bfdf53128c78bbd5af0b9b20b189",
+            "x-checker-data": {
+              "type": "pypi",
+              "name": "pathspec",
+              "packagetype": "bdist_wheel"
+            }
+          },
+          {
+            "type": "file",
+            "url": "https://files.pythonhosted.org/packages/07/49/b2f0fbe3165d55c02e7f9eec6a10685d518af0ef6e919ff2f589c2d15c85/scikit_build_core-0.12.2-py3-none-any.whl",
+            "sha256": "6ea4730da400f9a998ec3287bd3ebc1d751fe45ad0a93451bead8618adbc02b1",
+            "x-checker-data": {
+              "type": "pypi",
+              "name": "scikit_build_core",
+              "packagetype": "bdist_wheel"
+            }
+          }
+        ]
+      },
+      {
+        "name": "python3-patchelf",
+        "buildsystem": "simple",
+        "build-commands": [
+          "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"patchelf\" --no-build-isolation"
+        ],
+        "cleanup": [
+          "*"
+        ],
+        "sources": [
+          {
+            "type": "file",
+            "url": "https://files.pythonhosted.org/packages/2c/a3/fdd3fa938c864aa2f11dd0b7f08befeda983d2dcdee44da493c6977a653f/patchelf-0.17.2.4.tar.gz",
+            "sha256": "970ee5cd8af33e5ea2099510b2f9013fa1b8d5cd763bf3fd3961281c18101a09",
+            "x-checker-data": {
+              "type": "pypi",
+              "name": "patchelf"
+            }
+          }
+        ]
+      },
+      {
+        "name": "python3-meson-python",
+        "buildsystem": "simple",
+        "build-commands": [
+          "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"meson-python\" --no-build-isolation"
+        ],
+        "cleanup": [
+          "*"
+        ],
+        "sources": [
+          {
+            "type": "file",
+            "url": "https://files.pythonhosted.org/packages/16/7f/d1b0c65b267a1463d752b324f11d3470e30889daefc4b9ec83029bfa30b5/meson_python-0.19.0-py3-none-any.whl",
+            "sha256": "67b5906c37404396d23c195e12c8825506074460d4a2e7083266b845d14f0298",
+            "x-checker-data": {
+              "type": "pypi",
+              "name": "meson_python",
+              "packagetype": "bdist_wheel"
+            }
+          },
+          {
+            "type": "file",
+            "url": "https://files.pythonhosted.org/packages/df/b2/87e62e8c3e2f4b32e5fe99e0b86d576da1312593b39f47d8ceef365e95ed/packaging-26.2-py3-none-any.whl",
+            "sha256": "5fc45236b9446107ff2415ce77c807cee2862cb6fac22b8a73826d0693b0980e",
+            "x-checker-data": {
+              "type": "pypi",
+              "name": "packaging",
+              "packagetype": "bdist_wheel"
+            }
+          },
+          {
+            "type": "file",
+            "url": "https://files.pythonhosted.org/packages/1d/0b/da4851b1e2d9c40c9bd74c0abd94510a7d797da9ccde0a90e8953751ed4a/pyproject_metadata-0.11.0-py3-none-any.whl",
+            "sha256": "85bbecca8694e2c00f63b492c96921d6c228454057c88e7c352b2077fcaa4096",
+            "x-checker-data": {
+              "type": "pypi",
+              "name": "pyproject_metadata",
+              "packagetype": "bdist_wheel"
+            }
+          }
+        ]
+      },
+      {
+        "name": "python3-dbus-python",
+        "buildsystem": "meson",
+        "config-opts": [
+          "-Dtests=false"
+        ],
+        "sources": [
+          {
+            "type": "archive",
+            "url": "https://files.pythonhosted.org/packages/ff/24/63118050c7dd7be04b1ccd60eab53fef00abe844442e1b6dec92dae505d6/dbus-python-1.4.0.tar.gz",
+            "sha256": "991666e498f60dbf3e49b8b7678f5559b8a65034fdf61aae62cdecdb7d89c770",
+            "x-checker-data": {
+              "type": "pypi",
+              "name": "dbus-python"
+            }
+          }
+        ]
+      },
+      {
+        "name": "python3-numpy",
+        "buildsystem": "simple",
+        "build-commands": [
+          "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"numpy==1.26.4\" --no-build-isolation"
+        ],
+        "sources": [
+          {
+            "type": "file",
+            "url": "https://files.pythonhosted.org/packages/65/6e/09db70a523a96d25e115e71cc56a6f9031e7b8cd166c1ac8438307c14058/numpy-1.26.4.tar.gz",
+            "sha256": "2a02aba9ed12e4ac4eb3ea9421c420301a0c6460d9830d74a9df87efa4912010"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "flathub-repro-checker",
+    "version": "unknown",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "flathub-repro-checker",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} --no-build-isolation ."
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/flathub-infra/flathub-repro-checker.git",
+        "tag": "v0.2.1",
+        "commit": "c573aec5e377e51f7170fdad6e159a5e8070bbdb",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^v([\\d.]+)$"
+        }
+      }
+    ]
+  }
+}

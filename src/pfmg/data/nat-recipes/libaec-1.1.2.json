@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "libaec",
+    "version": "1.1.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libaec",
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "config-opts": [
+      "-DBUILD_TESTING:BOOL=OFF"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://gitlab.dkrz.de/k202009/libaec/-/archive/v1.1.2/libaec-v1.1.2.tar.bz2",
+        "sha256": "bdad8c7923537c3695327aa85afdcd714fb3d30a5f956a27ba2971ef98c043ac",
+        "strip-components": 1
+      }
+    ],
+    "cleanup": [
+      "/bin",
+      "/include",
+      "/lib/libaec.a",
+      "/lib/libaec.so*",
+      "/lib/libsz.a",
+      "/cmake"
+    ]
+  }
+}

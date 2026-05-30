@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "tk9.0",
+    "version": "9.0.3",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "tk9.0",
+    "buildsystem": "autotools",
+    "subdir": "unix",
+    "config-opts": [
+      "--disable-zipfs"
+    ],
+    "post-install": [
+      "chmod +w ${FLATPAK_DEST}/lib/libtcl9tk9.0.so"
+    ],
+    "cleanup": [
+      "/bin",
+      "/lib/tk*/demos"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://sourceforge.net/projects/tcl/files/Tcl/9.0.3/tk9.0.3-src.tar.gz",
+        "sha256": "bf344efadb618babb7933f69275620f72454d1c8220130da93e3f7feb0efbf9b",
+        "x-checker-data": {
+          "type": "html",
+          "url": "https://sourceforge.net/projects/tcl/rss",
+          "pattern": "<link>(https://sourceforge.net/.+/tk(9\\.0\\.[\\d\\.]*\\d)-src.tar.gz)/download"
+        }
+      }
+    ]
+  }
+}

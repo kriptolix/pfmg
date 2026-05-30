@@ -1,0 +1,36 @@
+{
+  "header": {
+    "id": "transmission",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "transmission",
+    "buildsystem": "cmake-ninja",
+    "build-options": {
+      "env": {
+        "CMAKE_POLICY_VERSION_MINIMUM": "3.5"
+      }
+    },
+    "config-opts": [
+      "-DENABLE_CLI=OFF",
+      "-DENABLE_TESTS=OFF",
+      "-DENABLE_MAC=OFF",
+      "-DENABLE_DAEMON=ON",
+      "-DENABLE_GTK=OFF"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/transmission/transmission",
+        "tag": "4.0.5",
+        "commit": "a6fe2a64aa7eca089f96006cf082a12f0cde937f"
+      },
+      {
+        "type": "patch",
+        "path": "transmission_pdeathsig.patch"
+      }
+    ]
+  }
+}

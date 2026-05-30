@@ -1,0 +1,44 @@
+{
+  "header": {
+    "id": "wickeditor",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "WickEditor",
+    "buildsystem": "simple",
+    "build-options": {
+      "env": {
+        "XDG_CACHE_HOME": "/run/build/WickEditor/flatpak-node/cache",
+        "npm_config_cache": "/run/build/WickEditor/flatpak-node/npm-cache",
+        "npm_config_nodedir": "/usr/lib/sdk/node14",
+        "npm_config_offline": "true"
+      }
+    },
+    "subdir": "main",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/Wicklets/wick-editor.git",
+        "dest": "main",
+        "commit": "f34f0d9512d7165e74c1910ea1aba9173ab8dec2"
+      },
+      "generated-sources.json",
+      {
+        "type": "script",
+        "dest-filename": "run.sh",
+        "commands": [
+          "zypak-wrapper.sh /app/main/wick-editor \"$@\""
+        ]
+      }
+    ],
+    "build-commands": [
+      "jq '.build.linux.target=\"dir\"' <<<$(<package.json) > package.json",
+      "npm install --offline",
+      ". ../flatpak-node/electron-builder-arch-args.sh\nnpm run package-linux -- $ELECTRON_BUILDER_ARCH_ARGS  --linux --dir\n",
+      "cp -a dist/linux*unpacked /app/main",
+      "install -Dm755 -t /app/bin/ ../run.sh"
+    ]
+  }
+}

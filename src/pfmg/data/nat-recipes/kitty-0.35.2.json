@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "kitty",
+    "version": "0.35.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "kitty",
+    "buildsystem": "simple",
+    "build-commands": [
+      "install -Dm0775 -t /app/bin bin/kitty",
+      "cp -rn lib/libpython3.12.so.1.0 /app/lib",
+      "cp -rn lib/kitty-extensions /app/lib"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/kovidgoyal/kitty/releases/download/v0.35.2/kitty-0.35.2-x86_64.txz",
+        "sha256": "a49bb1ecd05495178a50958960a6377db6bbbfbe647b5c5ecae9bd14ded93acc",
+        "strip-components": 0
+      }
+    ]
+  }
+}

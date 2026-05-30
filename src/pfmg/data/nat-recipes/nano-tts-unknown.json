@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "nano-tts",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "nano-tts",
+    "buildsystem": "simple",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/gmn/nanotts",
+        "commit": "d8b91f3d9d524c30f6fe8098ea7a0a638c889cf9"
+      }
+    ],
+    "build-commands": [
+      "make CFLAGS='-Wno-error=incompatible-pointer-types'",
+      "install -Dm755 nanotts /app/bin/nanotts-real/nanotts",
+      "mkdir -p /app/share/pico/",
+      "cp -r lang /app/share/pico/"
+    ]
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "header": {
+    "id": "q4wine",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "q4wine",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
+      "-DLIBS_ENTRY_PATH=/app/lib",
+      "-DWITH_DBUS=ON"
+    ],
+    "post-install": [
+      "install -Dm644 -t /app/share/appdata/ ${FLATPAK_ID}.appdata.xml"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/brezerk/q4wine.git",
+        "tag": "v1.4.2",
+        "commit": "f506d89976c427d4878ac968db448bf7dd8cdbe2"
+      },
+      {
+        "type": "file",
+        "path": "ua.org.brezblock.q4wine.appdata.xml",
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://api.github.com/repos/brezerk/q4wine/releases/latest",
+          "tag-query": ".tag_name",
+          "timestamp-query": ".published_at"
+        }
+      }
+    ],
+    "modules": [
+      {
+        "name": "fuseiso",
+        "sources": [
+          {
+            "type": "archive",
+            "url": "https://downloads.sourceforge.net/fuseiso/fuseiso-20070708.tar.bz2",
+            "sha256": "8b242e077d66cd20900c59c905ff90b4c934b0613dd5a20facb0b1260ac5fd88"
+          }
+        ],
+        "modules": [
+          {
+            "name": "libfuse",
+            "config-opts": [
+              "--enable-lib"
+            ],
+            "build-options": {
+              "env": {
+                "MOUNT_FUSE_PATH": "/app/bin",
+                "INIT_D_PATH": "/app/etc/init.d",
+                "UDEV_RULES_PATH": "/app/etc/udev/rules.d",
+                "ACLOCAL_PATH": "/usr/share/gettext/m4/"
+              }
+            },
+            "sources": [
+              {
+                "type": "archive",
+                "url": "https://github.com/libfuse/libfuse/archive/fuse-2.9.9.tar.gz",
+                "sha256": "e57a24721177c3b3dd71cb9239ca46b4dee283db9388d48f7ccd256184982194"
+              },
+              {
+                "type": "shell",
+                "commands": [
+                  "./makeconf.sh"
+                ]
+              },
+              {
+                "type": "patch",
+                "paths": [
+                  "fuse-closefrom.patch"
+                ]
+              }
+            ],
+            "cleanup": [
+              "/etc",
+              "/include",
+              "/lib/pkgconfig"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "icoutils",
+        "sources": [
+          {
+            "type": "archive",
+            "url": "http://savannah.nongnu.org/download/icoutils/icoutils-0.32.3.tar.bz2",
+            "sha256": "17abe02d043a253b68b47e3af69c9fc755b895db68fdc8811786125df564c6e0"
+          },
+          {
+            "type": "patch",
+            "paths": [
+              "icoutils-gcc15.patch"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

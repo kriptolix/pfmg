@@ -1,0 +1,33 @@
+{
+  "header": {
+    "id": "libcloudproviders",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libcloudproviders",
+    "buildsystem": "meson",
+    "config-opts": [
+      "-Dvapigen=false",
+      "-Dintrospection=false"
+    ],
+    "cleanup": [
+      "/include"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://gitlab.gnome.org/World/libcloudproviders.git",
+        "tag": "0.4.0",
+        "commit": "510f0eee666e4f99e8b11eb55945347db371b47c",
+        "x-checker-data": {
+          "type": "anitya",
+          "tag-template": "$version",
+          "stable-only": true,
+          "project-id": 21207
+        }
+      }
+    ]
+  }
+}

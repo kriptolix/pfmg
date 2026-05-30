@@ -1,0 +1,60 @@
+{
+  "header": {
+    "id": "sysdvr-client",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "SysDVR-Client",
+    "buildsystem": "simple",
+    "build-options": {
+      "append-path": "/usr/lib/sdk/dotnet8/bin",
+      "append-ld-library-path": "/usr/lib/sdk/dotnet8/lib",
+      "env": {
+        "PKG_CONFIG_PATH": "/app/lib/pkgconfig:/app/share/pkgconfig:/usr/lib/pkgconfig:/usr/share/pkgconfig:/usr/lib/sdk/dotnet8/lib/pkgconfig",
+        "DOTNET_CLI_TELEMETRY_OPTOUT": "1",
+        "DOTNET_NOLOGO": "1",
+        "DOTNET_SKIP_FIRST_TIME_EXPERIENCE": "1"
+      },
+      "arch": {
+        "aarch64": {
+          "env": {
+            "RUNTIME": "linux-arm64"
+          }
+        },
+        "x86_64": {
+          "env": {
+            "RUNTIME": "linux-x64"
+          }
+        }
+      }
+    },
+    "build-commands": [
+      "mkdir -p /app/bin",
+      "dotnet publish -c Release --source ./nuget-sources ./Client/Client.csproj --runtime $RUNTIME --self-contained true",
+      "cp -r ./Client/bin/Release/net8.0/$RUNTIME/publish /app/SysDVR-Client",
+      "ln -s /app/SysDVR-Client/SysDVR-Client /app/bin/SysDVR-Client",
+      "ln -s /usr/lib/x86_64-linux-gnu/libSDL2-2.0.so.0 /app/lib/libSDL2.so",
+      "ln -s /usr/lib/x86_64-linux-gnu/libSDL2_image-2.0.so.0 /app/lib/libSDL2_image.so",
+      "ln -s /usr/lib/x86_64-linux-gnu/libSDL2_mixer-2.0.so.0 /app/lib/libSDL2_mixer.so",
+      "ln -s /usr/lib/x86_64-linux-gnu/libSDL2_net-2.0.so.0 /app/lib/libSDL2_net.so",
+      "ln -s /usr/lib/x86_64-linux-gnu/libSDL2_ttf-2.0.so.0 /app/lib/libSDL2_ttf.so"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/exelix11/SysDVR.git",
+        "tag": "v6.1.1",
+        "commit": "6e138497be3adc64e0e1f6a14c6b1fe11869f91c",
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://api.github.com/repos/exelix11/SysDVR/tags",
+          "tag-query": "first | .name",
+          "version-query": "$tag | sub(\"^v\"; \"\")"
+        }
+      },
+      "nuget-sources.json"
+    ]
+  }
+}

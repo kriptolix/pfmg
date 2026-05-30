@@ -1,0 +1,82 @@
+{
+  "header": {
+    "id": "zquest",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "zquest",
+    "buildsystem": "cmake",
+    "builddir": true,
+    "build-options": {
+      "append-path": "/usr/lib/sdk/llvm17/bin",
+      "prepend-ld-library-path": "/usr/lib/sdk/llvm17/lib"
+    },
+    "config-opts": [
+      "-D CMAKE_C_COMPILER=clang",
+      "-D CMAKE_CXX_COMPILER=clang++",
+      "-D RELEASE_TAG=2.55.13",
+      "-D RELEASE_CHANNEL=2.55",
+      "-D REPO=ZQuestClassic/ZQuestClassic",
+      "-D FETCHCONTENT_SOURCE_DIR_ALLEGRO5=../deps/allegro5",
+      "-D FETCHCONTENT_SOURCE_DIR_GME_EXTERNAL=../deps/gme",
+      "-D FETCHCONTENT_SOURCE_DIR_ASMJIT=../deps/asmjit",
+      "-D FETCHCONTENT_SOURCE_DIR_NATIVEFILEDIALOG=../deps/nfd",
+      "-D FETCHCONTENT_SOURCE_DIR_JSON=../deps/json",
+      "-D FETCHCONTENT_SOURCE_DIR_STDUUID=../deps/stduuid",
+      "-D WANT_VENDORED_ZLIB=OFF"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/ZQuestClassic/ZQuestClassic",
+        "commit": "5feb08b0f8ca51c5329522fb9ba531ab349b5677",
+        "tag": "2.55.13",
+        "disable-shallow-clone": true
+      },
+      {
+        "type": "git",
+        "url": "https://github.com/connorjclark/allegro5",
+        "tag": "3d5eda1aa2be689a057b99d1050c425ec40ea57e",
+        "dest": "deps/allegro5"
+      },
+      {
+        "type": "git",
+        "url": "https://github.com/libgme/game-music-emu",
+        "tag": "05a2aa29e8eae29316804fdd28ceaa96c74a1531",
+        "dest": "deps/gme"
+      },
+      {
+        "type": "git",
+        "url": "https://github.com/connorjclark/asmjit",
+        "tag": "6d153ad8e13984841c2c642c0fa11e60f41e54dc",
+        "dest": "deps/asmjit"
+      },
+      {
+        "type": "git",
+        "url": "https://github.com/btzy/nativefiledialog-extended",
+        "tag": "660493307dd6a8d7fe5fa77cb1c23cbb18ff17c3",
+        "dest": "deps/nfd"
+      },
+      {
+        "type": "git",
+        "url": "https://github.com/mariusbancila/stduuid",
+        "tag": "3afe7193facd5d674de709fccc44d5055e144d7a",
+        "dest": "deps/stduuid"
+      },
+      {
+        "type": "shell",
+        "commands": [
+          "cd deps/stduuid && git apply ../../third_party/stduuid.patch"
+        ]
+      },
+      {
+        "type": "archive",
+        "url": "https://github.com/nlohmann/json/releases/download/v3.11.3/json.tar.xz",
+        "sha256": "d6c65aca6b1ed68e7a182f4757257b107ae403032760ed6ef121c9d55e81757d",
+        "dest": "deps/json"
+      }
+    ]
+  }
+}

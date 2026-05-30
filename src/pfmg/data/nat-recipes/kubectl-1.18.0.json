@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "kubectl",
+    "version": "1.18.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "kubectl",
+    "buildsystem": "simple",
+    "build-commands": [
+      "mv -f kubectl /app/kubectl",
+      "chmod 755 /app/kubectl"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://storage.googleapis.com/kubernetes-release/release/v1.18.0/bin/linux/amd64/kubectl",
+        "sha256": "bb16739fcad964c197752200ff89d89aad7b118cb1de5725dc53fe924c40e3f7"
+      }
+    ]
+  }
+}

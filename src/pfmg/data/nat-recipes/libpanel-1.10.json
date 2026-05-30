@@ -1,0 +1,29 @@
+{
+  "header": {
+    "id": "libpanel",
+    "version": "1.10",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libpanel",
+    "buildsystem": "meson",
+    "config-opts": [
+      "-Ddocs=disabled",
+      "-Dintrospection=disabled",
+      "-Dvapi=false"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.gnome.org/sources/libpanel/1.10/libpanel-1.10.4.tar.xz",
+        "sha256": "593888a7691f0af8aaa6e193c9e14afa86a810c0c2f27515c6d813f18733b1cd",
+        "x-checker-data": {
+          "type": "gnome",
+          "name": "libpanel",
+          "stable-only": true
+        }
+      }
+    ]
+  }
+}

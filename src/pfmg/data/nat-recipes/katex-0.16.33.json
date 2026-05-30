@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "katex",
+    "version": "0.16.33",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "katex",
+    "buildsystem": "simple",
+    "build-options": {
+      "env": {
+        "DEST": "/app/share/iotas/media/"
+      }
+    },
+    "build-commands": [
+      "mkdir -p ${DEST}/js/",
+      "cp katex.min.js ${DEST}/js/",
+      "mkdir -p ${DEST}/css/web/",
+      "cp katex.min.css ${DEST}/css/web/",
+      "mkdir -p ${DEST}/css/web/fonts/",
+      "cp fonts/*.woff2 ${DEST}/css/web/fonts/"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/KaTeX/KaTeX/releases/download/v0.16.33/katex.tar.gz",
+        "sha256": "c6db1f4b1d6f718421079196edf57ab7f81b0daa622be6c24ad57c58e95cd8da"
+      }
+    ]
+  }
+}

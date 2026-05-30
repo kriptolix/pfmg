@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-sphinxcontrib-htmlhelp",
+    "version": "2.1.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-sphinxcontrib-htmlhelp",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"sphinxcontrib-htmlhelp==2.1.0\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/0a/7b/18a8c0bcec9182c05a0b3ec2a776bba4ead82750a55ff798e8d406dae604/sphinxcontrib_htmlhelp-2.1.0-py3-none-any.whl",
+        "sha256": "166759820b47002d22914d64a075ce08f4c46818e17cfc9470a9786b759b19f8"
+      }
+    ]
+  }
+}

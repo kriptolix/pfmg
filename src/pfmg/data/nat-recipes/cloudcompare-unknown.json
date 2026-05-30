@@ -1,0 +1,85 @@
+{
+  "header": {
+    "id": "cloudcompare",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "CloudCompare",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/CloudCompare/CloudCompare.git",
+        "commit": "8660dcc86da2d86066649dc3e8438a813d310dc7"
+      },
+      {
+        "type": "patch",
+        "path": "patches/cc-treeiso.patch"
+      },
+      {
+        "type": "git",
+        "url": "https://github.com/tmontaigu/CloudCompare-PythonRuntime.git",
+        "commit": "a07c38407455bb0a7bd924bc65c3c26e6399bc15",
+        "dest": "plugins/private/CloudCompare-PythonRuntime"
+      },
+      {
+        "type": "patch",
+        "path": "patches/CloudCompare-PythonRuntime.patch"
+      }
+    ],
+    "builddir": true,
+    "build-options": {
+      "cxxflags": "-I/usr/include/python3.11 -Wno-deprecated-declarations"
+    },
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DBUILD_SHARED_LIBS=OFF",
+      "-DCCCORELIB_USE_CGAL=ON",
+      "-DCCCORELIB_USE_TBB=ON",
+      "-DOPTION_USE_GDAL=ON",
+      "-DOPTION_USE_DXF_LIB=ON",
+      "-DOPTION_USE_SHAPE_LIB=ON",
+      "-DEIGEN_ROOT_DIR=/app/include/eigen3",
+      "-DPLUGIN_STANDARD_3DMASC=ON",
+      "-DPLUGIN_GL_QEDL=ON",
+      "-DPLUGIN_GL_QSSAO=ON",
+      "-DPLUGIN_IO_QADDITIONAL=ON",
+      "-DPLUGIN_IO_QCORE=ON",
+      "-DPLUGIN_IO_QCSV_MATRIX=ON",
+      "-DPLUGIN_IO_QE57=ON",
+      "-DPLUGIN_IO_QPHOTOSCAN=ON",
+      "-DPLUGIN_IO_QLAS=ON",
+      "-DPLUGIN_STANDARD_QANIMATION=ON",
+      "-DQANIMATION_WITH_FFMPEG_SUPPORT=ON",
+      "-DPLUGIN_STANDARD_QBROOM=ON",
+      "-DPLUGIN_STANDARD_QCANUPO=ON",
+      "-DPLUGIN_STANDARD_QCLOUDLAYERS=ON",
+      "-DPLUGIN_STANDARD_QCOMPASS=ON",
+      "-DPLUGIN_STANDARD_QCOLORIMETRIC_SEGMENTER=ON",
+      "-DPLUGIN_STANDARD_QCSF=ON",
+      "-DPLUGIN_STANDARD_QFACETS=ON",
+      "-DPLUGIN_STANDARD_QHOUGH_NORMALS=ON",
+      "-DPLUGIN_STANDARD_QHPR=ON",
+      "-DPLUGIN_STANDARD_QM3C2=ON",
+      "-DPLUGIN_STANDARD_MASONRY_QAUTO_SEG=ON",
+      "-DPLUGIN_STANDARD_MASONRY_QMANUAL_SEG=ON",
+      "-DPLUGIN_STANDARD_QMPLANE=ON",
+      "-DPLUGIN_STANDARD_QPCL=ON",
+      "-DPLUGIN_STANDARD_QPCV=ON",
+      "-DPLUGIN_STANDARD_QPOISSON_RECON=ON",
+      "-DPLUGIN_STANDARD_QSRA=ON",
+      "-DPLUGIN_STANDARD_QTREEISO=ON",
+      "-DPLUGIN_PYTHON=ON",
+      "-DPLUGIN_PYTHON_USE_EMBEDDED_MODULES=ON"
+    ],
+    "post-install": [
+      "install -d /app/share/icons/hicolor/256x256/apps",
+      "cp ${FLATPAK_BUILDER_BUILDDIR}/qCC/images/icon/cc_icon_256.png /app/share/icons/hicolor/256x256/apps/org.cloudcompare.CloudCompare.png",
+      "chmod 644 /app/share/icons/hicolor/256x256/apps/org.cloudcompare.CloudCompare.png",
+      "cp ${FLATPAK_BUILDER_BUILDDIR}/qCC/images/icon/cc_viewer_icon_256.png /app/share/icons/hicolor/256x256/apps/org.cloudcompare.CloudCompare.Viewer.png",
+      "chmod 644 /app/share/icons/hicolor/256x256/apps/org.cloudcompare.CloudCompare.Viewer.png"
+    ]
+  }
+}

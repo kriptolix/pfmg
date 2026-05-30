@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "qtx11extras",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "qtx11extras",
+    "buildsystem": "qmake",
+    "cleanup": [
+      "/bin"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://invent.kde.org/qt/qt/qtx11extras.git",
+        "commit": "0dfaf36ec6f642a0fd583ce1cc33a31eb6b3328e"
+      }
+    ]
+  }
+}

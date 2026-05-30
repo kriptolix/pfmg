@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "gr-iqbal",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "gr-iqbal",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DENABLE_DOXYGEN=OFF"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://gitea.osmocom.org/sdr/gr-iqbal.git",
+        "tag": "v0.38.3",
+        "commit": "6782a1f934bc6c3bd293d34ab7453a85b00f4fab"
+      }
+    ]
+  }
+}

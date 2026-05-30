@@ -1,0 +1,20 @@
+{
+  "header": {
+    "id": "xsel",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "xsel",
+    "buildsystem": "autotools",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/kfish/xsel.git",
+        "tag": "1.2.1",
+        "commit": "8c89a9225ea898b67c5a067d1a7f8e78f0a458aa"
+      }
+    ]
+  }
+}

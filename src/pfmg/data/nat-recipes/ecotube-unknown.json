@@ -1,0 +1,324 @@
+{
+  "header": {
+    "id": "ecotube",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "ecotube",
+    "buildsystem": "meson",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/ecotubehq/player",
+        "tag": "26-04-02",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^([\\d-]+)$",
+          "is-important": true
+        }
+      }
+    ],
+    "modules": [
+      {
+        "name": "libmpv",
+        "cleanup": [
+          "/share/applications",
+          "/share/bash-completion",
+          "/share/doc",
+          "/share/icons",
+          "/share/zsh"
+        ],
+        "buildsystem": "meson",
+        "config-opts": [
+          "-Dlibmpv=true",
+          "-Dbuild-date=false",
+          "-Dalsa=disabled",
+          "-Djack=disabled",
+          "-Dopenal=disabled",
+          "-Dopensles=disabled",
+          "-Dgl=enabled",
+          "-Dlibarchive=enabled",
+          "-Dlcms2=enabled",
+          "-Dlua=enabled",
+          "-Drubberband=enabled",
+          "-Duchardet=enabled",
+          "-Dwayland=enabled",
+          "-Dx11=disabled",
+          "-Dbuildtype=release",
+          "-Doptimization=2",
+          "-Db_lto=true",
+          "-Db_ndebug=true"
+        ],
+        "sources": [
+          {
+            "type": "archive",
+            "url": "https://github.com/mpv-player/mpv/archive/v0.40.0.tar.gz",
+            "sha256": "10a0f4654f62140a6dd4d380dcf0bbdbdcf6e697556863dc499c296182f081a3",
+            "x-checker-data": {
+              "type": "anitya",
+              "project-id": 5348,
+              "stable-only": true,
+              "url-template": "https://github.com/mpv-player/mpv/archive/v$version.tar.gz"
+            }
+          }
+        ],
+        "modules": [
+          {
+            "name": "luajit",
+            "no-autogen": true,
+            "cleanup": [
+              "/bin"
+            ],
+            "sources": [
+              {
+                "type": "archive",
+                "url": "https://github.com/LuaJIT/LuaJIT/archive/refs/tags/v2.1.0-beta1.tar.gz",
+                "sha256": "3d10de34d8020d7035193013f07c93fc7f16fcf0bb28fc03f572a21a368a5f2a"
+              },
+              {
+                "type": "shell",
+                "commands": [
+                  "sed -i 's|/usr/local|/app|' ./Makefile"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "libv4l2",
+            "buildsystem": "meson",
+            "cleanup": [
+              "/sbin",
+              "/bin",
+              "/share/doc"
+            ],
+            "config-opts": [
+              "-Dbpf=disabled",
+              "-Dudevdir=/app/lib/udev",
+              "-Dsystemdsystemunitdir=/dev/null"
+            ],
+            "sources": [
+              {
+                "type": "archive",
+                "url": "https://linuxtv.org/downloads/v4l-utils/v4l-utils-1.28.1.tar.xz",
+                "sha256": "0fa075ce59b6618847af6ea191b6155565ccaa44de0504581ddfed795a328a82",
+                "x-checker-data": {
+                  "type": "anitya",
+                  "project-id": 9998,
+                  "stable-only": true,
+                  "url-template": "https://linuxtv.org/downloads/v4l-utils/v4l-utils-$version.tar.xz"
+                }
+              }
+            ]
+          },
+          {
+            "name": "nv-codec-headers",
+            "cleanup": [
+              "*"
+            ],
+            "no-autogen": true,
+            "make-install-args": [
+              "PREFIX=/app"
+            ],
+            "sources": [
+              {
+                "type": "git",
+                "url": "https://git.videolan.org/git/ffmpeg/nv-codec-headers.git",
+                "tag": "n13.0.19.0",
+                "commit": "e844e5b26f46bb77479f063029595293aa8f812d",
+                "x-checker-data": {
+                  "type": "git",
+                  "tag-pattern": "^n([\\d.]+)$"
+                }
+              }
+            ]
+          },
+          {
+            "name": "libopenmpt",
+            "config-opts": [
+              "--disable-static",
+              "--disable-tests",
+              "--disable-examples",
+              "--disable-openmpt123",
+              "--disable-doxygen-doc",
+              "--without-portaudio"
+            ],
+            "cleanup": [
+              "/share/doc"
+            ],
+            "sources": [
+              {
+                "type": "archive",
+                "url": "https://lib.openmpt.org/files/libopenmpt/src/libopenmpt-0.7.9+release.autotools.tar.gz",
+                "sha256": "0386e918d75d797e79d5b14edd0847165d8b359e9811ef57652c0a356a2dfcf4",
+                "x-checker-data": {
+                  "type": "anitya",
+                  "project-id": 141468,
+                  "stable-only": true,
+                  "url-template": "https://lib.openmpt.org/files/libopenmpt/src/libopenmpt-$version+release.autotools.tar.gz"
+                }
+              }
+            ]
+          },
+          {
+            "name": "ffmpeg",
+            "cleanup": [
+              "/share/ffmpeg/examples"
+            ],
+            "config-opts": [
+              "--enable-shared",
+              "--disable-static",
+              "--enable-gnutls",
+              "--enable-gpl",
+              "--disable-doc",
+              "--disable-programs",
+              "--disable-encoders",
+              "--disable-muxers",
+              "--enable-encoder=png",
+              "--enable-encoder=libjxl",
+              "--enable-libv4l2",
+              "--enable-libdav1d",
+              "--enable-libjxl",
+              "--enable-libopenmpt",
+              "--enable-muxer=image2",
+              "--enable-muxer=rawvideo",
+              "--enable-muxer=mjpeg",
+              "--enable-encoder=bmp",
+              "--enable-encoder=rawvideo",
+              "--enable-filter=scale",
+              "--enable-filter=pad",
+              "--enable-filter=format"
+            ],
+            "sources": [
+              {
+                "type": "archive",
+                "url": "https://ffmpeg.org/releases/ffmpeg-7.1.1.tar.xz",
+                "sha256": "733984395e0dbbe5c046abda2dc49a5544e7e0e1e2366bba849222ae9e3a03b1",
+                "x-checker-data": {
+                  "type": "anitya",
+                  "project-id": 5405,
+                  "stable-only": true,
+                  "url-template": "https://ffmpeg.org/releases/ffmpeg-$version.tar.xz",
+                  "versions": {
+                    "<": "8"
+                  }
+                }
+              }
+            ]
+          },
+          {
+            "name": "libass",
+            "config-opts": [
+              "--disable-static"
+            ],
+            "sources": [
+              {
+                "type": "archive",
+                "url": "https://github.com/libass/libass/releases/download/0.17.3/libass-0.17.3.tar.xz",
+                "sha256": "eae425da50f0015c21f7b3a9c7262a910f0218af469e22e2931462fed3c50959",
+                "x-checker-data": {
+                  "type": "anitya",
+                  "project-id": 1560,
+                  "stable-only": true,
+                  "url-template": "https://github.com/libass/libass/releases/download/$version/libass-$version.tar.xz"
+                }
+              }
+            ]
+          },
+          {
+            "name": "uchardet",
+            "buildsystem": "cmake-ninja",
+            "config-opts": [
+              "-DCMAKE_BUILD_TYPE=Release",
+              "-DBUILD_STATIC=0",
+              "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
+            ],
+            "cleanup": [
+              "/bin"
+            ],
+            "sources": [
+              {
+                "type": "archive",
+                "url": "https://www.freedesktop.org/software/uchardet/releases/uchardet-0.0.8.tar.xz",
+                "sha256": "e97a60cfc00a1c147a674b097bb1422abd9fa78a2d9ce3f3fdcc2e78a34ac5f0",
+                "x-checker-data": {
+                  "type": "anitya",
+                  "project-id": 9265,
+                  "stable-only": true,
+                  "url-template": "https://www.freedesktop.org/software/uchardet/releases/uchardet-$version.tar.xz"
+                }
+              }
+            ]
+          },
+          {
+            "name": "rubberband",
+            "buildsystem": "meson",
+            "config-opts": [
+              "-Ddefault_library=shared"
+            ],
+            "cleanup": [
+              "/lib/ladspa"
+            ],
+            "sources": [
+              {
+                "type": "archive",
+                "url": "https://breakfastquay.com/files/releases/rubberband-3.3.0.tar.bz2",
+                "sha256": "d9ef89e2b8ef9f85b13ac3c2faec30e20acf2c9f3a9c8c45ce637f2bc95e576c",
+                "x-checker-data": {
+                  "type": "anitya",
+                  "project-id": 4222,
+                  "stable-only": true,
+                  "url-template": "https://breakfastquay.com/files/releases/rubberband-$version.tar.bz2"
+                }
+              }
+            ]
+          },
+          {
+            "name": "mujs",
+            "cleanup": [
+              "/lib/libmujs.a"
+            ],
+            "no-autogen": true,
+            "make-args": [
+              "release",
+              "prefix=/app"
+            ],
+            "make-install-args": [
+              "prefix=/app",
+              "install-shared"
+            ],
+            "sources": [
+              {
+                "type": "git",
+                "url": "https://github.com/ccxvii/mujs",
+                "tag": "1.3.5",
+                "commit": "0df0707f2f10187127e36acfbc3ba9b9ca5b5cf0",
+                "x-checker-data": {
+                  "type": "git",
+                  "tag-pattern": "^([\\d.]+)$"
+                }
+              }
+            ]
+          },
+          {
+            "name": "libplacebo",
+            "buildsystem": "meson",
+            "sources": [
+              {
+                "type": "git",
+                "url": "https://github.com/haasn/libplacebo.git",
+                "commit": "cee9b076f2c63104ccfd497fa79c39a867293ec4",
+                "x-checker-data": {
+                  "type": "git",
+                  "tag-pattern": "^v([\\d.]+)$"
+                },
+                "tag": "v7.360.1"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

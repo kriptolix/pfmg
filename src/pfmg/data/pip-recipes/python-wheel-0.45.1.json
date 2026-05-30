@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python-wheel",
+    "version": "0.45.1",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python-wheel",
+    "buildsystem": "simple",
+    "build-commands": [
+      "/app/bin/pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} --no-build-isolation wheel"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/source/w/wheel/wheel-0.45.1.tar.gz",
+        "sha256": "661e1abd9198507b1409a20c02106d9670b2576e916d58f520316666abca6729"
+      }
+    ]
+  }
+}

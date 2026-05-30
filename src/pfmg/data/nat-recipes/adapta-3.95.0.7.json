@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "adapta",
+    "version": "3.95.0.7",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "Adapta",
+    "config-opts": [
+      "--prefix=/usr/share/runtime",
+      "--disable-light",
+      "--disable-dark",
+      "--disable-compact"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/adapta-project/adapta-gtk-theme-flatpak/archive/3.95.0.7.tar.gz",
+        "sha256": "858c76d7b20116f19444d369c20141835e371557cccb7a5a9a2f2c56cf69ca60"
+      }
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-helpdev",
+    "version": "0.7.1",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-helpdev",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"helpdev==0.7.1\""
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/0c/af/b7549206bf1b4c618dfefb7650bb09be80fdbe1858e5ab4f1f69db51d9bb/helpdev-0.7.1-py3-none-any.whl",
+        "sha256": "779a761b18c2d96fb181aa699609f802347806125f2fee2f60dad875a625e38e"
+      }
+    ]
+  }
+}

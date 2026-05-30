@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "wxlua",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "wxLua",
+    "buildsystem": "cmake-ninja",
+    "subdir": "wxLua",
+    "config-opts": [
+      "-DwxWidgets_CONFIG_EXECUTABLE=/app/bin/wx-config",
+      "-DwxLua_LUA_LIBRARY_USE_BUILTIN=OFF",
+      "-DwxLua_LUA_LIBRARY_VERSION=5.1",
+      "-DwxLua_LUA_LIBRARY_BUILD_SHARED=ON",
+      "-DBUILD_SHARED_LIBS=ON"
+    ],
+    "post-install": [
+      "install -d ${FLATPAK_DEST}/lib/lua/5.1",
+      "mv ${FLATPAK_DEST}/lib/{lib,lua/5.1/}wx.so"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/pkulchenko/wxlua",
+        "tag": "v3.0.0.9",
+        "commit": "c6b71e91e66775d8397ad995410ecb5176e85b51"
+      }
+    ]
+  }
+}

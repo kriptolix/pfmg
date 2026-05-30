@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "ancient-libstdc++",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "ancient-libstdc++",
+    "buildsystem": "simple",
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://www.pro-linux.de/files/rollemup/libstdc++.so.2.8",
+        "sha256": "51481e2aaea55bfe3b69b5819257c7a0057c4e4331f5ad0a904e481b41da73af"
+      }
+    ],
+    "build-commands": [
+      "install -D libstdc++.so.2.8 /app/lib/libstdc++.so.2.8"
+    ]
+  }
+}

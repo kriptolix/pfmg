@@ -1,0 +1,34 @@
+{
+  "header": {
+    "id": "libprotobuf-c",
+    "version": "1.5.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libprotobuf-c",
+    "buildsystem": "autotools",
+    "config-opts": [
+      "CFLAGS=-fPIC"
+    ],
+    "post-install": [
+      "rm /app/lib/*.so"
+    ],
+    "cleanup": [
+      "*"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/protobuf-c/protobuf-c/releases/download/v1.5.2/protobuf-c-1.5.2.tar.gz",
+        "sha512": "78dc72988d7e8232c1b967849aa00939bc05ab7d39b86a8e2af005e38aa4ef4c9b03920d51fb5337399d980e65f35d11bd4742bea745a893ecc909f56a51c9ac",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 3716,
+          "stable-only": true,
+          "url-template": "https://github.com/protobuf-c/protobuf-c/releases/download/v$version/protobuf-c-$version.tar.gz"
+        }
+      }
+    ]
+  }
+}

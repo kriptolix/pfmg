@@ -1,0 +1,29 @@
+{
+  "header": {
+    "id": "akonadi-calendar",
+    "version": "25.12.3",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "akonadi-calendar",
+    "config-opts": [
+      "-DBUILD_TESTING=OFF",
+      "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+    ],
+    "buildsystem": "cmake-ninja",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.kde.org/stable/release-service/25.12.3/src/akonadi-calendar-25.12.3.tar.xz",
+        "sha256": "ac606d2210ba581167b0f17bc81dc60ed4c0de66daf9adcd55fce25c73c60014",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 8763,
+          "stable-only": true,
+          "url-template": "https://download.kde.org/stable/release-service/$version/src/akonadi-calendar-$version.tar.xz"
+        }
+      }
+    ]
+  }
+}

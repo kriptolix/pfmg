@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "jansson",
+    "version": "2.10",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "jansson",
+    "config-opts": [
+      "--enable-shared",
+      "--disable-static"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "http://www.digip.org/jansson/releases/jansson-2.10.tar.bz2",
+        "sha256": "241125a55f739cd713808c4e0089986b8c3da746da8b384952912ad659fa2f5a"
+      },
+      {
+        "type": "script",
+        "commands": [
+          "autoreconf --force --install"
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "header": {
+    "id": "pysrt",
+    "version": "1.1.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "pysrt",
+    "buildsystem": "simple",
+    "build-commands": [
+      "python3 setup.py install --prefix=/app --root=/"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://files.pythonhosted.org/packages/31/1a/0d858da1c6622dcf16011235a2639b0a01a49cecf812f8ab03308ab4de37/pysrt-1.1.2.tar.gz",
+        "sha256": "b4f844ba33e4e7743e9db746492f3a193dc0bc112b153914698e7c1cdeb9b0b9",
+        "x-checker-data": {
+          "type": "pypi",
+          "name": "pysrt"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "header": {
+    "id": "skia",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "skia",
+    "buildsystem": "simple",
+    "build-commands": [
+      "gn gen out/Release --args='is_official_build=true is_debug=false is_component_build=false target_os=\"linux\" target_cpu=\"x64\" skia_use_dng_sdk=false skia_use_system_libjpeg_turbo=false skia_use_libwebp_decode=false skia_use_libwebp_encode=false'",
+      "ninja -C out/Release skia",
+      "mkdir /app/skia_root",
+      "cp -r * /app/skia_root"
+    ],
+    "cleanup": [
+      "*"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "dest": "third_party/externals/sfntly",
+        "url": "https://github.com/googlefonts/sfntly.git",
+        "commit": "1e7adf313bd9c488a70015f8df8782f7c65e9ce7"
+      },
+      {
+        "type": "archive",
+        "dest": "third_party/externals/libjpeg-turbo",
+        "url": "https://downloads.sourceforge.net/project/libjpeg-turbo/2.0.4/libjpeg-turbo-2.0.4.tar.gz",
+        "sha256": "33dd8547efd5543639e890efbf2ef52d5a21df81faf41bb940657af916a23406"
+      },
+      {
+        "type": "git",
+        "url": "https://skia.googlesource.com/skia",
+        "commit": "76f4fff613b5ba4365d24dbd943a8ed47221f1e9"
+      }
+    ]
+  }
+}

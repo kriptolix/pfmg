@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "libpagemaker",
+    "version": "0.0.4",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libpagemaker",
+    "config-opts": [
+      "--without-docs",
+      "--disable-tools",
+      "--disable-werror"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://dev-www.libreoffice.org/src/libpagemaker-0.0.4.tar.xz",
+        "sha256": "66adacd705a7d19895e08eac46d1e851332adf2e736c566bef1164e7a442519d"
+      },
+      {
+        "type": "patch",
+        "path": "patches/libpagemaker-build.patch"
+      }
+    ],
+    "cleanup": [
+      "/include",
+      "/lib/pkgconfig",
+      "*.la"
+    ]
+  }
+}

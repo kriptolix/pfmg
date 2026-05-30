@@ -1,0 +1,47 @@
+{
+  "header": {
+    "id": "python3-sentry-sdk",
+    "version": "2.19.2",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-sentry-sdk",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"sentry-sdk==2.19.2\""
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/a5/32/8f6669fc4798494966bf446c8c4a162e0b5d893dff088afddf76414f70e1/certifi-2024.12.14-py3-none-any.whl",
+        "sha256": "1275f7a45be9464efc1173084eaa30f866fe2e47d389406136d332ed4967ec56"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/31/4d/74597bb6bcc23abc774b8901277652c61331a9d4d0a8d1bdb20679b9bbcb/sentry_sdk-2.19.2-py2.py3-none-any.whl",
+        "sha256": "ebdc08228b4d131128e568d696c210d846e5b9d70aa0327dec6b1272d9d40b84"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/c8/19/4ec628951a74043532ca2cf5d97b7b14863931476d117c471e8e2b1eb39f/urllib3-2.3.0-py3-none-any.whl",
+        "sha256": "1cee9ad369867bfdbbb48b7dd50374c0967a0bb7710050facf0dd6911440e3df"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/32/c0/5b8013b5a812701c72e3b1e2b378edaa6514d06bee6704a5ab0d7fa52931/setuptools-71.1.0.tar.gz",
+        "sha256": "032d42ee9fb536e33087fb66cac5f840eb9391ed05637b3f2a76a7c8fb477936"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/8a/98/2d9906746cdc6a6ef809ae6338005b3f21bb568bea3165cfc6a243fdc25c/wheel-0.45.1.tar.gz",
+        "sha256": "661e1abd9198507b1409a20c02106d9670b2576e916d58f520316666abca6729"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/d5/ae/09427bea9227a33ec834ed5461432752fd5d02b14f93dd68406c91684622/flit_core-3.10.1.tar.gz",
+        "sha256": "66e5b87874a0d6e39691f0e22f09306736b633548670ad3c09ec9db03c5662f7"
+      }
+    ]
+  }
+}

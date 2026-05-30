@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "astilectron-bundler-astilectron",
+    "version": "0.56.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "astilectron-bundler-astilectron",
+    "buildsystem": "simple",
+    "build-options": {
+      "env": {
+        "BUNDLER_CACHE": "/app/lib/astibundler/cache"
+      }
+    },
+    "build-commands": [
+      "install -Dm 644 astilectron-0.56.0.zip ${BUNDLER_CACHE}/astilectron-0.56.0.zip"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://github.com/asticode/astilectron/archive/v0.56.0.zip",
+        "sha256": "2725492843edaef0530543c041c5c7d9e43d4163f5c192fc8da11ce89fcaa0f5",
+        "dest-filename": "astilectron-0.56.0.zip"
+      }
+    ]
+  }
+}

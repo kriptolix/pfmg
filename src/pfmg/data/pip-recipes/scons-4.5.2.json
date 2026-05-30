@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "scons",
+    "version": "4.5.2",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "scons",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"scons\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/a1/a9/a160614f5630192e51bc6e35127d5b39ea6c457f07bc5e34063776370d0e/SCons-4.5.2-py3-none-any.whl",
+        "sha256": "2f66a1c5c485068a496c12356583eefb2d79e17177278c7334b12b460f0503ce"
+      }
+    ]
+  }
+}

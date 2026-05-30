@@ -1,0 +1,42 @@
+{
+  "header": {
+    "id": "webappreader",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "webappreader",
+    "buildsystem": "simple",
+    "build-commands": [
+      "mkdir -p /app/webappreader/",
+      "cp -r database /app/webappreader/database",
+      "cp -r pages /app/webappreader/pages",
+      "cp -r src /app/webappreader/src",
+      "cp -r ui /app/webappreader/ui",
+      "install -Dm644 constants.py -t /app/webappreader",
+      "install -Dm644 settings.py -t /app/webappreader",
+      "install -Dm644 tools.py -t /app/webappreader",
+      "install -Dm644 webappreader.py -t /app/webappreader",
+      "install -Dm644 src/logo_256.png /app/share/icons/hicolor/256x256/apps/org.mintguide.WebAppReader.png",
+      "install -Dm644 src/logo_512.png /app/share/icons/hicolor/512x512/apps/org.mintguide.WebAppReader.png",
+      "install -Dm755 webappreader.sh /app/bin/webappreader.sh",
+      "install -Dm644 flatpak/org.mintguide.WebAppReader.desktop /app/share/applications/org.mintguide.WebAppReader.desktop",
+      "install -Dm644 flatpak/org.mintguide.WebAppReader.metainfo.xml /app/share/metainfo/org.mintguide.WebAppReader.metainfo.xml"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/ShvonderSiN/WebAppReader.git",
+        "commit": "5cfd27c87384641f4169524a70292573e8040654"
+      },
+      {
+        "type": "script",
+        "commands": [
+          "python3 /app/webappreader/webappreader.py \"$@\""
+        ],
+        "dest-filename": "webappreader.sh"
+      }
+    ]
+  }
+}

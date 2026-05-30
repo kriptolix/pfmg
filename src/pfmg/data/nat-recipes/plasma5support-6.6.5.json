@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "plasma5support",
+    "version": "6.6.5",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "plasma5support",
+    "buildsystem": "cmake-ninja",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.kde.org/stable/plasma/6.6.5/plasma5support-6.6.5.tar.xz",
+        "sha256": "5f45687e2d281cdfc0666a0ad777adfcbbbb2534284ca6450d3aa7d700b9f763",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 8761,
+          "stable-only": true,
+          "url-template": "https://download.kde.org/stable/plasma/$version/plasma5support-$version.tar.xz"
+        }
+      }
+    ]
+  }
+}

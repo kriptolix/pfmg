@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "python3-material-color-utilities-python",
+    "version": "0.1.5",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-material-color-utilities-python",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"material-color-utilities-python\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/27/b5/92d404279fd5f4f0a17235211bb0f5ae7a0d9afb7f439086ec247441ed28/regex-2022.10.31.tar.gz",
+        "sha256": "a3a98921da9a1bf8457aeee6a551948a83601689e5ecdd736894ea9bbec77e83"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/bc/07/830784e061fb94d67649f3e438ff63cfb902dec6d48ac75aeaaac7c7c30e/Pillow-9.4.0.tar.gz",
+        "sha256": "a1c2d7780448eb93fbcc3789bf3916aa5720d942e37945f4056680317f1cd23e"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/31/65/a8e0f3e2bad0d4eabeb1931b22cdae08344a955f28022dc83420a128683c/material_color_utilities_python-0.1.5-py2.py3-none-any.whl",
+        "sha256": "48abd8695a1355ab3ad43fe314ca8664c66282a86fbf94a717571273bf422bdf"
+      }
+    ]
+  }
+}

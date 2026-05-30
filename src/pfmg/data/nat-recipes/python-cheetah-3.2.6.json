@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python-cheetah",
+    "version": "3.2.6",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python-cheetah",
+    "buildsystem": "simple",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://files.pythonhosted.org/packages/23/33/ace0250068afca106c1df34348ab0728e575dc9c61928d216de3e381c460/Cheetah3-3.2.6.post1.tar.gz",
+        "sha256": "58b5d84e5fbff6cf8e117414b3ea49ef51654c02ee887d155113c5b91d761967"
+      }
+    ],
+    "build-commands": [
+      "python setup.py install --prefix=/app --root=/"
+    ]
+  }
+}

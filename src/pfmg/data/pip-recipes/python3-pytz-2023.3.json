@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "python3-pytz",
+    "version": "2023.3",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-pytz",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"pytz\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/32/4d/aaf7eff5deb402fd9a24a1449a8119f00d74ae9c2efa79f8ef9994261fc2/pytz-2023.3.post1-py2.py3-none-any.whl",
+        "sha256": "ce42d816b81b68506614c11e8937d3aa9e41007ceb50bfdcb0749b921bf646c7",
+        "x-checker-data": {
+          "type": "pypi",
+          "name": "pytz",
+          "packagetype": "bdist_wheel"
+        }
+      }
+    ]
+  }
+}

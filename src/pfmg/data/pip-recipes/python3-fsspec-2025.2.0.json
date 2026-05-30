@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-fsspec",
+    "version": "2025.2.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-fsspec",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"fsspec==2025.2.0\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/e2/94/758680531a00d06e471ef649e4ec2ed6bf185356a7f9fbfbb7368a40bd49/fsspec-2025.2.0-py3-none-any.whl",
+        "sha256": "9de2ad9ce1f85e1931858535bc882543171d197001a0a5eb2ddc04f1781ab95b"
+      }
+    ]
+  }
+}

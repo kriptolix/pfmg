@@ -1,0 +1,31 @@
+{
+  "header": {
+    "id": "pd-l2ork",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "pd-l2ork",
+    "buildsystem": "autotools",
+    "subdir": "pd/src",
+    "config-opts": [
+      "--enable-portaudio",
+      "--enable-alsa",
+      "--disable-oss",
+      "--enable-jack"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/pd-l2ork/pd-l2ork/",
+        "tag": "20260425",
+        "commit": "5b463522eae95c45bae613f8695da92855424e7f"
+      },
+      {
+        "type": "patch",
+        "path": "patch/no-rsync-during-install.patch"
+      }
+    ]
+  }
+}

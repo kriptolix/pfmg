@@ -1,0 +1,116 @@
+{
+  "header": {
+    "id": "python3-syncedlyrics",
+    "version": "1.0.1",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-syncedlyrics",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"syncedlyrics\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/1a/39/47f9197bdd44df24d67ac8893641e16f386c984a0619ef2ee4c51fbbc019/beautifulsoup4-4.14.3-py3-none-any.whl",
+        "sha256": "0918bfe44902e6ad8d57732ba310582e98da931428d231a5ecb9e7c703a735bb",
+        "x-checker-data": {
+          "type": "pypi",
+          "name": "beautifulsoup4",
+          "packagetype": "bdist_wheel"
+        }
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/22/30/7cd8fdcdfbc5b869528b079bfb76dcdf6056b1a2097a662e5e8c04f42965/certifi-2026.4.22-py3-none-any.whl",
+        "sha256": "3cb2210c8f88ba2318d29b0388d1023c8492ff72ecdde4ebdaddbb13a31b1c4a",
+        "x-checker-data": {
+          "type": "pypi",
+          "name": "certifi",
+          "packagetype": "bdist_wheel"
+        }
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/db/8f/61959034484a4a7c527811f4721e75d02d653a35afb0b6054474d8185d4c/charset_normalizer-3.4.7-py3-none-any.whl",
+        "sha256": "3dce51d0f5e7951f8bb4900c257dad282f49190fdbebecd4ba99bcc41fef404d",
+        "x-checker-data": {
+          "type": "pypi",
+          "name": "charset-normalizer",
+          "packagetype": "bdist_wheel"
+        }
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/5d/13/ad7d7ca3808a898b4612b6fe93cde56b53f3034dcde235acb1f0e1df24c6/idna-3.13-py3-none-any.whl",
+        "sha256": "892ea0cde124a99ce773decba204c5552b69c3c67ffd5f232eb7696135bc8bb3",
+        "x-checker-data": {
+          "type": "pypi",
+          "name": "idna",
+          "packagetype": "bdist_wheel"
+        }
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/2c/21/ef6157213316e85790041254259907eb722e00b03480256c0545d98acd33/rapidfuzz-3.14.5.tar.gz",
+        "sha256": "ba10ac57884ce82112f7ed910b67e7fb6072d8ef2c06e30dc63c0f604a112e0e",
+        "x-checker-data": {
+          "type": "pypi",
+          "name": "rapidfuzz"
+        }
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/d7/8e/7540e8a2036f79a125c1d2ebadf69ed7901608859186c856fa0388ef4197/requests-2.33.1-py3-none-any.whl",
+        "sha256": "4e6d1ef462f3626a1f0a0a9c42dd93c63bad33f9f1c1937509b8c5c8718ab56a",
+        "x-checker-data": {
+          "type": "pypi",
+          "name": "requests",
+          "packagetype": "bdist_wheel"
+        }
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/46/2c/1462b1d0a634697ae9e55b3cecdcb64788e8b7d63f54d923fcd0bb140aed/soupsieve-2.8.3-py3-none-any.whl",
+        "sha256": "ed64f2ba4eebeab06cc4962affce381647455978ffc1e36bb79a545b91f45a95",
+        "x-checker-data": {
+          "type": "pypi",
+          "name": "soupsieve",
+          "packagetype": "bdist_wheel"
+        }
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/7f/ad/62d2a1cd2a251ea2d43185f2b98badb8acf97a42278ce424ea8a97d8f911/syncedlyrics-1.0.1-py3-none-any.whl",
+        "sha256": "31ca4322311b454f969e837c7350ecbef241f705f2122ea0183a2902a1a3791a",
+        "x-checker-data": {
+          "type": "pypi",
+          "name": "syncedlyrics",
+          "packagetype": "bdist_wheel"
+        }
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/18/67/36e9267722cc04a6b9f15c7f3441c2363321a3ea07da7ae0c0707beb2a9c/typing_extensions-4.15.0-py3-none-any.whl",
+        "sha256": "f0fa19c6845758ab08074a0cfa8b7aecb71c999ca73d62883bc25cc018c4e548",
+        "x-checker-data": {
+          "type": "pypi",
+          "name": "typing-extensions",
+          "packagetype": "bdist_wheel"
+        }
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/7f/3e/5db95bcf282c52709639744ca2a8b149baccf648e39c8cc87553df9eae0c/urllib3-2.7.0-py3-none-any.whl",
+        "sha256": "9fb4c81ebbb1ce9531cce37674bbc6f1360472bc18ca9a553ede278ef7276897",
+        "x-checker-data": {
+          "type": "pypi",
+          "name": "urllib3",
+          "packagetype": "bdist_wheel"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "link-grammar",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "link-grammar",
+    "cleanup": [
+      "/include",
+      "/lib/pkgconfig",
+      "/bin/link-parser"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/AbiWord/link-grammar.git",
+        "tag": "link-grammar-5.3.11",
+        "commit": "48fd63ebfeb570b418e1068ed434c8b17bf743f2"
+      }
+    ]
+  }
+}

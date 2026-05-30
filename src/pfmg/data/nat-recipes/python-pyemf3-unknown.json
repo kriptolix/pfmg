@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "python-pyemf3",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python-pyemf3",
+    "buildsystem": "simple",
+    "build-commands": [
+      "python3 -mpip install . --no-index --find-links=file://${PWD} --prefix=${FLATPAK_DEST} --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/jeremysanders/pyemf3",
+        "tag": "v3.3",
+        "commit": "b9a6824626c451c5a59135d669ab5f79d47632c9",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^v?([\\d.]+)$"
+        }
+      }
+    ]
+  }
+}

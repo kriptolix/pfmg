@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "heimdall",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "heimdall",
+    "buildsystem": "simple",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://people.ubuntu.com/~neothethird/heimdall-linux.zip",
+        "sha256": "b8abc6e274dedf98263ede30cbceef69f21134298905f319474c7814008eb78d"
+      }
+    ],
+    "build-commands": [
+      "install -Dm755 heimdall /app/lib/python3.11/site-packages/openandroidinstaller/bin/heimdall"
+    ]
+  }
+}

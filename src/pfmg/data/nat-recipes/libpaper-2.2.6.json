@@ -1,0 +1,37 @@
+{
+  "header": {
+    "id": "libpaper",
+    "version": "2.2.6",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libpaper",
+    "config-opts": [
+      "--disable-static"
+    ],
+    "cleanup": [
+      "/bin",
+      "/sbin"
+    ],
+    "sources": [
+      {
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 15136,
+          "url-template": "https://github.com/rrthomas/libpaper/releases/download/v${version}/libpaper-${version}.tar.gz"
+        },
+        "type": "archive",
+        "url": "https://github.com/rrthomas/libpaper/releases/download/v2.2.6/libpaper-2.2.6.tar.gz",
+        "sha256": "500d39dc58768ee09688738c8b5bfe07640ba2fd6c25a6dc78810eb69c719e93"
+      },
+      {
+        "type": "script",
+        "commands": [
+          "autoreconf -vfi"
+        ],
+        "dest-filename": "autogen.sh"
+      }
+    ]
+  }
+}

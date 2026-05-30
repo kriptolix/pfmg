@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "microlens-th",
+    "version": "0.4.3.15",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "microlens-th",
+    "buildsystem": "simple",
+    "builddir": false,
+    "build-commands": [
+      "echo '#! /usr/bin/env runhaskell' >Setup.txt",
+      "echo '> import Distribution.Simple' >>Setup.txt",
+      "echo '> main = defaultMain' >>Setup.txt",
+      "ln -s Setup.txt Setup.lhs || true",
+      "runhaskell Setup configure --prefix=/app",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "sources": [
+      {
+        "sha256": "0fceb3271297ad29a2bfa3e62953debbb44dba513c439a363acf625f954e45c9",
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/microlens-th-0.4.3.15/microlens-th-0.4.3.15.tar.gz"
+      },
+      {
+        "dest-filename": "microlens-th.cabal",
+        "sha256": "1b98beac6ed1ac00b8c235b248169d5e383f4a76f63faa33494ec5e7cdac544e",
+        "type": "file",
+        "url": "https://hackage.haskell.org/package/microlens-th-0.4.3.15/revision/0.cabal"
+      }
+    ]
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "header": {
+    "id": "tauonmb-git",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "tauonmb-git",
+    "buildsystem": "simple",
+    "build-options": {
+      "append-path": "/usr/lib/sdk/rust-stable/bin",
+      "env": {
+        "CARGO_HOME": "/run/build/tauonmb-git/cargo"
+      }
+    },
+    "build-commands": [
+      "cargo --offline fetch --manifest-path src/lrclib-solver/Cargo.toml --verbose",
+      "cargo build --release --offline --manifest-path src/lrclib-solver/Cargo.toml --bin lrclib-solver",
+      "cp src/lrclib-solver/target/release/lrclib-solver src/tauon/lrclib-solver",
+      "rm -rf src/lrclib-solver/target",
+      "bash run.sh 5",
+      "python3 compile_translations.py",
+      "rm -rf cargo maturin",
+      "mkdir -p /app/share/locale",
+      "mv src/tauon/locale /app/share/",
+      "mkdir -p /app/bin",
+      "cp -r * /app/bin/",
+      "mkdir -p /app/share/icons/hicolor/scalable/apps",
+      "mkdir -p /app/share/icons/hicolor/symbolic/apps",
+      "install -D extra/tauonmb.svg /app/share/icons/hicolor/scalable/apps/${FLATPAK_ID}.svg",
+      "install -D extra/tauonmb-symbolic.svg /app/share/icons/hicolor/symbolic/apps/${FLATPAK_ID}-symbolic.svg",
+      "install -D src/tauon/assets/icon-64.png /app/share/icons/hicolor/64x64/apps/${FLATPAK_ID}.png",
+      "install -D src/tauon/assets/icon-128.png /app/share/icons/hicolor/128x128/apps/${FLATPAK_ID}.png",
+      "install -D extra/com.github.taiko2k.tauonmb.appdata.xml /app/share/metainfo/${FLATPAK_ID}.appdata.xml",
+      "install -D extra/com.github.taiko2k.tauonmb.desktop /app/share/applications/${FLATPAK_ID}.desktop",
+      "install -D extra/com.github.taiko2k.tauonmb.sh /app/bin/com.github.taiko2k.tauonmb.sh"
+    ],
+    "sources": [
+      "lrclib-solver-cargo-sources.json",
+      {
+        "type": "git",
+        "url": "https://github.com/Taiko2k/Tauon.git",
+        "commit": "69871a599f787d5bc102dfbe94e0e3133a3d02ec"
+      }
+    ]
+  }
+}

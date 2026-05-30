@@ -1,0 +1,41 @@
+{
+  "header": {
+    "id": "wine-32bit",
+    "version": "8.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "wine-32bit",
+    "build-options": {
+      "libdir": "/app/wine/lib32",
+      "ldflags": "-L/app/lib32 -Wl,-z,relro,-z,now -Wl,--as-needed",
+      "ldflags-override": true,
+      "env": {
+        "CC": "i686-unknown-linux-gnu-gcc",
+        "CXX": "i686-unknown-linux-gnu-g++"
+      },
+      "prepend-pkg-config-path": "/app/lib32/pkgconfig:/usr/lib/i386-linux-gnu/pkgconfig"
+    },
+    "config-opts": [
+      "--disable-win16",
+      "--without-ldap",
+      "--without-cups",
+      "--without-gphoto",
+      "--without-gsm",
+      "--with-faudio"
+    ],
+    "make-install-args": [
+      "LDCONFIG=/bin/true",
+      "UPDATE_DESKTOP_DATABASE=/bin/true",
+      "INSTALL_PROGRAM_FLAGS=-s"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://dl.winehq.org/wine/source/8.0/wine-8.0.1.tar.xz",
+        "sha256": "22035f3836b4f9c3b1940ad90f9b9e3c1be09234236d2a80d893180535c75b7d"
+      }
+    ]
+  }
+}

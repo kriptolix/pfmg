@@ -1,0 +1,42 @@
+{
+  "header": {
+    "id": "soapuios",
+    "version": "5.9.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "soapuios",
+    "buildsystem": "simple",
+    "build-commands": [
+      "cp -TR app ${FLATPAK_DEST}",
+      "install -Dpm755 -t /app/bin soapui-launcher.sh",
+      "ln -s /usr/bin/xdg-open /app/bin/firefox"
+    ],
+    "cleanup": [
+      "/bin/*.log",
+      "/bin/actions",
+      "/bin/ext",
+      "/bin/listeners"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://dl.eviware.com/soapuios/5.9.1/SoapUI-5.9.1-linux-bin.tar.gz",
+        "sha256": "56523a4dc7ac6af28ea4a7ff47c4ba22e6dea64b6102b15ff099a2ed85061e3b",
+        "dest": "app",
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://api.github.com/repos/SmartBear/soapui/releases/latest",
+          "version-query": ".tag_name | sub(\"^v\"; \"\")",
+          "timestamp-query": ".published_at",
+          "url-query": "\"https://dl.eviware.com/soapuios/\\($version)/SoapUI-\\($version)-linux-bin.tar.gz\""
+        }
+      },
+      {
+        "type": "file",
+        "path": "soapui-launcher.sh"
+      }
+    ]
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "character-ps",
+    "version": "0.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "character-ps",
+    "buildsystem": "simple",
+    "builddir": false,
+    "build-commands": [
+      "echo '#! /usr/bin/env runhaskell' >Setup.txt",
+      "echo '> import Distribution.Simple' >>Setup.txt",
+      "echo '> main = defaultMain' >>Setup.txt",
+      "ln -s Setup.txt Setup.lhs || true",
+      "runhaskell Setup configure --prefix=/app",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "sources": [
+      {
+        "sha256": "22de71fde38b236d3e9168a832b5e1e75d1fb4f4028667bdf747b3b4c8c1529c",
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/character-ps-0.1/character-ps-0.1.tar.gz"
+      },
+      {
+        "dest-filename": "character-ps.cabal",
+        "sha256": "b38ed1c07ae49e7461e44ca1d00c9ca24d1dcb008424ccd919916f92fd48d9fe",
+        "type": "file",
+        "url": "https://hackage.haskell.org/package/character-ps-0.1/revision/0.cabal"
+      }
+    ]
+  }
+}

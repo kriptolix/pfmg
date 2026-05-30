@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "rubygems",
+    "version": "1.11.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "rubygems",
+    "buildsystem": "simple",
+    "build-commands": [
+      "gem install --local ffi-1.11.1.gem --no-document"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://rubygems.org/gems/ffi-1.11.1.gem",
+        "sha256": "90ae2a7fe7ac4c0af30650fba8b75d93ff3611803c4937248118797ae5edbb1a"
+      }
+    ]
+  }
+}

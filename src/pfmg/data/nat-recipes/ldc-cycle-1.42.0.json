@@ -1,0 +1,38 @@
+{
+  "header": {
+    "id": "ldc-cycle",
+    "version": "1.42.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "ldc-cycle",
+    "build-options": {
+      "prefix": "/usr/lib/sdk/ldc/cycle",
+      "append-path": "/usr/lib/sdk/ldc/bootstrap/bin"
+    },
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DLDC_WITH_LLD:BOOL=OFF",
+      "-DLDC_BUNDLE_LLVM_TOOLS=OFF"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/ldc-developers/ldc/releases/download/v1.42.0/ldc-1.42.0-src.tar.gz",
+        "sha256": "9bb0f628f869f7fc7b53c381a79742d29c17552c6f1a56b0a02aa289e65a0e3b",
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://api.github.com/repos/ldc-developers/ldc/releases/latest",
+          "tag-query": ".tag_name",
+          "version-query": "$tag | sub(\"^[vV]\"; \"\")",
+          "url-query": ".assets | map(select(.name==\"ldc-\\($version)-src.tar.gz\")) | first | .browser_download_url",
+          "is-main-source": true
+        }
+      }
+    ],
+    "cleanup": [
+      "*"
+    ]
+  }
+}

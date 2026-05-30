@@ -1,0 +1,29 @@
+{
+  "header": {
+    "id": "khealthcertificate",
+    "version": "26.04.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "khealthcertificate",
+    "config-opts": [
+      "-DBUILD_TESTING=OFF"
+    ],
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.kde.org/stable/release-service/26.04.1/src/khealthcertificate-26.04.1.tar.xz",
+        "sha256": "8d2b3bef90e78d35a99019466cfc8856d1775881925a2836b2fb9efb297b33c1",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 242958,
+          "stable-only": true,
+          "url-template": "https://download.kde.org/stable/release-service/$version/src/khealthcertificate-$version.tar.xz"
+        }
+      }
+    ]
+  }
+}

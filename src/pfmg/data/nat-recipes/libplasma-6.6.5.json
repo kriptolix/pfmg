@@ -1,0 +1,29 @@
+{
+  "header": {
+    "id": "libplasma",
+    "version": "6.6.5",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libplasma",
+    "config-opts": [
+      "-DBUILD_TESTING=OFF"
+    ],
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.kde.org/stable/plasma/6.6.5/libplasma-6.6.5.tar.xz",
+        "sha256": "82e02b2098f4bac90f28cdd4f9d3a4da4557440ec8347220d8fee293c1f98d8b",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 8761,
+          "stable-only": true,
+          "url-template": "https://download.kde.org/stable/plasma/$version/libplasma-$version.tar.xz"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "libopenshot-audio",
+    "version": "0.4.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libopenshot-audio",
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+    ],
+    "cleanup": [
+      "/bin",
+      "/share/doc"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/OpenShot/libopenshot-audio/archive/v0.4.0.tar.gz",
+        "sha256": "1abdedf9c8686c972c42225a283f518ed2ade445c2e454996b6709d8cc8d1704"
+      }
+    ]
+  }
+}

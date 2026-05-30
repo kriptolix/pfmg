@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "dbus-python",
+    "version": "1.3.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "dbus-python",
+    "buildsystem": "meson",
+    "config-opts": [
+      "-Dtests=false"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://dbus.freedesktop.org/releases/dbus-python/dbus-python-1.3.2.tar.gz",
+        "sha256": "ad67819308618b5069537be237f8e68ca1c7fcc95ee4a121fe6845b1418248f8"
+      }
+    ]
+  }
+}

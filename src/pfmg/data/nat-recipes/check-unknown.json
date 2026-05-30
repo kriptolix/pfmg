@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "check",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "Check",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/libcheck/check.git",
+        "commit": "90db730441bab1656c4447fafd45ffa39660f408"
+      },
+      {
+        "type": "script",
+        "commands": [
+          "autoreconf -fiv"
+        ],
+        "dest-filename": "autogen.sh"
+      }
+    ]
+  }
+}

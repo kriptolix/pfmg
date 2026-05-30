@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "qtfeedback",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "qtfeedback",
+    "buildsystem": "qmake",
+    "make-install-args": [
+      "INSTALL_ROOT=${FLATPAK_DEST}/redirection"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://invent.kde.org/qt/qt/qtfeedback.git/",
+        "commit": "596bf453588a8d6117df854d6a4899074a5d4c4b"
+      }
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-wassima",
+    "version": "1.2.2",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-wassima",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"wassima==1.2.2\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/08/dd/8df88ac3a1644bc6300eb3e5529a5808fff28d4e9a37fde9abcbd5ee7281/wassima-1.2.2-py3-none-any.whl",
+        "sha256": "c0fee0a8593028bde17b57527b1ac21fea74f209b3522363e3ba0197ffaa6323"
+      }
+    ]
+  }
+}

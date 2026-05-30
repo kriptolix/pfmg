@@ -1,0 +1,40 @@
+{
+  "header": {
+    "id": "python3-onnxruntime-webgpu",
+    "version": "1.25.1",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-onnxruntime-webgpu",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"onnxruntime-webgpu\" --no-build-isolation"
+    ],
+    "only-arches": [
+      "x86_64"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/e8/2d/d2a548598be01649e2d46231d151a6c56d10b964d94043a335ae56ea2d92/flatbuffers-25.12.19-py2.py3-none-any.whl",
+        "sha256": "7634f50c427838bb021c2d66a3d1168e9d199b0607e6329399f04846d42e20b4"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/d1/73/a9d864e42a01896bb5974475438f16086be9ba1f0d19d0bb7a07427c4a8b/numpy-2.4.4-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "sha256": "c901b15172510173f5cb310eae652908340f8dede90fff9e3bf6c0d8dfd92f83"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/53/1b/3b431694a4dc6d37b9f653f0c64b0a0d9ec074ee810710c0c3da21d67ba7/protobuf-7.34.1-cp310-abi3-manylinux2014_x86_64.whl",
+        "sha256": "8ff40ce8cd688f7265326b38d5a1bed9bfdf5e6723d49961432f83e21d5713e4"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/86/1d/091d8c26f3041fe6a46d7306db49827d9a03cdac2c369c4a217a516dab3c/onnxruntime_webgpu-1.25.1-cp313-cp313-manylinux_2_27_x86_64.manylinux_2_28_x86_64.whl",
+        "sha256": "cd0842b9b9b7a2d2d01b37f2b079f834aac43840cf873ac1ac5e04a8509ed3da"
+      }
+    ]
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "header": {
+    "id": "xfconf",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "xfconf",
+    "buildsystem": "meson",
+    "config-opts": [
+      "-Dgtk-doc=false",
+      "-Dintrospection=false",
+      "-Dvala=disabled"
+    ],
+    "cleanup": [
+      "/bin",
+      "/share/bash-completion"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://gitlab.xfce.org/xfce/xfconf.git",
+        "tag": "xfconf-4.21.0",
+        "commit": "aa1a5b5f327c616eb8d5abe4d458d971461f0576",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 14854,
+          "stable-only": true,
+          "tag-template": "xfconf-$version"
+        }
+      }
+    ],
+    "modules": [
+      {
+        "name": "xfce4-dev-tools",
+        "cleanup": [
+          "*"
+        ],
+        "sources": [
+          {
+            "type": "archive",
+            "url": "https://archive.xfce.org/src/xfce/xfce4-dev-tools/4.20/xfce4-dev-tools-4.20.0.tar.bz2",
+            "sha256": "1fba39a08a0ecc771eaa3a3b6e4272a4f0b9e7c67d0f66e780cd6090cd4466aa",
+            "x-checker-data": {
+              "type": "anitya",
+              "project-id": 15888,
+              "stable-only": true,
+              "url-template": "https://archive.xfce.org/src/xfce/xfce4-dev-tools/$major.$minor/xfce4-dev-tools-$version.tar.bz2"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

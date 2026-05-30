@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "unvanquished-assets",
+    "version": "0.56.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "unvanquished-assets",
+    "buildsystem": "simple",
+    "build-commands": [
+      "mv pkg /app/pkg"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://dl.unvanquished.net/release/unvanquished_0.56.2.zip",
+        "sha512": "4d453e2991f433fe49aa0f767c842298dc71691640beb4d905ef9984fb9cdc08078dd037bdb35662800c9546dcf1234453a850f1164ca42e2521474c1fa70830"
+      }
+    ]
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "tcl8.6",
+    "version": "8.6.16",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "tcl8.6",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://sourceforge.net/projects/tcl/files/Tcl/8.6.16/tcl8.6.16-src.tar.gz",
+        "sha256": "91cb8fa61771c63c262efb553059b7c7ad6757afa5857af6265e4b0bdc2a14a5",
+        "x-checker-data": {
+          "type": "html",
+          "url": "https://sourceforge.net/projects/tcl/rss",
+          "pattern": "<link>(https://sourceforge.net/.+/tcl(8\\.6\\.[\\d\\.]*\\d)-src.tar.gz)/download"
+        }
+      }
+    ],
+    "subdir": "unix",
+    "post-install": [
+      "chmod +w ${FLATPAK_DEST}/lib/libtcl8.6.so"
+    ]
+  }
+}

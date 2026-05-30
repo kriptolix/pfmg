@@ -1,0 +1,19 @@
+{
+  "header": {
+    "id": "gsvg",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "gsvg",
+    "buildsystem": "meson",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://gitlab.com/gsvg/gsvg.git",
+        "tag": "0.10.3"
+      }
+    ]
+  }
+}

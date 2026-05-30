@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "luagobject",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "LuaGObject",
+    "no-autogen": true,
+    "subdir": "LuaGObject",
+    "make-args": [
+      "LUA_VERSION=5.4"
+    ],
+    "make-install-args": [
+      "LUA_VERSION=5.4",
+      "PREFIX=/app"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/vtrlx/LuaGObject",
+        "tag": "0.10.2"
+      }
+    ]
+  }
+}

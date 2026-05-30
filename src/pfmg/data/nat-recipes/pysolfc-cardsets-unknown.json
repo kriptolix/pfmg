@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "pysolfc-cardsets",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "PySolFC-Cardsets",
+    "buildsystem": "simple",
+    "build-commands": [
+      "mkdir -p /app/share/PySolFC/cardsets/",
+      "cp -r * /app/share/PySolFC/cardsets/"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/shlomif/PySolFC-Cardsets",
+        "commit": "6d382152d4c49169022785fcc629ff98b13e04b7",
+        "tag": "3.1",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^([\\d.]+)$"
+        }
+      }
+    ]
+  }
+}

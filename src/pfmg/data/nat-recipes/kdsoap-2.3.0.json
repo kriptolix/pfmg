@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "kdsoap",
+    "version": "2.3.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "kdsoap",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DKDSoap_QT6=ON"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/KDAB/KDSoap/releases/download/kdsoap-2.3.0/kdsoap-2.3.0.tar.gz",
+        "sha256": "d2184951145cb768cc30376a10701be13869a164c1272d09f831ba2d195f02de",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 17735,
+          "stable-only": true,
+          "url-template": "https://github.com/KDAB/KDSoap/releases/download/kdsoap-$version/kdsoap-$version.tar.gz"
+        }
+      }
+    ]
+  }
+}

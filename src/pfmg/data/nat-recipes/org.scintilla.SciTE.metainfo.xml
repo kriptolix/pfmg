@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2020 Asif Ali Rizvan -->
+<component type="desktop-application">
+  <id type="desktop">org.scintilla.SciTE</id>
+  <launchable type="desktop-id">org.scintilla.SciTE.desktop</launchable>
+  <metadata_license>CC0-1.0</metadata_license>
+  <name>SciTE</name>
+  <project_license>HPND</project_license>
+  <summary>A SCIntilla based Text Editor</summary>
+  <url type="homepage">https://scintilla.org/SciTE.html</url>
+  <description>
+    <p>SciTE is a SCIntilla based Text Editor. Originally built to demonstrate Scintilla, it has grown to be a generally useful editor with facilities for building and running programs. </p>
+    <p>SciTE includes the following features:</p>
+    <ul>
+      <li>Syntax highlighting</li>
+      <li>Run code in Terminal, C, C++, vala, go</li>
+      <li>Code completion</li>
+      <li>Code folding</li>
+      <li>Many supported filetypes like C, Java, PHP, HTML, Python, Perl, Pascal</li>
+      <li>Exporting file to HTML, RTF, PDF, LATEX, XML</li>
+    </ul>
+  </description>
+  <developer_name>Neil Hodgson</developer_name>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://raw.githubusercontent.com/flathub/org.scintilla.SciTE/master/screenshots/0.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/flathub/org.scintilla.SciTE/master/screenshots/1.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/flathub/org.scintilla.SciTE/master/screenshots/2.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://raw.githubusercontent.com/flathub/org.scintilla.SciTE/master/screenshots/3.png</image>
+    </screenshot>
+  </screenshots>
+  <update_contact>https://github.com/fastrizwaan/SciTE_flatpak</update_contact>
+  <translation type="gettext">SciTE</translation>
+  <releases>
+    <release date="2024-11-10" version="5.5.8"/>
+    <release date="2024-06-07" version="5.5.7"/>
+    <release date="2024-04-02" version="5.5.6"/>
+    <release date="2024-02-25" version="5.5.5"/>
+    <release date="2024-12-18" version="5.5.4"/>
+    <release date="2024-10-19" version="5.5.3"/>
+    <release date="2024-04-23" version="5.5.0"/>
+    <release date="2024-03-05" version="5.4.2"/>
+    <release date="2023-12-27" version="5.4.1"/>
+    <release date="2023-11-05" version="5.3.9"/>
+    <release date="2023-09-22" version="5.3.8"/>
+    <release date="2023-05-31" version="5.3.6"/>
+    <release date="2023-03-31" version="5.3.5"/>
+    <release date="2023-02-08" version="5.3.3"/>
+    <release date="2022-12-06" version="5.3.2"/>
+    <release date="2022-10-12" version="5.3.1"/>
+    <release date="2022-08-27" version="5.3.0"/>
+    <release date="2022-07-10" version="5.2.4"/>
+    <release date="2022-05-22" version="5.2.3"/>
+    <release date="2022-02-24" version="5.2.1"/>
+    <release date="2022-02-09" version="5.2.0"/>
+    <release date="2021-12-07" version="5.1.6"/>
+    <release date="2021-09-23" version="5.1.4"/>
+    <release date="2021-07-26" version="5.1.1"/>
+    <release date="2020-12-01" version="4.4.6"/>
+  </releases>
+  <content_rating type="oars-1.1"/>
+</component>

@@ -1,0 +1,26 @@
+{
+  "header": {
+    "id": "premake3",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "premake3",
+    "buildsystem": "simple",
+    "build-commands": [
+      "make -C Src",
+      "install -Dm755 -t ${FLATPAK_DEST}/bin bin/premake"
+    ],
+    "cleanup": [
+      "/bin"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/premake/premake-3.x.git",
+        "commit": "1d3651e96bcb5b8dc95e71303daf56b30aa2a6df"
+      }
+    ]
+  }
+}

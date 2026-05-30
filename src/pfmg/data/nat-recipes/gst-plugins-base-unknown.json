@@ -1,0 +1,26 @@
+{
+  "header": {
+    "id": "gst-plugins-base",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "gst-plugins-base",
+    "buildsystem": "meson",
+    "builddir": true,
+    "config-opts": [
+      "-Dgtk_doc=disabled",
+      "--prefix=/app",
+      "--buildtype=release",
+      "-Dopenh264=disabled"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://gitlab.freedesktop.org/gstreamer/gst-plugins-base.git",
+        "tag": "1.18.6"
+      }
+    ]
+  }
+}

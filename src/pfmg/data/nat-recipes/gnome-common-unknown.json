@@ -1,0 +1,18 @@
+{
+  "header": {
+    "id": "gnome-common",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "gnome-common",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://gitlab.gnome.org/GNOME/gnome-common.git",
+        "commit": "3f52961bcc8828e33535466d60ca3edcdf5175c6"
+      }
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "gitdb",
+    "version": "4.0.5",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "gitdb",
+    "buildsystem": "simple",
+    "build-commands": [
+      "python3 setup.py install --prefix=/app --root=/"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://files.pythonhosted.org/packages/d1/05/eaf2ac564344030d8b3ce870b116d7bb559020163e80d9aa4a3d75f3e820/gitdb-4.0.5.tar.gz",
+        "sha256": "c9e1f2d0db7ddb9a704c2a0217be31214e91a4fe1dea1efad19ae42ba0c285c9"
+      }
+    ]
+  }
+}

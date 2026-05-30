@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "atrain-core",
+    "version": "unknown",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "atrain-core",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} --no-build-isolation --no-deps .",
+      "install -Dm0644 LICENSE -t ${FLATPAK_DEST}/share/licenses/$FLATPAK_ID/atrain_core"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/JuergenFleiss/atrain_core.git",
+        "commit": "36d56549b10950585e4426dae46ebf447b1aa779"
+      }
+    ]
+  }
+}

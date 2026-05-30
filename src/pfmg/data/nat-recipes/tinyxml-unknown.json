@@ -1,0 +1,19 @@
+{
+  "header": {
+    "id": "tinyxml",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "tinyxml",
+    "buildsystem": "meson",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/tintou/tinyxml.git",
+        "commit": "852527eb49a449599806d4671bb27a79fe0fbf16"
+      }
+    ]
+  }
+}

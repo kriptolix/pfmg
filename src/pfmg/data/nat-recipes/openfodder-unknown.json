@@ -1,0 +1,48 @@
+{
+  "header": {
+    "id": "openfodder",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "openfodder",
+    "buildsystem": "simple",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/OpenFodder/openfodder.git",
+        "tag": "2.0.0",
+        "commit": "5eb41362f72fcedf2b1dffed397a7a8edf9a6305",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^([\\d.]+)$"
+        }
+      },
+      {
+        "type": "file",
+        "path": "org.openfodder.OpenFodder.desktop"
+      },
+      {
+        "type": "file",
+        "path": "org.openfodder.OpenFodder.png"
+      },
+      {
+        "type": "file",
+        "path": "org.openfodder.OpenFodder.appdata.xml"
+      }
+    ],
+    "build-commands": [
+      "make -j${FLATPAK_BUILDER_N_JOBS}"
+    ],
+    "post-install": [
+      "mkdir -p ${FLATPAK_DEST}/share/OpenFodder/",
+      "cp -r  Run/* ${FLATPAK_DEST}/share/OpenFodder/",
+      "mkdir -p ${FLATPAK_DEST}/bin/",
+      "mv ${FLATPAK_DEST}/share/OpenFodder/OpenFodder ${FLATPAK_DEST}/bin/openfodder",
+      "install -Dm644 org.openfodder.OpenFodder.appdata.xml -t ${FLATPAK_DEST}/share/metainfo/",
+      "install -Dm644 org.openfodder.OpenFodder.desktop -t ${FLATPAK_DEST}/share/applications/",
+      "install -Dm644 org.openfodder.OpenFodder.png -t ${FLATPAK_DEST}/share/icons/hicolor/128x128/apps/"
+    ]
+  }
+}

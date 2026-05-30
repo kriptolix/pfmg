@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-pyuca",
+    "version": "1.2",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-pyuca",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"pyuca==1.2\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/98/88/aeeee34d88f841aca712a8c18fbd62a33eaad8f2dbe535e87f3c829b02f9/pyuca-1.2-py2.py3-none-any.whl",
+        "sha256": "abaa12e1bd2c7c68ca8396ff8383bc0654a739cef3ae68fd7af58bf29af0a91e"
+      }
+    ]
+  }
+}

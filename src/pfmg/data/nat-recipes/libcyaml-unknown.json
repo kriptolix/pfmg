@@ -1,0 +1,58 @@
+{
+  "header": {
+    "id": "libcyaml",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libcyaml",
+    "buildsystem": "simple",
+    "build-options": {
+      "no-debuginfo": true
+    },
+    "build-commands": [
+      "make PREFIX=${FLATPAK_DEST} -j $FLATPAK_BUILDER_N_JOBS",
+      "make PREFIX=${FLATPAK_DEST} install"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/tlsa/libcyaml",
+        "commit": "d05365e474e56d34c8d4b25599a333c0635eeebf",
+        "tag": "v1.4.2",
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://api.github.com/repos/tlsa/libcyaml/releases/latest",
+          "tag-query": ".tag_name",
+          "version-query": "$tag | sub(\"^jq-\"; \"\")",
+          "timestamp-query": ".published_at"
+        }
+      }
+    ],
+    "modules": [
+      {
+        "name": "libyaml",
+        "build-options": {
+          "no-debuginfo": true
+        },
+        "buildsystem": "autotools",
+        "sources": [
+          {
+            "type": "git",
+            "url": "https://github.com/yaml/libyaml",
+            "commit": "2c891fc7a770e8ba2fec34fc6b545c672beb37e6",
+            "tag": "0.2.5",
+            "x-checker-data": {
+              "type": "json",
+              "url": "https://api.github.com/repos/yaml/libyaml/releases/latest",
+              "tag-query": ".tag_name",
+              "version-query": "$tag | sub(\"^jq-\"; \"\")",
+              "timestamp-query": ".published_at"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

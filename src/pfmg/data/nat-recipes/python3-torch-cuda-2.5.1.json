@@ -1,0 +1,47 @@
+{
+  "header": {
+    "id": "python3-torch-cuda",
+    "version": "2.5.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-torch-cuda",
+    "only-arches": [
+      "x86_64"
+    ],
+    "buildsystem": "simple",
+    "build-options": {
+      "strip": true,
+      "env": {
+        "PYTHONPATH": "/app/extensions/nvidia/lib/python3.12/site-packages:/app/lib/python3.12/site-packages"
+      }
+    },
+    "build-commands": [
+      "set -e\nmkdir -p ${FLATPAK_DEST}/lib/python3.12/site-packages\ncd ${FLATPAK_DEST}/lib/python3.12/site-packages\nln -s ${FLATPAK_DEST}/extra/site-packages/torch torch\nln -s ${FLATPAK_DEST}/extra/site-packages/torch-2.5.1.dist-info torch-2.5.1.dist-info\nln -s ${FLATPAK_DEST}/extra/site-packages/functorch functorch\nln -s ${FLATPAK_DEST}/extra/site-packages/torchgen torchgen\nln -s ${FLATPAK_DEST}/extra/site-packages/torchaudio torchaudio\nln -s ${FLATPAK_DEST}/extra/site-packages/torchaudio-2.5.1.dist-info torchaudio-2.5.1.dist-info\nln -s ${FLATPAK_DEST}/extra/site-packages/torio torio\nln -s ${FLATPAK_DEST}/extra/site-packages/triton triton\nln -s ${FLATPAK_DEST}/extra/site-packages/triton-3.1.0.dist-info triton-3.1.0.dist-info\n"
+    ],
+    "sources": [
+      {
+        "type": "extra-data",
+        "url": "https://files.pythonhosted.org/packages/8b/5c/36c114d120bfe10f9323ed35061bc5878cc74f3f594003854b0ea298942f/torch-2.5.1-cp312-cp312-manylinux1_x86_64.whl",
+        "sha256": "ed231a4b3a5952177fafb661213d690a72caaad97d5824dd4fc17ab9e15cec03",
+        "filename": "torch.whl",
+        "size": 906389343
+      },
+      {
+        "type": "extra-data",
+        "url": "https://files.pythonhosted.org/packages/78/eb/65f5ba83c2a123f6498a3097746607e5b2f16add29e36765305e4ac7fdd8/triton-3.1.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "sha256": "c8182f42fd8080a7d39d666814fa36c5e30cc00ea7eeeb1a2983dbb4c99a0fdc",
+        "filename": "triton.whl",
+        "size": 209551444
+      },
+      {
+        "type": "extra-data",
+        "url": "https://files.pythonhosted.org/packages/34/1c/345d11bf492a1414dced70a9572ff1eb2c73013578d24fb4d728a91a09d1/torchaudio-2.5.1-cp312-cp312-manylinux1_x86_64.whl",
+        "sha256": "9c8fb06fbd8d2016e7b7caf15a3231867c792a2e3b0f2f8f9013633e9c2ce412",
+        "filename": "torchaudio.whl",
+        "size": 3371851
+      }
+    ]
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "header": {
+    "id": "ldc-bootstrap",
+    "version": "1.42.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "ldc-bootstrap",
+    "buildsystem": "simple",
+    "build-commands": [
+      "mkdir -p /usr/lib/sdk/ldc/bootstrap",
+      "cp -av * /usr/lib/sdk/ldc/bootstrap/"
+    ],
+    "cleanup": [
+      "*"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "only-arches": [
+          "x86_64"
+        ],
+        "url": "https://github.com/ldc-developers/ldc/releases/download/v1.42.0/ldc2-1.42.0-linux-x86_64.tar.xz",
+        "sha256": "a7bc9c956138f558cadf9c962352f59d41c80df6eb3ae3f8039f25be14a69303",
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://api.github.com/repos/ldc-developers/ldc/releases/latest",
+          "version-query": ".tag_name | sub(\"^[vV]\"; \"\")",
+          "url-query": ".assets | map(select(.name==\"ldc2-\\($version)-linux-x86_64.tar.xz\")) | first | .browser_download_url"
+        }
+      },
+      {
+        "type": "archive",
+        "only-arches": [
+          "aarch64"
+        ],
+        "url": "https://github.com/ldc-developers/ldc/releases/download/v1.42.0/ldc2-1.42.0-linux-aarch64.tar.xz",
+        "sha256": "687707c3e20ff910528eb2d92f27a98cb0960284de3b026e6bf20284ac1c8511",
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://api.github.com/repos/ldc-developers/ldc/releases/latest",
+          "version-query": ".tag_name | sub(\"^[vV]\"; \"\")",
+          "url-query": ".assets | map(select(.name==\"ldc2-\\($version)-linux-aarch64.tar.xz\")) | first | .browser_download_url"
+        }
+      }
+    ]
+  }
+}

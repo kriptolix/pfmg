@@ -1,0 +1,31 @@
+{
+  "header": {
+    "id": "python-proton-core",
+    "version": "unknown",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python-proton-core",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \".\" --no-build-isolation"
+    ],
+    "modules": [
+      "pip-resources.python-proton-core.yaml"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/ProtonVPN/python-proton-core",
+        "tag": "v0.7.0",
+        "commit": "f7a178a99c3adc0e88c7f91d4db5371a052c4985",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 369954,
+          "tag-template": "v$version"
+        }
+      }
+    ]
+  }
+}

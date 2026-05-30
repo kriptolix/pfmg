@@ -1,0 +1,45 @@
+{
+  "header": {
+    "id": "python3-borgbackup",
+    "version": "1.4.4",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-borgbackup",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --use-deprecated=legacy-resolver --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"borgbackup\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/eb/38/7fc8c8c7d9dba455f0e29f2ab5b77109313f4e58fe5014d0e1b7855de3cd/borgbackup-1.4.4.tar.gz",
+        "sha256": "2716bc124a24908efcac9436df31b716d1f0bbd828ad39b18f73bfdd772a651a",
+        "x-checker-data": {
+          "type": "pypi",
+          "name": "borgbackup"
+        }
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/4d/f2/bfb55a6236ed8725a96b0aa3acbd0ec17588e6a2c3b62a93eb513ed8783f/msgpack-1.1.2.tar.gz",
+        "sha256": "3b60763c1373dd60f398488069bcdc703cd08a711477b5d480eecc9f9626f47e",
+        "x-checker-data": {
+          "type": "pypi",
+          "name": "msgpack"
+        }
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/df/b2/87e62e8c3e2f4b32e5fe99e0b86d576da1312593b39f47d8ceef365e95ed/packaging-26.2-py3-none-any.whl",
+        "sha256": "5fc45236b9446107ff2415ce77c807cee2862cb6fac22b8a73826d0693b0980e",
+        "x-checker-data": {
+          "type": "pypi",
+          "name": "packaging",
+          "packagetype": "bdist_wheel"
+        }
+      }
+    ]
+  }
+}

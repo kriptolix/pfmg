@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "ambiance",
+    "version": "16.10",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "ambiance",
+    "buildsystem": "simple",
+    "build-commands": [
+      "install -dm755 /usr/share/runtime/share/themes/Ambiance/gtk-3.0",
+      "cp -aL Ambiance/gtk-3.20/* /usr/share/runtime/share/themes/Ambiance/gtk-3.0",
+      "cp -a Ambiance/index.theme /usr/share/runtime/share/themes/Ambiance"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "http://archive.ubuntu.com/ubuntu/pool/main/u/ubuntu-themes/ubuntu-themes_16.10+17.10.20171012.1.orig.tar.gz",
+        "sha256": "ffe0c403f31cb3aee83c0193f25bf69b1ae40bfe3acac90502003ea61c27db4b"
+      }
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "demo",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "demo",
+    "buildsystem": "meson",
+    "config-opts": [
+      "--buildtype=release"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/kusma/even-laster-engine.git",
+        "commit": "90e00933a4d5af01b0c2e9a29350e7fab3f0465b"
+      }
+    ]
+  }
+}

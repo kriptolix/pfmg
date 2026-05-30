@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "gweather-location",
+    "version": "2026.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "gweather-location",
+    "buildsystem": "meson",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.gnome.org/sources/gweather-locations/2026/gweather-locations-2026.2.tar.xz",
+        "sha256": "e7570a3661e0a752a06387b2032585cf588fc56770b1f9f39f1a55d17b2835fe",
+        "x-checker-data": {
+          "type": "gnome",
+          "name": "gweather-locations"
+        }
+      }
+    ]
+  }
+}

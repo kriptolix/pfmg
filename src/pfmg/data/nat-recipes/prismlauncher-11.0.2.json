@@ -1,0 +1,37 @@
+{
+  "header": {
+    "id": "prismlauncher",
+    "version": "11.0.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "prismlauncher",
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "config-opts": [
+      "-DLauncher_BUILD_PLATFORM=flatpak",
+      "-DLauncher_ENABLE_JAVA_DOWNLOADER=ON",
+      "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+    ],
+    "build-options": {
+      "env": {
+        "JAVA_HOME": "/usr/lib/sdk/openjdk17/jvm/openjdk-17",
+        "JAVA_COMPILER": "/usr/lib/sdk/openjdk17/jvm/openjdk-17/bin/javac"
+      }
+    },
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/PrismLauncher/PrismLauncher/releases/download/11.0.2/PrismLauncher-11.0.2.tar.gz",
+        "sha256": "8956e9351bcb0472fc9c2c61ae68aa2960f27f7cabb1cacd86dd2af1c233a064",
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://api.github.com/repos/PrismLauncher/PrismLauncher/releases/latest",
+          "version-query": ".tag_name",
+          "url-query": ".assets[] | select(.name == \"PrismLauncher-\" + $version + \".tar.gz\") | .browser_download_url"
+        }
+      }
+    ]
+  }
+}

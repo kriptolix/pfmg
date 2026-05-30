@@ -1,0 +1,34 @@
+{
+  "header": {
+    "id": "qscintilla",
+    "version": "2.10.8",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "qscintilla",
+    "buildsystem": "simple",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://sourceforge.net/projects/pyqt/files/QScintilla2/QScintilla-2.10.8/QScintilla_gpl-2.10.8.tar.gz",
+        "sha256": "46cd5b4e609ca5e13130ba8cc7028d44fd1dc5b037f97c492899006ed0c992eb"
+      },
+      {
+        "type": "patch",
+        "path": "patches/0011-Fixed-the-Python-signatures-of-the-QsciAPIs-ctors.patch"
+      }
+    ],
+    "build-commands": [
+      "sed -e 's|\\(target.path\\) = .*|\\1 = /app/lib|' -i Qt4Qt5/qscintilla.pro",
+      "sed -e 's|\\(header.path\\) = .*|\\1 = /app/include|' -i Qt4Qt5/qscintilla.pro",
+      "sed -e 's|\\(trans.path\\) = .*|\\1 = /app/share/qt5/translations|' -i Qt4Qt5/qscintilla.pro",
+      "sed -e 's|\\(qsci.path\\) = .*|\\1 = /app/share/qt5|' -i Qt4Qt5/qscintilla.pro",
+      "sed -e 's|\\(features.path\\) = .*|\\1 = /app/lib/qt5/mkspecs/features|' -i Qt4Qt5/qscintilla.pro",
+      "sed -e \"s|qmake = {'CONFIG': 'qscintilla2'}|qmake = {'CONFIG': 'qscintilla2', 'QT': 'widgets printsupport'}|\" -i Python/configure.py",
+      "cd Qt4Qt5 && qmake && make -j ${FLATPAK_BUILDER_N_JOBS:-`nproc`}",
+      "cd Python && python3 configure.py --pyqt=PyQt5 -n ../Qt4Qt5/ -o ../Qt4Qt5/ --pyqt-sipdir=/app/share/sip --destdir=/app/lib/python3.9/site-packages/PyQt5 --apidir=/app/qsci/api/python --no-stubs --no-dist-info && make -j ${FLATPAK_BUILDER_N_JOBS:-`nproc`} && make install",
+      "cd Qt4Qt5 && make install"
+    ]
+  }
+}

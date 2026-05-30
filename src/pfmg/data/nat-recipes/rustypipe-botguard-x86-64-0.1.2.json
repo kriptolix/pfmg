@@ -1,0 +1,26 @@
+{
+  "header": {
+    "id": "rustypipe-botguard-x86-64",
+    "version": "0.1.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "rustypipe-botguard-x86_64",
+    "only-arches": [
+      "x86_64"
+    ],
+    "buildsystem": "simple",
+    "build-commands": [
+      "BINARY_PATH=$(find . -type f -name \"*rustypipe-botguard*\" | head -n 1) && install -D -m 755 \"$BINARY_PATH\" /app/share/flameget/binaries/rustypipe-botguard"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://codeberg.org/ThetaDev/rustypipe-botguard/releases/download/v0.1.2/rustypipe-botguard-v0.1.2-x86_64-unknown-linux-gnu.tar.xz",
+        "sha256": "4f2ec561e8f9fadece7deadc6ce0624fbdedd852222c3eb194c22153b1323129",
+        "strip-components": 0
+      }
+    ]
+  }
+}

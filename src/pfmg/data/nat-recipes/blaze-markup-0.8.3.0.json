@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "blaze-markup",
+    "version": "0.8.3.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "blaze-markup",
+    "buildsystem": "simple",
+    "builddir": false,
+    "build-commands": [
+      "echo '#! /usr/bin/env runhaskell' >Setup.txt",
+      "echo '> import Distribution.Simple' >>Setup.txt",
+      "echo '> main = defaultMain' >>Setup.txt",
+      "ln -s Setup.txt Setup.lhs || true",
+      "runhaskell Setup configure --prefix=/app",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "sources": [
+      {
+        "sha256": "8606ac8b4a1f7f8f1bbc0770b2752e9b6f88ccc9fbdcbb33aa20577d0e5930e8",
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/blaze-markup-0.8.3.0/blaze-markup-0.8.3.0.tar.gz"
+      },
+      {
+        "dest-filename": "blaze-markup.cabal",
+        "sha256": "027f218b81d28a7c0a33b93d456c4e5aa92d145e9dcee14834fbad73a39ad7e4",
+        "type": "file",
+        "url": "https://hackage.haskell.org/package/blaze-markup-0.8.3.0/revision/2.cabal"
+      }
+    ]
+  }
+}

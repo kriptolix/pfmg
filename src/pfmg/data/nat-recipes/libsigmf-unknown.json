@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "libsigmf",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libsigmf",
+    "buildsystem": "cmake-ninja",
+    "build-options": {
+      "cflags": "-Wno-error",
+      "cflags-override": true,
+      "cxxflags": "-Wno-error",
+      "cxxflags-override": true
+    },
+    "config-opts": [
+      "-Wno-dev"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/f4exb/libsigmf.git",
+        "commit": "299dc8f9725f1733e5cc1ce8a69fbcf7f18a2f58"
+      }
+    ]
+  }
+}

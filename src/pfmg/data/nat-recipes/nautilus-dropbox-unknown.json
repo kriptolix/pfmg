@@ -1,0 +1,41 @@
+{
+  "header": {
+    "id": "nautilus-dropbox",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "nautilus-dropbox",
+    "buildsystem": "simple",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/dropbox/nautilus-dropbox.git",
+        "commit": "28e5ff69c9ed2c8213deef4f5bdde0bebbde4cd0",
+        "tag": "v2026.03.20",
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://api.github.com/repos/dropbox/nautilus-dropbox/tags",
+          "tag-query": ".[0].name",
+          "version-query": "$tag | sub(\"^v\"; \"\")"
+        }
+      },
+      {
+        "type": "patch",
+        "paths": [
+          "patches/nautilus-dropbox/0001-Ping-daemon-to-check-if-it-is-running.patch",
+          "patches/nautilus-dropbox/0002-Patch-install-path-for-Flatpak.patch",
+          "patches/nautilus-dropbox/0003-Resolve-symlinks-in-home-directory.patch"
+        ]
+      },
+      {
+        "type": "file",
+        "path": "install-nautilus-dropbox.sh"
+      }
+    ],
+    "build-commands": [
+      "./install-nautilus-dropbox.sh"
+    ]
+  }
+}

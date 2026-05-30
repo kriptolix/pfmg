@@ -1,0 +1,31 @@
+{
+  "header": {
+    "id": "libghoto2",
+    "version": "2.5.33",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libghoto2",
+    "cleanup": [
+      "/bin",
+      "/share/doc"
+    ],
+    "sources": [
+      {
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 12558,
+          "url-template": "https://sourceforge.net/projects/gphoto/files/libgphoto/$version/libgphoto2-$version.tar.xz"
+        },
+        "type": "archive",
+        "url": "https://sourceforge.net/projects/gphoto/files/libgphoto/2.5.33/libgphoto2-2.5.33.tar.xz",
+        "sha256": "28825f767a85544cb58f6e15028f8e53a5bb37a62148b3f1708b524781c3bef2"
+      }
+    ],
+    "config-opts": [
+      "--disable-introspection",
+      "--disable-docs"
+    ]
+  }
+}

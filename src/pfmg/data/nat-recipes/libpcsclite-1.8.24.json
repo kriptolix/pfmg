@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "libpcsclite",
+    "version": "1.8.24",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libpcsclite",
+    "config-opts": [
+      "--disable-libsystemd",
+      "--disable-serial",
+      "--disable-usb",
+      "--disable-libudev",
+      "--with-systemdsystemunitdir=no"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://pcsclite.apdu.fr/files/pcsc-lite-1.8.24.tar.bz2",
+        "sha256": "b81864fa6a5ec776639c02ae89998955f7702a8d10e8b8f70023c5a599d97568"
+      }
+    ]
+  }
+}

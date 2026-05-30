@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "limesdr",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "limesdr",
+    "buildsystem": "cmake-ninja",
+    "build-options": {
+      "cflags": "-std=gnu17"
+    },
+    "config-opts": [
+      "-DCMAKE_POLICY_VERSION_MINIMUM=3.5",
+      "-DENABLE_QUICKTEST=OFF",
+      "-DENABLE_GUI=OFF",
+      "-DENABLE_SOAPY_LMS7=OFF",
+      "-DENABLE_EXAMPLES=OFF",
+      "-DENABLE_UTILITIES=OFF",
+      "-DENABLE_HEADERS=ON"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/myriadrf/LimeSuite.git",
+        "tag": "v23.11.0",
+        "commit": "c2d9e87754586304577beff4dc5b16fb9b72c826"
+      }
+    ]
+  }
+}

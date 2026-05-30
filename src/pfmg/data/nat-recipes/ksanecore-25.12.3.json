@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "ksanecore",
+    "version": "25.12.3",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "ksanecore",
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "config-opts": [
+      "-DQT_MAJOR_VERSION=6"
+    ],
+    "cleanup": [
+      "*.la"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.kde.org/stable/release-service/25.12.3/src/ksanecore-25.12.3.tar.xz",
+        "sha256": "60476b5e7ad764142cf69af1f827e9f7af8883eae3cbd3faa6d1a42d635ee282",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 8763,
+          "stable-only": true,
+          "url-template": "https://download.kde.org/stable/release-service/$version/src/ksanecore-$version.tar.xz"
+        }
+      }
+    ]
+  }
+}

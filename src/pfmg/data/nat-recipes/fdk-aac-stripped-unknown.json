@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "fdk-aac-stripped",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "fdk-aac-stripped",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://gitlab.freedesktop.org/wtaymans/fdk-aac-stripped.git",
+        "commit": "529b87452cd33d45e1d0a5066d20b64f10b38845"
+      }
+    ]
+  }
+}

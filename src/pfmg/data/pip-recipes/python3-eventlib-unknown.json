@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "python3-eventlib",
+    "version": "unknown",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-eventlib",
+    "buildsystem": "simple",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/AGProjects/python3-eventlib",
+        "tag": "0.3.1",
+        "commit": "3382d14a763719d39907f2f8140cf4eeb8c8d00a"
+      }
+    ],
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --prefix=\"${FLATPAK_DEST}\" --no-build-isolation ."
+    ]
+  }
+}

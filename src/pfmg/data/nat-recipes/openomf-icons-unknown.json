@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "openomf-icons",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "openomf-icons",
+    "buildsystem": "simple",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://www.omf2097.com/pub/files/omf/openomf-icons.zip",
+        "sha256": "f0b5a6ae46376625dcb957b4663f744501544f0336edd2787aff538811a8564d"
+      }
+    ],
+    "build-commands": [
+      "install -Dm644 omf-48x48.png ${FLATPAK_DEST}/share/icons/hicolor/48x48/apps/org.openomf.OpenOMF.png",
+      "install -Dm644 omf-64x64.png ${FLATPAK_DEST}/share/icons/hicolor/64x64/apps/org.openomf.OpenOMF.png",
+      "install -Dm644 omf-128x128.png ${FLATPAK_DEST}/share/icons/hicolor/128x128/apps/org.openomf.OpenOMF.png",
+      "install -Dm644 omf-256x256.png ${FLATPAK_DEST}/share/icons/hicolor/256x256/apps/org.openomf.OpenOMF.png"
+    ]
+  }
+}

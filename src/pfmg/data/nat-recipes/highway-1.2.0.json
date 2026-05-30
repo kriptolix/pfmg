@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "highway",
+    "version": "1.2.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "highway",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DBUILD_SHARED_LIBS=ON",
+      "-DHWY_ENABLE_TESTS=OFF",
+      "-DHWY_ENABLE_EXAMPLES=OFF",
+      "-DHWY_WARNINGS_ARE_ERRORS=OFF"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/google/highway/archive/refs/tags/1.2.0.tar.gz",
+        "sha256": "7e0be78b8318e8bdbf6fa545d2ecb4c90f947df03f7aadc42c1967f019e63343"
+      }
+    ]
+  }
+}

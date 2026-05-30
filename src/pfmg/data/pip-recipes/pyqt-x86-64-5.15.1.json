@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "pyqt-x86-64",
+    "version": "5.15.1",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "pyqt-x86_64",
+    "buildsystem": "simple",
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/4c/bb/7fce18fbe0275d7a3e069a306d8f4662c77eda30ec6780634fd4a7ee50ce/PyQt5-5.15.1-5.15.1-cp35.cp36.cp37.cp38.cp39-abi3-manylinux2014_x86_64.whl",
+        "sha256": "b1ea7e82004dc7b311d1e29df2f276461016e2d180e10c73805ace4376125ed9"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/31/24/f887203677955ba4d5d4efe9176ac7ed2bf84efce8c243ab91e63183ad9e/PyQt5_sip-12.8.1-cp37-cp37m-manylinux1_x86_64.whl",
+        "sha256": "a1b8ef013086e224b8e86c93f880f776d01b59195bdfa2a8e0b23f0480678fec"
+      }
+    ],
+    "build-commands": [
+      "pip3 install PyQt*.whl --target=/app/lib/python3.7/site-packages"
+    ]
+  }
+}

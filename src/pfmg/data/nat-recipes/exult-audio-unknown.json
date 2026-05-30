@@ -1,0 +1,33 @@
+{
+  "header": {
+    "id": "exult-audio",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "exult-audio",
+    "sources": [
+      {
+        "type": "archive",
+        "dest-filename": "exult_audio.zip",
+        "url": "https://downloads.sourceforge.net/project/exult/exult-data/exult_audio.zip",
+        "sha256": "72e10efa8664a645470ceb99f6b749ce99c3d5fd1c8387c63640499cfcdbbc68"
+      },
+      {
+        "type": "archive",
+        "dest-filename": "freepats.tar.bz2",
+        "url": "https://mse.uk.distfiles.macports.org/freepats/freepats-20060219.tar.bz2",
+        "sha256": "0261ea1057b232183fa472432d5cedb0dca33698a5319328cdf193d4b2193c8a"
+      }
+    ],
+    "buildsystem": "simple",
+    "build-commands": [
+      "install -Dm 644 *.ogg -t ${FLATPAK_DEST}/share/exult/music",
+      "install -Dm 644 *.flx -t ${FLATPAK_DEST}/share/exult",
+      "install -Dm 644 -t ${FLATPAK_DEST}/share/freepats/ freepats.cfg",
+      "install -Dm 644 -t ${FLATPAK_DEST}/share/freepats/Tone_000/ Tone_000/*",
+      "install -Dm 644 -t ${FLATPAK_DEST}/share/freepats/Drum_000/ Drum_000/*"
+    ]
+  }
+}

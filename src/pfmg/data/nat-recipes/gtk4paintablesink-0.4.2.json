@@ -1,0 +1,29 @@
+{
+  "header": {
+    "id": "gtk4paintablesink",
+    "version": "0.4.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "gtk4paintablesink",
+    "buildsystem": "simple",
+    "build-options": {
+      "env": {
+        "CARGO_HOME": "/run/build/gtk4paintablesink/cargo"
+      }
+    },
+    "build-commands": [
+      "cargo --offline fetch --manifest-path Cargo.toml --verbose",
+      "cargo build --offline --release --verbose --features wayland,x11egl,x11glx",
+      "install -Dm755 target/release/libgstgtk4.so -t /app/lib/gstreamer-1.0"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/swanux/hbud/releases/download/v0.4.2/gtk4paintablesink_230309.tar.xz",
+        "sha256": "a9e23356b6df9d2b25046fee782a70318f749fc0ac6a0b8daa81257b208ed11f"
+      }
+    ]
+  }
+}

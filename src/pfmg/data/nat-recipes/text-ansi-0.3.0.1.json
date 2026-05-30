@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "text-ansi",
+    "version": "0.3.0.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "text-ansi",
+    "buildsystem": "simple",
+    "builddir": false,
+    "build-commands": [
+      "echo '#! /usr/bin/env runhaskell' >Setup.txt",
+      "echo '> import Distribution.Simple' >>Setup.txt",
+      "echo '> main = defaultMain' >>Setup.txt",
+      "ln -s Setup.txt Setup.lhs || true",
+      "runhaskell Setup configure --prefix=/app",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "sources": [
+      {
+        "sha256": "0078b6e1adfb3fbbb4e241e20116829c3ede02f3906eb292ab4540c9e82f3846",
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/text-ansi-0.3.0.1/text-ansi-0.3.0.1.tar.gz"
+      },
+      {
+        "dest-filename": "text-ansi.cabal",
+        "sha256": "a63b2f1c8ffe5725ceec96ea7d83542bb02cabc6a95ba1cfbf97ec029d3b2392",
+        "type": "file",
+        "url": "https://hackage.haskell.org/package/text-ansi-0.3.0.1/revision/1.cabal"
+      }
+    ]
+  }
+}

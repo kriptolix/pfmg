@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "python-h5py",
+    "version": "3.16.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python-h5py",
+    "buildsystem": "simple",
+    "build-commands": [
+      "python3 -mpip install . --no-index --find-links=file://${PWD} --prefix=${FLATPAK_DEST} --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/h5py/h5py/archive/refs/tags/3.16.0.tar.gz",
+        "sha256": "9c3aa5e1fc0c33ae8501a17987af2f986c8ba3ade25da66c78738a5abefea133",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 6409,
+          "stable-only": true,
+          "url-template": "https://github.com/h5py/h5py/archive/refs/tags/${version}.tar.gz"
+        }
+      }
+    ]
+  }
+}

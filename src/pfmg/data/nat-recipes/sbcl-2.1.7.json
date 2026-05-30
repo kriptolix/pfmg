@@ -1,0 +1,38 @@
+{
+  "header": {
+    "id": "sbcl",
+    "version": "2.1.7",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "sbcl",
+    "buildsystem": "simple",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "http://prdownloads.sourceforge.net/sbcl/sbcl-2.1.7-x86-64-linux-binary.tar.bz2",
+        "sha256": "4a09d891c2b5a0214bf6ddb348c53abfb540f192d552adb03a22271961a9b458"
+      },
+      {
+        "type": "file",
+        "path": "ql.tar.gz"
+      },
+      {
+        "type": "file",
+        "path": "sbclrc"
+      }
+    ],
+    "build-options": {
+      "env": {
+        "BUILD_ROOT": "/app/sbcl"
+      }
+    },
+    "build-commands": [
+      "sh install.sh",
+      "zcat ql.tar.gz | (cd /app && tar xf -)",
+      "mkdir /app/tools",
+      "cp sbclrc /app/tools/sbcl-init.lisp"
+    ]
+  }
+}

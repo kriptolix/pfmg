@@ -1,0 +1,33 @@
+{
+  "header": {
+    "id": "apx-configs",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "apx-configs",
+    "buildsystem": "simple",
+    "build-commands": [
+      "mkdir -p /app/share/apx",
+      "mv * /app/share/apx"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/Vanilla-OS/vanilla-apx-configs.git",
+        "tag": "v1.0.0",
+        "commit": "691d7c737b0fff095f81adfca4736aecc318beaa",
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://api.github.com/repos/Vanilla-OS/vanilla-apx-configs/releases/latest",
+          "tag-query": ".tag_name"
+        }
+      },
+      {
+        "type": "file",
+        "path": "config.json"
+      }
+    ]
+  }
+}

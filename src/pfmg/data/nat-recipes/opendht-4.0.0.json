@@ -1,0 +1,33 @@
+{
+  "header": {
+    "id": "opendht",
+    "version": "4.0.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "opendht",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DCMAKE_INSTALL_LIBDIR=/app/lib",
+      "-DBUILD_SHARED_LIBS=OFF",
+      "-DCMAKE_POSITION_INDEPENDENT_CODE=ON",
+      "-DCMAKE_CXX_STANDARD=20",
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DBUILD_TESTING=Off",
+      "-DOPENDHT_DOCUMENTATION=Off",
+      "-DOPENDHT_PROXY_CLIENT=On",
+      "-DOPENDHT_PROXY_SERVER=On",
+      "-DOPENDHT_PUSH_NOTIFICATIONS=On",
+      "-DOPENDHT_IO_URING=Off",
+      "-DOPENDHT_TOOLS=Off"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/savoirfairelinux/opendht/archive/refs/tags/v4.0.0.tar.gz",
+        "sha256": "7d26eba6a43d7215cd87d1118c5d047ab72dce0d9147ef723538abd401cfa4fe"
+      }
+    ]
+  }
+}

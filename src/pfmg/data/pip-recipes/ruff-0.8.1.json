@@ -1,0 +1,36 @@
+{
+  "header": {
+    "id": "ruff",
+    "version": "0.8.1",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "ruff",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=/app \"ruff==0.8.1\" --no-build-isolation"
+    ],
+    "cleanup": [
+      "*"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/7f/29/e059f945d6bd2d90213387b8c360187f2fefc989ddcee6bbf3c241329b92/ruff-0.8.1-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "sha256": "b22346f845fec132aa39cd29acb94451d030c10874408dbf776af3aaeb53284c",
+        "only-arches": [
+          "x86_64"
+        ]
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/e2/a0/6ee2d949835d5701d832fc5acd05c0bfdad5e89cfdd074a171411f5ccad5/ruff-0.8.1-py3-none-manylinux_2_17_aarch64.manylinux2014_aarch64.whl",
+        "sha256": "2029b8c22da147c50ae577e621a5bfbc5d1fed75d86af53643d7a7aee1d23871",
+        "only-arches": [
+          "aarch64"
+        ]
+      }
+    ]
+  }
+}

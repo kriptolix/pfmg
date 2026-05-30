@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "semigroups-0.18.5",
+    "version": "0.18.5",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "build-commands": [
+      "ghc -threaded --make Setup",
+      "./Setup configure --prefix=/app",
+      "./Setup build",
+      "./Setup install"
+    ],
+    "buildsystem": "simple",
+    "cleanup": [],
+    "name": "semigroups-0.18.5",
+    "only-arches": [],
+    "sources": [
+      {
+        "sha256": "ab2a96af6e81e31b909c37ba65f436f1493dbf387cfe0de10b6586270c4ce29d",
+        "type": "archive",
+        "url": "https://s3.amazonaws.com/hackage.fpcomplete.com/package/semigroups-0.18.5.tar.gz"
+      },
+      {
+        "sha256": "aaf0d3d5050aa120b2eb98682bc7f8aeed947c1eb51a80375f32775af3d2ff68",
+        "type": "file",
+        "url": "https://raw.githubusercontent.com/commercialhaskell/all-cabal-files/a5f22172fce750e93afa6987320f5c5be62b5670/semigroups/0.18.5/semigroups.cabal"
+      }
+    ]
+  }
+}

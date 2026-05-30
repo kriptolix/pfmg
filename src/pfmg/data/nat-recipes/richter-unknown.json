@@ -1,0 +1,53 @@
+{
+  "header": {
+    "id": "richter",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "richter",
+    "buildsystem": "simple",
+    "build-commands": [
+      "(cd JUCE/extras/Projucer/Builds/LinuxMakefile/ && make -j $FLATPAK_BUILDER_N_JOBS)",
+      "JUCE/extras/Projucer/Builds/LinuxMakefile/build/Projucer --resave Richter.jucer",
+      "make -j $FLATPAK_BUILDER_N_JOBS -C Builds/LinuxMakefile/"
+    ],
+    "cleanup": [],
+    "post-install": [
+      "install -Dm644 -t ${FLATPAK_DEST}/share/licenses/richter Source/Graphics/OFL.txt",
+      "install -Dm644 -t ${FLATPAK_DEST}/share/licenses/richter License",
+      "install -d ${FLATPAK_DEST}/vst3",
+      "cp -R Builds/LinuxMakefile/build/Richter.vst3 ${FLATPAK_DEST}/vst3",
+      "strip  --strip-unneeded ${FLATPAK_DEST}/vst3/Richter.vst3/Contents/*/*.so"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/jd-13/Richter-Tremolo.git",
+        "tag": "v2.3.0"
+      },
+      {
+        "type": "patch",
+        "path": "patches/richter-jucer.patch"
+      },
+      {
+        "type": "archive",
+        "path": "Montserrat.zip",
+        "dest": "Source/Graphics/"
+      },
+      {
+        "type": "git",
+        "url": "https://github.com/juce-framework/JUCE.git",
+        "tag": "7.0.2",
+        "dest": "JUCE"
+      },
+      {
+        "type": "git",
+        "url": "https://github.com/jd-13/WE-Core.git",
+        "tag": "v0.2.5",
+        "dest": "WE-Core"
+      }
+    ]
+  }
+}

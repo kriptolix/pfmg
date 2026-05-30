@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-elementpath",
+    "version": "5.1.1",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-elementpath",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --prefix=/app elementpath-5.1.1-py3-none-any.whl"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/14/5a/4ddfd9aeecdc75a78b5d85d882abc2b822115caae2c00a4d0eb23cc101fc/elementpath-5.1.1-py3-none-any.whl",
+        "sha256": "57637359065e60654422d8474c1749b09bb21348012b7197f868027e3c09c9b9"
+      }
+    ]
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "header": {
+    "id": "laszip",
+    "version": "3.4.4",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "LASzip",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/LASzip/LASzip/releases/download/3.4.4/laszip-src-3.4.4.tar.gz",
+        "sha256": "41f826848ff106f471b134224f58075ac8e36a62b6ba0ad75be8a8c191bdba4b",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 241499,
+          "stable-only": true,
+          "url-template": "https://github.com/LASzip/LASzip/releases/download/$version/laszip-src-$version.tar.gz"
+        }
+      }
+    ],
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release"
+    ]
+  }
+}

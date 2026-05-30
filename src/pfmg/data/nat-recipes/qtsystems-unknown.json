@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "qtsystems",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "qtsystems",
+    "buildsystem": "qmake",
+    "make-install-args": [
+      "INSTALL_ROOT=${FLATPAK_DEST}/redirection"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://invent.kde.org/qt/qt/qtsystems.git/",
+        "commit": "66e45676f5f5c6251ccab36906c6324fd0065e08"
+      }
+    ],
+    "cleanup": [
+      "/bin"
+    ]
+  }
+}

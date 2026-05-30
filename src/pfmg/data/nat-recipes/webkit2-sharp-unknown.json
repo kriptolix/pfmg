@@ -1,0 +1,19 @@
+{
+  "header": {
+    "id": "webkit2-sharp",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "webkit2-sharp",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/hbons/webkit2-sharp",
+        "commit": "a59fd76dd730432c76b12ee6347ea66567107ab9"
+      }
+    ],
+    "no-parallel-make": true
+  }
+}

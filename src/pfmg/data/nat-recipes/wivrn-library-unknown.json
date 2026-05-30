@@ -1,0 +1,69 @@
+{
+  "header": {
+    "id": "wivrn-library",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "wivrn-library",
+    "buildsystem": "cmake-ninja",
+    "build-options": {
+      "cflags": "-Wp,-U_FORTIFY_SOURCE -Wp,-D_FORTIFY_SOURCE=2",
+      "cxxflags": "-Wp,-U_FORTIFY_SOURCE -Wp,-D_FORTIFY_SOURCE=2",
+      "arch": {
+        "aarch64": {
+          "ldflags": "-L/usr/lib/aarch64-linux-gnu -Wl,--warn-unresolved-symbols",
+          "cflags": "-idirafter/usr/include -idirafter/usr/lib/aarch64-linux-gnu/include/",
+          "cxxflags": "-idirafter/usr/include -idirafter/usr/lib/aarch64-linux-gnu/include/",
+          "env": {
+            "CC": "/app/aarch64-unknown-linux-gnu/bin/aarch64-unknown-linux-gnu-gcc",
+            "CXX": "/app/aarch64-unknown-linux-gnu/bin/aarch64-unknown-linux-gnu-g++"
+          }
+        },
+        "x86_64": {
+          "ldflags": "-L/usr/lib/x86_64-linux-gnu -Wl,--warn-unresolved-symbols",
+          "cflags": "-idirafter/usr/include -idirafter/usr/lib/x86_64-linux-gnu/include/",
+          "cxxflags": "-idirafter/usr/include -idirafter/usr/lib/x86_64-linux-gnu/include/",
+          "env": {
+            "CC": "/app/x86_64-unknown-linux-gnu/bin/x86_64-unknown-linux-gnu-gcc",
+            "CXX": "/app/x86_64-unknown-linux-gnu/bin/x86_64-unknown-linux-gnu-g++"
+          }
+        }
+      }
+    },
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
+      "-DWIVRN_BUILD_CLIENT=OFF",
+      "-DWIVRN_BUILD_SERVER=OFF",
+      "-DWIVRN_BUILD_SERVER_LIBRARY=ON",
+      "-DWIVRN_BUILD_DASHBOARD=OFF",
+      "-DWIVRN_BUILD_WIVRNCTL=OFF",
+      "-DWIVRN_WERROR=ON",
+      "-DFETCHCONTENT_FULLY_DISCONNECTED=ON",
+      "-DFETCHCONTENT_BASE_DIR=deps",
+      "-DGIT_DESC=v26.2.3",
+      "-DGIT_COMMIT=v26.2.3",
+      "-Wno-dev"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/WiVRn/WiVRn.git",
+        "tag": "v26.2.3"
+      },
+      {
+        "type": "git",
+        "url": "https://gitlab.freedesktop.org/monado/monado",
+        "tag": "723652b545a79609f9f04cb89fcbf807d9d6451a",
+        "dest": "deps/monado-src"
+      },
+      {
+        "type": "shell",
+        "commands": [
+          "cd deps/monado-src && ../../patches/apply.sh ../../patches/monado/*"
+        ]
+      }
+    ]
+  }
+}

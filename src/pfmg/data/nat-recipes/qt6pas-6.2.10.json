@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "qt6pas",
+    "version": "6.2.10",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "qt6pas",
+    "buildsystem": "qmake",
+    "subdir": "cbindings",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/davidbannon/libqt6pas/archive/refs/tags/v6.2.10.tar.gz",
+        "sha256": "dbcc13559f991958fb69de31d67c85575bbe278fdff0813b51787da50720d591"
+      },
+      {
+        "type": "patch",
+        "path": "path_fix.patch"
+      }
+    ]
+  }
+}

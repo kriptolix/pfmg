@@ -1,0 +1,20 @@
+{
+  "header": {
+    "id": "normaliz",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "Normaliz",
+    "buildsystem": "autotools",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/Normaliz/Normaliz.git",
+        "tag": "v3.10.4",
+        "commit": "1cdd4a7c6c4ecc074a3527162befc2fe892e6254"
+      }
+    ]
+  }
+}

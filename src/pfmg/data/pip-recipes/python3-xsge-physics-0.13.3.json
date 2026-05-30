@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-xsge-physics",
+    "version": "0.13.3",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-xsge_physics",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"xsge_physics\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/3b/40/53abe3da331d16397f0ac14f68f61cb07f3a1b5b505d2770fc6a99ec2c7f/xsge_physics-0.13.3.tar.gz",
+        "sha256": "59d44fefc031a8c24208655c346a9947de5bef0381e687f19a8edbb89eaeb6ba"
+      }
+    ]
+  }
+}

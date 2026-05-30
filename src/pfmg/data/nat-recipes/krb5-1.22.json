@@ -1,0 +1,39 @@
+{
+  "header": {
+    "id": "krb5",
+    "version": "1.22",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "krb5",
+    "subdir": "src",
+    "config-opts": [
+      "--disable-static",
+      "--disable-rpath"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://kerberos.org/dist/krb5/1.22/krb5-1.22.2.tar.gz",
+        "sha256": "3243ffbc8ea4d4ac22ddc7dd2a1dc54c57874c40648b60ff97009763554eaf13",
+        "x-checker-data": {
+          "type": "html",
+          "url": "https://kerberos.org/dist/",
+          "version-pattern": "Kerberos V5 Release ([\\d\\.-]*) - current release",
+          "url-template": "https://kerberos.org/dist/krb5/$major.$minor/krb5-$version.tar.gz"
+        }
+      }
+    ],
+    "cleanup": [
+      "/sbin",
+      "/bin",
+      "/var",
+      "/include",
+      "/lib/pkgconfig",
+      "/share/et",
+      "/share/examples",
+      "/share/man"
+    ]
+  }
+}

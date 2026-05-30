@@ -1,0 +1,39 @@
+{
+  "header": {
+    "id": "bluerecorder",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "bluerecorder",
+    "buildsystem": "simple",
+    "build-options": {
+      "append-path": "/usr/lib/sdk/rust-stable/bin:/usr/lib/sdk/llvm15/bin",
+      "prepend-ld-library-path": "/usr/lib/sdk/llvm15/lib",
+      "env": {
+        "CARGO_HOME": "/run/build/bluerecorder/cargo",
+        "RUST_BACKTRACE": "1"
+      }
+    },
+    "build-commands": [
+      "mkdir -p $FLATPAK_DEST/opt $FLATPAK_DEST/share/icons/hicolor/128x128/apps/",
+      "install -D flatpak/sa.sy.bluerecorder.metainfo.xml -t $FLATPAK_DEST/share/metainfo/",
+      "install -D flatpak/sa.sy.bluerecorder.desktop -t $FLATPAK_DEST/share/applications/",
+      "cp -v data/blue-recorder@x128.png $FLATPAK_DEST/share/icons/hicolor/128x128/apps/sa.sy.bluerecorder.png",
+      "cargo --offline fetch --manifest-path Cargo.toml --verbose",
+      "cargo --offline build --release --verbose",
+      "cp target/release/blue-recorder $FLATPAK_DEST/opt",
+      "cp -a data interfaces po $FLATPAK_DEST/opt"
+    ],
+    "sources": [
+      "cargo-sources.json",
+      {
+        "type": "git",
+        "url": "https://github.com/xlmnxp/blue-recorder.git",
+        "branch": "master",
+        "commit": "0ec73e5bbb20ac4e1b7c57e2ea8ba9c7e61b4e39"
+      }
+    ]
+  }
+}

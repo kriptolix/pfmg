@@ -1,0 +1,84 @@
+{
+  "header": {
+    "id": "joplin",
+    "version": "3.5.13",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "joplin",
+    "buildsystem": "simple",
+    "build-options": {
+      "append-path": "/usr/lib/sdk/node22/bin",
+      "env": {
+        "XDG_CACHE_HOME": "/run/build/joplin/flatpak-node/cache",
+        "npm_config_nodedir": "/usr/lib/sdk/node22",
+        "YARN_ENABLE_INLINE_BUILDS": "1",
+        "YARN_ENABLE_TELEMETRY": "0",
+        "YARN_ENABLE_NETWORK": "0",
+        "YARN_ENABLE_GLOBAL_CACHE": "0",
+        "SHARP_IGNORE_GLOBAL_LIBVIPS": "1",
+        "YARN_GLOBAL_FOLDER": "/run/build/joplin/flatpak-node/yarn-berry",
+        "TMPDIR": "/run/build/joplin/flatpak-tmp"
+      }
+    },
+    "build-commands": [
+      "yarn config",
+      "yarn plugin import $FLATPAK_BUILDER_BUILDDIR/flatpak-node/flatpak-yarn.js",
+      "yarn convertToZip $(which yarn)",
+      "yarn install --mode=skip-build",
+      "install -Dm755 /app/bin/wasm-pack -t packages/onenote-converter/node_modules/binary-install/node_modules/.bin",
+      "install -Dm755 /app/bin/wasm-pack -t packages/onenote-converter/node_modules/wasm-pack/binary",
+      "sed -i 's/git config/true||git config/g' packages/default-plugins/node_modules/joplin-plugin-freehand-drawing/package.json",
+      "yarn rebuild",
+      "yarn run postinstall",
+      "mkdir -p packages/app-desktop/dist && touch packages/app-desktop/dist/AppImage",
+      ". flatpak-node/electron-builder-arch-args.sh\ncd packages/app-desktop\nyarn run dist $ELECTRON_BUILDER_ARCH_ARGS --config.asar=false --linux --dir\n",
+      "cd packages/app-desktop\ncp -r dist/linux*unpacked /app/joplin-desktop\nmv /app/joplin-desktop/{@joplinapp-desktop,joplin}\nfor size in 16 32 64 128 256; do\n  [[ -e \"build/icons/${size}x${size}.png\" ]] && \\\n    install -Dm644 \"build/icons/${size}x${size}.png\" \\\n    \"/app/share/icons/hicolor/${size}x${size}/apps/joplin.png\";\ndone\n",
+      "install -Dm755 joplin.desktop -t /app/share/applications",
+      "install -Dm644 ${FLATPAK_ID}.appdata.xml -t /app/share/metainfo",
+      "install -Dm755 joplin-desktop.sh /app/bin/joplin-desktop"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/laurent22/joplin/archive/v3.5.13.tar.gz",
+        "sha256": "6f81f7f0265a28fa2d1033cb5703afcc6b72781bc168ea6f9b759cd5f19caf96",
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://api.github.com/repos/laurent22/joplin/releases/latest",
+          "version-query": ".tag_name | sub(\"^v\"; \"\")",
+          "url-query": "\"https://github.com/laurent22/joplin/archive/v\" + $version + \".tar.gz\"",
+          "timestamp-query": ".published_at",
+          "is-main-source": true
+        }
+      },
+      {
+        "type": "shell",
+        "commands": [
+          "jq '.desktopName = \"net.cozic.joplin_desktop\"' packages/app-desktop/package.json > package.json.tmp && mv package.json.tmp packages/app-desktop/package.json",
+          "rm -rf packages/app-clipper",
+          "cat packages/default-plugins/pluginRepositories.json | jq 'with_entries(select(.value.package))' > pluginRepositories.json",
+          "mv pluginRepositories.json packages/default-plugins/pluginRepositories.json"
+        ]
+      },
+      "generated-sources.json",
+      {
+        "type": "file",
+        "path": "joplin.desktop"
+      },
+      {
+        "type": "file",
+        "path": "net.cozic.joplin_desktop.appdata.xml"
+      },
+      {
+        "type": "script",
+        "dest-filename": "joplin-desktop.sh",
+        "commands": [
+          "export TMPDIR=$XDG_RUNTIME_DIR/app/$FLATPAK_ID",
+          "exec zypak-wrapper /app/joplin-desktop/joplin $wayland_opt \"$@\""
+        ]
+      }
+    ]
+  }
+}

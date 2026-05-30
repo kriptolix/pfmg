@@ -1,0 +1,19 @@
+{
+  "header": {
+    "id": "netcdf-c++4",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "netcdf_c++4",
+    "buildsystem": "cmake-ninja",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/Unidata/netcdf-cxx4.git",
+        "commit": "4d5a7adbace9c5571af0aa8bd10b3fe768794c6f"
+      }
+    ]
+  }
+}

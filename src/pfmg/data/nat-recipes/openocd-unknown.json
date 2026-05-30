@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "openocd",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "openocd",
+    "config-opts": [
+      "--enable-stlink"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://git.code.sf.net/p/openocd/code",
+        "tag": "v0.11.0",
+        "commit": "f342aac0845a69d591ad39a025d74e9c765f6420"
+      }
+    ]
+  }
+}

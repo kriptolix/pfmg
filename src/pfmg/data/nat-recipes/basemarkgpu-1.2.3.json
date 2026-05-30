@@ -1,0 +1,31 @@
+{
+  "header": {
+    "id": "basemarkgpu",
+    "version": "1.2.3",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "basemarkgpu",
+    "buildsystem": "simple",
+    "build-commands": [
+      "cp -ra basemarkgpu /app/basemarkgpu",
+      "install -Dm755 start-basemarkgpu.sh /app/bin/start-basemarkgpu"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://cdn.downloads.basemark.com/BasemarkGPU-linux-x64-1.2.3.tar.gz",
+        "dest": "basemarkgpu",
+        "sha256": "2d7431a7a32e89db52c2d2782f2d2ac1c91ff77ff5d1c8fcdc18c21ff65b9c9b"
+      },
+      {
+        "type": "script",
+        "dest-filename": "start-basemarkgpu.sh",
+        "commands": [
+          "/app/basemarkgpu/basemarkgpu --no-sandbox"
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "base-compat",
+    "version": "0.14.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "base-compat",
+    "buildsystem": "simple",
+    "builddir": false,
+    "build-commands": [
+      "echo '#! /usr/bin/env runhaskell' >Setup.txt",
+      "echo '> import Distribution.Simple' >>Setup.txt",
+      "echo '> main = defaultMain' >>Setup.txt",
+      "ln -s Setup.txt Setup.lhs || true",
+      "runhaskell Setup configure --prefix=/app",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "sources": [
+      {
+        "sha256": "f146de664ac838ebe18ec9360df82da3660149dc7d51fd29bcb61d653b799c50",
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/base-compat-0.14.0/base-compat-0.14.0.tar.gz"
+      },
+      {
+        "dest-filename": "base-compat.cabal",
+        "sha256": "9e2ca4ccab9b1259891e8bbd7705a7704096e2867e703a9d2442fa4876a10f8f",
+        "type": "file",
+        "url": "https://hackage.haskell.org/package/base-compat-0.14.0/revision/0.cabal"
+      }
+    ]
+  }
+}

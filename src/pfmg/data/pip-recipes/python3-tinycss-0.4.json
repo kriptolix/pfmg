@@ -1,0 +1,26 @@
+{
+  "header": {
+    "id": "python3-tinycss",
+    "version": "0.4",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-tinycss",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"tinycss\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/05/59/af583fff6236c7d2f94f8175c40ce501dcefb8d1b42e4bb7a2622dff689e/tinycss-0.4.tar.gz",
+        "sha256": "12306fb50e5e9e7eaeef84b802ed877488ba80e35c672867f548c0924a76716e",
+        "x-checker-data": {
+          "name": "tinycss",
+          "type": "pypi"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "header": {
+    "id": "bulletml",
+    "version": "0.0.6",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "bulletml",
+    "buildsystem": "simple",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "http://http.debian.net/debian/pool/main/b/bulletml/bulletml_0.0.6.orig.tar.gz",
+        "sha256": "162544e708cd8f61c944f7eac2a0403d2900d29fa9b1dc45235cfccfac8ae960"
+      },
+      {
+        "type": "patch",
+        "path": "patches/bulletml/fixes.patch"
+      },
+      {
+        "type": "patch",
+        "path": "patches/bulletml/bulletml_d.patch"
+      },
+      {
+        "type": "patch",
+        "path": "patches/bulletml/d_cpp.patch"
+      },
+      {
+        "type": "patch",
+        "path": "patches/bulletml/warnings.patch"
+      },
+      {
+        "type": "patch",
+        "path": "patches/bulletml/makefile.patch"
+      },
+      {
+        "type": "patch",
+        "path": "patches/bulletml/includes.patch"
+      },
+      {
+        "type": "patch",
+        "path": "patches/bulletml/get-rid-of-boost.patch"
+      }
+    ],
+    "build-commands": [
+      "make -C src CXXFLAGS=\"$(CXXFLAGS) $(CPPFLAGS) -fPIC -fpic\" LDFLAGS=\"$(LDFLAGS) -Wl,-z,defs\" libbulletml.so",
+      "mkdir -p /app/include/d/ /app/include/bulletml/ /app/include/bulletml/tinyxml/ /app/lib",
+      "cp src/bulletml.d /app/include/d/",
+      "cp -a src/*.h /app/include/bulletml/",
+      "cp -a src/tinyxml/*.h /app/include/bulletml/tinyxml/",
+      "cp -a src/lib*.so* /app/lib/"
+    ],
+    "cleanup": [
+      "/include"
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "regex-tdfa-1.2.3",
+    "version": "1.2.3",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "regex-tdfa-1.2.3",
+    "only-arches": [
+      "x86_64"
+    ],
+    "buildsystem": "simple",
+    "build-commands": [
+      "ghc -threaded --make Setup",
+      "./Setup configure --prefix=/app",
+      "./Setup build",
+      "./Setup install"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "sha256": "89b17ebb812d4597c0007fbbc21c78dfef70a133aa41b208217a9c99bed600d9",
+        "url": "https://hackage.haskell.org/package/regex-tdfa-1.2.3/regex-tdfa-1.2.3.tar.gz"
+      }
+    ]
+  }
+}

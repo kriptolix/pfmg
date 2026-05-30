@@ -1,0 +1,41 @@
+{
+  "header": {
+    "id": "dash-core",
+    "version": "23.1.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "dash-core",
+    "buildsystem": "simple",
+    "build-commands": [
+      "install -m 0744 -D -t /app/bin/internal bin/dashd",
+      "install -m 0744 -D -t /app/bin/internal bin/dash-qt",
+      "install -m 0744 -D -t /app/bin/internal bin/dash-cli",
+      "install -m 0744 -D -t /app/bin/internal bin/dash-tx",
+      "install -m 0744 -D -t /app/bin/internal bin/dash-wallet",
+      "install -m 0744 -D -t /app/bin/internal bin/test_dash"
+    ],
+    "post-install": [
+      "/app/bin/internal/test_dash"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "only-arches": [
+          "x86_64"
+        ],
+        "url": "https://github.com/dashpay/dash/releases/download/v23.1.2/dashcore-23.1.2-x86_64-linux-gnu.tar.gz",
+        "sha256": "3fb1392edf967c7007f5b84317d1f497cf8eece16b0760dfe6e37700012e856a"
+      },
+      {
+        "type": "archive",
+        "only-arches": [
+          "aarch64"
+        ],
+        "url": "https://github.com/dashpay/dash/releases/download/v23.1.2/dashcore-23.1.2-aarch64-linux-gnu.tar.gz",
+        "sha256": "8f42584ef119b83829a09dd9b9fb971b9ae5e533591da9df0d5b79f8b1784f1f"
+      }
+    ]
+  }
+}

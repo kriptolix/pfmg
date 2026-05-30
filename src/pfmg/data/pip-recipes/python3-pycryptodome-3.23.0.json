@@ -1,0 +1,26 @@
+{
+  "header": {
+    "id": "python3-pycryptodome",
+    "version": "3.23.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-pycryptodome",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"pycryptodome\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/8e/a6/8452177684d5e906854776276ddd34eca30d1b1e15aa1ee9cefc289a33f5/pycryptodome-3.23.0.tar.gz",
+        "sha256": "447700a657182d60338bab09fdb27518f8856aecd80ae4c6bdddb67ff5da44ef",
+        "x-checker-data": {
+          "type": "pypi",
+          "name": "pycryptodome"
+        }
+      }
+    ]
+  }
+}

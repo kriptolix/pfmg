@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "yaru-dark",
+    "version": "22.04.3.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "Yaru-dark",
+    "buildsystem": "simple",
+    "build-commands": [
+      "ar x yaru-gtk-theme.deb",
+      "tar -xf data.tar.zst",
+      "install -dm755 /usr/share/runtime/share/themes/Yaru-dark/gtk-3.0",
+      "cp -aL usr/share/themes/Yaru-dark/gtk-3.0/* /usr/share/runtime/share/themes/Yaru-dark/gtk-3.0",
+      "cp -a usr/share/themes/Yaru-dark/index.theme /usr/share/runtime/share/themes/Yaru-dark"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://launchpad.net/ubuntu/+archive/primary/+files/yaru-theme-gtk_22.04.3.1_all.deb",
+        "dest-filename": "yaru-gtk-theme.deb",
+        "sha256": "92f7e63d410f3a6b79e4d3a22e8b765248273ac3760620a09fa0b81b3f141da2"
+      }
+    ]
+  }
+}

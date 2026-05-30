@@ -1,0 +1,34 @@
+{
+  "header": {
+    "id": "mecab",
+    "version": "0.996",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "mecab",
+    "buildsystem": "autotools",
+    "cleanup": [
+      "/bin",
+      "/include",
+      "/libexec/mecab/mecab-*"
+    ],
+    "config-opts": [
+      "--with-charset=utf-8"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "archive-type": "tar",
+        "url": "https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/mecab/mecab-0.996.tar.gz",
+        "sha256": "e073325783135b72e666145c781bb48fada583d5224fb2490fb6c1403ba69c59"
+      },
+      {
+        "type": "shell",
+        "commands": [
+          "cp -p /usr/share/automake-*/config.{sub,guess} ."
+        ]
+      }
+    ]
+  }
+}

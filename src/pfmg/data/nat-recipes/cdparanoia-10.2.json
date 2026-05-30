@@ -1,0 +1,36 @@
+{
+  "header": {
+    "id": "cdparanoia",
+    "version": "10.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "cdparanoia",
+    "buildsystem": "simple",
+    "build-commands": [
+      "./configure --prefix=/app",
+      "make all slib",
+      "make install"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://downloads.xiph.org/releases/cdparanoia/cdparanoia-III-10.2.src.tgz",
+        "sha256": "005db45ef4ee017f5c32ec124f913a0546e77014266c6a1c50df902a55fe64df",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 15309,
+          "url-template": "https://downloads.xiph.org/releases/cdparanoia/cdparanoia-III-$version.src.tgz"
+        }
+      },
+      {
+        "type": "shell",
+        "commands": [
+          "cp -p /usr/share/automake-*/config.sub ./configure.sub",
+          "cp -p /usr/share/automake-*/config.guess ./configure.guess"
+        ]
+      }
+    ]
+  }
+}

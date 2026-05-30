@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "comonad",
+    "version": "5.0.8",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "comonad",
+    "buildsystem": "simple",
+    "builddir": false,
+    "build-commands": [
+      "echo '#! /usr/bin/env runhaskell' >Setup.txt",
+      "echo '> import Distribution.Simple' >>Setup.txt",
+      "echo '> main = defaultMain' >>Setup.txt",
+      "ln -s Setup.txt Setup.lhs || true",
+      "runhaskell Setup configure --prefix=/app",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "sources": [
+      {
+        "sha256": "ef6cdf2cc292cc43ee6aa96c581b235fdea8ab44a0bffb24dc79ae2b2ef33d13",
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/comonad-5.0.8/comonad-5.0.8.tar.gz"
+      },
+      {
+        "dest-filename": "comonad.cabal",
+        "sha256": "4a4dbfbd03fb4963987710fca994e8b5624bd05a33e5f95b7581b26f8229c5e3",
+        "type": "file",
+        "url": "https://hackage.haskell.org/package/comonad-5.0.8/revision/2.cabal"
+      }
+    ]
+  }
+}

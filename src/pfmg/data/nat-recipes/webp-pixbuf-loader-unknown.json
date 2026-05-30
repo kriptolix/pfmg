@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "webp-pixbuf-loader",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "webp-pixbuf-loader",
+    "buildsystem": "meson",
+    "config-opts": [
+      "-Dgdk_pixbuf_moduledir=/app/lib/gnome-books/gdk-pixbuf/2.10.0/"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/aruiz/webp-pixbuf-loader.git",
+        "commit": "ffddc060497ee11d6cc573dae01a528b357b91ec"
+      }
+    ],
+    "post-install": [
+      "gdk-pixbuf-query-loaders /app/lib/gnome-books/gdk-pixbuf/2.10.0/*.so > /app/lib/gnome-books/gdk-pixbuf/2.10.0/loaders.cache"
+    ]
+  }
+}

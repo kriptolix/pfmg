@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "crossguid",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "crossguid",
+    "buildsystem": "cmake-ninja",
+    "cleanup": [
+      "*"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/graeme-hill/crossguid.git",
+        "//": "The 0.2.2 doesn't even have .pc or install rules",
+        "commit": "ca1bf4b810e2d188d04cb6286f957008ee1b7681"
+      },
+      {
+        "//": "Fix for GCC 13",
+        "type": "patch",
+        "path": "patches/crossguid.patch"
+      }
+    ]
+  }
+}

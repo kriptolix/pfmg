@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "safeint",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "safeint",
+    "buildsystem": "simple",
+    "build-commands": [
+      "install -Dm644 SafeInt.hpp /app/include/SafeInt.hpp",
+      "install -Dm644 safe_math.h /app/include/safe_math.h",
+      "install -Dm644 safe_math_impl.h /app/include/safe_math_impl.h"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/dcleblanc/SafeInt.git",
+        "tag": "3.0.28",
+        "commit": "4cafc9196c4da9c817992b20f5253ef967685bf8"
+      }
+    ]
+  }
+}

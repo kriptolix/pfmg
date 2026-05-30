@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-wurlitzer",
+    "version": "3.1.1",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-wurlitzer",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"wurlitzer==3.1.1\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/9a/24/93ce54550a9dd3fd996ed477f00221f215bf6da3580397fbc138d6036e2e/wurlitzer-3.1.1-py3-none-any.whl",
+        "sha256": "0b2749c2cde3ef640bf314a9f94b24d929fe1ca476974719a6909dfc568c3aac"
+      }
+    ]
+  }
+}

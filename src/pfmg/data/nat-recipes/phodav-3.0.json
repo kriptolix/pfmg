@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "phodav",
+    "version": "3.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "phodav",
+    "buildsystem": "meson",
+    "config-opts": [
+      "-Dsystemdsystemunitdir=/app/lib/systemd/system",
+      "-Dudevrulesdir=usr/lib/udev/rules.d"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.gnome.org/sources/phodav/3.0/phodav-3.0.tar.xz",
+        "sha256": "392ec2d06d50300dcff1ef269a2a985304e29bce3520002fca29f2edc1d138d1"
+      }
+    ]
+  }
+}

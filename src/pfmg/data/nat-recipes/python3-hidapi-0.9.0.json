@@ -1,0 +1,26 @@
+{
+  "header": {
+    "id": "python3-hidapi",
+    "version": "0.9.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-hidapi",
+    "buildsystem": "simple",
+    "build-commands": [
+      "python3 setup.py install --prefix=${FLATPAK_DEST}"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://files.pythonhosted.org/packages/ee/e9/b2ec08690c280a0eaa4777bf829db6b5d269903d4e8e9ce82f079c837d5a/hidapi-0.9.0.post3.tar.gz",
+        "sha256": "5a2442928f17ba742d9c53073f48b152051c5747d758d2fefd937543da5ab2e5"
+      },
+      {
+        "type": "patch",
+        "path": "hidapi_fix_prefix.patch"
+      }
+    ]
+  }
+}

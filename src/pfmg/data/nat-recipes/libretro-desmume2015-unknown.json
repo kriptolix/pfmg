@@ -1,0 +1,42 @@
+{
+  "header": {
+    "id": "libretro-desmume2015",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libretro-desmume2015",
+    "skip-arches": [
+      "aarch64",
+      "arm"
+    ],
+    "no-autogen": true,
+    "subdir": "desmume",
+    "make-args": [
+      "prefix=/app",
+      "core_installdir=/app/lib/libretro"
+    ],
+    "make-install-args": [
+      "prefix=/app",
+      "core_installdir=/app/lib/libretro"
+    ],
+    "post-install": [
+      "mkdir -p /app/lib/libretro/",
+      "install -m644 -p desmume2015.libretro /app/lib/libretro/"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/libretro/desmume2015",
+        "commit": "b6de1b650d047a43f78b1ae561d379100e22814f"
+      },
+      {
+        "type": "file",
+        "path": "desmume2015.libretro",
+        "dest": "desmume",
+        "dest-filename": "desmume2015.libretro"
+      }
+    ]
+  }
+}

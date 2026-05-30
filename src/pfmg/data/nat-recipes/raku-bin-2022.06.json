@@ -1,0 +1,34 @@
+{
+  "header": {
+    "id": "raku-bin",
+    "version": "2022.06",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "raku-bin",
+    "only-arches": [
+      "x86_64"
+    ],
+    "buildsystem": "simple",
+    "build-commands": [
+      "cp -r bin lib share ${FLATPAK_DEST}/"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://rakudo.org/dl/rakudo/rakudo-moar-2022.06-01-linux-x86_64-gcc.tar.gz",
+        "sha256": "f934f08b864a5c3e2eff1926fbdd28a0044501aa769541f4154dcd140101d3b9",
+        "only-arches": [
+          "x86_64"
+        ],
+        "x-checker-data": {
+          "type": "html",
+          "url": "https://rakudo.org/downloads/rakudo",
+          "version-pattern": "rakudo-([\\d\\.-]+).tar.gz",
+          "url-template": "https://rakudo.org/dl/rakudo/rakudo-moar-$version-01-linux-x86_64-gcc.tar.gz"
+        }
+      }
+    ]
+  }
+}

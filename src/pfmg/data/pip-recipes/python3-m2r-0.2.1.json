@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "python3-m2r",
+    "version": "0.2.1",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-m2r",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"m2r\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/a7/39/c1c7f390413f378b5291a7943e05bd2a4df772b5526f17cb8fa5e6fcf497/mistune-2.0.2-py2.py3-none-any.whl",
+        "sha256": "6bab6c6abd711c4604206c7d8cad5cd48b28f072b4bb75797d74146ba393a049"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/8d/14/69b4bad34e3f250afe29a854da03acb6747711f3df06c359fa053fae4e76/docutils-0.18.1-py2.py3-none-any.whl",
+        "sha256": "23010f129180089fbcd3bc08cfefccb3b890b0050e1ca00c867036e9d161b98c"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/39/e7/9fae11a45f5e1a3a21d8a98d02948e597c4afd7848a0dbe1a1ebd235f13e/m2r-0.2.1.tar.gz",
+        "sha256": "bf90bad66cda1164b17e5ba4a037806d2443f2a4d5ddc9f6a5554a0322aaed99"
+      }
+    ]
+  }
+}

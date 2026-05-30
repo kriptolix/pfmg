@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "perl-gtk3",
+    "version": "0.038",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "perl-gtk3",
+    "buildsystem": "simple",
+    "build-commands": [
+      "perl Makefile.PL PREFIX=/app LIB=/app/lib",
+      "make",
+      "make install"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://cpan.metacpan.org/authors/id/X/XA/XAOC/Gtk3-0.038.tar.gz",
+        "sha256": "70dc4bf2aa74981c79e15fd298d998e05a92eba4811f1ad5c9f1f4de37737acc"
+      }
+    ]
+  }
+}

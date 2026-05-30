@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "jamovi-server",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "jamovi-server",
+    "buildsystem": "simple",
+    "build-commands": [
+      "cd server && python3 setup.py build_ext",
+      "cd server && python3 setup.py install --single-version-externally-managed --root=/ --prefix=${FLATPAK_DEST}",
+      "cd readstat && python3 setup.py build_ext",
+      "cd readstat && python3 setup.py install --single-version-externally-managed --root=/ --prefix=${FLATPAK_DEST}",
+      "mkdir -p /app/lib/jamovi",
+      "cp version /app/lib/jamovi/version"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/jamovi/jamovi.git",
+        "commit": "2146574acee0bf6a0f6b342ece0024147d2515b2"
+      }
+    ]
+  }
+}

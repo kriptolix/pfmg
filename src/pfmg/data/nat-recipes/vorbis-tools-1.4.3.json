@@ -1,0 +1,19 @@
+{
+  "header": {
+    "id": "vorbis-tools",
+    "version": "1.4.3",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "vorbis-tools",
+    "buildsystem": "autotools",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "http://downloads.xiph.org/releases/vorbis/vorbis-tools-1.4.3.tar.gz",
+        "sha256": "a1fe3ddc6777bdcebf6b797e7edfe0437954b24756ffcc8c6b816b63e0460dde"
+      }
+    ]
+  }
+}

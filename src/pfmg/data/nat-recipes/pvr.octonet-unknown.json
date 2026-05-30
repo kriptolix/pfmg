@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "pvr.octonet",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "pvr.octonet",
+    "buildsystem": "cmake-ninja",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/DigitalDevices/pvr.octonet",
+        "commit": "c2a22304cc4afd93dd92a34886e8ffbc33827707"
+      }
+    ],
+    "build-options": {
+      "no-debuginfo": true,
+      "cflags": "-g0",
+      "cxxflags": "-g0"
+    },
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release"
+    ]
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "kotki",
+    "version": "0.6.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "kotki",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DSTATIC=OFF",
+      "-DSHARED=ON"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/terslang/kotki/archive/refs/tags/v0.6.0-1.tar.gz",
+        "sha256": "6784f82cd5bd9be5a9de28a1a30a21881aa0cbc9ac2a0a744afd82fbff57a50c"
+      }
+    ]
+  }
+}

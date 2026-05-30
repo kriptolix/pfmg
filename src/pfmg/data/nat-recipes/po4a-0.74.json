@@ -1,0 +1,38 @@
+{
+  "header": {
+    "id": "po4a",
+    "version": "0.74",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "po4a",
+    "buildsystem": "simple",
+    "build-options": {
+      "env": {
+        "PERL5LIB": "/app/lib"
+      }
+    },
+    "build-commands": [
+      "perl Build.PL --install_base=${FLATPAK_DEST} --install_path lib=${FLATPAK_DEST}/lib",
+      "./Build code",
+      "./Build install"
+    ],
+    "cleanup": [
+      "*"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/mquinson/po4a/releases/download/v0.74/po4a-0.74.tar.gz",
+        "sha256": "25fc323f2ba37bbd48c3af0ebf49952644b0e468261f98633e91219a838fe7c2",
+        "x-checker-data": {
+          "type": "html",
+          "url": "https://po4a.org",
+          "url-template": "https://github.com/mquinson/po4a/releases/download/v$version/po4a-$version.tar.gz",
+          "version-pattern": "<h2>\\d{4}-\\d{2}-\\d{2} - po4a ([\\d\\.]+) .+</h2>"
+        }
+      }
+    ]
+  }
+}

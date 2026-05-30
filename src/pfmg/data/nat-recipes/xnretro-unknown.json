@@ -1,0 +1,65 @@
+{
+  "header": {
+    "id": "xnretro",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "XnRetro",
+    "buildsystem": "simple",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.xnview.com/XnRetro-linux.tgz",
+        "sha256": "e0912a4fd9d9e095f695bf6e89b81b3ed9894caca05d247fde9126b3102990cd",
+        "strip-components": 0,
+        "x-checker-data": {
+          "type": "rotating-url",
+          "url": "https://download.xnview.com/XnRetro-linux.tgz"
+        }
+      },
+      {
+        "type": "archive",
+        "url": "https://download.xnview.com/old_versions/XnConvert/XnConvert-1.51-linux.tgz",
+        "sha256": "6dbb7d33f2fb974d3bdd3dd7f83ca43da5645a0c2b7ace03b154b7caba55b021",
+        "strip-components": 0
+      },
+      {
+        "type": "archive",
+        "url": "https://download.xnview.com/old_versions/XnConvert/XnConvert-1.51-linux-x64.tgz",
+        "sha256": "98947433c114d53013a45c24ad573287f00eaccd182aed58632be2a517af2f4f",
+        "strip-components": 0,
+        "only-arches": [
+          "x86_64"
+        ]
+      },
+      {
+        "type": "patch",
+        "path": "patches/xnretro-1.01-wrapper.patch",
+        "strip-components": 0
+      },
+      {
+        "type": "file",
+        "path": "xnretro.png"
+      },
+      {
+        "type": "file",
+        "path": "com.xnview.XnRetro.desktop"
+      },
+      {
+        "type": "file",
+        "path": "com.xnview.XnRetro.appdata.xml"
+      }
+    ],
+    "build-commands": [
+      "cp -a \"XnRetro\" \"${FLATPAK_DEST}/\"",
+      "for file in \"XnConvert/lib\"/{libQt*.so.4*,libphonon.so.4}; do\n  [[ -f \"${file}\" ]] || continue;\n  f=\"$( basename \"${file}\" )\";\n  [[ ! -f \"${FLATPAK_DEST}/XnRetro/lib/${f}\" ]] || continue;\n  cp -a \"${file}\" \"${FLATPAK_DEST}/XnRetro/lib/\";\ndone;\n",
+      "for file in \"${FLATPAK_DEST}/lib\"/{libQt*.so.4*,libphonon.so.4}; do\n  [[ -f \"${file}\" ]] || continue;\n  f=\"$( basename \"${file}\" )\";\n  ln -sf \"${file}\" \"${FLATPAK_DEST}/XnRetro/lib/\";\ndone;\n",
+      "ln -s \"${FLATPAK_DEST}/XnRetro/xnretro.sh\" \"${FLATPAK_DEST}/bin/xnretro\"",
+      "install -Dm0644 \"com.xnview.XnRetro.desktop\" -t \"${FLATPAK_DEST}/share/applications/\"",
+      "install -Dm0644 \"com.xnview.XnRetro.appdata.xml\" -t \"${FLATPAK_DEST}/share/appdata/\"",
+      "install -Dm0644 \"xnretro.png\" \"${FLATPAK_DEST}/share/icons/hicolor/128x128/apps/${FLATPAK_ID}.png\""
+    ]
+  }
+}

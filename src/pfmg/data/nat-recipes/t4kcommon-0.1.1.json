@@ -1,0 +1,38 @@
+{
+  "header": {
+    "id": "t4kcommon",
+    "version": "0.1.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "t4kcommon",
+    "rm-configure": true,
+    "build-options": {
+      "cflags": "-fcommon -Wno-error=implicit-function-declaration -Wno-error=incompatible-pointer-types -std=gnu17",
+      "cxxflags": "-fcommon -Wno-error=implicit-function-declaration -Wno-error=incompatible-pointer-types -std=gnu17"
+    },
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://downloads.sourceforge.net/project/tuxmath/t4k_common/t4k_common-0.1.1.tar.gz",
+        "sha256": "42c155816dae2c5dad560faa50edaa1ca84536530283d37859c4b91e82675110"
+      },
+      {
+        "type": "patch",
+        "path": "t4kcommon-libpng16.patch"
+      },
+      {
+        "type": "patch",
+        "path": "t4kcommon-libxml2-frame-count.patch"
+      },
+      {
+        "type": "script",
+        "dest-filename": "autogen.sh",
+        "commands": [
+          "autoreconf -vfi"
+        ]
+      }
+    ]
+  }
+}

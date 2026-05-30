@@ -1,0 +1,26 @@
+{
+  "header": {
+    "id": "qtwebdav",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "qtwebdav",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DBUILD_WITH_QT6=ON"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/PikachuHy/QtWebDAV.git",
+        "commit": "ac39687b8ae16118d385d3694e900becd108a0f2"
+      },
+      {
+        "type": "patch",
+        "path": "patches/qtwebdav-cmake.patch"
+      }
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "sugar-artwork",
+    "version": "0.119",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "sugar-artwork",
+    "no-parallel-make": true,
+    "config-opts": [
+      "--without-gtk2"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "http://download.sugarlabs.org/sources/sucrose/glucose/sugar-artwork/sugar-artwork-0.119.tar.xz",
+        "sha256": "01a027b64c44e4f5fa27933d803ce8358d22c04bc882b689e797d36a85f13718"
+      }
+    ]
+  }
+}

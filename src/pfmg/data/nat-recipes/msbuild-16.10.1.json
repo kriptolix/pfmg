@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "msbuild",
+    "version": "16.10.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "msbuild",
+    "buildsystem": "simple",
+    "build-commands": [
+      "ar x msbuild_*.deb",
+      "rm -r msbuild_*.deb",
+      "tar xf data.tar.xz --strip-components=2 --exclude=doc --directory=${FLATPAK_DEST}",
+      "sed -i 's:/usr:/usr/lib/sdk/mono6:g' ${FLATPAK_DEST}/bin/msbuild"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://download.mono-project.com/repo/debian/pool/main/m/msbuild/msbuild_16.10.1%2bxamarinxplat.2021.05.26.14.00-0xamarin2%2bdebian10b1_all.deb",
+        "sha256": "a177610be806c44877169a3fef7f15ffc65e2df7bdbe11b532eb6cc8f92b4c3c",
+        "x-checker-data": {
+          "type": "debian-repo",
+          "package-name": "msbuild",
+          "root": "https://download.mono-project.com/repo/debian",
+          "dist": "stable-buster",
+          "component": "main"
+        }
+      }
+    ]
+  }
+}

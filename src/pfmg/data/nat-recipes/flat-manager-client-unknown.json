@@ -1,0 +1,38 @@
+{
+  "header": {
+    "id": "flat-manager-client",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "flat-manager-client",
+    "buildsystem": "simple",
+    "build-options": {
+      "append-path": "/usr/lib/sdk/rust-stable/bin",
+      "env": {
+        "CARGO_HOME": "/run/build/flat-manager-client-rust/cargo",
+        "CARGO_NET_OFFLINE": "true"
+      }
+    },
+    "build-commands": [
+      "cargo --offline fetch --manifest-path Cargo.toml --verbose",
+      "cargo build --offline --release --bin flat-manager-client",
+      "install -Dm0755 target/release/flat-manager-client ${FLATPAK_DEST}/bin/flat-manager-client"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/flatpak/flat-manager",
+        "commit": "a2844c3014b9633a833dcb3c7c149446e17561a3"
+      },
+      "flat-manager-client-rust-deps.json",
+      {
+        "type": "inline",
+        "dest": ".cargo",
+        "dest-filename": "config.toml",
+        "contents": "[source.crates-io]\nreplace-with = \"vendored-sources\"\n\n[source.vendored-sources]\ndirectory = \"cargo/vendor\"\n"
+      }
+    ]
+  }
+}

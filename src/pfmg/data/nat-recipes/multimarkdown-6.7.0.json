@@ -1,0 +1,29 @@
+{
+  "header": {
+    "id": "multimarkdown",
+    "version": "6.7.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "MultiMarkdown",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
+    ],
+    "builddir": true,
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/fletcher/MultiMarkdown-6/archive/refs/tags/6.7.0.tar.gz",
+        "sha256": "aa386f54631dbc4e0beeb6b9cf9eb769db95a3f505a69b663140a80008cf0595",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 131019,
+          "stable-only": true,
+          "url-template": "https://github.com/fletcher/MultiMarkdown-6/archive/refs/tags/$version.tar.gz"
+        }
+      }
+    ]
+  }
+}

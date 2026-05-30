@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "pyasn1",
+    "version": "0.6.3",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "pyasn1",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --prefix=/app pyasn1*.whl"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/5d/a0/7d793dce3fa811fe047d6ae2431c672364b462850c6235ae306c0efd025f/pyasn1-0.6.3-py3-none-any.whl",
+        "sha256": "a80184d120f0864a52a073acc6fc642847d0be408e7c7252f31390c0f4eadcde",
+        "x-checker-data": {
+          "type": "pypi",
+          "name": "pyasn1",
+          "packagetype": "bdist_wheel"
+        }
+      }
+    ]
+  }
+}

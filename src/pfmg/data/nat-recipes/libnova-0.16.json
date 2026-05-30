@@ -1,0 +1,30 @@
+{
+  "header": {
+    "id": "libnova",
+    "version": "0.16",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libnova",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://gitlab.com/libnova/libnova/-/archive/v0.16/libnova-v0.16.tar.gz",
+        "sha256": "8b7a8dd0f06c17643d721eef3cee5239ecaeaba233c4994ff3bdd07bfa489b69",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 14947,
+          "stable-only": true,
+          "url-template": "https://gitlab.com/libnova/libnova/-/archive/v$version/libnova-v$version.tar.gz"
+        }
+      },
+      {
+        "type": "shell",
+        "commands": [
+          "autoreconf -vfi"
+        ]
+      }
+    ]
+  }
+}

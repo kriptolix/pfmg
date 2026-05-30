@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "libyuv",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libyuv",
+    "buildsystem": "cmake",
+    "builddir": true,
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://salsa.debian.org/debian/libyuv.git",
+        "commit": "8f0761d7b98aa402548983b2f823e5c1e81d687b"
+      }
+    ],
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=\"Release\""
+    ]
+  }
+}

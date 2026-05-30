@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "acpica-unix",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "acpica-unix",
+    "buildsystem": "simple",
+    "build-commands": [
+      "make -j $FLATPAK_BUILDER_N_JOBS",
+      "make install DESTDIR=$FLATPAK_DEST PREFIX=/"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/user-attachments/files/19613932/acpica-unix-20250404.tar.gz",
+        "sha256": "c0895489e6cb2dc92e49dc60cdf94ac02b0d33602166354267b8f4b6586c2315"
+      }
+    ]
+  }
+}

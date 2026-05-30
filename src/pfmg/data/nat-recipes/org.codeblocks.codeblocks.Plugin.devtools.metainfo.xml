@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="addon">
+  <id>org.codeblocks.codeblocks.Plugin.devtools</id>
+  <extends>org.codeblocks.codeblocks</extends>
+  <name>DevTools</name>
+  <summary>Contains SFML2, SFML3, wxWidgets3.2, Raylib5, GLFW3.4, GLUT3.6 andFLTK1.</summary>
+  <project_license>GPL-2.0-or-later</project_license>
+  <metadata_license>CC0-1.0</metadata_license>
+  <update_contact>sixpalax_AT_gmail.com</update_contact>
+  <url type="homepage">https://www.codeblocks.org/</url>
+  <releases>
+    <release version="0.0.1" date="2025-01-01"/>
+  </releases>
+</component>

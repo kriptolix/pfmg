@@ -1,0 +1,26 @@
+{
+  "header": {
+    "id": "fluidlite",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "fluidlite",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
+      "-DBUILD_SHARED_LIBS=ON",
+      "-DCMAKE_POSITION_INDEPENDENT_CODE=ON",
+      "-DENABLE_SF3=YES",
+      "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/divideconcept/FluidLite.git",
+        "commit": "d59d2328818f913b7d1a6a59aed695c47a8ce388"
+      }
+    ]
+  }
+}

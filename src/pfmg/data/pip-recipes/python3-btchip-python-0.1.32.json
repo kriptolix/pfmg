@@ -1,0 +1,42 @@
+{
+  "header": {
+    "id": "python3-btchip-python",
+    "version": "0.1.32",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-btchip-python",
+    "buildsystem": "simple",
+    "build-commands": [
+      "env C_INCLUDE_PATH=/app/include/libusb-1.0 pip3 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"btchip-python==0.1.32\""
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/c3/a9/5dc32465951cf4812e9e93b4ad2d314893c2fa6d5f66ce5c057af6e76d85/setuptools-49.6.0-py3-none-any.whl",
+        "sha256": "4dd5bb0a0a0cff77b46ca5dd3a84857ee48c83e8223886b556613c724994073f"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/ee/ff/48bde5c0f013094d729fe4b0316ba2a24774b3ff1c52d924a8a4cb04078a/six-1.15.0-py2.py3-none-any.whl",
+        "sha256": "8b74bedcbbbaca38ff6d7491d76f2b06b3592611af620f8426e82dddb04a5ced"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/99/9b/5c41756461308a5b2d8dcbcd6eaa2f1c1bc60f0a6aa743b58cab756a92e1/hidapi-0.10.1.tar.gz",
+        "sha256": "a1170b18050bc57fae3840a51084e8252fd319c0fc6043d68c8501deb0e25846"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/98/16/70be2716e24eaf5d81074bb3c05429d60292c2a96613a78ac3d69526ad2a/ecdsa-0.16.1-py2.py3-none-any.whl",
+        "sha256": "881fa5e12bb992972d3d1b3d4dfbe149ab76a89f13da02daa5ea1ec7dea6e747"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/30/fd/16394adaff5736840aeda77163d5f6f593091d687a1807ff02dedcfc7bca/btchip-python-0.1.32.tar.gz",
+        "sha256": "34f5e0c161c08f65dc0d070ba2ff4c315ed21c4b7e0faa32a46862d0dc1b8f55"
+      }
+    ]
+  }
+}

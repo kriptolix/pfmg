@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "scrcpy-server",
+    "version": "3.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "scrcpy-server",
+    "buildsystem": "simple",
+    "build-commands": [
+      "install -Dm644 scrcpy-server /app/share/scrcpy/scrcpy-server"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://github.com/Genymobile/scrcpy/releases/download/v3.1/scrcpy-server-v3.1",
+        "sha256": "958f0944a62f23b1f33a16e9eb14844c1a04b882ca175a738c16d23cb22b86c0",
+        "dest-filename": "scrcpy-server"
+      }
+    ]
+  }
+}

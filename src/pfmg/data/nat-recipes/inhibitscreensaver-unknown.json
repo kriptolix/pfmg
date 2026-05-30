@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "inhibitscreensaver",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "InhibitScreensaver",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/trilader/InhibitScreensaver",
+        "tag": "v1.0.3",
+        "commit": "407830cad6c5d58958901c9983bed9b7bf81cef2",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^v([\\d.]+)$"
+        }
+      }
+    ]
+  }
+}

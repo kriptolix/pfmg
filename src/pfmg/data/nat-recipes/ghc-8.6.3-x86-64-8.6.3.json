@@ -1,0 +1,29 @@
+{
+  "header": {
+    "id": "ghc-8.6.3-x86-64",
+    "version": "8.6.3",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "build-commands": [
+      "mkdir -p /app/lib",
+      "ln -s /usr/lib/x86_64-linux-gnu/libtinfo.so /app/lib/libtinfo.so.5",
+      "./configure --prefix=/app",
+      "make install"
+    ],
+    "buildsystem": "simple",
+    "cleanup": [],
+    "name": "ghc-8.6.3-x86_64",
+    "only-arches": [
+      "x86_64"
+    ],
+    "sources": [
+      {
+        "sha256": "291ca565374f4d51cc311488581f3279d3167a064fabfd4a6722fe2bd4532fd5",
+        "type": "archive",
+        "url": "https://github.com/commercialhaskell/ghc/releases/download/ghc-8.6.3-release/ghc-8.6.3-x86_64-deb8-linux.tar.xz"
+      }
+    ]
+  }
+}

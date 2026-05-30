@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "vcard",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "vcard",
+    "buildsystem": "cmake-ninja",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/ivanenko/vCard.git",
+        "commit": "9e6a5349d27733c931815b2e236807f3414ab251"
+      },
+      {
+        "type": "patch",
+        "path": "patches/vcard-cmake.patch"
+      }
+    ]
+  }
+}

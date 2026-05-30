@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "intel-onevpl-runtime",
+    "version": "26.1.6",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "intel-onevpl-runtime",
+    "only-arches": [
+      "x86_64"
+    ],
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DBUILD_SAMPLES=OFF",
+      "-DBUILD_TESTS=OFF",
+      "-DBUILD_TOOLS=OFF"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/oneapi-src/oneVPL-intel-gpu/archive/intel-onevpl-26.1.6.tar.gz",
+        "sha256": "41456ec8bff819b29a69601aeaffec72fd408ea6c79ab0e4184cc11b6b04f1ba",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 368736,
+          "stable-only": true,
+          "url-template": "https://github.com/oneapi-src/oneVPL-intel-gpu/archive/intel-onevpl-$version.tar.gz"
+        }
+      }
+    ]
+  }
+}

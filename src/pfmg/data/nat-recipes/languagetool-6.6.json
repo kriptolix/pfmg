@@ -1,0 +1,36 @@
+{
+  "header": {
+    "id": "languagetool",
+    "version": "6.6",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "LanguageTool",
+    "buildsystem": "simple",
+    "build-commands": [
+      "cp -r . /app/LanguageTool"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://languagetool.org/download/LanguageTool-6.6.zip",
+        "sha256": "53600506b399bb5ffe1e4c8dec794fd378212f14aaf38ccef9b6f89314d11631",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 241970,
+          "url-template": "https://languagetool.org/download/LanguageTool-6.6.zip"
+        }
+      }
+    ],
+    "modules": [
+      {
+        "name": "openjdk",
+        "buildsystem": "simple",
+        "build-commands": [
+          "/usr/lib/sdk/openjdk25/install.sh"
+        ]
+      }
+    ]
+  }
+}

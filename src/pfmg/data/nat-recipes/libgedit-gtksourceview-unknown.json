@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "libgedit-gtksourceview",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libgedit-gtksourceview",
+    "buildsystem": "meson",
+    "config-opts": [
+      "-Dgtk_doc=false",
+      "-Dtests=false"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://gitlab.gnome.org/World/gedit/libgedit-gtksourceview.git",
+        "tag": "299.7.0",
+        "commit": "9fb56b0afed2d03fb9b166c9273530321e044377",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^299\\.7\\.\\d+$"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "header": {
+    "id": "xorg-libxmu",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "xorg-libXmu",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://gitlab.freedesktop.org/xorg/lib/libxmu.git",
+        "tag": "libXmu-1.2.1",
+        "commit": "792f80402ee06ce69bca3a8f2a84295999c3a170"
+      }
+    ]
+  }
+}

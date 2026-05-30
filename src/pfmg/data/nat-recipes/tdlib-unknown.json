@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "tdlib",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "tdlib",
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/tdlib/td.git",
+        "commit": "8517026415e75a8eec567774072cbbbbb52376c1"
+      }
+    ]
+  }
+}

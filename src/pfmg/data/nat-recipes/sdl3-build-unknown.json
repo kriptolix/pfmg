@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "sdl3-build",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "sdl3-build",
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/libsdl-org/SDL.git",
+        "tag": "release-3.2.10"
+      }
+    ]
+  }
+}

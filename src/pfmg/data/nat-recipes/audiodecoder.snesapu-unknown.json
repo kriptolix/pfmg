@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "audiodecoder.snesapu",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "audiodecoder.snesapu",
+    "buildsystem": "cmake-ninja",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/xbmc/audiodecoder.snesapu",
+        "commit": "00d8535705bfd5b39bde090b4037b674fbd10b31"
+      }
+    ],
+    "build-options": {
+      "no-debuginfo": true,
+      "cflags": "-g0",
+      "cxxflags": "-g0"
+    },
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release"
+    ]
+  }
+}

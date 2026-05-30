@@ -1,0 +1,20 @@
+{
+  "header": {
+    "id": "portaudio",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "portaudio",
+    "buildsystem": "cmake-ninja",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://git.assembla.com/portaudio.git",
+        "tag": "pa_stable_v190600_20161030",
+        "commit": "396fe4b6699ae929d3a685b3ef8a7e97396139a4"
+      }
+    ]
+  }
+}

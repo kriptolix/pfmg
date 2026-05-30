@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "simutrans",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "simutrans",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DSIMUTRANS_USE_REVISION=11919"
+    ],
+    "builddir": true,
+    "sources": [
+      {
+        "type": "svn",
+        "url": "svn://servers.simutrans.org/simutrans/trunk",
+        "revision": "11919"
+      }
+    ]
+  }
+}

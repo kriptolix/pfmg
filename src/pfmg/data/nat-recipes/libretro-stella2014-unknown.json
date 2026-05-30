@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "libretro-stella2014",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libretro-stella2014",
+    "no-autogen": true,
+    "make-args": [
+      "prefix=/app",
+      "core_installdir=/app/lib/libretro"
+    ],
+    "make-install-args": [
+      "prefix=/app",
+      "core_installdir=/app/lib/libretro"
+    ],
+    "post-install": [
+      "mkdir -p /app/lib/libretro/",
+      "install -m644 -p stella2014.libretro /app/lib/libretro/"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/libretro/stella2014-libretro",
+        "commit": "138b9709e0b1687826eba6a92eed8a0b04a56ee2"
+      },
+      {
+        "type": "file",
+        "path": "stella2014.libretro"
+      }
+    ]
+  }
+}

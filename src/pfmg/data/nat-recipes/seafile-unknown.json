@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "seafile",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "seafile",
+    "config-opts": [
+      "--with-python_prefix=/app"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/haiwen/seafile.git",
+        "tag": "v9.0.18",
+        "commit": "e41a24dc18d838858c01bbd917651cb0ec9bbac1",
+        "x-checker-data": {
+          "type": "git",
+          "version-scheme": "semantic",
+          "tag-pattern": "^v([\\d.]+)$"
+        }
+      }
+    ]
+  }
+}

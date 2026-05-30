@@ -1,0 +1,42 @@
+{
+  "header": {
+    "id": "gimp-help",
+    "version": "2.10.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "gimp-help",
+    "modules": [
+      {
+        "name": "python2-libxml2",
+        "cleanup": [
+          "*"
+        ],
+        "config-opts": [
+          "--with-python=/app/share/gimp/2.0/help"
+        ],
+        "sources": [
+          {
+            "type": "archive",
+            "url": "ftp://xmlsoft.org/libxml2/libxml2-2.9.12.tar.gz",
+            "sha256": "c8d6681e38c56f172892c85ddc0852e1fd4b53b4209e7f4ebf17f7e2eae71d92"
+          }
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.gimp.org/pub/gimp/help/gimp-help-2.10.0.tar.bz2",
+        "sha256": "03804fed071b49e5810edd8327868659dfd9932fbf34d34189d56bd0ad539118"
+      },
+      {
+        "type": "shell",
+        "commands": [
+          "cp /usr/share/automake-1.16/{config.guess,config.sub} ."
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "header": {
+    "id": "mcpelauncher-client",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "mcpelauncher-client",
+    "buildsystem": "cmake",
+    "builddir": true,
+    "build-options": {
+      "env": {
+        "CC": "clang",
+        "CXX": "clang++",
+        "CFLAGS": "",
+        "CXXFLAGS": ""
+      },
+      "config-opts": [
+        "-DGAMEWINDOW_SYSTEM=SDL3",
+        "-DENABLE_DEV_PATHS=OFF",
+        "-DFETCHCONTENT_SOURCE_DIR_NLOHMANN_JSON_EXT=../nlohmann_json_ext",
+        "-DJNI_USE_JNIVM=ON",
+        "-DBUILD_UI=ON",
+        "-DBUILD_CLIENT=ON",
+        "-DUSE_OWN_CURL=OFF",
+        "-DCMAKE_BUILD_TYPE=Release",
+        "-DCMAKE_C_FLAGS=-DNDEBUG",
+        "-DCMAKE_CXX_FLAGS=-DNDEBUG",
+        "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
+      ],
+      "prepend-path": "/usr/lib/sdk/llvm21/bin",
+      "prepend-ld-library-path": "/usr/lib/sdk/llvm21/lib"
+    },
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/minecraft-linux/mcpelauncher-manifest.git",
+        "commit": "06d038a3159c5667b5a63786fe22bba5214ec76a",
+        "disable-shallow-clone": true
+      },
+      {
+        "type": "git",
+        "url": "https://github.com/gabomdq/SDL_GameControllerDB",
+        "commit": "bd4ef5de42d50480c5be6bd54de164140a62f384",
+        "dest": "gamecontrollerdb"
+      },
+      {
+        "type": "file",
+        "url": "https://github.com/nlohmann/json/releases/download/v3.7.3/include.zip",
+        "sha512": "8efd82a54472335e548d0d5c375b6f2781b4a0f2dbc5aa0acc3f504277ec455e0782046286cf08eb4864ac8bcaa1a9691af8d0259dd71a9e539cfc12e0478eb5",
+        "dest-filename": "nlohmann_json_ext.zip"
+      },
+      {
+        "type": "shell",
+        "commands": [
+          "mkdir nlohmann_json_ext",
+          "cd nlohmann_json_ext && unzip ../nlohmann_json_ext.zip"
+        ]
+      }
+    ]
+  }
+}

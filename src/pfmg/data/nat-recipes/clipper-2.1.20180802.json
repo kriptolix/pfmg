@@ -1,0 +1,52 @@
+{
+  "header": {
+    "id": "clipper",
+    "version": "2.1.20180802",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "clipper",
+    "buildsystem": "autotools",
+    "config-opts": [
+      "--enable-mmdb",
+      "--enable-ccp4",
+      "--enable-cif",
+      "--enable-minimol",
+      "--enable-cns",
+      "--disable-debug",
+      "--disable-docs",
+      "--disable-dependency-tracking",
+      "--disable-silent-rules",
+      "--enable-shared",
+      "--disable-static",
+      "--disable-Werror"
+    ],
+    "build-options": {
+      "cxxflags": "-O2 -fno-strict-aliasing -Wno-narrowing -fPIC -std=c++11 -DNDEBUG"
+    },
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://www2.mrc-lmb.cam.ac.uk/personal/pemsley/coot/dependencies/clipper-2.1.20180802.tar.gz",
+        "sha256": "7c7774f224b59458e0faa104d209da906c129523fa737e81eb3b99ec772b81e0",
+        "x-checker-data": {
+          "type": "html",
+          "url": "https://www2.mrc-lmb.cam.ac.uk/personal/pemsley/coot/dependencies/",
+          "version-pattern": "clipper-([\\d\\.]+)\\.tar\\.gz",
+          "url-template": "https://www2.mrc-lmb.cam.ac.uk/personal/pemsley/coot/dependencies/clipper-$version.tar.gz"
+        }
+      },
+      {
+        "type": "patch",
+        "path": "patches/clipper-configure-2.patch"
+      },
+      {
+        "type": "shell",
+        "commands": [
+          "sed -i 's|libccp4c|ccp4c|g' configure"
+        ]
+      }
+    ]
+  }
+}

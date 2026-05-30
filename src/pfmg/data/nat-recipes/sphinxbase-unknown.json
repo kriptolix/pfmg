@@ -1,0 +1,21 @@
+{
+  "header": {
+    "id": "sphinxbase",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "sphinxbase",
+    "config-opts": [
+      "--without-python"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/cmusphinx/sphinxbase.git",
+        "commit": "562d0472aababa9a5fbc5b7518ea174745323e4f"
+      }
+    ]
+  }
+}

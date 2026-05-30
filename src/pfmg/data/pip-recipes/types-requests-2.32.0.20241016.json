@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "types-requests",
+    "version": "2.32.0.20241016",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "types-requests",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=/app \"types-requests==2.32.0.20241016\" --no-build-isolation"
+    ],
+    "cleanup": [
+      "*"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/d7/01/485b3026ff90e5190b5e24f1711522e06c79f4a56c8f4b95848ac072e20f/types_requests-2.32.0.20241016-py3-none-any.whl",
+        "sha256": "4195d62d6d3e043a4eaaf08ff8a62184584d2e8684e9d2aa178c7915a7da3747"
+      }
+    ]
+  }
+}

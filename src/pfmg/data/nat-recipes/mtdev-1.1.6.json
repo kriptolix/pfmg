@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "mtdev",
+    "version": "1.1.6",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "mtdev",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "http://bitmath.org/code/mtdev/mtdev-1.1.6.tar.gz",
+        "sha256": "1325f389a2f25cd5f5a8ea4d29aad24aa7c3ec30401d679400dd79eb9c0a8dbb",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 8868,
+          "stable-only": true,
+          "url-template": "http://bitmath.org/code/mtdev/mtdev-$version.tar.gz"
+        }
+      }
+    ]
+  }
+}

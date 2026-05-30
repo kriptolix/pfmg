@@ -1,0 +1,30 @@
+{
+  "header": {
+    "id": "kcolorpicker",
+    "version": "0.3.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "kColorPicker",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DBUILD_WITH_QT6=ON",
+      "-DBUILD_SHARED_LIBS=ON"
+    ],
+    "builddir": true,
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/ksnip/kColorPicker/archive/refs/tags/v0.3.1.tar.gz",
+        "sha256": "e78c785ec4a8a22a48a91835c97601f5704b5076b154415353b0d2697dc0b4f7",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 120606,
+          "stable-only": true,
+          "url-template": "https://github.com/ksnip/kColorPicker/archive/refs/tags/v$version.tar.gz"
+        }
+      }
+    ]
+  }
+}

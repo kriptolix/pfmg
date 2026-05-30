@@ -1,0 +1,52 @@
+{
+  "header": {
+    "id": "krb5-libs",
+    "version": "1.20.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "krb5-libs",
+    "buildsystem": "simple",
+    "build-commands": [
+      "set -e\nmkdir -p /app/lib\n\nfor deb in *.deb; do\n  echo \">>> Распаковываю $deb\"\n  tmpdir=\"$(mktemp -d)\"\n  (\n    cd \"$tmpdir\"\n\n    ar x \"$OLDPWD/$deb\"\n    bsdtar -xf data.tar.* -C \"$tmpdir\"\n\n    for dir in \\\n        \"$tmpdir/usr/lib\" \\\n        \"$tmpdir/usr/lib/x86_64-linux-gnu\" \\\n        \"$tmpdir/lib\" \\\n        \"$tmpdir/lib/x86_64-linux-gnu\"; do\n\n      if [ -d \"$dir\" ]; then\n        echo \">>> копирую из $dir\"\n        find \"$dir\" -name 'lib*.so*' -exec cp -av '{}' /app/lib/ \\; || true\n      fi\n    done\n  )\n  rm -rf \"$tmpdir\"\ndone\n"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://deb.debian.org/debian/pool/main/k/krb5/libgssapi-krb5-2_1.20.1-2+deb12u4_amd64.deb",
+        "sha256": "ae20a9d90d0998ccb062a42739c8c5c725579e2d3f44fbd16b026e336b4543bb"
+      },
+      {
+        "type": "file",
+        "url": "https://deb.debian.org/debian/pool/main/k/krb5/libkrb5-3_1.20.1-2+deb12u4_amd64.deb",
+        "sha256": "af14ab652a7e8579c67c846dd95b987a4332c05165c8eec9790028f5aea6c2b0"
+      },
+      {
+        "type": "file",
+        "url": "https://deb.debian.org/debian/pool/main/k/krb5/libk5crypto3_1.20.1-2+deb12u4_amd64.deb",
+        "sha256": "b921355ee030582117aadd95a9f08de341867921a277803ae7e520be2ac9786d"
+      },
+      {
+        "type": "file",
+        "url": "https://deb.debian.org/debian/pool/main/k/krb5/libkrb5support0_1.20.1-2+deb12u4_amd64.deb",
+        "sha256": "5e7fac690530a3e16c0a6707d8262d869c23248eac72daee3eb7c40982c3ddfe"
+      },
+      {
+        "type": "file",
+        "url": "https://deb.debian.org/debian/pool/main/e/e2fsprogs/libcom-err2_1.47.2-3~bpo12+1_amd64.deb",
+        "sha256": "616bb3f52aad7d918e27250d8042dd8b7868a66724083b40a04a9436471799a9"
+      },
+      {
+        "type": "file",
+        "url": "https://deb.debian.org/debian/pool/main/k/keyutils/libkeyutils1_1.6.3-2_amd64.deb",
+        "sha256": "cfac89e6a7a54ff3c6a4f843310e25efeddaa771baeae470bd98bd588c373563"
+      },
+      {
+        "type": "file",
+        "url": "https://ftp.debian.org/debian/pool/main/x/xcb-util-cursor/libxcb-cursor0_0.1.5-1_amd64.deb",
+        "sha256": "e0c77e6e96843581ff2668dc9a10f676be0e78209ef198e98646184858efe164"
+      }
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "header": {
+    "id": "gxml",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "gxml",
+    "buildsystem": "meson",
+    "builddir": true,
+    "config-opts": [],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://gitlab.gnome.org/GNOME/gxml.git",
+        "tag": "0.20.3"
+      }
+    ]
+  }
+}

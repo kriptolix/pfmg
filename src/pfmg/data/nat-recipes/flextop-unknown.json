@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "flextop",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "flextop",
+    "buildsystem": "meson",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/refi64/flextop",
+        "tag": "v2022.03",
+        "commit": "83c73e435630b94a6f44abe67cb268eae5b229b4",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^v([\\d.]+)$"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "audiodecoder.2sf",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "audiodecoder.2sf",
+    "buildsystem": "cmake-ninja",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/xbmc/audiodecoder.2sf",
+        "commit": "6d229fbd9e072d3c29e21e1e0f4b8523dee6b933"
+      }
+    ],
+    "build-options": {
+      "no-debuginfo": true,
+      "cflags": "-g0",
+      "cxxflags": "-g0"
+    },
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release"
+    ]
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "header": {
+    "id": "libultrahdr",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libultrahdr",
+    "builddir": true,
+    "buildsystem": "cmake-ninja",
+    "build-options": {
+      "config-opts": [
+        "-DCMAKE_INSTALL_LIBDIR=lib",
+        "-DUHDR_BUILD_BENCHMARK=OFF",
+        "-DUHDR_BUILD_DEPS=OFF",
+        "-DUHDR_BUILD_EXAMPLES=OFF",
+        "-DUHDR_BUILD_FUZZERS=OFF",
+        "-DUHDR_BUILD_JAVA=OFF",
+        "-DUHDR_BUILD_PACKAGING=OFF",
+        "-DUHDR_BUILD_TESTS=OFF",
+        "-DUHDR_ENABLE_GLES=OFF",
+        "-DUHDR_ENABLE_LOGS=OFF",
+        "-DUHDR_ENABLE_WERROR=OFF",
+        "-DUHDR_WRITE_ISO=ON",
+        "-DUHDR_WRITE_XMP=OFF"
+      ]
+    },
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/google/libultrahdr.git",
+        "commit": "8cbc983d2f6c2171af5cbcdb8801102f83fe92ab"
+      }
+    ]
+  }
+}

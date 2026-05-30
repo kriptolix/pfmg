@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "python3-hunter",
+    "version": "3.4.3",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-hunter",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"hunter\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/9c/66/fdccda930b31bf74f1f17509ad60d277f199663c14e96245e654370957e0/manhole-1.8.0-py2.py3-none-any.whl",
+        "sha256": "a17f62f9d47bd9a53438f655d351d7d2b0d6e9d805665fc775e4cb6cbbb4440b"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/28/83/b9e7f344fecb1fb51901bb6fdae64221da904f1a3b0e7bb12897fce554c1/hunter-3.4.3.tar.gz",
+        "sha256": "024bbcf7b98022289407a569f170d2d9a2a1c0c9fed3ef82e938270d49769794"
+      }
+    ]
+  }
+}

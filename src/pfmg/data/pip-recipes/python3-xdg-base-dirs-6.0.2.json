@@ -1,0 +1,31 @@
+{
+  "header": {
+    "id": "python3-xdg-base-dirs",
+    "version": "6.0.2",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-xdg-base-dirs",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"xdg-base-dirs\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/fc/03/030b47fd46b60fc87af548e57ff59c2ca84b2a1dadbe721bb0ce33896b2e/xdg_base_dirs-6.0.2-py3-none-any.whl",
+        "sha256": "3c01d1b758ed4ace150ac960ac0bd13ce4542b9e2cdf01312dcda5012cfebabe",
+        "x-checker-data": {
+          "name": "xdg_base_dirs",
+          "packagetype": "bdist_wheel",
+          "type": "pypi"
+        }
+      }
+    ],
+    "cleanup": [
+      "/bin",
+      "/share/man/man1"
+    ]
+  }
+}

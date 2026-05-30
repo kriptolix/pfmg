@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "layer-shell-qt",
+    "version": "6.5.5",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "layer-shell-qt",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DBUILD_TESTING=OFF"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.kde.org/stable/plasma/6.5.5/layer-shell-qt-6.5.5.tar.xz",
+        "sha256": "6844fee55b8b7cbc320cd8308b51595ef830d5a99b4d355b0fd59f88feab2c11",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 8761,
+          "stable-only": true,
+          "url-template": "https://download.kde.org/stable/plasma/$version/layer-shell-qt-$version.tar.xz"
+        }
+      }
+    ]
+  }
+}

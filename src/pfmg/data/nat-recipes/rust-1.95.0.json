@@ -1,0 +1,117 @@
+{
+  "header": {
+    "id": "rust",
+    "version": "1.95.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "rust",
+    "buildsystem": "simple",
+    "sources": [
+      {
+        "type": "archive",
+        "only-arches": [
+          "arm",
+          "aarch64"
+        ],
+        "dest": "rust-armv7-unknown-linux-gnueabihf",
+        "url": "https://static.rust-lang.org/dist/2026-04-16/rust-1.95.0-armv7-unknown-linux-gnueabihf.tar.xz",
+        "sha256": "111bcdf153df6e323e68ae1a812c3da736cc42e4846f24b1bd7ddb174a383b69",
+        "x-checker-data": {
+          "type": "rust",
+          "package": "rust",
+          "target": "armv7-unknown-linux-gnueabihf"
+        }
+      },
+      {
+        "type": "archive",
+        "only-arches": [
+          "aarch64"
+        ],
+        "dest": "rust-aarch64-unknown-linux-gnu",
+        "url": "https://static.rust-lang.org/dist/2026-04-16/rust-1.95.0-aarch64-unknown-linux-gnu.tar.xz",
+        "sha256": "094c9c36531911c5cc7dd6ab2d3069ab8dcd744d6239b0bda1387b243dfc391e",
+        "x-checker-data": {
+          "type": "rust",
+          "package": "rust",
+          "target": "aarch64-unknown-linux-gnu"
+        }
+      },
+      {
+        "type": "archive",
+        "only-arches": [
+          "x86_64"
+        ],
+        "dest": "rust-x86_64-unknown-linux-gnu",
+        "url": "https://static.rust-lang.org/dist/2026-04-16/rust-1.95.0-x86_64-unknown-linux-gnu.tar.xz",
+        "sha256": "2e0338f18ecbaa4a0f631b9e80e8b8e26bb6fe77dd5454fba8a70cf96c1e84a1",
+        "x-checker-data": {
+          "type": "rust",
+          "package": "rust",
+          "target": "x86_64-unknown-linux-gnu",
+          "is-main-source": true
+        }
+      },
+      {
+        "type": "archive",
+        "only-arches": [
+          "i386",
+          "x86_64"
+        ],
+        "dest": "rust-i686-unknown-linux-gnu",
+        "url": "https://static.rust-lang.org/dist/2026-04-16/rust-1.95.0-i686-unknown-linux-gnu.tar.xz",
+        "sha256": "49954c2ea9d36fea90169b350734b0eb4f53237f62274a73c68f315dcceb8fcd",
+        "x-checker-data": {
+          "type": "rust",
+          "package": "rust",
+          "target": "i686-unknown-linux-gnu"
+        }
+      },
+      {
+        "type": "archive",
+        "dest": "rust-src",
+        "url": "https://static.rust-lang.org/dist/2026-04-16/rust-src-1.95.0.tar.xz",
+        "sha256": "67b09138c8db96afc4bbfc69ea771ac9a091fd777698acb43f6dfd9fb7dea363",
+        "x-checker-data": {
+          "type": "rust",
+          "package": "rust-src",
+          "target": "*"
+        }
+      }
+    ],
+    "build-options": {
+      "arch": {
+        "x86_64": {
+          "env": {
+            "NATIVE_TARGET": "x86_64-unknown-linux-gnu",
+            "COMPAT_TARGET": "i686-unknown-linux-gnu"
+          }
+        },
+        "i386": {
+          "env": {
+            "NATIVE_TARGET": "i686-unknown-linux-gnu",
+            "COMPAT_TARGET": ""
+          }
+        },
+        "aarch64": {
+          "env": {
+            "NATIVE_TARGET": "aarch64-unknown-linux-gnu",
+            "COMPAT_TARGET": "armv7-unknown-linux-gnueabihf"
+          }
+        },
+        "arm": {
+          "env": {
+            "NATIVE_TARGET": "armv7-unknown-linux-gnueabihf",
+            "COMPAT_TARGET": ""
+          }
+        }
+      }
+    },
+    "build-commands": [
+      "cd \"rust-$NATIVE_TARGET\" && ./install.sh --prefix=/usr/lib/sdk/rust-stable --without=rust-docs --without=rust-docs-json-preview --disable-ldconfig --verbose",
+      "test -n \"$COMPAT_TARGET\" &&  cd \"rust-$COMPAT_TARGET\" && ./install.sh --prefix=/usr/lib/sdk/rust-stable --disable-ldconfig --verbose --components=rust-std-$COMPAT_TARGET,rust-analysis-$COMPAT_TARGET",
+      "cd rust-src && ./install.sh --prefix=/usr/lib/sdk/rust-stable --disable-ldconfig --verbose"
+    ]
+  }
+}

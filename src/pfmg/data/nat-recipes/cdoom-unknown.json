@@ -1,0 +1,26 @@
+{
+  "header": {
+    "id": "cdoom",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "cdoom",
+    "buildsystem": "cmake-ninja",
+    "no-make-install": true,
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+    ],
+    "post-install": [
+      "install -Dm 755 cdoom.so /app/lib/dhewm3"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/dhewm/dhewm3-sdk",
+        "commit": "c6d2afac06b3b0b16e2efc7e23e27c60822eefa9"
+      }
+    ]
+  }
+}

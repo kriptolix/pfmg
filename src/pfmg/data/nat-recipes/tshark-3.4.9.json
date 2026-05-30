@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "tshark",
+    "version": "3.4.9",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "tshark",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DBUILD_wireshark=OFF"
+    ],
+    "cleanup": [
+      "/include",
+      "/share/man",
+      "/lib/pkgconfig"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "sha256": "c6525e829bd24525ee699aa207ecd27c50646d64263a669671badfb71cd99620",
+        "url": "https://1.eu.dl.wireshark.org/src/all-versions/wireshark-3.4.9.tar.xz"
+      }
+    ]
+  }
+}

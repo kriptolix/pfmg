@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "data-fix",
+    "version": "0.3.4",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "data-fix",
+    "buildsystem": "simple",
+    "builddir": false,
+    "build-commands": [
+      "echo '#! /usr/bin/env runhaskell' >Setup.txt",
+      "echo '> import Distribution.Simple' >>Setup.txt",
+      "echo '> main = defaultMain' >>Setup.txt",
+      "ln -s Setup.txt Setup.lhs || true",
+      "runhaskell Setup configure --prefix=/app",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "sources": [
+      {
+        "sha256": "8df052d18c047ab9e9200536a8799b5af3997ebecbbb091a7384b6be8416ab37",
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/data-fix-0.3.4/data-fix-0.3.4.tar.gz"
+      },
+      {
+        "dest-filename": "data-fix.cabal",
+        "sha256": "49114884d59f74ab62a3fc9ab1fd8888ed81b234e30b5d798be4aec4ddba0113",
+        "type": "file",
+        "url": "https://hackage.haskell.org/package/data-fix-0.3.4/revision/0.cabal"
+      }
+    ]
+  }
+}

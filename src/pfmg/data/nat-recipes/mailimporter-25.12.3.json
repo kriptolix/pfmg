@@ -1,0 +1,29 @@
+{
+  "header": {
+    "id": "mailimporter",
+    "version": "25.12.3",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "mailimporter",
+    "config-opts": [
+      "-DBUILD_TESTING=OFF",
+      "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+    ],
+    "buildsystem": "cmake-ninja",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.kde.org/stable/release-service/25.12.3/src/mailimporter-25.12.3.tar.xz",
+        "sha256": "eb99de68d8f5febe3d9eef8e6a793f9bdf62f54ad016fabe78f564d90e7a2db4",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 8763,
+          "stable-only": true,
+          "url-template": "https://download.kde.org/stable/release-service/$version/src/mailimporter-$version.tar.xz"
+        }
+      }
+    ]
+  }
+}

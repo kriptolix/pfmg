@@ -1,0 +1,59 @@
+{
+  "header": {
+    "id": "collabora-office",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "collabora-office",
+    "buildsystem": "autotools",
+    "build-options": {
+      "arch": {
+        "x86_64": {
+          "prepend-pkg-config-path": "/app/lib/x86_64-linux-gnu/pkgconfig"
+        },
+        "aarch64": {
+          "prepend-pkg-config-path": "/app/lib/aarch64-linux-gnu/pkgconfig"
+        }
+      },
+      "env": {
+        "XDG_CACHE_HOME": "/run/build/collabora-online/flatpak-node/cache",
+        "npm_config_offline": "true",
+        "npm_config_cache": "/run/build/collabora-online/flatpak-node/npm-cache"
+      }
+    },
+    "config-opts": [
+      "--enable-qtapp",
+      "--enable-silent-rules",
+      "--disable-ssl",
+      "--with-poco-includes=/app/include",
+      "--with-poco-libs=/app/lib",
+      "--with-lokit-path=/app/core/include",
+      "--with-lo-path=/app/collaboraoffice",
+      "--with-vendor=Collabora Productivity Limited",
+      "--with-app-name=Collabora Office",
+      "--with-info-url=https://collaboraoffice.com/"
+    ],
+    "ensure-writable": [
+      "/collaboraoffice/LICENSE.html"
+    ],
+    "post-install": [
+      "python3 scripts/insert-coda-license.py /app/collaboraoffice/LICENSE.html CODA-THIRDPARTYLICENSES.html"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/CollaboraOnline/online.git",
+        "tag": "coda-25.04.9.2-2",
+        "commit": "76dd790f3a0cb209aa3ce684736cf6fbf73dd46b"
+      },
+      {
+        "type": "archive",
+        "url": "https://github.com/CollaboraOnline/online/releases/download/for-code-assets/node_modules-25.04.7.tar.xz",
+        "sha256": "2ffa320633ef95679b22b3815ee628e61acaf00e68ae84245e2e0ab83b49c17b",
+        "dest": "browser/node_modules"
+      }
+    ]
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "matcha-light-pueril",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "Matcha-light-pueril",
+    "buildsystem": "simple",
+    "build-commands": [
+      "mkdir -pm 755 /usr/share/runtime/share/themes/Matcha-light-pueril/gtk-3.0/assets",
+      "cp -fr src/gtk/assets-pueril/* /usr/share/runtime/share/themes/Matcha-light-pueril/gtk-3.0/assets/",
+      "cp src/gtk/gtk-3.0/gtk-light-pueril.css /usr/share/runtime/share/themes/Matcha-light-pueril/gtk-3.0/gtk.css"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "archive-type": "tar-gzip",
+        "url": "https://api.github.com/repos/vinceliuice/Matcha-gtk-theme/tarball/2021-06-24",
+        "sha256": "11e91ab1094238bf6239c42238375e0138b0fdcb889b88f55322d1a7d6a1715a"
+      }
+    ]
+  }
+}

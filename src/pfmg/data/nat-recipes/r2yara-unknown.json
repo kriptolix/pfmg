@@ -1,0 +1,63 @@
+{
+  "header": {
+    "id": "r2yara",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "r2yara",
+    "buildsystem": "autotools",
+    "build-options": {
+      "cflags": "-O3"
+    },
+    "config-opts": [
+      "--with-checks-level=0"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/radareorg/r2yara.git",
+        "tag": "1.4.8",
+        "commit": "76235a4ed81c2b26ad2aa4b923b20a12cb329915",
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://api.github.com/repos/radareorg/r2yara/releases/latest",
+          "tag-query": ".tag_name",
+          "version-query": "$tag",
+          "timestamp-query": ".published_at"
+        }
+      }
+    ],
+    "modules": [
+      {
+        "name": "yara",
+        "buildsystem": "autotools",
+        "build-options": {
+          "cflags": "-O3"
+        },
+        "sources": [
+          {
+            "type": "git",
+            "url": "https://github.com/VirusTotal/yara.git",
+            "tag": "v4.5.5",
+            "commit": "f44a8958e88daa75d765a52a68876f2286d57a51",
+            "x-checker-data": {
+              "type": "json",
+              "url": "https://api.github.com/repos/VirusTotal/yara/releases/latest",
+              "tag-query": ".tag_name",
+              "version-query": "$tag | sub(\"^v\"; \"\")",
+              "timestamp-query": ".published_at"
+            }
+          },
+          {
+            "type": "shell",
+            "commands": [
+              "./bootstrap.sh"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

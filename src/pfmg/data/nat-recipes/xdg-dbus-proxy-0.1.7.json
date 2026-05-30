@@ -1,0 +1,29 @@
+{
+  "header": {
+    "id": "xdg-dbus-proxy",
+    "version": "0.1.7",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "xdg-dbus-proxy",
+    "buildsystem": "meson",
+    "config-opts": [
+      "-Dman=disabled",
+      "-Dtests=false"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/flatpak/xdg-dbus-proxy/archive/refs/tags/0.1.7.tar.gz",
+        "sha256": "232d2eb9b456fa1e307322da1bfeb4849eb410750a2a16a5de51ed2c2eb919e6",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 58434,
+          "stable-only": true,
+          "url-template": "https://github.com/flatpak/xdg-dbus-proxy/archive/refs/tags/$version.tar.gz"
+        }
+      }
+    ]
+  }
+}

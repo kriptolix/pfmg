@@ -1,0 +1,19 @@
+{
+  "header": {
+    "id": "confuse",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "confuse",
+    "buildsystem": "autotools",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/libconfuse/libconfuse",
+        "tag": "v3.3"
+      }
+    ]
+  }
+}

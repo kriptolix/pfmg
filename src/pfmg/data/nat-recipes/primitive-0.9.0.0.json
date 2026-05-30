@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "primitive",
+    "version": "0.9.0.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "primitive",
+    "buildsystem": "simple",
+    "builddir": false,
+    "build-commands": [
+      "echo '#! /usr/bin/env runhaskell' >Setup.txt",
+      "echo '> import Distribution.Simple' >>Setup.txt",
+      "echo '> main = defaultMain' >>Setup.txt",
+      "ln -s Setup.txt Setup.lhs || true",
+      "runhaskell Setup configure --prefix=/app",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "sources": [
+      {
+        "sha256": "696d4bd291c94d736142d6182117dca4258d3ef28bfefdb649ac8b5ecd0999c7",
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/primitive-0.9.0.0/primitive-0.9.0.0.tar.gz"
+      },
+      {
+        "dest-filename": "primitive.cabal",
+        "sha256": "2e08c5409e3559c7f1669ef50e9a0d9a397e68ecf51110d5e2cedf05cdd7d93c",
+        "type": "file",
+        "url": "https://hackage.haskell.org/package/primitive-0.9.0.0/revision/1.cabal"
+      }
+    ]
+  }
+}

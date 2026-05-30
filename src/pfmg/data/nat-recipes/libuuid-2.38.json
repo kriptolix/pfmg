@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "libuuid",
+    "version": "2.38",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libuuid",
+    "config-opts": [
+      "--disable-all-programs",
+      "--enable-libuuid"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://www.kernel.org/pub/linux/utils/util-linux/v2.38/util-linux-2.38.tar.xz",
+        "sha256": "6d111cbe4d55b336db2f1fbeffbc65b89908704c01136371d32aa9bec373eb64"
+      }
+    ],
+    "cleanup": [
+      "/sbin"
+    ]
+  }
+}

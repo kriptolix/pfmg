@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "openseeface",
+    "version": "25.2.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "OpenSeeFace",
+    "buildsystem": "simple",
+    "build-commands": [
+      "mkdir -p /app/share/facetracker/osf/",
+      "cp -r ./ /app/share/facetracker/osf/",
+      "chmod +x /app/share/facetracker/osf/facetracker"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://codeberg.org/ZRayEntertainment/Facetracker/releases/download/25.2.1/osf_pre_build.zip",
+        "sha256": "2cfa657e4600891aef7e0c73751717e70f65ff86c303661e6b6ca894977f40bb"
+      }
+    ]
+  }
+}

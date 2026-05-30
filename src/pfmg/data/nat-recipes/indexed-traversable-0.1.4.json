@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "indexed-traversable",
+    "version": "0.1.4",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "indexed-traversable",
+    "buildsystem": "simple",
+    "builddir": false,
+    "build-commands": [
+      "echo '#! /usr/bin/env runhaskell' >Setup.txt",
+      "echo '> import Distribution.Simple' >>Setup.txt",
+      "echo '> main = defaultMain' >>Setup.txt",
+      "ln -s Setup.txt Setup.lhs || true",
+      "runhaskell Setup configure --prefix=/app",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "sources": [
+      {
+        "sha256": "58be09afdf3ad5a25c2aa0d2a7df80d602df09f4e76d3abf2b7cdb0e75d03b22",
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/indexed-traversable-0.1.4/indexed-traversable-0.1.4.tar.gz"
+      },
+      {
+        "dest-filename": "indexed-traversable.cabal",
+        "sha256": "7e6eaeca52197856f3ab878fb31e30233dbb35b52a16441a42e4364b22b421e5",
+        "type": "file",
+        "url": "https://hackage.haskell.org/package/indexed-traversable-0.1.4/revision/0.cabal"
+      }
+    ]
+  }
+}

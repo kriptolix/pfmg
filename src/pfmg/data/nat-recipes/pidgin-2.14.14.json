@@ -1,0 +1,52 @@
+{
+  "header": {
+    "id": "pidgin",
+    "version": "2.14.14",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "pidgin",
+    "config-opts": [
+      "--disable-static",
+      "--disable-meanwhile",
+      "--disable-nm",
+      "--enable-cyrus-sasl",
+      "--disable-tk",
+      "--disable-tcl",
+      "--disable-consoleui",
+      "--with-python=python3",
+      "--disable-gnutls",
+      "--with-system-ssl-certs=/etc/ssl/certs",
+      "--disable-doxygen",
+      "--disable-gevolution"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://downloads.sourceforge.net/project/pidgin/Pidgin/2.14.14/pidgin-2.14.14.tar.bz2",
+        "sha256": "0ffc9994def10260f98a55cd132deefa8dc4a9835451cc0e982747bd458e2356",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 3636,
+          "stable-only": true,
+          "is-main-source": true,
+          "url-template": "https://downloads.sourceforge.net/project/pidgin/Pidgin/$version/pidgin-$version.tar.bz2"
+        }
+      },
+      {
+        "type": "file",
+        "path": "im.pidgin.Pidgin.appdata.xml"
+      },
+      {
+        "type": "patch",
+        "path": "add_wm_class.patch"
+      }
+    ],
+    "post-install": [
+      "chmod 755 /app/lib/pidgin/perl/auto/Pidgin/Pidgin.so",
+      "chmod 755 /app/lib/purple-2/perl/auto/Purple/Purple.so",
+      "install -Dm644 im.pidgin.Pidgin.appdata.xml /app/share/appdata/im.pidgin.Pidgin.appdata.xml"
+    ]
+  }
+}

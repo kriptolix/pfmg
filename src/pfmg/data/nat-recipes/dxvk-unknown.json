@@ -1,0 +1,66 @@
+{
+  "header": {
+    "id": "dxvk",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "dxvk",
+    "subdir": "dxvk",
+    "buildsystem": "meson",
+    "build-options": {
+      "ldflags": "",
+      "ldflags-override": true,
+      "config-opts": [
+        "--cross-file=../build-win64.txt",
+        "--cross-file=../meson-ccache-mingw64.txt",
+        "--libdir=lib/wine/dxvk",
+        "--bindir=lib/wine/dxvk"
+      ],
+      "prepend-path": "/usr/lib/sdk/mingw-w64/bin:/app/share/steam/compatibilitytools.d/Proton/bin"
+    },
+    "config-opts": [
+      "--buildtype=release",
+      "--strip",
+      "-Denable_tests=false",
+      "-Denable_dxgi=true",
+      "-Denable_d3d9=true",
+      "-Denable_d3d10=true",
+      "-Denable_d3d11=true"
+    ],
+    "post-install": [
+      "cd ${FLATPAK_BUILDER_BUILDDIR}; git submodule status -- dxvk > ${FLATPAK_DEST}/lib/wine/dxvk/version",
+      "ln -s version ${FLATPAK_DEST}/lib/wine/dxvk/d9vk_version"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/ValveSoftware/Proton.git",
+        "tag": "proton-7.0-6",
+        "commit": "c5ad95671cecaf03c4a92500de84b542add585d1",
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://api.github.com/repos/ValveSoftware/Proton/git/refs/tags/proton-",
+          "tag-query": "map(select(.ref | match(\"refs/tags/proton-[0-9].*\"; \"\"))) | last | if .object.type==\"commit\" then . else error(\"not a commit\") end | .ref | sub(\"^refs/tags/\"; \"\")",
+          "version-query": "$tag | sub(\"^proton-\"; \"\")",
+          "commit-query": "map(select(.ref | match(\"refs/tags/proton-[0-9].*\"; \"\"))) | last | .object.sha",
+          "timestamp-data-url": "map(select(.ref | match(\"refs/tags/proton-[0-9].*\"; \"\"))) | last | .object.url",
+          "timestamp-query": ".committer.date",
+          "is-main-source": true,
+          "source-id": "proton-git-0"
+        }
+      },
+      {
+        "type": "file",
+        "dest": "dxvk",
+        "path": "meson-ccache-mingw32.txt"
+      },
+      {
+        "type": "file",
+        "dest": "dxvk",
+        "path": "meson-ccache-mingw64.txt"
+      }
+    ]
+  }
+}

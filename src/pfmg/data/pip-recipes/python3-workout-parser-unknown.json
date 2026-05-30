@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-workout-parser",
+    "version": "unknown",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-workout-parser",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --no-index --no-deps --no-build-isolation --prefix=${FLATPAK_DEST} ."
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/luigi311/workout_parser",
+        "commit": "631d57b79e34633d71e2cbfb3b07337a77fa90a8"
+      }
+    ]
+  }
+}

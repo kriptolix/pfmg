@@ -1,0 +1,38 @@
+{
+  "header": {
+    "id": "fontforge",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "fontforge",
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "config-opts": [
+      "-DENABLE_GUI=OFF",
+      "-DENABLE_LIBSPIRO=OFF",
+      "-DENABLE_DOCS=OFF",
+      "-DBUILD_TESTING=OFF"
+    ],
+    "cleanup": [
+      "/share/applications",
+      "/share/doc",
+      "/share/icons",
+      "/share/metainfo",
+      "/share/mime"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/fontforge/fontforge/releases/download/20251009/fontforge-20251009.tar.xz",
+        "sha256": "69046500185a5581b58139dfad30c0b3d8128f00ebbfddc31f2fcf877e329e52",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 5807,
+          "url-template": "https://github.com/fontforge/fontforge/releases/download/$version/fontforge-$version.tar.xz"
+        }
+      }
+    ]
+  }
+}

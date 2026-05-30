@@ -1,0 +1,31 @@
+{
+  "header": {
+    "id": "android-sdk-build-tools",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "android-sdk-build-tools",
+    "buildsystem": "simple",
+    "build-options": {
+      "env": {
+        "target": "/opt/android-sdk/build-tools/android-14"
+      }
+    },
+    "build-commands": [
+      "mkdir -p \"/app/$target\"",
+      "cp -r * \"/app/$target\"",
+      "chmod +Xr -R \"/app/$target\"",
+      "mkdir -p \"/app/bin/\"",
+      "find . -maxdepth 1 -type f -executable -printf \"%f\\n\" | xargs -n 1 -I _ ln -s \"/app/$target/_\" \"/app/bin/_\""
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://dl.google.com/android/repository/build-tools_r34-linux.zip",
+        "sha256": "e858c4b60069d0431051b225d384413b1643e1289b00a4825aed347f25bd510f"
+      }
+    ]
+  }
+}

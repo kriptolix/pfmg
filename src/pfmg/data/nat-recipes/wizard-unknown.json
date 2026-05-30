@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "wizard",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "wizard",
+    "buildsystem": "cmake-ninja",
+    "subdir": "Flatpak/firststart",
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+    ],
+    "post-install": [
+      "mv /app/bin/{firststart,easyrpg-firststart}"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "disable-submodules": true,
+        "url": "https://github.com/EasyRPG/packaging.git",
+        "commit": "a20be36b008e0e2a6b84d049663cc97a64461166"
+      }
+    ]
+  }
+}

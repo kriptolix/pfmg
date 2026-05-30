@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "xres",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "xres",
+    "buildsystem": "autotools",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://gitlab.freedesktop.org/xorg/lib/libxres.git",
+        "tag": "libXres-1.2.2",
+        "commit": "f77165c819b05af27d9878efe8526a157f569b1a",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^libXres-([\\d.]+)$"
+        }
+      }
+    ]
+  }
+}

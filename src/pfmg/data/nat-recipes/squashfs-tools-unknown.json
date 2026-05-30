@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "squashfs-tools",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "squashfs-tools",
+    "buildsystem": "simple",
+    "build-commands": [
+      "XZ_SUPPORT=1 make -C squashfs-tools -j ${FLATPAK_BUILDER_N_JOBS} install INSTALL_DIR=${FLATPAK_DEST}/bin"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/plougher/squashfs-tools.git",
+        "tag": "4.4-git.1",
+        "commit": "ddfb69d50971710502c9818a1fd1be42497e9808"
+      }
+    ]
+  }
+}

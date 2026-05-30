@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "cxxitimer",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "cxxitimer",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DCLANG_FORMAT=OFF",
+      "-DCOMPILER_WARNINGS=OFF",
+      "-DCLANG_TIDY=OFF",
+      "-DBUILD_DOC=OFF",
+      "-DENABLE_TEST=OFF"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "tag": "v2.0.4",
+        "url": "https://github.com/NikolasK-source/cxxitimer.git",
+        "commit": "65fc36980cc62e073f5f7f9f3ac11779492cf107",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^v([\\d.]+)$"
+        }
+      }
+    ]
+  }
+}

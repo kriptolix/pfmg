@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-zope.interface",
+    "version": "8.2",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-zope.interface",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"zope.interface\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/86/a4/77daa5ba398996d16bb43fc721599d27d03eae68fe3c799de1963c72e228/zope_interface-8.2.tar.gz",
+        "sha256": "afb20c371a601d261b4f6edb53c3c418c249db1a9717b0baafc9a9bb39ba1224"
+      }
+    ]
+  }
+}

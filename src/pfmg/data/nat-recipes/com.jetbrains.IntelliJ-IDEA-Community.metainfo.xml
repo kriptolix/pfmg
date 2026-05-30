@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+    <id>com.jetbrains.IntelliJ-IDEA-Community</id>
+    <metadata_license>CC0-1.0</metadata_license>
+    <project_license>Apache-2.0</project_license>
+    <name>IntelliJ IDEA Open</name>
+    <launchable type="desktop-id">com.jetbrains.IntelliJ-IDEA-Community.desktop</launchable>
+    <update_contact>community-support@jetbrains.com</update_contact>
+    <summary>Leading Java and Kotlin editor</summary>
+    <url type="bugtracker">https://youtrack.jetbrains.com/issues/IDEA/</url>
+    <url type="help">https://www.jetbrains.com/help/idea</url>
+    <url type="homepage">https://www.jetbrains.com/idea/</url>
+    <url type="vcs-browser">https://github.com/JetBrains/intellij-community</url>
+    <url type="contact">https://www.jetbrains.com/company/contacts</url>
+    <developer id="com.jetbrains">
+        <name>JetBrains s.r.o.</name>
+    </developer>
+    <content_rating type="oars-1.1">
+        <content_attribute id="social-info">moderate</content_attribute>
+    </content_rating>
+    <branding>
+        <color scheme_preference="light" type="primary">#f7909e</color>
+        <color scheme_preference="dark" type="primary">#1c5bd8</color>
+    </branding>
+    <categories>
+        <category>Development</category>
+        <category>IDE</category>
+    </categories>
+    <keywords>
+        <keyword>kotlin</keyword>
+        <keyword>java</keyword>
+        <keyword>development</keyword>
+        <keyword>ide</keyword>
+    </keywords>
+    <requires>
+        <memory>2048</memory>
+        <control>keyboard</control>
+        <control>pointing</control>
+        <display_length compare="ge">768</display_length>
+    </requires>
+    <recommends>
+        <memory>8192</memory>
+        <display_length compare="ge">1080</display_length>
+        <internet>always</internet>
+    </recommends>
+    <supports>
+        <internet>offline-only</internet>
+    </supports>
+    <description>
+        <p>**This is a community package of IntelliJ IDEA and not officially supported by JetBrains s.r.o.**</p>
+        <p>IntelliJ IDEA Open Edition is a free IDE built on open-source code that provides essential features for Java and Kotlin enthusiasts.</p>
+        <p>IntelliJ IDEA is an Integrated Development Environment (IDE) for professional development in Java and Kotlin. It is designed to maximize developer productivity and has a strong focus on privacy and security. It does the routine and repetitive tasks for you by providing clever code completion, static code analysis, and refactorings. It lets you focus on the bright side of software development, making it not only productive but also an enjoyable experience.</p>
+        <p>The development of modern applications involves using multiple languages, tools, frameworks, and technologies. IntelliJ IDEA is designed as an IDE for JVM languages, but numerous plugins can extend it to provide a polyglot experience.</p>
+        <p>Use IntelliJ IDEA to develop applications in the following languages that can be compiled into the JVM bytecode, namely: Java, Kotlin, Scala and Groovy</p>
+    </description>
+    <screenshots>
+        <screenshot type="default">
+            <image>https://raw.githubusercontent.com/flathub/com.jetbrains.IntelliJ-IDEA-Community/refs/heads/master/screenshots/java-and-kotlin-support-1.png</image>
+            <caption>Java support</caption>
+        </screenshot>
+        <screenshot>
+            <image>https://raw.githubusercontent.com/flathub/com.jetbrains.IntelliJ-IDEA-Community/refs/heads/master/screenshots/java-and-kotlin-support-2.png</image>
+            <caption>Kotlin support</caption>
+        </screenshot>
+        <screenshot>
+            <image>https://raw.githubusercontent.com/flathub/com.jetbrains.IntelliJ-IDEA-Community/refs/heads/master/screenshots/AI_Assistant_features_v2.png</image>
+            <caption>AI Assistant</caption>
+        </screenshot>
+        <screenshot>
+            <image>https://raw.githubusercontent.com/flathub/com.jetbrains.IntelliJ-IDEA-Community/refs/heads/master/screenshots/ProblemsToolsWindow.png</image>
+            <caption>The Problems tool window</caption>
+        </screenshot>
+        <screenshot>
+            <image>https://raw.githubusercontent.com/flathub/com.jetbrains.IntelliJ-IDEA-Community/refs/heads/master/screenshots/CodeDuplicates.png</image>
+            <caption>Detection of code duplicates</caption>
+        </screenshot>
+    </screenshots>
+    <releases>
+        <release version="2026.1.1" date="2026-04-23">
+            <url type="details">https://blog.jetbrains.com/idea/2026/04/intellij-idea-2026-1-1/</url>
+            <description>
+                <ul>
+                    <li>It’s once again possible to set up a WSL Python SDK.</li>
+                    <li>Emmet in remote development now works as expected.</li>
+                    <li>Gradle sync no longer fails due to a class cast error involving InternalIdeaModule and org.gradle.tooling.model.ProjectModel.</li>
+                    <li>The IDE now correctly connects to the WildFly admin process after server startup, restoring deployment and the Open browser after launch option.</li>
+                    <li>The IDE no longer fails to locate the WSL 2 JDK.</li>
+                    <li>Double-clicking an Ant target in the Ant tool window now runs the target and shows the build output in the Messages tool window.</li>
+                    <li>Search for context actions and code completion in large Spring projects are now more responsive and faster.</li>
+                    <li>The IDE now correctly supports creating a run configuration for a local WebLogic server.</li>
+                    <li>The Find and Replace action now works as expected when pressing Enter.</li>
+                </ul>
+            </description>
+        </release>
+        <release version="2026.1" date="2026-03-25">
+            <url type="details">https://blog.jetbrains.com/idea/2026/03/intellij-idea-2026-1/</url>
+            <description>
+                <ul>
+                    <li>ACP Registry: Browse and install AI agents in one click.</li>
+                    <li>Git worktrees: Work in parallel branches and hand one off to an agent while you keep moving in another.</li>
+                    <li>Database access for AI agents: Let Codex or Claude Agent query and modify your data sources natively.</li>
+                    <li>Quota-free next edit suggestions: Propagate changes throughout a given file with IDE-driven assistance.</li>
+                    <li>Spring runtime insight: Inspect injected beans, endpoint security, and property values without pausing execution.</li>
+                    <li>Kotlin-aware JPA: Detect and fix Kotlin-specific pitfalls in Jakarta Persistence entities.</li>
+                    <li>Java 26: Enjoy day-one support, including preview features.</li>
+                    <li>Kotlin 2.3.20: Enjoy day-one support, including experimental features.</li>
+                    <li>C/C++ in IntelliJ IDEA: Access first-class C/C++ coding assistance for multi-language projects.</li>
+                    <li>Support for JavaScript without an Ultimate subscription.</li>
+                    <li>Expanded command completion, now with AI actions, postfix templates, and config file support.</li>
+                    <li>Better performance for large-scale TypeScript projects.</li>
+                    <li>Native Dev Container workflow: Open containerized projects as if they were local.</li>
+                </ul>
+            </description>
+        </release>
+        <release version="2025.3.4" date="2026-03-17">
+            <url type="details">https://blog.jetbrains.com/idea/2026/03/intellij-idea-2025-3-4/</url>
+            <description>
+                <ul>
+                    <li>Resolved an issue where running an HTTP request could trigger a different request in the same file</li>
+                    <li>Local changes refresh in large Perforce projects now works as expected</li>
+                    <li>The Dependencies tab now opens correctly when using the Analyze Cyclic Dependencies feature</li>
+                </ul>
+            </description>
+        </release>
+        <release version="2025.3.3" date="2026-02-20">
+            <url type="details">https://blog.jetbrains.com/idea/2026/02/intellij-idea-2025-3-3/</url>
+            <description>
+                <ul>
+                    <li>MCP server output schema now correctly handles default properties in the schema, preventing invalid schema errors during structured output</li>
+                    <li>Downloading the IDE backend now works as intended with a configured proxy</li>
+                    <li>Resolved an issue that prevented successful proxy authentication</li>
+                    <li>Package annotations referenced through JAR dependencies are now correctly reflected in the PSI model</li>
+                </ul>
+            </description>
+        </release>
+        <release version="2025.3.2" date="2026-01-22">
+            <url type="details">https://blog.jetbrains.com/idea/2026/01/intellij-idea-2025-3-2/</url>
+            <description>
+                <ul>
+                    <li>The Terminal tool window no longer flickers when you use CLI tools with synchronized output, such as Claude Code.</li>
+                    <li>Several issues related to credential storage and settings synchronization in remote development have been resolved</li>
+                    <li>Run configuration handling in the Services tool window has received multiple improvements</li>
+                </ul>
+            </description>
+        </release>
+    </releases>
+</component>

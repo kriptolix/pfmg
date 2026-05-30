@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "swift-lib",
+    "version": "5.5",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "swift-lib",
+    "buildsystem": "simple",
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://swift.org/builds/swift-5.5-release/ubuntu2004/swift-5.5-RELEASE/swift-5.5-RELEASE-ubuntu20.04.tar.gz",
+        "sha256": "aaf7eaefdc3f90f77b21b8829546fc2648e02928af476437d6a58556cb858ec6"
+      }
+    ],
+    "build-commands": [
+      "tar -xzf swift-5.5-RELEASE-ubuntu20.04.tar.gz",
+      "mkdir -p /app/lib",
+      "cp -r swift-5.5-RELEASE-ubuntu20.04/usr/lib/swift/linux/* /app/lib"
+    ]
+  }
+}

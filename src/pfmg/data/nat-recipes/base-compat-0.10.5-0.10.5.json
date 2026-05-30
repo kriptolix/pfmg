@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "base-compat-0.10.5",
+    "version": "0.10.5",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "build-commands": [
+      "ghc -threaded --make Setup",
+      "./Setup configure --prefix=/app",
+      "./Setup build",
+      "./Setup install"
+    ],
+    "buildsystem": "simple",
+    "cleanup": [],
+    "name": "base-compat-0.10.5",
+    "only-arches": [],
+    "sources": [
+      {
+        "sha256": "990aea21568956d44ab018c5dbfbaea014b9a0d5295d29ca7550149419a6fb41",
+        "type": "archive",
+        "url": "https://s3.amazonaws.com/hackage.fpcomplete.com/package/base-compat-0.10.5.tar.gz"
+      },
+      {
+        "sha256": "d49e174ed0daecd059c52d13d4f4de87b5609c81212a22adbb92431f9cd58fff",
+        "type": "file",
+        "url": "https://raw.githubusercontent.com/commercialhaskell/all-cabal-files/a5f22172fce750e93afa6987320f5c5be62b5670/base-compat/0.10.5/base-compat.cabal"
+      }
+    ]
+  }
+}

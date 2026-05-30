@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "backtrace",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "backtrace",
+    "buildsystem": "autotools",
+    "build-options": {
+      "env": {
+        "CFLAGS": "-fPIC"
+      },
+      "no-debuginfo": true
+    },
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/ianlancetaylor/libbacktrace",
+        "commit": "86885d14049fab06ef8a33aac51664230ca09200",
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://api.github.com/repos/ianlancetaylor/libbacktrace/commits",
+          "commit-query": "first( .[].sha )",
+          "version-query": "first( .[].sha )",
+          "timestamp-query": "first( .[].commit.committer.date )"
+        }
+      }
+    ]
+  }
+}

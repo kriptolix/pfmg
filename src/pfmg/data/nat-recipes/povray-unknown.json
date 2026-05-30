@@ -1,0 +1,115 @@
+{
+  "header": {
+    "id": "povray",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "povray",
+    "buildsystem": "simple",
+    "build-commands": [
+      "cd unix && chmod +x prebuild3rdparty.sh && ./prebuild3rdparty.sh",
+      "./configure COMPILED_BY=\"Trevor SANDY <trevor.sandy@gmail.com> using FlatHub for LPub3D.\" --prefix=${LP3D_DIST_DIR_PATH} LPUB3D_3RD_PARTY=yes --with-libsdl2 --with-boost-libdir=${FLATPAK_DEST}/lib --enable-watch-cursor",
+      "make",
+      "make check",
+      "make install"
+    ],
+    "build-options": {
+      "cxxflags": "-std=c++14"
+    },
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/trevorsandy/povray.git",
+        "//": "Branch lpub3d/raytracer-cui",
+        "commit": "cc6aeb73c52beadaadc0b9783ce83937c047237f"
+      }
+    ],
+    "modules": [
+      {
+        "name": "boost",
+        "buildsystem": "simple",
+        "cleanup": [
+          "/include",
+          "*.a"
+        ],
+        "build-commands": [
+          "./bootstrap.sh --prefix=${FLATPAK_DEST} --with-libraries=date_time,thread",
+          "./b2 install variant=release link=shared runtime-link=shared --prefix=/app -j $FLATPAK_BUILDER_N_JOBS"
+        ],
+        "sources": [
+          {
+            "type": "archive",
+            "url": "https://downloads.sourceforge.net/project/boost/boost/1.75.0/boost_1_75_0.tar.bz2",
+            "sha256": "953db31e016db7bb207f11432bef7df100516eeb746843fa0486a222e3fd49cb"
+          }
+        ]
+      },
+      {
+        "name": "openexr",
+        "modules": [
+          {
+            "name": "ilmbase",
+            "build-options": {
+              "cxxflags": "-std=c++14"
+            },
+            "cleanup": [
+              "*.la",
+              "*.so"
+            ],
+            "config-opts": [
+              "--disable-static"
+            ],
+            "sources": [
+              {
+                "type": "archive",
+                "url": "https://download.savannah.nongnu.org/releases/openexr/ilmbase-2.2.1.tar.gz",
+                "sha256": "cac206e63be68136ef556c2b555df659f45098c159ce24804e9d5e9e0286609e"
+              },
+              {
+                "type": "shell",
+                "commands": [
+                  "cp -p /usr/share/automake-*/config.{sub,guess} ."
+                ]
+              }
+            ]
+          }
+        ],
+        "build-options": {
+          "cxxflags": "-std=c++14"
+        },
+        "config-opts": [
+          "--disable-static",
+          "--disable-ilmbasetest"
+        ],
+        "cleanup": [
+          "/bin",
+          "/include",
+          "/share/doc",
+          "/share/aclocal",
+          "/lib/libIlmImfUtil*",
+          "*.la",
+          "*.so"
+        ],
+        "sources": [
+          {
+            "type": "archive",
+            "//": "Can upgrade to OpenEXR 3.0 - see https://github.com/POV-Ray/povray/pull/423",
+            "url": "https://download.savannah.nongnu.org/releases/openexr/openexr-2.2.1.tar.gz",
+            "sha256": "8f9a5af6131583404261931d9a5c83de0a425cb4b8b25ddab2b169fbf113aecd"
+          },
+          {
+            "type": "shell",
+            "commands": [
+              "cp -p /usr/share/automake-*/config.{sub,guess} ."
+            ]
+          }
+        ]
+      }
+    ],
+    "post-install": [
+      "if test -d ${FLATPAK_DEST}/build_staging/lpub3d_trace_cui-3.8; then echo \"POV-Ray staged to ${FLATPAK_DEST}/build_staging/lpub3d_trace_cui-3.8.\"; fi"
+    ]
+  }
+}

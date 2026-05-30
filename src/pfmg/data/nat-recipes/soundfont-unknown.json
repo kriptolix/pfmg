@@ -1,0 +1,26 @@
+{
+  "header": {
+    "id": "soundfont",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "soundfont",
+    "disabled": false,
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://musical-artifacts.com/artifacts/23/8bitsf.SF2",
+        "mirror-urls": [
+          "https://archive.org/download/free-soundfonts-sf2-2019-04/8bitsf.SF2"
+        ],
+        "sha256": "3394f3436ffcec4ab094949942dc601d6f20ef4595af3291230b7261ff89bb2c"
+      }
+    ],
+    "buildsystem": "simple",
+    "build-commands": [
+      "install -D --preserve-timestam --mode=644 8bitsf.SF2 -t $FLATPAK_DEST/share/games/srb2/soundfonts/"
+    ]
+  }
+}

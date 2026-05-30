@@ -1,0 +1,34 @@
+{
+  "header": {
+    "id": "clapper",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "clapper",
+    "buildsystem": "meson",
+    "config-opts": [
+      "--buildtype=release",
+      "-Dclapper-app=enabled",
+      "-Ddiscoverer=disabled",
+      "-Dmpris=disabled",
+      "-Dserver=disabled",
+      "-Dpipeline-preview=enabled",
+      "-Dintrospection=enabled",
+      "-Dvapi=disabled"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/Rafostar/clapper.git",
+        "tag": "0.10.0",
+        "commit": "8fcaaffe8a8f408f26a2da9f0a0087e32195fa46",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^([\\d.]+)$"
+        }
+      }
+    ]
+  }
+}

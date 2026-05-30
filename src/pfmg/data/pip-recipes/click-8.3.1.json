@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "click",
+    "version": "8.3.1",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "click",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --prefix=/app click-*.whl"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/98/78/01c019cdb5d6498122777c1a43056ebb3ebfeef2076d9d026bfe15583b2b/click-8.3.1-py3-none-any.whl",
+        "sha256": "981153a64e25f12d547d3426c367a4857371575ee7ad18df2a6183ab0545b2a6",
+        "x-checker-data": {
+          "type": "pypi",
+          "name": "click",
+          "packagetype": "bdist_wheel"
+        }
+      }
+    ]
+  }
+}

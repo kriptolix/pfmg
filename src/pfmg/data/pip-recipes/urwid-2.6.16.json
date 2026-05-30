@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "urwid",
+    "version": "2.6.16",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "urwid",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"urwid\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/54/cb/271a4f5a1bf4208dbdc96d85b9eae744cf4e5e11ac73eda76dc98c8fd2d7/urwid-2.6.16-py3-none-any.whl",
+        "sha256": "de14896c6df9eb759ed1fd93e0384a5279e51e0dde8f621e4083f7a8368c0797"
+      }
+    ]
+  }
+}

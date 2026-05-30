@@ -1,0 +1,56 @@
+{
+  "header": {
+    "id": "wolfendoom",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "wolfendoom",
+    "buildsystem": "simple",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/Realm667/WolfenDoom/archive/c2-release.tar.gz",
+        "sha256": "c0e09acc18cf845188ca2796ded644fd38842c83275930efd60b63876d1f66f2"
+      },
+      {
+        "type": "shell",
+        "commands": [
+          "7z a -tzip -mmt=on -mm='Deflate' -mx=9 -ssc -xr@'tools/7zExcludeList.txt' -x@'tools/7zExcludeListDir.txt' boa_c2.pk3 *"
+        ]
+      },
+      {
+        "type": "file",
+        "url": "https://raw.githubusercontent.com/Realm667/WolfenDoom/5ff5c4d416b4735e9355eca3130e3c2fd64078bc/dist/com.realm667.WolfenDoom_Blade_of_Agony.desktop",
+        "sha256": "57b1dbf9f9b7d26c6546dfd8fb956bbcff5287d737a9e9f6630b04271332b266"
+      },
+      {
+        "type": "file",
+        "path": "com.realm667.WolfenDoom_Blade_of_Agony.appdata.xml"
+      },
+      {
+        "type": "file",
+        "path": "m_doomxl-48x48.png"
+      },
+      {
+        "type": "file",
+        "path": "m_doomxl-64x64.png"
+      },
+      {
+        "type": "file",
+        "path": "m_doomxl-128x128.png"
+      }
+    ],
+    "build-commands": [
+      "install -Dm 644 boa_c2.pk3 -t /app/share/games/doom",
+      "desktop-file-edit --set-key=Exec --set-value=gzdoom.sh com.realm667.WolfenDoom_Blade_of_Agony.desktop",
+      "desktop-file-edit --set-key=StartupWMClass --set-value=gzdoom com.realm667.WolfenDoom_Blade_of_Agony.desktop",
+      "install -Dm 644 com.realm667.WolfenDoom_Blade_of_Agony.desktop -t /app/share/applications",
+      "install -Dm 644 com.realm667.WolfenDoom_Blade_of_Agony.appdata.xml -t /app/share/appdata",
+      "install -Dm 644 m_doomxl-48x48.png /app/share/icons/hicolor/48x48/apps/m_doom.png",
+      "install -Dm 644 m_doomxl-64x64.png /app/share/icons/hicolor/64x64/apps/m_doom.png",
+      "install -Dm 644 m_doomxl-128x128.png /app/share/icons/hicolor/128x128/apps/m_doom.png"
+    ]
+  }
+}

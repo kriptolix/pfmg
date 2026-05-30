@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "asmjit",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "asmjit",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/asmjit/asmjit.git",
+        "commit": "7bed2b0e1427fab185eea2da8ab4b9fb5b1f45a9"
+      }
+    ]
+  }
+}

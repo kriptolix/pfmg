@@ -1,0 +1,47 @@
+{
+  "header": {
+    "id": "python3-lmfit",
+    "version": "1.3.4",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-lmfit",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"lmfit\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/13/ac/19dbba27e891f39feb4170b884da449ee2699ef4ebb88eefeda364bbbbcf/asteval-1.0.6-py3-none-any.whl",
+        "sha256": "5e119ed306e39199fd99c881cea0e306b3f3807f050c9be79829fe274c6378dc"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/50/3d/9373ad9c56321fdab5b41197068e1d8c25883b3fea29dd361f9b55116869/dill-0.4.0-py3-none-any.whl",
+        "sha256": "44f54bf6412c2c8464c14e8243eb163690a9800dbe2c367330883b19c7561049"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/38/7e/7b91c89a4cf0f543a83be978657afb20c86af6d725253e319589dcc4ce52/lmfit-1.3.4-py3-none-any.whl",
+        "sha256": "afce1593b42324d37ae2908249b0c55445e2f4c1a0474ff706a8e2f7b5d949fa"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/37/7d/3fec4199c5ffb892bed55cff901e4f39a58c81df9c44c280499e92cad264/numpy-2.3.2.tar.gz",
+        "sha256": "e0486a11ec30cdecb53f184d496d1c6a20786c81e55e41640270130056f8ee48"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/f5/4a/b927028464795439faec8eaf0b03b011005c487bb2d07409f28bf30879c4/scipy-1.16.1.tar.gz",
+        "sha256": "44c76f9e8b6e8e488a586190ab38016e4ed2f8a038af7cd3defa903c0a2238b3"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/8f/5e/f1e1dd319e35e962a4e00b33150a8868b6329cc1d19fd533436ba5488f09/uncertainties-3.2.3-py3-none-any.whl",
+        "sha256": "313353900d8f88b283c9bad81e7d2b2d3d4bcc330cbace35403faaed7e78890a"
+      }
+    ]
+  }
+}

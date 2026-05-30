@@ -1,0 +1,41 @@
+{
+  "header": {
+    "id": "ffmpeg-libdrm",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "ffmpeg-libdrm",
+    "config-opts": [
+      "--optflags=\"${CFLAGS}\"",
+      "--extra-ldflags=\"${LDFLAGS}\"",
+      "--disable-stripping",
+      "--disable-debug",
+      "--disable-doc",
+      "--disable-static",
+      "--disable-everything",
+      "--enable-shared",
+      "--enable-libdrm",
+      "--enable-vaapi",
+      "--enable-pthreads",
+      "--enable-encoder=hevc_vaapi,h264_vaapi,av1_vaapi"
+    ],
+    "build-commands": [
+      "make install"
+    ],
+    "cleanup": [
+      "/share/ffmpeg",
+      "/bin/ffmpeg",
+      "/bin/ffplay",
+      "/bin/ffprobe"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://gitlab.com/freedesktop-sdk/mirrors/ffmpeg/ffmpeg.git",
+        "tag": "n7.0.1"
+      }
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-pandocfilters",
+    "version": "1.5.1",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-pandocfilters",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"pandocfilters==1.5.1\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/ef/af/4fbc8cab944db5d21b7e2a5b8e9211a03a79852b1157e2c102fcc61ac440/pandocfilters-1.5.1-py2.py3-none-any.whl",
+        "sha256": "93be382804a9cdb0a7267585f157e5d1731bbe5545a85b268d6f5fe6232de2bc"
+      }
+    ]
+  }
+}

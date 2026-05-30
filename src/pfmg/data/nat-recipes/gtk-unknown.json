@@ -1,0 +1,36 @@
+{
+  "header": {
+    "id": "gtk",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "gtk",
+    "buildsystem": "meson",
+    "config-opts": [
+      "-Dbuildtype=release",
+      "-Dintrospection=disabled",
+      "-Dprint-cups=disabled",
+      "-Ddemos=false",
+      "-Dbuild-testsuite=false",
+      "-Dbuild-examples=false",
+      "-Dbuild-tests=false"
+    ],
+    "cleanup": [
+      "/bin/gtk*"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://gitlab.gnome.org/GNOME/gtk.git",
+        "commit": "06b3ced8e7fc936caed43379b120d75be09713ca",
+        "tag": "4.10.3"
+      },
+      {
+        "type": "patch",
+        "path": "gtk-reversed-list.patch"
+      }
+    ]
+  }
+}

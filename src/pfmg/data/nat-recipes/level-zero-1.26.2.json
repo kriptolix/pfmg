@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "level-zero",
+    "version": "1.26.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "level-zero",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/oneapi-src/level-zero/archive/refs/tags/v1.26.2.tar.gz",
+        "sha256": "8b53fdbd8455d414c0113059e351264ae8a5731503a865ef80cfd9172eb99a11"
+      }
+    ]
+  }
+}

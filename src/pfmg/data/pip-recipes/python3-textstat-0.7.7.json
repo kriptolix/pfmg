@@ -1,0 +1,52 @@
+{
+  "header": {
+    "id": "python3-textstat",
+    "version": "0.7.7",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-textstat",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"textstat==0.7.7\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/fa/ff/617bdeab02c2ce0384e64a5bb00ec479322dbf019491def68af6a860733d/cmudict-1.0.32-py3-none-any.whl",
+        "sha256": "b9323664d49d128193c480ec97a3270ab2162469289bb26e950d13b2ef661c41"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/20/b0/36bd937216ec521246249be3bf9855081de4c5e06a0c9b4219dbeda50373/importlib_metadata-8.7.0-py3-none-any.whl",
+        "sha256": "e5dd1551894c77868a30651cef00984d50e1002d06942a7101d34870c5f02afd"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/a4/ed/1f1afb2e9e7f38a545d628f864d562a5ae64fe6f7a10e28ffb9b185b4e89/importlib_resources-6.5.2-py3-none-any.whl",
+        "sha256": "789cfdc3ed28c78b67a06acb8126751ced69a3d5f79c095a98298cd8a760ccec"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/7b/1f/c2142d2edf833a90728e5cdeb10bdbdc094dde8dbac078cee0cf33f5e11b/pyphen-0.17.2-py3-none-any.whl",
+        "sha256": "3a07fb017cb2341e1d9ff31b8634efb1ae4dc4b130468c7c39dd3d32e7c3affd"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/90/7c/c5506dab41cc67acef5e6554bdac0bc9953e7f3e91cf6103cbdff200d1c5/textstat-0.7.7-py3-none-any.whl",
+        "sha256": "103296f6a6f7451a4f56f78a5fd2ff184574a80e63886229f988cb4cc688270b"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/2e/54/647ade08bf0db230bfea292f893923872fd20be6ac6f53b2b936ba839d75/zipp-3.23.0-py3-none-any.whl",
+        "sha256": "071652d6115ed432f5ce1d34c336c0adfd6a884660d1e9712a256d3d3bd4b14e"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/9d/76/f789f7a86709c6b087c5a2f52f911838cad707cc613162401badc665acfe/setuptools-82.0.1-py3-none-any.whl",
+        "sha256": "a59e362652f08dcd477c78bb6e7bd9d80a7995bc73ce773050228a348ce2e5bb"
+      }
+    ]
+  }
+}

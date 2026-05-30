@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "gsfonts",
+    "version": "8.11",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "gsfonts",
+    "buildsystem": "simple",
+    "sources": [
+      {
+        "type": "file",
+        "url": "http://archive.ubuntu.com/ubuntu/pool/universe/g/gsfonts/gsfonts_8.11+urwcyr1.0.7~pre44-4.4_all.deb",
+        "sha256": "14b9c058a7bb18c0d19d9f2735f3ad34cbc613702440bb46e8adafbeec4aabad"
+      }
+    ],
+    "build-commands": [
+      "ar x gsfonts_*.deb",
+      "tar xf data.tar.* ./usr/share/fonts/type1/gsfonts/n019003l.pfb",
+      "install -Dm644 usr/share/fonts/type1/gsfonts/n019003l.pfb /app/share/fonts/type1/gsfonts/n019003l.pfb"
+    ]
+  }
+}

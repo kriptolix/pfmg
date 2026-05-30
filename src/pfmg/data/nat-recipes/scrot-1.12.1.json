@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "scrot",
+    "version": "1.12.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "scrot",
+    "sources": [
+      {
+        "type": "archive",
+        "archive-type": "tar-gzip",
+        "url": "https://api.github.com/repos/resurrecting-open-source-projects/scrot/tarball/1.12.1",
+        "sha256": "b4087954fa19f2adf16e90f6d3ba6c20ae41000591501933b82a2ce7d2c23cfa",
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://api.github.com/repos/resurrecting-open-source-projects/scrot/releases/latest",
+          "version-query": ".tag_name",
+          "url-query": ".tarball_url"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python-pkgconfig",
+    "version": "1.2.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python-pkgconfig",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip2 install --no-index --find-links=\"file://${PWD}\" --install-option=\"--prefix=${FLATPAK_DEST}\" pkgconfig"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/9d/ba/80910bbed2b4e646a6adab4474d2e506744c260c7002a0e6b41ef8750d8d/pkgconfig-1.2.2.tar.gz",
+        "sha256": "3685ba02a9b72654a764b728b559f327e1dbd7dc6ebc310a1bd429666ee202aa"
+      }
+    ]
+  }
+}

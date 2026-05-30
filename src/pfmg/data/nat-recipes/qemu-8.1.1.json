@@ -1,0 +1,54 @@
+{
+  "header": {
+    "id": "qemu",
+    "version": "8.1.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "qemu",
+    "config-opts": [
+      "--disable-user",
+      "--enable-kvm",
+      "--enable-opengl",
+      "--enable-virglrenderer",
+      "--enable-slirp",
+      "--disable-gtk",
+      "--disable-sdl",
+      "--disable-vnc",
+      "--python=/bin/python3",
+      "--target-list=x86_64-softmmu,i386-softmmu,aarch64-softmmu"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.qemu.org/qemu-8.1.1.tar.xz",
+        "sha256": "37ce2ef5e500fb752f681117c68b45118303ea49a7e26bd54080ced54fab7def"
+      }
+    ],
+    "modules": [
+      {
+        "name": "slirp",
+        "buildsystem": "meson",
+        "sources": [
+          {
+            "type": "archive",
+            "url": "https://gitlab.freedesktop.org/slirp/libslirp/-/archive/v4.7.0.tar.gz",
+            "sha256": "ccfd4e330b3d59be19e0cce25b0da000d61bcee2cfb608eb23418920d991a6da"
+          }
+        ]
+      },
+      {
+        "name": "virglrenderer",
+        "buildsystem": "meson",
+        "sources": [
+          {
+            "type": "archive",
+            "url": "https://gitlab.freedesktop.org/virgl/virglrenderer/-/archive/1.0.0/virglrenderer-1.0.0.tar.gz",
+            "sha256": "130c417bfcc8d35063245322609fd310e981a33e2a6c73beac7fb98c4beed8e6"
+          }
+        ]
+      }
+    ]
+  }
+}

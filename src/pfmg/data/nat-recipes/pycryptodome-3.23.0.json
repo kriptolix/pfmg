@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "pycryptodome",
+    "version": "3.23.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "pycryptodome",
+    "buildsystem": "simple",
+    "build-commands": [
+      "touch .separate_namespace",
+      "python3 setup.py install --prefix=/app --root=/"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://files.pythonhosted.org/packages/8e/a6/8452177684d5e906854776276ddd34eca30d1b1e15aa1ee9cefc289a33f5/pycryptodome-3.23.0.tar.gz",
+        "sha512": "86c8db4f16d788190de6a24debaaaf78958b08179a2f56c021973e3d01828e655e7deb0c65a25aa93b2ac5420ba5a0945a30f5fa8f4455c6518c89347c301c84"
+      }
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "haskell-gi-overloading-1.0",
+    "version": "1.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "haskell-gi-overloading-1.0",
+    "only-arches": [
+      "x86_64"
+    ],
+    "buildsystem": "simple",
+    "build-commands": [
+      "ghc -threaded --make Setup",
+      "./Setup configure --prefix=/app",
+      "./Setup build",
+      "./Setup install"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "sha256": "3ed797f8dd8d3535640b1ca99851bbc5968817c25a80fc499af42715d371682a",
+        "url": "https://hackage.haskell.org/package/haskell-gi-overloading-1.0/haskell-gi-overloading-1.0.tar.gz"
+      }
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "pandoc-arm64",
+    "version": "3.1.12",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "pandoc-arm64",
+    "cleanup": [
+      "*.a"
+    ],
+    "only-arches": [
+      "aarch64"
+    ],
+    "buildsystem": "simple",
+    "build-commands": [
+      "mv -v bin/pandoc /app/bin/pandoc"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/jgm/pandoc/releases/download/3.1.12/pandoc-3.1.12-linux-arm64.tar.gz",
+        "sha256": "5e27952bee7ddc88e5629bf86252233b418abdf8f7f66c86c412805469afd560"
+      }
+    ]
+  }
+}

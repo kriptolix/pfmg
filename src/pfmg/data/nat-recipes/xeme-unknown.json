@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "xeme",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "xeme",
+    "buildsystem": "meson",
+    "config-opts": [
+      "-Ddoc=false",
+      "--wrap-mode=nofallback"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "archive-type": "tar-gzip",
+        "url": "https://keep.imfreedom.org/xeme/xeme/archive/5d0707ab10a2.tar.gz",
+        "sha256": "eabb0f88fdc54775e9aab63d277d0d0cf54c456ee09580d45bd516d1117088da"
+      }
+    ]
+  }
+}

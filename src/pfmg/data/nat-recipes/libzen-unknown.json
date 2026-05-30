@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "libzen",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libzen",
+    "cleanup": [
+      "/bin",
+      "/include",
+      "/lib/pkgconfig"
+    ],
+    "subdir": "Project/GNU/Library",
+    "config-opts": [
+      "--enable-shared",
+      "--disable-static"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "commit": "1250d326306f4036d78dfdb7b24b344e729eb9f3",
+        "url": "https://github.com/MediaArea/ZenLib.git"
+      }
+    ]
+  }
+}

@@ -1,0 +1,201 @@
+{
+  "header": {
+    "id": "winetricks",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "winetricks",
+    "no-autogen": true,
+    "make-install-args": [
+      "PREFIX=$(FLATPAK_DEST)"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/Matoking/winetricks.git",
+        "commit": "a8b93ce18e471a711309bc935112000b37840e07"
+      }
+    ],
+    "modules": [
+      {
+        "name": "xterm",
+        "sources": [
+          {
+            "type": "git",
+            "url": "https://github.com/ThomasDickey/xterm-snapshots.git",
+            "tag": "xterm-401",
+            "commit": "8704589513bcc1da1ae7a33ccf54468377bce50a",
+            "x-checker-data": {
+              "type": "anitya",
+              "project-id": 5272,
+              "tag-template": "xterm-$version",
+              "is-main-source": true
+            }
+          }
+        ],
+        "modules": [
+          {
+            "name": "libXaw",
+            "sources": [
+              {
+                "type": "archive",
+                "url": "https://xorg.freedesktop.org/releases/individual/lib/libXaw-1.0.16.tar.gz",
+                "sha256": "012f90adf8739f2f023d63a5fee1528949cf2aba92ef7ac1abcfc2ae9cf28798",
+                "x-checker-data": {
+                  "type": "anitya",
+                  "project-id": 1766,
+                  "url-template": "https://xorg.freedesktop.org/releases/individual/lib/libXaw-$version.tar.gz"
+                }
+              }
+            ],
+            "modules": [
+              {
+                "name": "xmu",
+                "sources": [
+                  {
+                    "type": "archive",
+                    "url": "https://www.x.org/archive/individual/lib/libXmu-1.2.1.tar.xz",
+                    "sha256": "fcb27793248a39e5fcc5b9c4aec40cc0734b3ca76aac3d7d1c264e7f7e14e8b2",
+                    "x-checker-data": {
+                      "type": "anitya",
+                      "project-id": 1785,
+                      "url-template": "https://www.x.org/archive/individual/lib/libXmu-$version.tar.xz"
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "ncurses",
+            "config-opts": [
+              "--with-shared",
+              "--without-manpageus",
+              "--with-abi-version=5"
+            ],
+            "cleanup": [
+              "/bin",
+              "/include",
+              "/share",
+              "*.a"
+            ],
+            "sources": [
+              {
+                "type": "archive",
+                "url": "https://invisible-mirror.net/archives/ncurses/current/ncurses-6.5-20250830.tgz",
+                "sha256": "519ec9f748d7f2873cf763394fc766a701967439610125ad0fbf76ab2c7510a5",
+                "x-checker-data": {
+                  "type": "anitya",
+                  "project-id": 2057,
+                  "url-template": "https://invisible-mirror.net/archives/ncurses/current/ncurses-$version.tgz",
+                  "versions": {
+                    ">=": "6.5"
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "7zip",
+        "buildsystem": "simple",
+        "subdir": "CPP/7zip/Bundles/Alone2",
+        "build-commands": [
+          "make -j $FLATPAK_BUILDER_N_JOBS -f makefile.gcc",
+          "install -D ./_o/7zz -t /app/bin",
+          "ln -s /app/bin/7zz /app/bin/7za",
+          "ln -s /app/bin/7zz /app/bin/7z"
+        ],
+        "sources": [
+          {
+            "type": "git",
+            "url": "https://github.com/ip7z/7zip.git",
+            "tag": "25.01",
+            "commit": "5e96a8279489832924056b1fa82f29d5837c9469",
+            "x-checker-data": {
+              "type": "git",
+              "tag-pattern": "^([\\d.]+)$"
+            }
+          }
+        ]
+      },
+      {
+        "name": "cabextract",
+        "build-options": {
+          "strip": true
+        },
+        "sources": [
+          {
+            "type": "archive",
+            "url": "https://www.cabextract.org.uk/cabextract-1.11.tar.gz",
+            "sha256": "b5546db1155e4c718ff3d4b278573604f30dd64c3c5bfd4657cd089b823a3ac6",
+            "x-checker-data": {
+              "type": "anitya",
+              "project-id": 245,
+              "url-template": "https://www.cabextract.org.uk/cabextract-$version.tar.gz"
+            }
+          }
+        ]
+      },
+      {
+        "name": "unrar-free",
+        "post-install": [
+          "ln -s /app/bin/unrar-free /app/bin/unrar"
+        ],
+        "sources": [
+          {
+            "type": "archive",
+            "url": "https://gitlab.com/bgermann/unrar-free/-/archive/0.3.3/unrar-free-0.3.3.tar.gz",
+            "sha256": "e0d52bded7863b81cbc4313929d0ad2e4d2e449bf96c85b436658eda02c506a7",
+            "x-checker-data": {
+              "type": "anitya",
+              "project-id": 243110,
+              "url-template": "https://gitlab.com/bgermann/unrar-free/-/archive/$version/unrar-free-$version.tar.gz"
+            }
+          },
+          {
+            "type": "script",
+            "dest-filename": "autogen.sh",
+            "commands": [
+              "autoreconf -vfi"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "binutils-ar",
+        "buildsystem": "simple",
+        "build-options": {
+          "strip": true
+        },
+        "build-commands": [
+          "install -Dm755 /usr/bin/ar -t ${FLATPAK_DEST}/bin/",
+          "install -Dm755 /usr/lib/$(gcc -print-multiarch)/libbfd-*.so -t ${FLATPAK_DEST}/lib/"
+        ]
+      },
+      {
+        "name": "aria2",
+        "config-opts": [
+          "--disable-libaria2",
+          "--disable-websocket",
+          "--without-sqlite3"
+        ],
+        "sources": [
+          {
+            "type": "archive",
+            "sha256": "60a420ad7085eb616cb6e2bdf0a7206d68ff3d37fb5a956dc44242eb2f79b66b",
+            "url": "https://github.com/aria2/aria2/releases/download/release-1.37.0/aria2-1.37.0.tar.xz",
+            "x-checker-data": {
+              "type": "anitya",
+              "project-id": 109,
+              "url-template": "https://github.com/aria2/aria2/releases/download/release-$version/aria2-$version.tar.xz"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

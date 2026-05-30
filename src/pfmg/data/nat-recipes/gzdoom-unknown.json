@@ -1,0 +1,42 @@
+{
+  "header": {
+    "id": "gzdoom",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "gzdoom",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release"
+    ],
+    "build-options": {
+      "env": {
+        "CXXFLAGS": "-Wno-error=template-id-cdtor -Wno-template-id-cdtor"
+      }
+    },
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/ZDoom/gzdoom/archive/refs/tags/g4.10.0.tar.gz",
+        "sha256": "8702522c05048dfd4a765c6ac82a270d8bd0942e813d5bc6f4b69795a5d23a20"
+      },
+      {
+        "type": "patch",
+        "path": "gcc14.patch"
+      },
+      {
+        "type": "script",
+        "commands": [
+          "[ ! -f ~/.config/gzdoom/gzdoom.ini ] && cp /app/share/games/doom/gzdoom_portable.ini ~/.config/gzdoom/gzdoom.ini",
+          "exec gzdoom -file totalchaos.pk3 +fluid_patchset /app/share/games/doom/soundfonts/gzdoom.sf2 \"$@\""
+        ],
+        "dest-filename": "gzdoom.sh"
+      }
+    ],
+    "build-commands": [
+      "install -Dm 755 gzdoom.sh /app/bin/gzdoom.sh"
+    ]
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "header": {
+    "id": "clblast",
+    "version": "1.6.3",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "clblast",
+    "only-arches": [
+      "x86_64"
+    ],
+    "buildsystem": "cmake-ninja",
+    "build-options": {
+      "no-debuginfo": true
+    },
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DCMAKE_POSITION_INDEPENDENT_CODE=ON",
+      "-DTUNERS=OFF"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/CNugteren/CLBlast/archive/refs/tags/1.6.3.tar.gz",
+        "sha256": "c05668c7461e8440fce48c9f7a8966a6f9e0923421acd7c0357ece9b1d83f20e"
+      }
+    ]
+  }
+}

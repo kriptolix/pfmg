@@ -1,0 +1,40 @@
+{
+  "header": {
+    "id": "mupen64plus-core",
+    "version": "2.6.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "mupen64plus-core",
+    "buildsystem": "autotools",
+    "subdir": "projects/unix",
+    "no-autogen": true,
+    "make-args": [
+      "SHAREDIR=/app/share/mupen64plus",
+      "VULKAN=0",
+      "OSD=0",
+      "NEW_DYNAREC=1"
+    ],
+    "make-install-args": [
+      "SHAREDIR=/app/share/mupen64plus",
+      "PREFIX=/app",
+      "VULKAN=0",
+      "OSD=0",
+      "NEW_DYNAREC=1"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/mupen64plus/mupen64plus-core/releases/download/2.6.0/mupen64plus-core-src-2.6.0.tar.gz",
+        "sha256": "7f79f7f56b94dfa09c8f0dc95720cdffc07c722457e18f46ec8adbbb3505d21f"
+      },
+      {
+        "type": "shell",
+        "commands": [
+          "sed -i '321,324d;315d' projects/unix/Makefile"
+        ]
+      }
+    ]
+  }
+}

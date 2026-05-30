@@ -1,0 +1,30 @@
+{
+  "header": {
+    "id": "ebook-tools",
+    "version": "0.2.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "ebook-tools",
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
+      "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://downloads.sourceforge.net/project/ebook-tools/ebook-tools/0.2.2/ebook-tools-0.2.2.tar.gz",
+        "sha256": "cbc35996e911144fa62925366ad6a6212d6af2588f1e39075954973bbee627ae",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 17771,
+          "stable-only": true,
+          "url-template": "https://downloads.sourceforge.net/project/ebook-tools/ebook-tools/$version/ebook-tools-$version.tar.gz"
+        }
+      }
+    ]
+  }
+}

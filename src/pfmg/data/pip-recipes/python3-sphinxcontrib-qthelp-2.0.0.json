@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-sphinxcontrib-qthelp",
+    "version": "2.0.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-sphinxcontrib-qthelp",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"sphinxcontrib-qthelp==2.0.0\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/27/83/859ecdd180cacc13b1f7e857abf8582a64552ea7a061057a6c716e790fce/sphinxcontrib_qthelp-2.0.0-py3-none-any.whl",
+        "sha256": "b18a828cdba941ccd6ee8445dbe72ffa3ef8cbe7505d8cd1fa0d42d3f2d5f3eb"
+      }
+    ]
+  }
+}

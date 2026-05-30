@@ -1,0 +1,30 @@
+{
+  "header": {
+    "id": "spyder-flatpak-wrapper",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "Spyder-flatpak-wrapper",
+    "buildsystem": "meson",
+    "config-opts": [
+      "-Deditor_binary=/app/bin/spyder",
+      "-Deditor_args=--new-instance",
+      "-Dprogram_name=spyder-wrapper",
+      "-Deditor_title=Spyder IDE",
+      "-Dsdk_version=24.08"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/flathub/ide-flatpak-wrapper.git",
+        "commit": "e42aba9acceceb234216e60bb690705992517907"
+      },
+      {
+        "type": "patch",
+        "path": "ide_first_run.patch"
+      }
+    ]
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "proj",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "proj",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DBUILD_TESTING=OFF"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/OSGeo/PROJ.git",
+        "tag": "9.4.1",
+        "commit": "875a485fa5ef435c57f7682f904dd31ca92253ab"
+      }
+    ]
+  }
+}

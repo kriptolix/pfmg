@@ -1,0 +1,56 @@
+{
+  "header": {
+    "id": "monstr",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "monstr",
+    "buildsystem": "simple",
+    "build-commands": [
+      "(cd JUCE/extras/Projucer/Builds/LinuxMakefile/ && make -j $FLATPAK_BUILDER_N_JOBS)",
+      "JUCE/extras/Projucer/Builds/LinuxMakefile/build/Projucer --resave MONSTR.jucer",
+      "make -j $FLATPAK_BUILDER_N_JOBS -C Builds/LinuxMakefile/"
+    ],
+    "post-install": [
+      "install -Dm644 -t ${FLATPAK_DEST}/share/licenses/monstr Source/Graphics/OFL.txt",
+      "install -Dm644 -t ${FLATPAK_DEST}/share/licenses/monstr LICENSE",
+      "install -d ${FLATPAK_DEST}/vst3",
+      "cp -R Builds/LinuxMakefile/build/MONSTR.vst3 ${FLATPAK_DEST}/vst3",
+      "strip  --strip-unneeded ${FLATPAK_DEST}/vst3/MONSTR.vst3/Contents/*/*.so"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/jd-13/MONSTR-Stereo-Imaging.git",
+        "tag": "v2.1.3",
+        "commit": "7071f938813a879397726aaa1a8374e9cfdaf59b"
+      },
+      {
+        "type": "archive",
+        "path": "Montserrat.zip",
+        "dest": "Source/Graphics/"
+      },
+      {
+        "type": "git",
+        "url": "https://github.com/juce-framework/JUCE.git",
+        "tag": "7.0.9",
+        "dest": "JUCE"
+      },
+      {
+        "type": "git",
+        "url": "https://github.com/jd-13/WE-Core.git",
+        "tag": "v0.2.8",
+        "dest": "WECore"
+      },
+      {
+        "type": "patch",
+        "paths": [
+          "patches/monstr-jucer.patch",
+          "patches/wef-build.patch"
+        ]
+      }
+    ]
+  }
+}

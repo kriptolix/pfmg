@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "rkcommon",
+    "version": "1.8.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "rkcommon",
+    "buildsystem": "cmake",
+    "builddir": true,
+    "config-opts": [
+      "-DBUILD_TESTING:BOOL=OFF"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/ospray/rkcommon/archive/refs/tags/v1.8.0.tar.gz",
+        "sha256": "f037c15f7049610ef8bca37500b2ab00775af60ebbb9d491ba5fc2e5c04a7794"
+      }
+    ]
+  }
+}

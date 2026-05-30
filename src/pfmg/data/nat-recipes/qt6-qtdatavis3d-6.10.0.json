@@ -1,0 +1,26 @@
+{
+  "header": {
+    "id": "qt6-qtdatavis3d",
+    "version": "6.10.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "qt6-qtdatavis3d",
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://invent.kde.org/qt/qt/qtdatavis3d/-/archive/v6.10.0/qtdatavis3d-v6.10.0.tar.gz",
+        "sha256": "827518719d9efa3c7a8521ac89c22fa1a95cf1a8d4401fd3826feaec95a9e77f",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 7927,
+          "stable-only": true,
+          "url-template": "https://invent.kde.org/qt/qt/qtdatavis3d/-/archive/v$version/qtdatavis3d-v$version.tar.gz"
+        }
+      }
+    ]
+  }
+}

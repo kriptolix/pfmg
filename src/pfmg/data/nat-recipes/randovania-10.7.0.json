@@ -1,0 +1,52 @@
+{
+  "header": {
+    "id": "randovania",
+    "version": "10.7.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "randovania",
+    "buildsystem": "simple",
+    "build-commands": [
+      "mkdir -p /app/share/randovania",
+      "find . -type f -exec install -Dm 755 \"{}\" \"/app/share/randovania/{}\" \\;",
+      "mkdir -p /app/share/applications",
+      "mkdir -p /app/share/icons/hicolor/256x256/apps/",
+      "rm /app/share/randovania/_internal/xdg_assets/README.md",
+      "mv /app/share/randovania/_internal/xdg_assets/io.github.randovania.Randovania.png /app/share/icons/hicolor/256x256/apps/io.github.randovania.Randovania.png",
+      "mv /app/share/randovania/_internal/xdg_assets/io.github.randovania.Randovania.desktop /app/share/applications/io.github.randovania.Randovania.desktop",
+      "desktop-file-edit /app/share/applications/io.github.randovania.Randovania.desktop --set-key=Exec --set-value=$FLATPAK_DEST/bin/randovania",
+      "rmdir /app/share/randovania/_internal/xdg_assets",
+      "install -Dm 644 io.github.randovania.Randovania.metainfo.xml /app/share/appdata/io.github.randovania.Randovania.metainfo.xml",
+      "install -Dm 755 randovania-wrapper $FLATPAK_DEST/bin/randovania"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "archive-type": "tar-gzip",
+        "url": "https://github.com/randovania/randovania/releases/download/v10.7.0/randovania-10.7.0-linux.tar.gz",
+        "sha256": "b867e47723f8efb927f77a2a043fe6568b11b034318f7d6a212532a2831d26b6",
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://api.github.com/repos/randovania/randovania/releases/latest",
+          "tag-query": ".tag_name",
+          "version-query": "$tag | .[1:]",
+          "url-query": "\"https://github.com/randovania/randovania/releases/download/\" + $tag + \"/randovania-\" + $version + \"-linux.tar.gz\"",
+          "is-main-source": true
+        }
+      },
+      {
+        "type": "file",
+        "path": "io.github.randovania.Randovania.metainfo.xml"
+      },
+      {
+        "type": "script",
+        "commands": [
+          "exec /app/share/randovania/randovania \"$@\""
+        ],
+        "dest-filename": "randovania-wrapper"
+      }
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-nvsmi",
+    "version": "0.4.2",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-nvsmi",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"nvsmi>=0.4.2\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/d2/d5/6ec6d6410b434463ba76900d2363a1f75c474f3442a4365557b2588fa14b/nvsmi-0.4.2-py3-none-any.whl",
+        "sha256": "718894c24bdf7b58b8ecdfd282dceb06ef120a4b4e0b8517193cba876174945e"
+      }
+    ]
+  }
+}

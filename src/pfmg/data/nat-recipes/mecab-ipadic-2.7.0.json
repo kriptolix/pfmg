@@ -1,0 +1,34 @@
+{
+  "header": {
+    "id": "mecab-ipadic",
+    "version": "2.7.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "mecab-ipadic",
+    "buildsystem": "autotools",
+    "cleanup": [
+      "/bin",
+      "/include",
+      "/libexec/mecab/mecab-*"
+    ],
+    "config-opts": [
+      "--with-charset=utf-8"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "archive-type": "tar",
+        "url": "https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/mecab/mecab-ipadic-2.7.0-20070801.tar.gz",
+        "sha256": "b62f527d881c504576baed9c6ef6561554658b175ce6ae0096a60307e49e3523"
+      },
+      {
+        "type": "shell",
+        "commands": [
+          "cp -p /usr/share/automake-*/config.{sub,guess} ."
+        ]
+      }
+    ]
+  }
+}

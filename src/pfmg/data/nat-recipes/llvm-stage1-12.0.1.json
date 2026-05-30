@@ -1,0 +1,87 @@
+{
+  "header": {
+    "id": "llvm-stage1",
+    "version": "12.0.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "llvm-stage1",
+    "buildsystem": "cmake-ninja",
+    "subdir": "llvm",
+    "builddir": true,
+    "build-options": {
+      "prefix": "/usr/lib/sdk/llvm12/llvm-stage1",
+      "arch": {
+        "aarch64": {
+          "config-opts": [
+            "-DLLVM_DEFAULT_TARGET_TRIPLE=aarch64-unknown-linux-gnu"
+          ]
+        },
+        "x86_64": {
+          "config-opts": [
+            "-DLLVM_DEFAULT_TARGET_TRIPLE=x86_64-unknown-linux-gnu"
+          ]
+        }
+      },
+      "env": {
+        "CFLAGS": "-O2 -pipe",
+        "CXXFLAGS": "-O2 -pipe",
+        "LDFLAGS": "-Wl,--as-needed -Wl,--no-keep-memory"
+      }
+    },
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DCMAKE_C_FLAGS_RELEASE='-DNDEBUG'",
+      "-DCMAKE_CXX_FLAGS_RELEASE='-DNDEBUG'",
+      "-DLLVM_ENABLE_PROJECTS='clang;compiler-rt;lld'",
+      "-DLLVM_TARGETS_TO_BUILD='Native'",
+      "-DLLVM_LIBDIR_SUFFIX=''",
+      "-DLLVM_INCLUDE_TESTS:BOOL=OFF",
+      "-DLLVM_INCLUDE_EXAMPLES:BOOL=OFF",
+      "-DLLVM_INCLUDE_DOCS:BOOL=OFF",
+      "-DLLVM_INCLUDE_BENCHMARKS=OFF",
+      "-DLLVM_INSTALL_UTILS:BOOL=ON",
+      "-DLLVM_BINUTILS_INCDIR=/usr/include",
+      "-DCLANG_ENABLE_ARCMT:BOOL=OFF",
+      "-DCLANG_ENABLE_STATIC_ANALYZER:BOOL=OFF",
+      "-DCOMPILER_RT_BUILD_SANITIZERS:BOOL=OFF",
+      "-DCOMPILER_RT_BUILD_XRAY:BOOL=OFF",
+      "-Wno-dev"
+    ],
+    "cleanup": [
+      "*"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/llvm/llvm-project/releases/download/llvmorg-12.0.1/llvm-project-12.0.1.src.tar.xz",
+        "sha256": "129cb25cd13677aad951ce5c2deb0fe4afc1e9d98950f53b51bdcfb5a73afa0e"
+      },
+      {
+        "type": "patch",
+        "path": "patches/llvm-fix-tsan-build.patch"
+      },
+      {
+        "type": "patch",
+        "path": "patches/link-clang-shared.patch"
+      },
+      {
+        "type": "patch",
+        "path": "patches/link-clang-tools-extra-shared.patch"
+      },
+      {
+        "type": "patch",
+        "path": "patches/llvm-exegesis-link-dylib.patch"
+      },
+      {
+        "type": "patch",
+        "path": "patches/llvm_build_tablegen_component_as_shared_library.patch"
+      },
+      {
+        "type": "patch",
+        "path": "patches/llvm-do-not-install-static-libraries.patch"
+      }
+    ]
+  }
+}

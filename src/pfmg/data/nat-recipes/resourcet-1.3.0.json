@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "resourcet",
+    "version": "1.3.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "resourcet",
+    "buildsystem": "simple",
+    "builddir": false,
+    "build-commands": [
+      "echo '#! /usr/bin/env runhaskell' >Setup.txt",
+      "echo '> import Distribution.Simple' >>Setup.txt",
+      "echo '> main = defaultMain' >>Setup.txt",
+      "ln -s Setup.txt Setup.lhs || true",
+      "runhaskell Setup configure --prefix=/app",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "sources": [
+      {
+        "sha256": "ec601785ee42a201f32adb205b8685c983f18757b1bd33d2e806d571e0f9996b",
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/resourcet-1.3.0/resourcet-1.3.0.tar.gz"
+      },
+      {
+        "dest-filename": "resourcet.cabal",
+        "sha256": "faa760fb28fb5c98fbe4867e375a775495cabc00926da81fa102dc991017d2c5",
+        "type": "file",
+        "url": "https://hackage.haskell.org/package/resourcet-1.3.0/revision/0.cabal"
+      }
+    ]
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "header": {
+    "id": "haskell-sha",
+    "version": "1.6.4.4",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "haskell-SHA",
+    "buildsystem": "simple",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/SHA-1.6.4.4/SHA-1.6.4.4.tar.gz",
+        "sha256": "6bd950df6b11a3998bb1452d875d2da043ee43385459afc5f16d471d25178b44",
+        "x-checker-data": {
+          "type": "html",
+          "url": "https://www.stackage.org/lts-21",
+          "version-pattern": ">SHA-([\\d.]+)<",
+          "url-template": "https://hackage.haskell.org/package/SHA-$version/SHA-$version.tar.gz"
+        }
+      }
+    ],
+    "build-commands": [
+      "runhaskell Setup configure --prefix=/app --extra-lib-dirs=/app/lib",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "cleanup": [
+      "*"
+    ]
+  }
+}

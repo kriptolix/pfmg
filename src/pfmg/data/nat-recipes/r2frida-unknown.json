@@ -1,0 +1,88 @@
+{
+  "header": {
+    "id": "r2frida",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "r2frida",
+    "buildsystem": "autotools",
+    "build-options": {
+      "cflags": "-O3 -w"
+    },
+    "config-opts": [
+      "--with-precompiled-agent",
+      "--with-checks-level=0"
+    ],
+    "make-args": [
+      "DLCMD=false"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/nowsecure/r2frida.git",
+        "tag": "6.1.4",
+        "commit": "217ed43d599c59b629d4c5308ff040565c10a5a5",
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://api.github.com/repos/nowsecure/r2frida/releases/latest",
+          "timestamp-query": ".published_at",
+          "version-query": ".tag_name",
+          "tag-query": ".tag_name"
+        }
+      },
+      {
+        "type": "file",
+        "url": "https://github.com/nowsecure/r2frida/releases/download/6.1.4/_agent.js",
+        "sha256": "3ade15b0924a39ef57bdbaa7e8592f566ae83a46a5e7a6a3d5cb80d3ab626a99",
+        "dest": "src",
+        "dest-filename": "_agent.js",
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://api.github.com/repos/nowsecure/r2frida/releases/latest",
+          "timestamp-query": ".published_at",
+          "version-query": ".tag_name",
+          "url-query": ".assets[] | select(.name==\"_agent.js\") | .browser_download_url"
+        }
+      },
+      {
+        "type": "file",
+        "url": "https://github.com/frida/frida/releases/download/17.9.1/frida-core-devkit-17.9.1-linux-x86_64.tar.xz",
+        "sha256": "f78664ee89dea5d35511e0dbf959f887af345285c264f7995be786a5a52b9f02",
+        "only-arches": [
+          "x86_64"
+        ],
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://api.github.com/repos/nowsecure/r2frida/releases/latest",
+          "version-query": ".body | capture(\"[Ff]rida +(?<frida_version>[0-9.]+)\") | .frida_version",
+          "url-data-url": "\"https://api.github.com/repos/frida/frida/releases/tags/\\($version)\"",
+          "url-query": ".assets[] | select(.name==\"frida-core-devkit-\" + $version + \"-linux-x86_64.tar.xz\") | .browser_download_url"
+        }
+      },
+      {
+        "type": "file",
+        "url": "https://github.com/frida/frida/releases/download/17.9.1/frida-core-devkit-17.9.1-linux-arm64.tar.xz",
+        "sha256": "a3d909bf1a87202cee148b4f8faafbe83f1a10417ff10b11c09bc4e28c6985f0",
+        "only-arches": [
+          "aarch64"
+        ],
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://api.github.com/repos/nowsecure/r2frida/releases/latest",
+          "version-query": ".body | capture(\"[Ff]rida +(?<frida_version>[0-9.]+)\") | .frida_version",
+          "url-data-url": "\"https://api.github.com/repos/frida/frida/releases/tags/\\($version)\"",
+          "url-query": ".assets[] | select(.name==\"frida-core-devkit-\" + $version + \"-linux-arm64.tar.xz\") | .browser_download_url"
+        }
+      },
+      {
+        "type": "shell",
+        "commands": [
+          "FRIDA_DEST=$(echo frida-core-devkit-*.tar.xz | sed -r 's,^.*-([0-9\\.]+)-.*$,ext/frida-linux-\\1,'); mkdir -vp \"${FRIDA_DEST}\" && tar -vxJf frida-core-devkit-*.tar.xz -C \"${FRIDA_DEST}\"",
+          "rm -vf frida-core-devkit-*.tar.xz"
+        ]
+      }
+    ]
+  }
+}

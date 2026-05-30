@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "paho-mqtt-cpp",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "paho-mqtt-cpp",
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "config-opts": [
+      "-DPAHO_WITH_MQTT_C=ON"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/eclipse-paho/paho.mqtt.cpp.git",
+        "tag": "v1.6.0",
+        "commit": "c0b43a49d7b7e7b5e7009658ca22f19ac1112c83"
+      }
+    ]
+  }
+}

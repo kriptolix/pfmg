@@ -1,0 +1,26 @@
+{
+  "header": {
+    "id": "python-docutils",
+    "version": "0.19",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python-docutils",
+    "buildsystem": "simple",
+    "build-commands": [
+      "python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://files.pythonhosted.org/packages/6b/5c/330ea8d383eb2ce973df34d1239b3b21e91cd8c865d21ff82902d952f91f/docutils-0.19.tar.gz",
+        "sha256": "33995a6753c30b7f577febfc2c50411fec6aac7f7ffeb7c4cfe5991072dcf9e6",
+        "x-checker-data": {
+          "type": "pypi",
+          "name": "docutils"
+        }
+      }
+    ]
+  }
+}

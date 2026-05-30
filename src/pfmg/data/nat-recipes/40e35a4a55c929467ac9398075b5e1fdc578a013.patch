@@ -1,0 +1,28 @@
+From 40e35a4a55c929467ac9398075b5e1fdc578a013 Mon Sep 17 00:00:00 2001
+From: PunkPangolin <116445585+PunkPangolin@users.noreply.github.com>
+Date: Tue, 19 Aug 2025 20:54:20 +0200
+Subject: [PATCH] fix icon install
+
+svg file should be installed as scalable instead of 128x128
+---
+ icons/CMakeLists.txt                                            | 2 +-
+ ....nyre221.kiview.svg => sc-apps-io.github.nyre221.kiview.svg} | 0
+ 2 files changed, 1 insertion(+), 1 deletion(-)
+ rename icons/{128-apps-io.github.nyre221.kiview.svg => sc-apps-io.github.nyre221.kiview.svg} (100%)
+
+diff --git a/icons/CMakeLists.txt b/icons/CMakeLists.txt
+index 957f8e4..53afedc 100644
+--- a/icons/CMakeLists.txt
++++ b/icons/CMakeLists.txt
+@@ -1,6 +1,6 @@
+ #SPDX-License-Identifier: BSD-2-Clause
+ #SPDX-FileCopyrightText: 2023 danilo agostini <nyre334@gmail.com>
+-ecm_install_icons(ICONS 128-apps-io.github.nyre221.kiview.svg
++ecm_install_icons(ICONS sc-apps-io.github.nyre221.kiview.svg
+     DESTINATION ${KDE_INSTALL_ICONDIR}
+     THEME hicolor
+ )
+diff --git a/icons/128-apps-io.github.nyre221.kiview.svg b/icons/sc-apps-io.github.nyre221.kiview.svg
+similarity index 100%
+rename from icons/128-apps-io.github.nyre221.kiview.svg
+rename to icons/sc-apps-io.github.nyre221.kiview.svg

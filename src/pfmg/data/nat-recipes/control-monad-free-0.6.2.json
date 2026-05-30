@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "control-monad-free",
+    "version": "0.6.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "control-monad-free",
+    "buildsystem": "simple",
+    "builddir": false,
+    "build-commands": [
+      "echo '#! /usr/bin/env runhaskell' >Setup.txt",
+      "echo '> import Distribution.Simple' >>Setup.txt",
+      "echo '> main = defaultMain' >>Setup.txt",
+      "ln -s Setup.txt Setup.lhs || true",
+      "runhaskell Setup configure --prefix=/app",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "sources": [
+      {
+        "sha256": "63c830bd2af23e372ebfee628d9f538a32d8368cf74f897370d839bf8e7b4bc1",
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/control-monad-free-0.6.2/control-monad-free-0.6.2.tar.gz"
+      },
+      {
+        "dest-filename": "control-monad-free.cabal",
+        "sha256": "8ce55c2cdac65f1c9254c5a71839a746da76bbabaab4d043ad01c96b35519879",
+        "type": "file",
+        "url": "https://hackage.haskell.org/package/control-monad-free-0.6.2/revision/0.cabal"
+      }
+    ]
+  }
+}

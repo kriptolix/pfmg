@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "guessit",
+    "version": "3.8.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "guessit",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --prefix=/app guessit-*.whl"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/b8/9b/924a8f9709c3143d4c9a301a88042cbce37e09789378217284b19d4f8132/guessit-3.8.0-py3-none-any.whl",
+        "sha256": "eb5747b1d0fbca926562c1e5894dbc3f6507c35e8c0bd9e38148401cd9579d83",
+        "x-checker-data": {
+          "type": "pypi",
+          "name": "guessit",
+          "packagetype": "bdist_wheel"
+        }
+      }
+    ]
+  }
+}

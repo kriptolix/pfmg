@@ -1,0 +1,19 @@
+{
+  "header": {
+    "id": "fuzzylite",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "fuzzylite",
+    "buildsystem": "cmake-ninja",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/fuzzylite/fuzzylite",
+        "commit": "03d99e42ed37867deabda61bbedde34e9f4b48f0"
+      }
+    ]
+  }
+}

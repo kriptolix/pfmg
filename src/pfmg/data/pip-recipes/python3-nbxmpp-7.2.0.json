@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-nbxmpp",
+    "version": "7.2.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-nbxmpp",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install nbxmpp-7.2.0-py3-none-any.whl"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/df/ef/2bfe8af417ab7cdb5e0ee619817725fb8cabaf050a03c244df1c3e5875eb/nbxmpp-7.2.0-py3-none-any.whl",
+        "sha256": "151f98c78708e2d5c1754217faea718daab2ef4f0e53338eaf6eef9cd62b9fe7"
+      }
+    ]
+  }
+}

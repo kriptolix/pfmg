@@ -1,0 +1,21 @@
+{
+  "header": {
+    "id": "git2",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "git2",
+    "buildsystem": "cmake",
+    "builddir": true,
+    "sources": [
+      {
+        "type": "git",
+        "tag": "v1.8.5",
+        "commit": "c7e6c72fd773f6813dca3d743cdd54bb3be7de18",
+        "url": "https://github.com/libgit2/libgit2"
+      }
+    ]
+  }
+}

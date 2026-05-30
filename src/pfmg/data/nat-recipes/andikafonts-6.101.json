@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "andikafonts",
+    "version": "6.101",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "AndikaFonts",
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://software.sil.org/downloads/r/andika/Andika-6.101.zip",
+        "sha256": "8595a879054a540b24fa942a2621efcd194a9f6468d9cf2541ae693e496b8dd4"
+      },
+      {
+        "type": "file",
+        "url": "https://software.sil.org/downloads/r/andika/AndikaNewBasic-5.500.zip",
+        "sha256": "18308284a3e98cd7712d057742d8d6cd040a52ec0479a1dcf92d57815f8d368a"
+      }
+    ],
+    "buildsystem": "simple",
+    "build-commands": [
+      "set -xueo pipefail\nunzip -uqo Andika-6.101.zip\ninstall -d /app/share/fonts/truetype/andika\ninstall Andika-6.101/Andika-Regular.ttf /app/share/fonts/truetype/andika\ninstall Andika-6.101/Andika-Bold.ttf /app/share/fonts/truetype/andika\ninstall Andika-6.101/Andika-Italic.ttf /app/share/fonts/truetype/andika\ninstall Andika-6.101/Andika-BoldItalic.ttf /app/share/fonts/truetype/andika\ninstall -d /app/share/doc/fonts-sil-andika\ninstall Andika-6.101/OFL.txt /app/share/doc/fonts-sil-andika\ninstall Andika-6.101/README.txt /app/share/doc/fonts-sil-andika\nunzip -uqo AndikaNewBasic-5.500.zip\ninstall -d /app/share/fonts/opentype/andika-new-basic\ninstall AndikaNewBasic-5.500/AndikaNewBasic-R.ttf /app/share/fonts/opentype/andika-new-basic\ninstall AndikaNewBasic-5.500/AndikaNewBasic-B.ttf /app/share/fonts/opentype/andika-new-basic\ninstall AndikaNewBasic-5.500/AndikaNewBasic-I.ttf /app/share/fonts/opentype/andika-new-basic\ninstall AndikaNewBasic-5.500/AndikaNewBasic-BI.ttf /app/share/fonts/opentype/andika-new-basic\ninstall -d /app/share/doc/fonts-sil-andika-new-basic\ninstall AndikaNewBasic-5.500/OFL.txt /app/share/doc/fonts-sil-andika-new-basic\ninstall AndikaNewBasic-5.500/README.txt /app/share/doc/fonts-sil-andika-new-basic\n"
+    ]
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "header": {
+    "id": "qt5-qttools",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "qt5-qttools",
+    "buildsystem": "qmake",
+    "cleanup": [
+      "/bin",
+      "/include",
+      "/lib",
+      "/phrasebooks",
+      "*.prl",
+      "*.la",
+      "*.a"
+    ],
+    "cleanup-platform": [
+      "/mkspecs",
+      "/bin/assistant",
+      "/bin/qhelpgenerator",
+      "/bin/qcollectiongenerator",
+      "/bin/qhelpconverter",
+      "/bin/pixeltool",
+      "/bin/designer",
+      "/bin/lrelease",
+      "/bin/lupdate",
+      "/bin/lconvert",
+      "/bin/linguist",
+      "/bin/qdoc",
+      "/bin/qtattributionsscanner",
+      "/bin/qtplugininfo",
+      "/bin/qtdiag",
+      "/bin/qdbusviewer"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://invent.kde.org/qt/qt/qttools.git",
+        "commit": "672ba9d902be3634a9fef80be65227aece9e0aed"
+      }
+    ]
+  }
+}

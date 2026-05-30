@@ -1,0 +1,26 @@
+{
+  "header": {
+    "id": "pysol-cards",
+    "version": "0.24.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "pysol_cards",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"pysol_cards\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/b8/83/b14bf5b2c8a8c6e6d793c0ebd292e8d82c20e9ee8104045087a1cabc6399/pysol_cards-0.24.0.tar.gz",
+        "sha256": "a985492da81aa1588dfc056d9a7c6ca83f66254c0b90f25afc682a70713d4d4b",
+        "x-checker-data": {
+          "type": "pypi",
+          "name": "pysol_cards"
+        }
+      }
+    ]
+  }
+}

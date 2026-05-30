@@ -1,0 +1,18 @@
+{
+  "header": {
+    "id": "ffmpeg-old",
+    "version": "4.3.8",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "ffmpeg-old",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://ffmpeg.org/releases/ffmpeg-4.3.8.tar.xz",
+        "sha256": "103fd01f78c596c4c974ddf180dabaf149a86d234988895a0e566a5ff4afa444"
+      }
+    ]
+  }
+}

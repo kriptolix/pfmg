@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-protobuf",
+    "version": "5.28.2",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-protobuf",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"protobuf==5.28.2\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/b1/a4/4579a61de526e19005ceeb93e478b61d77aa38c8a85ad958ff16a9906549/protobuf-5.28.2.tar.gz",
+        "sha256": "59379674ff119717404f7454647913787034f03fe7049cbef1d74a97bb4593f0"
+      }
+    ]
+  }
+}

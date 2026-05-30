@@ -1,0 +1,26 @@
+{
+  "header": {
+    "id": "python-lsp-server",
+    "version": "1.14.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python-lsp-server",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --no-index --find-links=file://${PWD} --prefix=${FLATPAK_DEST} --no-build-isolation ."
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://files.pythonhosted.org/packages/b4/b5/b989d41c63390dfc2bf63275ab543b82fed076723d912055e77ccbae1422/python_lsp_server-1.14.0.tar.gz",
+        "sha256": "509c445fc667f41ffd3191cb7512a497bf7dd76c14ceb1ee2f6c13ebe71f9a6b",
+        "x-checker-data": {
+          "type": "pypi",
+          "name": "python-lsp-server"
+        }
+      }
+    ]
+  }
+}

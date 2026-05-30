@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "babl",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "babl",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://gitlab.gnome.org/GNOME/babl.git",
+        "tag": "BABL_0_1_126",
+        "commit": "8307f8d3347f5fececca88e264632d49df9bcb85"
+      }
+    ],
+    "buildsystem": "meson",
+    "config-opts": [
+      "-Dgi-docgen=disabled",
+      "-Dwith-docs=false"
+    ],
+    "cleanup": [
+      "/bin"
+    ]
+  }
+}

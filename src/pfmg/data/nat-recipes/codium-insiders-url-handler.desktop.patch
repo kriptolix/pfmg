@@ -1,0 +1,11 @@
+@@ -2,8 +2,8 @@
+ Name=VSCodium - Insiders - URL Handler
+ Comment=Code Editing. Redefined.
+ GenericName=Text Editor
+-Exec=/usr/share/codium-insiders/codium-insiders --open-url %U
+-Icon=vscodium-insiders
++Exec=com.vscodium.codium-insiders --open-url %U
++Icon=com.vscodium.codium-insiders
+ Type=Application
+ NoDisplay=true
+ StartupNotify=true

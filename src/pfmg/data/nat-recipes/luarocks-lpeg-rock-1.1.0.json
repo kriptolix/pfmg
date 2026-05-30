@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "luarocks-lpeg-rock",
+    "version": "1.1.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "luarocks-lpeg_rock",
+    "buildsystem": "simple",
+    "build-options": {
+      "prepend-path": "/app/automations/DependencyControl/bin"
+    },
+    "build-commands": [
+      "luarocks build ./lpeg-1.1.0-2.src.rock"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://luarocks.org/manifests/gvvaughan/lpeg-1.1.0-2.src.rock",
+        "sha512": "e2c9dd2c8bdbb14dcedead7708dcc98c95e5c6a5f90ca0768886dfa16e97936283e6b433ffced1ef3f67f6e8f36a41615153dd570d1089e6b8fc446a59bb2fb1"
+      }
+    ]
+  }
+}

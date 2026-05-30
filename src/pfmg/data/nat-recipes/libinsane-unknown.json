@@ -1,0 +1,21 @@
+{
+  "header": {
+    "id": "libinsane",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libinsane",
+    "buildsystem": "meson",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://gitlab.gnome.org/World/OpenPaperwork/libinsane.git",
+        "tag": "1.0.10",
+        "commit": "d466163a4e7ba8bd90644a2a6734395be5e51cd4",
+        "disable-shallow-clone": true
+      }
+    ]
+  }
+}

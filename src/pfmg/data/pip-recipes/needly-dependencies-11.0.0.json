@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "needly-dependencies",
+    "version": "11.0.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "needly-dependencies",
+    "buildsystem": "simple",
+    "build-commands": [
+      "/app/bin/pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} Pillow libvirt-python --no-build-isolation --no-deps"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/source/p/pillow/pillow-11.0.0.tar.gz",
+        "sha256": "72bacbaf24ac003fea9bff9837d1eedb6088758d41e100c1552930151f677739"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/source/l/libvirt-python/libvirt-python-11.0.0.tar.gz",
+        "sha256": "cee825a53c6438c5bc84b4250b35493a8e504d5d8075d3d2069ffaf7090846f8"
+      }
+    ]
+  }
+}

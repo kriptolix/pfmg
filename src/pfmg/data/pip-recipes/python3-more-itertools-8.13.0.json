@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-more-itertools",
+    "version": "8.13.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-more-itertools",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"more-itertools\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/bd/3f/c4b3dbd315e248f84c388bd4a72b131a29f123ecacc37ffb2b3834546e42/more_itertools-8.13.0-py3-none-any.whl",
+        "sha256": "c5122bffc5f104d37c1626b8615b511f3427aa5389b94d61e5ef8236bfbc3ddb"
+      }
+    ]
+  }
+}

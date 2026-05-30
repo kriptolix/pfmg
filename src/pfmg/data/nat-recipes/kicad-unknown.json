@@ -1,0 +1,110 @@
+{
+  "header": {
+    "id": "kicad",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "kicad",
+    "builddir": true,
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
+      "-DCMAKE_CTEST_ARGUMENTS=\"--output-on-failure\"",
+      "-DGLEW_INCLUDE_DIR=/app/include/GL",
+      "-DOCC_INCLUDE_DIR=/app/include/opencascade",
+      "-DOPENGL_glu_LIBRARY=/app/lib/libGLU.so",
+      "-DKICAD_BUILD_FLATPAK=ON",
+      "-DKICAD_BUILD_I18N=ON",
+      "-DKICAD_LIBRARY_DATA=/app/extensions/Library",
+      "-DKICAD_USE_EGL=OFF",
+      "-DKICAD_USE_PCH=OFF"
+    ],
+    "post-install": [
+      "install ../../flatpak-extra/kicad-startup /app/bin/kicad-startup",
+      "install ../../flatpak-extra/eeschema-startup /app/bin/eeschema-startup",
+      "install ../../flatpak-extra/pcbnew-startup /app/bin/pcbnew-startup",
+      "install ../../flatpak-extra/python /app/bin/python",
+      "install ../../flatpak-extra/pip3 /app/bin/pip3.10",
+      "ln -s /app/bin/pip3.10 /app/bin/pip3",
+      "ln -s /app/bin/pip3 /app/bin/pip",
+      "install -d /app/extensions/ODBCDriver",
+      "for f in $FLATPAK_DEST/share/applications/*.desktop; do\n  desktop_name=\"$(basename $f)\";\n  if [ \"$desktop_name\" = \"org.kicad.KiCad.desktop\" ]; then\n    desktop-file-edit \\\n      --set-key=Exec \\\n      --set-value=\"kicad-startup %f\" \\\n      \"$f\";\n  else\n    if [[ \"$desktop_name\" =~ ^org\\.kicad\\.KiCad\\.(eeschema|pcbnew)\\.desktop$\n]]; then\n      desktop-file-edit \\\n        --set-key=Exec \\\n        --set-value=\"${BASH_REMATCH[1]}-startup %f\" \\\n        \"$f\";\n    fi;\n  fi;\ndone; unset desktop_name\n"
+    ],
+    "subdir": "kicad-git",
+    "sources": [
+      {
+        "type": "git",
+        "dest": "kicad-git",
+        "url": "https://gitlab.com/kicad/code/kicad.git",
+        "commit": "146a4f2a7585c65bc580427a19b6fe2ec4a3f622",
+        "tag": "10.0.3",
+        "x-checker-data": {
+          "is-main-source": true,
+          "type": "git",
+          "tag-pattern": "^([\\d\\.]+)$",
+          "versions": {
+            "<": "10.99.0"
+          }
+        }
+      },
+      {
+        "type": "script",
+        "dest": "flatpak-extra",
+        "dest-filename": "pip3",
+        "commands": [
+          "export PYTHONUSERBASE=\"$XDG_DATA_HOME/python\"",
+          "export PATH=\"$XDG_DATA_HOME/python/bin\":$PATH",
+          "exec /usr/bin/pip3 \"$@\""
+        ]
+      },
+      {
+        "type": "script",
+        "dest": "flatpak-extra",
+        "dest-filename": "python",
+        "commands": [
+          "export PYTHONUSERBASE=\"$XDG_DATA_HOME/python\"",
+          "export PATH=\"$XDG_DATA_HOME/python/bin\":$PATH",
+          "exec /usr/bin/python \"$@\""
+        ]
+      },
+      {
+        "type": "script",
+        "dest": "flatpak-extra",
+        "dest-filename": "kicad-startup",
+        "commands": [
+          "mkdir -p ${XDG_CONFIG_HOME}/unixodbc",
+          "export ODBCSYSINI=${XDG_CONFIG_HOME}/unixodbc",
+          "rm -f ${ODBCSYSINI}/odbcinst.ini",
+          "for template in /app/extensions/ODBCDriver/template/*.ini; do\n  test -f \"$template\" || continue;\n  odbcinst -i -d -f \"$template\" >/dev/null;\ndone\n",
+          "exec /app/bin/kicad \"$@\""
+        ]
+      },
+      {
+        "type": "script",
+        "dest": "flatpak-extra",
+        "dest-filename": "eeschema-startup",
+        "commands": [
+          "mkdir -p ${XDG_CONFIG_HOME}/unixodbc",
+          "export ODBCSYSINI=${XDG_CONFIG_HOME}/unixodbc",
+          "rm -f ${ODBCSYSINI}/odbcinst.ini",
+          "for template in /app/extensions/ODBCDriver/template/*.ini; do\n  test -f \"$template\" || continue;\n  odbcinst -i -d -f \"$template\" >/dev/null;\ndone\n",
+          "exec /app/bin/eeschema \"$@\""
+        ]
+      },
+      {
+        "type": "script",
+        "dest": "flatpak-extra",
+        "dest-filename": "pcbnew-startup",
+        "commands": [
+          "mkdir -p ${XDG_CONFIG_HOME}/unixodbc",
+          "export ODBCSYSINI=${XDG_CONFIG_HOME}/unixodbc",
+          "rm -f ${ODBCSYSINI}/odbcinst.ini",
+          "for template in /app/extensions/ODBCDriver/template/*.ini; do\n  test -f \"$template\" || continue;\n  odbcinst -i -d -f \"$template\" >/dev/null;\ndone\n",
+          "exec /app/bin/pcbnew \"$@\""
+        ]
+      }
+    ]
+  }
+}

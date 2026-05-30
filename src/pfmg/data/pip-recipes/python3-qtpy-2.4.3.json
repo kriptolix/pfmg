@@ -1,0 +1,37 @@
+{
+  "header": {
+    "id": "python3-qtpy",
+    "version": "2.4.3",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-qtpy",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"qtpy\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/69/76/37c0ccd5ab968a6a438f9c623aeecc84c202ab2fabc6a8fd927580c15b5a/QtPy-2.4.3-py3-none-any.whl",
+        "sha256": "72095afe13673e017946cc258b8d5da43314197b741ed2890e563cf384b51aa1",
+        "x-checker-data": {
+          "type": "pypi",
+          "name": "qtpy",
+          "packagetype": "bdist_wheel"
+        }
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/df/b2/87e62e8c3e2f4b32e5fe99e0b86d576da1312593b39f47d8ceef365e95ed/packaging-26.2-py3-none-any.whl",
+        "sha256": "5fc45236b9446107ff2415ce77c807cee2862cb6fac22b8a73826d0693b0980e",
+        "x-checker-data": {
+          "type": "pypi",
+          "name": "packaging",
+          "packagetype": "bdist_wheel"
+        }
+      }
+    ]
+  }
+}

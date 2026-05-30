@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "orcus",
+    "version": "0.21.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "orcus",
+    "config-opts": [
+      "--with-boost=/app"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://gitlab.com/orcus/orcus/-/archive/0.21.0/orcus-0.21.0.tar.bz2",
+        "sha256": "3555660197d6d38d720643f430804bb0f95a484c1fe6c28c00808ae67f978d15",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 1696,
+          "stable-only": true,
+          "url-template": "https://gitlab.com/orcus/orcus/-/archive/$version/orcus-$version.tar.bz2"
+        }
+      }
+    ]
+  }
+}

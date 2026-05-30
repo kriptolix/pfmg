@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "greybird-dark",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "Greybird-dark",
+    "buildsystem": "meson",
+    "build-options": {
+      "prefix": "/usr/share/runtime",
+      "append-path": "/usr/share/runtime/share/themes/Greybird-dark/gtk-3.0/bin"
+    },
+    "config-opts": [
+      "-Dflatpak=true",
+      "-Dflatpak-variant=dark"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/shimmerproject/Greybird.git",
+        "tag": "v3.22.12"
+      }
+    ]
+  }
+}

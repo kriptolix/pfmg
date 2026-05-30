@@ -1,0 +1,26 @@
+{
+  "header": {
+    "id": "oauth",
+    "version": "1.0.3",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "oauth",
+    "config-opts": [
+      "--enable-nss"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "http://downloads.sourceforge.net/liboauth/liboauth-1.0.3.tar.gz",
+        "sha256": "0df60157b052f0e774ade8a8bac59d6e8d4b464058cc55f9208d72e41156811f",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 1686,
+          "url-template": "http://downloads.sourceforge.net/liboauth/liboauth-$version.tar.gz"
+        }
+      }
+    ]
+  }
+}

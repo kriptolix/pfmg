@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "python3-dbus-mediaplayer",
+    "version": "2025.6.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-dbus-mediaplayer",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"dbus-mediaplayer>=2025.6.0\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/3b/d1/0a275995f9fdd807531b143e6020e1e18de9a8e7202a6674ba6160ccc6e4/dbus_mediaplayer-2025.6.0-py3-none-any.whl",
+        "sha256": "142e427b019672fbd40cb26db019784da8684594d2670c2e6366154276d18611"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/b2/a3/e137168c9c44d18eff0376253da9f1e9234d0239e0ee230d2fee6cea8e55/jeepney-0.9.0-py3-none-any.whl",
+        "sha256": "97e5714520c16fc0a45695e5365a2e11b81ea79bba796e26f9f1d178cb182683"
+      }
+    ]
+  }
+}

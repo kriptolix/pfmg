@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "python3-frozenlist-arm",
+    "version": "1.8.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-frozenlist-arm",
+    "buildsystem": "simple",
+    "only-arches": [
+      "aarch64"
+    ],
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"frozenlist\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/8f/83/f61505a05109ef3293dfb1ff594d13d64a2324ac3482be2cedc2be818256/frozenlist-1.8.0-cp312-cp312-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl",
+        "sha256": "96f423a119f4777a4a056b66ce11527366a8bb92f54e541ade21f2374433f6d4"
+      }
+    ]
+  }
+}

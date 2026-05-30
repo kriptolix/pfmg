@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "python-pyocr",
+    "version": "unknown",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python-pyocr",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --prefix=${FLATPAK_DEST} --no-build-isolation ."
+    ],
+    "ensure-writable": [
+      "/lib/python*/site-packages/easy-install.pth",
+      "/lib/python*/site-packages/setuptools.pth"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://gitlab.gnome.org/World/OpenPaperwork/pyocr.git",
+        "tag": "0.8.5",
+        "commit": "ca191ba776743fe10a1c3dd99eaa82626ee4edc1",
+        "disable-shallow-clone": true
+      }
+    ]
+  }
+}

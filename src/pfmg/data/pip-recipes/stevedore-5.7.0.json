@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "stevedore",
+    "version": "5.7.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "stevedore",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --prefix=/app stevedore-*.whl"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/69/06/36d260a695f383345ab5bbc3fd447249594ae2fa8dfd19c533d5ae23f46b/stevedore-5.7.0-py3-none-any.whl",
+        "sha256": "fd25efbb32f1abb4c9e502f385f0018632baac11f9ee5d1b70f88cc5e22ad4ed",
+        "x-checker-data": {
+          "type": "pypi",
+          "name": "stevedore",
+          "packagetype": "bdist_wheel"
+        }
+      }
+    ]
+  }
+}

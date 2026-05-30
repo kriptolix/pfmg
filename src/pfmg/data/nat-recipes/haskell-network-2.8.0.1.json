@@ -1,0 +1,33 @@
+{
+  "header": {
+    "id": "haskell-network",
+    "version": "2.8.0.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "haskell-network",
+    "buildsystem": "simple",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/network-2.8.0.1/network-2.8.0.1.tar.gz",
+        "sha256": "61f55dbfed0f0af721a8ea36079e9309fcc5a1be20783b44ae500d9e4399a846"
+      },
+      {
+        "type": "shell",
+        "commands": [
+          "sed -i '/\\bbytestring\\b/ s/== *0\\.10\\.\\*/>=0.10 \\&\\& <0.12/' *.cabal"
+        ]
+      }
+    ],
+    "build-commands": [
+      "runhaskell Setup configure --prefix=/app --extra-lib-dirs=/app/lib",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "cleanup": [
+      "*"
+    ]
+  }
+}

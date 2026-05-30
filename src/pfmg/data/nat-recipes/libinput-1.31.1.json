@@ -1,0 +1,30 @@
+{
+  "header": {
+    "id": "libinput",
+    "version": "1.31.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libinput",
+    "buildsystem": "meson",
+    "config-opts": [
+      "-Dlibwacom=false",
+      "-Ddebug-gui=false",
+      "-Dtests=false"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://gitlab.freedesktop.org/libinput/libinput/-/archive/1.31.1/libinput-1.31.1.tar.gz",
+        "sha256": "e010b02021b8fe9f3e696a4a2059c0243f0c90f2f9d4bcf4c88d2f9613c52b0b",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 5781,
+          "stable-only": true,
+          "url-template": "https://gitlab.freedesktop.org/libinput/libinput/-/archive/$version/libinput-$version.tar.gz"
+        }
+      }
+    ]
+  }
+}

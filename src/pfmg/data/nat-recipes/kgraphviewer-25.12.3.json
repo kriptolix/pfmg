@@ -1,0 +1,29 @@
+{
+  "header": {
+    "id": "kgraphviewer",
+    "version": "25.12.3",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "kgraphviewer",
+    "buildsystem": "cmake",
+    "post-install": [
+      "rm /app/share/applications/org.kde.kgraphviewer.desktop",
+      "rm /app/share/metainfo/org.kde.kgraphviewer.appdata.xml"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.kde.org/stable/release-service/25.12.3/src/kgraphviewer-25.12.3.tar.xz",
+        "sha256": "634d92f9bedb09e5e491e7c8ceb1c4a6607ccb8ef87f8c8b1c8a9f52e3f8c0c6",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 8763,
+          "stable-only": true,
+          "url-template": "https://download.kde.org/stable/release-service/$version/src/kgraphviewer-$version.tar.xz"
+        }
+      }
+    ]
+  }
+}

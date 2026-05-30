@@ -1,0 +1,45 @@
+{
+  "header": {
+    "id": "python3-accessible-output2",
+    "version": "0.17",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-accessible-output2",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"accessible-output2\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/ba/55/a6f031e77dfc6b3e260778518810ac267b360ea8a1ec3765ca301d678f73/libloader-1.3.1-py2.py3-none-any.whl",
+        "sha256": "a99290e600b43e9b8907189a549ac18003c908c1127829fd6bd63c8f10af1301",
+        "x-checker-data": {
+          "type": "pypi",
+          "name": "libloader"
+        }
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/b5/51/56c8a348481b23bc1bf2a4c8c07457b7c1eac5450a746c1a3d11d80222e6/platform_utils-1.5.4-py2.py3-none-any.whl",
+        "sha256": "c91ff5e03f62d9cfbdceddf73a7bfaea113de2384ae065edbd67f441bef0b26f",
+        "x-checker-data": {
+          "type": "pypi",
+          "name": "platform_utils"
+        }
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/02/8e/2bb81f845d8f3ecb07acd094544ecbf0c0e02f80364e35fdabaec96ee6dc/accessible_output2-0.17-py2.py3-none-any.whl",
+        "sha256": "bdcfc5f2c8ecb50b219fa7d547018dd0c99dfa4c56b506872c74f5dc941a3288",
+        "x-checker-data": {
+          "type": "pypi",
+          "name": "accessible-output2",
+          "packagetype": "bdist_wheel"
+        }
+      }
+    ]
+  }
+}

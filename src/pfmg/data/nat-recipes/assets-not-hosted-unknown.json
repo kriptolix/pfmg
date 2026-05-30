@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "assets-not-hosted",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "assets_not_hosted",
+    "buildsystem": "simple",
+    "build-commands": [
+      "cp -R share ${FLATPAK_DEST}/share",
+      "cp -R patches ${FLATPAK_DEST}"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/vpelss/snis_flatpak.git",
+        "commit": "3bb2936da03097a5ef8769f1819d8cbe92f140f4"
+      }
+    ]
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "header": {
+    "id": "python3-pyexcel-xls",
+    "version": "0.7.1",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-pyexcel-xls",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"pyexcel-xls\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/c8/da/c649f3d09155660bcc5bf4f7fb59effae968e4ffd872cdd738f0b6932400/lml-0.2.0-py2.py3-none-any.whl",
+        "sha256": "20c80728189e46e8d986f5d0cdf6d83c493471fc25b1c31a8cb3fa96e80b58f8"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/7d/95/44376fb9c5a8200167fc7beac640be3522f85c07297a810865c5ad3fe440/pyexcel_io-0.6.7-py2.py3-none-any.whl",
+        "sha256": "add9f3c1489070ab0a3226bab7d23d4b84a364f5b44f3a14e2ce785ede88fcb3"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/af/41/80495879428132ba6b43c161def10e5a4dc787038d2f476f7547ecca9cc5/pyexcel_xls-0.7.1-py2.py3-none-any.whl",
+        "sha256": "5fd1bc29a50ad7abf5e5d5b6b0dfa1f83e01a97dbb3e7a9dc8ef118d5b78b46a"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/1a/62/c8d562e7766786ba6587d09c5a8ba9f718ed3fa8af7f4553e8f91c36f302/xlrd-2.0.2-py2.py3-none-any.whl",
+        "sha256": "ea762c3d29f4cca48d82df517b6d89fbce4db3107f9d78713e48cd321d5c9aa9"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/44/48/def306413b25c3d01753603b1a222a011b8621aed27cd7f89cbc27e6b0f4/xlwt-1.3.0-py2.py3-none-any.whl",
+        "sha256": "a082260524678ba48a297d922cc385f58278b8aa68741596a87de01a9c628b2e"
+      }
+    ]
+  }
+}

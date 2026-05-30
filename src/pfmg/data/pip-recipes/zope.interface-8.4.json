@@ -1,0 +1,43 @@
+{
+  "header": {
+    "id": "zope.interface",
+    "version": "8.4",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "zope.interface",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --prefix=/app zope_interface*.whl"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/83/88/e08923fcd8a8c8704af05a90418b07cd897ac90865925b37d7ad8139adfa/zope_interface-8.4-cp313-cp313-manylinux1_x86_64.manylinux2014_x86_64.manylinux_2_17_x86_64.manylinux_2_5_x86_64.whl",
+        "sha256": "29f09ec8bda65f7b30294328070070a2590b90f252f834ee0817cdb0e2c35f6a",
+        "only-arches": [
+          "x86_64"
+        ],
+        "x-checker-data": {
+          "type": "pypi",
+          "name": "zope.interface",
+          "packagetype": "bdist_wheel"
+        }
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/27/67/96c94cd307f9946d0b0f03402a335f7aae7b4f0b129b5734cc56cc78cb65/zope_interface-8.4-cp313-cp313-manylinux2014_aarch64.manylinux_2_17_aarch64.whl",
+        "sha256": "2bc388cebcb753d21eaf2a0481fd6f0ce6840a47300a40dcec0b56bac27d0f97",
+        "only-arches": [
+          "aarch64"
+        ],
+        "x-checker-data": {
+          "type": "pypi",
+          "name": "zope.interface",
+          "packagetype": "bdist_wheel"
+        }
+      }
+    ]
+  }
+}

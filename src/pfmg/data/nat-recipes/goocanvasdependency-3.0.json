@@ -1,0 +1,30 @@
+{
+  "header": {
+    "id": "goocanvasdependency",
+    "version": "3.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "GoocanvasDependency",
+    "buildsystem": "autotools",
+    "config-opts": [
+      "--prefix=/app"
+    ],
+    "make-install-args": [
+      "pyoverridesdir=/app/lib/python3.13/site-packages/gi/overrides",
+      "typelibdir=/app/lib/girepository-1.0"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.gnome.org/sources/goocanvas/3.0/goocanvas-3.0.0.tar.xz",
+        "sha256": "670a7557fe185c2703a14a07506156eceb7cea3b4bf75076a573f34ac52b401a"
+      },
+      {
+        "type": "patch",
+        "path": "goocanvas-3.0.0-gcc14.patch"
+      }
+    ]
+  }
+}

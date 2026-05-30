@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "flite",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "flite",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/festvox/flite.git",
+        "tag": "v2.2"
+      }
+    ],
+    "buildsystem": "simple",
+    "build-commands": [
+      "./configure --prefix=/app --with-langvox=ben --with-pic",
+      "make",
+      "echo >bin/flite_time",
+      "make install"
+    ]
+  }
+}

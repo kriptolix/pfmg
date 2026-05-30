@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "avdl",
+    "version": "0.4.3",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "avdl",
+    "buildsystem": "simple",
+    "build-commands": [
+      "make -j4 prefix=${FLATPAK_DEST}",
+      "make -j4 prefix=${FLATPAK_DEST} install"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/tomtsagk/avdl/archive/refs/tags/v0.4.3.tar.gz",
+        "sha256": "fa80f556007b9ce56e8d110f7b0869a86765f860d37d77061643d6a9f2e7f3d0"
+      }
+    ],
+    "cleanup": [
+      "/bin/avdl",
+      "/include",
+      "/share/avdl"
+    ]
+  }
+}

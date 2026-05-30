@@ -1,0 +1,26 @@
+{
+  "header": {
+    "id": "python3-xxhash",
+    "version": "3.7.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-xxhash",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"xxhash\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/24/2f/e183a1b407002f5af81822bee18b61cdb94b8670208ef34734d8d2b8ebe9/xxhash-3.7.0.tar.gz",
+        "sha256": "6cc4eefbb542a5d6ffd6d70ea9c502957c925e800f998c5630ecc809d6702bae",
+        "x-checker-data": {
+          "type": "pypi",
+          "name": "xxhash"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "header": {
+    "id": "dos2unix",
+    "version": "7.5.5",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "dos2unix",
+    "cleanup": [
+      "*"
+    ],
+    "no-autogen": true,
+    "make-install-args": [
+      "prefix=${FLATPAK_DEST}"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://downloads.sourceforge.net/project/dos2unix/dos2unix/7.5.5/dos2unix-7.5.5.tar.gz",
+        "sha256": "75f692b8484c8c24579a2ffd87df16b9c9428ed95497e3393a21d1ba0697ac33",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 453,
+          "url-template": "https://downloads.sourceforge.net/project/dos2unix/dos2unix/$version/dos2unix-$version.tar.gz"
+        }
+      }
+    ]
+  }
+}

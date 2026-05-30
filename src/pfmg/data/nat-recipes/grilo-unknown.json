@@ -1,0 +1,30 @@
+{
+  "header": {
+    "id": "grilo",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "grilo",
+    "buildsystem": "meson",
+    "config-opts": [
+      "-Denable-grl-net=true",
+      "-Denable-grl-pls=false",
+      "-Denable-gtk-doc=false",
+      "-Denable-test-ui=false"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://gitlab.gnome.org/GNOME/grilo.git",
+        "tag": "grilo-0.3.13",
+        "commit": "b3372233ee509676ab4408f049549c1020cff7a1"
+      }
+    ],
+    "cleanup": [
+      "/include",
+      "/bin"
+    ]
+  }
+}

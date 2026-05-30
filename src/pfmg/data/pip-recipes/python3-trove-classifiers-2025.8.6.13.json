@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-trove-classifiers",
+    "version": "2025.8.6.13",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-trove-classifiers",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"trove-classifiers==2025.8.6.13\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/d5/44/323a87d78f04d5329092aada803af3612dd004a64b69ba8b13046601a8c9/trove_classifiers-2025.8.6.13-py3-none-any.whl",
+        "sha256": "c4e7fc83012770d80b3ae95816111c32b085716374dccee0d3fbf5c235495f9f"
+      }
+    ]
+  }
+}

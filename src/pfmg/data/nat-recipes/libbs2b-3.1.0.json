@@ -1,0 +1,40 @@
+{
+  "header": {
+    "id": "libbs2b",
+    "version": "3.1.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libbs2b",
+    "buildsystem": "autotools",
+    "config-opts": [
+      "--disable-static"
+    ],
+    "cleanup": [
+      "/include",
+      "/lib/pkgconfig"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "archive-type": "tar",
+        "url": "https://downloads.sourceforge.net/sourceforge/bs2b/libbs2b-3.1.0.tar.gz",
+        "sha256": "6aaafd81aae3898ee40148dd1349aab348db9bfae9767d0e66e0b07ddd4b2528",
+        "x-checker-data": {
+          "type": "html",
+          "url": "https://sourceforge.net/projects/bs2b/files/libbs2b/",
+          "version-pattern": "projects/bs2b/files/libbs2b/(\\d+\\.\\d+\\.\\d+)",
+          "url-template": "https://downloads.sourceforge.net/sourceforge/bs2b/libbs2b-$version.tar.gz"
+        }
+      },
+      {
+        "type": "shell",
+        "commands": [
+          "sed -i -e 's/lzma/xz/g' configure.ac",
+          "autoreconf -vif"
+        ]
+      }
+    ]
+  }
+}

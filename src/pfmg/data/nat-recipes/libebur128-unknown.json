@@ -1,0 +1,33 @@
+{
+  "header": {
+    "id": "libebur128",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libebur128",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DBUILD_STATIC_LIBS=OFF",
+      "-DCMAKE_INSTALL_LIBDIR=lib",
+      "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/jiixyj/libebur128",
+        "tag": "v1.2.6",
+        "commit": "67b33abe1558160ed76ada1322329b0e9e058b02",
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://api.github.com/repos/jiixyj/libebur128/releases/latest",
+          "tag-query": ".tag_name",
+          "version-query": "$tag | sub(\"^jq-\"; \"\")",
+          "timestamp-query": ".published_at"
+        }
+      }
+    ]
+  }
+}

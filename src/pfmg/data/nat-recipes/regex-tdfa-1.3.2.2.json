@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "regex-tdfa",
+    "version": "1.3.2.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "regex-tdfa",
+    "buildsystem": "simple",
+    "builddir": false,
+    "build-commands": [
+      "echo '#! /usr/bin/env runhaskell' >Setup.txt",
+      "echo '> import Distribution.Simple' >>Setup.txt",
+      "echo '> main = defaultMain' >>Setup.txt",
+      "ln -s Setup.txt Setup.lhs || true",
+      "runhaskell Setup configure --prefix=/app",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "sources": [
+      {
+        "sha256": "933ed5c54246bb50e335d86b884ffb70bc252b5f776fb291f162a80a27bd75b7",
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/regex-tdfa-1.3.2.2/regex-tdfa-1.3.2.2.tar.gz"
+      },
+      {
+        "dest-filename": "regex-tdfa.cabal",
+        "sha256": "e5ea15b2898c62c63fae798784bc402b3862733d97a4f7ee3ec4f9ae6f447478",
+        "type": "file",
+        "url": "https://hackage.haskell.org/package/regex-tdfa-1.3.2.2/revision/3.cabal"
+      }
+    ]
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "header": {
+    "id": "art4apps",
+    "version": "unknown",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "art4apps",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --no-index --find-links ${PWD} --prefix=${FLATPAK_DEST} $PWD --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/godiard/art4apps.git",
+        "commit": "9be20a1ccdc11a54685951a3652e631ac29a598a"
+      },
+      {
+        "type": "patch",
+        "path": "art4apps-fix-path.patch"
+      }
+    ],
+    "post-install": [
+      "mkdir -p /app/share/art4apps/",
+      "cp -r data /app/share/art4apps/",
+      "cp -r images /app/share/art4apps/"
+    ]
+  }
+}

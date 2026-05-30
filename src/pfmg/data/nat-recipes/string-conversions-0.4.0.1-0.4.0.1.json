@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "string-conversions-0.4.0.1",
+    "version": "0.4.0.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "build-commands": [
+      "ghc -threaded --make Setup",
+      "./Setup configure --prefix=/app",
+      "./Setup build",
+      "./Setup install"
+    ],
+    "buildsystem": "simple",
+    "cleanup": [],
+    "name": "string-conversions-0.4.0.1",
+    "only-arches": [],
+    "sources": [
+      {
+        "sha256": "46bcce6d9ce62c558b7658a75d9c6a62f7259d6b0473d011d8078234ad6a1994",
+        "type": "archive",
+        "url": "https://s3.amazonaws.com/hackage.fpcomplete.com/package/string-conversions-0.4.0.1.tar.gz"
+      },
+      {
+        "sha256": "9c4075e54aa6cabfe244e07e2a1de720f3e98a0a6980fc671ab9c0da30f0f259",
+        "type": "file",
+        "url": "https://raw.githubusercontent.com/commercialhaskell/all-cabal-files/a5f22172fce750e93afa6987320f5c5be62b5670/string-conversions/0.4.0.1/string-conversions.cabal"
+      }
+    ]
+  }
+}

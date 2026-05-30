@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-lark",
+    "version": "1.1.5",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-lark",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"lark==1.1.5\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/a2/25/8e16de418fc83bb00dabaf8c7110bc45a90bf5481a70aa5f1668fcea73bc/lark-1.1.5.tar.gz",
+        "sha256": "4b534eae1f9af5b4ea000bea95776350befe1981658eea3820a01c37e504bb4d"
+      }
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-ollama",
+    "version": "0.6.1",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-ollama",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"ollama\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/47/4f/4a617ee93d8208d2bcf26b2d8b9402ceaed03e3853c754940e2290fed063/ollama-0.6.1-py3-none-any.whl",
+        "sha256": "fc4c984b345735c5486faeee67d8a265214a31cbb828167782dc642ce0a2bf8c"
+      }
+    ]
+  }
+}

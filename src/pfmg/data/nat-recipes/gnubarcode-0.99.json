@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "gnubarcode",
+    "version": "0.99",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "gnubarcode",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "http://ftp.gnu.org/gnu/barcode/barcode-0.99.tar.gz",
+        "sha256": "7c031cf3eb811242f53664379aebbdd9fae0b7b26b5e5d584c31a9f338154b64"
+      },
+      {
+        "type": "patch",
+        "path": "barcode-fixes.patch"
+      }
+    ]
+  }
+}

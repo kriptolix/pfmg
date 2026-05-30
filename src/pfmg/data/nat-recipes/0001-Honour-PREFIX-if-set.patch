@@ -1,0 +1,394 @@
+From 9398c2e7df5605aefcb5cf0ffe251dc47a80dfea Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Hubert=20Figui=C3=A8re?= <hub@figuiere.net>
+Date: Sun, 27 Sep 2020 10:02:55 -0400
+Subject: [PATCH 1/2] Honour PREFIX if set
+
+- also get the CXXFLAGS for lv2 using pkg-config
+- make uninstall should work too (setting the top-level prefix
+to the same default)
+---
+ Makefile                                 | 4 +++-
+ Makefile.single                          | 2 +-
+ plugins/mod-caps-AmpVTS.lv2/Makefile     | 2 +-
+ plugins/mod-caps-AutoFilter.lv2/Makefile | 2 +-
+ plugins/mod-caps-CEO.lv2/Makefile        | 2 +-
+ plugins/mod-caps-CabinetIII.lv2/Makefile | 2 +-
+ plugins/mod-caps-CabinetIV.lv2/Makefile  | 2 +-
+ plugins/mod-caps-ChorusI.lv2/Makefile    | 2 +-
+ plugins/mod-caps-Click.lv2/Makefile      | 2 +-
+ plugins/mod-caps-Compress.lv2/Makefile   | 2 +-
+ plugins/mod-caps-CompressX2.lv2/Makefile | 2 +-
+ plugins/mod-caps-Eq10.lv2/Makefile       | 2 +-
+ plugins/mod-caps-Eq10X2.lv2/Makefile     | 2 +-
+ plugins/mod-caps-Eq4p.lv2/Makefile       | 2 +-
+ plugins/mod-caps-EqFA4p.lv2/Makefile     | 2 +-
+ plugins/mod-caps-Fractal.lv2/Makefile    | 2 +-
+ plugins/mod-caps-Narrower.lv2/Makefile   | 2 +-
+ plugins/mod-caps-Noisegate.lv2/Makefile  | 2 +-
+ plugins/mod-caps-PhaserII.lv2/Makefile   | 2 +-
+ plugins/mod-caps-Plate.lv2/Makefile      | 2 +-
+ plugins/mod-caps-PlateX2.lv2/Makefile    | 2 +-
+ plugins/mod-caps-Saturate.lv2/Makefile   | 2 +-
+ plugins/mod-caps-Scape.lv2/Makefile      | 2 +-
+ plugins/mod-caps-Sin.lv2/Makefile        | 2 +-
+ plugins/mod-caps-Spice.lv2/Makefile      | 2 +-
+ plugins/mod-caps-SpiceX2.lv2/Makefile    | 2 +-
+ plugins/mod-caps-ToneStack.lv2/Makefile  | 2 +-
+ plugins/mod-caps-White.lv2/Makefile      | 2 +-
+ plugins/mod-caps-Wider.lv2/Makefile      | 2 +-
+ 29 files changed, 31 insertions(+), 29 deletions(-)
+
+diff --git a/Makefile b/Makefile
+index 2214a94..fa05aab 100644
+--- a/Makefile
++++ b/Makefile
+@@ -1,7 +1,9 @@
+ 
+-PREFIX = /usr
++PREFIX ?= /usr/local
+ DESTDIR =
+ 
++CXXFLAGS += `pkg-config --cflags lv2`
++
+ all: build
+ 
+ build:
+diff --git a/Makefile.single b/Makefile.single
+index ab3158e..8c52bb0 100644
+--- a/Makefile.single
++++ b/Makefile.single
+@@ -1,6 +1,6 @@
+ VERSION = 0.9.26
+ 
+-PREFIX = /usr/local
++PREFIX ?= /usr/local
+ DESTDIR =
+ 
+ CXX ?= g++
+diff --git a/plugins/mod-caps-AmpVTS.lv2/Makefile b/plugins/mod-caps-AmpVTS.lv2/Makefile
+index 1c2519f..d0e62af 100644
+--- a/plugins/mod-caps-AmpVTS.lv2/Makefile
++++ b/plugins/mod-caps-AmpVTS.lv2/Makefile
+@@ -1,6 +1,6 @@
+ VERSION = 0.9.26
+ 
+-PREFIX = /usr/local
++PREFIX ?= /usr/local
+ DESTDIR =
+ 
+ CXX ?= g++
+diff --git a/plugins/mod-caps-AutoFilter.lv2/Makefile b/plugins/mod-caps-AutoFilter.lv2/Makefile
+index 1cd906f..0b699e4 100644
+--- a/plugins/mod-caps-AutoFilter.lv2/Makefile
++++ b/plugins/mod-caps-AutoFilter.lv2/Makefile
+@@ -1,6 +1,6 @@
+ VERSION = 0.9.26
+ 
+-PREFIX = /usr/local
++PREFIX ?= /usr/local
+ DESTDIR =
+ 
+ CXX ?= g++
+diff --git a/plugins/mod-caps-CEO.lv2/Makefile b/plugins/mod-caps-CEO.lv2/Makefile
+index 67f1c47..0ae2baf 100644
+--- a/plugins/mod-caps-CEO.lv2/Makefile
++++ b/plugins/mod-caps-CEO.lv2/Makefile
+@@ -1,6 +1,6 @@
+ VERSION = 0.9.26
+ 
+-PREFIX = /usr/local
++PREFIX ?= /usr/local
+ DESTDIR =
+ 
+ CXX ?= g++
+diff --git a/plugins/mod-caps-CabinetIII.lv2/Makefile b/plugins/mod-caps-CabinetIII.lv2/Makefile
+index c99307b..29df7be 100644
+--- a/plugins/mod-caps-CabinetIII.lv2/Makefile
++++ b/plugins/mod-caps-CabinetIII.lv2/Makefile
+@@ -1,6 +1,6 @@
+ VERSION = 0.9.26
+ 
+-PREFIX = /usr/local
++PREFIX ?= /usr/local
+ DESTDIR =
+ 
+ CXX ?= g++
+diff --git a/plugins/mod-caps-CabinetIV.lv2/Makefile b/plugins/mod-caps-CabinetIV.lv2/Makefile
+index 71b3a21..8e07dba 100644
+--- a/plugins/mod-caps-CabinetIV.lv2/Makefile
++++ b/plugins/mod-caps-CabinetIV.lv2/Makefile
+@@ -1,6 +1,6 @@
+ VERSION = 0.9.26
+ 
+-PREFIX = /usr/local
++PREFIX ?= /usr/local
+ DESTDIR =
+ 
+ CXX ?= g++
+diff --git a/plugins/mod-caps-ChorusI.lv2/Makefile b/plugins/mod-caps-ChorusI.lv2/Makefile
+index 7b932c4..b2fff5c 100644
+--- a/plugins/mod-caps-ChorusI.lv2/Makefile
++++ b/plugins/mod-caps-ChorusI.lv2/Makefile
+@@ -1,6 +1,6 @@
+ VERSION = 0.9.26
+ 
+-PREFIX = /usr/local
++PREFIX ?= /usr/local
+ DESTDIR =
+ 
+ CXX ?= g++
+diff --git a/plugins/mod-caps-Click.lv2/Makefile b/plugins/mod-caps-Click.lv2/Makefile
+index b191e98..4e170b6 100644
+--- a/plugins/mod-caps-Click.lv2/Makefile
++++ b/plugins/mod-caps-Click.lv2/Makefile
+@@ -1,6 +1,6 @@
+ VERSION = 0.9.26
+ 
+-PREFIX = /usr/local
++PREFIX ?= /usr/local
+ DESTDIR =
+ 
+ CXX ?= g++
+diff --git a/plugins/mod-caps-Compress.lv2/Makefile b/plugins/mod-caps-Compress.lv2/Makefile
+index 4d8f695..213c04a 100644
+--- a/plugins/mod-caps-Compress.lv2/Makefile
++++ b/plugins/mod-caps-Compress.lv2/Makefile
+@@ -1,6 +1,6 @@
+ VERSION = 0.9.26
+ 
+-PREFIX = /usr/local
++PREFIX ?= /usr/local
+ DESTDIR =
+ 
+ CXX ?= g++
+diff --git a/plugins/mod-caps-CompressX2.lv2/Makefile b/plugins/mod-caps-CompressX2.lv2/Makefile
+index 9f3884c..16690ea 100644
+--- a/plugins/mod-caps-CompressX2.lv2/Makefile
++++ b/plugins/mod-caps-CompressX2.lv2/Makefile
+@@ -1,6 +1,6 @@
+ VERSION = 0.9.26
+ 
+-PREFIX = /usr/local
++PREFIX ?= /usr/local
+ DESTDIR =
+ 
+ CXX ?= g++
+diff --git a/plugins/mod-caps-Eq10.lv2/Makefile b/plugins/mod-caps-Eq10.lv2/Makefile
+index c25f0c3..aa99df1 100644
+--- a/plugins/mod-caps-Eq10.lv2/Makefile
++++ b/plugins/mod-caps-Eq10.lv2/Makefile
+@@ -1,6 +1,6 @@
+ VERSION = 0.9.26
+ 
+-PREFIX = /usr/local
++PREFIX ?= /usr/local
+ DESTDIR =
+ 
+ CXX ?= g++
+diff --git a/plugins/mod-caps-Eq10X2.lv2/Makefile b/plugins/mod-caps-Eq10X2.lv2/Makefile
+index bfeb76b..13b3114 100644
+--- a/plugins/mod-caps-Eq10X2.lv2/Makefile
++++ b/plugins/mod-caps-Eq10X2.lv2/Makefile
+@@ -1,6 +1,6 @@
+ VERSION = 0.9.26
+ 
+-PREFIX = /usr/local
++PREFIX ?= /usr/local
+ DESTDIR =
+ 
+ CXX ?= g++
+diff --git a/plugins/mod-caps-Eq4p.lv2/Makefile b/plugins/mod-caps-Eq4p.lv2/Makefile
+index 75ecd01..ba2683b 100644
+--- a/plugins/mod-caps-Eq4p.lv2/Makefile
++++ b/plugins/mod-caps-Eq4p.lv2/Makefile
+@@ -1,6 +1,6 @@
+ VERSION = 0.9.26
+ 
+-PREFIX = /usr/local
++PREFIX ?= /usr/local
+ DESTDIR =
+ 
+ CXX ?= g++
+diff --git a/plugins/mod-caps-EqFA4p.lv2/Makefile b/plugins/mod-caps-EqFA4p.lv2/Makefile
+index ca8e610..fdd2c3f 100644
+--- a/plugins/mod-caps-EqFA4p.lv2/Makefile
++++ b/plugins/mod-caps-EqFA4p.lv2/Makefile
+@@ -1,6 +1,6 @@
+ VERSION = 0.9.26
+ 
+-PREFIX = /usr/local
++PREFIX ?= /usr/local
+ DESTDIR =
+ 
+ CXX ?= g++
+diff --git a/plugins/mod-caps-Fractal.lv2/Makefile b/plugins/mod-caps-Fractal.lv2/Makefile
+index 071062b..7b852b2 100644
+--- a/plugins/mod-caps-Fractal.lv2/Makefile
++++ b/plugins/mod-caps-Fractal.lv2/Makefile
+@@ -1,6 +1,6 @@
+ VERSION = 0.9.26
+ 
+-PREFIX = /usr/local
++PREFIX ?= /usr/local
+ DESTDIR =
+ 
+ CXX ?= g++
+diff --git a/plugins/mod-caps-Narrower.lv2/Makefile b/plugins/mod-caps-Narrower.lv2/Makefile
+index 597f729..3f4fa63 100644
+--- a/plugins/mod-caps-Narrower.lv2/Makefile
++++ b/plugins/mod-caps-Narrower.lv2/Makefile
+@@ -1,6 +1,6 @@
+ VERSION = 0.9.26
+ 
+-PREFIX = /usr/local
++PREFIX ?= /usr/local
+ DESTDIR =
+ 
+ CXX ?= g++
+diff --git a/plugins/mod-caps-Noisegate.lv2/Makefile b/plugins/mod-caps-Noisegate.lv2/Makefile
+index 13fa4ed..80b531b 100644
+--- a/plugins/mod-caps-Noisegate.lv2/Makefile
++++ b/plugins/mod-caps-Noisegate.lv2/Makefile
+@@ -1,6 +1,6 @@
+ VERSION = 0.9.26
+ 
+-PREFIX = /usr/local
++PREFIX ?= /usr/local
+ DESTDIR =
+ 
+ CXX ?= g++
+diff --git a/plugins/mod-caps-PhaserII.lv2/Makefile b/plugins/mod-caps-PhaserII.lv2/Makefile
+index 3a02a2c..ad42a9a 100644
+--- a/plugins/mod-caps-PhaserII.lv2/Makefile
++++ b/plugins/mod-caps-PhaserII.lv2/Makefile
+@@ -1,6 +1,6 @@
+ VERSION = 0.9.26
+ 
+-PREFIX = /usr/local
++PREFIX ?= /usr/local
+ DESTDIR =
+ 
+ CXX ?= g++
+diff --git a/plugins/mod-caps-Plate.lv2/Makefile b/plugins/mod-caps-Plate.lv2/Makefile
+index b52342b..dc8fac3 100644
+--- a/plugins/mod-caps-Plate.lv2/Makefile
++++ b/plugins/mod-caps-Plate.lv2/Makefile
+@@ -1,6 +1,6 @@
+ VERSION = 0.9.26
+ 
+-PREFIX = /usr/local
++PREFIX ?= /usr/local
+ DESTDIR =
+ 
+ CXX ?= g++
+diff --git a/plugins/mod-caps-PlateX2.lv2/Makefile b/plugins/mod-caps-PlateX2.lv2/Makefile
+index 1e45137..987b246 100644
+--- a/plugins/mod-caps-PlateX2.lv2/Makefile
++++ b/plugins/mod-caps-PlateX2.lv2/Makefile
+@@ -1,6 +1,6 @@
+ VERSION = 0.9.26
+ 
+-PREFIX = /usr/local
++PREFIX ?= /usr/local
+ DESTDIR =
+ 
+ CXX ?= g++
+diff --git a/plugins/mod-caps-Saturate.lv2/Makefile b/plugins/mod-caps-Saturate.lv2/Makefile
+index 113262a..08bd0b4 100644
+--- a/plugins/mod-caps-Saturate.lv2/Makefile
++++ b/plugins/mod-caps-Saturate.lv2/Makefile
+@@ -1,6 +1,6 @@
+ VERSION = 0.9.26
+ 
+-PREFIX = /usr/local
++PREFIX ?= /usr/local
+ DESTDIR =
+ 
+ CXX ?= g++
+diff --git a/plugins/mod-caps-Scape.lv2/Makefile b/plugins/mod-caps-Scape.lv2/Makefile
+index f2fd19d..54451e8 100644
+--- a/plugins/mod-caps-Scape.lv2/Makefile
++++ b/plugins/mod-caps-Scape.lv2/Makefile
+@@ -1,6 +1,6 @@
+ VERSION = 0.9.26
+ 
+-PREFIX = /usr/local
++PREFIX ?= /usr/local
+ DESTDIR =
+ 
+ CXX ?= g++
+diff --git a/plugins/mod-caps-Sin.lv2/Makefile b/plugins/mod-caps-Sin.lv2/Makefile
+index 21724fa..15ae00d 100644
+--- a/plugins/mod-caps-Sin.lv2/Makefile
++++ b/plugins/mod-caps-Sin.lv2/Makefile
+@@ -1,6 +1,6 @@
+ VERSION = 0.9.26
+ 
+-PREFIX = /usr/local
++PREFIX ?= /usr/local
+ DESTDIR =
+ 
+ CXX ?= g++
+diff --git a/plugins/mod-caps-Spice.lv2/Makefile b/plugins/mod-caps-Spice.lv2/Makefile
+index 2b2bbc4..f376a21 100644
+--- a/plugins/mod-caps-Spice.lv2/Makefile
++++ b/plugins/mod-caps-Spice.lv2/Makefile
+@@ -1,6 +1,6 @@
+ VERSION = 0.9.26
+ 
+-PREFIX = /usr/local
++PREFIX ?= /usr/local
+ DESTDIR =
+ 
+ CXX ?= g++
+diff --git a/plugins/mod-caps-SpiceX2.lv2/Makefile b/plugins/mod-caps-SpiceX2.lv2/Makefile
+index a881751..38cdbe1 100644
+--- a/plugins/mod-caps-SpiceX2.lv2/Makefile
++++ b/plugins/mod-caps-SpiceX2.lv2/Makefile
+@@ -1,6 +1,6 @@
+ VERSION = 0.9.26
+ 
+-PREFIX = /usr/local
++PREFIX ?= /usr/local
+ DESTDIR =
+ 
+ CXX ?= g++
+diff --git a/plugins/mod-caps-ToneStack.lv2/Makefile b/plugins/mod-caps-ToneStack.lv2/Makefile
+index 5cd3125..c5c8b0e 100644
+--- a/plugins/mod-caps-ToneStack.lv2/Makefile
++++ b/plugins/mod-caps-ToneStack.lv2/Makefile
+@@ -1,6 +1,6 @@
+ VERSION = 0.9.26
+ 
+-PREFIX = /usr/local
++PREFIX ?= /usr/local
+ DESTDIR =
+ 
+ CXX ?= g++
+diff --git a/plugins/mod-caps-White.lv2/Makefile b/plugins/mod-caps-White.lv2/Makefile
+index 8c1ed8f..ea046c6 100644
+--- a/plugins/mod-caps-White.lv2/Makefile
++++ b/plugins/mod-caps-White.lv2/Makefile
+@@ -1,6 +1,6 @@
+ VERSION = 0.9.26
+ 
+-PREFIX = /usr/local
++PREFIX ?= /usr/local
+ DESTDIR =
+ 
+ CXX ?= g++
+diff --git a/plugins/mod-caps-Wider.lv2/Makefile b/plugins/mod-caps-Wider.lv2/Makefile
+index a1c7bbf..959b2e3 100644
+--- a/plugins/mod-caps-Wider.lv2/Makefile
++++ b/plugins/mod-caps-Wider.lv2/Makefile
+@@ -1,6 +1,6 @@
+ VERSION = 0.9.26
+ 
+-PREFIX = /usr/local
++PREFIX ?= /usr/local
+ DESTDIR =
+ 
+ CXX ?= g++
+-- 
+2.26.2
+

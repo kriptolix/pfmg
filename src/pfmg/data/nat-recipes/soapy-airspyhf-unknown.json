@@ -1,0 +1,19 @@
+{
+  "header": {
+    "id": "soapy-airspyhf",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "soapy_airspyhf",
+    "buildsystem": "cmake-ninja",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/pothosware/SoapyAirspyHF.git",
+        "commit": "7457d6972d97ea6808a2774a9439501308e4c688"
+      }
+    ]
+  }
+}

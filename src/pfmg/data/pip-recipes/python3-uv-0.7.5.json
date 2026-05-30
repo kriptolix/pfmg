@@ -1,0 +1,29 @@
+{
+  "header": {
+    "id": "python3-uv",
+    "version": "0.7.5",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-uv",
+    "buildsystem": "simple",
+    "build-options": {
+      "append-path": "/usr/lib/sdk/rust-stable/bin",
+      "env": {
+        "CARGO_HOME": "/run/build/python3-uv/cargo"
+      }
+    },
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"uv==0.7.5\" --no-build-isolation"
+    ],
+    "sources": [
+      "cargo-sources-uv.json",
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/33/b1/e4fcbff616269307743f8c13d1d9a35cb6ef8f39af9f0fbc87f4206b8cc5/uv-0.7.5.tar.gz",
+        "sha256": "ae2192283eb645ccab189b1dfd8b13d3264eae631469a903c0e0f2dffce65e3b"
+      }
+    ]
+  }
+}

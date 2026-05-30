@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "stm-2.4.5.0",
+    "version": "2.4.5.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "stm-2.4.5.0",
+    "only-arches": [
+      "x86_64"
+    ],
+    "buildsystem": "simple",
+    "build-commands": [
+      "ghc -threaded --make Setup",
+      "./Setup configure --prefix=/app",
+      "./Setup build",
+      "./Setup install"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "sha256": "31d7db183f13beed5c71409d12747a7f4cf3e145630553dc86336208540859a7",
+        "url": "https://hackage.haskell.org/package/stm-2.4.5.0/stm-2.4.5.0.tar.gz"
+      }
+    ]
+  }
+}

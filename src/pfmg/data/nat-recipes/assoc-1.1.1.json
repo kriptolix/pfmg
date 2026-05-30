@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "assoc",
+    "version": "1.1.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "assoc",
+    "buildsystem": "simple",
+    "builddir": false,
+    "build-commands": [
+      "echo '#! /usr/bin/env runhaskell' >Setup.txt",
+      "echo '> import Distribution.Simple' >>Setup.txt",
+      "echo '> main = defaultMain' >>Setup.txt",
+      "ln -s Setup.txt Setup.lhs || true",
+      "runhaskell Setup configure --prefix=/app",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "sources": [
+      {
+        "sha256": "231149b7fef09f5dd95af51228615e3b296dbd0faadeca053e0644a4b13b0ff6",
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/assoc-1.1.1/assoc-1.1.1.tar.gz"
+      },
+      {
+        "dest-filename": "assoc.cabal",
+        "sha256": "ad458c9e06a23dd275f8dbb02d13e250b8e40ac4858bc67e7992628563d14f5d",
+        "type": "file",
+        "url": "https://hackage.haskell.org/package/assoc-1.1.1/revision/0.cabal"
+      }
+    ]
+  }
+}

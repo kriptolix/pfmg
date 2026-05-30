@@ -1,0 +1,30 @@
+{
+  "header": {
+    "id": "kmail",
+    "version": "25.12.3",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "kmail",
+    "config-opts": [
+      "-DBUILD_TESTING=OFF",
+      "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+    ],
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.kde.org/stable/release-service/25.12.3/src/kmail-25.12.3.tar.xz",
+        "sha256": "e1ed980945ea3428100e01b5fccbb4e98b109c1d8503340c23b97238d36821c1",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 8763,
+          "stable-only": true,
+          "url-template": "https://download.kde.org/stable/release-service/$version/src/kmail-$version.tar.xz"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "tasty-hunit",
+    "version": "0.10.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "tasty-hunit",
+    "buildsystem": "simple",
+    "builddir": false,
+    "build-commands": [
+      "echo '#! /usr/bin/env runhaskell' >Setup.txt",
+      "echo '> import Distribution.Simple' >>Setup.txt",
+      "echo '> main = defaultMain' >>Setup.txt",
+      "ln -s Setup.txt Setup.lhs || true",
+      "runhaskell Setup configure --prefix=/app",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "sources": [
+      {
+        "sha256": "5af01fa7c1ef98b324da062e36f79986a8b1b83ff0cf6fd53f95d976b41e03f6",
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/tasty-hunit-0.10.2/tasty-hunit-0.10.2.tar.gz"
+      },
+      {
+        "dest-filename": "tasty-hunit.cabal",
+        "sha256": "22bc1122e8256664d7cb1e44c6bcace95676c523179947bf2403db71af43dc6d",
+        "type": "file",
+        "url": "https://hackage.haskell.org/package/tasty-hunit-0.10.2/revision/0.cabal"
+      }
+    ]
+  }
+}

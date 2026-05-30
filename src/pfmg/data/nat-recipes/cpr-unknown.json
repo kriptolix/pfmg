@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "cpr",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "cpr",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DCPR_USE_SYSTEM_CURL=ON",
+      "-DBUILD_SHARED_LIBS=OFF"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/libcpr/cpr.git",
+        "tag": "1.11.2"
+      }
+    ],
+    "cleanup": [
+      "*"
+    ]
+  }
+}

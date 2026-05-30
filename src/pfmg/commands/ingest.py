@@ -35,12 +35,14 @@ def cmd_import(
     rprint(f"  Scanned           : {report.scanned}")
     rprint(f"  Imported          : {report.imported}")
     rprint(f"  Skipped (exists)  : {report.skipped_existing}")
-    rprint(f"  Skipped (no src)  : {report.skipped_no_source}")
+    rprint(f"  Skipped (no src)  : {report.skipped_no_source}")    
 
+    '''
     if report.created:
         rprint(f"\n[bold]Created {len(report.created)} recipe(s):[/bold]")
         for p in report.created:
             rprint(f"  [green]{p}[/green]")
+    '''
 
     if report.errors:
         rprint(f"\n[red]{len(report.errors)} error(s):[/red]")

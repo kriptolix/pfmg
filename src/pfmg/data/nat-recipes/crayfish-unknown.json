@@ -1,0 +1,37 @@
+{
+  "header": {
+    "id": "crayfish",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "crayfish",
+    "buildsystem": "simple",
+    "build-options": {
+      "env": {
+        "CARGO_HOME": "/run/build/crayfish/cargo"
+      }
+    },
+    "subdir": "src/github.com/nanu-c/axolotl",
+    "build-commands": [
+      "cargo fetch --manifest-path crayfish/Cargo.toml",
+      "make build-crayfish",
+      "make install-crayfish DESTDIR=${FLATPAK_DEST} INSTALL_PREFIX=/bin"
+    ],
+    "sources": [
+      "generated-crayfish-sources.json",
+      {
+        "type": "git",
+        "url": "https://github.com/nanu-c/axolotl",
+        "tag": "v1.6.0",
+        "commit": "e521ab32b5bf315866a17f6844e5339abbc41e79",
+        "dest": "src/github.com/nanu-c/axolotl",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^v([\\d.]+)$"
+        }
+      }
+    ]
+  }
+}

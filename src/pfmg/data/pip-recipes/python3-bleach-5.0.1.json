@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "python3-bleach",
+    "version": "5.0.1",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-bleach",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"bleach\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/f4/24/2a3e3df732393fed8b3ebf2ec078f05546de641fe1b667ee316ec1dcf3b7/webencodings-0.5.1-py2.py3-none-any.whl",
+        "sha256": "a0af1213f3c2226497a97e2b3aa01a7e4bee4f403f95be16fc9acd2947514a78"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/d4/87/508104336a2bc0c4cfdbdceedc0f44dc72da3abc0460c57e323ddd1b3257/bleach-5.0.1-py3-none-any.whl",
+        "sha256": "085f7f33c15bd408dd9b17a4ad77c577db66d76203e5984b1bd59baeee948b2a"
+      }
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-jupyterlab-pygments",
+    "version": "0.3.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-jupyterlab-pygments",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"jupyterlab-pygments==0.3.0\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/b1/dd/ead9d8ea85bf202d90cc513b533f9c363121c7792674f78e0d8a854b63b4/jupyterlab_pygments-0.3.0-py3-none-any.whl",
+        "sha256": "841a89020971da1d8693f1a99997aefc5dc424bb1b251fd6322462a1b8842780"
+      }
+    ]
+  }
+}

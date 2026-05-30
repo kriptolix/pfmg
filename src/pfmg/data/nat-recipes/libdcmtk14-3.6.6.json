@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "libdcmtk14",
+    "version": "3.6.6",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libdcmtk14",
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "config-opts": [
+      "-DBUILD_SHARED_LIBS:BOOL=ON"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/DCMTK/dcmtk/archive/refs/tags/DCMTK-3.6.6.tar.gz",
+        "sha256": "117097da6d50ddbad0e48bb1e6cdc61468e82ba1d32001dd8e2366b445133a8c"
+      }
+    ]
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "python3-user-agents",
+    "version": "2.2.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-user-agents",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"user-agents==2.2.0\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/a9/7c/6367995ff57aaa2d9e1055adbaec2519cf5a979780a83a93fdf8c6ec37be/ua_parser-1.0.2-py3-none-any.whl",
+        "sha256": "0f8e6d0484af2a9ff804bba5a4fe696e87c028eaba98ad9a7dfae873fef7788a"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/e3/42/178db21aab1815583fcdb8ae465fc006b384fbe679412b11ddf8aae90f38/ua_parser_builtins-202605-py3-none-any.whl",
+        "sha256": "a86976baa4b7c69a54269fe54091e3f0c7666f15a0f893855ff907a3bb6d878c"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/8f/1c/20bb3d7b2bad56d881e3704131ddedbb16eb787101306887dff349064662/user_agents-2.2.0-py3-none-any.whl",
+        "sha256": "a98c4dc72ecbc64812c4534108806fb0a0b3a11ec3fd1eafe807cee5b0a942e7"
+      }
+    ]
+  }
+}

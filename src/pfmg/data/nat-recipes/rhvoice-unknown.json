@@ -1,0 +1,45 @@
+{
+  "header": {
+    "id": "rhvoice",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "rhvoice",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DCMAKE_POSITION_INDEPENDENT_CODE=ON",
+      "-DWITH_DATA=OFF",
+      "-DENABLE_MAGE=OFF",
+      "-DBUILD_CLIENT=OFF",
+      "-DBUILD_UTILS=OFF",
+      "-DBUILD_TESTS=OFF",
+      "-DBUILD_SERVICE=OFF",
+      "-DBUILD_SPEECHDISPATCHER_MODULE=OFF",
+      "-DCMAKE_INSTALL_LIBDIR=/app/lib"
+    ],
+    "post-install": [
+      "mkdir -p /app/share/rhvoice",
+      "cp -R data /app/share/rhvoice",
+      "cp -R config /app/share/rhvoice"
+    ],
+    "cleanup": [
+      "libboost*",
+      "libRHVoice_audio*",
+      "/share/rhvoice"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/RHVoice/RHVoice.git",
+        "commit": "846293f4f966381802131ea3c94ff12461b6058a"
+      },
+      {
+        "type": "patch",
+        "path": "patches/rhvoice.patch"
+      }
+    ]
+  }
+}

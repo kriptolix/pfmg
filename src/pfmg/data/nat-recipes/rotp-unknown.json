@@ -1,0 +1,39 @@
+{
+  "header": {
+    "id": "rotp",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "rotp",
+    "buildsystem": "simple",
+    "build-options": {
+      "env": {
+        "PATH": "${PATH}:/app/bin:/usr/bin:/usr/lib/sdk/openjdk17/bin",
+        "MAVEN_OPTS": "-Dmaven.repo.local=.m2/repository",
+        "JAVA_HOME": "/usr/lib/sdk/openjdk17/jvm/openjdk-17"
+      }
+    },
+    "build-commands": [
+      "patch -u src/rotp/ui/game/GameUI.java -i xdg-open.patch",
+      "mvn compile"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/rayfowler/rotp-public.git",
+        "commit": "e3726fc22c2c44316306c50c79779e3da1c4c140"
+      },
+      {
+        "type": "file",
+        "path": "pom.xml"
+      },
+      {
+        "type": "file",
+        "path": "xdg-open.patch"
+      },
+      "maven-dependencies.yaml"
+    ]
+  }
+}

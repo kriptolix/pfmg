@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-pytokens",
+    "version": "0.4.1",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-pytokens",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"pytokens==0.4.1\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/b6/34/b4e015b99031667a7b960f888889c5bd34ef585c85e1cb56a594b92836ac/pytokens-0.4.1.tar.gz",
+        "sha256": "292052fe80923aae2260c073f822ceba21f3872ced9a68bb7953b348e561179a"
+      }
+    ]
+  }
+}

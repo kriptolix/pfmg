@@ -1,0 +1,42 @@
+{
+  "header": {
+    "id": "modrinth-app",
+    "version": "0.13.17",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "modrinth-app",
+    "buildsystem": "simple",
+    "build-commands": [
+      "chmod +x ModrinthApp.AppImage",
+      "./ModrinthApp.AppImage --appimage-extract",
+      "desktop-file-edit \\\n  --set-comment=\"Modrinth's game launcher\" \\\n  --set-icon=\"$FLATPAK_ID\" \\\n  --set-key=\"Exec\" --set-value=\"modrinth-app\" \\\n  --set-key=\"StartupNotify\" --set-value=\"true\" \\\n  --set-key=\"Categories\" --set-value=\"Game;ActionGame;AdventureGame;Simulation;\" \\\n  --set-key=\"Keywords\" --set-value=\"game;minecraft;mc;\" \\\n  --set-key=\"StartupWMClass\" --set-value=\"ModrinthApp\" \\\n  \"squashfs-root/usr/share/applications/Modrinth App.desktop\"\n",
+      "mkdir -p \"$FLATPAK_DEST\"/{bin,share}",
+      "cp -r squashfs-root/usr/share/{applications,icons} \"$FLATPAK_DEST\"/share/",
+      "install -Dm755 squashfs-root/usr/bin/ModrinthApp \"$FLATPAK_DEST\"/bin/modrinth-app",
+      "install -Dm644 com.modrinth.ModrinthApp.metainfo.xml \"$FLATPAK_DEST\"/share/metainfo/com.modrinth.ModrinthApp.metainfo.xml"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "path": "com.modrinth.ModrinthApp.metainfo.xml"
+      },
+      {
+        "type": "file",
+        "url": "https://launcher-files.modrinth.com/versions/0.13.17/linux/Modrinth%20App_0.13.17_amd64.AppImage",
+        "dest-filename": "ModrinthApp.AppImage",
+        "sha256": "36f9cea529a5fda1276926b9a0ee5563b76264683f52dfe982636ec3eef918bc",
+        "only-arches": [
+          "x86_64"
+        ],
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://launcher-files.modrinth.com/updates.json",
+          "version-query": ".version",
+          "url-query": "\"https://launcher-files.modrinth.com/versions/\\($version)/linux/Modrinth%20App_\\($version)_amd64.AppImage\"\n"
+        }
+      }
+    ]
+  }
+}

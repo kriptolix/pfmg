@@ -1,0 +1,40 @@
+{
+  "header": {
+    "id": "reaction",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "reaction",
+    "buildsystem": "simple",
+    "build-commands": [
+      "make DEFAULT_BASEDIR=${FLATPAK_DEST}/share/Reaction -j${FLATPAK_BUILDER_N_JOBS}",
+      "mkdir -p ${FLATPAK_DEST}/bin/",
+      "mkdir -p ${FLATPAK_DEST}/share/Reaction/",
+      "make copyfiles COPYBINDIR=${FLATPAK_DEST}/bin/ COPYDIR=${FLATPAK_DEST}/share/Reaction/ NO_STRIP=1",
+      "mv ${FLATPAK_DEST}/bin/Reactionded.* ${FLATPAK_DEST}/bin/Reactionded",
+      "mv ${FLATPAK_DEST}/bin/Reaction.* ${FLATPAK_DEST}/bin/Reaction",
+      "mv ${FLATPAK_DEST}/bin/*.so ${FLATPAK_DEST}/share/Reaction/",
+      "install -Dm644 ${FLATPAK_ID}.png ${FLATPAK_DEST}/share/icons/hicolor/512x512/apps/${FLATPAK_ID}.png",
+      "install -Dm644 ${FLATPAK_ID}.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop",
+      "install -Dm644 ${FLATPAK_ID}.metainfo.xml ${FLATPAK_DEST}/share/metainfo/${FLATPAK_ID}.metainfo.xml"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/ReactionQuake3/reaction.git",
+        "tag": "d214682124851c5fb4a1f7f254305ccfcec7bffc"
+      },
+      {
+        "type": "patch",
+        "path": "resync.patch"
+      },
+      {
+        "type": "patch",
+        "path": "freedesktop.patch",
+        "use-git": true
+      }
+    ]
+  }
+}

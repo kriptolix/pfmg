@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "libgamerzilla",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libgamerzilla",
+    "buildsystem": "cmake-ninja",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/dulsi/libgamerzilla.git",
+        "tag": "release-0.1.3",
+        "commit": "685e4ca066fa2d010d3bf12c4f2755e0cb45a77d",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^release-([\\d.]+)$"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "flat-remix-gtk-green-darker",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "Flat-Remix-GTK-Green-Darker",
+    "buildsystem": "simple",
+    "build-commands": [
+      "install -dm755 /usr/share/runtime/share/themes/Flat-Remix-GTK-Green-Darker/gtk-3.0",
+      "cp -a Flat-Remix-GTK-Green-Darker/index.theme /usr/share/runtime/share/themes/Flat-Remix-GTK-Green-Darker/",
+      "cp -a Flat-Remix-GTK-Green-Darker/gtk-3.0/** /usr/share/runtime/share/themes/Flat-Remix-GTK-Green-Darker/gtk-3.0"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/sp1ritCS/flat-remix-gtk.git",
+        "commit": "e5a57fe1bf4d675087d35223bb542476d56725e2"
+      }
+    ]
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "header": {
+    "id": "unrar-free",
+    "version": "0.3.3",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "unrar-free",
+    "post-install": [
+      "ln -s /app/bin/unrar-free /app/bin/unrar"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://gitlab.com/bgermann/unrar-free/-/archive/0.3.3/unrar-free-0.3.3.tar.gz",
+        "sha256": "e0d52bded7863b81cbc4313929d0ad2e4d2e449bf96c85b436658eda02c506a7",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 243110,
+          "url-template": "https://gitlab.com/bgermann/unrar-free/-/archive/$version/unrar-free-$version.tar.gz"
+        }
+      },
+      {
+        "type": "script",
+        "dest-filename": "autogen.sh",
+        "commands": [
+          "autoreconf -vfi"
+        ]
+      }
+    ]
+  }
+}

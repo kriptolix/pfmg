@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "openscenegraph",
+    "version": "3.6.5",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "openscenegraph",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/openscenegraph/OpenSceneGraph/archive/OpenSceneGraph-3.6.5.tar.gz",
+        "sha256": "aea196550f02974d6d09291c5d83b51ca6a03b3767e234a8c0e21322927d1e12",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 6848,
+          "stable-only": true,
+          "url-template": "https://github.com/openscenegraph/OpenSceneGraph/archive/OpenSceneGraph-$version.tar.gz"
+        }
+      }
+    ]
+  }
+}

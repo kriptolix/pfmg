@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "fmedia",
+    "version": "1.23.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "fmedia",
+    "buildsystem": "simple",
+    "only_arches": [
+      "x86_64"
+    ],
+    "build-commands": [
+      "mkdir -p /app/bin",
+      "cp -r fmedia-1 /app/bin",
+      "ln -s /app/bin/fmedia-1/fmedia /app/bin/fmedia"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "dest": "fmedia-1",
+        "url": "https://master.dl.sourceforge.net/project/fmedia/v1.23.1/fmedia-1.23.1-linux-amd64.tar.xz",
+        "sha256": "14b181aef14addcfc08e23a9b47c9eba8d2d5359f90a6155a5254f501036a846"
+      }
+    ]
+  }
+}

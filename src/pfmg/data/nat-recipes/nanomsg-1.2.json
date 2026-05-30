@@ -1,0 +1,19 @@
+{
+  "header": {
+    "id": "nanomsg",
+    "version": "1.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "nanomsg",
+    "buildsystem": "cmake",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/nanomsg/nanomsg/archive/1.2.tar.gz",
+        "sha512": "377b3a0b4be6d6decd2711ff84ac1855ae0a298e7557dbe4b7d881c2a76f4e521671b47987b924c434afdad7ff1dfebb50982c8c0afca9b44682c898510d4c92"
+      }
+    ]
+  }
+}

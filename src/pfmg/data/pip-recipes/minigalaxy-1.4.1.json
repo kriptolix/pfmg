@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "minigalaxy",
+    "version": "1.4.1",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "minigalaxy",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --no-build-isolation --no-deps . --no-index --prefix=${FLATPAK_DEST}"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/sharkwouter/minigalaxy/archive/1.4.1.tar.gz",
+        "sha256": "05018f96f77cb1a78287abb9ad00fe19b2b70f42c31a5ceca7177bb9cef31c3b",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 292418,
+          "url-template": "https://github.com/sharkwouter/minigalaxy/archive/$version.tar.gz"
+        }
+      }
+    ]
+  }
+}

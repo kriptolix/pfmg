@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-python-xlib",
+    "version": "0.33",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-python-xlib",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"python-xlib==0.33\""
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/fc/b8/ff33610932e0ee81ae7f1269c890f697d56ff74b9f5b2ee5d9b7fa2c5355/python_xlib-0.33-py2.py3-none-any.whl",
+        "sha256": "c3534038d42e0df2f1392a1b30a15a4ff5fdc2b86cfa94f072bf11b10a164398"
+      }
+    ]
+  }
+}

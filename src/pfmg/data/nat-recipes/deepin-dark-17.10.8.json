@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "deepin-dark",
+    "version": "17.10.8",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "deepin-dark",
+    "buildsystem": "simple",
+    "build-commands": [
+      "install -dm755 /usr/share/runtime/share/themes/deepin-dark/gtk-3.0",
+      "cp -aL deepin-dark/gtk-3.0/* /usr/share/runtime/share/themes/deepin-dark/gtk-3.0",
+      "cp -a deepin-dark/index.theme /usr/share/runtime/share/themes/deepin-dark"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/linuxdeepin/deepin-gtk-theme/archive/17.10.8.tar.gz",
+        "sha256": "83302b46b4e02310443ebb87fe8c50108c697b8f0c1f7dd7157d1d80dbdade61"
+      }
+    ]
+  }
+}

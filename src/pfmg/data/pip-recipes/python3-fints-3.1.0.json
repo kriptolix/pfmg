@@ -1,0 +1,82 @@
+{
+  "header": {
+    "id": "python3-fints",
+    "version": "3.1.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-fints",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"fints\""
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/db/6b/f07db68acbb0b38f031181d7863adac792941a27dbc453135efb8c16e9fe/elementpath-2.5.1-py3-none-any.whl",
+        "sha256": "1f41f1160aaae66bc25a8cb9451e5b31ca4553b6dccd9b57045205b005e5406e"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/3a/f6/7a8fd7cc072cab26196f9f87b2869f4aa2cb7ca6162a3177f03f95f69f9d/xmlschema-1.10.0-py3-none-any.whl",
+        "sha256": "dbd68bded2fef00c19cf37110ca0565eca34cf0b6c9e1d3b62ad0de8cbb582ca"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/f4/24/2a3e3df732393fed8b3ebf2ec078f05546de641fe1b667ee316ec1dcf3b7/webencodings-0.5.1-py2.py3-none-any.whl",
+        "sha256": "a0af1213f3c2226497a97e2b3aa01a7e4bee4f403f95be16fc9acd2947514a78"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/a6/a5/c0b6468d3824fe3fde30dbb5e1f687b291608f9473681bbf7dabbf5a87d7/text_unidecode-1.3-py2.py3-none-any.whl",
+        "sha256": "1311f10e8b895935241623731c2ba64f4c455287888b18189350b67134a822e8"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/ec/03/062e6444ce4baf1eac17a6a0ebfe36bb1ad05e1df0e20b110de59c278498/urllib3-1.26.9-py2.py3-none-any.whl",
+        "sha256": "44ece4d53fb1706f667c9bd1c648f5469a2ec925fcf3a776667042d645472c14"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/04/a2/d918dcd22354d8958fe113e1a3630137e0fc8b44859ade3063982eacd2a4/idna-3.3-py3-none-any.whl",
+        "sha256": "84d9dd047ffa80596e0f246e2eab0b391788b0503584e8945f2368256d2735ff"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/06/b3/24afc8868eba069a7f03650ac750a778862dc34941a4bebeb58706715726/charset_normalizer-2.0.12-py3-none-any.whl",
+        "sha256": "6881edbebdb17b39b4eaaa821b438bf6eddffb4468cf344f09f89def34a8b1df"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/37/45/946c02767aabb873146011e665728b680884cd8fe70dde973c640e45b775/certifi-2021.10.8-py2.py3-none-any.whl",
+        "sha256": "d62a0163eb4c2344ac042ab2bdf75399a71a2d8c7d47eac2e2ee91b9d6339569"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/2d/61/08076519c80041bc0ffa1a8af0cbd3bf3e2b62af10435d269a9d0f40564d/requests-2.27.1-py2.py3-none-any.whl",
+        "sha256": "f22fa1e554c9ddfd16e6e41ac79759e17be9e492b3587efa038054674760e72d"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/f2/7b/84f5fe22d7d9644a5f315127659631eafff3c784202ab4e179bd724a8900/mt_940-4.23.0-py2.py3-none-any.whl",
+        "sha256": "1f727184a12a8f289310620d9a7fbdda2737c396fb5abb356838a7d2823359b0"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/35/8b/bad37525e7ef0669f013059affb3bbcd9311a24d63eda96723339ee0aab7/bleach-5.0.0-py3-none-any.whl",
+        "sha256": "08a1fe86d253b5c88c92cc3d810fd8048a16d15762e1e5b74d502256e5926aa1"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/5e/0a/4c6db329aa1e5e6b28114b9b3752fc450093b33b843e6f482617715e8165/sepaxml-2.5.0-py3-none-any.whl",
+        "sha256": "06d72ef9514e17e7b59cd49ca898e6aa9f2a895eef4282d03a443faea64f231d"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/2a/aa/ab6d86fc4a0b69ab7e3cabe951c3dde52cdb4cbda06231c38e31664c9132/fints-3.1.0-py3-none-any.whl",
+        "sha256": "f4fb814f26d447257249c3af24f8abbb2bf2726dbbb0ee0e1ad832a9a010b487"
+      }
+    ]
+  }
+}

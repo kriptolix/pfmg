@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "libwmf",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libwmf",
+    "cleanup": [
+      "/include",
+      "/lib/gtk-2.0",
+      "/share/doc/libwmf",
+      "/bin/libwmf*",
+      "/bin/wmf*"
+    ],
+    "config-opts": [
+      "--with-freetype=/usr"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/caolanm/libwmf.git",
+        "tag": "v0.2.13",
+        "commit": "9e4737f2293c0d127bda92e5b01896df10571424"
+      },
+      {
+        "type": "shell",
+        "commands": [
+          "autoreconf -vfi"
+        ]
+      }
+    ]
+  }
+}

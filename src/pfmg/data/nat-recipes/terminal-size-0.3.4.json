@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "terminal-size",
+    "version": "0.3.4",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "terminal-size",
+    "buildsystem": "simple",
+    "builddir": false,
+    "build-commands": [
+      "echo '#! /usr/bin/env runhaskell' >Setup.txt",
+      "echo '> import Distribution.Simple' >>Setup.txt",
+      "echo '> main = defaultMain' >>Setup.txt",
+      "ln -s Setup.txt Setup.lhs || true",
+      "runhaskell Setup configure --prefix=/app",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "sources": [
+      {
+        "sha256": "b0f070d6926cdaacf3a412c5518e5c23afca1e0ed00808a5328c96e468b67f49",
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/terminal-size-0.3.4/terminal-size-0.3.4.tar.gz"
+      },
+      {
+        "dest-filename": "terminal-size.cabal",
+        "sha256": "21d7f1320eeb86177e860ec07a3d8e7510977b1b415a96ebb62ee4ad72955770",
+        "type": "file",
+        "url": "https://hackage.haskell.org/package/terminal-size-0.3.4/revision/1.cabal"
+      }
+    ]
+  }
+}

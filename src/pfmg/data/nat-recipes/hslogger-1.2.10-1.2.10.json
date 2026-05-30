@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "hslogger-1.2.10",
+    "version": "1.2.10",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "hslogger-1.2.10",
+    "only-arches": [
+      "x86_64"
+    ],
+    "buildsystem": "simple",
+    "build-commands": [
+      "ghc -threaded --make Setup",
+      "./Setup configure --prefix=/app",
+      "./Setup build",
+      "./Setup install"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "sha256": "d7ca6e94a4aacb47a8dc30e3960ab8deff482d2ec9dca9a87b225e03e97e452b",
+        "url": "https://hackage.haskell.org/package/hslogger-1.2.10/hslogger-1.2.10.tar.gz"
+      }
+    ]
+  }
+}

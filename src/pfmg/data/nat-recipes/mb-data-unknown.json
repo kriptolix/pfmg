@@ -1,0 +1,47 @@
+{
+  "header": {
+    "id": "mb-data",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "mb-data",
+    "buildsystem": "simple",
+    "build-commands": [
+      "python3 setup.py install --prefix=${FLATPAK_DEST}",
+      "install -d /app/share/appdata",
+      "mv /app/share/metadata/org.sugarlabs.MusicBlocks.appdata.xml /app/share/appdata",
+      "chmod +x MusicBlocks.AppImage",
+      "./MusicBlocks.AppImage --appimage-extract",
+      "rm MusicBlocks.AppImage",
+      "mv squashfs-root /app/bin/musicblocks"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/sugarlabs/musicblocks-launcher",
+        "tag": "v1.2.1",
+        "commit": "8bebbd8e0f3b0ea3f9a70e52445441c7017d0788"
+      },
+      {
+        "type": "file",
+        "dest-filename": "MusicBlocks.AppImage",
+        "url": "https://github.com/sugarlabs/musicblocks-launcher/releases/download/v1.2.1/MusicBlocks-3.5.1-arm64.AppImage",
+        "sha256": "3cca8ad13eb88b976918540857b771350bec36e43e9551df6454bf690cbd131b",
+        "only-arches": [
+          "aarch64"
+        ]
+      },
+      {
+        "type": "file",
+        "dest-filename": "MusicBlocks.AppImage",
+        "url": "https://github.com/sugarlabs/musicblocks-launcher/releases/download/v1.2.1/MusicBlocks-3.5.1-x86_64.AppImage",
+        "sha256": "6b385ea53d55396b906f3604ede256ae520f018ef2393631669d7e95fafaa92f",
+        "only-arches": [
+          "x86_64"
+        ]
+      }
+    ]
+  }
+}

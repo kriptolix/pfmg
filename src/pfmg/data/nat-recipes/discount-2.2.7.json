@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "discount",
+    "version": "2.2.7",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "discount",
+    "buildsystem": "simple",
+    "cleanup": [
+      "*.a"
+    ],
+    "build-commands": [
+      "./configure.sh --prefix=/app --enable-all-features --github-checkbox --with-fenced-code --shared",
+      "sed -e 's|/sbin/ldconfig|/sbin/ldconfig -n|' -i librarian.sh",
+      "make install"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://www.pell.portland.or.us/~orc/Code/discount/discount-2.2.7e.tar.bz2",
+        "sha256": "82249a3d50a09aac29245990bf9c6139c0ae48707b7dab1268daf851f9db963b"
+      }
+    ]
+  }
+}

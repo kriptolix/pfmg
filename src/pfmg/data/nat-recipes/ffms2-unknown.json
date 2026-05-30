@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "ffms2",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "ffms2",
+    "config-opts": [
+      "--with-pic",
+      "--disable-static",
+      "--enable-shared"
+    ],
+    "cleanup": [
+      "/include",
+      "/lib/pkgconfig"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/FFMS/ffms2.git",
+        "commit": "f20827cf280b669321cd5b62e01d744bc68c21fc"
+      }
+    ]
+  }
+}

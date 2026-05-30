@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "coeurl",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "coeurl",
+    "buildsystem": "meson",
+    "config-opts": [
+      "-Ddefault_library=static"
+    ],
+    "sources": [
+      {
+        "commit": "f49993e6ad3b2f4fa6503f46d547351fa276ac84",
+        "tag": "v0.3.1",
+        "type": "git",
+        "url": "https://nheko.im/nheko-reborn/coeurl.git"
+      }
+    ]
+  }
+}

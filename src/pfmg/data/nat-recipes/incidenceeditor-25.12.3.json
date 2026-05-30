@@ -1,0 +1,29 @@
+{
+  "header": {
+    "id": "incidenceeditor",
+    "version": "25.12.3",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "incidenceeditor",
+    "config-opts": [
+      "-DBUILD_TESTING=OFF",
+      "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+    ],
+    "buildsystem": "cmake-ninja",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.kde.org/stable/release-service/25.12.3/src/incidenceeditor-25.12.3.tar.xz",
+        "sha256": "c4ab1c0b44e68be4c3c287c2a5b0b41aaaf6ba746202694101ab4a50f5d8977a",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 8763,
+          "stable-only": true,
+          "url-template": "https://download.kde.org/stable/release-service/$version/src/incidenceeditor-$version.tar.xz"
+        }
+      }
+    ]
+  }
+}

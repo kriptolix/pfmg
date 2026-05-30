@@ -1,0 +1,328 @@
+{
+  "header": {
+    "id": "python3-magic-wormhole2",
+    "version": "0.20.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-magic-wormhole2",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --upgrade --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"magic-wormhole<=0.20\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/3a/2a/7cc015f5b9f5db42b7d48157e23356022889fc354a2813c15934b7cb5c0e/attrs-25.4.0-py3-none-any.whl",
+        "sha256": "adcf7e2a1fb3b36ac48d97835bb6d8ade15b8dcce26aba8bf1d14847b57a3373",
+        "x-checker-data": {
+          "name": "attrs",
+          "packagetype": "bdist_wheel",
+          "type": "pypi"
+        }
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/54/d5/9adf0f5b9eb244e58e898e9f3db4b00c09835ef4b6c37d491886e0376b4f/autobahn-25.12.2.tar.gz",
+        "sha256": "754c06a54753aeb7e8d10c5cbf03249ad9e2a1a32bca8be02865c6f00628a98c",
+        "x-checker-data": {
+          "name": "autobahn",
+          "type": "pypi"
+        }
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/02/ff/1175b0b7371e46244032d43a56862d0af455823b5280a50c63d99cc50f18/automat-25.4.16-py3-none-any.whl",
+        "sha256": "04e9bce696a8d5671ee698005af6e5a9fa15354140a87f4870744604dcdd3ba1",
+        "x-checker-data": {
+          "name": "automat",
+          "packagetype": "bdist_wheel",
+          "type": "pypi"
+        }
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/d9/8e/8b4fdde28e42ffcd741a37f4ffa9fb59cd4fe01625b544dfcfd9ccb54f01/cbor2-5.8.0.tar.gz",
+        "sha256": "b19c35fcae9688ac01ef75bad5db27300c2537eb4ee00ed07e05d8456a0d4931",
+        "x-checker-data": {
+          "name": "cbor2",
+          "type": "pypi"
+        }
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/eb/56/b1ba7935a17738ae8453301356628e8147c79dbb825bcbc73dc7401f9846/cffi-2.0.0.tar.gz",
+        "sha256": "44d1b5909021139fe36001ae048dbdde8214afa20200eda0f64c068cac5d5529",
+        "x-checker-data": {
+          "name": "cffi",
+          "type": "pypi"
+        }
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/98/78/01c019cdb5d6498122777c1a43056ebb3ebfeef2076d9d026bfe15583b2b/click-8.3.1-py3-none-any.whl",
+        "sha256": "981153a64e25f12d547d3426c367a4857371575ee7ad18df2a6183ab0545b2a6",
+        "x-checker-data": {
+          "name": "click",
+          "packagetype": "bdist_wheel",
+          "type": "pypi"
+        }
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/b8/40/c199d095151addf69efdb4b9ca3a4f20f70e20508d6222bffb9b76f58573/constantly-23.10.4-py3-none-any.whl",
+        "sha256": "3fd9b4d1c3dc1ec9757f3c52aef7e53ad9323dbe39f51dfd4c43853b68dfa3f9",
+        "x-checker-data": {
+          "name": "constantly",
+          "packagetype": "bdist_wheel",
+          "type": "pypi"
+        }
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/60/04/ee2a9e8542e4fa2773b81771ff8349ff19cdd56b7258a0cc442639052edb/cryptography-46.0.5.tar.gz",
+        "sha256": "abace499247268e3757271b2f1e244b36b06f8515cf27c4d49468fc9eb16e93d",
+        "x-checker-data": {
+          "name": "cryptography",
+          "type": "pypi"
+        }
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/c5/7b/bca5613a0c3b542420cf92bd5e5fb8ebd5435ce1011a091f66bb7693285e/humanize-4.15.0-py3-none-any.whl",
+        "sha256": "b1186eb9f5a9749cd9cb8565aee77919dd7c8d076161cf44d70e59e3301e1769",
+        "x-checker-data": {
+          "name": "humanize",
+          "packagetype": "bdist_wheel",
+          "type": "pypi"
+        }
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/6e/aa/8caf6a0a3e62863cbb9dab27135660acba46903b703e224f14f447e57934/hyperlink-21.0.0-py2.py3-none-any.whl",
+        "sha256": "e6b14c37ecb73e89c77d78cdb4c2cc8f3fb59a885c5b3f819ff4ed80f25af1b4",
+        "x-checker-data": {
+          "name": "hyperlink",
+          "packagetype": "bdist_wheel",
+          "type": "pypi"
+        }
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/0e/61/66938bbb5fc52dbdf84594873d5b51fb1f7c7794e9c0f5bd885f30bc507b/idna-3.11-py3-none-any.whl",
+        "sha256": "771a87f49d9defaf64091e6e6fe9c18d4833f140bd19464795bc32d966ca37ea",
+        "x-checker-data": {
+          "name": "idna",
+          "packagetype": "bdist_wheel",
+          "type": "pypi"
+        }
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/1d/55/0f4df2a44053867ea9cbea73fc588b03c55605cd695cee0a3d86f0029cb2/incremental-24.11.0-py3-none-any.whl",
+        "sha256": "a34450716b1c4341fe6676a0598e88a39e04189f4dce5dc96f656e040baa10b3",
+        "x-checker-data": {
+          "name": "incremental",
+          "packagetype": "bdist_wheel",
+          "type": "pypi"
+        }
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/e1/36/fd04d6e5060e2debe26227b23389ae60c857231e770da9fc7850f6122866/iterable_io-1.0.1-py3-none-any.whl",
+        "sha256": "da9cc8abcdb536627eb4bb00f2ef37c51ccee3be90752b2aef67b9eb1ef25189",
+        "x-checker-data": {
+          "name": "iterable_io",
+          "packagetype": "bdist_wheel",
+          "type": "pypi"
+        }
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/d9/35/731ece6a5ef42d7ae9bb690e0734ca0c7b3d2ee37fe76e302d5ec1f25dcc/magic_wormhole-0.20.0-py3-none-any.whl",
+        "sha256": "ca2bd4c38ebe6f4ce275912f7b7864df51223c99db56804fa93d04059309e984",
+        "x-checker-data": {
+          "name": "magic_wormhole",
+          "packagetype": "bdist_wheel",
+          "type": "pypi"
+        }
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/4d/f2/bfb55a6236ed8725a96b0aa3acbd0ec17588e6a2c3b62a93eb513ed8783f/msgpack-1.1.2.tar.gz",
+        "sha256": "3b60763c1373dd60f398488069bcdc703cd08a711477b5d480eecc9f9626f47e",
+        "x-checker-data": {
+          "name": "msgpack",
+          "type": "pypi"
+        }
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/1d/c7/28220d37e041fe1df03e857fe48f768dcd30cd151480bf6f00da8713214a/py-ubjson-0.16.1.tar.gz",
+        "sha256": "b9bfb8695a1c7e3632e800fb83c943bf67ed45ddd87cd0344851610c69a5a482",
+        "x-checker-data": {
+          "name": "py-ubjson",
+          "type": "pypi"
+        }
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/44/b5/a96872e5184f354da9c84ae119971a0a4c221fe9b27a4d94bd43f2596727/pyasn1-0.6.2-py3-none-any.whl",
+        "sha256": "1eb26d860996a18e9b6ed05e7aae0e9fc21619fcee6af91cca9bad4fbea224bf",
+        "x-checker-data": {
+          "name": "pyasn1",
+          "packagetype": "bdist_wheel",
+          "type": "pypi"
+        }
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/47/8d/d529b5d697919ba8c11ad626e835d4039be708a35b0d22de83a269a6682c/pyasn1_modules-0.4.2-py3-none-any.whl",
+        "sha256": "29253a9207ce32b64c3ac6600edc75368f98473906e8fd1043bd6b5b1de2c14a",
+        "x-checker-data": {
+          "name": "pyasn1_modules",
+          "packagetype": "bdist_wheel",
+          "type": "pypi"
+        }
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/0c/c3/44f3fbbfa403ea2a7c779186dc20772604442dde72947e7d01069cbe98e3/pycparser-3.0-py3-none-any.whl",
+        "sha256": "b727414169a36b7d524c1c3e31839a521725078d7b2ff038656844266160a992",
+        "x-checker-data": {
+          "name": "pycparser",
+          "packagetype": "bdist_wheel",
+          "type": "pypi"
+        }
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/d9/9a/4019b524b03a13438637b11538c82781a5eda427394380381af8f04f467a/pynacl-1.6.2.tar.gz",
+        "sha256": "018494d6d696ae03c7e656e5e74cdfd8ea1326962cc401bcf018f1ed8436811c",
+        "x-checker-data": {
+          "name": "pynacl",
+          "type": "pypi"
+        }
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/d1/81/ef2b1dfd1862567d573a4fdbc9f969067621764fbb74338496840a1d2977/pyopenssl-25.3.0-py3-none-any.whl",
+        "sha256": "1fda6fc034d5e3d179d39e59c1895c9faeaf40a79de5fc4cbbfbe0d36f4a77b6",
+        "x-checker-data": {
+          "name": "pyopenssl",
+          "packagetype": "bdist_wheel",
+          "type": "pypi"
+        }
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/dd/b8/d2d6d731733f51684bbf76bf34dab3b70a9148e8f2cef2bb544fccec681a/qrcode-8.2-py3-none-any.whl",
+        "sha256": "16e64e0716c14960108e85d853062c9e8bba5ca8252c0b4d0231b9df4060ff4f",
+        "x-checker-data": {
+          "name": "qrcode",
+          "packagetype": "bdist_wheel",
+          "type": "pypi"
+        }
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/08/2c/ca6dd598b384bc1ce581e24aaae0f2bed4ccac57749d5c3befbb5e742081/service_identity-24.2.0-py3-none-any.whl",
+        "sha256": "6b047fbd8a84fd0bb0d55ebce4031e400562b9196e1e0d3e0fe2b8a59f6d4a85",
+        "x-checker-data": {
+          "name": "service_identity",
+          "packagetype": "bdist_wheel",
+          "type": "pypi"
+        }
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/d2/42/a4e93badf46c20d862ce298d8873451e19f18141c6811ae7fdfaef0ea107/spake2-0.9-py3-none-any.whl",
+        "sha256": "2d7cbe936519c4172866649ddceefdec08e3d9b3ce4c8a75bbf84d6bdd07a2fb",
+        "x-checker-data": {
+          "name": "spake2",
+          "packagetype": "bdist_wheel",
+          "type": "pypi"
+        }
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/16/e1/3079a9ff9b8e11b846c6ac5c8b5bfb7ff225eee721825310c91b3b50304f/tqdm-4.67.3-py3-none-any.whl",
+        "sha256": "ee1e4c0e59148062281c49d80b25b67771a127c85fc9676d3be5f243206826bf",
+        "x-checker-data": {
+          "name": "tqdm",
+          "packagetype": "bdist_wheel",
+          "type": "pypi"
+        }
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/eb/66/ab7efd8941f0bc7b2bd555b0f0471bff77df4c88e0cc31120c82737fec77/twisted-25.5.0-py3-none-any.whl",
+        "sha256": "8559f654d01a54a8c3efe66d533d43f383531ebf8d81d9f9ab4769d91ca15df7",
+        "x-checker-data": {
+          "name": "twisted",
+          "packagetype": "bdist_wheel",
+          "type": "pypi"
+        }
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/50/05/bdb6318120cac9bf97779674f49035e0595d894b42d4c43b60637bafdb1f/txaio-25.12.2-py3-none-any.whl",
+        "sha256": "5f6cd6c6b397fc3305790d15efd46a2d5b91cdbefa96543b4f8666aeb56ba026",
+        "x-checker-data": {
+          "name": "txaio",
+          "packagetype": "bdist_wheel",
+          "type": "pypi"
+        }
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/3c/38/8b12c86c148612722d19bf9d7fdfcbcbc76bdcee5a0abebdbdc1eb14bf7c/txtorcon-24.8.0-py3-none-any.whl",
+        "sha256": "d3d0871a19c2ecaaae9e2c13b302a78b169048f5a3c2051069a2ea6ae44232c7",
+        "x-checker-data": {
+          "name": "txtorcon",
+          "packagetype": "bdist_wheel",
+          "type": "pypi"
+        }
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/18/67/36e9267722cc04a6b9f15c7f3441c2363321a3ea07da7ae0c0707beb2a9c/typing_extensions-4.15.0-py3-none-any.whl",
+        "sha256": "f0fa19c6845758ab08074a0cfa8b7aecb71c999ca73d62883bc25cc018c4e548",
+        "x-checker-data": {
+          "name": "typing_extensions",
+          "packagetype": "bdist_wheel",
+          "type": "pypi"
+        }
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/43/d9/3f17e3c5773fb4941c68d9a37a47b1a79c9649d6c56aefbed87cc409d18a/ujson-5.11.0.tar.gz",
+        "sha256": "e204ae6f909f099ba6b6b942131cee359ddda2b6e4ea39c12eb8b991fe2010e0",
+        "x-checker-data": {
+          "name": "ujson",
+          "type": "pypi"
+        }
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/de/62/c2da1c495291a52e561257d017585e08906d288035d025ccf636f6b9a266/zipstream_ng-1.9.0-py3-none-any.whl",
+        "sha256": "31dc2cf617abdbf28d44f2e08c0d14c8eee2ea0ec26507a7e4d5d5f97c564b7a",
+        "x-checker-data": {
+          "name": "zipstream_ng",
+          "packagetype": "bdist_wheel",
+          "type": "pypi"
+        }
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/86/a4/77daa5ba398996d16bb43fc721599d27d03eae68fe3c799de1963c72e228/zope_interface-8.2.tar.gz",
+        "sha256": "afb20c371a601d261b4f6edb53c3c418c249db1a9717b0baafc9a9bb39ba1224",
+        "x-checker-data": {
+          "name": "zope_interface",
+          "type": "pypi"
+        }
+      }
+    ]
+  }
+}

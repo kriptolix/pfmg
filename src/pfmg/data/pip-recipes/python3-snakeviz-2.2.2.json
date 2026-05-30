@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "python3-snakeviz",
+    "version": "2.2.2",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-snakeviz",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --ignore-installed --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"snakeviz==2.2.2\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/cd/f7/83b00cdf4f114f10750a18b64c27dc34636d0ac990ccac98282f5c0fbb43/snakeviz-2.2.2-py3-none-any.whl",
+        "sha256": "77e7b9c82f6152edc330040319b97612351cd9b48c706434c535c2df31d10ac5"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/09/ce/1eb500eae19f4648281bb2186927bb062d2438c2e5093d1360391afd2f90/tornado-6.5.2.tar.gz",
+        "sha256": "ab53c8f9a0fa351e2c0741284e06c7a45da86afb544133201c5cc8578eb076a0"
+      }
+    ]
+  }
+}

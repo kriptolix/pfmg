@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python-request-oauthlib",
+    "version": "0.8.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python-request_oauthlib",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --prefix=/app requests_oauthlib-0.8.0-py2.py3-none-any.whl"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://pypi.python.org/packages/77/34/d0957563f20b259a31c12f14e858d79f2e66eb539d3c1b9ab7077ef030ca/requests_oauthlib-0.8.0-py2.py3-none-any.whl#md5=3dd6a56cde1e4b86cbdec252b95efd8c",
+        "sha256": "50a8ae2ce8273e384895972b56193c7409601a66d4975774c60c2aed869639ca"
+      }
+    ]
+  }
+}

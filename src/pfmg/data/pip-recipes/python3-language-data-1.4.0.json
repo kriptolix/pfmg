@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "python3-language-data",
+    "version": "1.4.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-language_data",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"language_data\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/ad/d1/68e2bcca94c9bbdc122a71e504e0b6a6c3e31541b1bad33fee0205996006/language_data-1.4.0-py3-none-any.whl",
+        "sha256": "f741927c24ab14cbed2a57bc2bfe82b00cff266c427179597e8b14123364f084"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/77/5d/e235921b5b74818cb65b557fa05cc6201c2c1612d4866ff75c835bcf808d/marisa_trie-1.4.1.tar.gz",
+        "sha256": "44ce3bdbeb7c950d463e460184fc3e18702df9ef0edb826bac672fd789fb1d20"
+      }
+    ]
+  }
+}

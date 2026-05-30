@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "sdl2-net",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "SDL2_net",
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/libsdl-org/SDL_net.git",
+        "tag": "release-2.2.0"
+      }
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "translate-shell",
+    "version": "0.9.7.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "translate-shell",
+    "buildsystem": "simple",
+    "build-commands": [
+      "make install PREFIX=/app"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/soimort/translate-shell/archive/refs/tags/v0.9.7.1.tar.gz",
+        "sha256": "f949f379779b9e746bccb20fcd180d041fb90da95816615575b49886032bcefa"
+      }
+    ]
+  }
+}

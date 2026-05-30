@@ -1,0 +1,38 @@
+{
+  "header": {
+    "id": "fheroes2",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "fheroes2",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DSDL2MAIN_LIBRARY="
+    ],
+    "post-install": [
+      "desktop-file-edit --set-key=Exec --set-value=fheroes2.sh ${FLATPAK_DEST}/share/applications/fheroes2.desktop",
+      "install -Dm 744 fheroes2.sh -t /app/bin",
+      "install -Dm 644 files/timidity/timidity.cfg -t ${FLATPAK_DEST}/etc",
+      "install -Dm 644 files/timidity/instruments/* -t ${FLATPAK_DEST}/etc/instruments"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/ihhub/fheroes2",
+        "commit": "33190eed8ab9f12ae5a8b74468cefac1fc346e8b",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^([\\d.]+)$"
+        },
+        "tag": "1.1.15"
+      },
+      {
+        "type": "file",
+        "path": "fheroes2.sh",
+        "dest-filename": "fheroes2.sh"
+      }
+    ]
+  }
+}

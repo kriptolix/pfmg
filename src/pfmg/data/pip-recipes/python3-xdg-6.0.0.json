@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-xdg",
+    "version": "6.0.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-xdg",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"xdg\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/dd/54/3516c1cf349060fc3578686d271eba242f10ec00b4530c2985af9faac49b/xdg-6.0.0-py3-none-any.whl",
+        "sha256": "df3510755b4395157fc04fc3b02467c777f3b3ca383257397f09ab0d4c16f936"
+      }
+    ]
+  }
+}

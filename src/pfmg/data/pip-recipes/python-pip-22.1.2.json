@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "python-pip",
+    "version": "22.1.2",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python-pip",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --ignore-installed --exists-action=i --no-index --find-links=file://${PWD} --prefix=${FLATPAK_DEST} pip --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/96/2f/caec18213f6a67852f6997fb0673ae08d2e93d1b81573edb93ba4ef06970/pip-22.1.2-py3-none-any.whl",
+        "sha256": "a3edacb89022ef5258bf61852728bf866632a394da837ca49eb4303635835f17",
+        "x-checker-data": {
+          "type": "pypi",
+          "name": "pip",
+          "packagetype": "bdist_wheel"
+        }
+      }
+    ]
+  }
+}

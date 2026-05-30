@@ -1,0 +1,51 @@
+{
+  "header": {
+    "id": "lomiri-ui-toolkit",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "lomiri-ui-toolkit",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://gitlab.com/ubports/development/core/lomiri-ui-toolkit.git",
+        "commit": "083ae10f7a73c4aa1d3d754977443b0c491d7842"
+      },
+      {
+        "type": "patch",
+        "path": "patches/lomiri/113.patch"
+      },
+      {
+        "type": "shell",
+        "commands": [
+          "sed -i \"s|\\$\\$QT_MODULE_LIB_BASE|/app/lib/$(gcc --print-multiarch)|g\" /app/lib/mkspecs/modules/*.pri",
+          "mkdir -p lib",
+          "cp /app/lib/$(gcc --print-multiarch)/*.so* lib",
+          "mkdir -p qml",
+          "cp -r /app/lib/qml/* qml"
+        ]
+      }
+    ],
+    "buildsystem": "qmake",
+    "config-opts": [
+      "CONFIG+=no_lttng no_docs"
+    ],
+    "make-install-args": [
+      "INSTALL_ROOT=${FLATPAK_DEST}/redirection"
+    ],
+    "build-options": {
+      "env": [
+        "QMAKEPATH=/app/lib"
+      ]
+    },
+    "post-install": [
+      "rm /app/redirection/usr && rm -d /app/redirection",
+      "ln -sf /app/lib/*/*.so* /app/lib"
+    ],
+    "cleanup": [
+      "/bin"
+    ]
+  }
+}

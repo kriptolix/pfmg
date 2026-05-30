@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python-oauthlib",
+    "version": "2.0.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python-oauthlib",
+    "buildsystem": "simple",
+    "build-commands": [
+      "python3 setup.py install --prefix=/app --root=/"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://pypi.python.org/packages/fa/2e/25f25e6c69d97cf921f0a8f7d520e0ef336dd3deca0142c0b634b0236a90/oauthlib-2.0.2.tar.gz#md5=f59b448a30684347e00f369bc3542abc",
+        "sha256": "b3b9b47f2a263fe249b5b48c4e25a5bce882ff20a0ac34d553ce43cff55b53ac"
+      }
+    ]
+  }
+}

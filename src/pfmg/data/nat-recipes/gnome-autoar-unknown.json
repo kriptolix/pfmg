@@ -1,0 +1,20 @@
+{
+  "header": {
+    "id": "gnome-autoar",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "gnome-autoar",
+    "buildsystem": "meson",
+    "builddir": true,
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://gitlab.gnome.org/GNOME/gnome-autoar.git",
+        "tag": "0.4.5"
+      }
+    ]
+  }
+}

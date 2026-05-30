@@ -1,0 +1,26 @@
+{
+  "header": {
+    "id": "qoi",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "qoi",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/phoboslab/qoi.git",
+        "commit": "4ab68bbd20618a663255625160c40875713f5485"
+      }
+    ],
+    "buildsystem": "simple",
+    "build-commands": [
+      "install -D qoi.h /app/include/qoi.h"
+    ],
+    "cleanup": [
+      "/include",
+      "/lib/pkgconfig"
+    ]
+  }
+}

@@ -1,0 +1,233 @@
+{
+  "header": {
+    "id": "aegisub",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "aegisub",
+    "buildsystem": "meson",
+    "config-opts": [
+      "-Db_lto=true",
+      "-Dalsa=enabled",
+      "-Dlibpulse=enabled",
+      "-Dffms2=enabled",
+      "-Davisynth=enabled",
+      "-Dhunspell=enabled",
+      "-Duchardet=enabled",
+      "-Dcsri=enabled",
+      "-Dfftw3=enabled",
+      "-Dsystem_luajit=true",
+      "-Dwx_version=3.2.6",
+      "-Dcredit=\"zefr0x\"",
+      "-Denable_update_checker=false",
+      "--buildtype=release"
+    ],
+    "post-install": [
+      "mkdir -p ${FLATPAK_DEST}/automations/default/share/aegisub",
+      "mv ${FLATPAK_DEST}/share/aegisub/automation ${FLATPAK_DEST}/automations/default/share/aegisub/automation"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/TypesettingTools/Aegisub",
+        "tag": "v3.4.2",
+        "commit": "f437ba4f547fdb0e02432f1c45a4da25e51035f8",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^v(\\d*\\.\\d*\\.\\d*)$",
+          "version-scheme": "semantic"
+        }
+      },
+      {
+        "type": "patch",
+        "path": "fix-and-improve-appstream-file.patch"
+      }
+    ],
+    "modules": [
+      {
+        "name": "wxwidgets",
+        "buildsystem": "cmake-ninja",
+        "config-opts": [
+          "-DCMAKE_BUILD_TYPE=Release",
+          "-DwxBUILD_TOOLKIT=gtk3",
+          "-DwxUSE_BASE64=OFF",
+          "-DwxUSE_GIF=OFF",
+          "-DwxUSE_LIBJPEG=OFF",
+          "-DwxUSE_SVG=OFF",
+          "-DwxUSE_TARSTREAM=OFF",
+          "-DwxUSE_LIBTIFF=OFF",
+          "-DwxUSE_WEBVIEW_WEBKIT=OFF",
+          "-DwxUSE_WEBVIEW=OFF",
+          "-DwxUSE_LIBPNG=sys"
+        ],
+        "cleanup": [
+          "/bin",
+          "/share/bakefile",
+          "/lib/wx"
+        ],
+        "sources": [
+          {
+            "type": "git",
+            "url": "https://github.com/wxWidgets/wxWidgets.git",
+            "tag": "v3.2.8",
+            "commit": "8aef5f40b93958719771331ca03866b7b6fff6bf",
+            "x-checker-data": {
+              "type": "git",
+              "tag-pattern": "^v(\\d*\\.\\d*\\.\\d*)$",
+              "version-scheme": "semantic",
+              "versions": {
+                "<=": "3.2.8"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "name": "ffms2",
+        "buildsystem": "autotools",
+        "cleanup": [
+          "/bin"
+        ],
+        "sources": [
+          {
+            "type": "git",
+            "url": "https://github.com/FFMS/ffms2.git",
+            "tag": "5.0",
+            "commit": "7ed5e4d039ca9a6236bd2ebdfdd656c4304fbe04",
+            "x-checker-data": {
+              "type": "git",
+              "tag-pattern": "^(\\d*\\.\\d*)$"
+            }
+          }
+        ]
+      },
+      {
+        "name": "boost",
+        "buildsystem": "simple",
+        "build-commands": [
+          "./bootstrap.sh --prefix=${FLATPAK_DEST} --with-libraries=chrono,container,filesystem,system,locale,regex,thread --with-icu",
+          "./b2 install variant=release"
+        ],
+        "sources": [
+          {
+            "type": "archive",
+            "url": "https://archives.boost.io/release/1.88.0/source/boost_1_88_0.tar.gz",
+            "sha512": "fa97666d3de550541b038b1a5b496284ab0785b9fff1c5da01e88605f04ce97541626cbd2f9b793bd5b87fccb2db10f5f7544f4d78c710f39f4b6455a910e654",
+            "x-checker-data": {
+              "type": "anitya",
+              "project-id": 6845,
+              "stable-only": true,
+              "url-template": "https://archives.boost.io/release/$version/source/boost_${major}_${minor}_${patch}.tar.gz",
+              "versions": {
+                "<=": "1.88.0"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "name": "LuaJIT",
+        "buildsystem": "autotools",
+        "no-autogen": true,
+        "build-options": {
+          "cflags": "-DLUAJIT_ENABLE_LUA52COMPAT"
+        },
+        "make-install-args": [
+          "PREFIX=${FLATPAK_DEST}"
+        ],
+        "cleanup": [
+          "/bin"
+        ],
+        "sources": [
+          {
+            "type": "git",
+            "url": "https://github.com/LuaJIT/LuaJIT.git",
+            "commit": "f73e649a954b599fc184726c376476e7a5c439ca"
+          }
+        ]
+      },
+      "./shared-modules/linux-audio/fftw3f.json",
+      {
+        "name": "AviSynthPlus",
+        "buildsystem": "cmake-ninja",
+        "config-opts": [
+          "-DENABLE_CUDA=ON"
+        ],
+        "sources": [
+          {
+            "type": "git",
+            "url": "https://github.com/AviSynth/AviSynthPlus.git",
+            "tag": "v3.7.5",
+            "commit": "6c7c26617a6675eec89e4d4a3565ed709df6511f",
+            "x-checker-data": {
+              "type": "git",
+              "version-scheme": "semantic"
+            }
+          }
+        ]
+      },
+      {
+        "name": "libass",
+        "buildsystem": "autotools",
+        "sources": [
+          {
+            "type": "git",
+            "url": "https://github.com/libass/libass.git",
+            "tag": "0.17.4",
+            "commit": "bbb3c7f1570a4a021e52683f3fbdf74fe492ae84",
+            "x-checker-data": {
+              "type": "git",
+              "version-scheme": "semantic"
+            }
+          }
+        ]
+      },
+      {
+        "name": "uchardet",
+        "buildsystem": "cmake-ninja",
+        "config-opts": [
+          "-DCMAKE_BUILD_TYPE=Release",
+          "-DBUILD_BINARY=OFF"
+        ],
+        "sources": [
+          {
+            "type": "git",
+            "url": "https://gitlab.freedesktop.org/uchardet/uchardet.git",
+            "tag": "v0.0.8",
+            "commit": "ae6302a016088ad07177f86d417b20010053632b",
+            "x-checker-data": {
+              "type": "git",
+              "version-scheme": "semantic"
+            }
+          },
+          {
+            "type": "patch",
+            "path": "uchardet-fix-cmake.patch"
+          }
+        ]
+      },
+      "shared-modules/intltool/intltool-0.51.json",
+      {
+        "name": "gtest",
+        "buildsystem": "cmake-ninja",
+        "cleanup": [
+          "/**"
+        ],
+        "sources": [
+          {
+            "type": "git",
+            "url": "https://github.com/google/googletest.git",
+            "tag": "v1.17.0",
+            "commit": "52eb8108c5bdec04579160ae17225d66034bd723",
+            "x-checker-data": {
+              "type": "git",
+              "version-scheme": "semantic"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

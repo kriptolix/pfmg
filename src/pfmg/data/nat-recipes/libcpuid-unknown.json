@@ -1,0 +1,34 @@
+{
+  "header": {
+    "id": "libcpuid",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libcpuid",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
+      "-DBUILD_SHARED_LIBS=0",
+      "-DLIBCPUID_ENABLE_DOCS=0",
+      "-DLIBCPUID_ENABLE_TESTS=0",
+      "-DLIBCPUID_BUILD_DRIVERS=0"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/anrieff/libcpuid.git",
+        "tag": "v0.8.1",
+        "commit": "3c5b94bea740badb8da703e4a30a0ef70d956010"
+      }
+    ],
+    "cleanup": [
+      "/bin",
+      "/include",
+      "*.a",
+      "/lib/cmake",
+      "/lib/pkgconfig"
+    ]
+  }
+}

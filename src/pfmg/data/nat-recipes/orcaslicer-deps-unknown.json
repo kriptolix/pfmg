@@ -1,0 +1,164 @@
+{
+  "header": {
+    "id": "orcaslicer-deps",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "OrcaSlicer-deps",
+    "buildsystem": "cmake-ninja",
+    "subdir": "deps",
+    "no-make-install": true,
+    "config-opts": [
+      "-DFLATPAK=ON",
+      "-DDEP_DOWNLOAD_DIR=/run/build/OrcaSlicer-deps/external-packages",
+      "-DDESTDIR=/app"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/OrcaSlicer/OrcaSlicer.git",
+        "commit": "75fe485de7191f66b75d258398f350d996fe1e21"
+      },
+      {
+        "type": "file",
+        "url": "https://github.com/boostorg/boost/releases/download/boost-1.84.0/boost-1.84.0.tar.gz",
+        "sha256": "4d27e9efed0f6f152dc28db6430b9d3dfb40c0345da7342eaa5a987dde57bd95",
+        "dest": "external-packages/Boost"
+      },
+      {
+        "type": "file",
+        "url": "https://github.com/oneapi-src/oneTBB/archive/refs/tags/v2021.5.0.zip",
+        "sha256": "83ea786c964a384dd72534f9854b419716f412f9d43c0be88d41874763e7bb47",
+        "dest": "external-packages/TBB"
+      },
+      {
+        "type": "file",
+        "url": "https://github.com/USCiLab/cereal/archive/refs/tags/v1.3.0.zip",
+        "sha256": "71642cb54658e98c8f07a0f0d08bf9766f1c3771496936f6014169d3726d9657",
+        "dest": "external-packages/Cereal"
+      },
+      {
+        "type": "file",
+        "url": "https://github.com/qhull/qhull/archive/v8.0.2.zip",
+        "sha256": "a378e9a39e718e289102c20d45632f873bfdc58a7a5f924246ea4b176e185f1e",
+        "dest": "external-packages/Qhull"
+      },
+      {
+        "type": "file",
+        "url": "https://github.com/glfw/glfw/archive/refs/tags/3.3.7.zip",
+        "sha256": "e02d956935e5b9fb4abf90e2c2e07c9a0526d7eacae8ee5353484c69a2a76cd0",
+        "dest": "external-packages/GLFW"
+      },
+      {
+        "type": "file",
+        "url": "https://github.com/floriankirsch/OpenCSG/archive/refs/tags/opencsg-1-4-2-release.zip",
+        "sha256": "51afe0db79af8386e2027d56d685177135581e0ee82ade9d7f2caff8deab5ec5",
+        "dest": "external-packages/OpenCSG"
+      },
+      {
+        "type": "file",
+        "url": "https://github.com/tamasmeszaros/c-blosc/archive/refs/heads/v1.17.0_tm.zip",
+        "sha256": "dcb48bf43a672fa3de6a4b1de2c4c238709dad5893d1e097b8374ad84b1fc3b3",
+        "dest": "external-packages/Blosc"
+      },
+      {
+        "type": "file",
+        "url": "https://github.com/AcademySoftwareFoundation/openexr/archive/refs/tags/v2.5.5.zip",
+        "sha256": "0307a3d7e1fa1e77e9d84d7e9a8694583fbbbfd50bdc6884e2c96b8ef6b902de",
+        "dest": "external-packages/OpenEXR"
+      },
+      {
+        "type": "file",
+        "url": "https://github.com/tamasmeszaros/openvdb/archive/a68fd58d0e2b85f01adeb8b13d7555183ab10aa5.zip",
+        "sha256": "f353e7b99bd0cbfc27ac9082de51acf32a8bc0b3e21ff9661ecca6f205ec1d81",
+        "dest": "external-packages/OpenVDB"
+      },
+      {
+        "type": "file",
+        "url": "https://github.com/SoftFever/OrcaSlicer_deps/releases/download/gmp-6.2.1/gmp-6.2.1.tar.bz2",
+        "sha256": "eae9326beb4158c386e39a356818031bd28f3124cf915f8c5b1dc4c7a36b4d7c",
+        "dest": "external-packages/GMP"
+      },
+      {
+        "type": "file",
+        "url": "https://ftp.gnu.org/gnu/mpfr/mpfr-4.2.2.tar.bz2",
+        "sha256": "9ad62c7dc910303cd384ff8f1f4767a655124980bb6d8650fe62c815a231bb7b",
+        "dest": "external-packages/MPFR"
+      },
+      {
+        "type": "file",
+        "url": "https://github.com/CGAL/cgal/releases/download/v5.6.3/CGAL-5.6.3.zip",
+        "sha256": "5d577acb4a9918ccb960491482da7a3838f8d363aff47e14d703f19fd84733d4",
+        "dest": "external-packages/CGAL"
+      },
+      {
+        "type": "file",
+        "url": "https://github.com/stevengj/nlopt/archive/v2.5.0.tar.gz",
+        "sha256": "c6dd7a5701fff8ad5ebb45a3dc8e757e61d52658de3918e38bab233e7fd3b4ae",
+        "dest": "external-packages/NLopt"
+      },
+      {
+        "type": "file",
+        "url": "https://github.com/SoftFever/Orca-deps-libnoise/archive/refs/tags/1.0.zip",
+        "sha256": "96ffd6cc47898dd8147aab53d7d1b1911b507d9dbaecd5613ca2649468afd8b6",
+        "dest": "external-packages/libnoise"
+      },
+      {
+        "type": "file",
+        "url": "https://github.com/google/draco/archive/refs/tags/1.5.7.zip",
+        "sha256": "27b72ba2d5ff3d0a9814ad40d4cb88f8dc89a35491c0866d952473f8f9416b77",
+        "dest": "external-packages/Draco"
+      },
+      {
+        "type": "file",
+        "url": "https://github.com/openssl/openssl/archive/OpenSSL_1_1_1w.tar.gz",
+        "sha256": "2130e8c2fb3b79d1086186f78e59e8bc8d1a6aedf17ab3907f4cb9ae20918c41",
+        "dest": "external-packages/OpenSSL"
+      },
+      {
+        "type": "file",
+        "url": "https://github.com/curl/curl/archive/refs/tags/curl-7_75_0.zip",
+        "sha256": "a63ae025bb0a14f119e73250f2c923f4bf89aa93b8d4fafa4a9f5353a96a765a",
+        "dest": "external-packages/CURL"
+      },
+      {
+        "type": "file",
+        "url": "https://github.com/Open-Cascade-SAS/OCCT/archive/refs/tags/V7_6_0.zip",
+        "sha256": "28334f0e98f1b1629799783e9b4d21e05349d89e695809d7e6dfa45ea43e1dbc",
+        "dest": "external-packages/OCCT"
+      },
+      {
+        "type": "file",
+        "url": "https://github.com/opencv/opencv/archive/refs/tags/4.6.0.tar.gz",
+        "sha256": "1ec1cba65f9f20fe5a41fda1586e01c70ea0c9a6d7b67c9e13edf0cfe2239277",
+        "dest": "external-packages/OpenCV"
+      },
+      {
+        "type": "file",
+        "url": "https://github.com/madler/zlib/archive/refs/tags/v1.2.13.zip",
+        "sha256": "c2856951bbf30e30861ace3765595d86ba13f2cf01279d901f6c62258c57f4ff",
+        "dest": "external-packages/ZLIB"
+      },
+      {
+        "type": "file",
+        "url": "https://github.com/glennrp/libpng/archive/refs/tags/v1.6.35.zip",
+        "sha256": "3d22d46c566b1761a0e15ea397589b3a5f36ac09b7c785382e6470156c04247f",
+        "dest": "external-packages/PNG"
+      },
+      {
+        "type": "file",
+        "url": "https://github.com/libjpeg-turbo/libjpeg-turbo/archive/refs/tags/3.0.1.zip",
+        "sha256": "d6d99e693366bc03897677650e8b2dfa76b5d6c54e2c9e70c03f0af821b0a52f",
+        "dest": "external-packages/JPEG"
+      },
+      {
+        "type": "file",
+        "url": "https://github.com/SoftFever/orca_deps/releases/download/freetype-2.12.1.tar.gz/freetype-2.12.1.tar.gz",
+        "sha256": "efe71fd4b8246f1b0b1b9bfca13cfff1c9ad85930340c27df469733bbb620938",
+        "dest": "external-packages/FREETYPE"
+      }
+    ]
+  }
+}

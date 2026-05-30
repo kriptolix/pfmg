@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "python3-nbt",
+    "version": "1.5.1",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-nbt",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"nbt\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/b9/ae/f3bdbbaccaca97a2bfdd87466a08717a2174f136e3b99a189d32d03d6526/NBT-1.5.1-py2.py3-none-any.whl",
+        "sha256": "1503314d0374b983642f9f219890330ce19d9d85966a28bdb6bef1fb17c4c2c0",
+        "x-checker-data": {
+          "type": "pypi",
+          "name": "NBT",
+          "packagetype": "bdist_wheel"
+        }
+      }
+    ]
+  }
+}

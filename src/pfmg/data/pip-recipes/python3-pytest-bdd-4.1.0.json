@@ -1,0 +1,82 @@
+{
+  "header": {
+    "id": "python3-pytest-bdd",
+    "version": "4.1.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-pytest-bdd",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"pytest-bdd<=4.1.0\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/6c/10/a7d0fa5baea8fe7b50f448ab742f26f52b80bfca85ac2be9d35cdd9a3246/pyparsing-3.0.9-py3-none-any.whl",
+        "sha256": "5026bae9a10eeaefb61dab2f09052b9f4307d44aee4eda64b309723d8d206bbc"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/05/8e/8de486cbd03baba4deef4142bd643a3e7bbe954a784dc1bb17142572d127/packaging-21.3-py3-none-any.whl",
+        "sha256": "ef103e05f519cdc783ae24ea4e2e0f508a9c99b2d4969652eed6a2e1ea5bd522"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/9b/dd/b3c12c6d707058fa947864b67f0c4e0c39ef8610988d7baea9578f3c48f3/iniconfig-1.1.1-py2.py3-none-any.whl",
+        "sha256": "011e24c64b7f47f6ebd835bb12a743f2fbe9a26d4cecaa7f53bc4f35ee9da8b3"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/97/75/10a9ebee3fd790d20926a90a2547f0bf78f371b2f13aa822c759680ca7b9/tomli-2.0.1-py3-none-any.whl",
+        "sha256": "939de3e7a6161af0c887ef91b7d41a53e7c5a1ca976325f429cb46ea9bc30ecc"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/9e/01/f38e2ff29715251cf25532b9082a1589ab7e4f571ced434f98d0139336dc/pluggy-1.0.0-py2.py3-none-any.whl",
+        "sha256": "74134bbf457f031a36d68416e1509f34bd5ccc019f0bcc952c7b909d06b37bd3"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/1d/97/2288fe498044284f39ab8950703e88abbac2abbdf65524d576157af70556/MarkupSafe-2.1.1.tar.gz",
+        "sha256": "7f91197cc9e48f989d12e4e6fbc46495c446636dfc81b9ccf50bb0ec74b91d4b"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/be/be/7abce643bfdf8ca01c48afa2ddf8308c2308b0c3b239a44e57d020afa0ef/attrs-21.4.0-py2.py3-none-any.whl",
+        "sha256": "2d27e3784d7a565d36ab851fe94887c5eccd6a463168875832a1be79c82828b4"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/48/05/c7887ecb0adaab604bb4f7ced908ce0120b20abe588823dfca173ed407ab/parse_type-0.6.0-py2.py3-none-any.whl",
+        "sha256": "c148e88436bd54dab16484108e882be3367f44952c649c9cd6b82a7370b650cb"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/89/a1/82ce536be577ba09d4dcee45db58423a180873ad38a2d014d26ab7b7cb8a/parse-1.19.0.tar.gz",
+        "sha256": "9ff82852bcb65d139813e2a5197627a94966245c897796760a3a2a8eb66f020b"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/d7/a5/bbbc3b74a94fbdbd7915e7ad030f16539bfdc1362f7e9003b594f0537950/glob2-0.7.tar.gz",
+        "sha256": "85c3dbd07c8aa26d63d7aacee34fa86e9a91a3873bc30bf62ec46e531f92ab8c"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/f6/f0/10642828a8dfb741e5f3fbaac830550a518a775c7fff6f04a007259b0548/py-1.11.0-py2.py3-none-any.whl",
+        "sha256": "607c53218732647dff4acdfcd50cb62615cedf612e72d1724fb1a0cc6405b378"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/fb/d0/bae533985f2338c5d02184b4a7083b819f6b3fc101da792e0d96e6e5299d/pytest-7.1.2-py3-none-any.whl",
+        "sha256": "13d0e3ccfc2b6e26be000cb6568c832ba67ba32e719443bfe725814d3c42433c"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/6b/96/367bca11c7c5c975ece73d9fd658e2d0e3bbb5f2ad921f792b8e72307066/pytest_bdd-4.1.0-py3-none-any.whl",
+        "sha256": "7c5221680cec9a97630e1fae6132f4a97c2f86a90914206ee06a55ae1a409fe5"
+      }
+    ]
+  }
+}

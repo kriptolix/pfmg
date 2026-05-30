@@ -1,0 +1,62 @@
+{
+  "header": {
+    "id": "python3-zope.security",
+    "version": "7.3",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-zope.security",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"zope.security==7.3\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/ca/ce/293f46f71beff79a17b7c6a81ad04a3e1d29196cc23e2f01cf240678c888/zope_hookable-7.0.tar.gz",
+        "sha256": "ffd25a6706789752f307d1ee65d23d47436ebf30d1095f14584ebbd03bf921f3"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/59/c5/58fab4c6a5a82a8e276adcb9f42ad6cf19ace3ee48e96ef4628218638f79/zope_i18nmessageid-7.0.tar.gz",
+        "sha256": "bf9146078c0d7359da41043bd2b713203c4fc56ef2122b3cdbb7551c3fcd8464"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/5c/1c/d051c6a2968a189787c7ed8f789201dd7ee0f40e5c1553ea513bdbd21dcf/zope_proxy-6.1.tar.gz",
+        "sha256": "9b70bf787fcbd3ecb86ba886d71e5cd857da0d6dbe2fcf2b6c24774f24747e2e"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/aa/08/d1696704a8466e94495051dc82af8e30a6e80b2a5a24646683bf6008097f/zope_security-7.3.tar.gz",
+        "sha256": "5db5f79195321f2450ba49b3e1e47ba54364f966fdfc6d39df723043fe6c5549"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/a0/ea/18a5e07ce7f66714aa289ba21c5bc52221bffc3a77d6e4318d50e8a0a3f7/zope.component-6.0-py3-none-any.whl",
+        "sha256": "96d0a04db39643caf2dfaec152340f3e914df1dc3fa32fbb913782620dc6c3c6"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/00/ed/d8c3f56c1edb0ee9b51461dd08580382e9589850f769b69f0dedccff5215/zope_event-5.1-py3-none-any.whl",
+        "sha256": "53de8f0e9f61dc0598141ac591f49b042b6d74784dab49971b9cc91d0f73a7df"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/30/93/9210e7606be57a2dfc6277ac97dcc864fd8d39f142ca194fdc186d596fda/zope.interface-7.2.tar.gz",
+        "sha256": "8b49f1a3d1ee4cdaf5b32d2e738362c7f5e40ac8b46dd7d1a65e82a4872728fe"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/45/3e/fcbb944ec263a1609034aaa6244ae75e1d5cff08c5dc7374e896eee233da/zope.location-5.1-py3-none-any.whl",
+        "sha256": "e67aaba85d108a9e2228f01fa2aced55325a3a26c28a3ab6c03c8281708aef20"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/4b/80/5cec1172d3eb392652821cc1f689e9e24b199edd148315acd1c501cfe77d/zope_schema-7.1-py3-none-any.whl",
+        "sha256": "0b23034abc5a55411d5ac241b54a626143d43fe8e8016b69dae4d41811ab8b34"
+      }
+    ]
+  }
+}

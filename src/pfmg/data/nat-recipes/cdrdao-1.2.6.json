@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "cdrdao",
+    "version": "1.2.6",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "cdrdao",
+    "build-options": {
+      "cflags": "-std=gnu17"
+    },
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/cdrdao/cdrdao/releases/download/rel_1_2_6/cdrdao-1.2.6.tar.bz2",
+        "sha512": "6f2f1ae4ed74c7b725777de0fb0895eb78639527647ec3dcb3d148e2b7f7ef3354e9cdb71eab8de97a8f815435ce8945bae85ac5a70e6a63493c792f3cf71988",
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://api.github.com/repos/cdrdao/cdrdao/releases/latest",
+          "version-query": ".tag_name | sub(\"^rel_\"; \"\") | gsub(\"_\"; \".\")",
+          "url-query": ".assets[] | select(.name==\"cdrdao-\" + $version +  \".tar.bz2\") | .browser_download_url"
+        }
+      }
+    ]
+  }
+}

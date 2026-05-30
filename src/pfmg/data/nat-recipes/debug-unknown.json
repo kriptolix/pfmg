@@ -1,0 +1,29 @@
+{
+  "header": {
+    "id": "debug",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "debug",
+    "sources": [
+      {
+        "type": "file",
+        "path": "io.github.theforceengine.tfe.Debug.metainfo.xml"
+      },
+      {
+        "type": "file",
+        "url": "https://sourceware.org/gdb/images/archer.svg",
+        "sha256": "0b395702ca5d13ef32f7b9643b24a0c968ad193f45c22601ac3049b0575273ff",
+        "dest-filename": "io.github.theforceengine.tfe.Debug.svg"
+      }
+    ],
+    "buildsystem": "simple",
+    "build-commands": [
+      "install -Dvm 0644 -t \"$FLATPAK_DEST/lib/debug/share/metainfo\" \"$FLATPAK_ID.Debug.metainfo.xml\"",
+      "install -Dvm 0644 -t \"$FLATPAK_DEST/lib/debug/share/icons/hicolor/scalable/apps\" \"$FLATPAK_ID.Debug.svg\"",
+      "appstreamcli compose --prefix=/ --origin=\"$FLATPAK_ID.Debug\" --result-root=\"$FLATPAK_DEST/lib/debug\" --data-dir=\"$FLATPAK_DEST/lib/debug/share/app-info/xmls\" --icons-dir=\"$FLATPAK_DEST/lib/debug/share/app-info/icons/flatpak\" --components=\"$FLATPAK_ID.Debug\" \"$FLATPAK_DEST/lib/debug\""
+    ]
+  }
+}

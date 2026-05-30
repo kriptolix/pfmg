@@ -1,0 +1,19 @@
+{
+  "header": {
+    "id": "qdocumentview",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "qdocumentview",
+    "buildsystem": "meson",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://gitlab.com/extraqt/qdocumentview",
+        "tag": "v0.3.0.1"
+      }
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "missingh-1.4.0.1",
+    "version": "1.4.0.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "MissingH-1.4.0.1",
+    "only-arches": [
+      "x86_64"
+    ],
+    "buildsystem": "simple",
+    "build-commands": [
+      "ghc -threaded --make Setup",
+      "./Setup configure --prefix=/app",
+      "./Setup build",
+      "./Setup install"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "sha256": "283f2afd46625d98b4e29f77edadfa5e6009a227812ee2ece10091ad6a7e9b71",
+        "url": "https://hackage.haskell.org/package/MissingH-1.4.0.1/MissingH-1.4.0.1.tar.gz"
+      }
+    ]
+  }
+}

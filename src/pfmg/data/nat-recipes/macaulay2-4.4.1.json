@@ -1,0 +1,90 @@
+{
+  "header": {
+    "id": "macaulay2",
+    "version": "4.4.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "macaulay2",
+    "buildsystem": "autotools",
+    "config-opts": [
+      "--with-boost-libdir=/app/plugins/pack1/lib",
+      "--enable-shared",
+      "--enable-download",
+      "--disable-documentation"
+    ],
+    "subdir": "M2",
+    "build-options": {
+      "cppflags": "-I/usr/include/python3.13/",
+      "env": {
+        "C_INCLUDE_PATH": "/app/plugins/pack1/include:/app/plugins/pack1/include/cddlib",
+        "CPLUS_INCLUDE_PATH": "/app/plugins/pack1/include:/app/plugins/pack1/include/cddlib"
+      }
+    },
+    "post-install": [
+      "install -Dm644 --target-directory=${FLATPAK_DEST}/share/metainfo ../${FLATPAK_ID}.metainfo.xml"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/Macaulay2/M2.git",
+        "tag": "release-1.25.05"
+      },
+      {
+        "type": "file",
+        "path": "org.texmacs.TeXmacs.Plugin.pack1.metainfo.xml"
+      },
+      {
+        "type": "file",
+        "url": "http://macaulay2.com/Downloads/OtherSourceCode/mpfi-1.5.4.tar.gz",
+        "sha256": "32e6ad529c97aa5ce03e28d01c921d1bce1a464fb4c57fbc248d7be21e652782",
+        "dest": "M2/BUILD/tarfiles"
+      },
+      {
+        "type": "file",
+        "url": "http://archive.ubuntu.com/ubuntu/pool/universe/n/ntl/ntl_11.5.1.orig.tar.gz",
+        "dest-filename": "ntl-11.5.1.tar.gz",
+        "sha256": "210d06c31306cbc6eaf6814453c56c776d9d8e8df36d74eb306f6a523d1c6a8a",
+        "dest": "M2/BUILD/tarfiles"
+      },
+      {
+        "type": "file",
+        "url": "https://www.singular.uni-kl.de/ftp/pub/Math/Factory/factory-4.4.1.tar.gz",
+        "sha256": "ba6a8a215448ebc0a0872a284cc9563c05a66d01944ef5fcfabfa5df672a68c0",
+        "dest": "M2/BUILD/tarfiles"
+      },
+      {
+        "type": "file",
+        "url": "https://ftp.gnu.org/gnu/glpk/glpk-5.0.tar.gz",
+        "sha256": "4a1013eebb50f728fc601bdd833b0b2870333c3b3e5a816eeba921d95bec6f15",
+        "dest": "M2/BUILD/tarfiles"
+      },
+      {
+        "type": "file",
+        "url": "https://github.com/4ti2/4ti2/releases/download/Release_1_6_10/4ti2-1.6.10.tar.gz",
+        "sha256": "f7c191beb14246b643e4fd5b18b53d9966693b9e6d3a569441a0e3ca14b1a86b",
+        "dest": "M2/BUILD/tarfiles"
+      },
+      {
+        "type": "file",
+        "url": "https://gitlab.com/libeigen/eigen/-/archive/3.4.0/eigen-3.4.0.tar.gz",
+        "sha256": "8586084f71f9bde545ee7fa6d00288b264a2b7ac3607b974e54d13e7162c1c72",
+        "dest": "M2/BUILD/tarfiles"
+      },
+      {
+        "type": "file",
+        "url": "http://macaulay2.com/Downloads/OtherSourceCode/factory.4.0.1-gftables.tar.gz",
+        "sha256": "9cd158ceb1c2b1c47bdca2c0b004bba92cb0e0aaa0ea6a43ca784ebdce10eebd",
+        "dest": "M2/BUILD/tarfiles"
+      },
+      {
+        "type": "file",
+        "url": "https://github.com/algebraic-solving/msolve/archive/refs/tags/v0.7.5.tar.gz",
+        "dest-filename": "v0.7.5.tar.gz",
+        "sha256": "e88368abfd1e1918329ff9444164ca0e304835794fec68d192a63c845ae63128",
+        "dest": "M2/BUILD/tarfiles"
+      }
+    ]
+  }
+}

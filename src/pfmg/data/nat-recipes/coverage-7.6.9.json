@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "coverage",
+    "version": "7.6.9",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "coverage",
+    "buildsystem": "simple",
+    "build-commands": [
+      "python3 setup.py install --prefix=/app"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://files.pythonhosted.org/packages/5b/d2/c25011f4d036cf7e8acbbee07a8e09e9018390aee25ba085596c4b83d510/coverage-7.6.9.tar.gz",
+        "sha256": "4a8d8977b0c6ef5aeadcb644da9e69ae0dcfe66ec7f368c89c72e058bd71164d"
+      }
+    ]
+  }
+}

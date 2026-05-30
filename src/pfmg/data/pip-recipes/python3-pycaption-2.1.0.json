@@ -1,0 +1,42 @@
+{
+  "header": {
+    "id": "python3-pycaption",
+    "version": "2.1.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-pycaption",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"pycaption\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/d1/41/e6495bd7d3781cee623ce23ea6ac73282a373088fcd0ddc809a047b18eae/beautifulsoup4-4.9.3-py3-none-any.whl",
+        "sha256": "fff47e031e34ec82bf17e00da8f592fe7de69aeea38be00523c04623c04fb666"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/28/4e/6c6d07b1ab43f7b8b939406b562c652c651a66699b8a01fc6b774cbf69de/cssutils-2.6.0-py3-none-any.whl",
+        "sha256": "30c72f3a5c5951a11151640600aae7b3bf10e4c0d5c87f5bc505c2cd4a26e0c2"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/70/bb/7a2c7b4f8f434aa1ee801704bf08f1e53d7b5feba3d5313ab17003477808/lxml-4.9.1.tar.gz",
+        "sha256": "fe749b052bb7233fe5d072fcb549221a8cb1a16725c47c37e42b0b9cb3ff2c3f"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/6a/b3/7518aa7f031ba1ba8dce907cfb284f1bc7ab78a7293eaca13540ff5688e9/pycaption-2.1.0-py3-none-any.whl",
+        "sha256": "832f2302752a46497743a45828c00a3a3a71a063bf8348628d539f6ce5e348c5"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/16/e3/4ad79882b92617e3a4a0df1960d6bce08edfb637737ac5c3f3ba29022e25/soupsieve-2.3.2.post1-py3-none-any.whl",
+        "sha256": "3b2503d3c7084a42b1ebd08116e5f81aadfaea95863628c80a3b774a11b7c759"
+      }
+    ]
+  }
+}

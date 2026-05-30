@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-sacn",
+    "version": "1.11.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-sacn",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"sacn\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/7c/9a/ab6d66017f102898f1b74d55aad3072fb66f3b741a38b3f45edad45dfb94/sacn-1.11.0-py3-none-any.whl",
+        "sha256": "4c0c294746c6b8e9290bcc3db7b15483b28a716247d9d762de18597fb703a4fc"
+      }
+    ]
+  }
+}

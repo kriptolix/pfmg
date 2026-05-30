@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "adjustablehud",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "AdjustableHud",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/luciusDXL/TheForceEngine.git",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^v\\\\d+(\\\\.\\\\d+)+$"
+        },
+        "tag": "v1.22.000"
+      }
+    ],
+    "buildsystem": "simple",
+    "build-commands": [
+      "install -Dvm 0644 -t \"$FLATPAK_DEST/share/TheForceEngine/Mods/share/metainfo\" \"TheForceEngine/$FLATPAK_ID.Mod.AdjustableHud.metainfo.xml\"",
+      "appstreamcli compose --prefix=/ --origin=\"$FLATPAK_ID.Mod.AdjustableHud\" --result-root=\"$FLATPAK_DEST/share/TheForceEngine/Mods\" --data-dir=\"$FLATPAK_DEST/share/TheForceEngine/Mods/share/app-info/xmls\" --icons-dir=\"$FLATPAK_DEST/share/TheForceEngine/Mods/share/app-info/icons/flatpak\" --components=\"$FLATPAK_ID.Mod.AdjustableHud\" \"$FLATPAK_DEST/share/TheForceEngine/Mods\""
+    ]
+  }
+}

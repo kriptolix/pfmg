@@ -1,0 +1,26 @@
+{
+  "header": {
+    "id": "spyder-kernels",
+    "version": "3.1.4",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "spyder-kernels",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --no-index --find-links=file://${PWD} --prefix=${FLATPAK_DEST} --no-build-isolation ."
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://files.pythonhosted.org/packages/44/8a/877cb0c6ec8abaff1f1406814952be395c08845683d5084ce82bc6db7ee3/spyder_kernels-3.1.4.tar.gz",
+        "sha256": "100c8c85f963f41879ceb39ebd1482832cac09f2dc46a8d5d5b7764dd710c5cc",
+        "x-checker-data": {
+          "type": "pypi",
+          "name": "spyder-kernels"
+        }
+      }
+    ]
+  }
+}

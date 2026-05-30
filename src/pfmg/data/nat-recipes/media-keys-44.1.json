@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "media-keys",
+    "version": "44.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "media-keys",
+    "buildsystem": "simple",
+    "build-commands": [
+      "install -D data/org.gnome.settings-daemon.plugins.media-keys.gschema.xml.in /app/share/glib-2.0/schemas/org.gnome.settings-daemon.plugins.media-keys.gschema.xml",
+      "sed -i -e 's/@GETTEXT_PACKAGE@/gnome-settings-daemon/g' /app/share/glib-2.0/schemas/org.gnome.settings-daemon.plugins.media-keys.gschema.xml"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.gnome.org/sources/gnome-settings-daemon/44/gnome-settings-daemon-44.1.tar.xz",
+        "sha256": "12653b72d81f151300a47d700ac9410ac1bcce38e83f1bdd19cded2932943989"
+      }
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-ujson",
+    "version": "5.12.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-ujson",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"ujson==5.12.0\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/cb/3e/c35530c5ffc25b71c59ae0cd7b8f99df37313daa162ce1e2f7925f7c2877/ujson-5.12.0.tar.gz",
+        "sha256": "14b2e1eb528d77bc0f4c5bd1a7ebc05e02b5b41beefb7e8567c9675b8b13bcf4"
+      }
+    ]
+  }
+}

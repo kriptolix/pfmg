@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "yutils",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "YUtils",
+    "buildsystem": "simple",
+    "build-commands": [
+      "install -Dm644 src/Yutils.lua \"${FLATPAK_DEST}/automations/DependencyControl/share/aegisub/automation/include/Yutils.lua\""
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/TypesettingTools/YUtils",
+        "commit": "91a4ac771b08ecffdcc8c084592286961d99c5f2"
+      }
+    ]
+  }
+}

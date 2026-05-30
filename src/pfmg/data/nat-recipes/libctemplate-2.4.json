@@ -1,0 +1,30 @@
+{
+  "header": {
+    "id": "libctemplate",
+    "version": "2.4",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libctemplate",
+    "buildsystem": "autotools",
+    "builddir": true,
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/OlafvdSpek/ctemplate/archive/refs/tags/ctemplate-2.4.tar.gz",
+        "sha256": "ccc4105b3dc51c82b0f194499979be22d5a14504f741115be155bd991ee93cfa",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 376,
+          "stable-only": true,
+          "url-template": "https://github.com/OlafvdSpek/ctemplate/archive/refs/tags/ctemplate-$version.tar.gz"
+        }
+      }
+    ],
+    "cleanup": [
+      "/bin",
+      "/lib/*_nothreads.*"
+    ]
+  }
+}

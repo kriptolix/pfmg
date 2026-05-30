@@ -1,0 +1,53 @@
+{
+  "header": {
+    "id": "pythran",
+    "version": "0.18.1",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "pythran",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"pythran\""
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/a3/61/8001b38461d751cd1a0c3a6ae84346796a5758123f3ed97a1b121dfbf4f3/gast-0.6.0-py3-none-any.whl",
+        "sha256": "52b182313f7330389f72b069ba00f174cfe2a06411099547288839c6cbafbd54",
+        "x-checker-data": {
+          "versions": {
+            "<": "0.7.0"
+          },
+          "type": "pypi",
+          "name": "gast",
+          "packagetype": "bdist_wheel"
+        }
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/44/e4/6e8731d4d10dd09942a6f5015b2148ae612bf13e49629f33f9fade3c8253/beniget-0.4.2.post1-py3-none-any.whl",
+        "sha256": "e1b336e7b5f2ae201e6cc21f533486669f1b9eccba018dcff5969cd52f1c20ba",
+        "x-checker-data": {
+          "versions": {
+            "<": "0.5.0"
+          },
+          "type": "pypi",
+          "name": "beniget",
+          "packagetype": "bdist_wheel"
+        }
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/2d/25/d608f4a0a4bc3dfad40af2cdb5b92d16b907c3e0a29ff0ab6003740c63ea/pythran-0.18.1-py3-none-any.whl",
+        "sha256": "e1d811a5843d1881f8adcc3944fe3b84c7317ebf4530617829c19c9836f18b49",
+        "x-checker-data": {
+          "type": "pypi",
+          "name": "pythran",
+          "packagetype": "bdist_wheel"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-pystache",
+    "version": "0.6.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-pystache",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"pystache\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/3f/e7/8750ba6c6101d6aa5ceeb20c013adf2c6f3554a12c71d75654b468404bfa/pystache-0.6.0.tar.gz",
+        "sha256": "93bf92b2149a4c4b58d12142e2c4c6dd5c08d89e4c95afccd4b6efe2ee1d470d"
+      }
+    ]
+  }
+}

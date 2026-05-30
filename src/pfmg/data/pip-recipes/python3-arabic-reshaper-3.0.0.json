@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-arabic-reshaper",
+    "version": "3.0.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-arabic-reshaper",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"arabic-reshaper==3.0.0\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/44/fb/e20b45d81d74d810b01bff408baf8af04abf1d55a1a289c8395ad0919a7c/arabic_reshaper-3.0.0-py3-none-any.whl",
+        "sha256": "3f71d5034bb694204a239a6f1ebcf323ac3c5b059de02259235e2016a1a5e2dc"
+      }
+    ]
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "header": {
+    "id": "embree",
+    "version": "3.8.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "Embree",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DEMBREE_TUTORIALS:BOOL=OFF",
+      "-DEMBREE_ISPC_SUPPORT:BOOL=ON",
+      "-DEMBREE_TBB_INCLUDE_DIR=/app/include"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/embree/embree/archive/refs/tags/v3.8.0.tar.gz",
+        "sha256": "40cbc90640f63c318e109365d29aea00003e4bd14aaba8bb654fc1010ea5753a"
+      }
+    ],
+    "modules": [
+      {
+        "name": "extra-cmake-modules",
+        "buildsystem": "cmake-ninja",
+        "sources": [
+          {
+            "type": "git",
+            "url": "https://invent.kde.org/frameworks/extra-cmake-modules.git",
+            "tag": "v5.87.0"
+          }
+        ]
+      },
+      {
+        "name": "ISPC",
+        "buildsystem": "simple",
+        "build-commands": [
+          "cp bin/ispc /app/bin/"
+        ],
+        "sources": [
+          {
+            "type": "archive",
+            "url": "https://github.com/ispc/ispc/releases/download/v1.12.0/ispc-v1.12.0b-linux.tar.gz",
+            "sha256": "7a2bdd5fff5c1882639cfbd66bca31dbb68c7177f3013e80b0813a37fe0fdc23"
+          }
+        ]
+      },
+      {
+        "name": "glfw",
+        "buildsystem": "cmake-ninja",
+        "config-opts": [
+          "-DGLFW_USE_WAYLAND:BOOL=ON",
+          "-DBUILD_SHARED_LIBS:BOOL=ON",
+          "-DGLFW_BUILD_EXAMPLES:BOOL=OFF",
+          "-DGLFW_BUILD_TESTS:BOOL=OFF",
+          "-DGLFW_BUILD_DOCS:BOOL=OFF"
+        ],
+        "sources": [
+          {
+            "type": "archive",
+            "url": "https://github.com/glfw/glfw/releases/download/3.3.4/glfw-3.3.4.zip",
+            "sha256": "bbd2c42c660b725e9755eb417e40b373f0d4c03138c9b2e210d02cd308bd99cd"
+          }
+        ]
+      }
+    ]
+  }
+}

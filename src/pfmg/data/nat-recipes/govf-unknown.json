@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "govf",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "govf",
+    "config-opts": [
+      "--libdir=/app/lib"
+    ],
+    "buildsystem": "meson",
+    "sources": [
+      {
+        "type": "git",
+        "disable-shallow-clone": true,
+        "url": "https://gitlab.gnome.org/felipeborges/libovf-glib.git",
+        "commit": "52d35970d385d0beda4b765a7264d77e79736549"
+      }
+    ]
+  }
+}

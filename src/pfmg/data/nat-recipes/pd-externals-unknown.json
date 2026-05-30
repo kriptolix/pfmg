@@ -1,0 +1,31 @@
+{
+  "header": {
+    "id": "pd-externals",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "pd-externals",
+    "buildsystem": "simple",
+    "subdir": "externals",
+    "build-commands": [
+      "make prefix=/app \\\n     adaptive arraysize autotune bassemu boids comport creb cxc cyclone \\\n     disis_flatpak earplug ekext ext13 fftease flatgui freeverb gem ggee hcs \\\n     iem_ambi iem_bin_ambi iemlib iemguts iem_adaptfilt iemmatrix iemxmlrpc iem_delay \\\n     iem_roomsim iem_spec2 iem_tab jasch_lib loaders-libdir lyonpotpourri mapping \\\n     markex maxlib mjlib moonlib motex mrpeach pan pdcontainer pddp pdogg plugin pmpd \\\n     rjlib sigpack smlib tof unauthorized vbap windowing zexy\n",
+      "export BSAYLOR_FLATPAK_LDFLAGS=-L/app/lib && \\\n     make prefix=/app \\\n     bsaylor\n",
+      "make prefix=/app LDFLAGS=-L/app/lib \\\n     fluid\n",
+      "export IEMGUI_FLATPAK_LINKER_FLAGS=\"-Wl,--export-dynamic -shared\" && \\\n     make prefix=/app LDFLAGS=-L/app/lib \\\n     iemgui\n",
+      "export MOOCOW_FLATPAK_CONFIGURE=\"--host=$(uname -m)-pc-linux-gnu\" && \\\n     make prefix=/app \\\n     moocow\n",
+      "export OSCX_FLATPAK_CONFIGURE_FLAGS=\"--host=$(uname -m)-pc-linux-gnu\" && \\\n     export OSCX_FLATPAK_LIBS=\"-ltirpc\" && \\\n     export OSCX_FLATPAK_LDFLAGS=\"-L/app/lib\" && \\\n     export OSCX_FLATPAK_INCLUDES=\"-I/app/include/tirpc\" && \\\n     make prefix=/app \\\n     oscx\n",
+      "make prefix=/app LUA_LIBS=\"-L/app/lib -llua\" \\\n     pdlua\n",
+      "make DESTDIR=/ prefix=/app \\\n     adaptive_install arraysize_install autotune_install bassemu_install \\\n     boids_install bsaylor_install \\\n     comport_install creb_install cxc_install cyclone_install \\\n     disis_install earplug_install ekext_install ext13_install fftease_install \\\n     flatgui_install fluid_install freeverb_install gem_install ggee_install \\\n     hcs_install iem_ambi_install iem_bin_ambi_install iemlib_install \\\n     iemguts_install iem_adaptfilt_install iemmatrix_install iemxmlrpc_install \\\n     iem_delay_install iem_roomsim_install iem_spec2_install iem_tab_install \\\n     iemgui_install jasch_lib_install loaders-libdir_install lyonpotpourri_install \\\n     mapping_install markex_install maxlib_install mjlib_install \\\n     moocow_install moonlib_install motex_install mrpeach_install oscx_install \\\n     pan_install pdcontainer_install pddp_install pdlua_install pdogg_install \\\n     plugin_install pmpd_install rjlib_install sigpack_install smlib_install \\\n     tof_install unauthorized_install vbap_install windowing_install zexy_install\n"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/pd-l2ork/pd-l2ork/",
+        "tag": "20260425",
+        "commit": "5b463522eae95c45bae613f8695da92855424e7f"
+      }
+    ]
+  }
+}

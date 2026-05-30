@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "kirigami-addons",
+    "version": "1.10.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "kirigami-addons",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=MinSizeRel",
+      "-DBUILD_TESTING=OFF"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.kde.org/stable/kirigami-addons/kirigami-addons-1.10.0.tar.xz",
+        "sha256": "c98f92bf7c452e12f6dc403404215413db3959fe904ad830ead0db6bb09b3d11"
+      }
+    ]
+  }
+}

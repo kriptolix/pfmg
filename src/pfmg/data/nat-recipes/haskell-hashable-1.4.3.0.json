@@ -1,0 +1,33 @@
+{
+  "header": {
+    "id": "haskell-hashable",
+    "version": "1.4.3.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "haskell-hashable",
+    "buildsystem": "simple",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/hashable-1.4.3.0/hashable-1.4.3.0.tar.gz",
+        "sha256": "32efb16c2891786209b7cbe5c39df9b3a9ae51e836f1a54f646bc4602b7ab0f5",
+        "x-checker-data": {
+          "type": "html",
+          "url": "https://www.stackage.org/lts-21",
+          "version-pattern": ">hashable-([\\d.]+)<",
+          "url-template": "https://hackage.haskell.org/package/hashable-$version/hashable-$version.tar.gz"
+        }
+      }
+    ],
+    "build-commands": [
+      "runhaskell Setup configure --prefix=/app --extra-lib-dirs=/app/lib",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "cleanup": [
+      "*"
+    ]
+  }
+}

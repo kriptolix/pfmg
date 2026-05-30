@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "gi-gdk-3.0.15",
+    "version": "3.0.15",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "gi-gdk-3.0.15",
+    "only-arches": [
+      "x86_64"
+    ],
+    "buildsystem": "simple",
+    "build-commands": [
+      "ghc -threaded --make Setup",
+      "./Setup configure --prefix=/app",
+      "./Setup build",
+      "./Setup install"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "sha256": "6ffaa7fffea6fcda8b1d1b813779760b0919dc10da284eb9a595f664aa79929d",
+        "url": "https://hackage.haskell.org/package/gi-gdk-3.0.15/gi-gdk-3.0.15.tar.gz"
+      }
+    ]
+  }
+}

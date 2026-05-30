@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "python3-ckcc-protocol",
+    "version": "1.0.3",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-ckcc-protocol",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --no-build-isolation --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"ckcc-protocol==1.0.3\""
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/44/66/2c17bae31c906613795711fc78045c285048168919ace2220daa372c7d72/pyaes-1.6.1.tar.gz",
+        "sha256": "02c1b1405c38d3c370b085fb952dd8bea3fadcee6411ad99f312cc129c536d8f"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/6a/96/a12745fc16d3f5a0d0eda1677a6c8572b729acd7b5c84e5a33d0a94986e7/ckcc_protocol-1.0.3-py3-none-any.whl",
+        "sha256": "ffa79816629c0a2aa59b76dbf765bd2e12ef71225c757252f3a3613cdf8a0b39"
+      }
+    ]
+  }
+}

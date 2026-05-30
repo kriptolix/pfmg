@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "pulsar-bridge",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "pulsar-bridge",
+    "buildsystem": "simple",
+    "build-commands": [
+      "python3 -m PyInstaller --clean --onefile --name pulsar-bridge main.py",
+      "install -d /app/lib/pulsar/requirements",
+      "install -Dm755 dist/pulsar-bridge /app/lib/pulsar/requirements/pulsar-bridge"
+    ],
+    "cleanup": [
+      "/bin",
+      "/lib/python3*/site-packages",
+      "/lib/python3*/dist-packages"
+    ],
+    "modules": [
+      "bridge-sources.json"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/FuzjaJadrowa/Pulsar-Bridge.git",
+        "commit": "e05a4245e09c6e448a073782efb8876b50c7ac2c"
+      }
+    ]
+  }
+}

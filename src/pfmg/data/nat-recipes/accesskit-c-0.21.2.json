@@ -1,0 +1,26 @@
+{
+  "header": {
+    "id": "accesskit-c",
+    "version": "0.21.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "accesskit-c",
+    "buildsystem": "simple",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/godotengine/godot-accesskit-c-static/releases/download/0.21.2/accesskit-c-0.21.2.zip",
+        "sha256": "02a08691b78fc6f8f88f6546e997b9f90b4ecbedf5ca5c621dbab144a4b18964"
+      }
+    ],
+    "build-commands": [
+      "mkdir -p /app/accesskit-c",
+      "cp -r include lib /app/accesskit-c/"
+    ],
+    "cleanup": [
+      "*"
+    ]
+  }
+}

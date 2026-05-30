@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "lipi-fonts-data",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "lipi-fonts_data",
+    "buildsystem": "simple",
+    "build-commands": [
+      "mkdir -p ${FLATPAK_DEST}/share/io.github.shonebinu.Glyph/",
+      "cp -r fonts.json previews ${FLATPAK_DEST}/share/io.github.shonebinu.Glyph/"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/shonebinu/Lipi.git",
+        "commit": "763f1105cbc300e035b11ad7386d34a8a3419317"
+      }
+    ]
+  }
+}

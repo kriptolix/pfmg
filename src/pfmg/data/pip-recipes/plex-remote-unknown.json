@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "plex-remote",
+    "version": "unknown",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "plex-remote",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --no-build-isolation --prefix=/app ./"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/tijder/plex-remote",
+        "commit": "c29ef9549c166902e53b3a1b603b365d70ebdf93"
+      }
+    ]
+  }
+}

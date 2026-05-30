@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "libsbsms",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libsbsms",
+    "buildsystem": "cmake-ninja",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/claytonotey/libsbsms.git",
+        "tag": "2.3.0",
+        "commit": "e99cd7e6c6367e476577be34d2fdbe2023904d7e",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^([\\d.]+)$"
+        }
+      }
+    ]
+  }
+}

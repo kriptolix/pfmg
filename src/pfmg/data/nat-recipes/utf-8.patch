@@ -1,0 +1,13 @@
+Index: eukleides/contrib/examples/sundial.euk
+===================================================================
+--- eukleides.orig/contrib/examples/sundial.euk
++++ eukleides/contrib/examples/sundial.euk
+@@ -6,7 +6,7 @@
+ % y-direction corresponds to N-S. Parameter p is the latitude, l the
+ % length of the stylus, d the declination. The time parameters are j for
+ % the day (0 to 364), and h for the time of day, which must be expressed
+-% in angular units: midday is 0° and 1 h = 15°.
++% in angular units: midday is 0Â° and 1 h = 15Â°.
+ 
+ % Time lines
+ 

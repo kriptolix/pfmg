@@ -1,0 +1,41 @@
+{
+  "header": {
+    "id": "pyside6-essentials-aarch64",
+    "version": "6.8.2.1",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "pyside6-essentials-aarch64",
+    "only-arches": [
+      "aarch64"
+    ],
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"pyside6-essentials\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/fd/69/595002d860ee58431fe7add081d6f54fff94ae9680f2eb8cd355c1649bb6/PySide6_Essentials-6.8.2.1-cp39-abi3-manylinux_2_39_aarch64.whl",
+        "sha256": "7aed46f91d44399b4c713cf7387f5fb6f0114413fbcdbde493a528fb8e19f6ed"
+      }
+    ],
+    "modules": [
+      {
+        "name": "shiboken6",
+        "buildsystem": "simple",
+        "build-commands": [
+          "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"shiboken6\" --no-build-isolation"
+        ],
+        "sources": [
+          {
+            "type": "file",
+            "url": "https://files.pythonhosted.org/packages/a6/b0/4fb102eb5260ee06d379769f3c4f0b82ef397c15f1cbbbbb3f6dceb86d5d/shiboken6-6.8.2.1-cp39-abi3-manylinux_2_39_aarch64.whl",
+            "sha256": "8592401423acc693f51dbbfae5e7493cc3ed6738be79daaf90afa07f4da5bb25"
+          }
+        ]
+      }
+    ]
+  }
+}

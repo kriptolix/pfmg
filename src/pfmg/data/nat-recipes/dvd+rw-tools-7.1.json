@@ -1,0 +1,30 @@
+{
+  "header": {
+    "id": "dvd+rw-tools",
+    "version": "7.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "dvd+rw-tools",
+    "no-autogen": true,
+    "make-install-args": [
+      "prefix=/app"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://web.archive.org/web/20241229001828if_/https://fy.chalmers.se/~appro/linux/DVD+RW/tools/dvd+rw-tools-7.1.tar.gz",
+        "sha512": "938f9ec5597158af275c7bf63002696ba362f6f22a219108c6a1df28792f0485046a7af5ce57e41695aaaa0d69543bd66cbbeb4415df5c0e0a902a3f1d278a31"
+      },
+      {
+        "type": "patch",
+        "paths": [
+          "patch/dvd+rw-tools-glibc-2.28.patch",
+          "patch/dvd+rw-tools-includes.patch",
+          "patch/dvd+rw-tools-wctomb.patch"
+        ]
+      }
+    ]
+  }
+}

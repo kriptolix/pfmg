@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "spirv-tools",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "spirv-tools",
+    "buildsystem": "cmake-ninja",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/KhronosGroup/SPIRV-Tools.git",
+        "tag": "v2025.4"
+      },
+      {
+        "type": "git",
+        "url": "https://github.com/KhronosGroup/SPIRV-Headers.git",
+        "tag": "vulkan-sdk-1.4.335.0",
+        "dest": "external/spirv-headers"
+      }
+    ],
+    "cleanup": [
+      "*"
+    ]
+  }
+}

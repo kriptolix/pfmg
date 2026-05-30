@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "c-siphash",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "c-siphash",
+    "buildsystem": "simple",
+    "build-commands": [
+      "mkdir build",
+      "meson setup build -Dprefix=$FLATPAK_DEST",
+      "ninja -C build",
+      "ninja -C build install"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/c-util/c-siphash.git",
+        "commit": "17888b33f13da800aaa7b75bcf5e633366c87eb4"
+      }
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "header": {
+    "id": "gom",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "gom",
+    "buildsystem": "meson",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://gitlab.gnome.org/GNOME/gom.git",
+        "tag": "0.5.5"
+      }
+    ]
+  }
+}

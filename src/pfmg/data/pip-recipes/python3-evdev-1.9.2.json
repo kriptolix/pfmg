@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-evdev",
+    "version": "1.9.2",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-evdev",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"evdev==1.9.2\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/63/fe/a17c106a1f4061ce83f04d14bcedcfb2c38c7793ea56bfb906a6fadae8cb/evdev-1.9.2.tar.gz",
+        "sha256": "5d3278892ce1f92a74d6bf888cc8525d9f68af85dbe336c95d1c87fb8f423069"
+      }
+    ]
+  }
+}

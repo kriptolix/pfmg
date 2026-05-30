@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "olm",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "olm",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://gitlab.matrix.org/matrix-org/olm.git",
+        "tag": "3.2.14"
+      }
+    ]
+  }
+}

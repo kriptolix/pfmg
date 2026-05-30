@@ -1,0 +1,58 @@
+{
+  "header": {
+    "id": "surge-xt",
+    "version": "1.0.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "surge-xt",
+    "buildsystem": "cmake-ninja",
+    "build-options": {
+      "arch": {
+        "aarch64": {
+          "config-opts": [
+            "-DLINUX_ON_ARM=True"
+          ]
+        }
+      }
+    },
+    "config-opts": [
+      "-DCMAKE_INSTALL_PREFIX=/app/extensions/Plugins/Surge-XT",
+      "-DSURGE_SKIP_STANDALONE=YES",
+      "-DCMAKE_BUILD_TYPE=Release"
+    ],
+    "no-make-install": true,
+    "make-args": [
+      "surge-xt_VST3",
+      "surge-fx_VST3"
+    ],
+    "cleanup": [
+      "/bin/python"
+    ],
+    "post-install": [
+      "install -d $FLATPAK_DEST/vst3/",
+      "cp -R src/surge-fx/surge-fx_artefacts/Release/VST3/*.vst3 $FLATPAK_DEST/vst3/",
+      "cp -R src/surge-xt/surge-xt_artefacts/Release/VST3/*.vst3 $FLATPAK_DEST/vst3/",
+      "install -d $FLATPAK_DEST/share/surge-xt",
+      "cp -a resources/data/* $FLATPAK_DEST/share/surge-xt",
+      "strip $FLATPAK_DEST/vst3/*.vst3/Contents/$(arch)-linux/*.so",
+      "install -Dm644 -t $FLATPAK_DEST/share/licenses/surge-xt LICENSE"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/surge-synthesizer/releases-xt/releases/download/1.0.1/surge-src-1.0.1.tar.gz",
+        "strip-components": 2,
+        "sha256": "100b536f741c62529800fc26e3773567591385d4152db305382b4315f6e39c55"
+      },
+      {
+        "type": "shell",
+        "commands": [
+          "install -d ${FLATPAK_DEST}/bin",
+          "ln -sf /usr/bin/python3 ${FLATPAK_DEST}/bin/python"
+        ]
+      }
+    ]
+  }
+}

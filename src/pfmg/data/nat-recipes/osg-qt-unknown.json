@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "osg-qt",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "osg-qt",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/openscenegraph/osgQt.git",
+        "tag": "3.5.7",
+        "commit": "1096988b351d7a399f879c447c63e1c98c0b6df3"
+      }
+    ]
+  }
+}

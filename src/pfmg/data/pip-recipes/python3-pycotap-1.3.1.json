@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "python3-pycotap",
+    "version": "1.3.1",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-pycotap",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"pycotap\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/36/f4/77b5a41d53ae3c530b204ed9a35137171b20f8ee0f337e2ec4993d6026a5/pycotap-1.3.1-py3-none-any.whl",
+        "sha256": "1c3a25b3ff89e48f4e00f1f71dbbc1642b4f65c65d416524d07e73492fff25ea",
+        "x-checker-data": {
+          "type": "pypi",
+          "name": "pycotap",
+          "packagetype": "bdist_wheel"
+        }
+      }
+    ]
+  }
+}

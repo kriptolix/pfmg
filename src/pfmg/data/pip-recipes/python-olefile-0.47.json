@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python-olefile",
+    "version": "0.47",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python-olefile",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --disable-pip-version-check --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} --no-build-isolation \"olefile\""
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/69/1b/077b508e3e500e1629d366249c3ccb32f95e50258b231705c09e3c7a4366/olefile-0.47.zip",
+        "sha256": "599383381a0bf3dfbd932ca0ca6515acd174ed48870cbf7fee123d698c192c1c"
+      }
+    ]
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "megaparsec",
+    "version": "9.6.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "megaparsec",
+    "buildsystem": "simple",
+    "builddir": false,
+    "build-commands": [
+      "echo '#! /usr/bin/env runhaskell' >Setup.txt",
+      "echo '> import Distribution.Simple' >>Setup.txt",
+      "echo '> main = defaultMain' >>Setup.txt",
+      "ln -s Setup.txt Setup.lhs || true",
+      "runhaskell Setup configure --prefix=/app",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "sources": [
+      {
+        "sha256": "a32257be847dbe71ac22d512ab115f9ce26fa08bcdbea7ca8b5256a1700dcbff",
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/megaparsec-9.6.1/megaparsec-9.6.1.tar.gz"
+      },
+      {
+        "dest-filename": "megaparsec.cabal",
+        "sha256": "8d8f8ee5aca5d5c16aa4219afd13687ceab8be640f40ba179359f2b42a628241",
+        "type": "file",
+        "url": "https://hackage.haskell.org/package/megaparsec-9.6.1/revision/0.cabal"
+      }
+    ]
+  }
+}

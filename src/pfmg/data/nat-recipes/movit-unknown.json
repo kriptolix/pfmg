@@ -1,0 +1,21 @@
+{
+  "header": {
+    "id": "movit",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "movit",
+    "make-args": [
+      "libmovit.la"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/ddennedy/movit.git",
+        "commit": "c647b2a0edc1e3a2c2d8600c3f822f5d48268793"
+      }
+    ]
+  }
+}

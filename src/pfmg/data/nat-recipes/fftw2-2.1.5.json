@@ -1,0 +1,39 @@
+{
+  "header": {
+    "id": "fftw2",
+    "version": "2.1.5",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "fftw2",
+    "buildsystem": "autotools",
+    "config-opts": [
+      "--enable-float",
+      "--disable-debug",
+      "--disable-docs",
+      "--disable-dependency-tracking",
+      "--disable-silent-rules",
+      "--enable-shared",
+      "--disable-static",
+      "--disable-Werror"
+    ],
+    "build-options": {
+      "cflags": "-fPIC -O3 -DNDEBUG"
+    },
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://fftw.org/fftw-2.1.5.tar.gz",
+        "sha256": "f8057fae1c7df8b99116783ef3e94a6a44518d49c72e2e630c24b689c6022630"
+      },
+      {
+        "type": "shell",
+        "commands": [
+          "cp -f /usr/share/libtool/build-aux/config.sub .",
+          "cp -f /usr/share/libtool/build-aux/config.guess ."
+        ]
+      }
+    ]
+  }
+}

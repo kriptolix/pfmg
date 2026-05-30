@@ -1,0 +1,36 @@
+{
+  "header": {
+    "id": "jeveassets",
+    "version": "8.1.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "jEveAssets",
+    "buildsystem": "simple",
+    "build-commands": [
+      "install -D changelog.txt /app/jEveAssets/changelog.txt",
+      "install -D credits.txt /app/jEveAssets/credits.txt",
+      "install -D jarfile.properties /app/jEveAssets/jarfile.properties",
+      "install -D jeveassets.jar /app/jEveAssets/jeveassets.jar",
+      "install -D jmemory.jar /app/jEveAssets/jmemory.jar",
+      "install -D license.txt /app/jEveAssets/license.txt",
+      "install -D readme.txt /app/jEveAssets/readme.txt",
+      "cp -r lib /app/jEveAssets"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/GoldenGnu/jeveassets/releases/download/jeveassets-8.1.2/jeveassets-8.1.2.zip",
+        "sha256": "f059d5b9e75ec3531b293560a3bd583d6285efa518757a90ec4e2462833a631b",
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://api.github.com/repos/GoldenGnu/jeveassets/releases/latest",
+          "version-query": ".tag_name | sub(\"^jeveassets-\"; \"\")",
+          "url-query": ".assets[] | select(.name==\"jeveassets-\" + $version + \".zip\") | .browser_download_url",
+          "is-main-source": true
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "numix",
+    "version": "2.6.7",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "Numix",
+    "buildsystem": "simple",
+    "build-commands": [
+      "install -dm755 /usr/share/runtime/share/themes/Numix/gtk-3.0",
+      "cp -aL gtk-3.20/* /usr/share/runtime/share/themes/Numix/gtk-3.0",
+      "cp -a index.theme /usr/share/runtime/share/themes/Numix"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/numixproject/numix-gtk-theme/releases/download/2.6.7/Numix.zip",
+        "sha256": "1d5f2dd0577ee56d2ec4d153139524b0ba0d07e42aae7a713166ed9934ad0d0d"
+      }
+    ]
+  }
+}

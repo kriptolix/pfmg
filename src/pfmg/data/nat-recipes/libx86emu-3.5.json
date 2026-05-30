@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "libx86emu",
+    "version": "3.5",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libx86emu",
+    "buildsystem": "simple",
+    "build-commands": [
+      "echo '3.5' > VERSION",
+      "rm -f git2log",
+      "sed -i -e 's/ -g / -s /' Makefile",
+      "make -j $FLATPAK_BUILDER_N_JOBS",
+      "find . -type f | perl -lne 'print if -B and -x' | xargs strip",
+      "make install DESTDIR=`pwd`/INST",
+      "cp -fr INST/usr/* $FLATPAK_DEST/"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/wfeldt/libx86emu/archive/3.5.tar.gz",
+        "sha256": "91da55f5da55017d5a80e2364de30f9520aa8df2744ff587a09ba58d6e3536c8"
+      }
+    ]
+  }
+}

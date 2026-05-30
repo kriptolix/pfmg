@@ -1,0 +1,29 @@
+{
+  "header": {
+    "id": "ghc-8.6.3-i386",
+    "version": "8.6.3",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "build-commands": [
+      "mkdir -p /app/lib",
+      "ln -s /usr/lib/i386-linux-gnu/libtinfo.so /app/lib/libtinfo.so.5",
+      "./configure --prefix=/app",
+      "make install"
+    ],
+    "buildsystem": "simple",
+    "cleanup": [],
+    "name": "ghc-8.6.3-i386",
+    "only-arches": [
+      "i386"
+    ],
+    "sources": [
+      {
+        "sha256": "b57070ba8c70b1333a3e47ce124baf791be39c20a592954772532fd6dd51882f",
+        "type": "archive",
+        "url": "https://github.com/commercialhaskell/ghc/releases/download/ghc-8.6.3-release/ghc-8.6.3-i386-deb8-linux.tar.xz"
+      }
+    ]
+  }
+}

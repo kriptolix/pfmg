@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "libseat",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libseat",
+    "buildsystem": "meson",
+    "config-opts": [
+      "-Dserver=disabled",
+      "-Dman-pages=disabled"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://git.sr.ht/~kennylevinsen/seatd",
+        "tag": "0.9.3",
+        "commit": "daa8196e10b180b8b0caeafa8e5f860eb1bd6706"
+      }
+    ]
+  }
+}

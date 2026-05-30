@@ -1,0 +1,29 @@
+{
+  "header": {
+    "id": "ngtcp2",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "ngtcp2",
+    "buildsystem": "cmake",
+    "build-options": {
+      "append-path": "/usr/lib/sdk/llvm21/bin",
+      "prepend-ld-library-path": "/usr/lib/sdk/llvm21/lib"
+    },
+    "config-opts": [
+      "-D CMAKE_C_COMPILER=clang",
+      "-D CMAKE_CXX_COMPILER=clang++",
+      "-D CMAKE_BUILD_TYPE=Release"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/ngtcp2/ngtcp2.git",
+        "tag": "v1.22.1",
+        "commit": "716e64b05f4a3709dfc0b0522cf9fd4456d055e5"
+      }
+    ]
+  }
+}

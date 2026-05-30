@@ -1,0 +1,61 @@
+{
+  "header": {
+    "id": "vkd3d",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "vkd3d",
+    "subdir": "vkd3d",
+    "build-options": {
+      "ldflags": "-L/run/build/vkd3d/wine/dlls/vulkan-1",
+      "ldflags-override": true,
+      "config-opts": [
+        "--host=x86_64-w64-mingw32"
+      ],
+      "env": {
+        "CC": "ccache x86_64-w64-mingw32-gcc",
+        "LD": "x86_64-w64-mingw32-ld"
+      },
+      "prefix": "/app/share/steam/compatibilitytools.d/Proton/lib/vkd3d/prefix"
+    },
+    "config-opts": [
+      "--disable-doxygen-doc",
+      "--disable-tests",
+      "--disable-demos",
+      "--without-ncurses"
+    ],
+    "post-install": [
+      "mv -v ${FLATPAK_DEST}/lib/vkd3d/{prefix/bin/,}libvkd3d-shader-1.dll"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/ValveSoftware/Proton.git",
+        "tag": "proton-7.0-6",
+        "commit": "c5ad95671cecaf03c4a92500de84b542add585d1",
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://api.github.com/repos/ValveSoftware/Proton/git/refs/tags/proton-",
+          "tag-query": "map(select(.ref | match(\"refs/tags/proton-[0-9].*\"; \"\"))) | last | if .object.type==\"commit\" then . else error(\"not a commit\") end | .ref | sub(\"^refs/tags/\"; \"\")",
+          "version-query": "$tag | sub(\"^proton-\"; \"\")",
+          "commit-query": "map(select(.ref | match(\"refs/tags/proton-[0-9].*\"; \"\"))) | last | .object.sha",
+          "timestamp-data-url": "map(select(.ref | match(\"refs/tags/proton-[0-9].*\"; \"\"))) | last | .object.url",
+          "timestamp-query": ".committer.date",
+          "is-main-source": true,
+          "source-id": "proton-git-0"
+        }
+      },
+      {
+        "type": "shell",
+        "commands": [
+          "install -D $FLATPAK_LIBDIR_WINE_PE/vulkan-1.dll -t wine/dlls/vulkan-1/"
+        ]
+      }
+    ],
+    "cleanup": [
+      "/lib/vkd3d/prefix"
+    ]
+  }
+}

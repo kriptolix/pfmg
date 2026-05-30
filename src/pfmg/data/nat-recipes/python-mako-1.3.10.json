@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python-mako",
+    "version": "1.3.10",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python-mako",
+    "buildsystem": "simple",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://files.pythonhosted.org/packages/9e/38/bd5b78a920a64d708fe6bc8e0a2c075e1389d53bef8413725c63ba041535/mako-1.3.10.tar.gz",
+        "sha256": "99579a6f39583fa7e5630a28c3c1f440e4e97a414b80372649c0ce338da2ea28"
+      }
+    ],
+    "build-commands": [
+      "python setup.py install --prefix=/app --root=/"
+    ]
+  }
+}

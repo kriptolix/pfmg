@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "atkmm",
+    "version": "2.24",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "atkmm",
+    "config-opts": [
+      "--disable-documentation"
+    ],
+    "cleanup": [
+      "/lib/atkmm-1.6"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://ftp.acc.umu.se/pub/GNOME/sources/atkmm/2.24/atkmm-2.24.2.tar.xz",
+        "sha256": "ff95385759e2af23828d4056356f25376cfabc41e690ac1df055371537e458bd"
+      }
+    ]
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "header": {
+    "id": "python3-ezdxf",
+    "version": "1.3.5",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-ezdxf",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"ezdxf==1.3.5\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/bd/ba/e74be2267174f5ce79b7850ef5d3f439a39eda1fe29ab8fed9803acbf2d5/ezdxf-1.3.5.zip",
+        "sha256": "24e7c0ebe947f0ba073bd0a1c7570dae265b99daf5dd0fb5688533132c71b723"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/4b/42/97a13e47a1e51a5a7142475bbcf5107fe3a68fc34aef331c897d5fb98ad0/fonttools-4.60.1.tar.gz",
+        "sha256": "ef00af0439ebfee806b25f24c8f92109157ff3fac5731dc7867957812e87b8d9"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/fb/90/8956572f5c4ae52201fdec7ba2044b2c882832dcec7d5d0922c9e9acf2de/numpy-2.2.3.tar.gz",
+        "sha256": "dbdc15f0c81611925f382dfa97b3bd0bc2c1ce19d4fe50482cb0ddc12ba30020"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/10/5e/1aa9a93198c6b64513c9d7752de7422c06402de6600a8767da1524f9570b/pyparsing-3.2.5-py3-none-any.whl",
+        "sha256": "e38a4f02064cf41fe6593d328d0512495ad1f3d8a91c4f73fc401b3079a59a5e"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/18/67/36e9267722cc04a6b9f15c7f3441c2363321a3ea07da7ae0c0707beb2a9c/typing_extensions-4.15.0-py3-none-any.whl",
+        "sha256": "f0fa19c6845758ab08074a0cfa8b7aecb71c999ca73d62883bc25cc018c4e548"
+      }
+    ]
+  }
+}

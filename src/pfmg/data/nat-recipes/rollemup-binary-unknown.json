@@ -1,0 +1,33 @@
+{
+  "header": {
+    "id": "rollemup-binary",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "rollemup-binary",
+    "buildsystem": "simple",
+    "sources": [
+      {
+        "type": "script",
+        "dest-filename": "apply_extra",
+        "commands": [
+          "tar -xf Rollemup.tar.gz --strip-components=1",
+          "rm -fr Rollemup.tar.gz Games Upload"
+        ]
+      },
+      {
+        "type": "extra-data",
+        "url": "https://www.pro-linux.de/files/rollemup/Rollemup.tar.gz",
+        "filename": "Rollemup.tar.gz",
+        "sha256": "3419c7b170d24e6c33ef583f8cab7003199cd594ce9d3a3f3e8a8607184ea272",
+        "size": 20155934,
+        "installed-size": 36364068
+      }
+    ],
+    "build-commands": [
+      "install -D apply_extra /app/bin/apply_extra"
+    ]
+  }
+}

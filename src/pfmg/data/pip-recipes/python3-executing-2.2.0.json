@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-executing",
+    "version": "2.2.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-executing",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"executing==2.2.0\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/7b/8f/c4d9bafc34ad7ad5d8dc16dd1347ee0e507a52c3adb6bfa8887e1c6a26ba/executing-2.2.0-py2.py3-none-any.whl",
+        "sha256": "11387150cad388d62750327a53d3339fad4888b39a6fe233c3afbb54ecffd3aa"
+      }
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "haskell-lexer-1.0.1",
+    "version": "1.0.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "haskell-lexer-1.0.1",
+    "only-arches": [
+      "x86_64"
+    ],
+    "buildsystem": "simple",
+    "build-commands": [
+      "ghc -threaded --make Setup",
+      "./Setup configure --prefix=/app",
+      "./Setup build",
+      "./Setup install"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "sha256": "d7d42ab3c4bc2f0232ede8b005fb9de57f862ee4c1c83aa61e1022346fc84366",
+        "url": "https://hackage.haskell.org/package/haskell-lexer-1.0.1/haskell-lexer-1.0.1.tar.gz"
+      }
+    ]
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "header": {
+    "id": "libadlmidi",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libADLMIDI",
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
+      "-DlibADLMIDI_STATIC=OFF",
+      "-DlibADLMIDI_SHARED=ON",
+      "-DWITH_UNIT_TESTS=OFF"
+    ],
+    "sources": [
+      {
+        "url": "https://github.com/Wohlstand/libADLMIDI.git",
+        "tag": "v1.6.1",
+        "commit": "2b350f9ef5fa7bafd90b8ce3beb2a77c1e87af25",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 19042,
+          "stable-only": true,
+          "tag-template": "v$version"
+        },
+        "type": "git"
+      }
+    ],
+    "cleanup": [
+      "/share/doc",
+      "/lib/pkgconfig",
+      "/lib/libADLMIDI.so",
+      "/include/adlmidi.h"
+    ]
+  }
+}

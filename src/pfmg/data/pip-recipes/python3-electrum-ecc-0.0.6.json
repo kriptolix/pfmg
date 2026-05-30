@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-electrum-ecc",
+    "version": "0.0.6",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-electrum_ecc",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"electrum_ecc\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/1a/c2/500b5b89c7c4d930127b86dafa066cf2cfec0442edcff349112dad60d980/electrum_ecc-0.0.6.tar.gz",
+        "sha256": "6360c71fb08b51d80a455e938f126ba4c790be74ba226461d54d7a3aa6890b89"
+      }
+    ]
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "header": {
+    "id": "noto-sans",
+    "version": "2026.05.01",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "noto-sans",
+    "buildsystem": "simple",
+    "build-commands": [
+      "install -Dm644 NotoSans-Regular.ttf /app/share/fonts/NotoSans-Regular.ttf",
+      "install -Dm644 NotoSans.LICENSE.txt /app/share/fonts/NotoSans.LICENSE.txt"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://cdn.jsdelivr.net/gh/notofonts/notofonts.github.io@noto-monthly-release-2026.05.01/fonts/NotoSans/hinted/ttf/NotoSans-Regular.ttf",
+        "sha256": "478c558ea716033cd60c03438f628dfa75694dcf6b5f6d505a2f05fd2b4f3823"
+      },
+      {
+        "type": "file",
+        "url": "https://cdn.jsdelivr.net/gh/notofonts/notofonts.github.io@noto-monthly-release-2026.05.01/fonts/LICENSE",
+        "sha256": "f2095b08bed08b23a6fe26112fcd679a2bee3f002eef077eb05d215ed1051bd8",
+        "dest-filename": "NotoSans.LICENSE.txt"
+      }
+    ]
+  }
+}

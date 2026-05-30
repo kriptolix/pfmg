@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "libgit2-glib",
+    "version": "1.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libgit2-glib",
+    "config-opts": [
+      "--libdir=/app/lib",
+      "--buildtype=release"
+    ],
+    "buildsystem": "meson",
+    "builddir": true,
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.gnome.org/sources/libgit2-glib/1.2/libgit2-glib-1.2.1.tar.xz",
+        "sha256": "97423a779002b3be8751c75f9d79049dfccca3616a26159fc162486772ba785f",
+        "x-checker-data": {
+          "type": "gnome",
+          "name": "libgit2-glib"
+        }
+      }
+    ]
+  }
+}

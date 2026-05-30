@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "dhtnet",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "dhtnet",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DCMAKE_INSTALL_LIBDIR=/app/lib",
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DBUILD_SHARED_LIBS=Off",
+      "-DCMAKE_POSITION_INDEPENDENT_CODE=ON",
+      "-DCMAKE_CXX_STANDARD=20",
+      "-DBUILD_BENCHMARKS=Off",
+      "-DBUILD_TESTING=Off",
+      "-DBUILD_TOOLS=Off",
+      "-DBUILD_DEPENDENCIES=Off",
+      "-DBUILD_EXAMPLE=Off"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://git.jami.net/savoirfairelinux/dhtnet.git",
+        "commit": "4e391810175fd446246de60411e2b5fcfdd2f462",
+        "disable-submodules": true
+      }
+    ]
+  }
+}

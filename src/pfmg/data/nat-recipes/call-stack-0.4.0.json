@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "call-stack",
+    "version": "0.4.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "call-stack",
+    "buildsystem": "simple",
+    "builddir": false,
+    "build-commands": [
+      "echo '#! /usr/bin/env runhaskell' >Setup.txt",
+      "echo '> import Distribution.Simple' >>Setup.txt",
+      "echo '> main = defaultMain' >>Setup.txt",
+      "ln -s Setup.txt Setup.lhs || true",
+      "runhaskell Setup configure --prefix=/app",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "sources": [
+      {
+        "sha256": "430bcf8a3404f7e55319573c0b807b1356946f0c8f289bb3d9afb279c636b87b",
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/call-stack-0.4.0/call-stack-0.4.0.tar.gz"
+      },
+      {
+        "dest-filename": "call-stack.cabal",
+        "sha256": "ac44d2c00931dc20b01750da8c92ec443eb63a7231e8550188cb2ac2385f7feb",
+        "type": "file",
+        "url": "https://hackage.haskell.org/package/call-stack-0.4.0/revision/0.cabal"
+      }
+    ]
+  }
+}

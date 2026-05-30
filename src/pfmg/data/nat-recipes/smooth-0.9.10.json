@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "smooth",
+    "version": "0.9.10",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "smooth",
+    "no-autogen": true,
+    "make-install-args": [
+      "prefix=/app"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/enzo1982/smooth/releases/download/v0.9.10/smooth-0.9.10.tar.gz",
+        "sha256": "c018ea09eb4e269268cb123bb5d24a813d07c985384c5384d7fa73b7173e9f1c",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 84187,
+          "url-template": "https://github.com/enzo1982/smooth/releases/download/v$version/smooth-$version.tar.gz"
+        }
+      }
+    ]
+  }
+}

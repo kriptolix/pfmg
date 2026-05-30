@@ -1,0 +1,19 @@
+{
+  "header": {
+    "id": "appindicator-sharp",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "appindicator-sharp",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/hbons/appindicator-sharp",
+        "commit": "5a79cde93da6d68a4b1373f1ce5796c3c5fe1b37"
+      }
+    ],
+    "no-parallel-make": true
+  }
+}

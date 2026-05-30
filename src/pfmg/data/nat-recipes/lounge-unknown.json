@@ -1,0 +1,29 @@
+{
+  "header": {
+    "id": "lounge",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "Lounge",
+    "buildsystem": "meson",
+    "build-options": {
+      "prefix": "/usr/share/runtime",
+      "append-path": "/usr/share/runtime/share/themes/Lounge/gtk-3.0/bin"
+    },
+    "config-opts": [
+      "-Dflatpak=true",
+      "-Dflatpak-size=regular",
+      "-Dflatpak-variant=light"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/monday15/lounge-gtk-theme.git",
+        "tag": "1.24",
+        "commit": "25b0e63f369c597ce42b667d511d7d2838285ed5"
+      }
+    ]
+  }
+}

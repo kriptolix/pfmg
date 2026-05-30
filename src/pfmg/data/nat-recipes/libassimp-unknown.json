@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "libassimp",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libassimp",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DCMAKE_CXX_FLAGS='-Wno-error=array-compare -Wno-error=dangling-reference'"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/assimp/assimp.git",
+        "tag": "v5.2.3",
+        "commit": "19f2a624a9d69aa8d1680685766b76bd8983ffe8"
+      }
+    ]
+  }
+}

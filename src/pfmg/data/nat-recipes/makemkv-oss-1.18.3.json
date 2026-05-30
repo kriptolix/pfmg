@@ -1,0 +1,42 @@
+{
+  "header": {
+    "id": "makemkv-oss",
+    "version": "1.18.3",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "makemkv-oss",
+    "buildsystem": "autotools",
+    "build-options": {
+      "cflags": "-D__GNU_SOURCE -D__STDC_CONSTANT_MACROS -D__STDC_LIMIT_MACROS -D __STDC_FORMAT_MACROS"
+    },
+    "config-opts": [
+      "--enable-allcodecs"
+    ],
+    "make-install-args": [
+      "DESTDIR=/"
+    ],
+    "post-install": [
+      "install -Dp -m 644 com.makemkv.MakeMKV.appdata.xml --target-directory=/app/share/appdata",
+      "install -Dp -m 644 License.txt --target-directory=/app/share/licenses/com.makemkv.MakeMKV"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://www.makemkv.com/download/makemkv-oss-1.18.3.tar.gz",
+        "sha256": "bc8bb084ae3aabcd503d5bb93efc273e046e4fd4663d39a9836ce0c047fee823",
+        "x-checker-data": {
+          "type": "html",
+          "url": "https://www.makemkv.com/download",
+          "version-pattern": "MakeMKV v([\\d\\.]*)",
+          "url-template": "https://www.makemkv.com/download/makemkv-oss-$version.tar.gz"
+        }
+      },
+      {
+        "type": "file",
+        "path": "com.makemkv.MakeMKV.appdata.xml"
+      }
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "wsproto",
+    "version": "1.2.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "wsproto",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=/app \"wsproto==1.2.0\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/78/58/e860788190eba3bcce367f74d29c4675466ce8dddfba85f7827588416f01/wsproto-1.2.0-py3-none-any.whl",
+        "sha256": "b9acddd652b585d75b20477888c56642fdade28bdfd3579aa24a4d2c037dd736"
+      }
+    ]
+  }
+}

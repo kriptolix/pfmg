@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "python3-lifxlan",
+    "version": "1.2.7",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-lifxlan",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"lifxlan\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/92/0f/a577a724c03982b800232713874e805c8fcc14f4a2c3060902ed20b50da8/ifaddr-0.1.7-py2.py3-none-any.whl",
+        "sha256": "d1f603952f0a71c9ab4e705754511e4e03b02565bc4cec7188ad6415ff534cd3"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/49/fa/ac153ef3c9668a093f33386edf7a20122962e9142b1105fbe2a4a4262785/bitstring-3.1.9-py3-none-any.whl",
+        "sha256": "0de167daa6a00c9386255a7cac931b45e6e24e0ad7ea64f1f92a64ac23ad4578"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/4f/c3/e8b58064578e2fecf8778f685a79a6d505fba7151e3842fec06ed0314544/lifxlan-1.2.7.tar.gz",
+        "sha256": "603f144b38ccef637b1f5297b47b5c2b82b23ac5c2e4ccad976f15719da36ba8"
+      }
+    ]
+  }
+}

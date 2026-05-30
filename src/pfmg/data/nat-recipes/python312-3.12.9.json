@@ -1,0 +1,18 @@
+{
+  "header": {
+    "id": "python312",
+    "version": "3.12.9",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python312",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://www.python.org/ftp/python/3.12.9/Python-3.12.9.tar.xz",
+        "sha512": "c840b14aa21e6a963d18c06ebaafb551d9c9a101b3866417e762fc4a2fde071a7a25fa257faba2956c7344bbc2413ed61690a712d26fba4d0dbeaa50e49b2574"
+      }
+    ]
+  }
+}

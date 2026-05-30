@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "onetuple",
+    "version": "0.4.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "OneTuple",
+    "buildsystem": "simple",
+    "builddir": false,
+    "build-commands": [
+      "echo '#! /usr/bin/env runhaskell' >Setup.txt",
+      "echo '> import Distribution.Simple' >>Setup.txt",
+      "echo '> main = defaultMain' >>Setup.txt",
+      "ln -s Setup.txt Setup.lhs || true",
+      "runhaskell Setup configure --prefix=/app",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "sources": [
+      {
+        "sha256": "174da8a0f4004d17b08182cb25b0e045fce5de1fdeae84e9d75fdea2867aab55",
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/OneTuple-0.4.2/OneTuple-0.4.2.tar.gz"
+      },
+      {
+        "dest-filename": "OneTuple.cabal",
+        "sha256": "ce39b24139694ee1facfdbf0eed3fbca3444fa3c7bcaa386c65cd4e1b7691a4d",
+        "type": "file",
+        "url": "https://hackage.haskell.org/package/OneTuple-0.4.2/revision/0.cabal"
+      }
+    ]
+  }
+}

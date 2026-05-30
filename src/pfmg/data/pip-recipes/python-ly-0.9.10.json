@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "python-ly",
+    "version": "0.9.10",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python-ly",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip install --no-build-isolation --prefix=/app ."
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/frescobaldi/python-ly/releases/download/v0.9.10/python_ly-0.9.10.tar.gz",
+        "sha256": "18ef058b4d0fa235768b6669041174370f553d6c84eb7a4495f95bb315e0f18a",
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://api.github.com/repos/frescobaldi/python-ly/releases/latest",
+          "tag-query": ".tag_name",
+          "version-query": ".tag_name",
+          "timestamp-query": ".published_at",
+          "url-query": "[.assets[] | select(.name|test(\"python_ly.+.tar.gz$\"))][0] | .browser_download_url",
+          "is-important": true
+        }
+      }
+    ],
+    "cleanup": [
+      "/lib/python*/site-packages/ly/__pycache__",
+      "/lib/python*/site-packages/ly/*/__pycache__"
+    ]
+  }
+}

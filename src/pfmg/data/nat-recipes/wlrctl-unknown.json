@@ -1,0 +1,19 @@
+{
+  "header": {
+    "id": "wlrctl",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "wlrctl",
+    "buildsystem": "meson",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://git.sr.ht/~brocellous/wlrctl",
+        "commit": "3986d4e4d9075be3418043a8e053d7531f22558f"
+      }
+    ]
+  }
+}

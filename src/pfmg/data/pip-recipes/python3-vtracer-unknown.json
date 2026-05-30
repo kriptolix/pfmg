@@ -1,0 +1,33 @@
+{
+  "header": {
+    "id": "python3-vtracer",
+    "version": "unknown",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-vtracer",
+    "buildsystem": "simple",
+    "build-options": {
+      "append-path": "/usr/lib/sdk/rust-stable/bin",
+      "env": {
+        "CARGO_HOME": "/run/build/python3-vtracer/cargo",
+        "CARGO_NET_OFFLINE": "true"
+      }
+    },
+    "build-commands": [
+      "cargo fetch --manifest-path ./cmdapp/Cargo.toml --verbose",
+      "maturin build --release --compatibility linux --manifest-path ./cmdapp/Cargo.toml",
+      "pip3 install --verbose --exists-action=i --no-index --find-links=file://${PWD}/target/wheels --prefix=${FLATPAK_DEST} vtracer --no-build-isolation"
+    ],
+    "sources": [
+      "cargo-sources-vtracer.json",
+      {
+        "type": "git",
+        "url": "https://github.com/visioncortex/vtracer.git",
+        "tag": "0.6.15",
+        "commit": "fd9cdb08e622f237eb05be553a020ddc9e4c47a1"
+      }
+    ]
+  }
+}

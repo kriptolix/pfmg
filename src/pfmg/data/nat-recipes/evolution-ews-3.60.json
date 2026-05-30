@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "evolution-ews",
+    "version": "3.60",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "evolution-ews",
+    "buildsystem": "cmake-ninja",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.gnome.org/sources/evolution-ews/3.60/evolution-ews-3.60.1.tar.xz",
+        "sha256": "0a22f865ebeb70e2679520fd2d94aa9973c403cbe4e03aa88cf8f23f358e8b6d"
+      }
+    ],
+    "post-install": [
+      "cp NEWS /app/share/NEWS.ews"
+    ]
+  }
+}

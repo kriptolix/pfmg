@@ -1,0 +1,29 @@
+{
+  "header": {
+    "id": "libsecp256k1",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libsecp256k1",
+    "config-opts": [
+      "--enable-module-recovery",
+      "--disable-static"
+    ],
+    "cleanup": [
+      "/lib/*.la",
+      "/lib/pkgconfig"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/bitcoin-core/secp256k1",
+        "commit": "dbd41db16a0e91b2566820898a3ab2d7dad4fe00"
+      }
+    ],
+    "post-install": [
+      "install -Dm644 COPYING /app/share/licenses/libsecp256k1/COPYING"
+    ]
+  }
+}

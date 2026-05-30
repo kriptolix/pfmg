@@ -1,0 +1,46 @@
+{
+  "header": {
+    "id": "gdk-pixbuf-loaders-others",
+    "version": "2.44.6",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "gdk-pixbuf-loaders-others",
+    "buildsystem": "meson",
+    "config-opts": [
+      "-Ddocumentation=false",
+      "-Dman=false",
+      "-Dintrospection=disabled",
+      "-Dinstalled_tests=false",
+      "-Dtests=false",
+      "-Ddocumentation=false",
+      "-Dglycin=disabled",
+      "-Dandroid=disabled",
+      "-Dbuiltin_loaders=none",
+      "-Dpng=disabled",
+      "-Dtiff=disabled",
+      "-Djpeg=disabled",
+      "-Dgif=disabled",
+      "-Dothers=enabled",
+      "-Dlegacy_xpm=enabled"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://gitlab.gnome.org/GNOME/gdk-pixbuf/-/archive/2.44.6/gdk-pixbuf-2.44.6.tar.gz",
+        "sha256": "2e4deb685ca0406a046abed13cca56f336ea0764313209817367d00e26de2cbb"
+      }
+    ],
+    "post-install": [
+      "GDK_PIXBUF_MODULEDIR=${FLATPAK_DEST}/lib/gdk-pixbuf-2.0/2.10.0/loaders gdk-pixbuf-query-loaders > ${FLATPAK_DEST}/lib/gdk-pixbuf-2.0/2.10.0/loaders.cache",
+      "gdk-pixbuf-query-loaders >> ${FLATPAK_DEST}/lib/gdk-pixbuf-2.0/2.10.0/loaders.cache"
+    ],
+    "cleanup": [
+      "/bin",
+      "/share",
+      "/lib/pkgconfig",
+      "/lib/libgdk_pixbuf-2.0.so*"
+    ]
+  }
+}

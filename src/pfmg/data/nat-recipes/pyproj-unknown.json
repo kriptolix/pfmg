@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "pyproj",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "pyproj",
+    "buildsystem": "simple",
+    "build-commands": [
+      "python3 setup.py build",
+      "python3 setup.py install --prefix=/app --root=/ --optimize=1"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/pyproj4/pyproj.git",
+        "tag": "3.6.1",
+        "commit": "0c5159aab8c32488584ae472b3752203f1005559"
+      }
+    ]
+  }
+}

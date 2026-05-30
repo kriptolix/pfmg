@@ -1,0 +1,40 @@
+{
+  "header": {
+    "id": "evince",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "evince",
+    "buildsystem": "meson",
+    "cleanup": [
+      "/share/GConf",
+      "/share/help"
+    ],
+    "config-opts": [
+      "-Dnautilus=false",
+      "-Dviewer=false",
+      "-Dpreviewer=false",
+      "-Ddbus=false",
+      "-Dbrowser_plugin=false",
+      "-Dintrospection=true",
+      "-Dcomics=enabled",
+      "-Dpdf=enabled",
+      "-Ddjvu=enabled",
+      "-Dgspell=disabled",
+      "-Dgtk_doc=false",
+      "-Dt1lib=disabled",
+      "-Duser_doc=false",
+      "-Dthumbnailer=true"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://gitlab.gnome.org/GNOME/evince.git",
+        "commit": "f04ad76b698c1f80854bd21b00250d05fed64435",
+        "tag": "3.34.2"
+      }
+    ]
+  }
+}

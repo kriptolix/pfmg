@@ -1,0 +1,29 @@
+{
+  "header": {
+    "id": "old-time-1.1.0.3",
+    "version": "1.1.0.3",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "old-time-1.1.0.3",
+    "only-arches": [
+      "x86_64"
+    ],
+    "buildsystem": "simple",
+    "build-commands": [
+      "sed -i 's/base       >= 4\\.7 \\&\\& < 4\\.9/base       >= 4\\.7 \\&\\& < 5/' old-time.cabal",
+      "ghc -threaded --make Setup",
+      "./Setup configure --prefix=/app",
+      "./Setup build",
+      "./Setup install"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "sha256": "1ccb158b0f7851715d36b757c523b026ca1541e2030d02239802ba39b4112bc1",
+        "url": "https://hackage.haskell.org/package/old-time-1.1.0.3/old-time-1.1.0.3.tar.gz"
+      }
+    ]
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "header": {
+    "id": "capnproto",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "capnproto",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DBUILD_SHARED_LIBS=ON"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/capnproto/capnproto",
+        "tag": "v1.4.0",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 11515,
+          "stable-only": true,
+          "tag-template": "v${version}"
+        },
+        "commit": "8b892a8a11a632f5d52b877a49728808a142379a"
+      }
+    ]
+  }
+}

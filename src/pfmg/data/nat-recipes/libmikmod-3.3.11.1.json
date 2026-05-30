@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "libmikmod",
+    "version": "3.3.11.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libmikmod",
+    "cleanup": [
+      "/include",
+      "/lib/pkgconfig",
+      "/share/aclocal",
+      "/share/info",
+      "/share/man",
+      "*.la",
+      "*.a"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://sourceforge.net/projects/mikmod/files/libmikmod/3.3.11.1/libmikmod-3.3.11.1.tar.gz",
+        "sha256": "ad9d64dfc8f83684876419ea7cd4ff4a41d8bcd8c23ef37ecb3a200a16b46d19"
+      }
+    ]
+  }
+}

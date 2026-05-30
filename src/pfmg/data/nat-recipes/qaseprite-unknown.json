@@ -1,0 +1,29 @@
+{
+  "header": {
+    "id": "qaseprite",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "qaseprite",
+    "buildsystem": "cmake",
+    "builddir": true,
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DUSE_SHARED_ZLIB=on",
+      "-DUSE_SHARED_PIXMAN=on",
+      "-DUSE_SHARED_FREETYPE=on",
+      "-DUSE_SHARED_HARFBUZZ=on",
+      "-DQT_PLUGIN_PATH=/app/lib/plugins"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/mapeditor/qaseprite",
+        "tag": "1.0.3",
+        "commit": "31528aa225789070ca2379e3b6b8b48061b1a440"
+      }
+    ]
+  }
+}

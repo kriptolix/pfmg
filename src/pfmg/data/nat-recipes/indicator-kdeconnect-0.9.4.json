@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "indicator-kdeconnect",
+    "version": "0.9.4",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "indicator-kdeconnect",
+    "buildsystem": "cmake",
+    "post-install": [
+      "cp -R data/icons/ /app/share/icons/",
+      "cp data/desktop/indicator-kdeconnect-settings.desktop /app/share/applications/com.github.bajoja.indicator-kdeconnect.settings.desktop",
+      "rm /app/share/applications/indicator-kdeconnect-settings.desktop"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/b4j4/indicator-kdeconnect/archive/refs/tags/0.9.4.tar.gz",
+        "sha256": "416510171e6c2a7a87f7b0b43e2ddf135b152952c5032aecd82880ba88f9c2e0"
+      },
+      {
+        "type": "patch",
+        "path": "indicatorkdeconnect-fixes.patch"
+      }
+    ]
+  }
+}

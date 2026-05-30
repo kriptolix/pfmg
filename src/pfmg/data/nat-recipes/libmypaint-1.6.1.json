@@ -1,0 +1,65 @@
+{
+  "header": {
+    "id": "libmypaint",
+    "version": "1.6.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libmypaint",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/mypaint/libmypaint/releases/download/v1.6.1/libmypaint-1.6.1.tar.xz",
+        "sha256": "741754f293f6b7668f941506da07cd7725629a793108bb31633fb6c3eae5315f",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 12974,
+          "stable-only": true,
+          "url-template": "https://github.com/mypaint/libmypaint/releases/download/v$version/libmypaint-$version.tar.xz"
+        }
+      }
+    ],
+    "config-opts": [
+      "--disable-gegl",
+      "--disable-introspection",
+      "--disable-i18n"
+    ],
+    "cleanup": [
+      "/include",
+      "/lib/pkgconfig"
+    ],
+    "modules": [
+      {
+        "name": "json-c",
+        "sources": [
+          {
+            "type": "git",
+            "url": "https://github.com/json-c/json-c.git",
+            "tag": "json-c-0.18-20240915",
+            "commit": "41a55cfcedb54d9c1874f2f0eb07b504091d7e37",
+            "x-checker-data": {
+              "type": "git",
+              "tag-pattern": "^json-c-([\\d.]+)-[\\d]+$"
+            }
+          },
+          {
+            "type": "shell",
+            "commands": [
+              "perl -i -pe 'BEGIN{$m=0} $m=1 if s/cmake_minimum_required\\(VERSION 2\\.8\\)/cmake_minimum_required(VERSION 3.9...3.12)/; END{ if(!$m){ warn \"Patch failed on $ARGV\\n\"; exit 1 } }' apps/CMakeLists.txt"
+            ]
+          }
+        ],
+        "buildsystem": "cmake-ninja",
+        "config-opts": [
+          "-DDISABLE_WERROR=ON",
+          "-DBUILD_TESTING=OFF"
+        ],
+        "cleanup": [
+          "/include",
+          "/lib/pkgconfig"
+        ]
+      }
+    ]
+  }
+}

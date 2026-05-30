@@ -1,0 +1,37 @@
+{
+  "header": {
+    "id": "python3-pygame-menu",
+    "version": "4.2.8",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-pygame_menu",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"pygame_menu>=4.2.8\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/ed/d6/2afc375a8d55b8be879d6b4986d4f69f01115e795e36827fd3a40166028b/typing_extensions-4.3.0-py3-none-any.whl",
+        "sha256": "25642c956049920a5aa49edcdd6ab1e06d7e5d467fc00e0506c44ac86fbfca02"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/a7/2c/4c64579f847bd5d539803c8b909e54ba087a79d01bb3aba433a95879a6c5/pyperclip-1.8.2.tar.gz",
+        "sha256": "105254a8b04934f0bc84e9c24eb360a591aaf6535c9def5f29d92af107a9bf57"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/9a/50/67767e5586a45e7e7b02e6f0e07853f8fcb81b54c66db6278f1a1344491f/pygame-2.1.2.tar.gz",
+        "sha256": "d6d0eca28f886f0477cd0721ac688189155a587f2bb8eae740e52ca56c3ad23c"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/e9/6c/81166129a018500a5cedd9f6c37d7db0c3bc61e4401b1dc616181d4a9a5f/pygame_menu-4.2.8-py3-none-any.whl",
+        "sha256": "f60feb75865b196a052298db110b085a9c1335e9f81e803491e4d031128f7aaf"
+      }
+    ]
+  }
+}

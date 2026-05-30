@@ -1,0 +1,52 @@
+{
+  "header": {
+    "id": "ironwail",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "ironwail",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://api.github.com/repos/andrei-drexler/ironwail/zipball/v0.8.1",
+        "sha256": "aa2a02b43c2f9415023a37469ae01d2194d62a3ccdf2b61a8013b82de96aeec1",
+        "dest-filename": "ironwail.zip",
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://api.github.com/repos/andrei-drexler/ironwail/releases/latest",
+          "version-query": ".tag_name",
+          "url-query": ".zipball_url"
+        }
+      },
+      {
+        "type": "file",
+        "url": "https://raw.githubusercontent.com/lavenderdotpet/LibreQuake/e38e5fc2ddb0b0aa422a2be9c120fb798d67a318/docs/flatpak-metadata/io.github.lavenderdotpet.LibreQuake.svg",
+        "sha256": "9ebe794eed8d4a27db3f06ad6002390472c32b31fa6b22ffa945543cf3cca222",
+        "dest-filename": "io.github.lavenderdotpet.LibreQuake.svg"
+      },
+      {
+        "type": "patch",
+        "path": "io.github.sezero.quakespasm.userdir_log.patch"
+      },
+      {
+        "type": "patch",
+        "path": "io.github.andrei_drexler.ironwail.autosave-userdir.patch"
+      }
+    ],
+    "no-autogen": true,
+    "no-make-install": true,
+    "subdir": "Quake",
+    "make-args": [
+      "DO_USERDIRS=1",
+      "USE_SDL2=1",
+      "DEBUG=1",
+      "LDFLAGS=\"-L/app/lib\""
+    ],
+    "post-install": [
+      "install -D -m755 -t /app/bin/ ironwail",
+      "install -D -m644 ${FLATPAK_BUILDER_BUILDDIR}/io.github.lavenderdotpet.LibreQuake.svg /app/share/icons/hicolor/scalable/apps/io.github.lavenderdotpet.LibreQuake.ironwail.svg"
+    ]
+  }
+}

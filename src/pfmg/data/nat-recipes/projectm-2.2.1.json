@@ -1,0 +1,37 @@
+{
+  "header": {
+    "id": "projectm",
+    "version": "2.2.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "projectm",
+    "buildsystem": "autotools",
+    "rm-configure": true,
+    "config-opts": [
+      "--disable-static"
+    ],
+    "post-install": [
+      "f=$(fc-match -f '%{file}' sans) ; sed -i \"/Title Font/s:=.*:= $f:\" ${FLATPAK_DEST}/share/projectM/config.inp",
+      "f=$(fc-match -f '%{file}' monospace) ; sed -i \"/Menu Font/s:=.*:= $f:\" ${FLATPAK_DEST}/share/projectM/config.inp"
+    ],
+    "cleanup": [
+      "/share/projectM/fonts",
+      "/bin"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/projectM-visualizer/projectm/releases/download/v2.2.1/projectM-2.2.1.tar.gz",
+        "sha256": "9bbb33c5ba048537e97ea5ba2bd9fef76972c881597599a272b0194ec1d5f2a3"
+      },
+      {
+        "type": "patch",
+        "paths": [
+          "patches/projectM-2.2.1.patch"
+        ]
+      }
+    ]
+  }
+}

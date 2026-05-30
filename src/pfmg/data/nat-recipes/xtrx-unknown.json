@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "xtrx",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "xtrx",
+    "buildsystem": "cmake-ninja",
+    "subdir": "sources",
+    "config-opts": [
+      "-DENABLE_SOAPY=NO",
+      "-Wno-dev"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/xtrx-sdr/images.git",
+        "commit": "e7c68fa621004ee0d6a65171c786fd9d5a1f2ce6"
+      }
+    ]
+  }
+}

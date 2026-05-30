@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "pvr.pctv",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "pvr.pctv",
+    "buildsystem": "cmake-ninja",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/kodi-pvr/pvr.pctv",
+        "commit": "6052cb88db02e103c20e68694eb56fb8a865b9ac"
+      }
+    ],
+    "build-options": {
+      "no-debuginfo": true,
+      "cflags": "-g0",
+      "cxxflags": "-g0"
+    },
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release"
+    ]
+  }
+}

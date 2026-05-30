@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "bifunctors",
+    "version": "5.6.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "bifunctors",
+    "buildsystem": "simple",
+    "builddir": false,
+    "build-commands": [
+      "echo '#! /usr/bin/env runhaskell' >Setup.txt",
+      "echo '> import Distribution.Simple' >>Setup.txt",
+      "echo '> main = defaultMain' >>Setup.txt",
+      "ln -s Setup.txt Setup.lhs || true",
+      "runhaskell Setup configure --prefix=/app",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "sources": [
+      {
+        "sha256": "1086a9285061eed0c2c5d3cb65aa223defd52fca6d0515bb69ddf2dbc3d9697a",
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/bifunctors-5.6.2/bifunctors-5.6.2.tar.gz"
+      },
+      {
+        "dest-filename": "bifunctors.cabal",
+        "sha256": "e6a6e576b9e027ca374383c2d3a43753bce42c63c72724d3a35208a982d68c0f",
+        "type": "file",
+        "url": "https://hackage.haskell.org/package/bifunctors-5.6.2/revision/0.cabal"
+      }
+    ]
+  }
+}

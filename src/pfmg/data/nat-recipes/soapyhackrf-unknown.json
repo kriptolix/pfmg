@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "soapyhackrf",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "SoapyHackRF",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-Wno-dev"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/pothosware/SoapyHackRF.git",
+        "commit": "143ff5e7e0f786e341df8846c04e8273c5183c26"
+      }
+    ]
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "iproute-1.7.7",
+    "version": "1.7.7",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "build-commands": [
+      "ghc -threaded --make Setup",
+      "./Setup configure --prefix=/app",
+      "./Setup build",
+      "./Setup install"
+    ],
+    "buildsystem": "simple",
+    "cleanup": [],
+    "name": "iproute-1.7.7",
+    "only-arches": [],
+    "sources": [
+      {
+        "sha256": "e6a3fe4a6f2a78fcee0f98255f97232d8b6b9b1fa48faee3bef96f0b462a4b3d",
+        "type": "archive",
+        "url": "https://s3.amazonaws.com/hackage.fpcomplete.com/package/iproute-1.7.7.tar.gz"
+      },
+      {
+        "sha256": "bb9b8ec5c89de364df290e5d3f8d72449919f44a9a8f45a0550f63c46933085f",
+        "type": "file",
+        "url": "https://raw.githubusercontent.com/commercialhaskell/all-cabal-files/a5f22172fce750e93afa6987320f5c5be62b5670/iproute/1.7.7/iproute.cabal"
+      }
+    ]
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "header": {
+    "id": "jade-1-blue",
+    "version": "1.15",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "Jade-1-Blue",
+    "buildsystem": "simple",
+    "build-commands": [
+      "tar -xf jade-1-theme.tar.xz",
+      "install -Dm644 Jade-1-Blue/gtk-3.20/gtk.css /usr/share/runtime/share/themes/Jade-1-Blue/gtk-3.0",
+      "install -Dm644 Jade-1-Blue/gtk-3.0/colCommon.css /usr/share/runtime/share/themes/Jade-1-Blue/gtk-3.0",
+      "install -Dm644 Jade-1-Blue/gtk-3.0/colAccents.css /usr/share/runtime/share/themes/Jade-1-Blue/gtk-3.0",
+      "install -Dm644 Jade-1-Blue/gtk-3.0/colCommonDark.css /usr/share/runtime/share/themes/Jade-1-Blue/gtk-3.0",
+      "install -Dm644 Jade-1-Blue/gtk-3.20/gtk-dark.css /usr/share/runtime/share/themes/Jade-1-Blue/gtk-3.0",
+      "install -Dm644 --target-directory=/usr/share/runtime/share/themes/Jade-1-Blue/gtk-3.0/assets Jade-1-Blue/gtk-3.0/assets/*",
+      "install -Dm644 Jade-1-Blue/index.theme /usr/share/runtime/share/themes/Jade-1-Blue/index.theme"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://github.com/madmaxms/theme-jade-1/releases/download/v1.15/jade-1-theme.tar.xz",
+        "dest-filename": "jade-1-theme.tar.xz",
+        "sha256": "c2e3b1ad10d863f4075d6c90b994609dca87a0e0749a7218c9185e57815e82bf"
+      }
+    ]
+  }
+}

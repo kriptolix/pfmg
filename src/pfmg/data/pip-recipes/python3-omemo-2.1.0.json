@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-omemo",
+    "version": "2.1.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-omemo",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --prefix=/app omemo-2.1.0-py3-none-any.whl"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/d4/dd/3c2a55c6c38e560b47db5348b31db8b4dbd5e8f5c5ce89f421d16f6dd619/omemo-2.1.0-py3-none-any.whl",
+        "sha256": "8319fae4a9764ff9038504384553862c49011d447353ab1890bf871349c146c0"
+      }
+    ]
+  }
+}

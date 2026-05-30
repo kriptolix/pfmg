@@ -1,0 +1,56 @@
+{
+  "header": {
+    "id": "python3-gcovr",
+    "version": "8.6",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-gcovr",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"gcovr\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/6d/c1/e419ef3723a074172b68aaa89c9f3de486ed4c2399e2dbd8113a4fdcaf9e/colorlog-6.10.1-py3-none-any.whl",
+        "sha256": "2d7e8348291948af66122cff006c9f8da6255d224e7cf8e37d8de2df3bad8c9c",
+        "x-checker-data": {
+          "name": "colorlog",
+          "packagetype": "bdist_wheel",
+          "type": "pypi"
+        }
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/92/be/f722c843e7875c7cf92cf0e0c1604cddda55a70278c768c6327a78fdba79/gcovr-8.6-py3-none-any.whl",
+        "sha256": "dbf9d87c38042752ad6f530aa8210427e22b526611bb7b7bfed0e81977d1f1ef",
+        "x-checker-data": {
+          "name": "gcovr",
+          "packagetype": "bdist_wheel",
+          "type": "pypi"
+        }
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/f4/7e/a72dd26f3b0f4f2bf1dd8923c85f7ceb43172af56d63c7383eb62b332364/pygments-2.20.0-py3-none-any.whl",
+        "sha256": "81a9e26dd42fd28a23a2d169d86d7ac03b46e2f8b59ed4698fb4785f946d0176",
+        "x-checker-data": {
+          "name": "Pygments",
+          "packagetype": "bdist_wheel",
+          "type": "pypi"
+        }
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/28/30/9abc9e34c657c33834eaf6cd02124c61bdf5944d802aa48e69be8da3585d/lxml-6.1.0.tar.gz",
+        "sha256": "bfd57d8008c4965709a919c3e9a98f76c2c7cb319086b3d26858250620023b13",
+        "x-checker-data": {
+          "name": "lxml",
+          "type": "pypi"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "gpu-screen-recorder-appdata",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "gpu-screen-recorder-appdata",
+    "buildsystem": "simple",
+    "build-commands": [
+      "install -Dm644 com.dec05eba.gpu_screen_recorder.appdata.xml \"$FLATPAK_DEST/share/metainfo/com.dec05eba.gpu_screen_recorder.appdata.xml\""
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://dec05eba.com/snapshot/gpu-screen-recorder-appdata.git.r37.c18e8af.tar.gz",
+        "sha512": "c90135aeb3619e2068f162448e4b5c70d9f1bc15b989d96489f677f975d011137b69098cb6c7b3cf7fed8ae0417beeaf9c36d4a43a8f801bb2cbdd7677ca6597",
+        "strip-components": 0
+      }
+    ]
+  }
+}

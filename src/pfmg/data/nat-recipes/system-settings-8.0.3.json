@@ -1,0 +1,72 @@
+{
+  "header": {
+    "id": "system-settings",
+    "version": "8.0.3",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "system-settings",
+    "buildsystem": "meson",
+    "cleanup": [
+      "/share/applications",
+      "/share/metainfo",
+      "/bin",
+      "/share/glib-2.0/schemas/io.elementary.settings.gschema.xml",
+      "/share/icons"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/elementary/settings/archive/8.0.3.tar.gz",
+        "sha256": "cc41024b918cfcd0bd89b3c72e079ff12804cebefbaf34d5adb84191531ee7d1"
+      }
+    ],
+    "modules": [
+      {
+        "name": "sassc",
+        "cleanup": [
+          "*"
+        ],
+        "buildsystem": "autotools",
+        "sources": [
+          {
+            "type": "archive",
+            "url": "https://github.com/sass/sassc/archive/3.6.2.tar.gz",
+            "sha256": "608dc9002b45a91d11ed59e352469ecc05e4f58fc1259fc9a9f5b8f0f8348a03"
+          },
+          {
+            "type": "script",
+            "dest-filename": "autogen.sh",
+            "commands": [
+              "autoreconf -si"
+            ]
+          }
+        ],
+        "modules": [
+          {
+            "name": "libsass",
+            "cleanup": [
+              "*"
+            ],
+            "buildsystem": "autotools",
+            "sources": [
+              {
+                "type": "archive",
+                "url": "https://github.com/sass/libsass/archive/3.6.5.tar.gz",
+                "sha256": "89d8f2c46ae2b1b826b58ce7dde966a176bac41975b82e84ad46b01a55080582"
+              },
+              {
+                "type": "script",
+                "dest-filename": "autogen.sh",
+                "commands": [
+                  "autoreconf -si"
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "libgee",
+    "version": "0.20.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libgee",
+    "build-options": {
+      "env": {
+        "PKG_CONFIG_GOBJECT_INTROSPECTION_1_0_GIRDIR": "/app/share/gir-1.0",
+        "PKG_CONFIG_GOBJECT_INTROSPECTION_1_0_TYPELIBDIR": "/app/lib/girepository-1.0"
+      }
+    },
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/GNOME/libgee/archive/0.20.0.tar.gz",
+        "sha256": "42fe6d651910cb8b720167f71c5255a1b7b1afc82fecd3f31e61f9602b3b1335"
+      }
+    ]
+  }
+}

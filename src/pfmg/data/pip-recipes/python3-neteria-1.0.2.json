@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "python3-neteria",
+    "version": "1.0.2",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-neteria",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"neteria\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/62/1e/a94a8d635fa3ce4cfc7f506003548d0a2447ae76fd5ca53932970fe3053f/pyasn1-0.4.8-py2.py3-none-any.whl",
+        "sha256": "39c7e2ec30515947ff4e87fb6f456dfc6e84857d34be479c9d4a4ba4bf46aa5d"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/49/97/fa78e3d2f65c02c8e1268b9aba606569fe97f6c8f7c2d74394553347c145/rsa-4.9-py3-none-any.whl",
+        "sha256": "90260d9058e514786967344d0ef75fa8727eed8a7d2e43ce9f4bcf1b536174f7"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/fc/5a/ee9a9e71db8d0f986c25049ea0f158959423720d0713bdf983937ba890a2/neteria-1.0.2.tar.gz",
+        "sha256": "67fb82606aae0cb114d4db0a289fd0a84f31265e6d813fa2d0761b05508ff4ab"
+      }
+    ]
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "primitive-0.6.4.0",
+    "version": "0.6.4.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "build-commands": [
+      "ghc -threaded --make Setup",
+      "./Setup configure --prefix=/app",
+      "./Setup build",
+      "./Setup install"
+    ],
+    "buildsystem": "simple",
+    "cleanup": [],
+    "name": "primitive-0.6.4.0",
+    "only-arches": [],
+    "sources": [
+      {
+        "sha256": "4cbeaf7924dd79221f327ea101a29bf35c4976dc3319df157ff46ea68e6a0c64",
+        "type": "archive",
+        "url": "https://s3.amazonaws.com/hackage.fpcomplete.com/package/primitive-0.6.4.0.tar.gz"
+      },
+      {
+        "sha256": "5b6a2c3cc70a35aabd4565fcb9bb1dd78fe2814a36e62428a9a1aae8c32441a1",
+        "type": "file",
+        "url": "https://raw.githubusercontent.com/commercialhaskell/all-cabal-files/a5f22172fce750e93afa6987320f5c5be62b5670/primitive/0.6.4.0/primitive.cabal"
+      }
+    ]
+  }
+}

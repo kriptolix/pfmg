@@ -1,0 +1,45 @@
+{
+  "header": {
+    "id": "python3-pynvim",
+    "version": "0.6.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-pynvim",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"pynvim\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/3c/3f/dbf99fb14bfeb88c28f16729215478c0e265cacd6dc22270c8f31bb6892f/greenlet-3.5.0.tar.gz",
+        "sha256": "d419647372241bc68e957bf38d5c1f98852155e4146bd1e4121adea81f4f01e4",
+        "x-checker-data": {
+          "name": "greenlet",
+          "type": "pypi"
+        }
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/4d/f2/bfb55a6236ed8725a96b0aa3acbd0ec17588e6a2c3b62a93eb513ed8783f/msgpack-1.1.2.tar.gz",
+        "sha256": "3b60763c1373dd60f398488069bcdc703cd08a711477b5d480eecc9f9626f47e",
+        "x-checker-data": {
+          "name": "msgpack",
+          "type": "pypi"
+        }
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/54/2d/c28b9293975ed9ee05e52f1d316cb402ba6edb232baa0497754a70182ca2/pynvim-0.6.0-py3-none-any.whl",
+        "sha256": "29f92ff3fde9e52c263e6bfd7f30345be05bfc7b5c21484da1cc38a8d8e5e98f",
+        "x-checker-data": {
+          "name": "pynvim",
+          "packagetype": "bdist_wheel",
+          "type": "pypi"
+        }
+      }
+    ]
+  }
+}

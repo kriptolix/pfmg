@@ -1,0 +1,99 @@
+{
+  "header": {
+    "id": "s3drive",
+    "version": "1.17.7",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "s3drive",
+    "only-arches": [
+      "x86_64"
+    ],
+    "buildsystem": "simple",
+    "build-commands": [
+      "install apply_extra ${FLATPAK_DEST}/bin",
+      "install s3drive.sh ${FLATPAK_DEST}/bin/s3drive",
+      "install -Dm644 io.kapsa.drive.metainfo.xml ${FLATPAK_DEST}/share/appdata/${FLATPAK_ID}.metainfo.xml",
+      "install -Dm644 icon_22.png ${FLATPAK_DEST}/share/icons/hicolor/22x22/apps/${FLATPAK_ID}.png",
+      "install -Dm644 icon_32.png ${FLATPAK_DEST}/share/icons/hicolor/32x32/apps/${FLATPAK_ID}.png",
+      "install -Dm644 icon_128.png ${FLATPAK_DEST}/share/icons/hicolor/128x128/apps/${FLATPAK_ID}.png",
+      "install -Dm644 icon_256.png ${FLATPAK_DEST}/share/icons/hicolor/256x256@2/apps/${FLATPAK_ID}.png",
+      "install -Dm644 icon.svg ${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/${FLATPAK_ID}.svg",
+      "gtk-update-icon-cache -f -t ${FLATPAK_DEST}/share/icons/hicolor",
+      "install -Dm644 io.kapsa.drive.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop",
+      "install -Dm755 /usr/bin/ar -t ${FLATPAK_DEST}/bin",
+      "install -Dm755 /usr/lib/$(gcc -print-multiarch)/libbfd-*.so -t ${FLATPAK_DEST}/lib",
+      "cp -a /usr/lib/$(gcc -print-multiarch)/libsframe.so* ${FLATPAK_DEST}/lib"
+    ],
+    "sources": [
+      {
+        "type": "script",
+        "dest-filename": "apply_extra",
+        "commands": [
+          "ar x s3drive_amd64.deb",
+          "rm -f s3drive_amd64.deb",
+          "tar --use-compress-program=unzstd -xvf data.tar.zst",
+          "rm -f control.tar.zst data.tar.zst debian-binary",
+          "mv usr/* .",
+          "chmod -R a-s,go+rX,go-w .",
+          "rmdir usr"
+        ]
+      },
+      {
+        "type": "script",
+        "dest-filename": "s3drive.sh",
+        "commands": [
+          "exec env TMPDIR=$XDG_CACHE_HOME LD_LIBRARY_PATH=/app/lib /app/extra/local/lib/s3drive/kapsa $EXTRA_ARGS \"$@\""
+        ]
+      },
+      {
+        "type": "file",
+        "path": "io.kapsa.drive.metainfo.xml"
+      },
+      {
+        "type": "file",
+        "path": "io.kapsa.drive.desktop"
+      },
+      {
+        "type": "file",
+        "path": "icon_22.png"
+      },
+      {
+        "type": "file",
+        "path": "icon_32.png"
+      },
+      {
+        "type": "file",
+        "path": "icon_32_pending.png"
+      },
+      {
+        "type": "file",
+        "path": "icon_128.png"
+      },
+      {
+        "type": "file",
+        "path": "icon_256.png"
+      },
+      {
+        "type": "file",
+        "path": "icon.svg"
+      },
+      {
+        "type": "extra-data",
+        "filename": "s3drive_amd64.deb",
+        "only-arches": [
+          "x86_64"
+        ],
+        "url": "https://github.com/s3drive/deb-app/releases/download/1.17.7/s3drive_amd64.deb",
+        "sha256": "e402c8e6bed86a920453791d60c4127aeb67635a58676d1a455972a3db29b7ff",
+        "size": 68918324,
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 371008,
+          "url-template": "https://github.com/s3drive/deb-app/releases/download/$version/s3drive_amd64.deb"
+        }
+      }
+    ]
+  }
+}

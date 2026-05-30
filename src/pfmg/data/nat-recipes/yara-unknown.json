@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "yara",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "yara",
+    "buildsystem": "autotools",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/VirusTotal/yara.git",
+        "tag": "v4.3.1",
+        "commit": "a6f6ce1d6d74a03c396660db25765f2a794d9e30"
+      }
+    ],
+    "cleanup": [
+      "/include",
+      "/lib/pkgconfig",
+      "/lib64/pkgconfig",
+      "/lib/cmake",
+      "/lib64/cmake"
+    ]
+  }
+}

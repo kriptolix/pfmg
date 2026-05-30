@@ -1,0 +1,39 @@
+{
+  "header": {
+    "id": "mozjs",
+    "version": "68.9.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "mozjs",
+    "buildsystem": "autotools",
+    "build-options": {
+      "append-path": "/usr/lib/sdk/rust-stable/bin:/usr/lib/sdk/llvm13/bin",
+      "env": {
+        "AR": "llvm-ar",
+        "NM": "llvm-nm",
+        "RANLIB": "llvm-ranlib"
+      }
+    },
+    "builddir": true,
+    "subdir": "js/src",
+    "config-opts": [
+      "--prefix=/app",
+      "--enable-optimize",
+      "--disable-tests",
+      "--disable-jemalloc",
+      "--enable-linker=lld",
+      "--without-intl-api",
+      "--enable-shared-js",
+      "--disable-jitspew"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://ftp.mozilla.org/pub/firefox/releases/68.9.0esr/source/firefox-68.9.0esr.source.tar.xz",
+        "sha256": "935105e1a8a97d64daffb372690e2b566b5f07641f01470929dbbc82d20d4407"
+      }
+    ]
+  }
+}

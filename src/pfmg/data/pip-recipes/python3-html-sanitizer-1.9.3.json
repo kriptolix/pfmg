@@ -1,0 +1,37 @@
+{
+  "header": {
+    "id": "python3-html-sanitizer",
+    "version": "1.9.3",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-html_sanitizer",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"html_sanitizer>=1.9.1,<2\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/b1/fe/e8c672695b37eecc5cbf43e1d0638d88d66ba3a44c4d321c796f4e59167f/beautifulsoup4-4.12.3-py3-none-any.whl",
+        "sha256": "b80878c9f40111313e55da8ba20bdba06d8fa3969fc68304167741bbf9e082ed"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/53/cd/5304201980c58e3b1e71a1b37e0faa7494d736b5fea3d69a368ddab808fc/html_sanitizer-1.9.3-py3-none-any.whl",
+        "sha256": "a2e084d0963f38116ba140e8992280acc78874044cf288f037f2ec4ba586ebe6"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/2b/b4/bbccb250adbee490553b6a52712c46c20ea1ba533a643f1424b27ffc6845/lxml-5.1.0.tar.gz",
+        "sha256": "3eea6ed6e6c918e468e693c41ef07f3c3acc310b70ddd9cc72d9ef84bc9564ca"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/4c/f3/038b302fdfbe3be7da016777069f26ceefe11a681055ea1f7817546508e3/soupsieve-2.5-py3-none-any.whl",
+        "sha256": "eaa337ff55a1579b6549dc679565eac1e3d000563bcb1c8ab0d0fefbc0c2cdc7"
+      }
+    ]
+  }
+}

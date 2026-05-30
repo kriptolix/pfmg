@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "v8",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "v8",
+    "buildsystem": "simple",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://static.jasp-stats.org/v8-lock.tar.gz",
+        "sha256": "26e08ab7fe4c70aca35d68ec5391f7af4101a3250ede763064c5d3ff5b387675"
+      }
+    ],
+    "build-commands": [
+      "./install.sh"
+    ]
+  }
+}

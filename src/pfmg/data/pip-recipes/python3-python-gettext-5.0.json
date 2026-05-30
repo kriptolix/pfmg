@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-python-gettext",
+    "version": "5.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-python-gettext",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"python-gettext==5.0\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/0d/e7/70b80ec3480b9c453366a396e31eaa2f00b5a6824e1600d23f796e848b6b/python_gettext-5.0-py3-none-any.whl",
+        "sha256": "083d4c72c5e72a6bd83b0570770792b9a1e572d8ab3e9cba554e0cd4781aa84a"
+      }
+    ]
+  }
+}

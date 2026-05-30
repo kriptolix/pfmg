@@ -1,0 +1,29 @@
+{
+  "header": {
+    "id": "cups",
+    "version": "2.4.16",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "cups",
+    "buildsystem": "simple",
+    "build-commands": [
+      "./configure --disable-systemd --enable-threads --enable-gnutls",
+      "gcc berkeley/lpr.c -o /app/bin/lpr -I . -lcups"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/OpenPrinting/cups/releases/download/v2.4.16/cups-2.4.16-source.tar.gz",
+        "sha256": "0339587204b4f9428dd0592eb301dec0bf9ea6ea8dce5d9690d56be585aba92d",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 380,
+          "stable-only": true,
+          "url-template": "https://github.com/OpenPrinting/cups/releases/download/v$version/cups-$version-source.tar.gz"
+        }
+      }
+    ]
+  }
+}

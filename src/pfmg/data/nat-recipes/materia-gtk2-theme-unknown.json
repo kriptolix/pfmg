@@ -1,0 +1,30 @@
+{
+  "header": {
+    "id": "materia-gtk2-theme",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "materia-gtk2-theme",
+    "// NOTE": "This is used by Ubuntu Studio",
+    "buildsystem": "meson",
+    "cleanup": [
+      "/share/themes/Materia*/xfwm4",
+      "/share/themes/Materia*/gnome-shell",
+      "/share/themes/Materia*/gtk-3.0",
+      "/share/themes/Materia*/metacity-1",
+      "/share/themes/Materia*/cinnamon",
+      "/share/themes/Materia*/chrome",
+      "/share/themes/Materia*/plank",
+      "/share/themes/Materia*/unity"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/nana-4/materia-theme.git",
+        "commit": "b36b379c9256b67e5f63a60c6faf6912f1845b66"
+      }
+    ]
+  }
+}

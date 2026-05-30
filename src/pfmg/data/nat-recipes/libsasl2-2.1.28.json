@@ -1,0 +1,41 @@
+{
+  "header": {
+    "id": "libsasl2",
+    "version": "2.1.28",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libsasl2",
+    "buildsystem": "autotools",
+    "builddir": true,
+    "build-options": {
+      "cflags": "--std=gnu17 -DHAVE_TIME_H=1"
+    },
+    "config-opts": [
+      "--enable-login",
+      "--enable-ntlm",
+      "--with-gss_impl=mit"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/cyrusimap/cyrus-sasl/releases/download/cyrus-sasl-2.1.28/cyrus-sasl-2.1.28.tar.gz",
+        "sha256": "7ccfc6abd01ed67c1a0924b353e526f1b766b21f42d4562ee635a8ebfc5bb38c",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 13280,
+          "stable-only": true,
+          "url-template": "https://github.com/cyrusimap/cyrus-sasl/releases/download/cyrus-sasl-$version/cyrus-sasl-$version.tar.gz"
+        }
+      },
+      {
+        "type": "patch",
+        "path": "patches/libsasl2-time.patch"
+      }
+    ],
+    "cleanup": [
+      "/sbin"
+    ]
+  }
+}

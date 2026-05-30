@@ -1,0 +1,19 @@
+{
+  "header": {
+    "id": "hwloc",
+    "version": "2.9",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "hwloc",
+    "buildsystem": "autotools",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.open-mpi.org/release/hwloc/v2.9/hwloc-2.9.3.tar.bz2",
+        "sha256": "5c4062ce556f6d3451fc177ffb8673a2120f81df6835dea6a21a90fbdfff0dec"
+      }
+    ]
+  }
+}

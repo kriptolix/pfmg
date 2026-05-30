@@ -1,0 +1,41 @@
+{
+  "header": {
+    "id": "clucene",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "clucene",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
+    ],
+    "builddir": true,
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://git.code.sf.net/p/clucene/code",
+        "commit": "e8e3d20f20da5ee3e37d347207b01890829a5475"
+      },
+      {
+        "type": "patch",
+        "path": "patches-clucene/0001-Fix-missing-include-time.h.patch"
+      },
+      {
+        "type": "patch",
+        "path": "patches-clucene/0002-CMAKE-MIN.patch"
+      },
+      {
+        "type": "patch",
+        "path": "patches-clucene/0003-shared.cmake"
+      }
+    ],
+    "cleanup": [
+      "/lib/pkgconfig",
+      "/lib/CLuceneConfig.cmake",
+      "/include"
+    ]
+  }
+}

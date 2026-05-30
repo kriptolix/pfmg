@@ -1,0 +1,36 @@
+{
+  "header": {
+    "id": "polypass-common",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "polypass-common",
+    "buildsystem": "simple",
+    "build-commands": [
+      "desktop-file-edit git_repo/debian/gui/Polypass.desktop --set-icon=${FLATPAK_ID}",
+      "install -Dm644 git_repo/debian/gui/Polypass.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop",
+      "install -Dm644 git_repo/debian/gui/Polypass.png \"${FLATPAK_DEST}/share/icons/hicolor/256x256/apps/${FLATPAK_ID}.png\"",
+      "install -Dm644 git_repo/debian/gui/Polypass-128.png \"${FLATPAK_DEST}/share/icons/hicolor/128x128/apps/${FLATPAK_ID}.png\"",
+      "install -Dm644 git_repo/debian/gui/Polypass-64.png \"${FLATPAK_DEST}/share/icons/hicolor/64x64/apps/${FLATPAK_ID}.png\"",
+      "install -Dm644 git_repo/linux/${FLATPAK_ID}.appdata.xml /app/share/metainfo/${FLATPAK_ID}.metainfo.xml"
+    ],
+    "post-install": [
+      "desktop-file-edit --set-key=Exec --set-value=polypass ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "dest": "git_repo",
+        "url": "https://github.com/polypixeldev/polypass",
+        "tag": "v2.1.0",
+        "commit": "0e228c7f994f764df77f67be240a4b5196a029db"
+      },
+      {
+        "type": "patch",
+        "path": "fix-appdata.patch"
+      }
+    ]
+  }
+}

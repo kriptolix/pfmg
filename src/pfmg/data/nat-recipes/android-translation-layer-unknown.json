@@ -1,0 +1,29 @@
+{
+  "header": {
+    "id": "android-translation-layer",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "android-translation-layer",
+    "buildsystem": "meson",
+    "build-options": {
+      "append-path": "/usr/lib/sdk/openjdk17/bin",
+      "env": {
+        "JAVA_HOME": "/usr/lib/sdk/openjdk17/jvm/openjdk-17"
+      }
+    },
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://gitlab.com/android_translation_layer/android_translation_layer.git",
+        "commit": "d793a072196e8f344f70972e9238b338a025f03b"
+      },
+      {
+        "type": "patch",
+        "path": "patches/android_translation_layer_appid.patch"
+      }
+    ]
+  }
+}

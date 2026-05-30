@@ -1,0 +1,48 @@
+{
+  "header": {
+    "id": "python-idna",
+    "version": "2.8",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python-idna",
+    "buildsystem": "simple",
+    "build-options": {
+      "arch": {
+        "i386": {
+          "env": {
+            "MAX_CONCURRENCY": "1"
+          }
+        },
+        "arm": {
+          "env": {
+            "MAX_CONCURRENCY": "1"
+          }
+        }
+      }
+    },
+    "ensure-writable": [
+      "/lib/python*/site-packages/easy-install.pth",
+      "/lib/python*/site-packages/setuptools.pth",
+      "/app/lib/python*/site-packages/easy-install.pth",
+      "/app/lib/python*/site-packages/setuptools.pth"
+    ],
+    "build-commands": [
+      "python3 setup.py install --prefix=/app --root=/"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/kjd/idna/archive/v2.8.tar.gz",
+        "sha256": "db438aeba52c606cf1dd9671cb746377b4baeaea923397152e91576e8404d87a"
+      },
+      {
+        "type": "shell",
+        "commands": [
+          "sed -i 's/if not platform_/if not dirs/' setup.py"
+        ]
+      }
+    ]
+  }
+}

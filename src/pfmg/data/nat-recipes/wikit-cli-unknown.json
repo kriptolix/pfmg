@@ -1,0 +1,38 @@
+{
+  "header": {
+    "id": "wikit-cli",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "wikit-cli",
+    "buildsystem": "simple",
+    "build-options": {
+      "env": {
+        "CARGO_HOME": "/run/build/wikit-cli/cargo"
+      }
+    },
+    "build-commands": [
+      "cd cli && cargo --offline build --release",
+      "install -Dm755 target/release/wikit -t \"${FLATPAK_DEST}/bin\""
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/ikey4u/wikit",
+        "commit": "7315569317c6492646d9b954811a64ae40a7df11",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 326657,
+          "tag-template": "$version"
+        }
+      },
+      "generated-sources.json",
+      {
+        "type": "file",
+        "path": "Cargo.lock"
+      }
+    ]
+  }
+}

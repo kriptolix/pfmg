@@ -1,0 +1,34 @@
+{
+  "header": {
+    "id": "libnvctrl",
+    "version": "470.63.01",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libNVCtrl",
+    "buildsystem": "simple",
+    "no-autogen": true,
+    "no-make-install": true,
+    "build-commands": [
+      "make",
+      "install -d /app/lib/extensions/vulkan/MangoHud/lib/x86_64-linux-gnu",
+      "cp -a libXNVCtrl.so* /app/lib/extensions/vulkan/MangoHud/lib/x86_64-linux-gnu",
+      "install -d /app/lib/extensions/vulkan/MangoHud/include/NVCtrl",
+      "install -D *.h /app/lib/extensions/vulkan/MangoHud/include/NVCtrl"
+    ],
+    "subdir": "src/libXNVCtrl",
+    "sources": [
+      {
+        "type": "archive",
+        "archive-type": "tar",
+        "url": "https://api.github.com/repos/NVIDIA/nvidia-settings/tarball/refs/tags/470.63.01",
+        "sha256": "0ede63515851d85ac0d1ed5f00e355f539968e6d1fd226120a27b2c66c3575de"
+      },
+      {
+        "type": "patch",
+        "path": "patches/libxnvctrl_so_0.patch"
+      }
+    ]
+  }
+}

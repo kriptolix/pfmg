@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-aiosignal",
+    "version": "1.4.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-aiosignal",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --prefix=/app aiosignal-1.4.0-py3-none-any.whl"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/fb/76/641ae371508676492379f16e2fa48f4e2c11741bd63c48be4b12a6b09cba/aiosignal-1.4.0-py3-none-any.whl",
+        "sha256": "053243f8b92b990551949e63930a839ff0cf0b0ebbe0597b0f3fb19e1a0fe82e"
+      }
+    ]
+  }
+}

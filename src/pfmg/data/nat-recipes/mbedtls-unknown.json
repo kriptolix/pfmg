@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "mbedtls",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "mbedtls",
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DCMAKE_POSITION_INDEPENDENT_CODE=ON",
+      "-DUSE_SHARED_MBEDTLS_LIBRARY=ON",
+      "-DUSE_STATIC_MBEDTLS_LIBRARY=OFF",
+      "-DENABLE_TESTING=OFF",
+      "-DENABLE_PROGRAMS=OFF"
+    ],
+    "cleanup": [
+      "/include"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/ARMmbed/mbedtls.git",
+        "commit": "f71e2878084126737cc39083e1e15afc459bd93d",
+        "tag": "v2.27.0"
+      }
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "header": {
+    "id": "virglrenderer",
+    "version": "1.0.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "virglrenderer",
+    "buildsystem": "meson",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://gitlab.freedesktop.org/virgl/virglrenderer/-/archive/1.0.0/virglrenderer-1.0.0.tar.gz",
+        "sha256": "130c417bfcc8d35063245322609fd310e981a33e2a6c73beac7fb98c4beed8e6"
+      }
+    ]
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "write-shm",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "write_shm",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DCLANG_FORMAT=OFF",
+      "-DCOMPILER_WARNINGS=OFF",
+      "-DCLANG_TIDY=OFF",
+      "-DENABLE_TEST=OFF",
+      "-DBUILD_DOC=OFF"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "tag": "v1.1.1",
+        "url": "https://github.com/SHMModbus/write_shm.git",
+        "commit": "3b3cee7da4afe464f052388c3b6aec5d0dafd89e",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^v([\\d.]+)$"
+        }
+      }
+    ]
+  }
+}

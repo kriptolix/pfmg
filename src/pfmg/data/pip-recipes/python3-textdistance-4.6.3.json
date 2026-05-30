@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-textdistance",
+    "version": "4.6.3",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-textdistance",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"textdistance==4.6.3\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/c6/c2/c62601c858010b0513a6434b9be19bd740533a6e861eddfd30b7258d92a0/textdistance-4.6.3-py3-none-any.whl",
+        "sha256": "0cb1b2cc8e3339ddc3e0f8c870e49fb49de6ecc42a718917308b3c971f34aa56"
+      }
+    ]
+  }
+}

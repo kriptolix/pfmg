@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "gi-glib-2.0.16",
+    "version": "2.0.16",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "gi-glib-2.0.16",
+    "only-arches": [
+      "x86_64"
+    ],
+    "buildsystem": "simple",
+    "build-commands": [
+      "ghc -threaded --make Setup",
+      "./Setup configure --prefix=/app",
+      "./Setup build",
+      "./Setup install"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "sha256": "1cbb6289dcd628ed6044c75daff3237ac5c87ef793c03ecf78df3380bf2e140e",
+        "url": "https://hackage.haskell.org/package/gi-glib-2.0.16/gi-glib-2.0.16.tar.gz"
+      }
+    ]
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "python-psycopg2",
+    "version": "2.8.6",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python-psycopg2",
+    "buildsystem": "simple",
+    "build-commands": [
+      "python3 setup.py build",
+      "python3 setup.py install --prefix=/app --root=/ --optimize=1"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://files.pythonhosted.org/packages/fd/ae/98cb7a0cbb1d748ee547b058b14604bd0e9bf285a8e0cc5d148f8a8a952e/psycopg2-2.8.6.tar.gz",
+        "sha256": "fb23f6c71107c37fd667cb4ea363ddeb936b348bbd6449278eb92c189699f543"
+      }
+    ]
+  }
+}

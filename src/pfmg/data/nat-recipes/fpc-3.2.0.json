@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "fpc",
+    "version": "3.2.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "fpc",
+    "buildsystem": "simple",
+    "build-commands": [
+      "sed -i 's/PREFIX=\"$HOME\\/fpc-$VERSION\"/PREFIX=\\/app/g' install.sh",
+      "rm -f demo.tar.gz doc-pdf.tar.gz",
+      "./install.sh",
+      "/app/lib/fpc/3.2.0/samplecfg /app/lib/fpc/3.2.0 /app/etc"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "ftp://ftp.hu.freepascal.org/pub/fpc/dist/3.2.0/x86_64-linux/fpc-3.2.0-x86_64-linux.tar",
+        "sha512": "83e7b0489ac532701111684f2e20a67531d445ac009f0f0a1687c2d009d3a9631d4d932b4519345d64750601df877031109f80e7466280289f270422e7f620e5"
+      }
+    ]
+  }
+}

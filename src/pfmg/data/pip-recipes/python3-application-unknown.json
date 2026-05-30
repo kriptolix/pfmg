@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "python3-application",
+    "version": "unknown",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-application",
+    "buildsystem": "simple",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/AGProjects/python3-application",
+        "tag": "release-3.0.10",
+        "commit": "4c7fa833b2cb14c300b4835870df84d91be1b5a5"
+      }
+    ],
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --prefix=\"${FLATPAK_DEST}\" --no-build-isolation ."
+    ]
+  }
+}

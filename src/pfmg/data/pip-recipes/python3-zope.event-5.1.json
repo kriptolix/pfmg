@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-zope.event",
+    "version": "5.1",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-zope.event",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"zope.event==5.1\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/00/ed/d8c3f56c1edb0ee9b51461dd08580382e9589850f769b69f0dedccff5215/zope_event-5.1-py3-none-any.whl",
+        "sha256": "53de8f0e9f61dc0598141ac591f49b042b6d74784dab49971b9cc91d0f73a7df"
+      }
+    ]
+  }
+}

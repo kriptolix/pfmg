@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-tenacity",
+    "version": "8.1.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-tenacity",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"tenacity\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/a5/94/933ce16d18450ccf518a6da5bd51418611e8776b992070b9f40b2f9cedff/tenacity-8.1.0-py3-none-any.whl",
+        "sha256": "35525cd47f82830069f0d6b73f7eb83bc5b73ee2fff0437952cedf98b27653ac"
+      }
+    ]
+  }
+}

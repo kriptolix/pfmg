@@ -1,0 +1,34 @@
+{
+  "header": {
+    "id": "iaito",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "iaito",
+    "buildsystem": "qmake",
+    "config-opts": [
+      "-config",
+      "release",
+      "IAITO_ENABLE_DEBUGGER=false"
+    ],
+    "subdir": "src",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/radareorg/iaito.git",
+        "tag": "6.1.4",
+        "commit": "55130697c557e0fa2ddeeff8505d34a35825885d",
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://api.github.com/repos/radareorg/iaito/releases/latest",
+          "timestamp-query": ".published_at",
+          "version-query": ".tag_name",
+          "tag-query": ".tag_name",
+          "is-main-source": true
+        }
+      }
+    ]
+  }
+}

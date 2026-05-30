@@ -1,0 +1,37 @@
+{
+  "header": {
+    "id": "caps-lv2",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "caps-lv2",
+    "buildsystem": "simple",
+    "build-options": {
+      "env": {
+        "PREFIX": "${FLATPAK_DEST}",
+        "LV2DIR": "${FLATPAK_DEST}/lv2"
+      }
+    },
+    "build-commands": [
+      "make",
+      "make install"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/moddevices/caps-lv2",
+        "commit": "5d52a0c6e8863c058c2aab2dea9f901a90d96eb9"
+      },
+      {
+        "type": "patch",
+        "path": "0001-Honour-PREFIX-if-set.patch"
+      },
+      {
+        "type": "patch",
+        "path": "0002-Honour-LV2DIR.patch"
+      }
+    ]
+  }
+}

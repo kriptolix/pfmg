@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-jsonpickle",
+    "version": "1.2",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-jsonpickle",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} jsonpickle"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/07/07/c157520a3ebd166c8c24c6ae0ecae7c3968eb4653ff0e5af369bb82f004d/jsonpickle-1.2-py2.py3-none-any.whl",
+        "sha256": "d0c5a4e6cb4e58f6d5406bdded44365c2bcf9c836c4f52910cc9ba7245a59dc2"
+      }
+    ]
+  }
+}

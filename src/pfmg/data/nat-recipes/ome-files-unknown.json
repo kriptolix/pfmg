@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "ome-files",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "ome-files",
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "config-opts": [
+      "-DBUILD_TESTS=OFF",
+      "-Dxmldom=qt6"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://gitlab.com/codelibre/ome/ome-files-cpp.git",
+        "commit": "d1abffaa9c1d2143735ce254754410e591882bf2"
+      },
+      {
+        "type": "patch",
+        "path": "patches/omefiles_gcc15-build-fix.patch"
+      }
+    ]
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "materia-nord-compact",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "Materia-nord-compact",
+    "buildsystem": "simple",
+    "build-commands": [
+      "mkdir -pm 755 /usr/share/runtime/share/themes/Materia-nord-compact/",
+      "cp -r index.theme gtk-* /usr/share/runtime/share/themes/Materia-nord-compact/"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://tildegit.org/mcha/materia-nord/archive/39c47346ec540dd35854afa45e22ba941634378c.tar.gz",
+        "sha256": "fee44edfa53c8a86e435884a6a665e3584b9b5b8315cdfecefc656d216571015"
+      }
+    ]
+  }
+}

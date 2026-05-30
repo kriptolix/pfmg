@@ -1,0 +1,29 @@
+{
+  "header": {
+    "id": "mariadb",
+    "version": "3.2.6",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "mariadb",
+    "buildsystem": "cmake-ninja",
+    "post-install": [
+      "cp /app/lib/mariadb/libmariadb.so.3 /app/lib/libmariadb.so.3"
+    ],
+    "cleanup": [
+      "/bin/",
+      "/include/",
+      "/lib/pkgconfig/",
+      "/lib/mariadb/",
+      "/man/"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/mariadb-corporation/mariadb-connector-c/archive/refs/tags/v3.2.6.zip",
+        "sha256": "9fe6a161d1c1ff4f74bb87e4c587bbd2a14146a2bc3ba7b677633bfa0445b8b5"
+      }
+    ]
+  }
+}

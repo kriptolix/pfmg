@@ -1,0 +1,197 @@
+{
+  "header": {
+    "id": "hugin",
+    "version": "2025.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "hugin",
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "cleanup": [
+      "*.la"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.sourceforge.net/project/hugin/hugin/hugin-2025.0/hugin-2025.0.1.tar.bz2",
+        "sha256": "7cf8eb33a6a8848cc7f816faf4bc88389228883d5513136dccb5cb243912ab79",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 1341,
+          "stable-only": true,
+          "url-template": "https://download.sourceforge.net/project/hugin/hugin/hugin-$major.$minor/hugin-$version.tar.bz2"
+        }
+      }
+    ],
+    "modules": [
+      {
+        "name": "wxWidgets",
+        "buildsystem": "cmake-ninja",
+        "builddir": true,
+        "cleanup": [
+          "*.la"
+        ],
+        "sources": [
+          {
+            "type": "archive",
+            "url": "https://github.com/wxWidgets/wxWidgets/releases/download/v3.3.2/wxWidgets-3.3.2.tar.bz2",
+            "sha256": "50a28cb668de47b0e006cd6ebed8cf4f76c1cac6116fb3c978c44478219103f2",
+            "x-checker-data": {
+              "type": "anitya",
+              "project-id": 5150,
+              "stable-only": true,
+              "url-template": "https://github.com/wxWidgets/wxWidgets/releases/download/v$version/wxWidgets-$version.tar.bz2"
+            }
+          }
+        ]
+      },
+      {
+        "name": "vigra",
+        "buildsystem": "cmake-ninja",
+        "builddir": true,
+        "config-opts": [
+          "-DWITH_OPENEXR=ON"
+        ],
+        "cleanup": [
+          "*.la"
+        ],
+        "sources": [
+          {
+            "type": "git",
+            "url": "https://github.com/ukoethe/vigra.git",
+            "tag": "Version-1-12-3",
+            "commit": "5946bac7a9a15542c2612311a280038d71c358f2",
+            "x-checker-data": {
+              "type": "anitya",
+              "project-id": 15957,
+              "stable-only": true,
+              "tag-template": "Version-$version"
+            }
+          }
+        ],
+        "modules": [
+          {
+            "name": "openexr",
+            "buildsystem": "cmake-ninja",
+            "builddir": true,
+            "cleanup": [
+              "*.la"
+            ],
+            "sources": [
+              {
+                "type": "git",
+                "url": "https://github.com/AcademySoftwareFoundation/openexr.git",
+                "tag": "v3.4.6",
+                "commit": "d7605f5990900cff8024f1fb36ffb0912d340b52",
+                "x-checker-data": {
+                  "type": "anitya",
+                  "project-id": 13289,
+                  "stable-only": true,
+                  "tag-template": "v$version"
+                }
+              }
+            ],
+            "modules": [
+              {
+                "name": "imath",
+                "buildsystem": "cmake-ninja",
+                "builddir": true,
+                "cleanup": [
+                  "*.la"
+                ],
+                "sources": [
+                  {
+                    "type": "git",
+                    "url": "https://github.com/AcademySoftwareFoundation/Imath.git",
+                    "tag": "v3.2.2",
+                    "commit": "1e480d11cb98b032a2dece9b9a8730512effc7f6",
+                    "x-checker-data": {
+                      "type": "anitya",
+                      "project-id": 223366,
+                      "stable-only": true,
+                      "tag-template": "v$version"
+                    }
+                  }
+                ]
+              },
+              {
+                "name": "libdeflate",
+                "buildsystem": "cmake-ninja",
+                "builddir": true,
+                "config-opts": [
+                  "-DLIBDEFLATE_BUILD_STATIC_LIB=OFF"
+                ],
+                "cleanup": [
+                  "*.la"
+                ],
+                "sources": [
+                  {
+                    "type": "git",
+                    "url": "https://github.com/ebiggers/libdeflate",
+                    "tag": "v1.25",
+                    "commit": "c8c56a20f8f621e6a966b716b31f1dedab6a41e3",
+                    "x-checker-data": {
+                      "type": "anitya",
+                      "project-id": 242778,
+                      "stable-only": true,
+                      "tag-template": "v$version"
+                    }
+                  }
+                ]
+              },
+              {
+                "name": "openjph",
+                "buildsystem": "cmake-ninja",
+                "builddir": true,
+                "config-opts": [
+                  "-DOJPH_BUILD_EXECUTABLES=OFF"
+                ],
+                "cleanup": [
+                  "*.la"
+                ],
+                "sources": [
+                  {
+                    "type": "git",
+                    "url": "https://github.com/aous72/OpenJPH",
+                    "tag": "0.26.3",
+                    "commit": "cb6592af91fc1332d5381288c1b885372926c447",
+                    "x-checker-data": {
+                      "type": "anitya",
+                      "project-id": 375199,
+                      "stable-only": true,
+                      "tag-template": "$version"
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "shared-modules/glew/glew.json",
+      {
+        "name": "libpano13",
+        "buildsystem": "cmake-ninja",
+        "builddir": true,
+        "cleanup": [
+          "*.la"
+        ],
+        "sources": [
+          {
+            "type": "archive",
+            "url": "https://downloads.sourceforge.net/project/panotools/libpano13/libpano13-2.9.23/libpano13-2.9.23.tar.gz",
+            "sha256": "e7c076d37a14c39434962115e47ddbe18452ca3de5ce40e2aaefa7cf5815ea28",
+            "x-checker-data": {
+              "type": "anitya",
+              "project-id": 230121,
+              "stable-only": true,
+              "url-template": "https://downloads.sourceforge.net/project/panotools/libpano13/libpano13-$version/libpano13-$version.tar.gz"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

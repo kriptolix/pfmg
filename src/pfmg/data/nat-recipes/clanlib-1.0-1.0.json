@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "clanlib-1.0",
+    "version": "1.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "clanlib-1.0",
+    "buildsystem": "autotools",
+    "config-opts": [
+      "--disable-docs"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://gitlab.com/grumbel/clanlib-1.0.git",
+        "commit": "fef70e52a9ddb7f419a2575bd772be508af910dc"
+      },
+      {
+        "type": "patch",
+        "path": "clanlib-glibc2.34.patch"
+      }
+    ],
+    "cleanup": [
+      "*.a",
+      "*.la",
+      "/include",
+      "/lib/pkgconfig"
+    ]
+  }
+}

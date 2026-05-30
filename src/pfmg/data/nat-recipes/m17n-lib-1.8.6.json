@@ -1,0 +1,31 @@
+{
+  "header": {
+    "id": "m17n-lib",
+    "version": "1.8.6",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "m17n-lib",
+    "no-parallel-make": true,
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.savannah.gnu.org/releases/m17n/m17n-lib-1.8.6.tar.gz",
+        "sha256": "7129fe3b7ad500f88b8af8605ef07b96c87a75ec986a695fffc0a409f44a7c86",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 1870,
+          "stable-only": true,
+          "url-template": "https://download.savannah.gnu.org/releases/m17n/m17n-lib-${version}.tar.gz"
+        }
+      },
+      {
+        "type": "shell",
+        "commands": [
+          "sed -i \"s/freetype-config/pkg-config freetype2/\" configure"
+        ]
+      }
+    ]
+  }
+}

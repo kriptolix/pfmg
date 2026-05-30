@@ -1,0 +1,38 @@
+{
+  "header": {
+    "id": "uhd",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "uhd",
+    "buildsystem": "cmake-ninja",
+    "subdir": "host",
+    "config-opts": [
+      "-DCMAKE_POLICY_VERSION_MINIMUM=3.5",
+      "-DENABLE_DOXYGEN=OFF",
+      "-DENABLE_MANUAL=OFF",
+      "-DENABLE_MAN_PAGES=OFF",
+      "-DENABLE_PYTHON_API=OFF",
+      "-DENABLE_TESTS=OFF",
+      "-DINSTALL_UDEV_RULES=OFF"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/EttusResearch/uhd.git",
+        "tag": "v4.8.0.0",
+        "commit": "308126a479ca19dfaebfe4784b375e608788d763"
+      },
+      {
+        "type": "patch",
+        "paths": [
+          "patches/uhd-add-missing-cstdint-includes.patch",
+          "patches/uhd-disable-ascii-art-dft.patch",
+          "patches/uhd-disable-latency-utils.patch"
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "dlib",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "dlib",
+    "buildsystem": "simple",
+    "build-commands": [
+      "cp -R dlib /app/include/"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/davisking/dlib",
+        "tag": "v19.24.2",
+        "commit": "39749fba5163d4e25030358f6aa8d91617bfdca2"
+      }
+    ]
+  }
+}

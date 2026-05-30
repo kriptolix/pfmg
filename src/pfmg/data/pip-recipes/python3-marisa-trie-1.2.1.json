@@ -1,0 +1,26 @@
+{
+  "header": {
+    "id": "python3-marisa-trie",
+    "version": "1.2.1",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-marisa-trie",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"marisa-trie\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/31/15/9d9743897e4450b2de199ee673b50cb018980c4ced477d41cf91304a85e3/marisa_trie-1.2.1.tar.gz",
+        "sha256": "3a27c408e2aefc03e0f1d25b2ff2afb85aac3568f6fa2ae2a53b57a2e87ce29d",
+        "x-checker-data": {
+          "type": "pypi",
+          "name": "marisa_trie"
+        }
+      }
+    ]
+  }
+}

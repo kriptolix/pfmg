@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "mauikit-filebrowsing",
+    "version": "4.0.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "mauikit-filebrowsing",
+    "buildsystem": "cmake-ninja",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.kde.org/stable/maui/mauikit-filebrowsing/4.0.2/mauikit-filebrowsing-4.0.2.tar.xz",
+        "sha256": "cc6f522c6dd9b9ee7cef7adbae56a1a8a9e26cc31dfe2201a117601a10f58d21",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 242845,
+          "stable-only": true,
+          "url-template": "https://download.kde.org/stable/maui/mauikit-filebrowsing/$version/mauikit-filebrowsing-$version.tar.xz"
+        }
+      }
+    ]
+  }
+}

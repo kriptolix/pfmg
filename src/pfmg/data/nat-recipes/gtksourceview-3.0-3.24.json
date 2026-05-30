@@ -1,0 +1,38 @@
+{
+  "header": {
+    "id": "gtksourceview-3.0",
+    "version": "3.24",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "gtksourceview-3.0",
+    "config-opts": [
+      "--disable-gtk-doc",
+      "--enable-introspection=no"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.gnome.org/sources/gtksourceview/3.24/gtksourceview-3.24.11.tar.xz",
+        "sha256": "691b074a37b2a307f7f48edc5b8c7afa7301709be56378ccf9cc9735909077fd",
+        "x-checker-data": {
+          "type": "gnome",
+          "name": "gtksourceview",
+          "//": "gtksourceview-4+ is not API compatible",
+          "versions": {
+            "<": "3.99"
+          },
+          "stable-only": true
+        }
+      },
+      {
+        "type": "patch",
+        "//": "All but the last two patches were already accepted upstream",
+        "paths": [
+          "patches/gtksourceview/0001-gtksourceview-Add-typecast-when-setting-source_buffe.patch"
+        ]
+      }
+    ]
+  }
+}

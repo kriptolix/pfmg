@@ -1,5 +1,5 @@
 """
-pfmg.generation.collector
+pfmg.probe.module
 ~~~~~~~~~~~~~~~~~~~~
 Flatpak module generation from Python packages.
 
@@ -150,7 +150,9 @@ def collect_pip_download(
     extra_index_args: Optional[list[str]] = None,
 ) -> dict[str, dict]:
     """
-    Run ``pip download`` for *pkg_spec* and return one source entry per file.    
+    Run ``pip download`` for *pkg_spec* and return one source entry per file.
+
+    Steps performed (mirroring flatpak-pip-generator):
 
       1. ``pip download <spec>`` fetches the package and all transitive deps.
       2. Arch-specific wheels are replaced by the corresponding sdist so the
@@ -335,6 +337,45 @@ def make_vcs_source(pkg: "ResolvedPackage") -> Optional[OrderedDict]:
     if rev:
         entries.append((rev_key, rev))
     return OrderedDict(entries)
+
+
+# ---------------------------------------------------------------------------
+# Build-dependency auto-resolution
+# ---------------------------------------------------------------------------
+
+def resolve_import_to_pypi_name(import_name: str) -> Optional[str]:
+    """
+    Try to resolve a Python import name to a PyPI package name by querying
+    the PyPI JSON API directly.
+
+    Strategy: GET /pypi/{import_name}/json.  If the package exists the API
+    returns 200 and ``data["info"]["name"]`` is the canonical PyPI name
+    (e.g. "ninja" → "ninja", "mesonpy" → 404 → None).
+
+    Returns the canonical PyPI name on success, ``None`` when the package is
+    not found (404) or the request fails for any reason.  The caller is
+    responsible for falling back to a user-supplied ``--build-dep`` mapping.
+    """
+    url = f"https://pypi.org/pypi/{import_name}/json"
+    try:
+        with urllib.request.urlopen(url, timeout=10) as resp:
+            data = json.loads(resp.read())
+        canonical = data["info"]["name"]
+        logger.debug(
+            "Resolved import '%s' → PyPI package '%s'", import_name, canonical
+        )
+        return canonical
+    except urllib.error.HTTPError as exc:
+        if exc.code == 404:
+            logger.debug("PyPI lookup for '%s' returned 404 — not found", import_name)
+        else:
+            logger.warning(
+                "PyPI lookup for '%s' failed with HTTP %d", import_name, exc.code
+            )
+        return None
+    except Exception as exc:
+        logger.warning("PyPI lookup for '%s' failed: %s", import_name, exc)
+        return None
 
 
 # ---------------------------------------------------------------------------

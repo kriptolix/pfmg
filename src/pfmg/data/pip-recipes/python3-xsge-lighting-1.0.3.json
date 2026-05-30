@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-xsge-lighting",
+    "version": "1.0.3",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-xsge_lighting",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"xsge_lighting\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/fd/06/91b0b204ae62c84ccbe1e5c67480d305fa202fb0277b8bb33cd730f7364d/xsge_lighting-1.0.3.tar.gz",
+        "sha256": "9775ebf60b1003d86d965f692f5ea0539da00e66a4126eac86dfd57f13f96201"
+      }
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "libgedit-amtk",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libgedit-amtk",
+    "buildsystem": "meson",
+    "config-opts": [
+      "-Dgtk_doc=false",
+      "-Dgobject_introspection=false",
+      "-Dtests=false"
+    ],
+    "sources": [
+      {
+        "x-checker-data": {
+          "type": "git"
+        },
+        "type": "git",
+        "url": "https://gitlab.gnome.org/World/gedit/libgedit-amtk.git",
+        "tag": "5.9.2",
+        "commit": "117f27534d74c164f7f5d0d034189688720d6630"
+      }
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-lmfitxps",
+    "version": "4.1.2",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-lmfitxps",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"lmfitxps\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/b9/70/e608cfd0a422b95092e4265ddaecccd72bc9318c25bd0f4e38388a953c01/lmfitxps-4.1.2-py3-none-any.whl",
+        "sha256": "d9bf568251adf4fda01fe971c40e5771d88db0c8b96a2be084ab4949fb3fca11"
+      }
+    ]
+  }
+}

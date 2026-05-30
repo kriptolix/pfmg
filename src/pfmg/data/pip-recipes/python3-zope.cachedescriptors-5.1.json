@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-zope.cachedescriptors",
+    "version": "5.1",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-zope.cachedescriptors",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"zope.cachedescriptors==5.1\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/d2/89/0f1795841df3258bda60bdf985f17e89fe6bb48f0832bda41c7b67329af9/zope.cachedescriptors-5.1-py3-none-any.whl",
+        "sha256": "cd5c4e963ff176f645a3a29147562a4468356ea774a0b7f01edde7891a332763"
+      }
+    ]
+  }
+}

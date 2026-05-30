@@ -1,0 +1,19 @@
+{
+  "header": {
+    "id": "gsvgtk",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "gsvgtk",
+    "buildsystem": "meson",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://gitlab.com/gsvg/gsvgtk.git",
+        "tag": "0.11.0"
+      }
+    ]
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "header": {
+    "id": "libtorrent",
+    "version": "2.0.11",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libtorrent",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --prefix=/app libtorrent*.whl"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/a4/4c/86d834a8bbdd34276e4d87400d105ddab1dd4b8938f2c1229accc03a5b0d/libtorrent-2.0.11-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "sha256": "e234f665c987262d4102f6d2e099d76b12dfa20bcc77b77891184b075ab84ea8",
+        "only-arches": [
+          "x86_64"
+        ],
+        "x-checker-data": {
+          "type": "pypi",
+          "name": "libtorrent",
+          "packagetype": "bdist_wheel"
+        }
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/5c/85/e067ca5544e79525b80a7a986cb58e28977f274c4f341d1294c0ea35d7c7/libtorrent-2.0.11-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl",
+        "sha256": "474e792c52319cc918a007aa61cb34fb7f9236fa6c9603953e8c0fb3e6d922c7",
+        "only-arches": [
+          "aarch64"
+        ],
+        "x-checker-data": {
+          "type": "pypi",
+          "name": "libtorrent",
+          "packagetype": "bdist_wheel"
+        }
+      }
+    ]
+  }
+}

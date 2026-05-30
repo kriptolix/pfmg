@@ -1,0 +1,40 @@
+{
+  "header": {
+    "id": "csound",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "csound",
+    "buildsystem": "cmake",
+    "build-options": {
+      "cxxflags": "-Wno-error=template-body",
+      "env": {
+        "PYTHONHOME": "/app",
+        "PYTHONPATH": "/usr/lib/python3.13"
+      },
+      "arch": {
+        "arm": {
+          "config-opts": [
+            "-DHAVE_NEON=OFF",
+            "-DCMAKE_CXX_FLAGS=-DPFFFT_SIMD_DISABLE",
+            "-DCMAKE_C_FLAGS=-DPFFFT_SIMD_DISABLE"
+          ]
+        }
+      }
+    },
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/csound/csound.git",
+        "tag": "6.18.1",
+        "commit": "a1580f9cdf331c35dceb486f4231871ce0b00266",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^([\\d.]+)$"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "aeson-pretty",
+    "version": "0.8.10",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "aeson-pretty",
+    "buildsystem": "simple",
+    "builddir": false,
+    "build-commands": [
+      "echo '#! /usr/bin/env runhaskell' >Setup.txt",
+      "echo '> import Distribution.Simple' >>Setup.txt",
+      "echo '> main = defaultMain' >>Setup.txt",
+      "ln -s Setup.txt Setup.lhs || true",
+      "runhaskell Setup configure --prefix=/app",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "sources": [
+      {
+        "sha256": "2a21f2cd78adcb149ceba770239ed664519552911e7680172b18ff695cfa7ae5",
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/aeson-pretty-0.8.10/aeson-pretty-0.8.10.tar.gz"
+      },
+      {
+        "dest-filename": "aeson-pretty.cabal",
+        "sha256": "6b0d3c1004dc696cdfea45b442dd025b5ca62ecce44bf8669775529d5b672114",
+        "type": "file",
+        "url": "https://hackage.haskell.org/package/aeson-pretty-0.8.10/revision/0.cabal"
+      }
+    ]
+  }
+}

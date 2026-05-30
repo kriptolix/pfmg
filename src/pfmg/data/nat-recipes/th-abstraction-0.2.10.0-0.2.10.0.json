@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "th-abstraction-0.2.10.0",
+    "version": "0.2.10.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "build-commands": [
+      "ghc -threaded --make Setup",
+      "./Setup configure --prefix=/app",
+      "./Setup build",
+      "./Setup install"
+    ],
+    "buildsystem": "simple",
+    "cleanup": [],
+    "name": "th-abstraction-0.2.10.0",
+    "only-arches": [],
+    "sources": [
+      {
+        "sha256": "c9dbffcaa4ed04f257427e61da135797190b572d4e37662f7821844cbd2114af",
+        "type": "archive",
+        "url": "https://s3.amazonaws.com/hackage.fpcomplete.com/package/th-abstraction-0.2.10.0.tar.gz"
+      },
+      {
+        "sha256": "d5b5f2c4a3072b907e73dbdbf6f59cf55675b3042f3b02bf6a789d3d076a6f88",
+        "type": "file",
+        "url": "https://raw.githubusercontent.com/commercialhaskell/all-cabal-files/a5f22172fce750e93afa6987320f5c5be62b5670/th-abstraction/0.2.10.0/th-abstraction.cabal"
+      }
+    ]
+  }
+}

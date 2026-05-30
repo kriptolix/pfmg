@@ -1,0 +1,58 @@
+{
+  "header": {
+    "id": "fuseiso",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "fuseiso",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://downloads.sourceforge.net/fuseiso/fuseiso-20070708.tar.bz2",
+        "sha256": "8b242e077d66cd20900c59c905ff90b4c934b0613dd5a20facb0b1260ac5fd88"
+      }
+    ],
+    "modules": [
+      {
+        "name": "libfuse",
+        "config-opts": [
+          "--enable-lib"
+        ],
+        "build-options": {
+          "env": {
+            "MOUNT_FUSE_PATH": "/app/bin",
+            "INIT_D_PATH": "/app/etc/init.d",
+            "UDEV_RULES_PATH": "/app/etc/udev/rules.d",
+            "ACLOCAL_PATH": "/usr/share/gettext/m4/"
+          }
+        },
+        "sources": [
+          {
+            "type": "archive",
+            "url": "https://github.com/libfuse/libfuse/archive/fuse-2.9.9.tar.gz",
+            "sha256": "e57a24721177c3b3dd71cb9239ca46b4dee283db9388d48f7ccd256184982194"
+          },
+          {
+            "type": "shell",
+            "commands": [
+              "./makeconf.sh"
+            ]
+          },
+          {
+            "type": "patch",
+            "paths": [
+              "fuse-closefrom.patch"
+            ]
+          }
+        ],
+        "cleanup": [
+          "/etc",
+          "/include",
+          "/lib/pkgconfig"
+        ]
+      }
+    ]
+  }
+}

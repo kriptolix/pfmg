@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "qt6-grpc",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "qt6-grpc",
+    "buildsystem": "cmake-ninja",
+    "post-install": [
+      "ln -s /app/lib/*-linux-gnu/*.so* /app/lib/"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://code.qt.io/qt/qtgrpc.git",
+        "tag": "6.10.0"
+      }
+    ]
+  }
+}

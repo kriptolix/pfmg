@@ -1,0 +1,31 @@
+{
+  "header": {
+    "id": "libdatachannel",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libdatachannel",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DUSE_GNUTLS=0",
+      "-DUSE_NICE=0",
+      "-DNO_EXAMPLES=1",
+      "-DCMAKE_BUILD_TYPE=Release"
+    ],
+    "builddir": true,
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/paullouisageneau/libdatachannel.git",
+        "tag": "v0.24.2",
+        "commit": "4e4f4892dccb2a57fe3a490d0c9d958de4244e74"
+      }
+    ],
+    "x-checker-data": {
+      "type": "git",
+      "tag-pattern": "^v([\\d.]+)$"
+    }
+  }
+}

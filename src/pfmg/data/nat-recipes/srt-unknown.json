@@ -1,0 +1,33 @@
+{
+  "header": {
+    "id": "srt",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "srt",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DENABLE_STATIC=OFF",
+      "-DENABLE_APPS=OFF",
+      "-DENABLE_LOGGING=OFF"
+    ],
+    "cleanup": [
+      "/include",
+      "/bin"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/Haivision/srt.git",
+        "tag": "v1.4.4",
+        "commit": "8b32f3734ff6af7cc7b0fef272591cb80a2d1aae",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^v([\\d.]+)$"
+        }
+      }
+    ]
+  }
+}

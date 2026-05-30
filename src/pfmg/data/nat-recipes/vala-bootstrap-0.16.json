@@ -1,0 +1,21 @@
+{
+  "header": {
+    "id": "vala-bootstrap",
+    "version": "0.16",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "vala-bootstrap",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.gnome.org/sources/vala/0.16/vala-0.16.1.tar.xz",
+        "sha256": "8be28ff6347feecb391220ceb4e2209d32b697278e87ed7fc6c9fb1e9345e0d8"
+      }
+    ],
+    "build-options": {
+      "cflags": "-Wno-error=incompatible-pointer-types"
+    }
+  }
+}

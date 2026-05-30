@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "ffmpegthumbnailer",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "ffmpegthumbnailer",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DENABLE_TESTS=OFF"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/dirkvdb/ffmpegthumbnailer",
+        "commit": "cfaf0c5018aec14e5ecbb687d40b090c2a6a14bd",
+        "tag": "v2.3.0"
+      }
+    ]
+  }
+}

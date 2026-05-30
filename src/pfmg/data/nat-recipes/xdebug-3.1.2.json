@@ -1,0 +1,37 @@
+{
+  "header": {
+    "id": "xdebug",
+    "version": "3.1.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "xdebug",
+    "buildsystem": "autotools",
+    "config-opts": [
+      "--with-php-config=/usr/lib/sdk/php73/bin/php-config"
+    ],
+    "post-install": [
+      "install -Dm755 modules/xdebug.so $(php -r 'echo ini_get(\"extension_dir\");')/xdebug.so",
+      "install -Dm644 xdebug.ini ${PHP_INI_DIR}/conf.d/xdebug.ini",
+      "install -Dm644 LICENSE ${FLATPAK_DEST}/share/licenses/xdebug/LICENSE"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://xdebug.org/files/xdebug-3.1.2.tgz",
+        "sha256": "083f6be1100df79ccbdf049dafc3930bab35f0eb80f9b19ac1ad84fa6779ccf3"
+      },
+      {
+        "type": "file",
+        "path": "xdebug.ini"
+      },
+      {
+        "type": "shell",
+        "commands": [
+          "${FLATPAK_DEST}/bin/phpize"
+        ]
+      }
+    ]
+  }
+}

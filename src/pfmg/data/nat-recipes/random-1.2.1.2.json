@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "random",
+    "version": "1.2.1.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "random",
+    "buildsystem": "simple",
+    "builddir": false,
+    "build-commands": [
+      "echo '#! /usr/bin/env runhaskell' >Setup.txt",
+      "echo '> import Distribution.Simple' >>Setup.txt",
+      "echo '> main = defaultMain' >>Setup.txt",
+      "ln -s Setup.txt Setup.lhs || true",
+      "runhaskell Setup configure --prefix=/app",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "sources": [
+      {
+        "sha256": "790f4dc2d2327c453ff6aac7bf15399fd123d55e927935f68f84b5df42d9a4b4",
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/random-1.2.1.2/random-1.2.1.2.tar.gz"
+      },
+      {
+        "dest-filename": "random.cabal",
+        "sha256": "32397de181e20ccaacf806ec70de9308cf044f089a2be37c936f3f8967bde867",
+        "type": "file",
+        "url": "https://hackage.haskell.org/package/random-1.2.1.2/revision/0.cabal"
+      }
+    ]
+  }
+}

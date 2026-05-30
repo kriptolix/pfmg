@@ -1,0 +1,85 @@
+diff --git a/dist/com.realm667.Wolfenstein_Blade_of_Agony.metainfo.xml b/dist/com.realm667.Wolfenstein_Blade_of_Agony.metainfo.xml
+index facfa07f6..b6cbf6d08 100644
+--- a/dist/com.realm667.Wolfenstein_Blade_of_Agony.metainfo.xml
++++ b/dist/com.realm667.Wolfenstein_Blade_of_Agony.metainfo.xml
+@@ -1,20 +1,29 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+-<component type="desktop">
+-	<id>com.realm667.Wolfenstein_Blade_of_Agony.desktop</id>
++<component type="desktop-application">
++	<id>com.realm667.Wolfenstein_Blade_of_Agony</id>
+ 	<name>Wolfenstein: Blade of Agony</name>
+ 	<summary>Story-driven FPS inspired by WWII shooters from the 90's and early 2000's</summary>
+ 	<metadata_license>CC0-1.0</metadata_license>
+ 	<project_license>CC-BY-NC-SA-3.0</project_license>
+-	<developer_name>Realm667</developer_name>
+-	<url type="homepage">http://boa.realm667.com</url>
++	<developer id="com.realm667">
++		<name>Realm667</name>
++	</developer>
++	<url type="homepage">https://boa.realm667.com</url>
+ 	<url type="bugtracker">https://github.com/Realm667/WolfenDoom/issues</url>
++	<url type="faq">https://boa.realm667.com/help/f-a-q</url>
++	<url type="help">https://discord.gg/5zfvsbzPGW</url>
++	<url type="donation">https://www.paypal.com/donate?hosted_button_id=D5PQY9QBQWQHE</url>
++	<url type="translate">https://boa.realm667.com/index.php/about</url>
++	<url type="vcs-browser">https://github.com/Realm667/WolfenDoom</url>
++	<launchable type="desktop-id">com.realm667.Wolfenstein_Blade_of_Agony.desktop</launchable>
+ 	<description>
+ 	<p>
+ 		Blade of Agony is a story-driven FPS. The project is inspired by WWII shooters from the 90's and early 2000's, like Wolfenstein 3D, Medal of Honor, and Call of Duty, but with faster-paced gameplay in the spirit of Doom! The game can be played standalone using the GZDoom engine as a base.
+ 	</p>
+ 	<p>
+ 		STORY
+-
++	</p>
++	<p>
+ 		It's 1942, and the war approaches its peak. The U.S. has joined the Allied forces, and the Soviets are pushing back the front in the east. The tides of war are turning, and Hitler's victory seems more and more beyond his grasp. But the Nazis, refusing to capitulate, have grown obsessed with human experiments and occult artifacts, in which they see a potential escape from their final Doom. The Allied leaders reject this possibility as nonsense; nonetheless, some still fear what the Führer might be up to. The situation is nebulous, however, and little is certain.
+ 	</p>
+ 	<p>
+@@ -22,7 +31,8 @@
+ 	</p>
+ 	<p>
+ 		FEATURES
+-
++	</p>
++	<p>
+ 		Blade of Agony is much more than just a pastiche of the classic shooters that inspired it; the project will offer a unique experience. It also has many features not often seen in source port projects--Blade of Agony truly pushes GZDoom to its limits.
+ 	</p>
+ 	<ul>
+@@ -38,6 +48,11 @@
+ 		<li>Much, much more!</li>
+ 	</ul>
+ 	</description>
++	<icon type="remote">https://raw.githubusercontent.com/flathub/com.realm667.Wolfenstein_Blade_of_Agony/refs/heads/master/boa-256.png</icon>
++	<branding>
++		<color type="primary" scheme_preference="light">#c80000</color>
++		<color type="primary" scheme_preference="dark">#700000</color>
++	</branding>
+ 	<screenshots>
+ 		<screenshot type="default">
+ 			<image>https://boa.realm667.com/images/screenshots/c1/Screenshot_BoA_20210418_213149.jpg</image>
+@@ -71,7 +86,7 @@
+ 			<image>https://boa.realm667.com/images/screenshots/c2/Screenshot_BoA_20210418_215635.jpg</image>
+ 			<caption>Chapter 2</caption>
+ 		</screenshot>
+-        	<screenshot>
++			<screenshot>
+ 			<image>https://boa.realm667.com/images/screenshots/c3/Screenshot_BoA_20210418_222455.jpg</image>
+ 			<caption>Chapter 3</caption>
+ 		</screenshot>
+@@ -88,6 +103,14 @@
+ 			<caption>Chapter 3</caption>
+ 		</screenshot>
+ 	</screenshots>
++	<supports>
++	<control>keyboard</control>
++	<control>pointing</control>
++	<control>gamepad</control>
++	</supports>
++	<requires>
++		<display_length compare="ge">480</display_length>
++	</requires>
+ 	<releases>
+ 		<release date="2021-07-09" version="3.1"/>
+ 		<release date="2021-04-30" version="3.0"/>

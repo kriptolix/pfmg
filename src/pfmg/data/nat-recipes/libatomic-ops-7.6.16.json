@@ -1,0 +1,18 @@
+{
+  "header": {
+    "id": "libatomic-ops",
+    "version": "7.6.16",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libatomic_ops",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/ivmai/libatomic_ops/releases/download/v7.6.16/libatomic_ops-7.6.16.tar.gz",
+        "sha256": "b06969a04b2f7f3f3034ff1ee90f11a8f90b5e321fc7091995eb7c24495278aa"
+      }
+    ]
+  }
+}

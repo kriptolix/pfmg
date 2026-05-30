@@ -1,0 +1,19 @@
+{
+  "header": {
+    "id": "json-glib",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "json-glib",
+    "buildsystem": "meson",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://gitlab.gnome.org/jhaygood86/json-glib.git",
+        "commit": "405bc0e2a5b0248cd12c37235752d50156e204f3"
+      }
+    ]
+  }
+}

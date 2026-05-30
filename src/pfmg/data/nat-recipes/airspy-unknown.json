@@ -1,0 +1,26 @@
+{
+  "header": {
+    "id": "airspy",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "airspy",
+    "buildsystem": "cmake-ninja",
+    "build-options": {
+      "cflags": "-std=gnu17"
+    },
+    "config-opts": [
+      "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/airspy/airspyone_host.git",
+        "tag": "v1.0.10",
+        "commit": "229d5a5045b890621cd9cc200a19b1541c6021ae"
+      }
+    ]
+  }
+}

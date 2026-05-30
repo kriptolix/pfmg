@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "kde-extra-cmake-modules",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "kde-extra-cmake-modules",
+    "buildsystem": "cmake-ninja",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/KDE/extra-cmake-modules",
+        "tag": "v5.249.0",
+        "commit": "008ae77d0cd2a97c346228ab30b99279643e5022"
+      }
+    ],
+    "cleanup": [
+      "*"
+    ]
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "header": {
+    "id": "vinegar",
+    "version": "1.5.8",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "vinegar",
+    "buildsystem": "simple",
+    "build-commands": [
+      "make install GO=$GOROOT/bin/go PREFIX=/app",
+      "install -Dm644 io.github.vinegarhq.Vinegar.desktop -t /app/share/applications",
+      "install -Dm644 io.github.vinegarhq.Vinegar.metainfo.xml -t /app/share/metainfo",
+      "install -Dm644 catglass.svg /app/share/icons/hicolor/scalable/apps/io.github.vinegarhq.Vinegar.svg",
+      "install -Dm644 io.github.vinegarhq.Vinegar.png /app/share/icons/hicolor/128x128/apps/io.github.vinegarhq.Vinegar.png"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/vinegarhq/vinegar/releases/download/v1.5.8/vinegar-v1.5.8.tar.xz",
+        "sha256": "6bf2c9ecc62605e515cbd2fc0cef1ca08effa934be58ea72b4047cc44b7aa4bf",
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://api.github.com/repos/vinegarhq/vinegar/releases/latest",
+          "version-query": ".tag_name",
+          "url-query": ".assets[] | select(.name==\"vinegar-\\($version).tar.xz\") | .browser_download_url"
+        }
+      },
+      {
+        "type": "file",
+        "path": "io.github.vinegarhq.Vinegar.metainfo.xml"
+      },
+      {
+        "type": "file",
+        "path": "catglass.svg"
+      },
+      {
+        "type": "file",
+        "path": "io.github.vinegarhq.Vinegar.png"
+      },
+      {
+        "type": "file",
+        "path": "patches/io.github.vinegarhq.Vinegar.desktop"
+      }
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "header": {
+    "id": "libftgl",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libftgl",
+    "buildsystem": "cmake-ninja",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/frankheckenbach/ftgl.git",
+        "commit": "36e8cd683492456def3b6a54c6dcb56cd6ee4bb4"
+      }
+    ]
+  }
+}

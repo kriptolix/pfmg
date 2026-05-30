@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "libtidy-sil",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libtidy-sil",
+    "buildsystem": "cmake",
+    "config-opts": [
+      "-DBUILD_SHARED_LIB:BOOL=TRUE"
+    ],
+    "cleanup": [
+      "*.a"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/BloomBooks/tidy-html5.git",
+        "commit": "8efa8feb2046d31f9216e1ef806609c311809dea"
+      }
+    ]
+  }
+}

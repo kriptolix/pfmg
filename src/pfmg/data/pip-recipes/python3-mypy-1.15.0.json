@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "python3-mypy",
+    "version": "1.15.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-mypy",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"mypy==1.15.0\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/ce/43/d5e49a86afa64bd3839ea0d5b9c7103487007d728e1293f52525d6d5486a/mypy-1.15.0.tar.gz",
+        "sha256": "404534629d51d3efea5c800ee7c42b72a6554d6c400e6a79eafe15d11341fd43"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/2a/e2/5d3f6ada4297caebe1a2add3b126fe800c96f56dbe5d1988a2cbe0b267aa/mypy_extensions-1.0.0-py3-none-any.whl",
+        "sha256": "4392f6c0eb8a5668a69e23d168ffa70f0be9ccfd32b5cc2d26a34ae5b844552d"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/e0/86/39b65d676ec5732de17b7e3c476e45bb80ec64eb50737a8dce1a4178aba1/typing_extensions-4.13.0-py3-none-any.whl",
+        "sha256": "c8dd92cc0d6425a97c18fbb9d1954e5ff92c1ca881a309c45f06ebc0b79058e5"
+      }
+    ]
+  }
+}

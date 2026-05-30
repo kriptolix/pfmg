@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "resvg",
+    "version": "0.30.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "resvg",
+    "buildsystem": "simple",
+    "build-options": {
+      "append-path": "/usr/lib/sdk/rust-stable/bin",
+      "env": {
+        "CARGO_HOME": "/run/build/resvg/cargo"
+      }
+    },
+    "build-commands": [
+      "cargo build --workspace --frozen --release --all-features",
+      "install -Dm755 target/release/resvg /app/bin/resvg",
+      "install -Dm755 target/release/libresvg.so /app/lib/libresvg.so",
+      "install -Dm644 c-api/resvg.h /app/include/resvg.h"
+    ],
+    "sources": [
+      "cargo-sources.json",
+      {
+        "type": "archive",
+        "url": "https://github.com/RazrFalcon/resvg/releases/download/v0.30.0/resvg-0.30.0.tar.xz",
+        "sha256": "c97de618972dd98fd7b5c14d805c4149150ec6a400711d3b986b12af4cee175d"
+      }
+    ]
+  }
+}

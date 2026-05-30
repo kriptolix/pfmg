@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "libmarkdown",
+    "version": "2.2.4",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libmarkdown",
+    "buildsystem": "simple",
+    "build-commands": [
+      "./configure.sh --shared --prefix=/app --pkg-config",
+      "make -j${FLATPAK_BUILDER_N_JOBS}",
+      "sed -e 's|/sbin/ldconfig|/sbin/ldconfig -n|' -i librarian.sh",
+      "make install"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/Orc/discount/archive/refs/tags/v2.2.4.tar.gz",
+        "sha256": "918905377e6ed3d0a7158cac0a4a18ed3c4cc0cad8ee95dddd82cb86ba9dd044"
+      }
+    ]
+  }
+}

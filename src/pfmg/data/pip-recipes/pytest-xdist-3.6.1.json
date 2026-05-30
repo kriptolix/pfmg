@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "pytest-xdist",
+    "version": "3.6.1",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "pytest-xdist",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=/app \"pytest-xdist==3.6.1\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/6d/82/1d96bf03ee4c0fdc3c0cbe61470070e659ca78dc0086fb88b66c185e2449/pytest_xdist-3.6.1-py3-none-any.whl",
+        "sha256": "9ed4adfb68a016610848639bb7e02c9352d5d9f03d04809919e2dafc3be4cca7"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/43/09/2aea36ff60d16dd8879bdb2f5b3ee0ba8d08cbbdcdfe870e695ce3784385/execnet-2.1.1-py3-none-any.whl",
+        "sha256": "26dee51f1b80cebd6d0ca8e74dd8745419761d3bef34163928cbebbdc4749fdc"
+      }
+    ]
+  }
+}

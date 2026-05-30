@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "elixir",
+    "version": "1.14.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "elixir",
+    "buildsystem": "simple",
+    "build-options": {
+      "env": {
+        "PREFIX": "/app"
+      }
+    },
+    "build-commands": [
+      "make install"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/elixir-lang/elixir/archive/v1.14.0.zip",
+        "sha256": "6cece7317044233996e6056e86a09e8ba25971c5f60130738d0b6baccb3b99e0"
+      }
+    ]
+  }
+}

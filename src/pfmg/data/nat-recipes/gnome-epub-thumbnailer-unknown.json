@@ -1,0 +1,19 @@
+{
+  "header": {
+    "id": "gnome-epub-thumbnailer",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "gnome-epub-thumbnailer",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://gitlab.gnome.org/GNOME/gnome-epub-thumbnailer.git",
+        "tag": "1.6",
+        "commit": "0211ca3c1f11a2c49f3df1aacb33108846b52ef0"
+      }
+    ]
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "libxmlplusplus",
+    "version": "5.6.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libxmlplusplus",
+    "buildsystem": "meson",
+    "config-opts": [
+      "-Dbuild-examples=false",
+      "-Dbuild-tests=false"
+    ],
+    "cleanup": [
+      "/lib/libxml++-5.0"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/libxmlplusplus/libxmlplusplus/releases/download/5.6.1/libxml%2B%2B-5.6.1.tar.xz",
+        "sha256": "4996e8a73995e8a4cd656c8591dce38181146edfc30cb47c97d1db3c56990ad7",
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://api.github.com/repos/libxmlplusplus/libxmlplusplus/releases/latest",
+          "version-query": ".tag_name",
+          "url-query": ".assets[] | select(.name==\"libxml++-\" + $version + \".tar.xz\") | .browser_download_url"
+        }
+      }
+    ]
+  }
+}

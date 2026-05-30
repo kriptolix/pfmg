@@ -1,0 +1,31 @@
+{
+  "header": {
+    "id": "whisper.cpp",
+    "version": "1.8.3",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "whisper.cpp",
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DBUILD_SHARED_LIBS=ON",
+      "-DBUILD_TESTING=OFF",
+      "-DBUILD_APPS=OFF",
+      "-DENABLE_AVX512=OFF",
+      "-DGGML_VULKAN=1"
+    ],
+    "post-install": [
+      "install -Dm755 bin/whisper-cli -t /app/bin"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/ggerganov/whisper.cpp/archive/refs/tags/v1.8.3.tar.gz",
+        "sha256": "870ba21409cdf66697dc4db15ebdb13bc67037d76c7cc63756c81471d8f1731a"
+      }
+    ]
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "mupdf",
+    "version": "1.18.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "mupdf",
+    "buildsystem": "simple",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://mupdf.com/downloads/archive/mupdf-1.18.0-source.tar.xz",
+        "sha1": "fc17bd01d5860e49b009f28a5ddb629e94af4510"
+      }
+    ],
+    "build-commands": [
+      "make HAVE_X11=no HAVE_GLUT=no prefix=/app/mupdf",
+      "make HAVE_X11=no HAVE_GLUT=no prefix=/app/mupdf install"
+    ]
+  }
+}

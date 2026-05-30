@@ -1,0 +1,19 @@
+{
+  "header": {
+    "id": "gr-funcube",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "gr-funcube",
+    "buildsystem": "cmake-ninja",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/dl1ksv/gr-funcube.git",
+        "commit": "2fc05048a4a5c0be5105b2060a9daf999d8440bc"
+      }
+    ]
+  }
+}

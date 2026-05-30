@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-humanfriendly",
+    "version": "10.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-humanfriendly",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"humanfriendly==10.0\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/f0/0f/310fb31e39e2d734ccaa2c0fb981ee41f7bd5056ce9bc29b2248bd569169/humanfriendly-10.0-py2.py3-none-any.whl",
+        "sha256": "1697e1a8a8f550fd43c2865cd84542fc175a61dcb779b6fee18cf6b6ccba1477"
+      }
+    ]
+  }
+}

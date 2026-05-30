@@ -1,0 +1,30 @@
+{
+  "header": {
+    "id": "portmidi",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "portmidi",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/PortMidi/portmidi.git",
+        "tag": "v2.0.8",
+        "commit": "101dac9455e2718512c94e24cbcae6a6f34b908b"
+      }
+    ],
+    "cleanup": [
+      "/bin"
+    ],
+    "x-checker-data": {
+      "type": "git",
+      "tag-pattern": "^v([\\d.]+)$"
+    }
+  }
+}

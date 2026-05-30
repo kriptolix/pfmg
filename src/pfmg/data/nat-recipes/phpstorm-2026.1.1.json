@@ -1,0 +1,77 @@
+{
+  "header": {
+    "id": "phpstorm",
+    "version": "2026.1.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "phpstorm",
+    "buildsystem": "simple",
+    "build-commands": [
+      "install -Dm0644 -t ${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/ ${FLATPAK_ID}.svg",
+      "install -Dm0644 -t ${FLATPAK_DEST}/share/applications/ ${FLATPAK_ID}.desktop",
+      "install -Dm0644 -t ${FLATPAK_DEST}/share/metainfo/ ${FLATPAK_ID}.metainfo.xml",
+      "install -Dm0755 apply_extra ${FLATPAK_DEST}/bin/apply_extra",
+      "cat idea.properties | tee -a ${FLATPAK_DEST}/bin/idea.properties"
+    ],
+    "sources": [
+      {
+        "type": "extra-data",
+        "filename": "phpstorm.tar.gz",
+        "url": "https://download.jetbrains.com/webide/PhpStorm-2026.1.1.tar.gz",
+        "sha256": "4ce4a2140a6157f258ad483db41fc102d0068e7e8fd03a5a6073b65b715c0864",
+        "size": 1066256336,
+        "only-arches": [
+          "x86_64"
+        ],
+        "x-checker-data": {
+          "type": "jetbrains",
+          "code": "PS",
+          "is-main-source": true
+        }
+      },
+      {
+        "type": "extra-data",
+        "filename": "phpstorm.tar.gz",
+        "url": "https://download.jetbrains.com/webide/PhpStorm-2026.1.1-aarch64.tar.gz",
+        "sha256": "7d682ec20510b2d0b2b4030a6a6e2c7338847b23b1544848c52d4ef351ceff22",
+        "size": 1061302506,
+        "only-arches": [
+          "aarch64"
+        ],
+        "x-checker-data": {
+          "type": "jetbrains",
+          "code": "PS",
+          "is-main-source": true
+        }
+      },
+      {
+        "type": "file",
+        "dest-filename": "com.jetbrains.PhpStorm.svg",
+        "url": "https://resources.jetbrains.com/storage/products/company/brand/logos/PhpStorm_icon.svg",
+        "sha256": "8598cf9c38dc60596d7ec4e56052b9af69a5a4f407eb057d4c4482635e19bfc7"
+      },
+      {
+        "type": "file",
+        "path": "files/phpstorm/idea.properties"
+      },
+      {
+        "type": "file",
+        "path": "com.jetbrains.PhpStorm.desktop"
+      },
+      {
+        "type": "file",
+        "path": "com.jetbrains.PhpStorm.metainfo.xml"
+      },
+      {
+        "type": "script",
+        "dest-filename": "apply_extra",
+        "commands": [
+          "tar xzf phpstorm.tar.gz --strip-components=1",
+          "rm phpstorm.tar.gz"
+        ]
+      }
+    ]
+  }
+}

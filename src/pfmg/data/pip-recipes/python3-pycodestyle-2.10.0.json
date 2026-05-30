@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-pycodestyle",
+    "version": "2.10.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-pycodestyle",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"pycodestyle\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/a2/54/001fdc0d69e8d0bb86c3423a6fa6dfada8cc26317c2635ab543e9ac411bd/pycodestyle-2.10.0-py2.py3-none-any.whl",
+        "sha256": "8a4eaf0d0495c7395bdab3589ac2db602797d76207242c17d470186815706610"
+      }
+    ]
+  }
+}

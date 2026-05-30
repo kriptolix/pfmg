@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "python3-reportlab",
+    "version": "4.4.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-reportlab",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"reportlab==4.4.0\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/38/6f/f5fbc992a329ee4e0f288c1fe0e2ad9485ed064cac731ed2fe47dcc38cbf/chardet-5.2.0-py3-none-any.whl",
+        "sha256": "e1cf59446890a00105fe7b7912492ea04b6e6f06d4b742b2c788469e34c82970"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/f3/0d/d0d6dea55cd152ce3d6767bb38a8fc10e33796ba4ba210cbab9354b6d238/pillow-11.3.0.tar.gz",
+        "sha256": "3828ee7586cd0b2091b6209e5ad53e20d0649bbe87164a459d0676e035e8f523"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/52/15/4702e132ae36beb8daf3e20a92f166451148c4a89650cc9d3f19b3c66714/reportlab-4.4.0-py3-none-any.whl",
+        "sha256": "0a993f1d4a765fcbdf4e26adc96b3351004ebf4d27583340595ba7edafebec32"
+      }
+    ]
+  }
+}

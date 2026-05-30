@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "jamovi-client",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "jamovi-client",
+    "buildsystem": "simple",
+    "build-options": {
+      "env": {
+        "XDG_CACHE_HOME": "../flatpak-node/cache",
+        "npm_config_cache": "../flatpak-node/npm-cache",
+        "npm_config_offline": "true"
+      }
+    },
+    "build-commands": [
+      "cd client && npm install --offline",
+      "cd client && npm run build",
+      "cp -r client/dist     /app/lib/jamovi/client"
+    ],
+    "sources": [
+      "client-deps-sources.json",
+      {
+        "type": "git",
+        "url": "https://github.com/jamovi/jamovi.git",
+        "commit": "2146574acee0bf6a0f6b342ece0024147d2515b2"
+      }
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-pygubu",
+    "version": "0.36.3",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-pygubu",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"pygubu==0.36.3\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/33/07/9e2dc8e18c1e35b6f132bcd0cf15f376ba5e65300df4571eccbca73cbdc1/pygubu-0.36.3-py3-none-any.whl",
+        "sha256": "8cc5df7f68b03acb0762c3cdf2ad3130b4759620e670326988e14551c7ee8767"
+      }
+    ]
+  }
+}

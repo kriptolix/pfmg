@@ -1,0 +1,97 @@
+{
+  "header": {
+    "id": "python3-librelingo-yaml-loader.json",
+    "version": "1.10.5",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-librelingo_yaml_loader.json",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"librelingo_yaml_loader>=1.10.4\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/53/cc/41a6e63f290c94657475c18fb89ce1f279a77055d8e83793c00977a324d2/wasmer-1.0.0-py3-none-any.whl",
+        "sha256": "427e9c5e5301a453a09b8b9ceb8c793d85411b8f45e54c9c0d801566dd8d214e"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/05/f9/921646f07a5751eebe2053bc6b7bd239efb98519fcb3803bf6b2fab911c9/wasmer_compiler_cranelift-1.0.0-py3-none-any.whl",
+        "sha256": "081fdc24eaaac951b84efb6c7e439ccbda8b46f512b8ae2707bcb29763d15a49"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/e8/6b/927c955e350468e4c1a2a7fc73ef2d6197f66ab88f21fc259f3b543db3ed/bleach_allowlist-1.0.3-py2.py3-none-any.whl",
+        "sha256": "6427a3ac0baddf549703f1003ea53f411f3d7888524c94c00eb6ef1deb378899"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/f4/24/2a3e3df732393fed8b3ebf2ec078f05546de641fe1b667ee316ec1dcf3b7/webencodings-0.5.1-py2.py3-none-any.whl",
+        "sha256": "a0af1213f3c2226497a97e2b3aa01a7e4bee4f403f95be16fc9acd2947514a78"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/ac/e2/dfcab68c9b2e7800c8f06b85c76e5f978d05b195a958daa9b1dda54a1db6/bleach-6.0.0-py3-none-any.whl",
+        "sha256": "33c16e3353dbd13028ab4799a0f89a83f113405c766e9c122df8a06f5b85b3f4"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/d2/3d/fa76db83bf75c4f8d338c2fd15c8d33fdd7ad23a9b5e57eb6c5de26b430e/click-7.1.2-py2.py3-none-any.whl",
+        "sha256": "dacca89f4bfadd5de3d7489b7c8a566eee0d3676333fbb50030263894c38c0dc"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/d2/70/2c92d7bc961ba43b7b21032b7622144de5f97dec14b62226533f6940798e/soupsieve-2.4-py3-none-any.whl",
+        "sha256": "49e5368c2cda80ee7e84da9dbe3e110b70a4575f196efb74e51b94549d921955"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/c6/ee/16d6f808f5668317d7c23f942091fbc694bcded6aa39678e5167f61b2ba0/beautifulsoup4-4.11.2-py3-none-any.whl",
+        "sha256": "0e79446b10b3ecb499c1556f7e228a53e64a2bfcebd455f370d8927cb5b59e39"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/ba/05/666b8105c1c45ee05fcbcb210176c73638710e402b99c5968c5dfdf3c67d/html2markdown-0.1.7.tar.gz",
+        "sha256": "92baf932c7f216be6d9459a191d45b6401e204bda7a5413febafa875512cfa8c"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/b2/2e/7931caacdd2f32eaf8b60c3    06c448b3a6d3d9248ef1dbb6286e51e5b8dea/librelingo_types-3.3.0-py3-none-any.whl",
+        "sha256": "12a41062d5c0b3728637b577dd687a07c186b1ae281dd476e7381b6950c04de8"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/a4/db/1b738a4d422eee1bb9688c2ea01d9b4bcc02e4e98ad71e13f5db3ff3cd5a/pyfakefs-5.1.0-py3-none-any.whl",
+        "sha256": "e6f34a8224b41f1b1ab25aa8d430121dac42e3c6e981e01eae76b3343fba47d0"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/c2/98/72928a3911acf145d57dc02c494c025a3820665ca1df3fc083d1a82bac9e/fastdiff-0.3.0-py2.py3-none-any.whl",
+        "sha256": "ca5f61f6ddf5a1564ddfd98132ad28e7abe4a88a638a8b014a2214f71e5918ec"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/d9/5a/e7c31adbe875f2abbb91bd84cf2dc52d792b5a01506781dbcf25c91daf11/six-1.16.0-py2.py3-none-any.whl",
+        "sha256": "8abb2f1d86890a2dfb989f9a77cfcfd3e47c2a354b01111771326f8aa26e0254"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/aa/f4/8ddd8a684b4c005345f45740a449d93d0af7ccecd91319d0f4426cf08b36/termcolor-2.2.0-py3-none-any.whl",
+        "sha256": "91ddd848e7251200eac969846cbae2dacd7d71c2871e92733289e7e3666f48e7"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/c9/d9/9527f609c28b508043edf587d03f96b8621ae4adaa4480197347cb640d0e/snapshottest-0.6.0-py2.py3-none-any.whl",
+        "sha256": "9b177cffe0870c589df8ddbee0a770149c5474b251955bdbde58b7f32a4ec429"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/9d/0b/d92ed93f6d1b16c6eb4e7de486df97748a88d04a02c5102917c27c706072/librelingo_yaml_loader-1.10.5-py3-none-any.whl",
+        "sha256": "a8a1ee15c20ad840460713a121f81115ac213d8b387e713e50ec07404af8530a"
+      }
+    ]
+  }
+}

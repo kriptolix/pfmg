@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "data-default-instances-containers",
+    "version": "0.1.0.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "data-default-instances-containers",
+    "buildsystem": "simple",
+    "builddir": false,
+    "build-commands": [
+      "echo '#! /usr/bin/env runhaskell' >Setup.txt",
+      "echo '> import Distribution.Simple' >>Setup.txt",
+      "echo '> main = defaultMain' >>Setup.txt",
+      "ln -s Setup.txt Setup.lhs || true",
+      "runhaskell Setup configure --prefix=/app",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "sources": [
+      {
+        "sha256": "5b7aa4815fddd58984a388b41b0c96830d0350e9a4aa365e1e377d113c6ba66e",
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/data-default-instances-containers-0.1.0.2/data-default-instances-containers-0.1.0.2.tar.gz"
+      },
+      {
+        "dest-filename": "data-default-instances-containers.cabal",
+        "sha256": "8afa670a01716b2e8384fab803c196736f997dc426de03e45f7ad6c5497a9e7e",
+        "type": "file",
+        "url": "https://hackage.haskell.org/package/data-default-instances-containers-0.1.0.2/revision/0.cabal"
+      }
+    ]
+  }
+}

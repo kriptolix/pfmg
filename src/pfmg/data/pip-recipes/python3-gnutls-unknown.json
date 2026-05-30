@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "python3-gnutls",
+    "version": "unknown",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-gnutls",
+    "buildsystem": "simple",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/AGProjects/python3-gnutls",
+        "tag": "release-3.1.12",
+        "commit": "757ebc3f01c12a55adbbeef9a2122da1f7b081f0"
+      }
+    ],
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --prefix=\"${FLATPAK_DEST}\" --no-build-isolation ."
+    ]
+  }
+}

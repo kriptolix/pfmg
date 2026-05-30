@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "asgiref",
+    "version": "3.8.1",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "asgiref",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=/app \"asgiref==3.8.1\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/39/e3/893e8757be2612e6c266d9bb58ad2e3651524b5b40cf56761e985a28b13e/asgiref-3.8.1-py3-none-any.whl",
+        "sha256": "3e1e3ecc849832fe52ccf2cb6686b7a55f82bb1d6aee72a58826471390335e47"
+      }
+    ]
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "abseil-cpp",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "abseil-cpp",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DCMAKE_POSITION_INDEPENDENT_CODE=ON",
+      "-DABSL_PROPAGATE_CXX_STD=ON",
+      "-DCMAKE_CXX_STANDARD=17"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/abseil/abseil-cpp.git",
+        "tag": "20240722.0"
+      }
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-python-dateutil",
+    "version": "2.8.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-python-dateutil",
+    "buildsystem": "simple",
+    "build-commands": [
+      "python3 setup.py install --prefix=/app --root=/"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://files.pythonhosted.org/packages/4c/c4/13b4776ea2d76c115c1d1b84579f3764ee6d57204f6be27119f13a61d0a9/python-dateutil-2.8.2.tar.gz",
+        "sha256": "0123cacc1627ae19ddf3c27a5de5bd67ee4586fbdd6440d9748f8abb483d3e86"
+      }
+    ]
+  }
+}

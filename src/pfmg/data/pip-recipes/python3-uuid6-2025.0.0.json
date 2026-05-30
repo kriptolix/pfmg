@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-uuid6",
+    "version": "2025.0.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-uuid6",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"uuid6==2025.0.0\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/0a/50/4da47101af45b6cfa291559577993b52ee4399b3cd54ba307574a11e4f3a/uuid6-2025.0.0-py3-none-any.whl",
+        "sha256": "2c73405ff5333c7181443958c6865e0d1b9b816bb160549e8d80ba186263cb3a"
+      }
+    ]
+  }
+}

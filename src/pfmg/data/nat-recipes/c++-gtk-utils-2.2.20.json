@@ -1,0 +1,18 @@
+{
+  "header": {
+    "id": "c++-gtk-utils",
+    "version": "2.2.20",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "c++-gtk-utils",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://prdownloads.sourceforge.net/cxx-gtk-utils/c++-gtk-utils-2.2.20.tar.gz",
+        "sha256": "a64e03e5948d074f8309b036ca0acaf9ae4025c19cef6174f2319c504fb32d8c"
+      }
+    ]
+  }
+}

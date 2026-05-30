@@ -1,0 +1,37 @@
+{
+  "header": {
+    "id": "seatd",
+    "version": "0.9.3",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "seatd",
+    "buildsystem": "meson",
+    "config-opts": [
+      "-Dlibseat-logind=disabled",
+      "-Dlibseat-seatd=enabled",
+      "-Dlibseat-builtin=disabled",
+      "-Dserver=disabled",
+      "-Dexamples=disabled",
+      "-Dman-pages=disabled"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://git.sr.ht/~kennylevinsen/seatd/archive/0.9.3.tar.gz",
+        "sha256": "302564d54d8e28191fadfd734f2675ecb0c9e0615a58011b89ef15dfa4dbaa96",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 234932,
+          "stable-only": true,
+          "url-template": "https://git.sr.ht/~kennylevinsen/seatd/archive/$version.tar.gz"
+        }
+      }
+    ],
+    "cleanup": [
+      "/include",
+      "/lib/pkgconfig"
+    ]
+  }
+}

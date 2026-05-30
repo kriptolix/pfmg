@@ -1,0 +1,47 @@
+{
+  "header": {
+    "id": "python3-liquidctl",
+    "version": "1.8.1",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-liquidctl",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"liquidctl==1.8.1\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/a2/55/8f8cab2afd404cf578136ef2cc5dfb50baa1761b68c9da1fb1e4eed343c9/docopt-0.6.2.tar.gz",
+        "sha256": "49b3a825280bd66b3aa83585ef59c4a8c82f2c8a522dbe754a8bc8d08c85c491"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/4d/5c/70e14aa4f0c586efc017e1d1aa6e2f7921eefc7602fc2d03368ff912aa91/smbus-1.1.post2.tar.gz",
+        "sha256": "f96d345e0aa10053a8a4917634f1dc37ba1f656fa5cace7629b71777e90855c6"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/95/94/8c5a48699eaae4519e538f98ddae2d2c0810554c7b9efb2aac53817ef593/liquidctl-1.8.1.tar.gz",
+        "sha256": "0859dfe673babe9af10e4f431e0baa974961f0b2c973a37e64eb6c6c2fddbe73"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/7d/54/e24efe5469ecb2710112055de87a2900e9494810bcfc25c12c7a0723eb64/colorlog-6.6.0-py2.py3-none-any.whl",
+        "sha256": "351c51e866c86c3217f08e4b067a7974a678be78f07f85fc2d55b8babde6d94e"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/15/a8/4982498b2ab44d1fcd5c49f07ea3795eab01601dc143b009d333fcace3b9/pyusb-1.2.1-py3-none-any.whl",
+        "sha256": "2b4c7cb86dbadf044dfb9d3a4ff69fd217013dbe78a792177a3feb172449ea36"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/99/9b/5c41756461308a5b2d8dcbcd6eaa2f1c1bc60f0a6aa743b58cab756a92e1/hidapi-0.10.1.tar.gz",
+        "sha256": "a1170b18050bc57fae3840a51084e8252fd319c0fc6043d68c8501deb0e25846"
+      }
+    ]
+  }
+}

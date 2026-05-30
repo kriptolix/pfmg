@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "gws-cli",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "gws-cli",
+    "buildsystem": "simple",
+    "build-commands": [
+      "mkdir -p gws-cli",
+      "tar xzf gws-cli-0.6.0-production.0286.tar.gz -C gws-cli",
+      "cp -a gws-cli/bin gws-cli/lib /app/"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://static.tether.dev/qvac/workbench/QVAC.Workbench.linux.flatpak.tar.gz",
+        "sha512": "44f0490e6f5ecdc4e30ab52cc60edda4e1c0c1f25a4d121277ae6390f1ea0093471f9a356c689731a98f38fcb3ef5a38c81144026ae2e219ef8fee2e182a8549",
+        "strip-components": 0
+      }
+    ]
+  }
+}

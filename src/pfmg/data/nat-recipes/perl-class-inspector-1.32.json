@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "perl-class-inspector",
+    "version": "1.32",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "perl-class-inspector",
+    "no-autogen": true,
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://search.cpan.org/CPAN/authors/id/P/PL/PLICEASE/Class-Inspector-1.32.tar.gz",
+        "sha256": "cefadc8b5338e43e570bc43f583e7c98d535c17b196bcf9084bb41d561cc0535"
+      },
+      {
+        "type": "file",
+        "path": "perl-MakefilePL-Makefile",
+        "dest-filename": "Makefile"
+      }
+    ]
+  }
+}

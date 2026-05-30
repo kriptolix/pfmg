@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-dunamai",
+    "version": "1.25.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-dunamai",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"dunamai\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/36/41/04e2a649058b0713b00d6c9bd22da35618bb157289e05d068e51fddf8d7e/dunamai-1.25.0-py3-none-any.whl",
+        "sha256": "7f9dc687dd3256e613b6cc978d9daabfd2bb5deb8adc541fc135ee423ffa98ab"
+      }
+    ]
+  }
+}

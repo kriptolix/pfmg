@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "gjspack",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "gjspack",
+    "buildsystem": "simple",
+    "build-commands": [
+      "cd ./gjspack && ./bin/gjspack --appid=gjspack src/cli.js /app/bin"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/sonnyp/troll.git",
+        "commit": "8b0275948eedec9ed0378f9bdda1aa4aac3062ba"
+      }
+    ]
+  }
+}

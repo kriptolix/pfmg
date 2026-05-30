@@ -1,0 +1,29 @@
+{
+  "header": {
+    "id": "q3rally",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "q3rally",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pushd engine\nexport BUILD_GAME_QVM=0\nmake DEFAULT_BASEDIR=${FLATPAK_DEST}/lib/q3rally USE_AUTOUPDATER=0 -j${FLATPAK_BUILDER_N_JOBS}\nmkdir -p ${FLATPAK_DEST}/bin/\nmake copyfiles COPYBINDIR=${FLATPAK_DEST}/bin/ COPYDIR=${FLATPAK_DEST}/lib/q3rally/ NO_STRIP=1\n",
+      "mv ${FLATPAK_DEST}/bin/q3rally.* ${FLATPAK_DEST}/bin/q3rally",
+      "mv ${FLATPAK_DEST}/bin/q3rally-server.* ${FLATPAK_DEST}/bin/q3rally-server",
+      "mv ${FLATPAK_DEST}/bin/*.so ${FLATPAK_DEST}/lib/q3rally/",
+      "install -Dm0644 engine/misc/quake3.svg ${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/q3rally.svg",
+      "install -Dm0644 engine/misc/setup/q3rally.desktop ${FLATPAK_DEST}/share/applications/q3rally.desktop",
+      "install -Dm0644 engine/misc/setup/${FLATPAK_ID}.metainfo.xml ${FLATPAK_DEST}/share/metainfo/${FLATPAK_ID}.metainfo.xml"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/Q3Rally-Team/q3rally.git",
+        "tag": "v0.6",
+        "commit": "387651262ddb6204103eadda025d6ec697d74dd9"
+      }
+    ]
+  }
+}

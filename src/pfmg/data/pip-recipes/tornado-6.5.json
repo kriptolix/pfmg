@@ -1,0 +1,33 @@
+{
+  "header": {
+    "id": "tornado",
+    "version": "6.5",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "tornado",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=/app \"tornado==6.5.0\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/d8/fa/23bb108afb8197a55edd333fe26a3dad9341ce441337aad95cd06b025594/tornado-6.5-cp39-abi3-manylinux_2_5_x86_64.manylinux1_x86_64.manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "sha256": "03576ab51e9b1677e4cdaae620d6700d9823568b7939277e4690fe4085886c55",
+        "only-arches": [
+          "x86_64"
+        ]
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/4a/62/fdd9b12b95e4e2b7b8c21dfc306b0960b20b741e588318c13918cf52b868/tornado-6.5-cp39-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl",
+        "sha256": "7c625b9d03f1fb4d64149c47d0135227f0434ebb803e2008040eb92906b0105a",
+        "only-arches": [
+          "aarch64"
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "xrdb",
+    "version": "1.2.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "xrdb",
+    "buildsystem": "autotools",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://xorg.freedesktop.org/releases/individual/app/xrdb-1.2.2.tar.gz",
+        "sha256": "db2d774a35ae2f7e7ac61cc2de0dcae27fc2aa14399c35721f8300e63ea73549",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 14956,
+          "url-template": "https://xorg.freedesktop.org/releases/individual/app/xrdb-$version.tar.gz"
+        }
+      }
+    ]
+  }
+}

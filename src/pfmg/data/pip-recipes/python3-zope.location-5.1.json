@@ -1,0 +1,37 @@
+{
+  "header": {
+    "id": "python3-zope.location",
+    "version": "5.1",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-zope.location",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"zope.location==5.1\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/00/ed/d8c3f56c1edb0ee9b51461dd08580382e9589850f769b69f0dedccff5215/zope_event-5.1-py3-none-any.whl",
+        "sha256": "53de8f0e9f61dc0598141ac591f49b042b6d74784dab49971b9cc91d0f73a7df"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/30/93/9210e7606be57a2dfc6277ac97dcc864fd8d39f142ca194fdc186d596fda/zope.interface-7.2.tar.gz",
+        "sha256": "8b49f1a3d1ee4cdaf5b32d2e738362c7f5e40ac8b46dd7d1a65e82a4872728fe"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/45/3e/fcbb944ec263a1609034aaa6244ae75e1d5cff08c5dc7374e896eee233da/zope.location-5.1-py3-none-any.whl",
+        "sha256": "e67aaba85d108a9e2228f01fa2aced55325a3a26c28a3ab6c03c8281708aef20"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/4b/80/5cec1172d3eb392652821cc1f689e9e24b199edd148315acd1c501cfe77d/zope_schema-7.1-py3-none-any.whl",
+        "sha256": "0b23034abc5a55411d5ac241b54a626143d43fe8e8016b69dae4d41811ab8b34"
+      }
+    ]
+  }
+}

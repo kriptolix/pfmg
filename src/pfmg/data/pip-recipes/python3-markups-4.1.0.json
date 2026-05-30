@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "python3-markups",
+    "version": "4.1.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-Markups",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"Markups[restructuredtext,markdown]>=4.0\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/1d/37/cac1dea3f48e0af477b56d2c5b1a1b6e23a8ae62b655586075ca951bc022/Markups-4.1.0-py3-none-any.whl",
+        "sha256": "cb7efceddb570191a740b52fc305742f581c0646a5df997d586068763cceb1ac"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/4d/36/d16118345ff5f503d4d1c708e8427ed2213f2af7aaffac9d59010e665b5c/python_markdown_math-0.8-py3-none-any.whl",
+        "sha256": "c685249d84b5b697e9114d7beb352bd8ca2e07fd268fd4057ffca888c14641e5"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/54/ed/79a089b6be93607fa5cdaedf301d7dfb23af5f25c398d5ead2525b063e17/pyyaml-6.0.2.tar.gz",
+        "sha256": "d584d9ec91ad65861cc08d42e834324ef890a082e591037abe114850ff7bbc3e"
+      }
+    ]
+  }
+}

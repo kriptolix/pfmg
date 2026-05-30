@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "qmltermwidget",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "qmltermwidget",
+    "buildsystem": "qmake",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/kalaksi/qmltermwidget.git",
+        "commit": "6b73b77690948f17f5c881fd79153191d066be10"
+      }
+    ],
+    "make-install-args": [
+      "INSTALL_ROOT=/app/qmltermwidget"
+    ]
+  }
+}

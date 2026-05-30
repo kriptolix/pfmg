@@ -1,0 +1,56 @@
+{
+  "header": {
+    "id": "upp",
+    "version": "2025.1.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "upp",
+    "buildsystem": "simple",
+    "build-commands": [
+      "printf \"#define flagFlatpak 1\\\\n\" > uppsrc/uppconfig.h",
+      "printf \"#define IDE_VERSION \\\"2025.1.1\\\"\\\\n\" > uppsrc/ide/version.h",
+      "make -f Makefile -j $FLATPAK_BUILDER_N_JOBS",
+      "printf \"\\\\n\" > uppsrc/uppconfig.h",
+      "make -f umkMakefile.in -j $FLATPAK_BUILDER_N_JOBS",
+      "mv ide theide",
+      "install -Dm755 theide /app/bin/theide",
+      "install -Dm755 umk /app/bin/umk",
+      "install -Dm644 uppsrc/ide/icon.svg /app/share/icons/hicolor/scalable/apps/${FLATPAK_ID}.svg",
+      "install -Dm644 uppsrc/ide/theide.desktop /app/share/applications/${FLATPAK_ID}.desktop",
+      "desktop-file-edit --set-key=Icon --set-value=${FLATPAK_ID} /app/share/applications/${FLATPAK_ID}.desktop",
+      "mkdir -p /app/{src,lib,bm}",
+      "printf \"\\\\n\" > uppsrc/uppconfig.h",
+      "rm -f /app/src/ver.txt && touch /app/src/ver.txt",
+      "printf \"2025.1.1\" > /app/src/ver.txt",
+      "cp -r examples /app/src",
+      "cp -r reference /app/src",
+      "cp -r tutorial /app/src",
+      "cp -r uppsrc /app/src",
+      "cp .clang-format /app/src/uppsrc/.clang-format",
+      "cp uppbox/Scripts/GCCMK.bm /app/bm/GCC.bm",
+      "cp run-ide-install-host-deps.sh /app/src/run-ide-install-host-deps.sh",
+      "cp -a /usr/lib/sdk/llvm21/lib/libLLVM* /app/lib/",
+      "cp -a /usr/lib/sdk/llvm21/lib/libLLVMTableGen.so* /app/lib/",
+      "cp -a /usr/lib/sdk/llvm21/lib/libclang.so* /app/lib/",
+      "cp -a /usr/lib/sdk/llvm21/lib/libclang-cpp.so* /app/lib/",
+      "cp /usr/lib/sdk/llvm21/lib/LLVMgold.so /app/lib/"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/ultimatepp/ultimatepp/archive/refs/tags/2025.1.1.tar.gz",
+        "sha256": "de908431e1ed29b4cf05e775108cf0b13d5a1c6921e63c2ddf623dbcbe3f0646"
+      },
+      {
+        "type": "file",
+        "path": "run-ide-install-host-deps.sh"
+      },
+      {
+        "type": "patch",
+        "path": "patches/execute.patch"
+      }
+    ]
+  }
+}

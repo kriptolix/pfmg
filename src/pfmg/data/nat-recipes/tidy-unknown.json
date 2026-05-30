@@ -1,0 +1,19 @@
+{
+  "header": {
+    "id": "tidy",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "tidy",
+    "buildsystem": "cmake",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/htacg/tidy-html5",
+        "tag": "5.8.0"
+      }
+    ]
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "header": {
+    "id": "songbird",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "songbird",
+    "buildsystem": "simple",
+    "build-commands": [
+      "sed -e s/arm64/aarch64/g -i JUCE/extras/Build/CMake/juce_runtime_arch_detection.cpp JUCE/extras/Projucer/JuceLibraryCode/BinaryData.cpp",
+      "(cd JUCE/extras/Projucer/Builds/LinuxMakefile/ && make -j $FLATPAK_BUILDER_N_JOBS)",
+      "JUCE/extras/Projucer/Builds/LinuxMakefile/build/Projucer --resave Songbird.jucer",
+      "make -j $FLATPAK_BUILDER_N_JOBS -C Builds/LinuxMakefile/"
+    ],
+    "post-install": [
+      "install -Dm644 -t ${FLATPAK_DEST}/share/licenses/songbird Source/Graphics/OFL.txt",
+      "install -Dm644 -t ${FLATPAK_DEST}/share/licenses/songbird LICENSE",
+      "install -d ${FLATPAK_DEST}/vst3",
+      "cp -R Builds/LinuxMakefile/build/Songbird.vst3 ${FLATPAK_DEST}/vst3",
+      "strip  --strip-unneeded ${FLATPAK_DEST}/vst3/Songbird.vst3/Contents/*/*.so"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/jd-13/Songbird-Formant-Filter.git",
+        "tag": "v2.3.0"
+      },
+      {
+        "type": "patch",
+        "path": "patches/songbird-jucer.patch"
+      },
+      {
+        "type": "archive",
+        "path": "Montserrat.zip",
+        "dest": "Source/Graphics/"
+      },
+      {
+        "type": "git",
+        "url": "https://github.com/juce-framework/JUCE.git",
+        "tag": "6.1.6",
+        "dest": "JUCE"
+      },
+      {
+        "type": "patch",
+        "path": "patches/juce-616-header.patch"
+      },
+      {
+        "type": "git",
+        "url": "https://github.com/jd-13/WE-Core.git",
+        "tag": "v0.2.4",
+        "dest": "WE-Core"
+      },
+      {
+        "type": "patch",
+        "path": "patches/songbird-wecore.patch"
+      }
+    ]
+  }
+}

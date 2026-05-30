@@ -1,0 +1,41 @@
+{
+  "header": {
+    "id": "gtk2-murrine-engine",
+    "version": "0.98",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "gtk2-murrine-engine",
+    "rm-configure": true,
+    "// NOTE": "Used by Arc and CrosAdapta",
+    "cleanup": [
+      "*.la"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.gnome.org/sources/murrine/0.98/murrine-0.98.2.tar.xz",
+        "sha256": "e9c68ae001b9130d0f9d1b311e8121a94e5c134b82553ba03971088e57d12c89"
+      },
+      {
+        "type": "patch",
+        "paths": [
+          "murrine-engine-fix-crash.patch",
+          "gtk2-murrine-c99.patch"
+        ]
+      },
+      {
+        "type": "script",
+        "commands": [
+          "rm config.guess",
+          "autoreconf -si"
+        ]
+      }
+    ],
+    "modules": [
+      "../intltool/intltool-0.51.json",
+      "../gtk2/gtk2.json"
+    ]
+  }
+}

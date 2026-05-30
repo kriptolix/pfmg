@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "lua-curlv3",
+    "version": "0.3.13",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "Lua-cURLv3",
+    "buildsystem": "simple",
+    "build-commands": [
+      "make DESTDIR=/app LUA_CMOD=/lib/lua/5.1 LUA_IMPL=luajit -j$FLATPAK_BUILDER_N_JOBS install"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/Lua-cURL/Lua-cURLv3/archive/refs/tags/v0.3.13.tar.gz",
+        "sha256": "aba40511a7cac4422c0238d1db42b2124ea5a727b0745f7f434f3dc119cbb2db"
+      }
+    ]
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "header": {
+    "id": "akonadi-search",
+    "version": "25.12.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "akonadi-search",
+    "config-opts": [
+      "-DBUILD_TESTING=OFF",
+      "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
+      "-DAKONADISEARCH_ENABLE_KRUNNER_RUNNER=OFF"
+    ],
+    "buildsystem": "cmake-ninja",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.kde.org/stable/release-service/25.12.2/src/akonadi-search-25.12.2.tar.xz",
+        "sha256": "8328094f725ed4603e2309bf381d1a407baa38032e157f2e7421f3c53e2e21ce",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 8763,
+          "stable-only": true,
+          "url-template": "https://download.kde.org/stable/release-service/$version/src/akonadi-search-$version.tar.xz"
+        }
+      }
+    ]
+  }
+}

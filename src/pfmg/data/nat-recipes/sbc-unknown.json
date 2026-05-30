@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "sbc",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "sbc",
+    "cleanup": [
+      "/include"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://git.kernel.org/pub/scm/bluetooth/sbc.git",
+        "tag": "2.2",
+        "commit": "b3deb8a5dcfb42d8c10ba1f2f1ac9bd7bf7271cc",
+        "x-checker-data": {
+          "type": "git"
+        }
+      }
+    ]
+  }
+}

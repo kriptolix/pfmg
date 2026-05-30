@@ -1,0 +1,30 @@
+{
+  "header": {
+    "id": "blosc",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "blosc",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/Blosc/c-blosc.git",
+        "tag": "v1.21.6",
+        "x-checker-data": {
+          "type": "git"
+        },
+        "commit": "616f4b7343a8479f7e71dd3d7025bd92c9a6bbd0"
+      },
+      {
+        "type": "patch",
+        "path": "blosc-gcc15.patch"
+      }
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "nnedi3-weights.bin",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "nnedi3_weights.bin",
+    "buildsystem": "simple",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/dubhater/vapoursynth-nnedi3",
+        "commit": "8c35822ae358e46c99aae52e5a93010f1a5a6be6"
+      }
+    ],
+    "build-commands": [
+      "install src/nnedi3_weights.bin /app/bin/nnedi3_weights.bin"
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "cpp-httplib",
+    "version": "0.28.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "cpp-httplib",
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
+      "-DHTTPLIB_REQUIRE_OPENSSL=ON"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/yhirose/cpp-httplib/archive/refs/tags/v0.28.0.tar.gz",
+        "sha256": "ccb32f9832c906d571f61794f453223dbb724ba738265551e3cd28ca325b529d"
+      }
+    ]
+  }
+}

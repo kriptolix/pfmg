@@ -1,0 +1,40 @@
+{
+  "header": {
+    "id": "libsteam-api-bin",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libsteam_api-bin",
+    "build-options": {
+      "strip": false,
+      "no-debuginfo": true
+    },
+    "subdir": "steam_helper",
+    "buildsystem": "simple",
+    "build-commands": [
+      "install -Dm755 64/libsteam_api.so -t ${FLATPAK_DEST}/lib/",
+      "install -Dm755 32/libsteam_api.so -t ${FLATPAK_DEST}/lib32/"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/ValveSoftware/Proton.git",
+        "tag": "proton-7.0-6",
+        "commit": "c5ad95671cecaf03c4a92500de84b542add585d1",
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://api.github.com/repos/ValveSoftware/Proton/git/refs/tags/proton-",
+          "tag-query": "map(select(.ref | match(\"refs/tags/proton-[0-9].*\"; \"\"))) | last | if .object.type==\"commit\" then . else error(\"not a commit\") end | .ref | sub(\"^refs/tags/\"; \"\")",
+          "version-query": "$tag | sub(\"^proton-\"; \"\")",
+          "commit-query": "map(select(.ref | match(\"refs/tags/proton-[0-9].*\"; \"\"))) | last | .object.sha",
+          "timestamp-data-url": "map(select(.ref | match(\"refs/tags/proton-[0-9].*\"; \"\"))) | last | .object.url",
+          "timestamp-query": ".committer.date",
+          "is-main-source": true,
+          "source-id": "proton-git-0"
+        }
+      }
+    ]
+  }
+}

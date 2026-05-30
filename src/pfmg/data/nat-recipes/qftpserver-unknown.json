@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "qftpserver",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "QFtpServer",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/KangLin/QFtpServer.git",
+        "commit": "4e98ea4402cea73a9e028250aa025cd9bcbf337a"
+      }
+    ],
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DWITH_APP=OFF"
+    ]
+  }
+}

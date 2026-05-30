@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "nn",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "nn",
+    "buildsystem": "simple",
+    "build-commands": [
+      "mkdir -p /app/bin/Engines/lc0",
+      "mv nn /app/bin/Engines/lc0/"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "dest-filename": "nn",
+        "url": "https://training.lczero.org/get_network?sha=0f2f738e314bf618384045d4320a55333375d273d093adb805a4268ee53b519c",
+        "sha256": "5cf80e9e5091134241235400366c6c46c8b1613b07b98243f4e4dcc691bf47ae"
+      }
+    ]
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "opentimelineio",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "opentimelineio",
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "config-opts": [
+      "-DOTIO_FIND_IMATH=ON",
+      "-DOTIO_DEPENDENCIES_INSTALL=OFF",
+      "-DBUILD_TESTING=OFF"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/AcademySoftwareFoundation/OpenTimelineIO.git/",
+        "tag": "v0.18.1"
+      }
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "goocanvas",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "goocanvas",
+    "config-opts": [
+      "--enable-python=no"
+    ],
+    "build-options": {
+      "make-install-args": [
+        "girdir=/app/share/gir-1.0",
+        "typelibdir=/app/lib/girepository-1.0"
+      ]
+    },
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://gitlab.gnome.org/GNOME/goocanvas",
+        "branch": "goocanvas-3.0",
+        "commit": "076c374ab05b9ee326e3b7905d3d72197429171e"
+      }
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-qasync",
+    "version": "0.28.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-qasync",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"qasync==0.28.0\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/e5/84/0ce4cd946f6e958428c87d5accac35df70f81607e45ba4919947d0762d63/qasync-0.28.0-py3-none-any.whl",
+        "sha256": "21faba8d047c717008378f5ac29ea58c32a8128528629e4afd57c59b768dba0f"
+      }
+    ]
+  }
+}

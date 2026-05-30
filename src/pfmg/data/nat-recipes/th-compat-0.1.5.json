@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "th-compat",
+    "version": "0.1.5",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "th-compat",
+    "buildsystem": "simple",
+    "builddir": false,
+    "build-commands": [
+      "echo '#! /usr/bin/env runhaskell' >Setup.txt",
+      "echo '> import Distribution.Simple' >>Setup.txt",
+      "echo '> main = defaultMain' >>Setup.txt",
+      "ln -s Setup.txt Setup.lhs || true",
+      "runhaskell Setup configure --prefix=/app",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "sources": [
+      {
+        "sha256": "81f55fafc7afad7763c09cb8b7b4165ca3765edcf70ffa42c7393043a1382a1e",
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/th-compat-0.1.5/th-compat-0.1.5.tar.gz"
+      },
+      {
+        "dest-filename": "th-compat.cabal",
+        "sha256": "129a59ba3ccfcd06192fd6da899e2711ae276a466915a047bd6727e4a0321d2e",
+        "type": "file",
+        "url": "https://hackage.haskell.org/package/th-compat-0.1.5/revision/2.cabal"
+      }
+    ]
+  }
+}

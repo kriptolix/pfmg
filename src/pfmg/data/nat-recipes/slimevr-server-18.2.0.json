@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "slimevr-server",
+    "version": "18.2.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "slimevr-server",
+    "buildsystem": "simple",
+    "build-commands": [
+      "mkdir -p /app/share/slimevr",
+      "install -Dm755 slimevr.jar /app/share/slimevr/slimevr.jar"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://github.com/SlimeVR/SlimeVR-Server/releases/download/v18.2.0/slimevr.jar",
+        "sha256": "fd8409017e800eea8b00938efa3992be684769d6e3593c579ae4a2b422644790"
+      }
+    ]
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "header": {
+    "id": "acedrg",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "acedrg",
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DCMAKE_CXX_STANDARD=17",
+      "-DPython_EXECUTABLE=/usr/bin/python3",
+      "-DPYTHON_VERSION=3",
+      "-DPython_SITELIB=/app/lib/python3.13/site-packages"
+    ],
+    "build-options": {
+      "cxxflags": "-fPIC -O3"
+    },
+    "post-install": [
+      "ln -sf /app/libexec/libmol /app/bin/libmol"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://ccp4forge.rc-harwell.ac.uk/ccp4/acedrg.git",
+        "commit": "8e54f9bdfb21403e4b0b0a12c9abc11576c42094"
+      },
+      {
+        "type": "shell",
+        "commands": [
+          "sed -i '/find_package(Python/a set(Python_SITELIB \"/app/lib/python3.13/site-packages\")' CMakeLists.txt",
+          "grep -rlIZ --exclude-dir=.git 'ccp4-python' . | xargs -0 sed -i 's/ccp4-python/python/g'"
+        ]
+      }
+    ]
+  }
+}

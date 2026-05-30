@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-frozenlist",
+    "version": "1.8.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-frozenlist",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --prefix=/app frozenlist-1.8.0-py3-none-any.whl"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/9a/9a/e35b4a917281c0b8419d4207f4334c8e8c5dbf4f3f5f9ada73958d937dcc/frozenlist-1.8.0-py3-none-any.whl",
+        "sha256": "0c18a16eab41e82c295618a77502e17b195883241c563b00f0aa5106fc4eaa0d"
+      }
+    ]
+  }
+}

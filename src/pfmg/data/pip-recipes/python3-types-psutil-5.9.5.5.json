@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-types-psutil",
+    "version": "5.9.5.5",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-types-psutil",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"types-psutil==5.9.5.5\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/94/7d/e74be3fb36b7816e57dc8e9f7a21062629715cbe92ba2f12b74db5d188fa/types_psutil-5.9.5.5-py3-none-any.whl",
+        "sha256": "e576bb81c74f7443b067e94f92435894d5dd561161bec3d6401727b63df009f0"
+      }
+    ]
+  }
+}

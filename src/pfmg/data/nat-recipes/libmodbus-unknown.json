@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "libmodbus",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libmodbus",
+    "buildsystem": "autotools",
+    "sources": [
+      {
+        "type": "git",
+        "tag": "v3.1.11",
+        "url": "https://github.com/stephane/libmodbus.git",
+        "commit": "5190e5e141780ae481f24be16d7b39a5f3ad8f8f",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^v([\\d.]+)$"
+        }
+      }
+    ]
+  }
+}

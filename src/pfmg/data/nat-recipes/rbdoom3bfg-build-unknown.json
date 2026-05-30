@@ -1,0 +1,65 @@
+{
+  "header": {
+    "id": "rbdoom3bfg-build",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "rbdoom3bfg-build",
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "subdir": "neo",
+    "no-make-install": true,
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DFFMPEG=Off",
+      "-DBINKDEC=On",
+      "-DRETAIL=Off",
+      "-DFLATPAK=On",
+      "-DUSE_PRECOMPILED_HEADERS=Off",
+      "-DUSE_INTRINSICS_SSE=Off",
+      "-DUSE_INTRINSICS_NEON=Off"
+    ],
+    "build-options": {
+      "arch": {
+        "x86_64": {
+          "config-opts": [
+            "-DUSE_INTRINSICS_SSE=On"
+          ]
+        },
+        "aarch64": {
+          "config-opts": [
+            "-DUSE_INTRINSICS_SSE=Off"
+          ]
+        }
+      }
+    },
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/RobertBeckebans/RBDOOM-3-BFG",
+        "commit": "0fc10ab97b26c0db0900b403e26d7e6b8f8baee1"
+      },
+      {
+        "type": "patch",
+        "path": "shader-compiler.patch"
+      },
+      {
+        "type": "patch",
+        "path": "shader-make.patch"
+      }
+    ],
+    "post-install": [
+      "install -Dm 755 RBDoom3BFG /app/bin/RBDoom3BFG",
+      "mkdir -p /app/share/rbdoom3bfg/base",
+      "cp ../../base/default.cfg /app/share/rbdoom3bfg/base/default.cfg",
+      "cp -R ../../base/renderprogs2 /app/share/rbdoom3bfg/base/",
+      "install -Dm 644 ../../install/desktop/RBDOOM-3-BFG.metainfo.xml /app/share/metainfo/${FLATPAK_ID}.metainfo.xml",
+      "install -Dm 644 ../../install/desktop/RBDOOM-3-BFG.desktop /app/share/applications/${FLATPAK_ID}.desktop",
+      "install -Dm 644 ../../install/desktop/RBDOOM-3-BFG.png /app/share/icons/hicolor/256x256/apps/${FLATPAK_ID}.png",
+      "install -Dm 755 ../../install/flatpak/rbdoom3bfg.sh -t /app/bin",
+      "desktop-file-edit --set-key=Exec --set-value=/app/bin/rbdoom3bfg.sh /app/share/applications/${FLATPAK_ID}.desktop"
+    ]
+  }
+}

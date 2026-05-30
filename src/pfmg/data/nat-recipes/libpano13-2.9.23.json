@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "libpano13",
+    "version": "2.9.23",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libpano13",
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+    ],
+    "build-options": {
+      "cxxflags": "-fpermissive"
+    },
+    "cleanup": [
+      "/include",
+      "/lib/pkgconfig",
+      "/share/man",
+      "/share/pano13/doc"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.sourceforge.net/project/panotools/libpano13/libpano13-2.9.23/libpano13-2.9.23_rc1.tar.gz",
+        "sha256": "e7c076d37a14c39434962115e47ddbe18452ca3de5ce40e2aaefa7cf5815ea28"
+      }
+    ]
+  }
+}

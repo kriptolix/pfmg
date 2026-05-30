@@ -1,0 +1,41 @@
+{
+  "header": {
+    "id": "kvantum",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "kvantum",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DENABLE_QT5=OFF"
+    ],
+    "build-commands": [
+      "install -Dm755 -t ${FLATPAK_DEST}/styles/ style/libkvantum.so"
+    ],
+    "subdir": "Kvantum",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/tsujan/Kvantum.git",
+        "tag": "V1.1.6",
+        "commit": "ce2438af4c573856882eadca320b9a89eb8522b3",
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://api.github.com/repos/tsujan/Kvantum/releases/latest",
+          "tag-query": ".tag_name",
+          "version-query": "$tag | sub(\"^[vV]\"; \"\")",
+          "timestamp-query": ".published_at"
+        }
+      },
+      {
+        "type": "shell",
+        "dest": "Kvantum/style",
+        "commands": [
+          "sed \"s|\\${_Qt6_PLUGIN_INSTALL_DIR}|${FLATPAK_DEST}|g\" -i CMakeLists.txt"
+        ]
+      }
+    ]
+  }
+}

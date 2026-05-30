@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "python3-vulture",
+    "version": "2.3",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-vulture",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"vulture\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/44/6f/7120676b6d73228c96e17f1f794d8ab046fc910d781c8d151120c3f1569e/toml-0.10.2-py2.py3-none-any.whl",
+        "sha256": "806143ae5bfb6a3c6e736a764057db0e6a0e05e338b5630894a5f779cabb4f9b"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/a9/68/6dd3fdcbf00a1ca3c74e6e0876cda6c36c27744a7cde3e3b9f95e908b7b5/vulture-2.3-py2.py3-none-any.whl",
+        "sha256": "f39de5e6f1df1f70c3b50da54f1c8d494159e9ca3d01a9b89eac929600591703"
+      }
+    ]
+  }
+}

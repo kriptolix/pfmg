@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "fflas-ffpack",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "fflas-ffpack",
+    "buildsystem": "autotools",
+    "config-opts": [
+      "--enable-shared"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/linbox-team/fflas-ffpack.git",
+        "tag": "v2.5.0",
+        "commit": "497d81cbc6a8539857e8b4c7d9bca5d1828b6739"
+      }
+    ]
+  }
+}

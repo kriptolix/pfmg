@@ -1,0 +1,34 @@
+{
+  "header": {
+    "id": "ilmbase",
+    "version": "2.2.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "ilmbase",
+    "build-options": {
+      "cxxflags": "-std=c++14"
+    },
+    "cleanup": [
+      "*.la",
+      "*.so"
+    ],
+    "config-opts": [
+      "--disable-static"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.savannah.nongnu.org/releases/openexr/ilmbase-2.2.1.tar.gz",
+        "sha256": "cac206e63be68136ef556c2b555df659f45098c159ce24804e9d5e9e0286609e"
+      },
+      {
+        "type": "shell",
+        "commands": [
+          "cp -p /usr/share/automake-*/config.{sub,guess} ."
+        ]
+      }
+    ]
+  }
+}

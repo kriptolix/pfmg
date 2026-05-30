@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "python3-qdarkstyle",
+    "version": "3.2.3",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-QDarkStyle",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --no-build-isolation --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"QDarkStyle\""
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/0a/0c/58a1e48209b0b1220ca2368435573f39ff1fa3577b7eef913f8960c5d429/QtPy-2.4.2-py3-none-any.whl",
+        "sha256": "5a696b1dd7a354cb330657da1d17c20c2190c72d4888ba923f8461da67aa1a1c"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/93/7d/c3c10498430dadcea4def5faddf71cd199e577d20a125e7ef1e9d7bdbbfa/QDarkStyle-3.2.3-py2.py3-none-any.whl",
+        "sha256": "ea980ee426d594909cf1058306832af71ff6cbad6f69237b036d1550635aefbc"
+      }
+    ]
+  }
+}

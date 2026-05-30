@@ -1,0 +1,26 @@
+{
+  "header": {
+    "id": "clutter",
+    "version": "1.26",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "clutter",
+    "config-opts": [
+      "--disable-gtk-doc",
+      "--enable-egl-backend",
+      "--enable-wayland-backend"
+    ],
+    "cleanup": [
+      "/share/gtk-doc"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.gnome.org/sources/clutter/1.26/clutter-1.26.4.tar.xz",
+        "sha256": "8b48fac159843f556d0a6be3dbfc6b083fc6d9c58a20a49a6b4919ab4263c4e6"
+      }
+    ]
+  }
+}

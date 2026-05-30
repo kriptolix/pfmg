@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python-fontconfig",
+    "version": "0.6.2",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python-fontconfig",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --no-build-isolation ."
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://files.pythonhosted.org/packages/20/59/99db03443f584b6d14bb635ef9f849dae7966792471dee9bf50ae2308f07/python_fontconfig-0.6.2.post1.tar.gz",
+        "sha256": "4837290305613710cf6c515db8923284da06e4f48a549d2fe8e2d4276aed3e73"
+      }
+    ]
+  }
+}

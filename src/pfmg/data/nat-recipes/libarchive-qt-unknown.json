@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "libarchive-qt",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libarchive-qt",
+    "buildsystem": "meson",
+    "config-opts": [
+      "-Duse_qt_version=qt6"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://gitlab.com/marcusbritanicus/libarchive-qt",
+        "tag": "v2.0.8"
+      }
+    ]
+  }
+}

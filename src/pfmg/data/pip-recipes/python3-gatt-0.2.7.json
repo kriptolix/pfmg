@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-gatt",
+    "version": "0.2.7",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-gatt",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"gatt\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/96/d0/d66154053d5b47996731d80ee66f65bdf7b790258addc0b6a5f50bcc3579/gatt-0.2.7.tar.gz",
+        "sha256": "626d9de24a178b6eaff78c31b0bd29f962681da7caf18eb20363f6288d014e3a"
+      }
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-py",
+    "version": "1.8.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-py",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} py"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/76/bc/394ad449851729244a97857ee14d7cba61ddb268dce3db538ba2f2ba1f0f/py-1.8.0-py2.py3-none-any.whl",
+        "sha256": "64f65755aee5b381cea27766a3a147c3f15b9b6b9ac88676de66ba2ae36793fa"
+      }
+    ]
+  }
+}

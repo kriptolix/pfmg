@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "glaze",
+    "version": "7.6.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "glaze",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DBUILD_TESTING=OFF"
+    ],
+    "builddir": true,
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/stephenberry/glaze/archive/v7.6.0.tar.gz",
+        "sha256": "839cd7bd2bda4db1a4e973f18851c2ecdccf82c75512453f68b2389d43a3e8ad",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 377101,
+          "url-template": "https://github.com/stephenberry/glaze/archive/v$version.tar.gz"
+        }
+      }
+    ]
+  }
+}

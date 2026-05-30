@@ -1,0 +1,38 @@
+{
+  "header": {
+    "id": "openbabel",
+    "version": "3.1.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "OpenBabel",
+    "buildsystem": "cmake",
+    "builddir": true,
+    "config-opts": [
+      "-DBUILD_GUI=FALSE",
+      "-DENABLE_TESTS=OFF"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/openbabel/openbabel/releases/download/openbabel-3-1-1/openbabel-3.1.1-source.tar.bz2",
+        "sha256": "a6ec8381d59ea32a4b241c8b1fbd799acb52be94ab64cdbd72506fb4e2270e68",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 2539,
+          "stable-only": true,
+          "url-template": "https://github.com/openbabel/openbabel/releases/download/openbabel-${major}-${minor}-${patch}/openbabel-${version}-source.tar.bz2"
+        }
+      },
+      {
+        "type": "patch",
+        "path": "Removed_non-compiling_assignment_operator.patch"
+      },
+      {
+        "type": "patch",
+        "path": "fix_time_check_typo.patch"
+      }
+    ]
+  }
+}

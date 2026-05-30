@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "scientific-0.3.5.3",
+    "version": "0.3.5.3",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "scientific-0.3.5.3",
+    "only-arches": [
+      "x86_64"
+    ],
+    "buildsystem": "simple",
+    "build-commands": [
+      "ghc -threaded --make Setup",
+      "./Setup configure --prefix=/app",
+      "./Setup build",
+      "./Setup install"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "sha256": "12a6d13417c24e4b7f905d6cd8dcd1d9ae51f6f7ba3fda13057d521c8fc2c748",
+        "url": "https://hackage.haskell.org/package/scientific-0.3.5.3/scientific-0.3.5.3.tar.gz"
+      }
+    ]
+  }
+}

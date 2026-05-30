@@ -1,0 +1,377 @@
+{
+  "header": {
+    "id": "python3-zope",
+    "version": "5.13",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-Zope",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"Zope==5.13\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/63/12/cfaae50dbd4e570847e19d2834235bcf449ab174f2ea5616cab0c7f009bd/accesscontrol-7.2.tar.gz",
+        "sha256": "5a0e84b8b775a63826082a8697e75aad8131077d821d35ee7ce63f704a06ff43"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/67/9a/3df1e83e6655ca6eee9920f746455b9865c7dff9ef5ca9dadb683fb38c02/acquisition-6.1.tar.gz",
+        "sha256": "e88b296d6ec5fcb63194deb91d8c4df37150dcae149ede4e1aeb115d042e9378"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/65/15/716495cf0759c1dd8e449afb26cda840e3378b7b5afd47f63c8045434d1e/AuthEncoding-6.0-py3-none-any.whl",
+        "sha256": "4c1a8c3db8222a9892a947d77fde7db3b4be224bbcf0765762e44abdb4da3a0c"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/4b/bd/5dd0c5bd5ac2d518c18bc3f4746028f931d77b4d4b83cbcb8c4271ab465b/btrees-6.1.tar.gz",
+        "sha256": "e18746f8641869a20f45328c9b5f97dc6c71a1195960356aef63b75f5c8d445f"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/1b/44/07739ae778f280bb5d77806b57806730438331dd018268ff3a327a3507f6/Chameleon-4.6.0-py3-none-any.whl",
+        "sha256": "f674cab262d7b8a26c38574e06f513e91f60c129887ff5ab6a3a2a46c03dd925"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/f3/78/8e382b8cb4346119e2e04270b6eb4a01c5ee70b47a8a0244ecdb157204f7/DateTime-5.5-py3-none-any.whl",
+        "sha256": "0abf6c51cb4ba7cee775ca46ccc727f3afdde463be28dbbe8803631fefd4a120"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/29/34/71e07eeac40f191d5a152f2704d2150d252c8ae0f0fb5cd75451d89c1347/DocumentTemplate-4.6-py3-none-any.whl",
+        "sha256": "4e7b592857c9d6c880b5c664503cb270c3a6d44eabf48ecc468aeb0589fc4477"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/2b/01/08bfef7c8fe8d611f8fa8760985a5f3abf6b14d7da6341418f12c0f34dd3/extensionclass-6.0.tar.gz",
+        "sha256": "e36c9863f268b812811d783e4274ec369d9e152fc9fe6ecf7396a0cf8d06b09f"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/b0/c3/a23cd25567320bde3410bdb4ab9c0d1c4a29a3d62044e157fe413261b39f/MultiMapping-5.0-py3-none-any.whl",
+        "sha256": "ed92471d33c2c2eebd6a10a3f854f4a0930a0d65756212118904f8e202d2703d"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/85/30/cdddd9a88969683a59222a6d61cd6dce923977f2e9f9ffba38e1324149cd/PasteDeploy-3.1.0-py3-none-any.whl",
+        "sha256": "76388ad53a661448d436df28c798063108f70e994ddc749540d733cdbd1b38cf"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/03/7a/f344d4fc124a9df6856099e9fb9db1a7dffec852a44aa1786d5064a3c286/persistence-5.1.tar.gz",
+        "sha256": "4877b6a2ffe15d293e5323a0c530d3a8f9abb7ff27e9f409727c749fb057aec5"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/4f/b9/472013e536aa22eba099becd8d1c8cddc1fd900303c60c75a643a59e41a3/WSGIProxy2-0.5.1-py3-none-any.whl",
+        "sha256": "37ab414dc568aba8c1fb0660885d05ab7ddde0a3460af90fea415afcdd7dfca8"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/50/bd/c336448be43d40be28e71f2e0f3caf7ccb28e2755c58f4c02c065bfe3e8e/WebOb-1.8.9-py2.py3-none-any.whl",
+        "sha256": "45e34c58ed0c7e2ecd238ffd34432487ff13d9ad459ddfd77895e67abba7c1f9"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/c1/f9/99a7b04ab682f7c532fe0e53cddb7670218b0bb4ae26e4056ca5e5fc0a8c/ZConfig-4.2-py3-none-any.whl",
+        "sha256": "43ae4b70aeb30db44341863d480d739d1fba4534796a2f46f4ce4d99e075250a"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/50/cd/30110dc0ffcf3b131156077b90e9f60ed75711223f306da4db08eff8403b/beautifulsoup4-4.13.4-py3-none-any.whl",
+        "sha256": "9bbbb14bfde9d79f38b8cd5f8c7c85f4b8f2523190ebed90e950a8dea4cb1c4b"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/fc/97/c783634659c2920c3fc70419e3af40972dbaf758daa229a7d6ea6135c90d/cffi-1.17.1.tar.gz",
+        "sha256": "1c39c6016c32bc48dd54561950ebd6836e1670f2ae46128f67cf49e789c52824"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/5a/33/68c6c38193684537757e0d50a7ccb4f4656e5c2f7cd2be737a9d4a1bff71/legacy_cgi-2.6.3-py3-none-any.whl",
+        "sha256": "6df2ea5ae14c71ef6f097f8b6372b44f6685283dc018535a75c924564183cdab"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/9a/d6/d547a7004b81fa0b2aafa143b09196f6635e4105cd9d2c641fa8a4051c05/multipart-1.3.0-py3-none-any.whl",
+        "sha256": "439bf4b00fd7cb2dbff08ae13f49f4f49798931ecd8d496372c63537fa19f304"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/d3/4d/80e14d3f34a603c70d79f22ad5d14b5e77f7660c92d6f0ba405ca719c259/persistent-6.1.1.tar.gz",
+        "sha256": "2d321b60eb07ef900f85a96cf071ff8c3b9aee6e679becc48c46f3457e8d9d2f"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/13/a3/a812df4e2dd5696d1f351d58b8fe16a405b234ad2886a0dab9183fb78109/pycparser-2.22-py3-none-any.whl",
+        "sha256": "c3702b6d3dd8c7abc1afa565d7e63d53a1d0bd86cdc24edd75470f4de499cfcc"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/0d/e7/70b80ec3480b9c453366a396e31eaa2f00b5a6824e1600d23f796e848b6b/python_gettext-5.0-py3-none-any.whl",
+        "sha256": "083d4c72c5e72a6bd83b0570770792b9a1e572d8ab3e9cba554e0cd4781aa84a"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/81/c4/34e93fe5f5429d7570ec1fa436f1986fb1f00c3e0f43a589fe2bbcd22c3f/pytz-2025.2-py2.py3-none-any.whl",
+        "sha256": "5ddf76296dd8c44c26eb8f4b6f35488f3ccbf6fbbd7adee0b7262d43f0ec2f00"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/df/31/b33804f873742ab20c8ed82a75652bf60a6205116dfec8bb092a6ebef084/RestrictedPython-8.0-py3-none-any.whl",
+        "sha256": "ed3d894efd7d6cac0a5f13f75583b8458378d400d7dd4c083b59233eba85fe69"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/f7/d0/27c9840ddaf331ace898c7f4aa1e1304a7acc22b844b5420fabb6d14c3a0/roman-5.1-py3-none-any.whl",
+        "sha256": "bf595d8a9bc4a8e8b1dfa23e1d4def0251b03b494786df6b8c3d3f1635ce285a"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/e7/9c/0e6afc12c269578be5c0c1c9f4b49a8d32770a080260c333ac04cc1c832d/soupsieve-2.7-py3-none-any.whl",
+        "sha256": "6e60cc5c1ffaf1cebcc12e8188320b72071e922c2e897f737cadce79ad5d30c4"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/ae/2a/b531f79737312fedf0af878e38bfd42be3a31a7cc74bc89c5f22173ce2ad/transaction-5.0-py3-none-any.whl",
+        "sha256": "b4c0b2d49a042d86235fa76531c3356b66d7635bb0e9f29ba2512915fc7b7a42"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/b5/00/d631e67a838026495268c2f6884f3711a15a9a2a96cd244fdaea53b823fb/typing_extensions-4.14.1-py3-none-any.whl",
+        "sha256": "d1e1e3b58374dc93031d6eda2420a48ea44a36c2b4766a4fdeb3710755731d76"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/8d/57/a27182528c90ef38d82b636a11f606b0cbb0e17588ed205435f8affe3368/waitress-3.0.2-py3-none-any.whl",
+        "sha256": "c56d67fd6e87c2ee598b76abdd4e96cfad1f24cacdea5078d382b1f9d7b5ed2e"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/b8/72/22f292e65be0d68f19bb5cc439119453ba60ea1e7fec2a38217fa3d0de28/webtest-3.0.6-py3-none-any.whl",
+        "sha256": "0c4a5a3dcf745a78c7905b803d6a520a2cf241c1f00ccdf4351f52916d555543"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/df/f5/99cb2ccf605383c5084fdc86342924c76c2209412638032d86e9b6663505/z3c_pt-5.1-py3-none-any.whl",
+        "sha256": "871827359171888eba4c6e4c7a50e589515f6ae6ac229731b45a23f641abfd2b"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/6c/4d/8158d3f93c7eac8c94e0cff3ce5472335f46c5dc2f8c572742e9996e7aa1/zExceptions-5.0-py3-none-any.whl",
+        "sha256": "bbd11d5544f6611ae1045214f9fe5d0d95cd6c479a555de509fa1d41199491de"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/a7/aa/47f00f32605177a945f3a1b36a1b2bb9a39260566541280fcee27cbff5cf/zc.lockfile-3.0.post1-py3-none-any.whl",
+        "sha256": "ddb2d71088c061dc8a5edbaa346b637d742ca1e1564be75cb98e7dcae715de19"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/3d/90/d65b2b42d28d8496b6e2d43d3713aa6b7342a1f4e0648e6dbf7285ea6855/zodb-6.0.1-py3-none-any.whl",
+        "sha256": "484132ca9273894615606974cce4c0efa80e6cde9ba9b38fa2cbe6849bab1d33"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/7f/5b/1d4e85c0b26335e8bb007285bc9123857b5af1476cf694ca6dff1ff8ffea/zodbpickle-4.2.tar.gz",
+        "sha256": "5a85144fba6c34fc67bd00c7f089d6d532dc43a03447dfc5e23846c919230a45"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/dc/69/870128f952851509a56c2ea604e2fe1a9af032c66a87172fd2bd733e12d7/zope-5.13-py3-none-any.whl",
+        "sha256": "b0d0ebfa2787da62efaf37ba961e8a8c7caff0d248fc1f98844015aa07514997"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/06/e7/f249daa9da780483933b364e4e9cb80d59922744b57f2b9d0caf39412fdb/zope_annotation-5.2-py3-none-any.whl",
+        "sha256": "2c04add457131febdd17c28aa701fcbf398b064df357e3710ba23b5a699c5b0d"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/16/6e/3850c13cec46ae5ac5f63f348a7902d81b54984a3a6426aececdb153d62e/zope.browser-3.1-py3-none-any.whl",
+        "sha256": "c2f08da5a7514877878e3f02ad2dd984e7504c326b9c401ee03d2d92e4b4fec0"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/c5/c0/3bfd493f8afadac6b6275b2165af66876c970042d1274ddff72a17d1978b/zope.browsermenu-5.1-py3-none-any.whl",
+        "sha256": "4fb302c301816cf4630512d60181bb804b6dc2478e1efb8e0363c2116ce806a0"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/0d/c8/0917a32fb805f63a39de451e6803a00c5fc93dfc7a840cba0f9f349e1013/zope_browserpage-5.1-py3-none-any.whl",
+        "sha256": "67f5d8f7a6af8e914352286873f8b134fe5f233b10d8171283ecd8e19458df0b"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/02/33/0de62d868488df667f13a913285c3ea3a2527b72495d3e32e08ccd254427/zope.browserresource-5.2-py3-none-any.whl",
+        "sha256": "abeeaf16d526f21b89af58710e44a8b6ab7bb604fd5fe4fe930718dffca0a476"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/d2/89/0f1795841df3258bda60bdf985f17e89fe6bb48f0832bda41c7b67329af9/zope.cachedescriptors-5.1-py3-none-any.whl",
+        "sha256": "cd5c4e963ff176f645a3a29147562a4468356ea774a0b7f01edde7891a332763"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/a0/ea/18a5e07ce7f66714aa289ba21c5bc52221bffc3a77d6e4318d50e8a0a3f7/zope.component-6.0-py3-none-any.whl",
+        "sha256": "96d0a04db39643caf2dfaec152340f3e914df1dc3fa32fbb913782620dc6c3c6"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/97/32/ec9fe5c67a5b549d7088d523dc3429392e3b57b0d6055f781e7ed2e42803/zope.configuration-6.0-py3-none-any.whl",
+        "sha256": "1b99b4845c987fbb8e329a5548b7c4aa3b75ee5531dcc5f69674365a2f5e5306"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/e2/08/6e4f31820719ead7d2e77bc7ff3d412247923fdf4bef8cfb83d4d490017c/zope_contentprovider-6.1-py3-none-any.whl",
+        "sha256": "98b62ad88e311fb371de6d0042dd614e429df7329ab567eede01f4a2028de255"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/94/70/9d3c8c2f86658b02066678d46b0a7715c01f247d8dbd0efc9d71dd8146ef/zope.contenttype-5.2-py3-none-any.whl",
+        "sha256": "c3b2589a80f5d2100bc9365c9d7bda1ea3cfe05dd268b5e7bf5e7a8f239cc35f"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/04/bf/45470b506fb87eaeab3abdd2515f652757ab7ec0bf98ce5184a019cbdfd8/zope.datetime-5.1-py3-none-any.whl",
+        "sha256": "6c1e3f991c9a618cd454575fe4b938c8397e363f46b31123a04276ca942ac2f9"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/d2/46/eef421ceda2ef2e892bad63fa4dbc698bb2d23d78ce68d4ce21e4c158208/zope_deferredimport-5.1-py3-none-any.whl",
+        "sha256": "ecbea24c6801eee56bbc06d64262a541c2bd10b9653bcae69e6d33c010868056"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/30/88/5fc32633682a452260f50417da3d4be26137dd220ef617bbd8ed52f0cfa9/zope.deprecation-5.1-py3-none-any.whl",
+        "sha256": "60f957b964d8f947a4a592c647d51ce0f4f844d1f041657956ddde0d9fa9a76a"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/4a/88/b5bfd2d609c17114a9f13c48cd8b6be3a4917b03c9bde7fa2f926bcb3d79/zope_dottedname-6.1-py3-none-any.whl",
+        "sha256": "74286c52f0861b5b0967a9172fee8c0391360709cd9e7e2f4ea2df54ec8b5293"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/00/ed/d8c3f56c1edb0ee9b51461dd08580382e9589850f769b69f0dedccff5215/zope_event-5.1-py3-none-any.whl",
+        "sha256": "53de8f0e9f61dc0598141ac591f49b042b6d74784dab49971b9cc91d0f73a7df"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/dd/31/a54159a96776b55e7460e22fb77fb31b48b83a8c4f5a7f720adc4476c45c/zope.exceptions-5.2-py3-none-any.whl",
+        "sha256": "5c1182ad31ce5db2419cc4b6581a221f20582cb3bc8468568342661897974874"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/38/24/b82addfb4221621a3fa62856b52ad357ab9d1efb1d3ed125e152bb4d307f/zope.filerepresentation-6.1-py3-none-any.whl",
+        "sha256": "f1b47a577e518ae9545c9e44c719962a48bf9bd1bb754fdc0ebe2020437394d5"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/fa/68/6b21fd5c6f0f84d3e99e2c782159328ea4a4ee26eacd58e39ce9d2ff177c/zope.globalrequest-2.0-py3-none-any.whl",
+        "sha256": "372fdb35188377a4b41b767fe5d103c0bed97e9e3f37c64d56c238a919fa1819"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/75/a0/76a8f77857272ee7b706d9ed3fb58be52fded1e0d2d998db71040ed033d1/zope_i18n-5.3-py3-none-any.whl",
+        "sha256": "35aa309da4823e82e8ea8d034a5b44a4a87e26c893e2090ecd12efae5048727f"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/30/93/9210e7606be57a2dfc6277ac97dcc864fd8d39f142ca194fdc186d596fda/zope.interface-7.2.tar.gz",
+        "sha256": "8b49f1a3d1ee4cdaf5b32d2e738362c7f5e40ac8b46dd7d1a65e82a4872728fe"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/3f/7f/3bfa387fe0340a4f91ee4d82a1d65968cee1206c457eebe4a361aa33fa02/zope.lifecycleevent-5.1-py3-none-any.whl",
+        "sha256": "45ba9da9bd188be562701923c73ef523722c243fdb1b3825cc1020dbfa99d68c"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/45/3e/fcbb944ec263a1609034aaa6244ae75e1d5cff08c5dc7374e896eee233da/zope.location-5.1-py3-none-any.whl",
+        "sha256": "e67aaba85d108a9e2228f01fa2aced55325a3a26c28a3ab6c03c8281708aef20"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/1d/e6/1e3d76adfcfb4a3b27181b831c62165bd51a16a094b365d2c14e6f7f4e0d/zope_pagetemplate-5.2-py3-none-any.whl",
+        "sha256": "1dd8056851bedf14935f63ecfe423306dd04c02fbe5e64f4e1d8318f457aaa6b"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/96/39/8773c142146b36426c982635c52c6d7db1d3a133bc1f0921f853ecd2a6ab/zope.processlifetime-3.1-py3-none-any.whl",
+        "sha256": "692f64afc16ff345a45b4c8a25355e6a89dc8c28b0835dfe300ed2d83290c94f"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/c0/82/d2468031090fbb8d0b88de3efbed224c2496ce2ebe38e881c609c21be9e3/zope.ptresource-5.1-py3-none-any.whl",
+        "sha256": "5e4c8778ab49c09e53ce69284746f7d405f2fb3fc768b7dd34d8e23df5dc02f0"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/21/aa/7c0ab8354204b8236591e3a2fce88359e225cbb4815dbca114d39bb8944e/zope.publisher-7.3-py3-none-any.whl",
+        "sha256": "da1eb6a5e0a3a6438a3ea77605220b4e32154449908206096e8a0e2d2427e3e8"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/4b/80/5cec1172d3eb392652821cc1f689e9e24b199edd148315acd1c501cfe77d/zope_schema-7.1-py3-none-any.whl",
+        "sha256": "0b23034abc5a55411d5ac241b54a626143d43fe8e8016b69dae4d41811ab8b34"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/41/1a/ba88bec876ecec5ec98e48197bbe9118243de6a6efaabe27687e9a0fc376/zope.sequencesort-5.1-py3-none-any.whl",
+        "sha256": "1ad64e803ea8ba798e259e95382cf3d0f0d44ec328a3e7bb5dedafdf3016c68d"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/14/9c/eaf51a0b63930fcb74df95e91d39f3e2d4b1a396837e30e5614793f81880/zope.site-5.1-py3-none-any.whl",
+        "sha256": "080d4bd70d5ae95989ce29bccea7d0d048ec320447a313065bc17ae7d859217c"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/59/3e/d81696424b71f6518237b210306bed1bfdb286d20fb26d5b6820ddfa9670/zope.size-5.1-py3-none-any.whl",
+        "sha256": "e5237bea29f52e24ea9b6a976a74a20956783a4c43484a45aed3dc1d2ca8b691"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/56/bb/a4c40aa7638d04fd332e0215772a8e1f5f8f691ddd1395c0e5c070d181db/zope_structuredtext-5.1-py3-none-any.whl",
+        "sha256": "a837009f5880c06ac2450df79c8441881e2ec847c1da1057ab2f57ca503dc1d2"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/8e/d9/9411d3d38c14ce0fb4e4aac67eca5751164335cf6689bcd7840c6694f6e5/zope.tal-5.1.1-py3-none-any.whl",
+        "sha256": "e36ccbdd3139d0c3a9649f96261d3e08b8d61a0ccf665c13fef125b432eb2067"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/05/3e/2ec47de65076520f723035296a71515d0546720e3f90c896ac8a7ef9975b/zope.tales-6.1-py3-none-any.whl",
+        "sha256": "b6785cf2c7cadbc66af52e6f717482e82e6a740ca3971f8b134b64046dccefc0"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/f2/b8/7463b90c33d2ce7fd9e9cfa40ee1823c80d693446b3dfd65e5fe48807636/zope.testbrowser-7.0.1-py3-none-any.whl",
+        "sha256": "bdf80c68fb266f4ca4dfeaec9e7e5ffe0556073970ca989e5fe36a673bb7ed0d"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/02/da/31b3429dd90bc3108b0e480e0208ab3f9261012ba3d6078f2f2c42cae9d8/zope.testing-5.1-py3-none-any.whl",
+        "sha256": "0ad71af81a66988817e74dcee02f53ed26e65ae6e88c0bbff98790e465e0d223"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/1b/91/af4601d3b9b2c206663059ab262d3483b6f290572b10d4c4acc71935f315/zope.traversing-5.1-py3-none-any.whl",
+        "sha256": "3f808d7b9341adb005fe3d02079edc9c1b7beaea25999aed47c96520b76bdb8e"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/80/48/6d8901313a4a55cacfe20583ec2539f4ea8836cf014157df9e9a4c0f888c/zope.viewlet-5.1-py3-none-any.whl",
+        "sha256": "0c78f81a909b302a487a0b5b98d2c9c835a504d0fbf96e20706eab19de2a7ec7"
+      }
+    ]
+  }
+}

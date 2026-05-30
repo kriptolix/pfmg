@@ -1,0 +1,47 @@
+{
+  "header": {
+    "id": "gtkglext",
+    "version": "1.2.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "gtkglext",
+    "cleanup": [
+      "/lib/gtkglext-1.0/include"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://netcologne.dl.sourceforge.net/project/gtkglext/gtkglext/1.2.0/gtkglext-1.2.0.tar.gz",
+        "sha256": "e5073f3c6b816e7fa67d359d9745a5bb5de94a628ac85f624c992925a46844f9"
+      },
+      {
+        "type": "patch",
+        "path": "patches/gtkglext-1.2.0/01_fix_fontcache_nullderef.diff"
+      },
+      {
+        "type": "patch",
+        "path": "patches/gtkglext-1.2.0/02_fix_gtk-2.20_deprecated_symbols.diff"
+      },
+      {
+        "type": "patch",
+        "path": "patches/gtkglext-1.2.0/libGL.so.1.diff"
+      },
+      {
+        "type": "patch",
+        "path": "patches/gtkglext-1.2.0/03_gdkglext-config-h-installation-path.diff"
+      },
+      {
+        "type": "patch",
+        "path": "patches/gtkglext-1.2.0/glibc2.27-ftbfs.diff"
+      },
+      {
+        "type": "shell",
+        "commands": [
+          "cp -p /usr/share/automake-*/config.{sub,guess} ."
+        ]
+      }
+    ]
+  }
+}

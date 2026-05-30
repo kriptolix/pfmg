@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "libreoffice-dictionaries",
+    "version": "26.2.1.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libreoffice-dictionaries",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/LibreOffice/dictionaries/archive/refs/tags/libreoffice-26.2.1.1.tar.gz",
+        "sha256": "b840b9cd881141496090f1d728b966ff3fa4e6a2c186f2100b5a0394a6a67c7a"
+      }
+    ],
+    "buildsystem": "simple",
+    "build-commands": [
+      "for LANG in af ar ca cs de en es fr it nl pl pt ru sl tr; do for DIC in $(find . -iname \"${LANG}*.dic\"); do AFF=\"$(dirname \"${DIC}\")/$(basename \"${DIC}\" \".dic\").aff\"; if [ ! -f \"${AFF}\" ]; then continue; fi; echo \"Installing $(basename ${DIC} .dic)\"; install -D -t /app/share/hunspell \"${DIC}\"; install -D -t /app/share/hunspell \"${AFF}\"; done; done"
+    ]
+  }
+}

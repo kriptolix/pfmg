@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "client",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "client",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DEXEC=el.linux.bin",
+      "-DLOCAL_NLOHMANN_JSON=On"
+    ],
+    "no-make-install": true,
+    "build-commands": [
+      "install el.linux.bin /app/bin"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "tag": "1.9.7.0-4",
+        "url": "https://github.com/raduprv/Eternal-Lands"
+      }
+    ]
+  }
+}

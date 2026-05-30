@@ -1,0 +1,46 @@
+{
+  "header": {
+    "id": "wasm-bindgen",
+    "version": "0.2.84",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "wasm-bindgen",
+    "cleanup": [
+      "*"
+    ],
+    "buildsystem": "simple",
+    "build-commands": [
+      "install -D -m755 wasm-bindgen ${FLATPAK_DEST}/bin/wasm-bindgen"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/rustwasm/wasm-bindgen/releases/download/0.2.84/wasm-bindgen-0.2.84-x86_64-unknown-linux-musl.tar.gz",
+        "sha256": "55b4a591246cb69e983a6badd17e4a9d61712bbbed4b4c6c681b2e5dd76e61da",
+        "only-arches": [
+          "x86_64"
+        ],
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 128315,
+          "url-template": "https://github.com/rustwasm/wasm-bindgen/releases/download/$version/wasm-bindgen-$version-x86_64-unknown-linux-musl.tar.gz"
+        }
+      },
+      {
+        "type": "archive",
+        "url": "https://github.com/rustwasm/wasm-bindgen/releases/download/0.2.84/wasm-bindgen-0.2.84-aarch64-unknown-linux-gnu.tar.gz",
+        "sha256": "033f13228cf7770ba0707ff90428f37b8216b449fbab369d186a213a2781ec32",
+        "only-arches": [
+          "aarch64"
+        ],
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 128315,
+          "url-template": "https://github.com/rustwasm/wasm-bindgen/releases/download/$version/wasm-bindgen-$version-aarch64-unknown-linux-gnu.tar.gz"
+        }
+      }
+    ]
+  }
+}

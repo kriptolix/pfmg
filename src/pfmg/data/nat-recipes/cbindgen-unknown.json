@@ -1,0 +1,33 @@
+{
+  "header": {
+    "id": "cbindgen",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "cbindgen",
+    "buildsystem": "simple",
+    "build-options": {
+      "env": {
+        "CARGO_HOME": "/run/build/cbindgen/cargo"
+      }
+    },
+    "build-commands": [
+      "cargo --offline fetch --manifest-path Cargo.toml --verbose",
+      "cargo --offline build --release --verbose",
+      "install -Dm755 ./target/release/cbindgen -t /app/bin/"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/mozilla/cbindgen.git",
+        "tag": "0.28.0"
+      },
+      "dependencies/cbindgen-sources.json"
+    ],
+    "cleanup": [
+      "*"
+    ]
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "header": {
+    "id": "meshlab",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "MeshLab",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE:STRING=Release"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/cnr-isti-vclab/meshlab.git",
+        "tag": "MeshLab-2025.07",
+        "commit": "dc48b91ae562756a6988048c5d5c7f1d2b687256",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^(MeshLab-[\\d.]+)$"
+        }
+      },
+      {
+        "type": "git",
+        "url": "https://github.com/alemuntoni/meshlab-external-libraries.git",
+        "tag": "2025.07",
+        "commit": "fa745655c9b313506110afc54d8fbfbb51bca5ad",
+        "dest": "src/external"
+      },
+      {
+        "type": "patch",
+        "path": "lib3mf-fix-include.patch",
+        "options": [
+          "-d",
+          "src/external"
+        ]
+      }
+    ]
+  }
+}

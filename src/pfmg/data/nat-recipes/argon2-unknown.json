@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "argon2",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "argon2",
+    "buildsystem": "cmake-ninja",
+    "cleanup": [
+      "*"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://raw.githubusercontent.com/microsoft/vcpkg/98aa6396292d57e737a6ef999d4225ca488859d5/ports/argon2/CMakeLists.txt",
+        "sha256": "55492f7b05cdcb2c3fd78abc1bedad79e9c8186623a7ff91bdd4582fd3f07992"
+      },
+      {
+        "type": "file",
+        "url": "https://raw.githubusercontent.com/microsoft/vcpkg/98aa6396292d57e737a6ef999d4225ca488859d5/ports/argon2/unofficial-argon2-config.cmake",
+        "sha256": "0ba4414821d7f76edef65af4d2c15fd4dfbafe8a6ef5da43155267c8e41817f3"
+      },
+      {
+        "type": "archive",
+        "url": "https://github.com/P-H-C/phc-winner-argon2/archive/refs/tags/20190702.tar.gz",
+        "sha256": "daf972a89577f8772602bf2eb38b6a3dd3d922bf5724d45e7f9589b5e830442c"
+      }
+    ]
+  }
+}

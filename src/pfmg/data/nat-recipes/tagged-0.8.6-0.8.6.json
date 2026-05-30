@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "tagged-0.8.6",
+    "version": "0.8.6",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "build-commands": [
+      "ghc -threaded --make Setup",
+      "./Setup configure --prefix=/app",
+      "./Setup build",
+      "./Setup install"
+    ],
+    "buildsystem": "simple",
+    "cleanup": [],
+    "name": "tagged-0.8.6",
+    "only-arches": [],
+    "sources": [
+      {
+        "sha256": "ad16def0884cf6f05ae1ae8e90192cf9d8d9673fa264b249499bd9e4fac791dd",
+        "type": "archive",
+        "url": "https://s3.amazonaws.com/hackage.fpcomplete.com/package/tagged-0.8.6.tar.gz"
+      },
+      {
+        "sha256": "b5e1de3b14ff198b548928f686e5e8783301dc231413f751c23f4ee10cd47a7c",
+        "type": "file",
+        "url": "https://raw.githubusercontent.com/commercialhaskell/all-cabal-files/a5f22172fce750e93afa6987320f5c5be62b5670/tagged/0.8.6/tagged.cabal"
+      }
+    ]
+  }
+}

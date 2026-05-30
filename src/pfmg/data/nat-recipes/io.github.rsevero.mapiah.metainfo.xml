@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.github.rsevero.mapiah</id>
+
+  <name>Mapiah</name>
+
+  <summary>User friendly multiplatform Therion map editor</summary>
+
+  <developer id="io.github.rsevero">
+    <name>Mapiah developers</name>
+  </developer>
+
+  <url type="vcs-browser">https://github.com/rsevero/mapiah</url>
+  <url type="homepage">https://github.com/rsevero/mapiah</url>
+  <url type="bugtracker">https://github.com/rsevero/mapiah/issues</url>
+
+  <metadata_license>MIT</metadata_license>
+
+  <project_license>GPL-3.0-or-later</project_license>
+
+  <content_rating type="oars-1.0"></content_rating>
+
+  <description>
+    <p>
+      User-friendly multiplatform interface to the powerful Therion cave mapping software.
+    </p>
+    <p>
+      As an intended side effect, it aims to completely replace xTherion, the venerable but ostensibly ancient Therion graphical interface.
+    </p>
+    <p>
+      Also create a thriving community of users and developers to make it as powerful and user friendly as such community needs and creates.
+    </p>
+  </description>
+
+  <branding>
+    <color type="primary" scheme_preference="light">#f9f871</color>
+    <color type="primary" scheme_preference="dark">#4c8077</color>
+  </branding>
+
+  <launchable type="desktop-id">io.github.rsevero.mapiah.desktop</launchable>
+
+  <screenshots>
+    <screenshot type="default">
+      <image>https://github.com/rsevero/mapiah/raw/main/auxiliary/screenshots/mapiah-options.png</image>
+      <caption>Options dialog</caption>
+    </screenshot>
+
+    <screenshot>
+      <image>https://github.com/rsevero/mapiah/raw/main/auxiliary/screenshots/mapiah-single_scrap.png</image>
+      <caption>Editing a single scrap TH2 file</caption>
+    </screenshot>
+
+    <screenshot>
+      <image>https://github.com/rsevero/mapiah/raw/main/auxiliary/screenshots/mapiah-initial.png</image>
+      <caption>Initial window</caption>
+    </screenshot>
+  </screenshots>
+
+  <releases>
+    <release version="0.3.0" date="2026-03-09">
+      <description>
+        <p>0.3.0 - 2026-03-09 - The Great Fanfarra release</p>
+
+        <p>New features:</p>
+        <ul>
+          <li>Include contents of 'therion.log' file at end of Therion output.</li>
+          <li>If there are more than 3 newer versions available, warn the user of the newer versions on all runs instead of just showing the "New version available" dialog once a day.</li>
+          <li>At the "Therion run" window, create a "Run Therion" button. [requested by Edvard]</li>
+          <li>Enable shortcuts Esc, Ctrl+T and T at "Therion run" window.</li>
+          <li>Adding start and end time at Therion run output.</li>
+          <li>When creating a point or a line point, it should snap to near elements.</li>
+          <li>When clicking on an area, Ctrl (or Meta+Click) selects the area (and not the line), Shift+Ctrl+Click (or Meta+Shift+Click) selects the line (and not the area).</li>
+          <li>Created keyboard shortcut Ctrl+X that creates a "Map connection" line between the "section" point and the "base" point the section refers to. [requested by Edvard]</li>
+          <li>At flathub_disable.md, explain why Flathub version is being disabled.</li>
+          <li>At "newer versions available" page, also show how many commits and how many days the users installed version is old.</li>
+          <li>Release name and URL at About dialog.</li>
+        </ul>
+
+        <p>Fixed bugs:</p>
+        <ul>
+          <li>Newer version available window not appearing in Flathub version.</li>
+          <li>On very fast Therion executions, therion.log file content not being included in Therion run output.</li>
+          <li>Bézier created from straight lines are too tight.</li>
+          <li>Status bar info for selected elements not internationalized.</li>
+          <li>Current PLA type at PLA type selection overlay with too small left and bottom margins.</li>
+          <li>Zoom to file or to scrap should not consider images not visible.</li>
+          <li>When clicking on the name of an image, checkbox is not changed on "available images" dialog box.</li>
+        </ul>
+
+        <p>Infrastructure maintenance:</p>
+        <ul>
+          <li>Enabling github created flatpak generation.</li>
+          <li>New "New version available" page.</li>
+          <li>Created debug new version structure.</li>
+          <li>Improving newer version available messages.</li>
+          <li>Mapiah constants should start with 'mp' prefix. Save the 'th' prefix for Therion related constants.</li>
+          <li>Simplifying and reorganizing code related to Bézier curves and straight line segments simplification and conversion.</li>
+          <li>Review portuguese translations of PLA types and subtypes.</li>
+          <li>Renaming mpSubtype* localization strings to thSubtype*.</li>
+          <li>Included "Used on:..." on translation strings.</li>
+          <li>Created scripts/generate_releases_brief.dart and assets/releases/releases_summary.json to speed new version check.</li>
+          <li>Including "Accept-Encoding: gzip" on all http requests.</li>
+          <li>All clearBoundingBox() calls clear ancestor bounding boxes.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.2.39" date="2026-03-05">
+      <description>
+        <p>0.2.39 - 2026-03-05 - The Seeds of Love release</p>
+
+        <p>New features:</p>
+        <ul>
+          <li>Created keyboard shortcuts to run Therion: Ctrl+T (choose THConfig file and run Therion) and T (run Therion).</li>
+          <li>Showing PLA type and subtype at PLA overlay window.</li>
+          <li>Setting PLA type and subtype at PLA overlay window.</li>
+          <li>Element type showing also subtype on multiple elements clicked overlay window.</li>
+          <li>Flathub/flatpak release running embedded Therion.</li>
+        </ul>
+
+        <p>Fixed bugs:</p>
+        <ul>
+          <li>THConfig select file dialog not accepting common thconfig files. [reported by CaverBruce (issue #16)]</li>
+          <li>PLA types of created elements not added as last and most used types.</li>
+          <li>Creating new line with a subtype throws.</li>
+          <li>Test 3400 failing.</li>
+          <li>Test 3500 failing.</li>
+          <li>Unknown subtypes shown as internal subtype ID (all user type subtypes).</li>
+          <li>Setting subtype should update the last used subtype for the PLA type.</li>
+        </ul>
+
+        <p>Infrastructure maintenance:</p>
+        <ul>
+          <li>Converted MPGeneralController to a MobX store.</li>
+          <li>Created MPButtonTypes chooseTHConfigAndRunTherion and runTherion to run Therion.</li>
+          <li>Created TH2FileEditcontroller.getTHFileWidgetBuildContext().</li>
+          <li>Removed unused methods from TH2FileEditElementEditController.</li>
+          <li>Created addPoint() method in TH2FileEditElementEditController.</li>
+          <li>Monitoring subtypes with last used PLA types.</li>
+          <li>flutter upgrade to 3.41.3</li>
+          <li>flutter pub upgrade --major-versions</li>
+          <li>Embedding Therion (and its dependencies) in Flathub/Flatpak release.</li>
+        </ul>
+      </description>
+    </release>
+
+    <release version="0.2.38" date="2026-03-01">
+      <description>
+        <p>0.2.38 - 2026-06-01 - The Run therion in Flathub release (not accepted by Flathub)</p>
+
+        <p>Fixed bugs:</p>
+        <ul>
+          <li>Flatpak release not running Therion from Mapiah.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.2.37" date="2026-03-01">
+      <description>
+        <p>0.2.37 - 2026-03-01 - The Run Therion release (not sent to Flathub)</p>
+
+        <p>New features:</p>
+        <ul>
+          <li>Created Settings page.</li>
+          <li>Settings page with real time per setting type validation.</li>
+          <li>Settings page with "reset" button for each setting and for all settings.</li>
+          <li>Created new settings type: FilePickerExecutable.</li>
+          <li>Running Therion.</li>
+          <li>Tracking warnings and errors on Therion run output.</li>
+          <li>Debug output on Windows search for therion install info.</li>
+          <li>Caching Therion install path on windows on search.</li>
+          <li>MacOS Therion runner implementation.</li>
+          <li>"Choose THConfig file and run Therion" and "Run Therion" buttons painted red if no Therion found.</li>
+          <li>"Choose THConfig file and run Therion" and "Run Therion" buttons directed to appropriate help page in case no Therion is found.</li>
+        </ul>
+
+        <p>Fixed bugs:</p>
+        <ul>
+          <li>'Cancel' button on settings page not closing page.</li>
+          <li>Therion run output should be selectable as a whole and not only single lines.</li>
+          <li>Therion run output has no line breaks after copy/paste.</li>
+          <li>Searching for Therion install path on windows always failing.</li>
+          <li>Therion run on Windows.</li>
+          <li>Windows tests.</li>
+          <li>Set therion path not used on Windows.</li>
+          <li>Regression on appLocalizations initialization on MapiahHome.</li>
+        </ul>
+
+        <p>Infrastructure maintenance:</p>
+        <ul>
+          <li>Included "Current status" section in README.md. [requested by CaverBruce]</li>
+          <li>Included "Choose THConfig and run Therion" and "Run Therion" buttons in both MapiaHome and TH2FileEdit pages.</li>
+          <li>Moved business logic of running therion from MPRunTherionDialogWidget to new MPTherionRunner.</li>
+          <li>Added MPTherionRunner ok &lt; warning &lt; error escalation test.</li>
+          <li>Added multi line selection + clickable warnings and errors test.</li>
+          <li>MPTherionRunner checking exit code at end of therion run.</li>
+          <li>Fixed therion run for flatpak releases.</li>
+          <li>Renamed MPSettingsType -&gt; MPSettingType and MPSettingTypeType -&gt; MPSettingTypeType.</li>
+          <li>Renamed MPSettingType -&gt; MPSettingID and MPSettingTypeType -&gt; MPSettingType.</li>
+          <li>Unified therion executable path setting and therion executable path for encoding discovery.</li>
+          <li>Renamed MPSettingsController.getTYPE -&gt; getTYPEWithDefault.</li>
+          <li>Created MPSettingsController.getTYPEIfSet() that returns null if not set.</li>
+          <li>Created MPBaseTherionRunner class with getUserDefinedTherionExecutablePath() method.</li>
+          <li>therionExecutablePath and preferredExecutablePath from MPTherionRunner not used on Linux.</li>
+          <li>Created MPLinuxTherionRunner.</li>
+        </ul>
+      </description>
+    </release>
+    <release version="0.2.36" date="2026-02-24">
+      <url type="details">https://github.com/rsevero/mapiah/releases/tag/v0.2.36</url>
+      <description>
+        <p>0.2.36 - 2026-02-24 - The Danaids release</p>
+
+        <p>New features:</p>
+        <ul>
+          <li>Allow multiple "add line segment" operations in succession. (requested by Edvard)</li>
+          <li>Create shortcut to toggle all images visibility (keyboard shortcut Ctrl+I).</li>
+          <li>Show (and edit) orientation and lsize on the line points during edit.</li>
+        </ul>
+
+        <p>Fixed bugs:</p>
+        <ul>
+          <li>Main README.md still mentioning the web version of Mapiah, which was removed in 0.2.31 (reported by CaverBruce at issue #13: https://github.com/rsevero/mapiah/issues/13).</li>
+          <li>Slash produced by keyboard combinations (for example, AltRight + Q) is not processed as a shortcut to add line segments between selected line segments.</li>
+          <li>When adding line segments through keyboard shortcut '/', if there are no adjacent line segments selected, Mapiah throws instead of doing nothing. (reported by Edvard)</li>
+          <li>Parsing scrap scales with 8 numbers but no unit failed. (reported by CaverBruce as issue #15: https://github.com/rsevero/mapiah/issues/15)</li>
+          <li>Undo of Bézier curve line segment addition with keyboard shortcut '/' not working.</li>
+          <li>Parsing scrap projection value in brackets failing. (reported by CaverBruce as issue #14: https://github.com/rsevero/mapiah/issues/14)</li>
+          <li>Creating a line and making one of its points smooth by overlay option window throws.</li>
+          <li>MPNumericAux directionOffsetToDegrees() and normalFromTangent() returning wrong values for some directions.</li>
+          <li>Fixing popcorn point type translation. (reported by Daniel Bean)</li>
+          <li>LSize and Orientation arrows not presented when end point is selected.</li>
+          <li>Interactive Orientation arrow not moving with azimuth picker arrow is moved.</li>
+          <li>Azimuth picker arrow not moving when interactive orientation arrow is moved.</li>
+          <li>LSize text value in lsize option window does not change when lsize is interactively changed.</li>
+          <li>LSize interactive arrow size does not change when LSize text value in lsize option window changes.</li>
+        </ul>
+
+        <p>Infrastructure maintenance:</p>
+        <ul>
+          <li>Testing all possible variations of scrap scale option parsing.</li>
+          <li>Custom exceptions should provide trace.</li>
+          <li>Renaming _execPrePrepareUndoRedoInfo and _execPreCreateUndoRedoCommand at MPCommand.</li>
+          <li>Creating MPAddLineSegmentCommand.atExistingLineSegmentPosition().</li>
+          <li>Removing all references to web version.</li>
+          <li>Making custom exceptions be presented by showUnhandledErrorDialog() at main.dart.</li>
+          <li>Remove stack trace from THBaseException as showUnhandledErrorDialog() at main.dart already presents the stack trace.</li>
+          <li>Applying dart fix --apply to all code.</li>
+          <li>Flutter upgrade to 3.41.2.</li>
+          <li>flutter pub upgrade --major-versions.</li>
+          <li>Created TH2FileEditElementEditController.optionTypeBeingEdited.</li>
+          <li>Add keys to radio groups at MPPLATypeOptionsOverlayWindowWidget.</li>
+          <li>Created 3500-ui_change_line_type_test.</li>
+          <li>Separating THLSizeOrientationPainter from THLinePainter.</li>
+          <li>Single action to set both LSize and Orientation values at TH2FileEditElementEditController.</li>
+          <li>MPNumericAux.averageTangent() method to calculate the weighted by segment length average tangent of two line segments.</li>
+          <li>Using lsize and orientation behaviour inspired by xThreion original one.</li>
+          <li>LSize and orientation interactive arrow should appear immediately when starting to set either of them.</li>
+          <li>Reusing Path created to draw compass arrow to also fuel the click test at MPTH2FileEditStateEditSingleLine.</li>
+          <li>Decimal places for double to string conversion of LSize and Orientation options as constants.</li>
+        </ul>
+      </description>
+    </release>
+
+    <release version="0.2.35" date="2026-02-13">
+      <url type="details">https://github.com/rsevero/mapiah/releases/tag/v0.2.35</url>
+      <description>
+        <p>0.2.35 - 2026-02-13 - The <em>Chiquita Bacana&#39;s daughter</em> release</p>
+
+        <p>New features:</p>
+        <ul>
+          <li>Create zoom to selection window: keyboard shortcut 5. [requested by Edvard]</li>
+          <li>Help dialogs closable by pressing Escape key.</li>
+          <li>Creating Flathub specific new release check.</li>
+        </ul>
+
+        <p>Fixed bugs:</p>
+        <ul>
+          <li>Options window been shown when there is no element selected. [reported by dankez, issue #12]</li>
+          <li>Flatpak version not saving users language choice. [reported by Daniel Bean]</li>
+          <li>Deleting a line segment of a line with only one line segment would throw.</li>
+          <li>Element types in multiple clicked elements dialog box are not translated. [reported by Daniel Bean]</li>
+        </ul>
+
+        <p>Infrastructure maintenance:</p>
+        <ul>
+          <li>Create issue template for bug reports.</li>
+          <li>Create issue template for feature requests.</li>
+          <li>Created internal settings storage with SharedPreferencesWithCache package.</li>
+          <li>Replace application id com.example.mapiah -&gt; io.github.rsevero.mapiah.</li>
+          <li>Flatpak metainfo file not receiving duplicated &lt;release&gt; tags for same version.</li>
+          <li>Migrating all settings from TOML to SharedPreferencesWithCache.</li>
+        </ul>
+      </description>
+    </release>
+
+    <release version="0.2.34" date="2026-02-05">
+      <url type="details">https://github.com/rsevero/mapiah/releases/tag/v0.2.34</url>
+      <description>
+        <p>0.2.34 - 2026-02-05 - The <em>Viola Caipira</em> release</p>
+
+        <p>New features:</p>
+        <ul>
+          <li>Exceptions should be shown to the user as an AlertDialog box with copyable text. [requested by Nicolas]</li>
+          <li>Mapiah should check and present a notice when there is a new version available. [requested by Wal]</li>
+          <li>When zooming with mouse wheel and there is no element selected, use the cursor position as zoom center. [requested by Edvard]</li>
+          <li>When editing a line, make straight and Bézier curve line segments visually different.</li>
+        </ul>
+        <p>Fixed bugs:</p>
+        <ul>
+          <li>Portuguese edit window help page not being presented. [reported by Edvard]</li>
+          <li>Changelog URL not opening when user clicked on it at "About" dialog box.</li>
+          <li>Linux/flatpak version does not open URLs for not using GIO portal and not having shared network permission.</li>
+          <li>When creating a new line with one single Bézier line segment, the line is not selectable by direct click. [reported by Edvard]</li>
+          <li>Windows: language selection is not kept after app restart. [reported by Edvard]</li>
+          <li>No app icon in Windows version.</li>
+          <li>Add a publisher for Mapiah Windows installer.</li>
+          <li>Changing the line segment type of several line segments of different types wouldn't change any.</li>
+          <li>Trying to move a control point immediately after transforming a straight line segment to Bézier curve throws and the control point does not move.</li>
+          <li>Ctrl+K keyboard shortcut (Show keyboard shortcuts) not working at TH2 file edit page. [reported by Edvard]</li>
+          <li>During new line creation, on Bézier line segments, the control points are presented but are not usable. [reported by Edvard]</li>
+          <li>When creating a line, any line segment, if dragged to become a Bézier, leaves a shadow red straight line segment behind during drag.</li>
+          <li>Orientation/LSize arrows presented on all lines when editing a line, not only on the line being edited.</li>
+          <li>Removing spurious &lt;a&gt;&lt;/a&gt; tags from portuguese help page.</li>
+        </ul>
+        <p>Infrastructure maintenance:</p>
+        <ul>
+          <li>flutter upgrade to 3.38.9.</li>
+          <li>flutter pub upgrade --major-versions</li>
+          <li>Migrated thFileWidgetKey to getTHFileWidgetGlobalKey() at TH2FileEditController.</li>
+          <li>Created constants to set the help page names.</li>
+        </ul>
+      </description>
+    </release>
+
+    <release version="0.2.33" date="2026-01-30">
+      <url type="details">https://github.com/rsevero/mapiah/releases/tag/v0.2.33</url>
+      <description>
+        <p>0.2.33 - 2026-01-30 - The <em>o ano um</em> release</p>
+        <p>Fixed bugs:</p>
+        <ul>
+          <li>URLs at &quot;About&quot; dialog box should be clickable.</li>
+        </ul>
+        <p>Infrastructure maintenance:</p>
+        <ul>
+          <li>Flutter pub upgrade --major-versions.</li>
+          <li>Separating Appimage and flatpak build workflows.</li>
+          <li>Moving flatpak build to Ubuntu 24.04 base system from previous 22.04.</li>
+          <li>Script to set flutter version on release build files.</li>
+          <li>Moved flatpak creation/publishing to Flathub build system (amd64 and aarch64).</li>
+          <li>Removing flatpak build from GitHub actions.</li>
+        </ul>
+      </description>
+    </release>
+
+    <release version="0.2.32" date="2026-01-27">
+      <url type="details">https://github.com/rsevero/mapiah/releases/tag/v0.2.32</url>
+      <description>
+        <p>0.2.32 - 2026-01-25 - The UK Cave Survey Group meeting release</p>
+        <p>New features:</p>
+        <ul>
+          <li>Portuguese install instructions mentioning update procedure.</li>
+          <li>English install instructions.</li>
+          <li>Right click overlay windows dragging support.</li>
+          <li>Portuguese help pages.</li>
+          <li>Alt+click to select non active scrap.</li>
+          <li>Error text on alert dialog boxes should be selectable. [Wookey request]</li>
+        </ul>
+        <p>Fixed bugs:</p>
+        <ul>
+          <li>When hidden one of the background images in cave.th2 (demo.zip) the other image moves.</li>
+          <li>When dragging (right click) sketch, unselected sketchs are not dragged.</li>
+        </ul>
+      </description>
+    </release>
+
+    <release version="0.2.5" date="2025-06-21" />
+  </releases>
+
+</component>

@@ -1,0 +1,44 @@
+{
+  "header": {
+    "id": "libretro-parallel-n64",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libretro-parallel_n64",
+    "skip-arches": [
+      "aarch64",
+      "arm"
+    ],
+    "no-autogen": true,
+    "make-args": [
+      "--makefile=Makefile.install",
+      "prefix=/app"
+    ],
+    "make-install-args": [
+      "--makefile=Makefile.install",
+      "prefix=/app"
+    ],
+    "post-install": [
+      "mkdir -p /app/lib/libretro/",
+      "install -m644 -p parallel_n64.libretro /app/lib/libretro/"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/libretro/parallel-n64",
+        "commit": "133c655bfcec8e3105ea4d1fc028c6d2ba9e4cdb"
+      },
+      {
+        "type": "file",
+        "path": "parallel_n64-Makefile.install",
+        "dest-filename": "Makefile.install"
+      },
+      {
+        "type": "file",
+        "path": "parallel_n64.libretro"
+      }
+    ]
+  }
+}

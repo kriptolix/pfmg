@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "restic",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "restic",
+    "buildsystem": "simple",
+    "build-commands": [
+      "go install -mod=vendor ./cmd/restic"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/restic/restic",
+        "tag": "v0.17.3",
+        "commit": "bc64921a8ea73dfaeaf4d9b66676a76998e144fc"
+      },
+      "restic.go.mod.yml"
+    ]
+  }
+}

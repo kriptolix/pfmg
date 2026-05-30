@@ -1,0 +1,45 @@
+{
+  "header": {
+    "id": "types-flask",
+    "version": "1.1.6",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "types-Flask",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=/app \"types-Flask==1.1.6\" --no-build-isolation"
+    ],
+    "cleanup": [
+      "*"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/60/6c/a98a0c29c39d8a6283ac704f3d36f0d570d8dee931e9d46d6cc60d436bec/types_Flask-1.1.6-py3-none-any.whl",
+        "sha256": "6ab8a9a5e258b76539d652f6341408867298550b19b81f0e41e916825fc39087"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/b7/b0/e79d84748f1d34304f13191424348a719c3febaa3493835370fe9528e1e6/types_Jinja2-2.11.9-py3-none-any.whl",
+        "sha256": "60a1e21e8296979db32f9374d8a239af4cb541ff66447bb915d8ad398f9c63b2"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/4a/c1/eaf8426126eafa46d649afb2fddede327043fbc2e84021b8b09a7fa15115/types_Werkzeug-1.0.9-py3-none-any.whl",
+        "sha256": "194bd5715a13c598f05c63e8a739328657590943bce941e8a3619a6b5d4a54ec"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/ee/ad/607454a5f991c5b3e14693a7113926758f889138371058a5f72f567fa131/types_click-7.1.8-py3-none-any.whl",
+        "sha256": "8cb030a669e2e927461be9827375f83c16b8178c365852c060a34e24871e7e81"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/bc/d6/b8effb1c48539260a5eb4196afc55efac4ea1684a4991977555eb266b2ef/types_MarkupSafe-1.1.10-py3-none-any.whl",
+        "sha256": "ca2bee0f4faafc45250602567ef38d533e877d2ddca13003b319c551ff5b3cc5"
+      }
+    ]
+  }
+}

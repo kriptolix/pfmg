@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-langcodes",
+    "version": "3.5.1",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-langcodes",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"langcodes\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/dd/c1/d10b371bcba7abce05e2b33910e39c33cfa496a53f13640b7b8e10bb4d2b/langcodes-3.5.1-py3-none-any.whl",
+        "sha256": "b6a9c25c603804e2d169165091d0cdb23934610524a21d226e4f463e8e958a72"
+      }
+    ]
+  }
+}

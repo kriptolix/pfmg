@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "sikkmod",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "sikkmod",
+    "buildsystem": "cmake-ninja",
+    "no-make-install": true,
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+    ],
+    "post-install": [
+      "install -Dm 755 sikkmod.so /app/lib/dhewm3",
+      "install -Dm 755 sikkmodd3xp.so /app/lib/dhewm3"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/dhewm/dhewm3-sdk",
+        "commit": "03aae2f5b74a18ed5fdbfe9c345a4d50203c7518"
+      }
+    ]
+  }
+}

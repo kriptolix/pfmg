@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "libmodplug-sdl-vendored",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libmodplug_sdl_vendored",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DBUILD_SHARED_LIBS=ON"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/libsdl-org/libmodplug",
+        "commit": "4af4b988ad482226da51107cfb71075ca6a4ffff"
+      }
+    ]
+  }
+}

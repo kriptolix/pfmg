@@ -1,0 +1,19 @@
+{
+  "header": {
+    "id": "sbasic",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "sbasic",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/smallbasic/SmallBASIC.git",
+        "tag": "v12_33",
+        "commit": "3ed6f082826c12e3a5d75ae9e3fd0e9956846dce"
+      }
+    ]
+  }
+}

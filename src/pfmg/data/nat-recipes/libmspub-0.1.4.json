@@ -1,0 +1,34 @@
+{
+  "header": {
+    "id": "libmspub",
+    "version": "0.1.4",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libmspub",
+    "config-opts": [
+      "--without-docs",
+      "--disable-tools"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://dev-www.libreoffice.org/src/libmspub-0.1.4.tar.xz",
+        "sha256": "ef36c1a1aabb2ba3b0bedaaafe717bf4480be2ba8de6f3894be5fd3702b013ba"
+      },
+      {
+        "type": "patch",
+        "paths": [
+          "patches/libmspub-0.1.4-gcc10.patch",
+          "patches/libmspub-0.1.4-gcc15.patch"
+        ]
+      }
+    ],
+    "cleanup": [
+      "/include",
+      "/lib/pkgconfig",
+      "*.la"
+    ]
+  }
+}

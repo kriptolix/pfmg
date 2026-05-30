@@ -1,0 +1,30 @@
+{
+  "header": {
+    "id": "eternalmodmanager",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "eternalmodmanager",
+    "buildsystem": "simple",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/PowerBall253/EternalModManager.git",
+        "tag": "v4.0.3",
+        "commit": "4336ba9250ac3763173b9c6f5a9d8638b89acd46"
+      },
+      "sources.json"
+    ],
+    "build-commands": [
+      "cargo --offline fetch --manifest-path Cargo.toml --verbose",
+      "cargo --offline build --release --verbose",
+      "install -Dm755 ./target/release/eternal_mod_manager -t /app/bin/",
+      "install -Dm644 resources/com.powerball253.eternalmodmanager.appdata.xml /app/share/metainfo/com.powerball253.eternalmodmanager.appdata.xml",
+      "install -Dm644 resources/com.powerball253.eternalmodmanager.png /app/share/icons/hicolor/256x256/apps/com.powerball253.eternalmodmanager.png",
+      "install -Dm644 resources/com.powerball253.eternalmodmanager.desktop /app/share/applications/com.powerball253.eternalmodmanager.desktop",
+      "install -Dm644 LICENSE /app/share/licenses/com.powerball253.eternalmodmanager/LICENSE"
+    ]
+  }
+}

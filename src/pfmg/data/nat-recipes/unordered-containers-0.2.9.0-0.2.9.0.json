@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "unordered-containers-0.2.9.0",
+    "version": "0.2.9.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "unordered-containers-0.2.9.0",
+    "only-arches": [
+      "x86_64"
+    ],
+    "buildsystem": "simple",
+    "build-commands": [
+      "ghc -threaded --make Setup",
+      "./Setup configure --prefix=/app",
+      "./Setup build",
+      "./Setup install"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "sha256": "6730cb5c4a3e953e2c199d6425be08fd088ff0089a3e140d63226c052e318250",
+        "url": "https://hackage.haskell.org/package/unordered-containers-0.2.9.0/unordered-containers-0.2.9.0.tar.gz"
+      }
+    ]
+  }
+}

@@ -1,0 +1,157 @@
+{
+  "header": {
+    "id": "kdepim-addons",
+    "version": "25.12.3",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "kdepim-addons",
+    "config-opts": [
+      "-DBUILD_TESTING=OFF",
+      "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+    ],
+    "buildsystem": "cmake-ninja",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.kde.org/stable/release-service/25.12.3/src/kdepim-addons-25.12.3.tar.xz",
+        "sha256": "0eebf8a6aee397b53ce1365ed6a27af5f7a348865c575ba7ac0f88787f7fa979",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 8763,
+          "stable-only": true,
+          "url-template": "https://download.kde.org/stable/release-service/$version/src/kdepim-addons-$version.tar.xz"
+        }
+      }
+    ],
+    "modules": [
+      {
+        "name": "kitinerary",
+        "config-opts": [
+          "-DBUILD_TESTING=OFF",
+          "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+        ],
+        "buildsystem": "cmake-ninja",
+        "sources": [
+          {
+            "type": "archive",
+            "url": "https://download.kde.org/stable/release-service/25.12.3/src/kitinerary-25.12.3.tar.xz",
+            "sha256": "dd8374be2e4c488902f6c0b4b9fd12ad7f808de23b7df4561ef30b3f79b44d13",
+            "x-checker-data": {
+              "type": "anitya",
+              "project-id": 8763,
+              "stable-only": true,
+              "url-template": "https://download.kde.org/stable/release-service/$version/src/kitinerary-$version.tar.xz"
+            }
+          }
+        ],
+        "modules": [
+          {
+            "name": "poppler-data",
+            "buildsystem": "cmake-ninja",
+            "builddir": true,
+            "config-opts": [
+              "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+            ],
+            "sources": [
+              {
+                "type": "archive",
+                "url": "https://poppler.freedesktop.org/poppler-data-0.4.12.tar.gz",
+                "sha256": "c835b640a40ce357e1b83666aabd95edffa24ddddd49b8daff63adb851cdab74",
+                "x-checker-data": {
+                  "type": "anitya",
+                  "project-id": 3687,
+                  "stable-only": true,
+                  "url-template": "https://poppler.freedesktop.org/poppler-data-$version.tar.gz"
+                }
+              }
+            ]
+          },
+          {
+            "name": "poppler",
+            "buildsystem": "cmake-ninja",
+            "builddir": true,
+            "config-opts": [
+              "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
+              "-DBUILD_GTK_TESTS=OFF",
+              "-DBUILD_QT5_TESTS=OFF",
+              "-DBUILD_QT6_TESTS=ON",
+              "-DBUILD_CPP_TESTS=OFF",
+              "-DENABLE_UTILS=OFF",
+              "-DENABLE_CPP=OFF",
+              "-DENABLE_GLIB=OFF",
+              "-DENABLE_UNSTABLE_API_ABI_HEADERS=ON",
+              "-DENABLE_QT5=OFF",
+              "-DENABLE_QT6=ON"
+            ],
+            "sources": [
+              {
+                "type": "archive",
+                "url": "https://poppler.freedesktop.org/poppler-26.03.0.tar.xz",
+                "sha256": "8b3c5e2a9f2ab4c3ec5029f28af1b433c6b71f0d1e7b3997aa561cf1c0ca4ebe",
+                "x-checker-data": {
+                  "type": "anitya",
+                  "project-id": 3686,
+                  "stable-only": true,
+                  "url-template": "https://poppler.freedesktop.org/poppler-$version.tar.xz"
+                }
+              }
+            ]
+          },
+          {
+            "name": "kpkpass",
+            "config-opts": [
+              "-DBUILD_TESTING=OFF",
+              "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+            ],
+            "buildsystem": "cmake-ninja",
+            "sources": [
+              {
+                "type": "archive",
+                "url": "https://download.kde.org/stable/release-service/25.12.3/src/kpkpass-25.12.3.tar.xz",
+                "sha256": "f916bdc37c11740cc527ee76a1326d3457ed9bf153d609cdb5ea7bb581885df9",
+                "x-checker-data": {
+                  "type": "anitya",
+                  "project-id": 8763,
+                  "stable-only": true,
+                  "url-template": "https://download.kde.org/stable/release-service/$version/src/kpkpass-$version.tar.xz"
+                }
+              }
+            ]
+          },
+          {
+            "name": "zxing",
+            "config-opts": [
+              "-DBUILD_DEPENDENCIES=LOCAL",
+              "-DBUILD_SHARED_LIBS=ON",
+              "-DBUILD_UNIT_TESTS=OFF",
+              "-DBUILD_BLACKBOX_TESTS=OFF",
+              "-DBUILD_EXAMPLES=OFF"
+            ],
+            "buildsystem": "cmake-ninja",
+            "builddir": true,
+            "cleanup": [
+              "/include",
+              "*.pc",
+              "/lib/*/cmake",
+              "libZXing.so"
+            ],
+            "sources": [
+              {
+                "type": "archive",
+                "url": "https://github.com/zxing-cpp/zxing-cpp/archive/v2.3.0.tar.gz",
+                "sha256": "64e4139103fdbc57752698ee15b5f0b0f7af9a0331ecbdc492047e0772c417ba",
+                "x-checker-data": {
+                  "type": "anitya",
+                  "project-id": 101246,
+                  "url-template": "https://github.com/zxing-cpp/zxing-cpp/archive/v$version.tar.gz"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

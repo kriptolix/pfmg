@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "bibletime-docs",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "bibletime-docs",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/bibletime/generated_docs.git",
+        "commit": "31f83f5ffeebee691089bb056db6952c875620ae"
+      }
+    ],
+    "buildsystem": "simple",
+    "build-commands": [
+      "mkdir -p /app/share/doc/bibletime",
+      "cp -r docs/v3.2.0/h*  /app/share/doc/bibletime"
+    ]
+  }
+}

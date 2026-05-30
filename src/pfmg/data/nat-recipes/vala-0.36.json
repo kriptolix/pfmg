@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "vala",
+    "version": "0.36",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "vala",
+    "cleanup-platform": [
+      "*"
+    ],
+    "config-opts": [
+      "--enable-vapigen",
+      "--enable-unversioned"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.gnome.org/sources/vala/0.36/vala-0.36.14.tar.xz",
+        "sha256": "31df542f37f78d8847c3675a76f691df9e8a6ccfd93045ca3a33cd25db3aa4d2"
+      }
+    ]
+  }
+}

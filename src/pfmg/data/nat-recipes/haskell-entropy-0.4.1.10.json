@@ -1,0 +1,33 @@
+{
+  "header": {
+    "id": "haskell-entropy",
+    "version": "0.4.1.10",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "haskell-entropy",
+    "buildsystem": "simple",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/entropy-0.4.1.10/entropy-0.4.1.10.tar.gz",
+        "sha256": "85ac1d53f1d1c095aedd23fdb20c8e3ada04a7fd8aa6d7e6445ae6a59a277de5",
+        "x-checker-data": {
+          "type": "html",
+          "url": "https://www.stackage.org/lts-21",
+          "version-pattern": ">entropy-([\\d.]+)<",
+          "url-template": "https://hackage.haskell.org/package/entropy-$version/entropy-$version.tar.gz"
+        }
+      }
+    ],
+    "build-commands": [
+      "runhaskell Setup configure --prefix=/app --extra-lib-dirs=/app/lib",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "cleanup": [
+      "*"
+    ]
+  }
+}

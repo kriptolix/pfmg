@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-greenlet",
+    "version": "3.3.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-greenlet",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"greenlet\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/c7/e5/40dbda2736893e3e53d25838e0f19a2b417dfc122b9989c91918db30b5d3/greenlet-3.3.0.tar.gz",
+        "sha256": "a82bb225a4e9e4d653dd2fb7b8b2d36e4fb25bc0165422a11e48b88e9e6f78fb"
+      }
+    ]
+  }
+}

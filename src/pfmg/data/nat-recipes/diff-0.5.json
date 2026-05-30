@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "diff",
+    "version": "0.5",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "Diff",
+    "buildsystem": "simple",
+    "builddir": false,
+    "build-commands": [
+      "echo '#! /usr/bin/env runhaskell' >Setup.txt",
+      "echo '> import Distribution.Simple' >>Setup.txt",
+      "echo '> main = defaultMain' >>Setup.txt",
+      "ln -s Setup.txt Setup.lhs || true",
+      "runhaskell Setup configure --prefix=/app",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "sources": [
+      {
+        "sha256": "03cc84dedfb18fa693f0b0b7054d65e92c388d0657cf45ad5e9fbe3fe8b54551",
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/Diff-0.5/Diff-0.5.tar.gz"
+      },
+      {
+        "dest-filename": "Diff.cabal",
+        "sha256": "9c8a972eead9e079b90c6581fa8ef5755662c10dd075951b32b801145704afbb",
+        "type": "file",
+        "url": "https://hackage.haskell.org/package/Diff-0.5/revision/1.cabal"
+      }
+    ]
+  }
+}

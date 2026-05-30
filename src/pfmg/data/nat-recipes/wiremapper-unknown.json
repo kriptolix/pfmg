@@ -1,0 +1,20 @@
+{
+  "header": {
+    "id": "wiremapper",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "wiremapper",
+    "buildsystem": "meson",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://gitlab.com/MartijnBraam/wiremapper.git",
+        "tag": "0.10.0",
+        "commit": "e36b13c27d6d96e876ebb39aa9fd8ea7215f5a2b"
+      }
+    ]
+  }
+}

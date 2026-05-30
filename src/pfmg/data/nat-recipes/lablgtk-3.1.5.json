@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "lablgtk",
+    "version": "3.1.5",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "lablgtk",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/garrigue/lablgtk/releases/download/3.1.5/lablgtk3-3.1.5.tbz",
+        "sha256": "d4821cdbecf3ae374f20317d63e43fe58030c3ba9657b51a2e83e652197e8eac"
+      }
+    ],
+    "buildsystem": "simple",
+    "build-commands": [
+      "dune build -p lablgtk3",
+      "dune install -p lablgtk3 --prefix /app/share/runtime/ocaml"
+    ]
+  }
+}

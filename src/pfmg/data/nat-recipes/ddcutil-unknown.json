@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "ddcutil",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "ddcutil",
+    "buildsystem": "autotools",
+    "config-opts": [
+      "--disable-udev"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/rockowitz/ddcutil.git",
+        "tag": "v2.1.4",
+        "commit": "45aeabea5ab8bb6d18d24106d952f7eb978d806f"
+      }
+    ]
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "header": {
+    "id": "dee",
+    "version": "1.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "dee",
+    "buildsystem": "autotools",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://launchpad.net/dee/1.0/1.2.7/+download/dee-1.2.7.tar.gz",
+        "sha256": "1bf0336ce684aa0f48d6eae2469628c1a9b43695a77443bc31a5790aa673bf8a"
+      },
+      {
+        "type": "patch",
+        "path": "patches/dee/dee-1.2.7-deprecated-g_type_class_add_private.patch"
+      },
+      {
+        "type": "patch",
+        "path": "patches/dee/dee-1.2.7-fix-g_string_free-usage.patch"
+      },
+      {
+        "type": "patch",
+        "path": "patches/dee/dee-1.2.7-gcc6-fixes.patch"
+      },
+      {
+        "type": "patch",
+        "path": "patches/dee/fdsdk2508.patch"
+      }
+    ],
+    "cleanup": [
+      "/bin"
+    ]
+  }
+}

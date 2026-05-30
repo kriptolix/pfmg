@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "libqxp",
+    "version": "0.0.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libqxp",
+    "config-opts": [
+      "--without-docs",
+      "--disable-tools"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://dev-www.libreoffice.org/src/libqxp-0.0.2.tar.xz",
+        "sha256": "e137b6b110120a52c98edd02ebdc4095ee08d0d5295a94316a981750095a945c"
+      }
+    ],
+    "cleanup": [
+      "/include",
+      "/lib/pkgconfig",
+      "*.la"
+    ]
+  }
+}

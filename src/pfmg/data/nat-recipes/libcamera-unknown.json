@@ -1,0 +1,29 @@
+{
+  "header": {
+    "id": "libcamera",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libcamera",
+    "buildsystem": "meson",
+    "config-opts": [
+      "-Dcam=disabled",
+      "-Dqcam=disabled",
+      "-Dgstreamer=disabled",
+      "-Dtracing=disabled",
+      "-Dpycamera=disabled",
+      "-Dlc-compliance=disabled",
+      "-Ddocumentation=disabled",
+      "-Dtest=false"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/FreddyFunk/libcamera.git",
+        "commit": "b16952df91907858c6d8e646b65478938a91ce08"
+      }
+    ]
+  }
+}

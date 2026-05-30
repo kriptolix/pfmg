@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "pyqt-deps",
+    "version": "13.2.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "pyqt-deps",
+    "buildsystem": "simple",
+    "build-commands": [
+      "python3 setup.py install --prefix=/app --root=/"
+    ],
+    "modules": [
+      "python3-PyQt-builder.json"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://files.pythonhosted.org/packages/f0/c1/a394f3508c55bb8ee8e58da8a9b20f01576082da0f1d6908773b9a763cfd/PyQt6_sip-13.2.0.tar.gz",
+        "sha256": "10e6c5d0004308efcbe8826ff0b8faf6e6f60c9e906cffeb26834e18e6340ed4"
+      }
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-lz4",
+    "version": "4.4.3",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-lz4",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"lz4>=3.0.0\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/cc/bc/b2e79af05be82841706ddd7d78059e5f78e6ca5828f92034394b54e303b7/lz4-4.4.3.tar.gz",
+        "sha256": "91ed5b71f9179bf3dbfe85d92b52d4b53de2e559aa4daa3b7de18e0dd24ad77d"
+      }
+    ]
+  }
+}

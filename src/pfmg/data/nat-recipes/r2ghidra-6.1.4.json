@@ -1,0 +1,30 @@
+{
+  "header": {
+    "id": "r2ghidra",
+    "version": "6.1.4",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "r2ghidra",
+    "buildsystem": "autotools",
+    "build-options": {
+      "cflags": "-O3"
+    },
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/radareorg/r2ghidra/releases/download/6.1.4/r2ghidra-6.1.4.tar.xz",
+        "archive-type": "tar-xz",
+        "sha256": "d3447f75fe5dadb2177b9a43d1c8e1c8fafd9cd79b74b5b3c741b52c82b3aca8",
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://api.github.com/repos/radareorg/r2ghidra/releases/latest",
+          "timestamp-query": ".published_at",
+          "version-query": ".tag_name",
+          "url-query": ".assets[] | select(.name==\"r2ghidra-\" + $version + \".tar.xz\") | .browser_download_url"
+        }
+      }
+    ]
+  }
+}

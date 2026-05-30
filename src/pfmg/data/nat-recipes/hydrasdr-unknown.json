@@ -1,0 +1,20 @@
+{
+  "header": {
+    "id": "hydrasdr",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "hydrasdr",
+    "buildsystem": "cmake-ninja",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/hydrasdr/hydrasdr-host.git",
+        "tag": "v1.0.4",
+        "commit": "6958c53fd27190120ea67d79502693dd1e56d78e"
+      }
+    ]
+  }
+}

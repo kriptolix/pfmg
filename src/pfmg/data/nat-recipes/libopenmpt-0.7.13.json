@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "libopenmpt",
+    "version": "0.7.13",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libopenmpt",
+    "buildsystem": "autotools",
+    "config-opts": [
+      "--without-portaudio",
+      "--disable-examples"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://lib.openmpt.org/files/libopenmpt/src/libopenmpt-0.7.13+release.autotools.tar.gz",
+        "sha256": "dcd7cde4f9c498eb496c4556e1c1b81353e2a74747e8270a42565117ea42e1f1"
+      }
+    ],
+    "cleanup": [
+      "*.la",
+      "*.a",
+      "/include"
+    ]
+  }
+}

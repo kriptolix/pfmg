@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "quetoo",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "Quetoo",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/jdolan/quetoo.git",
+        "commit": "7dfb88911aff5a37ea46a01ff201a612295567a3"
+      },
+      {
+        "type": "script",
+        "commands": [
+          "autoreconf -fiv"
+        ],
+        "dest-filename": "autogen.sh"
+      }
+    ]
+  }
+}

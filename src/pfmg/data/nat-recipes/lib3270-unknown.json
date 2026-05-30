@@ -1,0 +1,30 @@
+{
+  "header": {
+    "id": "lib3270",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "lib3270",
+    "buildsystem": "meson",
+    "sources": [
+      {
+        "type": "git",
+        "tag": "master",
+        "url": "https://github.com/PerryWerneck/lib3270",
+        "x-checker-data": [
+          {
+            "type": "git"
+          },
+          {
+            "tag-pattern": "([\\\\d.]+)$"
+          },
+          {
+            "is-important": true
+          }
+        ]
+      }
+    ]
+  }
+}

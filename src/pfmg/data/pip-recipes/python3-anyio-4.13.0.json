@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-anyio",
+    "version": "4.13.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-anyio",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --prefix=/app anyio-4.13.0-py3-none-any.whl"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/da/42/e921fccf5015463e32a3cf6ee7f980a6ed0f395ceeaa45060b61d86486c2/anyio-4.13.0-py3-none-any.whl",
+        "sha256": "08b310f9e24a9594186fd75b4f73f4a4152069e3853f1ed8bfbf58369f4ad708"
+      }
+    ]
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "header": {
+    "id": "yutovo-calculator",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "yutovo-calculator",
+    "buildsystem": "cmake",
+    "build-options": {
+      "env": {
+        "YUTOVO_DEPLOY": "/app"
+      }
+    },
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/denprog/yutovo-calculator.git",
+        "tag": "v1.3.8"
+      }
+    ],
+    "config-opts": [
+      "-DCMAKE_INSTALL_PREFIX=/app",
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DBUILD_TESTS=OFF"
+    ]
+  }
+}

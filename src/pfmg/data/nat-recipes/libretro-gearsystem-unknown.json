@@ -1,0 +1,26 @@
+{
+  "header": {
+    "id": "libretro-gearsystem",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libretro-gearsystem",
+    "no-autogen": true,
+    "subdir": "platforms/libretro",
+    "make-args": [
+      "prefix=/app"
+    ],
+    "make-install-args": [
+      "prefix=/app"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/drhelius/Gearsystem.git",
+        "commit": "518651a63c54a1eebbb33fbfd98b36bf4cee976e"
+      }
+    ]
+  }
+}

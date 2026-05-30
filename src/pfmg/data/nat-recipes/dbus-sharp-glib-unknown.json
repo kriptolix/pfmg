@@ -1,0 +1,18 @@
+{
+  "header": {
+    "id": "dbus-sharp-glib",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "dbus-sharp-glib",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/mono/dbus-sharp-glib",
+        "commit": "9c003f566efa7cbcb413d6b374ccb15ec8abb330"
+      }
+    ]
+  }
+}

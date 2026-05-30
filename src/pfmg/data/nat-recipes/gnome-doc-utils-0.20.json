@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "gnome-doc-utils",
+    "version": "0.20",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "gnome-doc-utils",
+    "config-opts": [
+      "--disable-scrollkeeper"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "http://ftp.gnome.org/pub/GNOME/sources/gnome-doc-utils/0.20/gnome-doc-utils-0.20.10.tar.xz",
+        "sha256": "cb0639ffa9550b6ddf3b62f3b1add92fb92ab4690d351f2353cffe668be8c4a6"
+      },
+      {
+        "type": "shell",
+        "commands": [
+          "cp $(automake --print-libdir)/config.sub .",
+          "cp $(automake --print-libdir)/config.guess .",
+          "sed -i 's/ doc//g' Makefile.in",
+          "sed -i 's/ doc//g' Makefile.am",
+          "echo '#!/bin/sh' > xml2po/xml2po/xml2po.py.in",
+          "echo 'exit 0' >> xml2po/xml2po/xml2po.py.in"
+        ]
+      }
+    ]
+  }
+}

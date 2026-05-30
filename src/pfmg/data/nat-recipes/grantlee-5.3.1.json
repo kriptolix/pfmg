@@ -1,0 +1,30 @@
+{
+  "header": {
+    "id": "grantlee",
+    "version": "5.3.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "grantlee",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DBUILD_TESTING=OFF",
+      "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
+      "-DGRANTLEE_BUILD_WITH_QT6=ON"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/steveire/grantlee/archive/v5.3.1.tar.gz",
+        "sha256": "ba288ae9ed37ec0c3622ceb40ae1f7e1e6b2ea89216ad8587f0863d64be24f06",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 21448,
+          "stable-only": true,
+          "url-template": "https://github.com/steveire/grantlee/archive/v$version.tar.gz"
+        }
+      }
+    ]
+  }
+}

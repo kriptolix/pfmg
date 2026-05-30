@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "python-pybind11",
+    "version": "2.10.3",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python-pybind11",
+    "buildsystem": "simple",
+    "build-commands": [
+      "python3 setup.py build",
+      "python3 setup.py install --prefix=/app --root=/"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/pybind/pybind11/archive/refs/tags/v2.10.3.tar.gz",
+        "sha256": "5d8c4c5dda428d3a944ba3d2a5212cb988c2fae4670d58075a5a49075a6ca315"
+      }
+    ]
+  }
+}

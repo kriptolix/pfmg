@@ -1,0 +1,629 @@
+{
+  "header": {
+    "id": "bloomdesktop",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "BloomDesktop",
+    "buildsystem": "simple",
+    "build-options": {
+      "append-path": "/usr/lib/sdk/node16/bin",
+      "env": {
+        "MONO_PREFIX": "/app",
+        "MONO_SILPKGDIR": "/app",
+        "NUGET_SRC": "nuget_packages",
+        "NUGET_DEST": "packages",
+        "INSTALLATION_PREFIX": "/app",
+        "RUNMODE": "PACKAGING",
+        "XDG_CACHE_HOME": "/run/build/flatpak-node/cache",
+        "BLOOMLIB": "/app/lib/bloom-desktop",
+        "BLOOMSHARE": "/app/share/bloom-desktop",
+        "PREFIX": "/app",
+        "PERL5LIB": "/app/perl-modules/lib/perl5",
+        "BUILD_CONFIG": "Release"
+      }
+    },
+    "build-commands": [
+      "set -xueo pipefail\nyarn config set yarn-offline-mirror ${FLATPAK_BUILDER_BUILDDIR}/flatpak-node/yarn-mirror\ncp local-extra/Makefile .\nexport NODE_OPTIONS=--max-old-space-size=1536\nif [ -f local-extra/build_number.env ]; then . local-extra/build_number.env; else export FULL_BUILD_NUMBER=5.5.1.0; fi\nmake -B build\nmake -B install\n"
+    ],
+    "cleanup": [
+      "/include",
+      "/lib/*/include",
+      "*.a"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/BloomBooks/BloomDesktop.git",
+        "commit": "aa3895ddcf588d6be39029f5ebb5a68d5d8cef4a"
+      },
+      "bloom-build-nuget-sources.yml",
+      "bloom-sources-nuget.yml",
+      {
+        "type": "shell",
+        "commands": [
+          "set -xueo pipefail\nfor package in ${NUGET_SRC}/*.nupkg; do\n  mkdir -p \"${NUGET_DEST}/$(basename \"${package}\" .nupkg)\" &&\n    unzip \"${package}\" \\\n      -d \"${NUGET_DEST}/$(basename \"${package}\" .nupkg)\"\ndone\n# repair damaged nupkgs\nmv \"${NUGET_DEST}/MarkdownDeep.NET.1.5.0/lib/.NetFramework%203.5\" \"${NUGET_DEST}/MarkdownDeep.NET.1.5.0/lib/.NetFramework 3.5\"\nchmod 755 \"${NUGET_DEST}\"/sqlite-net-pcl.1.7.335/*.*\nchmod 755 \"${NUGET_DEST}\"/sqlite-net-pcl.1.7.335/lib/netstandard2.0/SQLite-net.*\nchmod 755 \"${NUGET_DEST}\"/L10NSharp.6.0.0/lib/net461/L10NSharp.*\n# copy artifacts from internal geckofx builds to where the nuget packages have been installed.\n# (we need some things the nuget package includes, but want to replace the actual assemblies and add debug info)\nrm \"${NUGET_DEST}\"/Geckofx60.64.Linux.60.0.51/lib/net40/Geckofx-*.dll.mdb\ncp --verbose --force /app/geckofx/Geckofx-Core.dll \"${NUGET_DEST}\"/Geckofx60.64.Linux.60.0.51/lib/net40/\ncp --verbose --force /app/geckofx/Geckofx-Core.dll.config \"${NUGET_DEST}\"/Geckofx60.64.Linux.60.0.51/lib/net40/\ncp --verbose --force /app/geckofx/Geckofx-Core.pdb \"${NUGET_DEST}\"/Geckofx60.64.Linux.60.0.51/lib/net40/\ncp --verbose --force /app/geckofx/Geckofx-Winforms.dll \"${NUGET_DEST}\"/Geckofx60.64.Linux.60.0.51/lib/net40/\ncp --verbose --force /app/geckofx/Geckofx-Winforms.dll.config \"${NUGET_DEST}\"/Geckofx60.64.Linux.60.0.51/lib/net40/\ncp --verbose --force /app/geckofx/Geckofx-Winforms.pdb \"${NUGET_DEST}\"/Geckofx60.64.Linux.60.0.51/lib/net40/\nrm -rf /app/geckofx\n"
+        ]
+      },
+      "bloom-sources-urls.yml",
+      {
+        "type": "shell",
+        "commands": [
+          "set -xueo pipefail\npwd\nmkdir -p \"DistFiles/pdf\" && unzip -uqo Downloads/pdfjs-viewer.zip -d \"DistFiles/pdf\"\n"
+        ]
+      },
+      "bloom-sources-browser-node.json",
+      "bloom-sources-content-node.json",
+      {
+        "type": "patch",
+        "path": "patches/BloomDesktop/BuildFileFixesForFlatpak.patch"
+      },
+      {
+        "type": "patch",
+        "path": "patches/BloomDesktop/CodeFixesForFlatpak.patch"
+      },
+      {
+        "type": "dir",
+        "path": "./extra",
+        "dest": "local-extra"
+      },
+      {
+        "type": "file",
+        "url": "https://dist.nuget.org/win-x86-commandline/v6.2.1/nuget.exe",
+        "sha256": "a79f342e739fdb3903a92218767e7813e04930dff463621b6d2be2d468b84e05",
+        "dest": ".nuget"
+      }
+    ],
+    "modules": [
+      "shared-modules/python2.7/python-2.7.json",
+      {
+        "name": "mono5-sil",
+        "config-opts": [
+          "--enable-minimal=aot"
+        ],
+        "cleanup": [
+          "/include",
+          "*.a",
+          "/bin/gtk-demo",
+          "/bin/monodis",
+          "/bin/monograph",
+          "/bin/pedump",
+          "/lib/mono/2*",
+          "/lib/mono/3*",
+          "/lib/mono/4.5/dim",
+          "/lib/mono/4.5/Microsoft.CodeAnalysis.*",
+          "/lib/mono/gac/Microsoft.Build.Engine",
+          "/lib/mono/gac/Microsoft.Build",
+          "/lib/mono/gac/monodoc",
+          "/lib/mono/msbuild",
+          "/lib/mono/xbuild-frameworks",
+          "/lib/mono/xbuild",
+          "/lib/monodoc"
+        ],
+        "sources": [
+          {
+            "type": "git",
+            "url": "https://github.com/sillsdev/mono.git",
+            "commit": "2672d16f8b3006a574a0108b6c324d7a090678b5"
+          },
+          {
+            "type": "archive",
+            "url": "https://download.mono-project.com/monolite/monolite-linux-1051600011-latest.tar.gz",
+            "sha512": "b48bb273f5a9107f9bb9795d47277aeaaeb458588a6e011676bb9a152b83759f305cf1031a5e74a62145854ef17026cb1aa20ea9adb5e6b15f275b9d6af585db",
+            "dest": "mcs/class/lib/monolite-linux/1051600011"
+          },
+          {
+            "type": "patch",
+            "path": "patches/mono/mono-ping-path.patch"
+          }
+        ]
+      },
+      {
+        "name": "gtk-sharp3",
+        "sources": [
+          {
+            "type": "git",
+            "url": "https://github.com/mono/gtk-sharp.git",
+            "commit": "9ef7d3f394b9d485674c59e92db24ac66fd9f16b"
+          },
+          {
+            "type": "patch",
+            "path": "patches/gtk-sharp3/gtk-sharp-profiler-startup.patch"
+          }
+        ]
+      },
+      {
+        "name": "mono5-sil-msbuild",
+        "buildsystem": "simple",
+        "build-commands": [
+          "for package in *.deb; do\n  mkdir \"${package}-dir\" &&\n    (cd \"${package}-dir\" && ar x ../\"${package}\") &&\n    tar -C /app -x -f \"${package}-dir\"/data.tar.xz \\\n      --strip-components=3 ./opt/mono5-sil\ndone\n",
+          "perl -pi -e 's#/opt/mono5-sil#/./././././app#g' /app/bin/*"
+        ],
+        "cleanup": [
+          "/lib/mono/msbuild",
+          "/lib/mono/xbuild"
+        ],
+        "sources": [
+          {
+            "type": "file",
+            "url": "http://linux.lsdev.sil.org/ubuntu/pool/main/m/mono5-sil-msbuild/mono5-sil-msbuild_15.8+xamarinxplat.2018.07.31.22.43-0xamarin5+ubuntu1804b1_all.deb",
+            "sha256": "758274d8bc438f325fc5fc808c0482ab50eb2bdaf02f61747888e190760753de"
+          }
+        ]
+      },
+      {
+        "name": "giflib",
+        "buildsystem": "simple",
+        "build-commands": [
+          "perl -pi -e 's#doc/Makefile##' configure.ac",
+          "./autogen.sh --prefix=/app",
+          "make",
+          "make install"
+        ],
+        "cleanup": [
+          "/include",
+          "*.a"
+        ],
+        "sources": [
+          {
+            "type": "git",
+            "url": "https://github.com/mirrorer/giflib.git",
+            "commit": "fa37672085ce4b3d62c51627ab3c8cf2dda8009a"
+          }
+        ]
+      },
+      {
+        "name": "libgdiplus",
+        "build-options": {
+          "env": {
+            "MONO_PREFIX": "/app"
+          }
+        },
+        "config-opts": [
+          "--with-pango"
+        ],
+        "cleanup": [
+          "/include",
+          "*.a"
+        ],
+        "sources": [
+          {
+            "type": "git",
+            "url": "https://github.com/sillsdev/libgdiplus",
+            "tag": "merge/5.6.0",
+            "commit": "b9c581ba87da89651d5ec56c5da0960ab739a63a"
+          }
+        ]
+      },
+      {
+        "name": "ping",
+        "buildsystem": "meson",
+        "config-opts": [
+          "-DBUILD_ARPING=false",
+          "-DBUILD_CLOCKDIFF=false",
+          "-DBUILD_RARPD=false",
+          "-DBUILD_RDISC=false",
+          "-DENABLE_RDISC_SERVER=false",
+          "-DBUILD_TRACEPATH=false",
+          "-DBUILD_NINFOD=false",
+          "-DBUILD_MANS=false",
+          "-DSKIP_TESTS=true"
+        ],
+        "sources": [
+          {
+            "type": "git",
+            "url": "https://github.com/iputils/iputils.git",
+            "tag": "20211215",
+            "commit": "1d1e7c43210d8af316a41cb2c53d612a4c16f34d"
+          }
+        ]
+      },
+      {
+        "name": "chmlib",
+        "cleanup": [
+          "/include",
+          "*.a"
+        ],
+        "sources": [
+          {
+            "type": "git",
+            "url": "https://github.com/jedwing/CHMLib",
+            "commit": "2bef8d063ec7d88a8de6fd9f0513ea42ac0fa21f"
+          },
+          {
+            "type": "shell",
+            "commands": [
+              "autoreconf --install"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "wxWidgets",
+        "cleanup": [
+          "/include",
+          "/lib/wx/include",
+          "*.a"
+        ],
+        "sources": [
+          {
+            "type": "git",
+            "url": "https://github.com/wxWidgets/wxWidgets",
+            "tag": "v3.0.4",
+            "commit": "721d62adde3f8ba8704a9cf56efeb050f652dfbf"
+          }
+        ]
+      },
+      {
+        "name": "xchm",
+        "cleanup": [
+          "/include",
+          "*.a",
+          "/share/icons",
+          "/share/applications"
+        ],
+        "sources": [
+          {
+            "type": "git",
+            "url": "https://github.com/rzvncj/xCHM",
+            "tag": "1.31",
+            "commit": "e983d11fd546c961501f736b2c6f93178c92fa97"
+          },
+          {
+            "type": "patch",
+            "path": "patches/xchm/no-config.patch"
+          }
+        ]
+      },
+      {
+        "name": "wget",
+        "buildsystem": "autotools",
+        "cleanup": [
+          "*"
+        ],
+        "sources": [
+          {
+            "type": "archive",
+            "url": "https://ftp.gnu.org/gnu/wget/wget-1.20.3.tar.gz",
+            "sha512": "e8b82b40e270296228094a78d47f81580bdbdea9e6b93fd61b37dccb39430aeb9bda5397dc53a31c952a61629383c7e2a8c8abf414c8a4dd369af6ecf2717e6c"
+          }
+        ]
+      },
+      "shared-modules/dbus-glib/dbus-glib.json",
+      {
+        "name": "fonts-sil-andika-new-basic",
+        "buildsystem": "simple",
+        "build-commands": [
+          "mkdir -p /app/share/fonts/truetype/andika-new-basic",
+          "cp --verbose --force -a *.ttf /app/share/fonts/truetype/andika-new-basic"
+        ],
+        "sources": [
+          {
+            "type": "archive",
+            "url": "https://software.sil.org/downloads/r/andika/AndikaNewBasic-5.500.zip",
+            "sha512": "53513c782889fd7e87903cab43f1e419a87cfbc425fd722b621cbdb1b1928584b5ce82ecc56e6f6aa1073ed30268993c46c451dfd8b198b430a54a5cf1eb10a1"
+          }
+        ]
+      },
+      {
+        "name": "libxmu",
+        "buildsystem": "autotools",
+        "cleanup": [
+          "/include",
+          "*.a"
+        ],
+        "sources": [
+          {
+            "type": "git",
+            "url": "https://gitlab.freedesktop.org/xorg/lib/libxmu.git",
+            "commit": "e9efe2d027b4c46cf6834cc532222f8ad1d1d3c3"
+          }
+        ]
+      },
+      {
+        "name": "wmctrl",
+        "buildsystem": "autotools",
+        "sources": [
+          {
+            "type": "git",
+            "url": "https://github.com/Conservatory/wmctrl.git",
+            "commit": "7c1dcbaa221a16e8a9765bf2b14d61d640a52304"
+          }
+        ]
+      },
+      {
+        "name": "libtidy-sil",
+        "buildsystem": "cmake",
+        "config-opts": [
+          "-DBUILD_SHARED_LIB:BOOL=TRUE"
+        ],
+        "cleanup": [
+          "*.a"
+        ],
+        "sources": [
+          {
+            "type": "git",
+            "url": "https://github.com/BloomBooks/tidy-html5.git",
+            "commit": "8efa8feb2046d31f9216e1ef806609c311809dea"
+          }
+        ]
+      },
+      {
+        "name": "lcdf-typetools",
+        "buildsystem": "autotools",
+        "config-opts": [
+          "--without-kpathsea",
+          "--disable-adobe-code",
+          "--disable-cfftot1",
+          "--disable-mmafm",
+          "--disable-mmpfb",
+          "--disable-otftotfm",
+          "--disable-t1dotlessj",
+          "--disable-t1lint",
+          "--disable-t1rawafm",
+          "--disable-t1reencode",
+          "--disable-t1testpage",
+          "--disable-ttftotype42"
+        ],
+        "cleanup": [
+          "*.a"
+        ],
+        "sources": [
+          {
+            "type": "git",
+            "url": "https://salsa.debian.org/fonts-team/lcdf-typetools.git",
+            "commit": "635cbab327dbff73a7b1acd4b322c850f202b7bd"
+          }
+        ]
+      },
+      {
+        "name": "ghostscript",
+        "config-opts": [
+          "--disable-cups",
+          "--disable-dbus",
+          "--enable-dynamic",
+          "--disable-hidden-visibility",
+          "--disable-gtk",
+          "--with-drivers=FILES"
+        ],
+        "make-args": [
+          "so"
+        ],
+        "make-install-args": [
+          "install",
+          "soinstall"
+        ],
+        "sources": [
+          {
+            "type": "archive",
+            "url": "https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs10011/ghostscript-10.01.1.tar.gz",
+            "sha256": "4df18a808cd4369f25e02dbcec2f133cb6d674627b2c6b1502020e58d43e32ce"
+          }
+        ],
+        "cleanup": [
+          "/share/doc",
+          "/share/ghostscript/*/doc",
+          "/share/ghostscript/*/examples",
+          "/share/man"
+        ]
+      },
+      {
+        "name": "GraphicsMagick",
+        "sources": [
+          {
+            "type": "archive",
+            "url": "https://sourceforge.net/projects/graphicsmagick/files/graphicsmagick/1.3.35/GraphicsMagick-1.3.35.tar.bz2",
+            "sha256": "7fd0b49903eb35df4ab5ca76139ab3f023f47485a4913fbdcf5c642c6e5f01fc"
+          }
+        ]
+      },
+      "python3-aeneas.yml",
+      {
+        "name": "msbuild",
+        "sources": [
+          {
+            "type": "file",
+            "url": "https://download.mono-project.com/repo/ubuntu/pool/main/m/msbuild/msbuild_16.10.1+xamarinxplat.2021.05.26.14.00-0xamarin2+ubuntu2004b1_all.deb",
+            "sha256": "32f1eba1c2df67bc55920cd45ce3689c32a5c705ae01fd7ead52ca180221b469"
+          }
+        ],
+        "buildsystem": "simple",
+        "build-commands": [
+          "ar x msbuild_*.deb",
+          "tar xf data.tar.xz",
+          "sed -e 's|/usr/|/usr/lib/sdk/mono6/|g' -i usr/bin/msbuild",
+          "cp -a usr/. /usr/lib/sdk/mono6/"
+        ]
+      },
+      {
+        "name": "ca-certificates",
+        "sources": [
+          {
+            "type": "file",
+            "url": "http://us.archive.ubuntu.com/ubuntu/pool/main/c/ca-certificates/ca-certificates_20230311ubuntu1_all.deb",
+            "sha256": "afb91d57ac5a34a2f65faa890f28f9596127d1b4131d64aab13acbadb1d5e023"
+          }
+        ],
+        "buildsystem": "simple",
+        "build-commands": [
+          "set -xueo pipefail\nar x ca-certificates_*all.deb\ntar xf data.tar.zst\ncat usr/share/ca-certificates/mozilla/*.crt >ca-certificates.crt\ninstall -d /app/share/ca-certificates\ninstall ca-certificates.crt /app/share/ca-certificates\n"
+        ]
+      },
+      {
+        "name": "geckofx",
+        "buildsystem": "simple",
+        "build-commands": [
+          "set -xueo pipefail\npwd\nls -FC\nmsbuild /p:Configuration=Release_Linux /p:Platform=\"Any CPU\" Geckofx.sln\n# copy where these can be found by the BloomDesktop nuget package code\ninstall -d /app/geckofx\ninstall Geckofx-Winforms/bin/Release_Linux/Geckofx-Core.dll /app/geckofx\ninstall Geckofx-Winforms/bin/Release_Linux/Geckofx-Core.dll.config /app/geckofx\ninstall Geckofx-Winforms/bin/Release_Linux/Geckofx-Core.pdb /app/geckofx\ninstall Geckofx-Winforms/bin/Release_Linux/Geckofx-Winforms.dll /app/geckofx\ninstall Geckofx-Winforms/bin/Release_Linux/Geckofx-Winforms.dll.config /app/geckofx\ninstall Geckofx-Winforms/bin/Release_Linux/Geckofx-Winforms.pdb /app/geckofx\n"
+        ],
+        "sources": [
+          {
+            "type": "git",
+            "url": "https://github.com/StephenMcConnel/Geckofx60.git",
+            "commit": "a77e5ba72728630ee02b95892d5fd0c219f87c98"
+          },
+          {
+            "type": "patch",
+            "path": "patches/geckofx/FixesForFlatpak.patch"
+          }
+        ]
+      },
+      {
+        "name": "AndikaFonts",
+        "sources": [
+          {
+            "type": "file",
+            "url": "https://software.sil.org/downloads/r/andika/Andika-6.101.zip",
+            "sha256": "8595a879054a540b24fa942a2621efcd194a9f6468d9cf2541ae693e496b8dd4"
+          },
+          {
+            "type": "file",
+            "url": "https://software.sil.org/downloads/r/andika/AndikaNewBasic-5.500.zip",
+            "sha256": "18308284a3e98cd7712d057742d8d6cd040a52ec0479a1dcf92d57815f8d368a"
+          }
+        ],
+        "buildsystem": "simple",
+        "build-commands": [
+          "set -xueo pipefail\nunzip -uqo Andika-6.101.zip\ninstall -d /app/share/fonts/truetype/andika\ninstall Andika-6.101/Andika-Regular.ttf /app/share/fonts/truetype/andika\ninstall Andika-6.101/Andika-Bold.ttf /app/share/fonts/truetype/andika\ninstall Andika-6.101/Andika-Italic.ttf /app/share/fonts/truetype/andika\ninstall Andika-6.101/Andika-BoldItalic.ttf /app/share/fonts/truetype/andika\ninstall -d /app/share/doc/fonts-sil-andika\ninstall Andika-6.101/OFL.txt /app/share/doc/fonts-sil-andika\ninstall Andika-6.101/README.txt /app/share/doc/fonts-sil-andika\nunzip -uqo AndikaNewBasic-5.500.zip\ninstall -d /app/share/fonts/opentype/andika-new-basic\ninstall AndikaNewBasic-5.500/AndikaNewBasic-R.ttf /app/share/fonts/opentype/andika-new-basic\ninstall AndikaNewBasic-5.500/AndikaNewBasic-B.ttf /app/share/fonts/opentype/andika-new-basic\ninstall AndikaNewBasic-5.500/AndikaNewBasic-I.ttf /app/share/fonts/opentype/andika-new-basic\ninstall AndikaNewBasic-5.500/AndikaNewBasic-BI.ttf /app/share/fonts/opentype/andika-new-basic\ninstall -d /app/share/doc/fonts-sil-andika-new-basic\ninstall AndikaNewBasic-5.500/OFL.txt /app/share/doc/fonts-sil-andika-new-basic\ninstall AndikaNewBasic-5.500/README.txt /app/share/doc/fonts-sil-andika-new-basic\n"
+        ]
+      },
+      "shared-modules/gtk2/gtk2.json",
+      {
+        "name": "gtklp",
+        "sources": [
+          {
+            "type": "archive",
+            "url": "https://downloads.sourceforge.net/project/gtklp/gtklp/1.3.4/gtklp-1.3.4.src.tar.gz",
+            "sha256": "be07609042595fa932034e3b2d7038cef33901ec0863fcedbb5188acb6b53bab"
+          },
+          {
+            "type": "patch",
+            "path": "patches/gtklp/FixGtklpForNewGcc.patch"
+          }
+        ]
+      },
+      {
+        "name": "xterm",
+        "sources": [
+          {
+            "type": "git",
+            "url": "https://github.com/ThomasDickey/xterm-snapshots.git",
+            "tag": "xterm-379",
+            "commit": "2ba96df676100dcb013e15f7392718e1b793907c",
+            "x-checker-data": {
+              "type": "anitya",
+              "project-id": 5272,
+              "tag-template": "xterm-$version",
+              "is-main-source": true
+            }
+          }
+        ],
+        "modules": [
+          {
+            "name": "libXaw",
+            "sources": [
+              {
+                "type": "archive",
+                "url": "https://www.x.org/archive/individual/lib/libXaw-1.0.15.tar.xz",
+                "sha256": "ab35f70fde9fb02cc71b342f654846a74328b74cb3a0703c02d20eddb212754a"
+              }
+            ]
+          },
+          {
+            "name": "libXaw-32bit",
+            "sources": [
+              {
+                "type": "archive",
+                "url": "https://www.x.org/archive/individual/lib/libXaw-1.0.15.tar.xz",
+                "sha256": "ab35f70fde9fb02cc71b342f654846a74328b74cb3a0703c02d20eddb212754a"
+              }
+            ]
+          },
+          {
+            "name": "ncurses",
+            "sources": [
+              {
+                "type": "archive",
+                "url": "https://invisible-mirror.net/archives/ncurses/ncurses-6.4.tar.gz",
+                "sha256": "6931283d9ac87c5073f30b6290c4c75f21632bb4fc3603ac8100812bed248159"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "libx264",
+        "config-opts": [
+          "--enable-shared",
+          "--disable-cli",
+          "--enable-static",
+          "--disable-cli",
+          "--disable-gpl",
+          "--disable-opencl",
+          "--disable-avs",
+          "--disable-swscale",
+          "--disable-lavf",
+          "--disable-ffms",
+          "--disable-gpac",
+          "--disable-lsmash",
+          "--enable-lto"
+        ],
+        "sources": [
+          {
+            "type": "git",
+            "url": "https://code.videolan.org/videolan/x264.git",
+            "commit": "baee400fa9ced6f5481a728138fed6e867b0ff7f"
+          }
+        ]
+      },
+      {
+        "name": "ffmpeg",
+        "config-opts": [
+          "--disable-postproc",
+          "--enable-avcodec",
+          "--enable-avdevice",
+          "--enable-avformat",
+          "--enable-avfilter",
+          "--enable-swresample",
+          "--enable-swscale",
+          "--disable-encoders",
+          "--enable-encoder=rawvideo,libx264,libvpx_vp8,aac,libmp3lame,h263,pcm_s16be,pcm_s24be,pcm_s16le,pcm_s24le,pcm_s32le,pcm_u8,null",
+          "--disable-hwaccels",
+          "--disable-parsers",
+          "--enable-parser=h264,vp8,mpegaudio",
+          "--disable-protocols",
+          "--enable-protocol=file,concat",
+          "--disable-muxers",
+          "--enable-muxer=rawvideo,mp4,mp3,tgp,pcm_s16be,pcm_s16le,wav,null",
+          "--disable-bsfs",
+          "--disable-filters",
+          "--enable-filter=scale,adelay,afade,amix,aresample,volume",
+          "--disable-indevs",
+          "--enable-indev=gdigrab",
+          "--disable-outdevs",
+          "--disable-autodetect",
+          "--enable-libx264",
+          "--enable-libvorbis",
+          "--enable-libvpx",
+          "--enable-libmp3lame",
+          "--disable-programs",
+          "--enable-ffmpeg",
+          "--disable-doc",
+          "--disable-htmlpages",
+          "--disable-manpages",
+          "--disable-podpages",
+          "--disable-txtpages",
+          "--enable-gpl"
+        ],
+        "sources": [
+          {
+            "type": "archive",
+            "url": "https://ffmpeg.org/releases/ffmpeg-5.1.2.tar.xz",
+            "sha256": "619e706d662c8420859832ddc259cd4d4096a48a2ce1eefd052db9e440eef3dc"
+          }
+        ]
+      }
+    ]
+  }
+}

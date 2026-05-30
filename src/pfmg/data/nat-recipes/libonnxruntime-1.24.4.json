@@ -1,0 +1,33 @@
+{
+  "header": {
+    "id": "libonnxruntime",
+    "version": "1.24.4",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "build-commands": [
+      "cp -r --no-target-directory ./lib /app/lib"
+    ],
+    "buildsystem": "simple",
+    "name": "libonnxruntime",
+    "sources": [
+      {
+        "only-arches": [
+          "x86_64"
+        ],
+        "sha256": "3a211fbea252c1e66290658f1b735b772056149f28321e71c308942cdb54b747",
+        "type": "archive",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.24.4/onnxruntime-linux-x64-1.24.4.tgz"
+      },
+      {
+        "only-arches": [
+          "aarch64"
+        ],
+        "sha256": "866109a9248d057671a039b9d725be4bd86888e3754140e6701ec621be9d4d7e",
+        "type": "archive",
+        "url": "https://github.com/microsoft/onnxruntime/releases/download/v1.24.4/onnxruntime-linux-aarch64-1.24.4.tgz"
+      }
+    ]
+  }
+}

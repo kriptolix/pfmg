@@ -1,0 +1,45 @@
+{
+  "header": {
+    "id": "modem-manager",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "modem-manager",
+    "buildsystem": "meson",
+    "config-opts": [
+      "-Dudev=false",
+      "-Dmbim=false",
+      "-Dqmi=false",
+      "-Dqrtr=false",
+      "-Dexamples=false",
+      "-Dtests=false",
+      "-Dman=false",
+      "-Dbash_completion=false",
+      "-Dsystemdsystemunitdir=/app/lib/systemd/system",
+      "-Dudevdir=/app/lib/udev"
+    ],
+    "cleanup": [
+      "/bin",
+      "/sbin",
+      "/lib/udev",
+      "/share/dbus-1/system-services",
+      "/share/dbus-1/services",
+      "/etc"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://gitlab.freedesktop.org/mobile-broadband/ModemManager.git",
+        "tag": "1.24.2",
+        "commit": "f2b9ab1ad78d322f32134a444b5b54c6e8160e19",
+        "x-checker-data": {
+          "type": "git",
+          "version-scheme": "semantic",
+          "tag-pattern": "^(\\d+\\.\\d*[02468]\\.\\d+)$"
+        }
+      }
+    ]
+  }
+}

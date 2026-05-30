@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "vigra",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "vigra",
+    "buildsystem": "cmake-ninja",
+    "cleanup": [
+      "/doc",
+      "/include",
+      "/lib/vigra/*.cmake",
+      "/share/man"
+    ],
+    "config-opts": [
+      "-DCMAKE_POLICY_VERSION_MINIMUM=3.5",
+      "-DWITH_OPENEXR=1"
+    ],
+    "post-install": [
+      "install -Dm644 -t ${FLATPAK_DEST}/share/licenses/vigra LICENSE.txt"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/ukoethe/vigra/archive/refs/tags/Version-1-11-2.tar.gz",
+        "sha256": "4841936f5c3c137611ec782e293d961df29d3b5b70ade8cb711374de0f4cb5d3"
+      }
+    ]
+  }
+}

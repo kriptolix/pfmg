@@ -1,0 +1,41 @@
+{
+  "header": {
+    "id": "python-pillow",
+    "version": "10.4.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python-pillow",
+    "buildsystem": "simple",
+    "build-options": {
+      "cflags": "-Wno-error=incompatible-pointer-types"
+    },
+    "build-commands": [
+      "pip3 install --disable-pip-version-check --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} --no-build-isolation \"pillow\""
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/cd/74/ad3d526f3bf7b6d3f408b73fde271ec69dfac8b81341a318ce825f2b3812/pillow-10.4.0.tar.gz",
+        "sha256": "166c1cd4d24309b30d61f79f4a9114b7b2313d7450912277855ff5dfd7cd4a06"
+      }
+    ],
+    "modules": [
+      {
+        "name": "python-olefile",
+        "buildsystem": "simple",
+        "build-commands": [
+          "pip3 install --disable-pip-version-check --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} --no-build-isolation \"olefile\""
+        ],
+        "sources": [
+          {
+            "type": "file",
+            "url": "https://files.pythonhosted.org/packages/69/1b/077b508e3e500e1629d366249c3ccb32f95e50258b231705c09e3c7a4366/olefile-0.47.zip",
+            "sha256": "599383381a0bf3dfbd932ca0ca6515acd174ed48870cbf7fee123d698c192c1c"
+          }
+        ]
+      }
+    ]
+  }
+}

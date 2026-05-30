@@ -1,0 +1,33 @@
+{
+  "header": {
+    "id": "luarocks",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "luarocks",
+    "build-options": {
+      "prefix": "/app/automations/DependencyControl"
+    },
+    "buildsystem": "autotools",
+    "config-opts": [
+      "--with-lua=/app",
+      "--lua-version=5.1",
+      "--with-lua-interpreter=luajit"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/luarocks/luarocks",
+        "tag": "v3.13.0",
+        "commit": "3421bedc2ce2b64e79530bb97497531b014899a8",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^v(\\d+\\.\\d+\\.\\d+)$",
+          "version-scheme": "semantic"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "header": {
+    "id": "python-gast",
+    "version": "0.5.3",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python-gast",
+    "buildsystem": "simple",
+    "build-commands": [
+      "python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://files.pythonhosted.org/packages/48/a3/0bd844c54ae8141642088b7ae09dd38fec2ec7faa9b7d25bb6a23c1f266f/gast-0.5.3.tar.gz",
+        "sha256": "cfbea25820e653af9c7d1807f659ce0a0a9c64f2439421a7bba4f0983f532dea",
+        "x-checker-data": {
+          "type": "pypi",
+          "name": "gast"
+        }
+      }
+    ]
+  }
+}

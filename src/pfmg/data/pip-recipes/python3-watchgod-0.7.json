@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-watchgod",
+    "version": "0.7",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-watchgod",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"watchgod>=0.7,<0.8\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/57/35/9a8da3fb6681e6eba662b2d249eea58cebf575e392271efac3344c172c5f/watchgod-0.7-py3-none-any.whl",
+        "sha256": "d6c1ea21df37847ac0537ca0d6c2f4cdf513562e95f77bb93abbcf05573407b7"
+      }
+    ]
+  }
+}

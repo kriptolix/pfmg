@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "qtpim",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "qtpim",
+    "buildsystem": "qmake",
+    "make-install-args": [
+      "INSTALL_ROOT=${FLATPAK_DEST}/redirection"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://invent.kde.org/qt/qt/qtpim.git/",
+        "commit": "f9a8f0fc914c040d48bbd0ef52d7a68eea175a98"
+      }
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "pyfiglet",
+    "version": "0.8",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "pyfiglet",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"pyfiglet\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/f9/02/48293654fb2e4fdeb4d927f00a380230a832744b6c9af757373a72d018d1/pyfiglet-0.8.post1.tar.gz",
+        "sha256": "c6c2321755d09267b438ec7b936825a4910fec696292139e664ca8670e103639"
+      }
+    ]
+  }
+}

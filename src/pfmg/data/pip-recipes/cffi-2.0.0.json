@@ -1,0 +1,43 @@
+{
+  "header": {
+    "id": "cffi",
+    "version": "2.0.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "cffi",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --prefix=/app cffi*.whl"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/98/df/0a1755e750013a2081e863e7cd37e0cdd02664372c754e5560099eb7aa44/cffi-2.0.0-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+        "sha256": "c8d3b5532fc71b7a77c09192b4a5a200ea992702734a2e9279a37f2478236f26",
+        "only-arches": [
+          "x86_64"
+        ],
+        "x-checker-data": {
+          "type": "pypi",
+          "name": "cffi",
+          "packagetype": "bdist_wheel"
+        }
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/a9/f5/a2c23eb03b61a0b8747f211eb716446c826ad66818ddc7810cc2cc19b3f2/cffi-2.0.0-cp313-cp313-manylinux2014_aarch64.manylinux_2_17_aarch64.whl",
+        "sha256": "d48a880098c96020b02d5a1f7d9251308510ce8858940e6fa99ece33f610838b",
+        "only-arches": [
+          "aarch64"
+        ],
+        "x-checker-data": {
+          "type": "pypi",
+          "name": "cffi",
+          "packagetype": "bdist_wheel"
+        }
+      }
+    ]
+  }
+}

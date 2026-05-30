@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "fc-solve",
+    "version": "6.12.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "fc-solve",
+    "buildsystem": "cmake",
+    "build-options": {
+      "env": {
+        "PERL5LIB": "/app/lib/perl5/site_perl/5.40.2"
+      }
+    },
+    "config-opts": [
+      "-DFCS_WITH_TEST_SUITE=OFF"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://fc-solve.shlomifish.org/downloads/fc-solve/freecell-solver-6.12.0.tar.xz",
+        "sha256": "a2b89e804ce4b918ef749031676210f2095fea3a8cb129805602843c7c4884a0",
+        "x-checker-data": {
+          "type": "html",
+          "url": "https://fc-solve.shlomifish.org/download.html",
+          "pattern": "(downloads/fc-solve/freecell-solver-([\\d\\.]+\\d).tar.xz)"
+        }
+      }
+    ]
+  }
+}

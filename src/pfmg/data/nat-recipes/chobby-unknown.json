@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "chobby",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "chobby",
+    "buildsystem": "simple",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/beyond-all-reason/BYAR-Chobby",
+        "commit": "eece9ffed260ff110ec2cc31fac25c4daf7a9c51",
+        "disable-shallow-clone": true
+      }
+    ],
+    "build-commands": [
+      "mkdir -p /app/chobby\necho \"1.$(git rev-list --count HEAD).0\" > /app/chobby/PACKAGE_VERSION\ncp -r dist_cfg /app/chobby\ncp -r build /app/chobby\n"
+    ]
+  }
+}

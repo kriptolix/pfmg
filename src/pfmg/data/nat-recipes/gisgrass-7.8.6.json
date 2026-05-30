@@ -1,0 +1,54 @@
+{
+  "header": {
+    "id": "gisgrass",
+    "version": "7.8.6",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "gisgrass",
+    "cleanup": [
+      "/include",
+      "/lib/pkgconfig",
+      "/share/man",
+      "/lib/*.la"
+    ],
+    "config-opts": [
+      "--prefix=/app",
+      "--with-freetype-includes=/usr/include/freetype2",
+      "--with-readline",
+      "--with-pthread",
+      "--with-nls",
+      "--with-geos",
+      "--with-sqlite=yes",
+      "--with-python=yes",
+      "--with-postgres"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://grass.osgeo.org/grass78/source/grass-7.8.6.tar.gz",
+        "sha256": "d85e17b0a717e344cdda8f6c5bdeb86763e48d1ee74a62ab471dc8e1293993be"
+      }
+    ],
+    "modules": [
+      "shared-modules/glu/glu-9.json",
+      {
+        "name": "zstd",
+        "buildsystem": "cmake-ninja",
+        "config-opts": [
+          "-DCMAKE_BUILD_TYPE=Release"
+        ],
+        "subdir": "build/cmake",
+        "sources": [
+          {
+            "type": "git",
+            "url": "https://github.com/facebook/zstd.git",
+            "tag": "v1.4.4",
+            "commit": "10f0e6993f9d2f682da6d04aa2385b7d53cbb4ee"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "discord-rpc",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "discord-rpc",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DBUILD_SHARED_LIBS=ON",
+      "-DBUILD_EXAMPLES=OFF",
+      "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
+    ],
+    "cleanup": [
+      "/include"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/discord/discord-rpc.git",
+        "commit": "c59fd6df20c6904ab39f026e87af1dd90fcac7ff"
+      }
+    ]
+  }
+}

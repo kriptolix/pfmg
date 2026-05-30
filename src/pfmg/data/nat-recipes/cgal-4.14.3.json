@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "cgal",
+    "version": "4.14.3",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "cgal",
+    "no-autogen": true,
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "build-options": {
+      "cxxflags": "-fPIC"
+    },
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/CGAL/cgal/archive/refs/tags/releases/CGAL-4.14.3.tar.gz",
+        "sha256": "05badca4025ec85012942533f5f1af6314ae10ce2f7effcc094b6844c4a54985"
+      }
+    ]
+  }
+}

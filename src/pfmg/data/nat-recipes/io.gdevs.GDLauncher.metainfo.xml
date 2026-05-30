@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>io.gdevs.GDLauncher</id>
+
+  <name>GDLauncher</name>
+  <summary>GDLauncher is a simple, yet powerful Minecraft custom launcher with a strong focus on the user experience. </summary>
+  
+  
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0-only</project_license>
+  
+  <categories>
+    <category>Game</category>
+  </categories>
+
+  <developer_name>GorillaDevs</developer_name>
+
+  <url type="homepage">https://gdevs.io/</url>
+
+  <content_rating type="oars-1.0">
+    <content_attribute id="violence-cartoon">moderate</content_attribute>
+    <content_attribute id="violence-fantasy">none</content_attribute>
+    <content_attribute id="violence-realistic">none</content_attribute>
+    <content_attribute id="violence-bloodshed">none</content_attribute>
+    <content_attribute id="violence-sexual">none</content_attribute>
+    <content_attribute id="drugs-alcohol">none</content_attribute>
+    <content_attribute id="drugs-narcotics">none</content_attribute>
+    <content_attribute id="drugs-tobacco">none</content_attribute>
+    <content_attribute id="sex-nudity">none</content_attribute>
+    <content_attribute id="sex-themes">none</content_attribute>
+    <content_attribute id="language-profanity">none</content_attribute>
+    <content_attribute id="language-humor">none</content_attribute>
+    <content_attribute id="language-discrimination">none</content_attribute>
+    <content_attribute id="social-chat">intense</content_attribute>
+    <content_attribute id="social-info">none</content_attribute>
+    <content_attribute id="social-audio">none</content_attribute>
+    <content_attribute id="social-location">none</content_attribute>
+    <content_attribute id="social-contacts">none</content_attribute>
+    <content_attribute id="money-purchasing">none</content_attribute>
+    <content_attribute id="money-gambling">none</content_attribute>
+  </content_rating>
+
+    <releases>
+    <release version="1.1.30" date="2023-01-30"/>
+    <release version="1.1.29" date="2022-08-28"/>
+    <release version="1.1.25" date="2022-06-16"/>
+    <release version="1.1.24" date="2022-06-15"/>
+    <release version="1.1.23" date="2022-05-15"/>
+    <release version="1.1.21" date="2022-01-02"/>
+    <release version="1.1.20" date="2021-12-22"/>
+    <release version="1.1.19" date="2021-12-21"/>
+    <release version="1.1.18" date="2021-12-10"/>
+    <release version="1.1.15" date="2021-11-6"/>
+    <release version="1.1.11" date="2021-06-21"/>
+    <release version="1.1.10" date="2021-06-12"/>
+  </releases>
+
+  <recommends>
+    <control>pointing</control>
+    <control>keyboard</control>
+    <control>gamepad</control>
+  </recommends>
+
+  <description>
+    <p>
+      This is an unofficial package. Issues with it should not be reported to GDLauncher upstream!
+    </p>
+    <p>
+      Main Features:
+    </p>
+    <p>
+      Modern and easy to use UI
+    </p>
+    <p>
+      Browse and Download CurseForge's Modpacks
+    </p>
+    <p>
+      Support for Vanilla, Forge and Fabric
+    </p>
+    <p>
+      Built in mods manager
+    </p>
+    <p>
+      Auto java setup (Note that sometimes GDLauncher's java version can be behind and will require manual
+      intervention: Simply right click on the instance you wish to use Flatpak Java for &gt; Click "Manage" &gt;
+      Enable "Custom Java Path" &gt; And map the path to `/app/jre/bin/java`)
+    </p>
+  </description>
+
+  <launchable type="desktop-id">io.gdevs.GDLauncher.desktop</launchable>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://raw.githubusercontent.com/flathub/io.gdevs.GDLauncher/master/gdlauncherscreenshot.png</image>
+    </screenshot>
+  </screenshots>
+</component>

@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "nanotts-pico2wav",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "nanotts_pico2wav",
+    "buildsystem": "simple",
+    "build-commands": [
+      "patch svoxpico/picoapi.c  -i ${FLATPAK_DEST}/patches/picoapi_patch.txt",
+      "mkdir -p ${FLATPAK_DEST}/bin/lang",
+      "cd svoxpico; ./autogen.sh && ./configure --host `uname -m` && make -j",
+      "make",
+      "install -Dm755 nanotts ${FLATPAK_DEST}/bin/nanotts",
+      "cp -R lang ${FLATPAK_DEST}/bin"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/gmn/nanotts.git",
+        "commit": "d8b91f3d9d524c30f6fe8098ea7a0a638c889cf9"
+      }
+    ]
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "header": {
+    "id": "zsh",
+    "version": "5.9",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "zsh",
+    "config-opts": [
+      "--enable-etcdir=/app/userscripts/etc/zsh",
+      "--enable-fndir=/app/userscripts/share/zsh/functions",
+      "--enable-function-subdirs",
+      "--enable-multibyte",
+      "--enable-pcre",
+      "--enable-scriptdir=/app/userscripts/share/zsh/scripts",
+      "--enable-zlogin=/app/userscripts/etc/zsh/zlogin",
+      "--enable-zlogout=/app/userscripts/etc/zsh/zlogout",
+      "--enable-zprofile=/app/userscripts/etc/zsh/zprofile",
+      "--enable-zsh-secure-free",
+      "--enable-zshenv=/app/userscripts/etc/zsh/zshenv",
+      "--enable-zshrc=/app/userscripts/etc/zsh/zshrc",
+      "--with-tcsetpgrp"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://www.zsh.org/pub/zsh-5.9.tar.xz",
+        "sha256": "9b8d1ecedd5b5e81fbf1918e876752a7dd948e05c1a0dba10ab863842d45acd5",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 5307,
+          "stable-only": true,
+          "url-template": "https://www.zsh.org/pub/zsh-$version.tar.xz"
+        }
+      }
+    ],
+    "cleanup": [
+      "/share/man"
+    ]
+  }
+}

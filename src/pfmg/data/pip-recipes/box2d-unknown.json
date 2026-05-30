@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "box2d",
+    "version": "unknown",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "box2d",
+    "buildsystem": "simple",
+    "build-commands": [
+      "python3 setup.py build_ext --inplace",
+      "pip3 install --no-index --find-links \"file://${PWD}\" --prefix=${FLATPAK_DEST} . --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/pybox2d/pybox2d.git",
+        "tag": "2.3.10",
+        "commit": "ed9d7b04f7099a15984c727dbce46c13abd64409",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^([\\d.]+)$"
+        }
+      }
+    ]
+  }
+}

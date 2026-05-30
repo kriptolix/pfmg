@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "types-certifi",
+    "version": "2021.10.8.3",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "types-certifi",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=/app \"types-certifi==2021.10.8.3\" --no-build-isolation"
+    ],
+    "cleanup": [
+      "*"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/b5/63/2463d89481e811f007b0e1cd0a91e52e141b47f9de724d20db7b861dcfec/types_certifi-2021.10.8.3-py3-none-any.whl",
+        "sha256": "b2d1e325e69f71f7c78e5943d410e650b4707bb0ef32e4ddf3da37f54176e88a"
+      }
+    ]
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "header": {
+    "id": "bazel",
+    "version": "8.6.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "bazel",
+    "buildsystem": "simple",
+    "build-options": {
+      "strip": false,
+      "no-debuginfo": true,
+      "no-debuginfo-compression": true
+    },
+    "sources": [
+      {
+        "type": "file",
+        "only-arches": [
+          "x86_64"
+        ],
+        "url": "https://github.com/bazelbuild/bazel/releases/download/8.6.0/bazel-8.6.0-linux-x86_64",
+        "sha256": "9860da9c9386bbc023feed8f43af3105d338727d77b644fa6aeca45a4a11957c",
+        "dest-filename": "bazel",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 15227,
+          "stable-only": true,
+          "url-template": "https://github.com/bazelbuild/bazel/releases/download/${version}/bazel-${version}-linux-x86_64",
+          "versions": {
+            "<": "9.0.0"
+          }
+        }
+      },
+      {
+        "type": "file",
+        "only-arches": [
+          "aarch64"
+        ],
+        "url": "https://github.com/bazelbuild/bazel/releases/download/8.6.0/bazel-8.6.0-linux-arm64",
+        "sha256": "afc9f702112df02edb44344c0671b3ad3afa34a9841bd2cc486b61a1ff605e30",
+        "dest-filename": "bazel",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 15227,
+          "stable-only": true,
+          "url-template": "https://github.com/bazelbuild/bazel/releases/download/${version}/bazel-${version}-linux-arm64",
+          "versions": {
+            "<": "9.0.0"
+          }
+        }
+      }
+    ],
+    "build-commands": [
+      "install -D -m755 bazel ${FLATPAK_DEST}/bin/bazel"
+    ],
+    "cleanup": [
+      "*"
+    ]
+  }
+}

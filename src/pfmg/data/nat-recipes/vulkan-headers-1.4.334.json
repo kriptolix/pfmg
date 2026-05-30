@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "vulkan-headers",
+    "version": "1.4.334",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "vulkan-headers",
+    "buildsystem": "cmake-ninja",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/KhronosGroup/Vulkan-Headers/archive/v1.4.334/Vulkan-Headers-v1.4.334.tar.gz",
+        "sha256": "f6b858ed8ff5747a32e7840ba20c565c6477c5c1c171bfc25195ef1730b349cc",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 88835,
+          "url-template": "https://github.com/KhronosGroup/Vulkan-Headers/archive/v$version/Vulkan-Headers-v$version.tar.gz"
+        }
+      }
+    ]
+  }
+}

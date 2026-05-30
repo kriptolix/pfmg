@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "types-cryptography",
+    "version": "3.3.23.2",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "types-cryptography",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=/app \"types-cryptography==3.3.23.2\" --no-build-isolation"
+    ],
+    "cleanup": [
+      "*"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/b6/36/92dfe7e5056694e78caefd05b383140c74c7fcbfc63d26ee514c77f2d8a2/types_cryptography-3.3.23.2-py3-none-any.whl",
+        "sha256": "b965d548f148f8e87f353ccf2b7bd92719fdf6c845ff7cedf2abb393a0643e4f"
+      }
+    ]
+  }
+}

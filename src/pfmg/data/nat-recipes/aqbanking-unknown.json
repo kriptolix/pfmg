@@ -1,0 +1,84 @@
+{
+  "header": {
+    "id": "aqbanking",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "aqbanking",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://git.aquamaniac.de/git/aqbanking",
+        "commit": "689847ab12b70c46337af1f85ab06300f8df485e",
+        "tag": "6.9.1",
+        "x-checker-data": {
+          "is-important": true,
+          "type": "git"
+        }
+      },
+      {
+        "type": "shell",
+        "commands": [
+          "make -fMakefile.cvs",
+          "./configure",
+          "make typedefs",
+          "make typefiles"
+        ]
+      }
+    ],
+    "modules": [
+      {
+        "name": "xmlsec",
+        "config-opts": [
+          "--disable-static"
+        ],
+        "sources": [
+          {
+            "type": "archive",
+            "url": "https://www.aleksey.com/xmlsec/download/xmlsec1-1.3.9.tar.gz",
+            "sha256": "a631c8cd7a6b86e6adb9f5b935d45a9cf9768b3cb090d461e8eb9d043cf9b62f",
+            "x-checker-data": {
+              "type": "anitya",
+              "project-id": 5200,
+              "stable-only": true,
+              "url-template": "https://www.aleksey.com/xmlsec/download/xmlsec1-$version.tar.gz"
+            }
+          }
+        ],
+        "cleanup": [
+          "/bin"
+        ]
+      },
+      {
+        "name": "gwenhywfar",
+        "config-opts": [
+          "--with-guis=qt6"
+        ],
+        "sources": [
+          {
+            "type": "git",
+            "url": "https://git.aquamaniac.de/git/gwenhywfar",
+            "commit": "424949d0c6e61028eaccd6e46e4c0c41931c2b2f",
+            "tag": "5.14.1",
+            "x-checker-data": {
+              "is-important": true,
+              "type": "git"
+            }
+          },
+          {
+            "type": "shell",
+            "commands": [
+              "if test ! -f i18nsources; then echo > i18nsources; fi",
+              "autoreconf -fi -I ./m4 -I /usr/share/gettext/m4"
+            ]
+          }
+        ],
+        "cleanup": [
+          "/bin"
+        ]
+      }
+    ]
+  }
+}

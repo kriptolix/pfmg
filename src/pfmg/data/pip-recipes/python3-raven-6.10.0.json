@@ -1,0 +1,26 @@
+{
+  "header": {
+    "id": "python3-raven",
+    "version": "6.10.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-raven",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"raven>=6.0.0\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/79/57/b74a86d74f96b224a477316d418389af9738ba7a63c829477e7a86dd6f47/raven-6.10.0.tar.gz",
+        "sha256": "3fa6de6efa2493a7c827472e984ce9b020797d0da16f1db67197bcc23c8fae54",
+        "x-checker-data": {
+          "type": "pypi",
+          "name": "raven"
+        }
+      }
+    ]
+  }
+}

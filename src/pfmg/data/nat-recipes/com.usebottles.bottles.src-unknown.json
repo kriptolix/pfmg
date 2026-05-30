@@ -1,0 +1,26 @@
+{
+  "header": {
+    "id": "com.usebottles.bottles.src",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "com.usebottles.bottles.src",
+    "builddir": true,
+    "buildsystem": "meson",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/bottlesdevs/Bottles",
+        "tag": "63.2",
+        "commit": "51da3f0f0f356f8b5161f699062016ba998a12a2",
+        "x-checker-data": {
+          "type": "git",
+          "is-main-source": true,
+          "tag-pattern": "^((?:\\d+.?){1,2})$"
+        }
+      }
+    ]
+  }
+}

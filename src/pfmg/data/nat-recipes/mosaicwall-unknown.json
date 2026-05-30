@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "mosaicwall",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "mosaicwall",
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "config-opts": [
+      "-DCMAKE_POLICY_VERSION_MINIMUM=3.5",
+      "-DENABLE_DPLUGIN=ON",
+      "-DBUILD_WITH_QT6=ON"
+    ],
+    "cleanup": [
+      "*.la"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/scheckmedia/ImageMosaicWall.git",
+        "commit": "a03eed03ae37831f002587145066476d2dc44eea"
+      }
+    ]
+  }
+}

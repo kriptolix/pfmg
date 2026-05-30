@@ -1,0 +1,19 @@
+{
+  "header": {
+    "id": "libpkcs11-helper",
+    "version": "1.31.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libpkcs11-helper",
+    "buildsystem": "autotools",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/OpenSC/pkcs11-helper/releases/download/pkcs11-helper-1.31.0/pkcs11-helper-1.31.0.tar.bz2",
+        "sha256": "46f0067bccd7be2c28f88b8bca775172b9e52fb6fc1280b44ca8bb831433fef9"
+      }
+    ]
+  }
+}

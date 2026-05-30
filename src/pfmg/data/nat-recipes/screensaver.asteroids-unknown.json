@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "screensaver.asteroids",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "screensaver.asteroids",
+    "buildsystem": "cmake-ninja",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/xbmc/screensaver.asteroids",
+        "commit": "309afa135b55e3cbe4e43e4921a33958b8982dc9"
+      }
+    ],
+    "build-options": {
+      "no-debuginfo": true,
+      "cflags": "-g0",
+      "cxxflags": "-g0"
+    },
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release"
+    ]
+  }
+}

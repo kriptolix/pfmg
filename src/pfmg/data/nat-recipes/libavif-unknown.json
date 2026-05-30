@@ -1,0 +1,94 @@
+{
+  "header": {
+    "id": "libavif",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libavif",
+    "buildsystem": "cmake-ninja",
+    "no-make-install": true,
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DBUILD_SHARED_LIBS=0",
+      "-DAVIF_BUILD_APPS=1",
+      "-DAVIF_LIBYUV=LOCAL",
+      "-DAVIF_LIBSHARPYUV=SYSTEM",
+      "-DAVIF_JPEG=SYSTEM",
+      "-DAVIF_ZLIBPNG=SYSTEM",
+      "-DAVIF_CODEC_SVT=LOCAL",
+      "-DAVIF_CODEC_AOM=LOCAL",
+      "-DCMAKE_AR=/usr/bin/gcc-ar",
+      "-DCMAKE_RANLIB=/usr/bin/gcc-ranlib",
+      "-DCMAKE_INSTALL_PREFIX=/app"
+    ],
+    "post-install": [
+      "install -Dm755 avifenc /app/xl-converter/bin/linux/avifenc",
+      "install -Dm755 avifdec /app/xl-converter/bin/linux/avifdec"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://aomedia.googlesource.com/libavif.git",
+        "tag": "v1.3.0",
+        "commit": "1aadfad932c98c069a1204261b1856f81f3bc199",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^v([\\d.]+)$"
+        }
+      },
+      {
+        "type": "git",
+        "url": "https://chromium.googlesource.com/libyuv/libyuv.git",
+        "dest": "ext/libyuv",
+        "commit": "4db2af62d"
+      },
+      {
+        "type": "git",
+        "url": "https://github.com/maryla-uc/libargparse.git",
+        "dest": "ext/libargparse",
+        "commit": "81998ffafb9c2ac8cf488d31e536a2e6fd6b3fdf"
+      },
+      {
+        "type": "git",
+        "url": "https://github.com/psy-ex/svt-av1-psy.git",
+        "dest": "ext/SVT-AV1",
+        "tag": "v3.0.2",
+        "commit": "e44e0a2f64089eec98f45a996d47f00ab9c531f2",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^v([\\d.]+)$"
+        }
+      },
+      {
+        "type": "git",
+        "url": "https://github.com/1480c1/cpuinfo.git",
+        "dest": "ext/SVT-AV1/third_party/cpuinfo",
+        "commit": "e649baaa95efeb61517c06cc783287d4942ffe0e"
+      },
+      {
+        "type": "patch",
+        "path": "SVT-AV1-PSY.patch",
+        "dest": "ext/SVT-AV1"
+      },
+      {
+        "type": "git",
+        "url": "https://aomedia.googlesource.com/aom.git",
+        "dest": "ext/aom",
+        "tag": "v3.13.1",
+        "commit": "d772e334cc724105040382a977ebb10dfd393293",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^v([\\d.]+)$"
+        }
+      },
+      {
+        "type": "shell",
+        "commands": [
+          "cd ext &&\nsed -i -E \"/git clone/d\" libyuv.cmd svt.sh aom.cmd libargparse.cmd &&\nchmod +x libyuv.cmd svt.sh aom.cmd libargparse.cmd &&\n./libyuv.cmd &&\n./libargparse.cmd &&\n./svt.sh &&\n./aom.cmd\n"
+        ]
+      }
+    ]
+  }
+}

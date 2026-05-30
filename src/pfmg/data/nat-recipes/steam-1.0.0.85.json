@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "steam",
+    "version": "1.0.0.85",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "steam",
+    "buildsystem": "simple",
+    "build-commands": [
+      "set -e\nsed -i s:/usr/bin/steam:/app/bin/steam: steam.desktop\ndesktop-file-edit --remove-key=PrefersNonDefaultGPU steam.desktop\ndesktop-file-edit --remove-key=X-KDE-RunOnDiscreteGpu steam.desktop\ndesktop-file-edit --set-key=StartupWMClass --set-value=Steam steam.desktop\nsed -i s:/usr/lib/:/app/lib/: steam\nPREFIX=/app make install\nln -sf /bin/true /app/bin/steamdeps\ncp /usr/bin/cmp /app/bin\ninstall -Dm644 -t /app/share/metainfo com.valvesoftware.Steam.metainfo.xml\nln -sf steam-wrapper /app/bin/steam\ntest -x /app/lib/steam/bin_steam.sh\n"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://repo.steampowered.com/steam/archive/stable/steam_1.0.0.85.tar.gz",
+        "sha256": "7f2d374a2fb413ced5b8125151456219d918a255872b4bb77016cbccf38bb7f1",
+        "x-checker-data": {
+          "type": "html",
+          "is-main-source": true,
+          "url": "https://repo.steampowered.com/steam/archive/stable/",
+          "pattern": "(steam_([\\d.-]+).tar.gz)"
+        }
+      },
+      {
+        "type": "file",
+        "path": "com.valvesoftware.Steam.metainfo.xml"
+      }
+    ]
+  }
+}

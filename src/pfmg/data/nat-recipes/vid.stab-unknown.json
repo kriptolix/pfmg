@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "vid.stab",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "vid.stab",
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/georgmartius/vid.stab.git",
+        "commit": "6686ba880a3506f9c701b640f67f5cad48f07959"
+      }
+    ]
+  }
+}

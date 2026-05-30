@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "qtgraphicaleffects",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "qtgraphicaleffects",
+    "buildsystem": "qmake",
+    "cleanup": [
+      "/bin"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://invent.kde.org/qt/qt/qtgraphicaleffects.git",
+        "commit": "a2b1600300cda89804d48ec90e0068a075fecc8b"
+      }
+    ]
+  }
+}

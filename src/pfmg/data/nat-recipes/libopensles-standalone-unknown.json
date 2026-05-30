@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "libopensles-standalone",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libopensles-standalone",
+    "buildsystem": "meson",
+    "build-options": {
+      "append-path": "/usr/lib/sdk/openjdk17/bin",
+      "env": {
+        "JAVA_HOME": "/usr/lib/sdk/openjdk17/jvm/openjdk-17"
+      }
+    },
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://gitlab.com/android_translation_layer/libopensles-standalone",
+        "commit": "bdb857a4baadbc8c036db85a5da26c5269a751c5"
+      }
+    ]
+  }
+}

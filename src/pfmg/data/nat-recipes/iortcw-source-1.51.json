@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "iortcw-source",
+    "version": "1.51",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "iortcw-source",
+    "buildsystem": "simple",
+    "build-commands": [
+      "cd /run/build/iortcw-source/SP/ && USE_INTERNAL_LIBS=0 COPYDIR=/app/bin/ make -j${FLATPAK_BUILDER_N_JOBS} copyfiles",
+      "cd /run/build/iortcw-source/MP/ && USE_INTERNAL_LIBS=0 COPYDIR=/app/bin/ make -j${FLATPAK_BUILDER_N_JOBS} copyfiles"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/iortcw/iortcw/archive/1.51c.tar.gz",
+        "sha256": "0f6c136db1e5c6115e044190655163b9784bbef9b0667ec2a8900abd79565e83",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 16908,
+          "url-template": "https://github.com/iortcw/iortcw/archive/$version.tar.gz"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "libutf8proc",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libutf8proc",
+    "builddir": true,
+    "buildsystem": "cmake",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/JuliaStrings/utf8proc.git",
+        "commit": "e5e799221b45bbb90f5fdc5c69b6b8dfbf017e78",
+        "tag": "v2.11.3",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^v([\\d.]+)$"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "header": {
+    "id": "scons",
+    "version": "3.1.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "scons",
+    "buildsystem": "simple",
+    "build-options": {
+      "append-path": "/usr/lib/sdk/llvm19/bin",
+      "prepend-ld-library-path": "/usr/lib/sdk/llvm19/lib"
+    },
+    "cleanup": [
+      "*"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://downloads.sourceforge.net/project/scons/scons/3.1.2/scons-3.1.2.tar.gz",
+        "sha256": "7801f3f62f654528e272df780be10c0e9337e897650b62ddcee9f39fde13f8fb"
+      }
+    ],
+    "build-commands": [
+      "python setup.py install --prefix=${FLATPAK_DEST} --optimize=1"
+    ]
+  }
+}

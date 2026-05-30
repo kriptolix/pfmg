@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop">
+  <id>com.longbridgeapp.LongbridgePro</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>LicenseRef-proprietary=https://support.longbridgeapp.com/topics/us-trade/user-agreement</project_license>
+  <name>Longbridge Pro</name>
+  <developer_name>LONG BRIDGE</developer_name>
+  <url type="homepage">https://longbridge.com/desktop/</url>
+  <summary>Trading platform</summary>
+  <description>
+    <p>A new professional securities trading desktop application, delivering an ultra-smooth investment experience for more efficient and convenient trading.</p>
+  </description>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://assets.lbctrl.com/uploads/f9971b35-3172-40a6-b124-65aea2e597a5/scr-20250502-mjkc.png</image>
+      <caption>Longbridge Pro</caption>
+    </screenshot>
+  </screenshots>
+  <launchable type="desktop-id">com.longbridgeapp.LongbridgePro.desktop</launchable>
+  <content_rating type="oars-1.1">
+    <content_attribute id="social-info">moderate</content_attribute>
+    <content_attribute id="money-purchasing">intense</content_attribute>
+  </content_rating>
+  <releases>
+    <release version="v0.15.1" date="2026-04-24"/>
+    <release version="1.7.3-latest-8788" date="2023-09-23"/>
+  </releases>
+</component>

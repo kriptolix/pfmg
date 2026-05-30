@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "decimal",
+    "version": "0.5.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "Decimal",
+    "buildsystem": "simple",
+    "builddir": false,
+    "build-commands": [
+      "echo '#! /usr/bin/env runhaskell' >Setup.txt",
+      "echo '> import Distribution.Simple' >>Setup.txt",
+      "echo '> main = defaultMain' >>Setup.txt",
+      "ln -s Setup.txt Setup.lhs || true",
+      "runhaskell Setup configure --prefix=/app",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "sources": [
+      {
+        "sha256": "a37a0220424e4bcb8cae1d38844c7027ee314449758d0d14ff3e2e0a5c8a87a7",
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/Decimal-0.5.2/Decimal-0.5.2.tar.gz"
+      },
+      {
+        "dest-filename": "Decimal.cabal",
+        "sha256": "83dd16a1c0737fd35fdb1088af36e1a53034e75090e3f0d4ad32296f1a35a13b",
+        "type": "file",
+        "url": "https://hackage.haskell.org/package/Decimal-0.5.2/revision/0.cabal"
+      }
+    ]
+  }
+}

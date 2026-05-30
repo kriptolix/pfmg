@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-codespell",
+    "version": "2.3.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-codespell",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"codespell\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/0e/20/b6019add11e84f821184234cea0ad91442373489ef7ccfa3d73a71b908fa/codespell-2.3.0-py3-none-any.whl",
+        "sha256": "a9c7cef2501c9cfede2110fd6d4e5e62296920efe9abfb84648df866e47f58d1"
+      }
+    ]
+  }
+}

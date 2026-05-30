@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "simple-sendfile-0.2.28",
+    "version": "0.2.28",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "build-commands": [
+      "ghc -threaded --make Setup",
+      "./Setup configure --prefix=/app",
+      "./Setup build",
+      "./Setup install"
+    ],
+    "buildsystem": "simple",
+    "cleanup": [],
+    "name": "simple-sendfile-0.2.28",
+    "only-arches": [],
+    "sources": [
+      {
+        "sha256": "a9800b79d41c3896181c93b3805135440bca31b5524a33303b7e32aa1bb29870",
+        "type": "archive",
+        "url": "https://s3.amazonaws.com/hackage.fpcomplete.com/package/simple-sendfile-0.2.28.tar.gz"
+      },
+      {
+        "sha256": "74f421727034ad218278346f9fc409f771120e45915014aa67b10dcb5d05923f",
+        "type": "file",
+        "url": "https://raw.githubusercontent.com/commercialhaskell/all-cabal-files/a5f22172fce750e93afa6987320f5c5be62b5670/simple-sendfile/0.2.28/simple-sendfile.cabal"
+      }
+    ]
+  }
+}

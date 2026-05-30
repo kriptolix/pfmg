@@ -1,0 +1,29 @@
+{
+  "header": {
+    "id": "xchm",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "xchm",
+    "cleanup": [
+      "/include",
+      "*.a",
+      "/share/icons",
+      "/share/applications"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/rzvncj/xCHM",
+        "tag": "1.31",
+        "commit": "e983d11fd546c961501f736b2c6f93178c92fa97"
+      },
+      {
+        "type": "patch",
+        "path": "patches/xchm/no-config.patch"
+      }
+    ]
+  }
+}

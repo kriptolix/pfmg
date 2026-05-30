@@ -1,0 +1,36 @@
+{
+  "header": {
+    "id": "skycheckers",
+    "version": "1.3.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "skycheckers",
+    "subdir": "linux",
+    "no-autogen": true,
+    "make-args": [
+      "RELEASEOPTS=-D_FLATPAK_BUILD",
+      "INSTALL_DATA=0"
+    ],
+    "make-install-args": [
+      "DESTDIR=/",
+      "USER_DIRNAME=app",
+      "INSTALL_DATA=0"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/zorgiepoo/Sky-Checkers/releases/download/1.3.1/sc-snap-pak-repo.tgz",
+        "sha256": "b75d1fc7bc76d4147f57055f965fb1d752222beba4dc90115b388af5532b3c87"
+      },
+      {
+        "type": "shell",
+        "commands": [
+          "sed -i -s 's/-lGLEW/-I\\/app\\/share\\/include -L\\/app\\/lib -lGLEW/g' linux/Makefile",
+          "mkdir ${FLATPAK_DEST}/bin"
+        ]
+      }
+    ]
+  }
+}

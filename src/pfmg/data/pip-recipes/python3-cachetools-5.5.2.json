@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-cachetools",
+    "version": "5.5.2",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-cachetools",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"cachetools==5.5.2\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/72/76/20fa66124dbe6be5cafeb312ece67de6b61dd91a0247d1ea13db4ebb33c2/cachetools-5.5.2-py3-none-any.whl",
+        "sha256": "d26a22bcc62eb95c3beabd9f1ee5e820d3d2704fe2967cbe350e20c8ffcd3f0a"
+      }
+    ]
+  }
+}

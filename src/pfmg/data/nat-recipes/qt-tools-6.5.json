@@ -1,0 +1,26 @@
+{
+  "header": {
+    "id": "qt-tools",
+    "version": "6.5",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "qt-tools",
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "config-opts": [
+      "-DCMAKE_PREFIX_PATH=/app",
+      "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
+      "-DQT_BUILD_EXAMPLES=OFF",
+      "-DQT_BUILD_TESTS=OFF"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.qt.io/archive/qt/6.5/6.5.8/src/submodules/qttools-everywhere-opensource-src-6.5.8.tar.xz",
+        "sha256": "1c99dd8d3fd4044866a2d3d569ccd08e25ba28261d494f58b464fcfc18b719a8"
+      }
+    ]
+  }
+}

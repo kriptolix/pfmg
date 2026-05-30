@@ -1,0 +1,29 @@
+{
+  "header": {
+    "id": "libmygpo-qt",
+    "version": "1.2.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libmygpo-qt",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
+      "-DBUILD_SHARED_LIBS=ON"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/gpodder/libmygpo-qt/archive/1.2.0.tar.gz",
+        "sha256": "71d6461939be14c044d1688bd3381cb3a724c0acb292d34fe63b9c677a4d2247",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 1671,
+          "stable-only": true,
+          "url-template": "https://github.com/gpodder/libmygpo-qt/archive/$version.tar.gz"
+        }
+      }
+    ]
+  }
+}

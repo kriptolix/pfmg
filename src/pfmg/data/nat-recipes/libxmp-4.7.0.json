@@ -1,0 +1,36 @@
+{
+  "header": {
+    "id": "libxmp",
+    "version": "4.7.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libxmp",
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
+      "-DBUILD_STATIC=OFF"
+    ],
+    "sources": [
+      {
+        "url": "https://github.com/libxmp/libxmp/releases/download/libxmp-4.7.0/libxmp-4.7.0.tar.gz",
+        "sha256": "b6251de1859352c6988752563d60983cb8aa9fd7dfe9f81b8bc6688da47f3464",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 1784,
+          "stable-only": true,
+          "url-template": "https://github.com/libxmp/libxmp/releases/download/libxmp-$version/libxmp-$version.tar.gz"
+        },
+        "type": "archive"
+      }
+    ],
+    "cleanup": [
+      "/lib/pkgconfig",
+      "/lib/libxmp.so",
+      "/lib/cmake",
+      "/include"
+    ]
+  }
+}

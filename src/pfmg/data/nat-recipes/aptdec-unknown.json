@@ -1,0 +1,19 @@
+{
+  "header": {
+    "id": "aptdec",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "aptdec",
+    "buildsystem": "cmake-ninja",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/srcejon/aptdec.git",
+        "commit": "d037f77cfaff946318e39293ae97fc2e68595f0f"
+      }
+    ]
+  }
+}

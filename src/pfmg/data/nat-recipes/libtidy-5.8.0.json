@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "libtidy",
+    "version": "5.8.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libtidy",
+    "buildsystem": "cmake",
+    "builddir": true,
+    "config-opts": [
+      "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
+    ],
+    "license-files": [
+      "README/LICENSE.md"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/htacg/tidy-html5/archive/refs/tags/5.8.0.tar.gz",
+        "sha256": "59c86d5b2e452f63c5cdb29c866a12a4c55b1741d7025cf2f3ce0cde99b0660e",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 13267,
+          "stable-only": true,
+          "url-template": "https://github.com/htacg/tidy-html5/archive/refs/tags/$version.tar.gz"
+        }
+      }
+    ],
+    "cleanup": [
+      "/bin"
+    ]
+  }
+}

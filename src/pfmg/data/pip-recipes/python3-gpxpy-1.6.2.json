@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-gpxpy",
+    "version": "1.6.2",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-gpxpy",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"gpxpy\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/44/9f/62df6c1e52462bdd04275b36cec49efa9e8af7e7b834499eb288f73dcfbc/gpxpy-1.6.2-py3-none-any.whl",
+        "sha256": "289bc2d80f116c988d0a1e763fda22838f83005573ece2bbc6521817b26fb40a"
+      }
+    ]
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "soapy",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "soapy",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/pothosware/SoapySDR.git",
+        "tag": "soapy-sdr-0.8.1",
+        "commit": "1cf5a539a21414ff509ff7d0eedfc5fa8edb90c6"
+      }
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "cockpit-ostree",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "cockpit-ostree",
+    "buildsystem": "simple",
+    "build-commands": [
+      "make install PREFIX=/app"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/cockpit-project/cockpit-ostree/releases/download/224/cockpit-ostree-224.tar.xz",
+        "sha256": "a77c7f2b572c8b1fc4fe9ae4ab551848395c626b7479683b7d240fe914f06bcf"
+      }
+    ]
+  }
+}

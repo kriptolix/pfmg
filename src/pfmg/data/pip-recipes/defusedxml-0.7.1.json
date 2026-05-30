@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "defusedxml",
+    "version": "0.7.1",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "defusedxml",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --no-index --no-build-isolation --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} defusedxml"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/0f/d5/c66da9b79e5bdb124974bfe172b4daf3c984ebd9c2a06e2b8a4dc7331c72/defusedxml-0.7.1.tar.gz",
+        "sha256": "1bb3032db185915b62d7c6209c5a8792be6a32ab2fedacc84e01b52c51aa3e69"
+      }
+    ],
+    "cleanup": [
+      "*.egg-info"
+    ]
+  }
+}

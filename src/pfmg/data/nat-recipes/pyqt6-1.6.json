@@ -1,0 +1,119 @@
+{
+  "header": {
+    "id": "pyqt6",
+    "version": "1.6",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "PyQt6",
+    "buildsystem": "simple",
+    "build-commands": [
+      "sip-install --confirm-license --no-designer-plugin --no-qml-plugin --no-tools --concatenate=1 --no-docstrings --verbose --qt-shared --target-dir=/app/lib/python3.9/site-packages/ --enable=QtCore --enable=QtGui --enable=QtWidgets"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/linuxhw/build-stuff/releases/download/1.6/PyQt6-6.2.3.tar.gz",
+        "sha256": "a9bfcac198fe4b703706f809bb686c7cef5f60a7c802fc145c6b57929c7a6a34"
+      }
+    ],
+    "modules": [
+      {
+        "name": "python3-sip",
+        "buildsystem": "simple",
+        "build-commands": [
+          "pip3 install --no-deps --no-use-pep517 --prefix=$FLATPAK_DEST ."
+        ],
+        "sources": [
+          {
+            "type": "archive",
+            "url": "https://github.com/linuxhw/build-stuff/releases/download/1.6/sip-6.5.1.tar.gz",
+            "sha256": "204f0240db8999a749d638a987b351861843e69239b811ec3d1881412c3706a6"
+          }
+        ],
+        "modules": [
+          {
+            "name": "python-toml",
+            "buildsystem": "simple",
+            "build-commands": [
+              "pip3 install --no-deps --no-use-pep517 --prefix=$FLATPAK_DEST ."
+            ],
+            "sources": [
+              {
+                "type": "archive",
+                "url": "https://files.pythonhosted.org/packages/source/t/toml/toml-0.10.0.tar.gz",
+                "sha256": "229f81c57791a41d65e399fc06bf0848bab550a9dfd5ed66df18ce5f05e73d5c"
+              }
+            ]
+          },
+          {
+            "name": "python-packaging",
+            "buildsystem": "simple",
+            "build-commands": [
+              "pip3 install --no-deps --no-use-pep517 --prefix=$FLATPAK_DEST ."
+            ],
+            "sources": [
+              {
+                "type": "archive",
+                "url": "https://files.pythonhosted.org/packages/source/p/packaging/packaging-20.1.tar.gz",
+                "sha256": "e665345f9eef0c621aa0bf2f8d78cf6d21904eef16a93f020240b704a57f1334"
+              }
+            ],
+            "cleanup": [
+              "*"
+            ]
+          }
+        ]
+      },
+      {
+        "name": "PyQt6_sip",
+        "buildsystem": "simple",
+        "build-commands": [
+          "pip3 install --no-deps --no-use-pep517 --prefix=$FLATPAK_DEST ."
+        ],
+        "sources": [
+          {
+            "type": "archive",
+            "url": "https://github.com/linuxhw/build-stuff/releases/download/1.6/PyQt6_sip-13.2.1.tar.gz",
+            "sha256": "b7bce59900b2e0a04f70246de2ccf79ee7933036b6b9183cf039b62eeae2b858"
+          }
+        ]
+      },
+      {
+        "name": "python-pyparsing",
+        "buildsystem": "simple",
+        "build-commands": [
+          "pip3 install --no-deps --no-use-pep517 --prefix=$FLATPAK_DEST ."
+        ],
+        "sources": [
+          {
+            "type": "archive",
+            "url": "https://files.pythonhosted.org/packages/source/p/pyparsing/pyparsing-2.4.6.tar.gz",
+            "sha256": "4c830582a84fb022400b85429791bc551f1f4871c33f23e44f353119e92f969f"
+          }
+        ],
+        "cleanup": [
+          "*"
+        ]
+      },
+      {
+        "name": "PyQt-builder",
+        "buildsystem": "simple",
+        "build-commands": [
+          "pip3 install --no-deps --no-use-pep517 --prefix=$FLATPAK_DEST ."
+        ],
+        "sources": [
+          {
+            "type": "archive",
+            "url": "https://files.pythonhosted.org/packages/8b/5f/1bd49787262ddce37b826ef49dcccf5a9970facf0ed363dee5ee233e681d/PyQt-builder-1.12.2.tar.gz",
+            "sha256": "f62bb688d70e0afd88c413a8d994bda824e6cebd12b612902d1945c5a67edcd7"
+          }
+        ],
+        "cleanup": [
+          "*"
+        ]
+      }
+    ]
+  }
+}

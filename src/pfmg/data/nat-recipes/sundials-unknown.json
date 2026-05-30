@@ -1,0 +1,31 @@
+{
+  "header": {
+    "id": "sundials",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "sundials",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
+      "-DENABLE_KLU=ON",
+      "-DKLU_INCLUDE_DIR:PATH=/app/include/suitesparse",
+      "-DKLU_LIBRARY_DIR:PATH=/app/lib"
+    ],
+    "builddir": true,
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/LLNL/sundials",
+        "commit": "ddf5daba8397ea89287a0fec6f1b3bc3fe6c548b",
+        "tag": "v7.6.0",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^v([\\d.]+)$"
+        }
+      }
+    ]
+  }
+}

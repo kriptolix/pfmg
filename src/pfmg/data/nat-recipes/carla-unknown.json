@@ -1,0 +1,41 @@
+{
+  "header": {
+    "id": "carla",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "carla",
+    "buildsystem": "simple",
+    "build-commands": [
+      "make features",
+      "make PREFIX=${FLATPAK_DEST} HAVE_FLUIDSYNTH=true HAVE_LIBMAGIC=true HAVE_LIBLO=true -j $FLATPAK_BUILDER_N_JOBS",
+      "make PREFIX=${FLATPAK_DEST} install"
+    ],
+    "build-options": {
+      "arch": {
+        "aarch64": {
+          "env": {
+            "NOOPT": "true"
+          }
+        }
+      },
+      "no-debuginfo": true
+    },
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/falkTX/Carla",
+        "commit": "e312817b6f3d95e928dfde119934e7657092e7cc",
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://api.github.com/repos/falkTX/Carla/commits",
+          "commit-query": "first( .[].sha )",
+          "version-query": "first( .[].sha )",
+          "timestamp-query": "first( .[].commit.committer.date )"
+        }
+      }
+    ]
+  }
+}

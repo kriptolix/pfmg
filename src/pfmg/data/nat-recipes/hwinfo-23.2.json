@@ -1,0 +1,31 @@
+{
+  "header": {
+    "id": "hwinfo",
+    "version": "23.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "hwinfo",
+    "skip-arches": [
+      "aarch64",
+      "arm"
+    ],
+    "buildsystem": "simple",
+    "build-commands": [
+      "echo '22.1' > VERSION",
+      "rm -f git2log",
+      "sed -i -e 's/ -g / -s /' Makefile.common",
+      "CFLAGS='-I'$FLATPAK_DEST'/include' LDFLAGS='-L'$FLATPAK_DEST'/lib64 -L'$FLATPAK_DEST'/lib -lx86emu' LD_LIBRARY_PATH=$FLATPAK_DEST'/lib64:'$FLATPAK_DEST'/lib' make",
+      "make install DESTDIR=`pwd`/INST",
+      "cp -fr INST/usr/* $FLATPAK_DEST/"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/openSUSE/hwinfo/archive/23.2.tar.gz",
+        "sha256": "1ffc00d07aa1ad766e861d0d8492e2d2fa52cf537807f34e1c80e8c2d56c7115"
+      }
+    ]
+  }
+}

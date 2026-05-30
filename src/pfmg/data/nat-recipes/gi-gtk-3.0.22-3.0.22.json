@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "gi-gtk-3.0.22",
+    "version": "3.0.22",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "gi-gtk-3.0.22",
+    "only-arches": [
+      "x86_64"
+    ],
+    "buildsystem": "simple",
+    "build-commands": [
+      "ghc -threaded --make Setup",
+      "./Setup configure --prefix=/app",
+      "./Setup build",
+      "./Setup install"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "sha256": "3f03d5ab8f388125904676b7e3c7b5edceb5f9046ed57bb2c2ba67ddafb7f604",
+        "url": "https://hackage.haskell.org/package/gi-gtk-3.0.22/gi-gtk-3.0.22.tar.gz"
+      }
+    ]
+  }
+}

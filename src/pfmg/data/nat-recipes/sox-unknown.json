@@ -1,0 +1,31 @@
+{
+  "header": {
+    "id": "sox",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "sox",
+    "config-opts": [
+      "--disable-static"
+    ],
+    "cleanup": [
+      "/bin"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://git.code.sf.net/p/sox/code",
+        "commit": "f3094754a7c2a7e55c35621d20fa9945736e72df"
+      },
+      {
+        "type": "script",
+        "dest-filename": "autogen.sh",
+        "commands": [
+          "autoreconf -vfi"
+        ]
+      }
+    ]
+  }
+}

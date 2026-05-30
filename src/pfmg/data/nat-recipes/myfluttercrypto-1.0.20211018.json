@@ -1,0 +1,29 @@
+{
+  "header": {
+    "id": "myfluttercrypto",
+    "version": "1.0.20211018",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "myfluttercrypto",
+    "buildsystem": "simple",
+    "build-commands": [
+      "chmod +x myfluttercrypto",
+      "mkdir /app/bin",
+      "mv LICENSE /app/",
+      "mv data /app/",
+      "mv lib /app/",
+      "install -Dpm755 myfluttercrypto /app/myfluttercrypto",
+      "install -Dpm644 myfluttercrypto.svg /app/share/icons/hicolor/scalable/apps/com.github.tglima.Myfluttercrypto.svg",
+      "ln -s /app/myfluttercrypto /app/bin/myfluttercrypto"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/tglima/myfluttercrypto/releases/download/MyFlutterCrypto_1.0.20211018/myfluttercrypto_linux_x64.tar.gz",
+        "sha256": "c175448b9f4e45938a62192a15900403be222c9903bb69547a5fbd63dbd2bd57"
+      }
+    ]
+  }
+}

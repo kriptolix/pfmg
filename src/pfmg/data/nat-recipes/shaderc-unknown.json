@@ -1,0 +1,58 @@
+{
+  "header": {
+    "id": "shaderc",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "shaderc",
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "config-opts": [
+      "-DSHADERC_SKIP_COPYRIGHT_CHECK=ON",
+      "-DSHADERC_SKIP_EXAMPLES=ON",
+      "-DSHADERC_SKIP_TESTS=ON",
+      "-DSPIRV_SKIP_EXECUTABLES=ON",
+      "-DENABLE_GLSLANG_BINARIES=OFF"
+    ],
+    "cleanup": [
+      "/bin",
+      "/include",
+      "/lib/cmake",
+      "/lib/pkgconfig",
+      "/lib/*.a"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/google/shaderc.git",
+        "tag": "v2025.3",
+        "commit": "8c2e602ce440b7739c95ff3d69cecb1adf6becda"
+      },
+      {
+        "type": "git",
+        "url": "https://github.com/KhronosGroup/SPIRV-Tools.git",
+        "commit": "33e02568181e3312f49a3cf33df470bf96ef293a",
+        "dest": "third_party/spirv-tools"
+      },
+      {
+        "type": "git",
+        "url": "https://github.com/KhronosGroup/SPIRV-Headers.git",
+        "commit": "2a611a970fdbc41ac2e3e328802aed9985352dca",
+        "dest": "third_party/spirv-headers"
+      },
+      {
+        "type": "git",
+        "url": "https://github.com/KhronosGroup/glslang.git",
+        "commit": "f0bd0257c308b9a26562c1a30c4748a0219cc951",
+        "dest": "third_party/glslang",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^(\\d{1,2}\\.\\d{1,2}\\.\\d{1,4})$"
+        },
+        "tag": "16.2.0"
+      }
+    ]
+  }
+}

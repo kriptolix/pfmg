@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "birdtray",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "birdtray",
+    "buildsystem": "qmake",
+    "subdir": "src",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/gyunaev/birdtray.git",
+        "commit": "f529663e5488f3f7f05d5d1ddeffec8267c0da87"
+      },
+      {
+        "type": "patch",
+        "path": "thunderbird-spawn.patch"
+      }
+    ]
+  }
+}

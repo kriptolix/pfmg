@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "yq",
+    "version": "4.45.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "yq",
+    "buildsystem": "simple",
+    "build-commands": [
+      "install -Dm755 yq_linux_amd64 ${FLATPAK_DEST}/bin/yq"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://github.com/mikefarah/yq/releases/download/v4.45.1/yq_linux_amd64",
+        "sha256": "654d2943ca1d3be2024089eb4f270f4070f491a0610481d128509b2834870049"
+      }
+    ]
+  }
+}

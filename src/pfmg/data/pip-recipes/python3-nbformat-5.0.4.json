@@ -1,0 +1,73 @@
+{
+  "header": {
+    "id": "python3-nbformat",
+    "version": "5.0.4",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-nbformat",
+    "buildsystem": "simple",
+    "build-commands": [
+      "source /app/bin/activate",
+      "pip3 install --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} nbformat"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/ca/ab/872a23e29cec3cf2594af7e857f18b687ad21039c1f9b922fac5b9b142d5/traitlets-4.3.3-py2.py3-none-any.whl",
+        "sha256": "70b4c6a1d9019d7b4f6846832288f86998aa3b9207c6821f3578a6a6a467fe44"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/7b/c0/ae033e3c01889bc792d062a954b840e0de21e3ca16b23fa203b7a09b2aae/jupyter_core-4.6.2-py2.py3-none-any.whl",
+        "sha256": "e91785b8bd7f752711c0c20e5ec6ba0d42178d6321a61396082c55818991caee"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/a2/db/4313ab3be961f7a763066401fb77f7748373b6094076ae2bda2806988af6/attrs-19.3.0-py2.py3-none-any.whl",
+        "sha256": "08a96c641c3a74e44eb59afb61a24f2cb9f4d7188748e76ba4bb5edfa3cb7d1c"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/8b/03/a00d504808808912751e64ccf414be53c29cad620e3de2421135fcae3025/importlib_metadata-1.5.0-py2.py3-none-any.whl",
+        "sha256": "b97607a1a18a5100839aec1dc26a1ea17ee0d93b20b0f008d80a5a050afb200b"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/46/42/f2dd964b2a6b1921b08d661138148c1bcd3f038462a44019416f2342b618/zipp-2.2.0-py36-none-any.whl",
+        "sha256": "d65287feb793213ffe11c0f31b81602be31448f38aeb8ffc2eb286c4f6f6657e"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/c5/8f/51e89ce52a085483359217bc72cdbf6e75ee595d5b1d4b5ade40c7e018b8/jsonschema-3.2.0-py2.py3-none-any.whl",
+        "sha256": "4e5b3cf8216f577bee9ce139cbe72eca3ea4f292ec60928ff24758ce626cd163"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/8f/b7/f329cfdc75f3d28d12c65980e4469e2fa373f1953f5df6e370e84ea2e875/decorator-4.4.1-py2.py3-none-any.whl",
+        "sha256": "5d19b92a3c8f7f101c8dd86afd86b0f061a8ce4540ab8cd401fa2542756bce6d"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/ac/eb/de575b7a64e7ab8d8c95e4c180ccc36deda3f1379186c4ee7adf6c2f1586/nbformat-5.0.4-py3-none-any.whl",
+        "sha256": "f4bbbd8089bd346488f00af4ce2efb7f8310a74b2058040d075895429924678c"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/fa/bc/9bd3b5c2b4774d5f33b2d544f1460be9df7df2fe42f352135381c347c69a/ipython_genutils-0.2.0-py2.py3-none-any.whl",
+        "sha256": "72dd37233799e619666c9f639a9da83c34013a73e8bbc79a7a6348d93c61fab8"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/65/eb/1f97cb97bfc2390a276969c6fae16075da282f5058082d4cb10c6c5c1dba/six-1.14.0-py2.py3-none-any.whl",
+        "sha256": "8f3cd2e254d8f793e7f3d6d9df77b92252b52637291d0f0da013c76ea2724b6c"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/90/aa/cdcf7ef88cc0f831b6f14c8c57318824c9de9913fe8de38e46a98c069a35/pyrsistent-0.15.7.tar.gz",
+        "sha256": "cdc7b5e3ed77bed61270a47d35434a30617b9becdf2478af76ad2c6ade307280"
+      }
+    ]
+  }
+}

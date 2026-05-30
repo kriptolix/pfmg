@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "tk8.6",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "tk8.6",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://prdownloads.sourceforge.net/tcl/tk8.6.12-src.tar.gz",
+        "sha256": "12395c1f3fcb6bed2938689f797ea3cdf41ed5cb6c4766eec8ac949560310630"
+      }
+    ],
+    "subdir": "unix",
+    "post-install": [
+      "chmod +w ${FLATPAK_DEST}/lib/libtk8.6.so"
+    ]
+  }
+}

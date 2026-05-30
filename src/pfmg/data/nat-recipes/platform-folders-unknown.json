@@ -1,0 +1,26 @@
+{
+  "header": {
+    "id": "platform-folders",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "platform-folders",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
+    ],
+    "cleanup": [
+      "*"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/sago007/PlatformFolders.git",
+        "tag": "4.2.0",
+        "commit": "784f8ceb8bbd042722caf2cdec427c7b80e0a960"
+      }
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "blaze-markup-0.8.2.1",
+    "version": "0.8.2.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "blaze-markup-0.8.2.1",
+    "only-arches": [
+      "x86_64"
+    ],
+    "buildsystem": "simple",
+    "build-commands": [
+      "ghc -threaded --make Setup",
+      "./Setup configure --prefix=/app",
+      "./Setup build",
+      "./Setup install"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "sha256": "90ab7cbc29df9fbe24e208ade58ca9828e3074f1163618f1faaf4da8f0600146",
+        "url": "https://hackage.haskell.org/package/blaze-markup-0.8.2.1/blaze-markup-0.8.2.1.tar.gz"
+      }
+    ]
+  }
+}

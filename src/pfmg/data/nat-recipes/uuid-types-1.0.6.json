@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "uuid-types",
+    "version": "1.0.6",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "uuid-types",
+    "buildsystem": "simple",
+    "builddir": false,
+    "build-commands": [
+      "echo '#! /usr/bin/env runhaskell' >Setup.txt",
+      "echo '> import Distribution.Simple' >>Setup.txt",
+      "echo '> main = defaultMain' >>Setup.txt",
+      "ln -s Setup.txt Setup.lhs || true",
+      "runhaskell Setup configure --prefix=/app",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "sources": [
+      {
+        "sha256": "7e0dd953483d6fd3ca49bcaed6b11f9e3c2787213479b2581e07747836b8357e",
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/uuid-types-1.0.6/uuid-types-1.0.6.tar.gz"
+      },
+      {
+        "dest-filename": "uuid-types.cabal",
+        "sha256": "595644500d36908be85cd02fb446c411555ecc5c59b7ce33d1205cfc9ceb55a6",
+        "type": "file",
+        "url": "https://hackage.haskell.org/package/uuid-types-1.0.6/revision/1.cabal"
+      }
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "header": {
+    "id": "dbus-sharp",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "dbus-sharp",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/mono/dbus-sharp",
+        "commit": "2686c4f15d56de301ef506047840814874c8e74f"
+      }
+    ]
+  }
+}

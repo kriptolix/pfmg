@@ -1,0 +1,40 @@
+{
+  "header": {
+    "id": "python3-onnxruntime",
+    "version": "1.25.1",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-onnxruntime",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"onnxruntime\" --no-build-isolation"
+    ],
+    "only-arches": [
+      "aarch64"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/e8/2d/d2a548598be01649e2d46231d151a6c56d10b964d94043a335ae56ea2d92/flatbuffers-25.12.19-py2.py3-none-any.whl",
+        "sha256": "7634f50c427838bb021c2d66a3d1168e9d199b0607e6329399f04846d42e20b4"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/7d/90/8d23e3b0dafd024bf31bdec225b3bb5c2dbfa6912f8a53b8659f21216cbf/numpy-2.4.4-cp313-cp313-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl",
+        "sha256": "45dbed2ab436a9e826e302fcdcbe9133f9b0006e5af7168afb8963a6520da103"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/eb/9d/aa69df2724ff63efa6f72307b483ce0827f4347cc6d6df24b59e26659fef/protobuf-7.34.1-cp310-abi3-manylinux2014_aarch64.whl",
+        "sha256": "5185e0e948d07abe94bb76ec9b8416b604cfe5da6f871d67aad30cbf24c3110b"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/dc/9a/33225481a94a59906fce44e27ab12fc3bddd2aaecdc6160bd73341ca1aba/onnxruntime-1.25.1-cp313-cp313-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl",
+        "sha256": "311d29b943e46a55ca72ca1ea48d7815c993122bfc359f68215fddeb9583fff4"
+      }
+    ]
+  }
+}

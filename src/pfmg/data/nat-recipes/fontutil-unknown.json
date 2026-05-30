@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "fontutil",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "fontutil",
+    "buildsystem": "autotools",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://gitlab.freedesktop.org/xorg/font/util.git",
+        "tag": "font-util-1.4.0",
+        "commit": "eee69c3f26f8e5d7f97599185d8d009f7fd76a7c",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^font-util-([\\d.]+)$"
+        }
+      }
+    ]
+  }
+}

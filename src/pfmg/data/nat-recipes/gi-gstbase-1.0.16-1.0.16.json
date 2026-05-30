@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "gi-gstbase-1.0.16",
+    "version": "1.0.16",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "gi-gstbase-1.0.16",
+    "only-arches": [
+      "x86_64"
+    ],
+    "buildsystem": "simple",
+    "build-commands": [
+      "ghc -threaded --make Setup",
+      "./Setup configure --prefix=/app",
+      "./Setup build",
+      "./Setup install"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "sha256": "4a8979361448718fd5664b9206482a40a008ed69d58c9856e253f20d298e13df",
+        "url": "https://hackage.haskell.org/package/gi-gstbase-1.0.16/gi-gstbase-1.0.16.tar.gz"
+      }
+    ]
+  }
+}

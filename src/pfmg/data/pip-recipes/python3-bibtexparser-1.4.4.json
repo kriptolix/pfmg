@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "python3-bibtexparser",
+    "version": "1.4.4",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-bibtexparser",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"bibtexparser\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/44/1c/577d3ce406e88f370e80a6ebf76ae52a2866521e0b585e8ec612759894f1/bibtexparser-1.4.4.tar.gz",
+        "sha256": "093b6c824f7a71d3a748867c4057b71f77c55b8dbc07efc993b781771520d8fb"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/10/bd/c038d7cc38edc1aa5bf91ab8068b63d4308c66c4c8bb3cbba7dfbc049f9c/pyparsing-3.3.2-py3-none-any.whl",
+        "sha256": "850ba148bd908d7e2411587e247a1e4f0327839c40e2e5e6d05a007ecc69911d"
+      }
+    ]
+  }
+}

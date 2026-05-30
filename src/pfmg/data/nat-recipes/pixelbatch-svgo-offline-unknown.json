@@ -1,0 +1,30 @@
+{
+  "header": {
+    "id": "pixelbatch-svgo-offline",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "pixelbatch-svgo-offline",
+    "buildsystem": "simple",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/keshavbhatt/pixelbatch-svgo-offline.git",
+        "tag": 1.0,
+        "commit": "47501d2037b61a1cd2cc5c01b2a2d8c12fd36675",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^(\\d+(?:\\.\\d+)*)$"
+        }
+      }
+    ],
+    "build-commands": [
+      "npm ci --offline --cache=$PWD/npm-cache --no-audit --no-fund",
+      "install -Dm755 /usr/lib/sdk/node20/bin/node /app/bin/node",
+      "cp -a node_modules /app/lib/node_modules",
+      "ln -s ../lib/node_modules/.bin/svgo /app/bin/svgo"
+    ]
+  }
+}

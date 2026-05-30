@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "sord",
+    "version": "0.16.14",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "sord",
+    "buildsystem": "meson",
+    "config-opts": [
+      "--default-library=static"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.drobilla.net/sord-0.16.14.tar.xz",
+        "sha256": "220fd97d5fcb216e7b85db66f685bfdaad7dc58a50d1f96dfb2558dbc6c4731b"
+      }
+    ],
+    "post-install": [
+      "install -Dm644 -t $FLATPAK_DEST/share/licenses/sord ../COPYING"
+    ],
+    "cleanup": [
+      "/bin",
+      "/include",
+      "/lib/pkgconfig",
+      "/share/doc",
+      "/share/man"
+    ]
+  }
+}

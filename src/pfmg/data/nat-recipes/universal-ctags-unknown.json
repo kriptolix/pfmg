@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "universal-ctags",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "universal-ctags",
+    "cleanup": [
+      "/bin/readtags"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/universal-ctags/ctags.git",
+        "commit": "b35c300972c617ad7cfc0f90cf653c3b95145d31",
+        "tag": "p5.9.20210919.0"
+      }
+    ]
+  }
+}

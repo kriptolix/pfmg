@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "chartjs2qml",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "ChartJs2QML",
+    "buildsystem": "simple",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/kalaksi/ChartJs2QML",
+        "commit": "cb1fbcb2618e5172ab0baebfd7a58908d0208fc5",
+        "dest": "ChartJs2QML"
+      }
+    ],
+    "build-commands": [
+      "rm -rf ChartJs2QML/.git",
+      "cp -va ChartJs2QML /app/ChartJs2QML"
+    ]
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "header": {
+    "id": "frobby",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "frobby",
+    "buildsystem": "simple",
+    "build-commands": [
+      "make CFLAGS=\"$CFLAGS\" CPPFLAGS=\"$CPPFLAGS\"",
+      "RANLIB=/usr/bin/ranlib make CFLAGS=\"$CFLAGS\" CPPFLAGS=\"$CPPFLAGS\" library",
+      "install -Dm 755 bin/frobby -t /app/plugins/pack1/bin/",
+      "install -Dm 644 bin/libfrobby.a -t /app/plugins/pack1/lib/",
+      "install -Dm 644 src/frobby.h -t /app/plugins/pack1/include/",
+      "install -Dm 644 src/stdinc.h -t /app/plugins/pack1/include/"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/Macaulay2/frobby.git",
+        "tag": "v0.9.5"
+      },
+      {
+        "type": "patch",
+        "paths": [
+          "patches/frobby/frobby-version.patch",
+          "patches/frobby/frobgrob.patch"
+        ]
+      }
+    ]
+  }
+}

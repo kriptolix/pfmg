@@ -1,0 +1,60 @@
+{
+  "header": {
+    "id": "openmsx",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "openmsx",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/openMSX/openMSX",
+        "tag": "RELEASE_21_0"
+      },
+      {
+        "type": "file",
+        "path": "org.openmsx.openMSX.desktop"
+      },
+      {
+        "type": "file",
+        "path": "org.openmsx.openMSX.metainfo.xml"
+      },
+      {
+        "type": "shell",
+        "commands": [
+          "sed -i 's/^INSTALL_BASE.*/INSTALL_BASE:=\\/app\\/share\\/'${FLATPAK_ID}'/' build/custom.mk",
+          "sed -i \"s/distroRoot = thirdPartyInstall or None/distroRoot = '\\/app'/\" build/probe.py",
+          "ln -s /usr/bin/libpng-config /app/bin/libpng-config",
+          "ln -s /usr/bin/sdl2-config /app/bin/sdl2-config",
+          "ln -s /usr/bin/pkg-config /app/bin/pkg-config",
+          "ln -s /usr/include/SDL2 /app/include/SDL2"
+        ]
+      }
+    ],
+    "build-options": {
+      "env": [
+        "TCL_CONFIG=/app/lib"
+      ]
+    },
+    "post-install": [
+      "install -Dm755 /app/share/${FLATPAK_ID}/bin/openmsx /app/bin",
+      "install -Dm644 org.openmsx.openMSX.desktop /app/share/applications/${FLATPAK_ID}.desktop",
+      "install -Dm644 org.openmsx.openMSX.metainfo.xml /app/share/metainfo/${FLATPAK_ID}.metainfo.xml",
+      "install -Dm644 share/icons/openMSX-logo-16.png /app/share/icons/hicolor/16x16/apps/${FLATPAK_ID}.png",
+      "install -Dm644 share/icons/openMSX-logo-32.png /app/share/icons/hicolor/32x32/apps/${FLATPAK_ID}.png",
+      "install -Dm644 share/icons/openMSX-logo-48.png /app/share/icons/hicolor/48x48/apps/${FLATPAK_ID}.png",
+      "install -Dm644 share/icons/openMSX-logo-64.png /app/share/icons/hicolor/64x64/apps/${FLATPAK_ID}.png",
+      "install -Dm644 share/icons/openMSX-logo-128.png /app/share/icons/hicolor/128x128/apps/${FLATPAK_ID}.png",
+      "install -Dm644 share/icons/openMSX-logo-256.png /app/share/icons/hicolor/256x256/apps/${FLATPAK_ID}.png"
+    ],
+    "cleanup": [
+      "/app/share/${FLATPAK_ID}/bin/openmsx",
+      "/app/share/${FLATPAK_ID}/bin",
+      "/app/bin/libpng-config",
+      "/app/bin/pkg-config",
+      "/app/bin/sdl2-config"
+    ]
+  }
+}

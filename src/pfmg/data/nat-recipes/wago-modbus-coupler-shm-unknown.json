@@ -1,0 +1,33 @@
+{
+  "header": {
+    "id": "wago-modbus-coupler-shm",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "wago-modbus-coupler-shm",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DCLANG_FORMAT=OFF",
+      "-DCOMPILER_WARNINGS=OFF",
+      "-DBUILD_DOC=OFF"
+    ],
+    "post-install": [
+      "mv ${FLATPAK_DEST}/bin/wago_modbus_coupler_shm ${FLATPAK_DEST}/bin/wago-modbus-coupler-shm"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "tag": "v1.1.1",
+        "url": "https://github.com/SHMModbus/wago_modbus_coupler_shm.git",
+        "commit": "6bed8de3342132d191171be9af2208fe388dbde7",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^v([\\d.]+)$"
+        }
+      }
+    ]
+  }
+}

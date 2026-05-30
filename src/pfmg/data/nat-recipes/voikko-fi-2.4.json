@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "voikko-fi",
+    "version": "2.4",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "voikko-fi",
+    "buildsystem": "simple",
+    "build-commands": [
+      "make vvfst",
+      "make vvfst-install DESTDIR=${FLATPAK_DEST}/voikko"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://www.puimula.org/voikko-sources/voikko-fi/voikko-fi-2.4.tar.gz",
+        "sha256": "320b2d4e428f6beba9d0ab0d775f8fbe150284fbbafaf3e5afaf02524cee28cc"
+      }
+    ]
+  }
+}

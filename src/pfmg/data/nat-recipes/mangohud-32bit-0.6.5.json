@@ -1,0 +1,78 @@
+{
+  "header": {
+    "id": "mangohud-32bit",
+    "version": "0.6.5",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "MangoHud-32bit",
+    "build-options": {
+      "prepend-pkg-config-path": "/app/lib32/pkgconfig:/usr/lib/i386-linux-gnu/pkgconfig",
+      "append-path": "/usr/lib/sdk/toolchain-i386/bin",
+      "env": {
+        "CC": "ccache i686-unknown-linux-gnu-gcc",
+        "CXX": "ccache i686-unknown-linux-gnu-g++"
+      },
+      "libdir": "lib/i386-linux-gnu"
+    },
+    "buildsystem": "meson",
+    "config-opts": [
+      "-Duse_system_vulkan=enabled",
+      "-Dwith_xnvctrl=enabled",
+      "-Dappend_libdir_mangohud=false"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/flightlessmango/MangoHud/releases/download/v0.6.5/MangoHud-v0.6.5-Source.tar.xz",
+        "sha256": "aa3f65ece217842c3be1b755c0f3a09b2096f0af475715d3619182a13c6f4fbf",
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://api.github.com/repos/flightlessmango/MangoHud/releases",
+          "url-query": "map(select(.tag_name | startswith(\"v\"))) | first |\n.assets | map((select(.name | endswith(\"Source.tar.xz\")))) | first | .browser_download_url\n",
+          "version-query": "map(select(.tag_name | startswith(\"v\"))) | first |\n.tag_name | sub(\"^[vV]\"; \"\")\n"
+        }
+      }
+    ],
+    "modules": [
+      {
+        "name": "libNVCtrl-32bit",
+        "build-options": {
+          "append-path": "/usr/lib/sdk/toolchain-i386/bin",
+          "env": {
+            "CC": "ccache i686-unknown-linux-gnu-gcc",
+            "CXX": "ccache i686-unknown-linux-gnu-g++",
+            "LIB": "lib/i386-linux-gnu"
+          }
+        },
+        "no-autogen": true,
+        "no-make-install": true,
+        "build-commands": [
+          "mkdir -p ${FLATPAK_DEST}/$LIB",
+          "cp -a libXNVCtrl.so* ${FLATPAK_DEST}/$LIB/",
+          "install -D *.h -t ${FLATPAK_DEST}/include/NVCtrl"
+        ],
+        "subdir": "src/libXNVCtrl",
+        "sources": [
+          {
+            "type": "archive",
+            "archive-type": "tar",
+            "url": "https://api.github.com/repos/NVIDIA/nvidia-settings/tarball/refs/tags/470.63.01",
+            "sha256": "0ede63515851d85ac0d1ed5f00e355f539968e6d1fd226120a27b2c66c3575de"
+          },
+          {
+            "type": "patch",
+            "path": "patches/libxnvctrl_so_0.patch",
+            "x-checker-data": {
+              "type": "json",
+              "url": "https://api.github.com/repos/NVIDIA/nvidia-settings/tags",
+              "url-query": ".[0].tarball_url",
+              "version-query": ".[0].name"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

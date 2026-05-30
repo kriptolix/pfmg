@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "python3-pynvml",
+    "version": "13.0.1",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-pynvml",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"pynvml\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/8a/24/fc256107d23597fa33d319505ce77160fa1a2349c096d01901ffc7cb7fc4/nvidia_ml_py-13.595.45-py3-none-any.whl",
+        "sha256": "b65a7977f503d56154b14d683710125ef93594adb63fbf7e559336e3318f1376"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/d7/4a/cac76c174bb439a0c46c9a4413fcbea5c6cabfb01879f7bbdb9fdfaed76c/pynvml-13.0.1-py3-none-any.whl",
+        "sha256": "e2b20e0a501eeec951e2455b7ab444759cf048e0e13a57b08049fa2775266aa8"
+      }
+    ]
+  }
+}

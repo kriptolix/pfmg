@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "aubio",
+    "version": "0.4.9",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "aubio",
+    "buildsystem": "simple",
+    "build-commands": [
+      "python3 ./waf configure --prefix=$FLATPAK_DEST --disable-avcodec build -j $FLATPAK_BUILDER_N_JOBS",
+      "python3 ./waf install"
+    ],
+    "cleanup": [
+      "/bin",
+      "/include",
+      "/lib/pkgconfig",
+      "/share/doc",
+      "*.a"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://aubio.org/pub/aubio-0.4.9.tar.bz2",
+        "disable-http-decompression": true,
+        "sha256": "d48282ae4dab83b3dc94c16cf011bcb63835c1c02b515490e1883049c3d1f3da"
+      },
+      {
+        "type": "patch",
+        "path": "patches/aubio-python.patch"
+      }
+    ]
+  }
+}

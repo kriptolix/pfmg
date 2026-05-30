@@ -1,0 +1,90 @@
+{
+  "header": {
+    "id": "rdkit",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "rdkit",
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DCatch2_DIR=/app",
+      "-DPython_EXECUTABLE=/usr/bin/python3",
+      "-DPYTHON_INCLUDE_DIR=/usr/include/python3.13",
+      "-DRDK_BUILD_CAIRO_SUPPORT=ON",
+      "-DRDK_INSTALL_INTREE=OFF",
+      "-DRDK_INSTALL_COMIC_FONTS=OFF",
+      "-DRDK_BUILD_MAEPARSER_SUPPORT=OFF",
+      "-DRDK_BUILD_CHEMDRAW_SUPPORT=OFF"
+    ],
+    "build-options": {
+      "cxxflags": "-fPIC -O3"
+    },
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/rdkit/rdkit",
+        "tag": "Release_2026_03_2",
+        "commit": "42fe8c952589bb750e27ea7f259a50b36576bfa5",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^Release_([0-9]+_[0-9]+_[0-9]+)$"
+        }
+      },
+      {
+        "type": "archive",
+        "url": "https://github.com/schrodinger/maeparser/archive/refs/tags/v1.3.1.tar.gz",
+        "sha256": "a8d80f67d1b9be6e23b9651cb747f4a3200132e7d878a285119c86bf44568e36",
+        "strip-components": 0
+      },
+      {
+        "type": "archive",
+        "url": "https://github.com/schrodinger/coordgenlibs/archive/refs/tags/v3.0.2.tar.gz",
+        "sha256": "f67697434f7fec03bca150a6d84ea0e8409f6ec49d5aab43badc5833098ff4e3",
+        "strip-components": 0
+      },
+      {
+        "type": "archive",
+        "url": "https://github.com/rareylab/RingDecomposerLib/archive/refs/tags/v1.1.3_rdkit.tar.gz",
+        "sha256": "944b5816712a48bbf88aa25d4300ce11871ddf6e971218eac08f90ed2192f715",
+        "strip-components": 0
+      },
+      {
+        "type": "archive",
+        "url": "https://github.com/ncbi/pubchem-align3d/archive/daefab3.tar.gz",
+        "sha256": "4871a08104c660890015f27d32a0147fc32df69a8962ca5cd1fe54ef6319c779",
+        "strip-components": 0
+      },
+      {
+        "type": "archive",
+        "url": "https://github.com/Tencent/rapidjson/archive/858451e.tar.gz",
+        "sha256": "765339356391422ad7f0258f8b746d8010da205762784a84980936e8b38e03ce",
+        "strip-components": 0
+      },
+      {
+        "type": "file",
+        "url": "https://raw.githubusercontent.com/aantron/better-enums/refs/tags/0.11.3/enum.h",
+        "sha256": "43a55c487052cfe068ecf1e4496d52128161bfb82c06c343eea85f177f235e04"
+      },
+      {
+        "type": "shell",
+        "commands": [
+          "mkdir -p External/CoordGen/{maeparser,coordgen}",
+          "mkdir -p External/RingFamilies/RingDecomposerLib",
+          "mkdir -p External/pubchem_shape/pubchem-align3d",
+          "mkdir -p External/rapidjson-1.1.0",
+          "cp -r maeparser-1.3.1/* External/CoordGen/maeparser",
+          "cp -r coordgenlibs-3.0.2/* External/CoordGen/coordgen",
+          "cp -r RingDecomposerLib-1.1.3_rdkit/* External/RingFamilies/RingDecomposerLib",
+          "cp -r pubchem-align3d-daefab3dd0c90ca56da9d3d5e375fe4d651e6be3/* External/pubchem_shape/pubchem-align3d",
+          "cp -r rapidjson-858451e5b7d1c56cf8f6d58f88cf958351837e53/* External/rapidjson-1.1.0",
+          "cp enum.h Code/RDGeneral",
+          "sed -i 's|FetchContent_MakeAvailable(better_enums)||' Code/RDGeneral/CMakeLists.txt"
+        ]
+      }
+    ]
+  }
+}

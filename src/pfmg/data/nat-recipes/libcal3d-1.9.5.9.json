@@ -1,0 +1,29 @@
+{
+  "header": {
+    "id": "libcal3d",
+    "version": "1.9.5.9",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libcal3d",
+    "config-opts": [
+      "--disable-static"
+    ],
+    "cleanup": [
+      "/bin",
+      "/share"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/raduprv/Eternal-Lands/releases/download/1.9.5.9-1/cal3d-0.11.0.tar.gz",
+        "sha256": "b3a3fc80053cc00fbe7585f972c0e11669dbd2a13a371a10cc2dac7c9ed5f473"
+      },
+      {
+        "type": "patch",
+        "path": "cal3d-0.11.0-patch"
+      }
+    ]
+  }
+}

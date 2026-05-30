@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "jmvcore",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "jmvcore",
+    "buildsystem": "simple",
+    "build-commands": [
+      "/app/bin/R CMD INSTALL *.Rpkg  --no-docs --no-html --no-help --no-demo --no-multiarch",
+      "/app/bin/R CMD INSTALL jmvcore --no-docs --no-html --no-help --no-demo --no-multiarch"
+    ],
+    "sources": [
+      "base-deps-sources.json",
+      {
+        "type": "git",
+        "url": "https://github.com/jamovi/jamovi.git",
+        "commit": "2146574acee0bf6a0f6b342ece0024147d2515b2"
+      }
+    ]
+  }
+}

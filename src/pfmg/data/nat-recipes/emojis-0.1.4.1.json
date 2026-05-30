@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "emojis",
+    "version": "0.1.4.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "emojis",
+    "buildsystem": "simple",
+    "builddir": false,
+    "build-commands": [
+      "echo '#! /usr/bin/env runhaskell' >Setup.txt",
+      "echo '> import Distribution.Simple' >>Setup.txt",
+      "echo '> main = defaultMain' >>Setup.txt",
+      "ln -s Setup.txt Setup.lhs || true",
+      "runhaskell Setup configure --prefix=/app",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "sources": [
+      {
+        "sha256": "8000d6197b1d43b9b3cd0711c34f120420f358d0425167d2fb7e616d65470ae5",
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/emojis-0.1.4.1/emojis-0.1.4.1.tar.gz"
+      },
+      {
+        "dest-filename": "emojis.cabal",
+        "sha256": "2e7006c952aa51fe7757ec6f2749f1bcbb65664da91c0404565381ddc909dbf5",
+        "type": "file",
+        "url": "https://hackage.haskell.org/package/emojis-0.1.4.1/revision/0.cabal"
+      }
+    ]
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "header": {
+    "id": "python3-qstylizer",
+    "version": "0.2.4",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-qstylizer",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"qstylizer==0.2.4\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/59/91/aa6bde563e0085a02a435aa99b49ef75b0a4b062635e606dab23ce18d720/inflection-0.5.1-py2.py3-none-any.whl",
+        "sha256": "f38b2b640938a4f35ade69ac3d053042959b62a0f1076a5bbaa1b9526605a8a2"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/2d/ba/2a4e51861942c2bc3be60400c69f6713359c3e307aee4696f2ea47f35811/qstylizer-0.2.4-py2.py3-none-any.whl",
+        "sha256": "8f384dfe86f9edb0bb596b93663a51f124f0794b94fd54057cc7cf9cea59fb6f"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/60/45/c7b5c3168458db837e8ceab06dc77824e18202679d0463f0e8f002143a97/tinycss2-1.5.1-py3-none-any.whl",
+        "sha256": "3415ba0f5839c062696996998176c4a3751d18b7edaaeeb658c9ce21ec150661"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/f4/24/2a3e3df732393fed8b3ebf2ec078f05546de641fe1b667ee316ec1dcf3b7/webencodings-0.5.1-py2.py3-none-any.whl",
+        "sha256": "a0af1213f3c2226497a97e2b3aa01a7e4bee4f403f95be16fc9acd2947514a78"
+      }
+    ]
+  }
+}

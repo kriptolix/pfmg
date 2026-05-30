@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "soapy-redpitaya",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "soapy_redpitaya",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-Wno-dev"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/pothosware/SoapyRedPitaya.git",
+        "commit": "0702140487231658d200d488dfde7db3e41a5538"
+      }
+    ]
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "python3-unittest-xml-reporting",
+    "version": "3.2.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-unittest-xml-reporting",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"unittest-xml-reporting==3.2.0\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/c5/ed/60eb6fa2923602fba988d9ca7c5cdbd7cf25faa795162ed538b527a35411/lxml-6.0.0.tar.gz",
+        "sha256": "032e65120339d44cdc3efc326c9f660f5f7205f3a535c1fdbf898b29ea01fb72"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/39/88/f6e9b87428584a3c62cac768185c438ca6d561367a5d267b293259d76075/unittest_xml_reporting-3.2.0-py2.py3-none-any.whl",
+        "sha256": "f3d7402e5b3ac72a5ee3149278339db1a8f932ee405f48bcb9c681372f2717d5"
+      }
+    ]
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "header": {
+    "id": "openssl-32bit",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "openssl-32bit",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/openssl/openssl",
+        "branch": "OpenSSL_1_0_0-stable",
+        "commit": "27007233db5d6f8b91ed474c4e09dd7014871cc6"
+      }
+    ],
+    "buildsystem": "simple",
+    "build-options": {
+      "prepend-pkg-config-path": "/app/lib32/pkgconfig:/usr/lib/i386-linux-gnu/pkgconfig",
+      "ldflags": "-L/app/lib32",
+      "prepend-path": "/usr/lib/sdk/toolchain-i386/bin",
+      "env": {
+        "CC": "i686-unknown-linux-gnu-gcc",
+        "CXX": "i686-unknown-linux-gnu-g++"
+      },
+      "libdir": "/app/lib32"
+    },
+    "build-commands": [
+      "./Configure linux-generic32 --prefix=/app --libdir=lib32 shared",
+      "make",
+      "make install_sw",
+      "chmod 755 /app/lib32/libcrypto.so.1.0.0",
+      "chmod 755 /app/lib32/libssl.so.1.0.0",
+      "chmod 755 -R /app/lib32/engines"
+    ]
+  }
+}

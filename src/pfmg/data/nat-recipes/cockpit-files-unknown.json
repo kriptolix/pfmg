@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "cockpit-files",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "cockpit-files",
+    "buildsystem": "simple",
+    "build-commands": [
+      "make install PREFIX=/app"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/cockpit-project/cockpit-files/releases/download/40/cockpit-files-40.tar.xz",
+        "sha256": "629eacf71d15bbc2e0720ef56889932c9f1834a2647f185b48e70f7242550062"
+      }
+    ]
+  }
+}

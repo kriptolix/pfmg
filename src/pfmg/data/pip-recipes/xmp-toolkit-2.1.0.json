@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "xmp-toolkit",
+    "version": "2.1.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "xmp-toolkit",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --prefix=/app *.whl"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/00/12/a1e57376289c8a949e079b011c8a1272da12317825a5669fa4488af98260/python_xmp_toolkit-2.1.0-py2.py3-none-any.whl",
+        "sha256": "62b51dbbf04009030cb0f0871f1ff7e1e30a2ef8d159daf62c3079290f75a0ed",
+        "x-checker-data": {
+          "type": "pypi",
+          "name": "python-xmp-toolkit",
+          "packagetype": "bdist_wheel"
+        }
+      }
+    ]
+  }
+}

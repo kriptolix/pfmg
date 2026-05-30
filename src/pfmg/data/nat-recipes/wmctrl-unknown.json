@@ -1,0 +1,18 @@
+{
+  "header": {
+    "id": "wmctrl",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "wmctrl",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/dancor/wmctrl.git",
+        "commit": "0181e8e4a7ed98255f6ef930875e56560f19aa95"
+      }
+    ]
+  }
+}

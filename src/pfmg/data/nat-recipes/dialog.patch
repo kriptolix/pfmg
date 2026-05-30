@@ -1,0 +1,17 @@
+diff --git a/zenmap/zenmapGUI/App.py b/zenmap/zenmapGUI/App.py
+index ec9d1324a..7e874e937 100644
+--- a/zenmap/zenmapGUI/App.py
++++ b/zenmap/zenmapGUI/App.py
+@@ -274,12 +274,6 @@ Do this now? \
+             log.debug(">>> Copy %s to %s." % (global_config_path, Path.user_config_file))
+         repair_dialog.destroy()
+ 
+-    # Display a "you're not root" warning if appropriate.
+-    if not is_root():
+-        non_root = NonRootWarning()
+-        non_root.run()
+-        non_root.destroy()
+-
+     # Load files given as command-line arguments.
+     filenames = option_parser.get_open_results()
+     if len(filenames) == 0:

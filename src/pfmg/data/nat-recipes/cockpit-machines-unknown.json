@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "cockpit-machines",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "cockpit-machines",
+    "buildsystem": "simple",
+    "build-commands": [
+      "make install PREFIX=/app"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/cockpit-project/cockpit-machines/releases/download/352/cockpit-machines-352.tar.xz",
+        "sha256": "9d641fd125c8c744f43eb40b532103d7f96fbe088de40a8256080b606fd32301"
+      }
+    ]
+  }
+}

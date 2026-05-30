@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "text-1.2.3.0",
+    "version": "1.2.3.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "text-1.2.3.0",
+    "only-arches": [
+      "x86_64"
+    ],
+    "buildsystem": "simple",
+    "build-commands": [
+      "ghc -threaded --make Setup",
+      "./Setup configure --prefix=/app",
+      "./Setup build",
+      "./Setup install"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "sha256": "20e0b1627f613b32cc7f2d2e8dcc48a4a61938b24f3d14fb77cee694f0c9311a",
+        "url": "https://hackage.haskell.org/package/text-1.2.3.0/text-1.2.3.0.tar.gz"
+      }
+    ]
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "header": {
+    "id": "objectbox",
+    "version": "5.0.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "objectbox",
+    "buildsystem": "simple",
+    "build-commands": [
+      "cp -r libobjectbox.so /app/lib/"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "only-arches": [
+          "x86_64"
+        ],
+        "url": "https://github.com/objectbox/objectbox-c/releases/download/v5.0.0-rc/objectbox-linux-x64.tar.gz",
+        "sha256": "280195f19594227068fcf389d32d5b315c9a6daabc3115cd3aac9c3cc8ad39a8"
+      },
+      {
+        "type": "archive",
+        "only-arches": [
+          "aarch64"
+        ],
+        "url": "https://github.com/objectbox/objectbox-c/releases/download/v5.0.0-rc/objectbox-linux-aarch64.tar.gz",
+        "sha256": "d11d7be8b5ff9cac361de050f634be02f82571b0a16c76da0ca33cf2adc2613e"
+      }
+    ]
+  }
+}

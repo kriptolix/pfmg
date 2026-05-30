@@ -1,0 +1,19 @@
+{
+  "header": {
+    "id": "spdlog",
+    "version": "1.8.5",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "spdlog",
+    "buildsystem": "cmake",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/gabime/spdlog/archive/refs/tags/v1.8.5.tar.gz",
+        "sha256": "944d0bd7c763ac721398dca2bb0f3b5ed16f67cef36810ede5061f35a543b4b8"
+      }
+    ]
+  }
+}

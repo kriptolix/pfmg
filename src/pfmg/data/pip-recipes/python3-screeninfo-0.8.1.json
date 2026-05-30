@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-screeninfo",
+    "version": "0.8.1",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-screeninfo",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"screeninfo==0.8.1\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/6e/bf/c5205d480307bef660e56544b9e3d7ff687da776abb30c9cb3f330887570/screeninfo-0.8.1-py3-none-any.whl",
+        "sha256": "e97d6b173856edcfa3bd282f81deb528188aff14b11ec3e195584e7641be733c"
+      }
+    ]
+  }
+}

@@ -1,0 +1,21 @@
+--- gnubarcode/library.c-old	2021-04-23 23:06:48.281233108 -0400
++++ gnubarcode/library.c	2021-04-23 23:06:57.047306464 -0400
+@@ -30,6 +30,8 @@
+ #endif
+ #include <errno.h>
+ 
++int streaming;
++
+ /*
+  * This function allocates a barcode structure and strdup()s the
+  * text string. It returns NULL in case of error
+--- gnubarcode/barcode.h-old	2021-04-23 23:05:53.962778572 -0400
++++ gnubarcode/barcode.h	2021-04-23 23:05:58.298814855 -0400
+@@ -123,6 +123,6 @@
+ }
+ #endif
+ 
+-int streaming;
++extern int streaming;
+ 
+ #endif /* _BARCODE_H_ */

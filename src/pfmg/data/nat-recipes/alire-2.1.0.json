@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "alire",
+    "version": "2.1.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "alire",
+    "only-arches": [
+      "x86_64"
+    ],
+    "buildsystem": "simple",
+    "build-commands": [
+      "install -Dm755 -t /usr/lib/sdk/gnat13/bin alr"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/alire-project/alire/releases/download/v2.1.0/alr-2.1.0-bin-x86_64-linux.zip",
+        "sha256": "e3b32cb0afe981b23d1a68da77452cf81ee1d82de8ebaf01c5e233be8b463fbe"
+      }
+    ]
+  }
+}

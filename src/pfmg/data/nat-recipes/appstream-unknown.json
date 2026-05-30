@@ -1,0 +1,62 @@
+{
+  "header": {
+    "id": "appstream",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "appstream",
+    "buildsystem": "meson",
+    "config-opts": [
+      "-Dbuildtype=release",
+      "-Dstemming=false",
+      "-Dgir=false",
+      "-Dapidocs=false"
+    ],
+    "cleanup": [
+      "/bin/appstreamcli"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/ximion/appstream.git",
+        "commit": "1ee6af91310f9deb47f3863a7a7ffb22c46bcce6",
+        "tag": "v0.16.2"
+      }
+    ],
+    "modules": [
+      {
+        "name": "libyaml",
+        "buildsystem": "autotools",
+        "sources": [
+          {
+            "type": "git",
+            "url": "https://github.com/yaml/libyaml.git",
+            "commit": "2c891fc7a770e8ba2fec34fc6b545c672beb37e6",
+            "tag": "0.2.5"
+          }
+        ]
+      },
+      {
+        "name": "libxmlb",
+        "buildsystem": "meson",
+        "config-opts": [
+          "-Dbuildtype=release",
+          "-Dintrospection=false",
+          "-Dtests=false",
+          "-Dcli=false",
+          "-Dgtkdoc=false"
+        ],
+        "sources": [
+          {
+            "type": "git",
+            "url": "https://github.com/hughsie/libxmlb.git",
+            "commit": "6191220071233972d798b57841d08e4964952a17",
+            "tag": "0.3.11"
+          }
+        ]
+      }
+    ]
+  }
+}

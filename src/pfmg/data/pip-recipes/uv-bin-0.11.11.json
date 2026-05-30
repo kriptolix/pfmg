@@ -1,0 +1,48 @@
+{
+  "header": {
+    "id": "uv-bin",
+    "version": "0.11.11",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "uv-bin",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"uv\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/4c/f8/a5d5bac297b1379719050788c6b852c6b3eefcb1e82d8465ed22c10cede7/uv-0.11.11-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "sha256": "d5b9f31dab557b5ee4257d8c6ba2608a63c7278537cb0cd102cf6fc518e3fb5c",
+        "only-arches": [
+          "x86_64"
+        ],
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://pypi.org/pypi/uv/json",
+          "version-query": ".info.version",
+          "url-query": ".releases | .[$version][] | select(.filename==\"uv-\" + $version + \"-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl\") | .url"
+        }
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/ee/d5/f3be167a43192062f1409fd6b857a612665d331174293b4ffc73218872e1/uv-0.11.11-py3-none-manylinux_2_28_aarch64.whl",
+        "sha256": "8e8faf2e5b3517155fd18e509b19b21135247d43b7fb9a8d61a44a53118d5ab7",
+        "only-arches": [
+          "aarch64"
+        ],
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://pypi.org/pypi/uv/json",
+          "version-query": ".info.version",
+          "url-query": ".releases | .[$version][] | select(.filename==\"uv-\" + $version + \"-py3-none-manylinux_2_28_aarch64.whl\") | .url"
+        }
+      }
+    ],
+    "cleanup": [
+      "*"
+    ]
+  }
+}

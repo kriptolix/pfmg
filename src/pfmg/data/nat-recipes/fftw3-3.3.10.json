@@ -1,0 +1,51 @@
+{
+  "header": {
+    "id": "fftw3",
+    "version": "3.3.10",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "fftw3",
+    "buildsystem": "autotools",
+    "build-options": {
+      "arch": {
+        "x86_64": {
+          "config-opts": [
+            "--enable-sse2",
+            "--enable-avx",
+            "--enable-avx-128-fma"
+          ]
+        },
+        "aarch64": {
+          "config-opts": [
+            "--enable-neon"
+          ]
+        }
+      }
+    },
+    "config-opts": [
+      "--enable-float",
+      "--enable-threads",
+      "--enable-openmp",
+      "--disable-fortran"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "http://fftw.org/fftw-3.3.10.tar.gz",
+        "sha256": "56c932549852cddcfafdab3820b0200c7742675be92179e59e6215b340e26467"
+      }
+    ],
+    "cleanup": [
+      "/bin",
+      "/include",
+      "*.a",
+      "*.la",
+      "/lib/cmake",
+      "/lib/pkgconfig",
+      "/share/info",
+      "/share/man"
+    ]
+  }
+}

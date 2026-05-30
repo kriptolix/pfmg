@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "biber",
+    "version": "2.21",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "biber",
+    "buildsystem": "simple",
+    "build-commands": [
+      "perl ./Build.PL",
+      "./Build",
+      "tar -xf biblatex.tds.tgz -C ${FLATPAK_DEST}/texmf-dist",
+      "texhash",
+      "./Build --output=${FLATPAK_DEST} install"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/plk/biber/archive/v2.21/biber-2.21.tar.gz",
+        "sha256": "2652cf3ae0abff5fb233aa77f18e70014cc2c70b94a8693c099a3cad9bbb4b20"
+      },
+      {
+        "type": "file",
+        "url": "https://github.com/plk/biblatex/archive/v3.21/biblatex-3.21.tar.gz",
+        "sha256": "8dfbd8e6f75650740066d7b25f3e8c527169febb3c70eb70c337d2f1bb157e3a",
+        "dest-filename": "biblatex.tds.tgz"
+      }
+    ]
+  }
+}

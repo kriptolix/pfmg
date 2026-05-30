@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-audioread",
+    "version": "3.0.1",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-audioread",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"audioread\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/57/8d/30aa32745af16af0a9a650115fbe81bde7c610ed5c21b381fca0196f3a7f/audioread-3.0.1-py3-none-any.whl",
+        "sha256": "4cdce70b8adc0da0a3c9e0d85fb10b3ace30fbdf8d1670fd443929b61d117c33"
+      }
+    ]
+  }
+}

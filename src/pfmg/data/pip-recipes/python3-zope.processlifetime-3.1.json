@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "python3-zope.processlifetime",
+    "version": "3.1",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-zope.processlifetime",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"zope.processlifetime==3.1\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/30/93/9210e7606be57a2dfc6277ac97dcc864fd8d39f142ca194fdc186d596fda/zope.interface-7.2.tar.gz",
+        "sha256": "8b49f1a3d1ee4cdaf5b32d2e738362c7f5e40ac8b46dd7d1a65e82a4872728fe"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/96/39/8773c142146b36426c982635c52c6d7db1d3a133bc1f0921f853ecd2a6ab/zope.processlifetime-3.1-py3-none-any.whl",
+        "sha256": "692f64afc16ff345a45b4c8a25355e6a89dc8c28b0835dfe300ed2d83290c94f"
+      }
+    ]
+  }
+}

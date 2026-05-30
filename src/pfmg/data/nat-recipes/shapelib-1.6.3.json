@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "shapelib",
+    "version": "1.6.3",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "shapelib",
+    "buildsystem": "autotools",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "http://download.osgeo.org/shapelib/shapelib-1.6.3.tar.gz",
+        "sha256": "3ff5ead18ca6d2fe249f0e80b361e1ad6782165115268ed4a58c780a60c1e0eb",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 4804,
+          "stable-only": true,
+          "url-template": "http://download.osgeo.org/shapelib/shapelib-$version.tar.gz"
+        }
+      }
+    ]
+  }
+}

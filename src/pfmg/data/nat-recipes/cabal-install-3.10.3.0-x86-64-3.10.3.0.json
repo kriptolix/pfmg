@@ -1,0 +1,30 @@
+{
+  "header": {
+    "id": "cabal-install-3.10.3.0-x86-64",
+    "version": "3.10.3.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "cabal-install-3.10.3.0-x86_64",
+    "only-arches": [
+      "x86_64"
+    ],
+    "cleanup": [
+      "/bin/cabal"
+    ],
+    "buildsystem": "simple",
+    "builddir": false,
+    "build-commands": [
+      "install cabal /app/bin"
+    ],
+    "sources": [
+      {
+        "sha256": "97e61bcd143f0b8a181ea2261a1de587b58fa9f84d123b9b9cec4463ae2f41c6",
+        "strip-components": 0,
+        "type": "archive",
+        "url": "https://downloads.haskell.org/cabal/cabal-install-3.10.3.0/cabal-install-3.10.3.0-x86_64-linux-deb9.tar.xz"
+      }
+    ]
+  }
+}

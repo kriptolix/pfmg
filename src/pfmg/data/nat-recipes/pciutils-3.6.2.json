@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "pciutils",
+    "version": "3.6.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "pciutils",
+    "buildsystem": "simple",
+    "build-commands": [
+      "make install PREFIX=/ DESTDIR=$FLATPAK_DEST SHARED=no LIBKMOD=no HWDB=no ZLIB=no DNS=no",
+      "sed -i -e 's|/share/pci.ids|/var/tmp/P_PCI|' $FLATPAK_DEST/sbin/lspci"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/pciutils/pciutils/archive/v3.6.2.tar.gz",
+        "sha256": "d84d7096a71890f0ddddc50e88ac5a3bc7412bf48d8100fc15857a411564687d"
+      }
+    ]
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "header": {
+    "id": "mingw-w64-winpthreads-i686",
+    "version": "14.0.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "mingw-w64-winpthreads-i686",
+    "build-options": {
+      "config-opts": [
+        "--host=i686-w64-mingw32",
+        "--prefix=${FLATPAK_DEST}/i686-w64-mingw32"
+      ]
+    },
+    "config-opts": [
+      "--enable-static",
+      "--enable-shared"
+    ],
+    "builddir": true,
+    "subdir": "mingw-w64-libraries/winpthreads",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://downloads.sourceforge.net/mingw-w64/mingw-w64-v14.0.0.tar.bz2",
+        "sha256": "6eaf921d9eb987d3820b364ea9775bc19b965ec81490b6fdd716526c28e1995c",
+        "x-checker-data": {
+          "type": "html",
+          "url": "https://sourceforge.net/projects/mingw-w64/rss",
+          "version-pattern": "<link>https://sourceforge.net/projects/mingw-w64/files/mingw-w64/mingw-w64-release/mingw-w64-v([\\d\\.]+).tar.bz2/download</link>",
+          "url-template": "https://downloads.sourceforge.net/mingw-w64/mingw-w64-v$version.tar.bz2",
+          "is-main-source": true
+        }
+      }
+    ]
+  }
+}

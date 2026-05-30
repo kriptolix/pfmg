@@ -1,0 +1,36 @@
+{
+  "header": {
+    "id": "lsp-plugins-lv2-bin-x86-64",
+    "version": "1.1.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "lsp-plugins-lv2-bin-x86_64",
+    "only-arches": [
+      "x86_64"
+    ],
+    "no-autogen": true,
+    "buildsystem": "simple",
+    "build-commands": [
+      "install -dm755 ${FLATPAK_DEST}/lib/lv2/lsp-plugins.lv2",
+      "for f in ./lsp-plugins.lv2/* ; do\n  install -m644 -t ${FLATPAK_DEST}/lib/lv2/lsp-plugins.lv2 $f\ndone\n"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://downloads.sourceforge.net/project/lsp-plugins/lsp-plugins/1.1.2/lsp-plugins-lv2-1.1.2-x86_64.tar.gz",
+        "sha256": "ee36b7072c32c48a886d75af16a152e4bde9525af3c64f4056bf780628990396"
+      },
+      {
+        "type": "file",
+        "path": "com.github.wwmm.pulseeffects.plugin.lsp-plugins.metainfo.xml"
+      }
+    ],
+    "post-install": [
+      "install -Dm644 -t ${FLATPAK_DEST}/share/licenses/${FLATPAK_ID} LICENSE.txt",
+      "install -Dm644 -t ${FLATPAK_DEST}/share/metainfo ${FLATPAK_ID}.metainfo.xml",
+      "appstream-compose --basename=${FLATPAK_ID} --prefix=${FLATPAK_DEST} --origin=flatpak ${FLATPAK_ID}"
+    ]
+  }
+}

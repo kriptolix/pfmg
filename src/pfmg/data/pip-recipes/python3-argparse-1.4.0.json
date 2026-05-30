@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-argparse",
+    "version": "1.4.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-argparse",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"argparse\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/f2/94/3af39d34be01a24a6e65433d19e107099374224905f1e0cc6bbe1fd22a2f/argparse-1.4.0-py2.py3-none-any.whl",
+        "sha256": "c31647edb69fd3d465a847ea3157d37bed1f95f19760b11a47aa91c04b666314"
+      }
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+diff -rupN svg2svgt-0.9.6/gui/exportdialog.cpp svg2svgt-0.9.6-new/gui/exportdialog.cpp
+--- svg2svgt-0.9.6/gui/exportdialog.cpp	2021-01-27 16:14:26.277192641 +0100
++++ svg2svgt-0.9.6-new/gui/exportdialog.cpp	2021-01-27 16:14:14.586213998 +0100
+@@ -21,6 +21,7 @@
+ 
+ #include <svg2svgt/tracer.h>
+ 
++#include <QtGui/QValidator>
+ #include <QtWidgets/QColorDialog>
+ 
+ using svg2svgt::Tracer;
+diff -rupN svg2svgt-0.9.6/gui/svglistitemdelegate.cpp svg2svgt-0.9.6-new/gui/svglistitemdelegate.cpp
+--- svg2svgt-0.9.6/gui/svglistitemdelegate.cpp	2017-08-31 12:01:05.000000000 +0200
++++ svg2svgt-0.9.6-new/gui/svglistitemdelegate.cpp	2021-01-27 16:14:46.637155402 +0100
+@@ -19,6 +19,7 @@
+ #include "svglistitemdelegate.h"
+ 
+ #include <QtGui/QPainter>
++#include <QtGui/QPainterPath>
+ #include <QtGui/QPixmapCache>
+ #include <QtSvg/QSvgRenderer>
+ 

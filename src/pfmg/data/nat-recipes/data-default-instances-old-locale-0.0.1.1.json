@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "data-default-instances-old-locale",
+    "version": "0.0.1.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "data-default-instances-old-locale",
+    "buildsystem": "simple",
+    "builddir": false,
+    "build-commands": [
+      "echo '#! /usr/bin/env runhaskell' >Setup.txt",
+      "echo '> import Distribution.Simple' >>Setup.txt",
+      "echo '> main = defaultMain' >>Setup.txt",
+      "ln -s Setup.txt Setup.lhs || true",
+      "runhaskell Setup configure --prefix=/app",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "sources": [
+      {
+        "sha256": "90bbf209b5d4cc7ec8e9504115978f5cec5659c5e591efec1ba14304d78569bf",
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/data-default-instances-old-locale-0.0.1.1/data-default-instances-old-locale-0.0.1.1.tar.gz"
+      },
+      {
+        "dest-filename": "data-default-instances-old-locale.cabal",
+        "sha256": "348fac197a0e69136a5b718f8665981e286f7ba5f094cd8d640d7ace3a57b7bd",
+        "type": "file",
+        "url": "https://hackage.haskell.org/package/data-default-instances-old-locale-0.0.1.1/revision/0.cabal"
+      }
+    ]
+  }
+}

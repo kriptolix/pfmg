@@ -1,0 +1,47 @@
+{
+  "header": {
+    "id": "colobot",
+    "version": "0.2.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "colobot",
+    "builddir": true,
+    "buildsystem": "cmake-ninja",
+    "build-options": {
+      "cxxflags": "-Wno-format-overflow"
+    },
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DCOLOBOT_INSTALL_BIN_DIR=/app/bin"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/colobot/colobot/archive/colobot-gold-0.2.2-alpha.tar.gz",
+        "sha256": "047eb2bc96725598d918c5b500928e3a08fa3e6e7e730a82169da4524b03ddad",
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://api.github.com/repos/colobot/colobot/releases/latest",
+          "version-query": ".tag_name",
+          "timestamp-query": ".published_at",
+          "url-query": "\"https://github.com/colobot/colobot/archive/\" + $version + \".tar.gz\""
+        }
+      },
+      {
+        "type": "file",
+        "path": "info.colobot.Colobot.appdata.xml",
+        "dest": "desktop/"
+      },
+      {
+        "type": "patch",
+        "path": "colobot-0.1.12-list.patch"
+      },
+      {
+        "type": "patch",
+        "path": "colobot-0.2.1-missing-include.patch"
+      }
+    ]
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "intel-vaapi-driver",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "intel-vaapi-driver",
+    "cleanup": [
+      "*.la"
+    ],
+    "config-opts": [
+      "--disable-static",
+      "LIBVA_DRIVERS_PATH=/usr/lib/dri/intel-vaapi-driver"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/intel/intel-vaapi-driver.git",
+        "branch": "fcf9041b29cee938a228dc7950955ccebb43c6bf"
+      }
+    ]
+  }
+}

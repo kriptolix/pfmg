@@ -1,0 +1,26 @@
+{
+  "header": {
+    "id": "libtomcrypt",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libtomcrypt",
+    "buildsystem": "simple",
+    "build-commands": [
+      "make -f makefile.shared library"
+    ],
+    "post-install": [
+      "make -f makefile.shared PREFIX=${FLATPAK_DEST} install"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/libtom/libtomcrypt",
+        "tag": "v1.18.2",
+        "commit": "7e7eb695d581782f04b24dc444cbfde86af59853"
+      }
+    ]
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "header": {
+    "id": "tap-lv2",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "tap-lv2",
+    "buildsystem": "simple",
+    "build-options": {
+      "env": {
+        "CFLAGS": "`pkg-config --cflags lv2`"
+      },
+      "arch": {
+        "aarch64": {
+          "env": {
+            "NOOPT": "true"
+          }
+        },
+        "arm": {
+          "env": {
+            "NOOPT": "true"
+          }
+        }
+      }
+    },
+    "build-commands": [
+      "make NOOPT=${NOOPT}",
+      "make install INSTALL_PATH=/app/extensions/Plugins/TAP/lv2"
+    ],
+    "post-install": [
+      "install -Dm644 -t $FLATPAK_DEST/share/licenses/tap-lv2 COPYING"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/moddevices/tap-lv2.git",
+        "commit": "cab6e0dfb2ce20e4ad34b067d1281ec0b193598a"
+      }
+    ]
+  }
+}

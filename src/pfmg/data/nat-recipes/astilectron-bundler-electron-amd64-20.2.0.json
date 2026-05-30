@@ -1,0 +1,31 @@
+{
+  "header": {
+    "id": "astilectron-bundler-electron-amd64",
+    "version": "20.2.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "astilectron-bundler-electron-amd64",
+    "buildsystem": "simple",
+    "only-arches": [
+      "x86_64"
+    ],
+    "build-options": {
+      "env": {
+        "BUNDLER_CACHE": "/app/lib/astibundler/cache"
+      }
+    },
+    "build-commands": [
+      "install -Dm 644 electron-linux-amd64-20.2.0.zip ${BUNDLER_CACHE}/electron-linux-amd64-20.2.0.zip"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://github.com/electron/electron/releases/download/v20.2.0/electron-v20.2.0-linux-x64.zip",
+        "sha256": "c0e3522de34819b838f4a35ddf30c6283c61be1bb8dff02089cda3f641938aad",
+        "dest-filename": "electron-linux-amd64-20.2.0.zip"
+      }
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "slixmpp-omemo",
+    "version": "2.1.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "slixmpp-omemo",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --prefix=/app slixmpp_omemo-2.1.0-py3-none-any.whl"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/54/5e/f22ac5e34f1fa32b39b80ddfda27feecea2a7ebdcab7d3dd809e93cf4217/slixmpp_omemo-2.1.0-py3-none-any.whl",
+        "sha256": "a08881a7e4400eedc4471a7d2d3b985bb5c9e1ad595fc09233ebac612f7abef3"
+      }
+    ]
+  }
+}

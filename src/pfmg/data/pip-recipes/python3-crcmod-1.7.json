@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-crcmod",
+    "version": "1.7",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-crcmod",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"crcmod==1.7\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/6b/b0/e595ce2a2527e169c3bcd6c33d2473c1918e0b7f6826a043ca1245dd4e5b/crcmod-1.7.tar.gz",
+        "sha256": "dc7051a0db5f2bd48665a990d3ec1cc305a466a77358ca4492826f41f283601e"
+      }
+    ]
+  }
+}

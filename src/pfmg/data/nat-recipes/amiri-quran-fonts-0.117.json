@@ -1,0 +1,37 @@
+{
+  "header": {
+    "id": "amiri-quran-fonts",
+    "version": "0.117",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "amiri-quran-fonts",
+    "buildsystem": "simple",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/aliftype/amiri/releases/download/0.117/Amiri-0.117.zip",
+        "sha256": "9c4e768893e0023a0ad6f488d5c84bd5add6565d3dcadb838ba5b20e75fcc9a7"
+      },
+      {
+        "type": "file",
+        "path": "amiri-fontconfig.conf"
+      },
+      {
+        "type": "file",
+        "path": "amiri-quran-fontconfig.conf"
+      }
+    ],
+    "build-commands": [
+      "pwd",
+      "ls -lh",
+      "mkdir -p /app/share/fonts/",
+      "cp *.ttf /app/share/fonts/",
+      "mkdir -p /app/etc/fonts/conf.d/",
+      "cp amiri-fontconfig.conf /app/etc/fonts/conf.d/",
+      "cp amiri-quran-fontconfig.conf /app/etc/fonts/conf.d/",
+      "fc-cache -fs"
+    ]
+  }
+}

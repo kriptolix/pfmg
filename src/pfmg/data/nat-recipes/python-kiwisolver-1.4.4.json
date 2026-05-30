@@ -1,0 +1,26 @@
+{
+  "header": {
+    "id": "python-kiwisolver",
+    "version": "1.4.4",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python-kiwisolver",
+    "buildsystem": "simple",
+    "build-commands": [
+      "python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://files.pythonhosted.org/packages/5f/5c/272a7dd49a1914f35cd8d6d9f386defa8b047f6fbd06badd6b77b3ba24e7/kiwisolver-1.4.4.tar.gz",
+        "sha256": "d41997519fcba4a1e46eb4a2fe31bc12f0ff957b2b81bac28db24744f333e955",
+        "x-checker-data": {
+          "type": "pypi",
+          "name": "kiwisolver"
+        }
+      }
+    ]
+  }
+}

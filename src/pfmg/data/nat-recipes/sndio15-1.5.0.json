@@ -1,0 +1,33 @@
+{
+  "header": {
+    "id": "sndio15",
+    "version": "1.5.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "sndio15",
+    "config-opts": [
+      "--with-libbsd"
+    ],
+    "cleanup": [
+      "/bin"
+    ],
+    "build-options": {
+      "cflags": "-Wno-error=implicit-function-declaration"
+    },
+    "sources": [
+      {
+        "type": "archive",
+        "url": "http://archive.ubuntu.com/ubuntu/pool/universe/s/sndio/sndio_1.5.0.orig.tar.gz",
+        "sha256": "12c70044749ad9cb7eaeb26c936816aa6b314fe4be71ef479d12272e4c5ad253"
+      },
+      {
+        "type": "shell",
+        "commands": [
+          "for i in libsndio aucat midicat; do\n  sed 's/cp /cp -f /g' -i $i/Makefile.in\ndone\n"
+        ]
+      }
+    ]
+  }
+}

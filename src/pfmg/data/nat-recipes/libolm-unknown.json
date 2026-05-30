@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "libolm",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libolm",
+    "buildsystem": "cmake-ninja",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://gitlab.matrix.org/matrix-org/olm.git",
+        "tag": "3.2.15"
+      }
+    ],
+    "config-opts": [
+      "-DBUILD_SHARED_LIBS=OFF"
+    ],
+    "cleanup": [
+      "/include",
+      "/lib",
+      "/share"
+    ]
+  }
+}

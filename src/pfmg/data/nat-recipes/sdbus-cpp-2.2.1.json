@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "sdbus-cpp",
+    "version": "2.2.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "sdbus-cpp",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/Kistler-Group/sdbus-cpp/archive/refs/tags/v2.2.1.tar.gz",
+        "sha256": "da69a0104beb6e51415a59f1571a47beb1eacc65cc6027b250eb1cf13ff4f802",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 70626,
+          "url-template": "https://github.com/Kistler-Group/sdbus-cpp/archive/refs/tags/v$version.tar.gz"
+        }
+      }
+    ]
+  }
+}

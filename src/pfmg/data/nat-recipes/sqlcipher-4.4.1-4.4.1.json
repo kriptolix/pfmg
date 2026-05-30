@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "sqlcipher-4.4.1",
+    "version": "4.4.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "sqlcipher-4.4.1",
+    "config-opts": [
+      "--enable-tempstore=yes",
+      "CFLAGS=-DSQLITE_HAS_CODEC",
+      "LDFLAGS=-lcrypto"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "sha256": "a36ed7c879a5e9af1054942201c75fc56f1db22e46bf6c2bbae3975dfeb6782d",
+        "url": "https://github.com/sqlcipher/sqlcipher/archive/v4.4.1.tar.gz"
+      }
+    ]
+  }
+}

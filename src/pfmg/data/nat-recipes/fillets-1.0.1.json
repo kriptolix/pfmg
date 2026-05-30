@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "fillets",
+    "version": "1.0.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "fillets",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://prdownloads.sourceforge.net/fillets/fillets-ng-1.0.1.tar.gz",
+        "sha256": "329a4d9515d60bebdb657d070824933b993b85864b9d3e302e6361accab992da"
+      },
+      {
+        "type": "file",
+        "path": "net.sourceforge.Fillets.svg"
+      },
+      {
+        "type": "file",
+        "path": "net.sourceforge.Fillets.desktop"
+      },
+      {
+        "type": "file",
+        "path": "net.sourceforge.Fillets.appdata.xml"
+      }
+    ],
+    "post-install": [
+      "install -Dm644 net.sourceforge.Fillets.svg /app/share/icons/hicolor/scalable/apps/net.sourceforge.Fillets.svg",
+      "install -Dm644 net.sourceforge.Fillets.desktop /app/share/applications/net.sourceforge.Fillets.desktop",
+      "install -Dm644 net.sourceforge.Fillets.appdata.xml /app/share/appdata/net.sourceforge.Fillets.appdata.xml"
+    ]
+  }
+}

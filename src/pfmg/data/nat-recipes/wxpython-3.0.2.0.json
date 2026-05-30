@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "wxpython",
+    "version": "3.0.2.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "wxPython",
+    "buildsystem": "simple",
+    "build-commands": [
+      "cd wxPython; /app/bin/python setup.py WXPORT=gtk3 UNICODE=1 BUILD_GLCANVAS=0 EP_ADD_OPTS=1 EP_FULL_VER=0 NO_SCRIPTS=1 WX_CONFIG=\"/app/bin/wx-config --prefix=/app --no_rpath\" SYS_WX_CONFIG=\"wx-config --version=3.0.2.0 --toolkit=gtk3 --static=no\" build_ext --rpath=/app/lib build",
+      "cd wxPython; /app/bin/python setup.py WXPORT=gtk3 UNICODE=1 BUILD_GLCANVAS=0 EP_ADD_OPTS=1 EP_FULL_VER=0 NO_SCRIPTS=1 WX_CONFIG=\"/app/bin/wx-config --prefix=/app --no_rpath\" SYS_WX_CONFIG=\"wx-config --version=3.0.2.0 --toolkit=gtk3 --static=no --unicode\" build_ext --rpath=/app/lib install --root=/"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://downloads.sourceforge.net/wxpython/wxPython/3.0.2.0/wxPython-src-3.0.2.0.tar.bz2",
+        "sha256": "d54129e5fbea4fb8091c87b2980760b72c22a386cb3b9dd2eebc928ef5e8df61"
+      }
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "omegat-nojre",
+    "version": "6.0.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "omegat-nojre",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://ixpeering.dl.sourceforge.net/project/omegat/OmegaT%20-%20Standard/OmegaT%206.0.1/OmegaT_6.0.1_Without_JRE.zip",
+        "sha256": "463e746f34fc93bf8659bd29fe66becf2f8fce417bb41ea25781785150089898",
+        "dest": "omegatpkg"
+      }
+    ],
+    "buildsystem": "simple",
+    "build-commands": [
+      "mkdir -p /app/share/omegat",
+      "mv omegatpkg/* /app/share/omegat/"
+    ]
+  }
+}

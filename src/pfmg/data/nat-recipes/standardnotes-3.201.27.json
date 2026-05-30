@@ -1,0 +1,52 @@
+{
+  "header": {
+    "id": "standardnotes",
+    "version": "3.201.27",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "standardnotes",
+    "buildsystem": "simple",
+    "build-commands": [
+      "bsdtar -Oxf standard-notes.deb data.tar.xz | bsdtar -xf -",
+      "mv \"opt/Standard Notes\" ${FLATPAK_DEST}/standardnotes",
+      "for lang in ${FLATPAK_DEST}/standardnotes/locales/*.pak\ndo\n  locale=\"$(basename -s .pak $lang)\"\n  install -Dm644 -t \"${FLATPAK_DEST}/share/runtime/locale/${locale%%-*}/\" \"$lang\"\n  ln -sf \"${FLATPAK_DEST}/share/runtime/locale/${locale%%-*}/$(basename $lang)\" \"${FLATPAK_DEST}/standardnotes/locales/$(basename $lang)\"\ndone\n",
+      "install -Dm644 usr/share/icons/hicolor/512x512/apps/standard-notes.png \"${FLATPAK_DEST}/share/icons/hicolor/512x512/apps/${FLATPAK_ID}.png\"",
+      "install -Dm644 usr/share/applications/standard-notes.desktop \"${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop\"",
+      "desktop-file-edit --set-key=Exec --set-value='start-standardnotes %U' --set-icon=${FLATPAK_ID} \"${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop\""
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "dest-filename": "standard-notes.deb",
+        "only-arches": [
+          "x86_64"
+        ],
+        "url": "https://github.com/standardnotes/app/releases/download/%40standardnotes%2Fdesktop%403.201.27/standard-notes-3.201.27-linux-amd64.deb",
+        "sha256": "e7a9c2fc16cf9c444d647da9466db61f31671d751b6b02cf2aa34e862ec91ce2",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 146681,
+          "url-template": "https://github.com/standardnotes/app/releases/download/%40standardnotes%2Fdesktop%40$version/standard-notes-$version-linux-amd64.deb",
+          "stable-only": true
+        }
+      },
+      {
+        "type": "file",
+        "dest-filename": "standard-notes.deb",
+        "only-arches": [
+          "aarch64"
+        ],
+        "url": "https://github.com/standardnotes/app/releases/download/%40standardnotes%2Fdesktop%403.201.27/standard-notes-3.201.27-linux-arm64.deb",
+        "sha256": "6ae9d01cddfa976d2be3599c5c1a578f33f098935e4fa2943eaed0e08b831abf",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 146681,
+          "url-template": "https://github.com/standardnotes/app/releases/download/%40standardnotes%2Fdesktop%40$version/standard-notes-$version-linux-arm64.deb",
+          "stable-only": true
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "kitemviews",
+    "version": "5.101",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "kitemviews",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DBUILD_TESTING=OFF"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.kde.org/stable/frameworks/5.101/kitemviews-5.101.0.tar.xz",
+        "sha256": "aca259eeff2dde1434cdf3ff3d979e9b17dd55bad15dd7341f92700cf8418fb1"
+      }
+    ]
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "header": {
+    "id": "tg-owt",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "tg_owt",
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/desktop-app/tg_owt.git",
+        "commit": "26068e29bfa8d74a9dc9c8f7f94172fafbc262b8",
+        "x-checker-data": {
+          "type": "json",
+          "parent-id": "tdesktop-git-0",
+          "commit-data-url": "\"https://github.com/forkgram/tdesktop/raw/\\($parent.new.tag//$parent.current.tag)/snap/snapcraft.yaml\"",
+          "commit-query": ".parts.webrtc.\"source-commit\"",
+          "version-data-url": "\"https://api.github.com/repos/desktop-app/tg_owt/commits/\\($commit)\"",
+          "version-query": "\"desktop-app/tg_owt@\\(.sha[0:7])\"",
+          "timestamp-data-url": "\"https://api.github.com/repos/desktop-app/tg_owt/commits/\\($commit)\"",
+          "timestamp-query": ".commit.committer.date"
+        }
+      }
+    ],
+    "cleanup": [
+      "*"
+    ]
+  }
+}

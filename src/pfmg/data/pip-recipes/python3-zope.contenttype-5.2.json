@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-zope.contenttype",
+    "version": "5.2",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-zope.contenttype",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"zope.contenttype==5.2\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/94/70/9d3c8c2f86658b02066678d46b0a7715c01f247d8dbd0efc9d71dd8146ef/zope.contenttype-5.2-py3-none-any.whl",
+        "sha256": "c3b2589a80f5d2100bc9365c9d7bda1ea3cfe05dd268b5e7bf5e7a8f239cc35f"
+      }
+    ]
+  }
+}

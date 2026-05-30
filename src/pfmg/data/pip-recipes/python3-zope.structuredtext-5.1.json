@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-zope.structuredtext",
+    "version": "5.1",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-zope.structuredtext",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"zope.structuredtext==5.1\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/56/bb/a4c40aa7638d04fd332e0215772a8e1f5f8f691ddd1395c0e5c070d181db/zope_structuredtext-5.1-py3-none-any.whl",
+        "sha256": "a837009f5880c06ac2450df79c8441881e2ec847c1da1057ab2f57ca503dc1d2"
+      }
+    ]
+  }
+}

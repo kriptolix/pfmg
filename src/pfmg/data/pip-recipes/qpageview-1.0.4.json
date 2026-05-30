@@ -1,0 +1,34 @@
+{
+  "header": {
+    "id": "qpageview",
+    "version": "1.0.4",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "qpageview",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip install --no-build-isolation --prefix=/app ."
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/frescobaldi/qpageview/releases/download/v1.0.4/qpageview-1.0.4.tar.gz",
+        "sha256": "4b74bf7b808cd4af745e722904e2a4af3f66ec54c15067588d813f6ab95aaf35",
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://api.github.com/repos/frescobaldi/qpageview/releases/latest",
+          "tag-query": ".tag_name",
+          "version-query": ".tag_name",
+          "timestamp-query": ".published_at",
+          "url-query": "[.assets[] | select(.name|test(\"qpageview.+.tar.gz$\"))][0] | .browser_download_url",
+          "is-important": true
+        }
+      }
+    ],
+    "cleanup": [
+      "/lib/python*/site-packages/qpageview/__pycache__"
+    ]
+  }
+}

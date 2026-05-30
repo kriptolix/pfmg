@@ -1,0 +1,26 @@
+{
+  "header": {
+    "id": "maplibre-gl-native-qt",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "maplibre-gl-native-qt",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DMLN_QT_WITH_WIDGETS=OFF",
+      "-DMLN_QT_WITH_LOCATION=OFF",
+      "-DMLN_QT_WITH_INTERNAL_ICU=ON",
+      "-DCMAKE_INSTALL_LIBDIR=lib"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/maplibre/maplibre-native-qt.git",
+        "commit": "85673cbe94d6ec0d9e7a35952375c24cb5f51589",
+        "disable-shallow-clone": true
+      }
+    ]
+  }
+}

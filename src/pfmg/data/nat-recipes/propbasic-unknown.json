@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "propbasic",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "propbasic",
+    "buildsystem": "simple",
+    "build-commands": [
+      "cd src && fpc @/app/etc/fpc.cfg -Tlinux -O3 PropBasic.lpr",
+      "install -D src/PropBasic /app/bin/propbasic"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/parallaxinc/PropBASIC.git",
+        "commit": "91174c081b6668695d0a9b7dbdc3beb237c32e2d"
+      }
+    ]
+  }
+}

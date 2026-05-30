@@ -1,0 +1,20 @@
+{
+  "header": {
+    "id": "yasm",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "yasm",
+    "cleanup": [
+      "*"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/yasm/yasm.git"
+      }
+    ]
+  }
+}

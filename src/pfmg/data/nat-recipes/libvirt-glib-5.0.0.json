@@ -1,0 +1,104 @@
+{
+  "header": {
+    "id": "libvirt-glib",
+    "version": "5.0.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libvirt-glib",
+    "buildsystem": "meson",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://gitlab.com/libvirt/libvirt-glib/-/archive/v5.0.0/libvirt-glib-v5.0.0.tar.gz",
+        "sha256": "b7ffc65e1e0ed014b5e5bcfbb9574cd56d103eeed974b6229dbf8c62975d16b5"
+      }
+    ],
+    "modules": [
+      {
+        "name": "libnl",
+        "sources": [
+          {
+            "type": "archive",
+            "url": "https://github.com/thom311/libnl/releases/download/libnl3_5_0/libnl-3.5.0.tar.gz",
+            "sha256": "352133ec9545da76f77e70ccb48c9d7e5324d67f6474744647a7ed382b5e05fa"
+          }
+        ]
+      },
+      {
+        "name": "libtirpc",
+        "config-opts": [
+          "--disable-gssapi",
+          "--libdir=/app/lib"
+        ],
+        "sources": [
+          {
+            "type": "archive",
+            "url": "https://downloads.sourceforge.net/sourceforge/libtirpc/libtirpc-1.3.7.tar.bz2",
+            "sha256": "b47d3ac19d3549e54a05d0019a6c400674da716123858cfdb6d3bdd70a66c702"
+          }
+        ]
+      },
+      {
+        "name": "rpcsvc-proto",
+        "buildsystem": "autotools",
+        "sources": [
+          {
+            "type": "archive",
+            "url": "https://github.com/thkukuk/rpcsvc-proto/archive/v1.4.1.tar.gz",
+            "sha256": "750f7e57b81407a25b707867e90d7ee80aeb53bf515b114fc218f3c78dc9a6e8"
+          }
+        ]
+      },
+      {
+        "name": "libvirt",
+        "builddir": true,
+        "buildsystem": "meson",
+        "build-options": {
+          "cflags": "-I/app/include/tirpc -ltirpc"
+        },
+        "config-opts": [
+          "-Daudit=disabled",
+          "-Dexpensive_tests=disabled",
+          "-Dgit_werror=disabled",
+          "-Ddocs=disabled",
+          "-Dtests=disabled",
+          "-Dapparmor=disabled",
+          "-Dbash_completion=disabled",
+          "-Dsbindir=/app/bin/",
+          "-Drpath=enabled",
+          "-Ddriver_qemu=enabled"
+        ],
+        "sources": [
+          {
+            "type": "archive",
+            "url": "https://libvirt.org/sources/libvirt-11.7.0.tar.xz",
+            "sha256": "dd56db0ced8baf668f476698db9956f160c93c0ec0c47a0603843235bf156f78"
+          },
+          {
+            "type": "patch",
+            "path": "libvirt-use-monitor-in-xdg-runtime-dir.patch"
+          }
+        ],
+        "modules": [
+          {
+            "name": "json-c",
+            "buildsystem": "cmake",
+            "config-opts": [
+              "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
+            ],
+            "sources": [
+              {
+                "type": "git",
+                "url": "https://github.com/json-c/json-c",
+                "tag": "json-c-0.18-20240915",
+                "commit": "41a55cfcedb54d9c1874f2f0eb07b504091d7e37"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

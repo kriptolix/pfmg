@@ -1,0 +1,19 @@
+{
+  "header": {
+    "id": "soapy-plutosdr",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "soapy_plutosdr",
+    "buildsystem": "cmake-ninja",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/pothosware/SoapyPlutoSDR.git",
+        "commit": "cdce23959aca536d5436e0cc689d069a8239f487"
+      }
+    ]
+  }
+}

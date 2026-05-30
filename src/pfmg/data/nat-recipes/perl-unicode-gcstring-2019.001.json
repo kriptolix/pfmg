@@ -1,0 +1,37 @@
+{
+  "header": {
+    "id": "perl-unicode-gcstring",
+    "version": "2019.001",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "perl-unicode-gcstring",
+    "buildsystem": "simple",
+    "build-commands": [
+      "perl Makefile.PL PREFIX=${FLATPAK_DEST} LIB=${FLATPAK_DEST}/lib",
+      "make",
+      "make install"
+    ],
+    "cleanup": [
+      "*"
+    ],
+    "post-install": [
+      "find ${FLATPAK_DEST}/lib -name '*.so' -exec chmod u+w {} \\;"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://cpan.metacpan.org/authors/id/N/NE/NEZUMI/Unicode-LineBreak-2019.001.tar.gz",
+        "sha256": "486762e4cacddcc77b13989f979a029f84630b8175e7fef17989e157d4b6318a",
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://fastapi.metacpan.org/v1/download_url/Unicode::LineBreak",
+          "version-query": ".version",
+          "url-query": ".download_url",
+          "timestamp-query": ".date"
+        }
+      }
+    ]
+  }
+}

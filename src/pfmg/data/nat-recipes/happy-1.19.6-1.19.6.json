@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "happy-1.19.6",
+    "version": "1.19.6",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "happy-1.19.6",
+    "only-arches": [
+      "x86_64"
+    ],
+    "buildsystem": "simple",
+    "build-commands": [
+      "ghc -threaded --make Setup",
+      "./Setup configure --prefix=/app",
+      "./Setup build",
+      "./Setup install"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "sha256": "7c472bec90e54f44ce3a21ebb2297f137b8c3208d32a9d1261bf285599200fc3",
+        "url": "https://hackage.haskell.org/package/happy-1.19.6/happy-1.19.6.tar.gz"
+      }
+    ]
+  }
+}

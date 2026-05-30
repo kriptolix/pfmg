@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "exceptions-0.10.0",
+    "version": "0.10.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "exceptions-0.10.0",
+    "only-arches": [
+      "x86_64"
+    ],
+    "buildsystem": "simple",
+    "build-commands": [
+      "ghc -threaded --make Setup",
+      "./Setup configure --prefix=/app",
+      "./Setup build",
+      "./Setup install"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "sha256": "1edd912e5ea5cbda37941b06738597d35214dc247d332b1bfffc82adadfa49d7",
+        "url": "https://hackage.haskell.org/package/exceptions-0.10.0/exceptions-0.10.0.tar.gz"
+      }
+    ]
+  }
+}

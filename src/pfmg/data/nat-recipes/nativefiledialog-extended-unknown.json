@@ -1,0 +1,39 @@
+{
+  "header": {
+    "id": "nativefiledialog-extended",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "nativefiledialog-extended",
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "config-opts": [
+      "-DCMAKE_INSTALL_PREFIX=/app",
+      "-DBUILD_STATIC_LIBS=ON",
+      "-DBUILD_SHARED_LIBS=OFF"
+    ],
+    "cleanup": [
+      "/bin",
+      "/include",
+      "/lib/cmake",
+      "/lib/*.a",
+      "/lib/*.la",
+      "/lib/pkgconfig",
+      "/share/man"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/btzy/nativefiledialog-extended.git",
+        "tag": "v1.3.0",
+        "commit": "fc168e8605bfa51aaec22ab0c4e46b9de665a437",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^v([\\d.]+)$"
+        }
+      }
+    ]
+  }
+}

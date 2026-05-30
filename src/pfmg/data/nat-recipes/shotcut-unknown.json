@@ -1,0 +1,29 @@
+{
+  "header": {
+    "id": "shotcut",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "shotcut",
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "config-opts": [
+      "-DEXTERNAL_LAUNCHERS=OFF",
+      "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
+      "-DSHOTCUT_VERSION=26.4.30"
+    ],
+    "post-install": [
+      "install -d /app/extensions/Plugins"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/mltframework/shotcut.git",
+        "commit": "1da45a9de2ab3a6d3823aa455be315dc8b034cfe",
+        "tag": "v26.4.30"
+      }
+    ]
+  }
+}

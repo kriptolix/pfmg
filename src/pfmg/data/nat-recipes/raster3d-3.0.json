@@ -1,0 +1,37 @@
+{
+  "header": {
+    "id": "raster3d",
+    "version": "3.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "raster3d",
+    "buildsystem": "simple",
+    "build-options": {
+      "cxxflags": "-O2 -fno-strict-aliasing -Wno-narrowing -fPIC -DNDEBUG"
+    },
+    "build-commands": [
+      "make linux",
+      "make all",
+      "make install"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "http://www.bmsc.washington.edu/raster3d/Raster3D_3.0-8.tar",
+        "sha256": "4f6999f8d446ed2d7ef32d4f7abaa1d63fa1fa78686e79cecafc06c5ae6b122d",
+        "x-checker-data": {
+          "type": "html",
+          "url": "http://www.bmsc.washington.edu/raster3d/",
+          "version-pattern": "Raster3D_([\\d\\.-]+)\\.tar",
+          "url-template": "http://www.bmsc.washington.edu/raster3d/Raster3D_$version.tar"
+        }
+      },
+      {
+        "type": "patch",
+        "path": "patches/fix-raster3d-Makefile.template.patch"
+      }
+    ]
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "header": {
+    "id": "ldview",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "ldview",
+    "buildsystem": "qmake",
+    "config-opts": [
+      "QMAKE_LIBDIR=/app/lib",
+      "CONFIG+=release",
+      "CONFIG+=3RD_PARTY_INSTALL=build_staging",
+      "CONFIG+=USE_SYSTEM_LIBS",
+      "CONFIG+=BUILD_CUI_ONLY",
+      "CONFIG+=BUILD_FLATPAK",
+      "CONFIG+=BUILD_TINYXML",
+      "CONFIG+=BUILD_GL2PS",
+      "CONFIG+=BUILD_CHECK"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/trevorsandy/ldview.git",
+        "commit": "0fcb0e7f162906e20ec4e0521ac426b6fb0c3e77"
+      }
+    ],
+    "modules": [
+      {
+        "name": "minizip",
+        "subdir": "contrib/minizip",
+        "cleanup": [
+          "/include",
+          "*.a",
+          "*.la"
+        ],
+        "sources": [
+          {
+            "type": "archive",
+            "url": "https://zlib.net/zlib-1.3.1.tar.gz",
+            "sha256": "9a93b2b7dfdac77ceba5a558a580e74667dd6fede4585b91eefb60f03b72df23"
+          },
+          {
+            "type": "shell",
+            "commands": [
+              "echo \"autoreconf -ifv $@\" > contrib/minizip/autogen.sh",
+              "chmod a+x contrib/minizip/autogen.sh"
+            ]
+          }
+        ]
+      }
+    ],
+    "post-install": [
+      "mv -f /run/build/ldview/OSMesa/build_staging/* ${FLATPAK_DEST}/build_staging/",
+      "if test -d ${FLATPAK_DEST}/build_staging/ldview-4.5; then echo \"LDView staged to ${FLATPAK_DEST}/build_staging/ldview-4.5.\"; fi"
+    ]
+  }
+}

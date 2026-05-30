@@ -1,0 +1,19 @@
+{
+  "header": {
+    "id": "mediaconch",
+    "version": "24.06",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "mediaconch",
+    "subdir": "Project/GNU/CLI",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://mediaarea.net/download/source/mediaconch/24.06/mediaconch_24.06.tar.xz",
+        "sha256": "cafc541e74aa1eff4aa973db547b7688ca62e7a6a954fee3ca244fdc6f22e21d"
+      }
+    ]
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "header": {
+    "id": "gtkspell",
+    "version": "3.0.10",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "gtkspell",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://sourceforge.net/projects/gtkspell/files/3.0.10/gtkspell3-3.0.10.tar.xz",
+        "sha256": "b040f63836b347eb344f5542443dc254621805072f7141d49c067ecb5a375732"
+      }
+    ],
+    "modules": [
+      {
+        "name": "enchant",
+        "sources": [
+          {
+            "type": "archive",
+            "url": "https://github.com/AbiWord/enchant/releases/download/v2.2.3/enchant-2.2.3.tar.gz",
+            "sha256": "abd8e915675cff54c0d4da5029d95c528362266557c61c7149d53fa069b8076d"
+          }
+        ]
+      },
+      "shared-modules/intltool/intltool-0.51.json"
+    ]
+  }
+}

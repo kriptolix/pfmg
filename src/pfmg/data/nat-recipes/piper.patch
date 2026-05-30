@@ -1,0 +1,135 @@
+diff -ruN piper-org/CMakeLists.txt piper-patched/CMakeLists.txt
+--- piper-org/CMakeLists.txt	1970-01-01 01:00:00.000000000 +0100
++++ piper-patched/CMakeLists.txt	2023-08-02 19:38:00.335761422 +0200
+@@ -0,0 +1,38 @@
++cmake_minimum_required(VERSION 3.5)
++
++project(piper_api C CXX)
++
++set(CMAKE_CXX_STANDARD 17)
++set(CMAKE_CXX_STANDARD_REQUIRED ON)
++
++set(PIPER_PHONEMIZE_INCLUDE ${CMAKE_INCLUDE_PATH}/piper-phonemize CACHE STRING "")
++
++add_library(piper_api STATIC piper_api.cpp src/cpp/piper.cpp)
++
++find_package(PkgConfig)
++pkg_check_modules(ESPEAK_NG REQUIRED espeak-ng<2)
++
++find_library(onnxruntime_path onnxruntime REQUIRED)
++
++target_link_libraries(piper_api
++  ${onnxruntime_path}
++  pthread
++  ${ESPEAK_NG_LIBRARIES})
++
++target_link_directories(piper_api PUBLIC
++  ${ESPEAK_NG_LIBRARY_DIRS}
++  ${CMAKE_LIBRARY_PATH})
++
++target_include_directories(piper_api PUBLIC
++  ${ESPEAK_NG_INCLUDE_DIRS}
++  ${PIPER_PHONEMIZE_INCLUDE})
++
++target_compile_options(piper_api PUBLIC
++  ${ESPEAK_NG_CFLAGS_OTHER})
++
++set_target_properties(piper_api PROPERTIES PUBLIC_HEADER "piper_api.h")
++
++install(TARGETS piper_api
++    LIBRARY DESTINATION lib
++    ARCHIVE DESTINATION lib
++    PUBLIC_HEADER DESTINATION include)
+diff -ruN piper-org/piper_api.cpp piper-patched/piper_api.cpp
+--- piper-org/piper_api.cpp	1970-01-01 01:00:00.000000000 +0100
++++ piper-patched/piper_api.cpp	2023-08-19 17:04:37.381886898 +0200
+@@ -0,0 +1,61 @@
++#include "piper_api.h"
++#include "src/cpp/piper.hpp"
++
++#include <algorithm>
++#include <optional>
++#include <fstream>
++#include <stdexcept>
++
++struct piper_api::ctx {
++    piper::PiperConfig config;
++    piper::Voice voice;
++};
++
++piper_api::piper_api(std::string model_path, std::string model_config_path,
++                     std::string espeak_ng_data_path, int64_t speaker_id) {
++    m_ctx = std::make_unique<ctx>();
++
++    m_ctx->config.eSpeakDataPath = std::move(espeak_ng_data_path);
++
++    piper::initialize(m_ctx->config);
++
++    std::optional<piper::SpeakerId> speaker;
++    if (speaker_id > -1) speaker.emplace(speaker_id);
++
++    piper::loadVoice(m_ctx->config, std::move(model_path), std::move(model_config_path), m_ctx->voice, speaker);
++}
++
++piper_api::~piper_api() {
++    piper::terminate(m_ctx->config);
++}
++
++float piper_api::length_scale() const {
++    return m_ctx->voice.synthesisConfig.lengthScale;
++}
++
++std::vector<int16_t> piper_api::text_to_audio(std::string text, float length_scale) {
++    std::vector<int16_t> out_buf;
++    std::vector<int16_t> tmp_buf;
++
++    piper::SynthesisResult result;
++
++    m_ctx->voice.synthesisConfig.lengthScale = length_scale;
++
++    piper::textToAudio(m_ctx->config, m_ctx->voice, std::move(text), tmp_buf, result, [&]{
++        out_buf.insert(out_buf.cend(), tmp_buf.cbegin(), tmp_buf.cend());
++    });
++
++    return out_buf;
++}
++
++void piper_api::text_to_wav_file(std::string text, const std::string& wav_file_path, float length_scale) {
++    std::ofstream out_file{wav_file_path, std::ios::out};
++
++    if (!out_file) throw std::runtime_error("failed to open file");
++
++    piper::SynthesisResult result;
++
++    m_ctx->voice.synthesisConfig.lengthScale = length_scale;
++
++    piper::textToWavFile(m_ctx->config, m_ctx->voice, std::move(text), out_file, result);
++}
+diff -ruN piper-org/piper_api.h piper-patched/piper_api.h
+--- piper-org/piper_api.h	1970-01-01 01:00:00.000000000 +0100
++++ piper-patched/piper_api.h	2023-08-19 17:04:26.521886454 +0200
+@@ -0,0 +1,24 @@
++#ifndef PIPER_API_H
++#define PIPER_API_H
++
++#define PIPER_API_EXPORT __attribute__((visibility("default")))
++
++#include <string>
++#include <vector>
++#include <memory>
++
++class PIPER_API_EXPORT piper_api {
++public:
++    piper_api(std::string model_path, std::string model_config_path,
++              std::string espeak_ng_data_path = {}, int64_t speaker_id = -1);
++    ~piper_api();
++    float length_scale() const;
++    std::vector<int16_t> text_to_audio(std::string text, float length_scale = 1.0f);
++    void text_to_wav_file(std::string text, const std::string& wav_file_path, float length_scale = 1.0f);
++
++private:
++    struct ctx;
++    std::unique_ptr<ctx> m_ctx;
++};
++
++#endif  // DSNOTE_APP_H

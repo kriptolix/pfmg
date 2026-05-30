@@ -1,0 +1,41 @@
+{
+  "header": {
+    "id": "yaru-remix",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "Yaru-remix",
+    "buildsystem": "meson",
+    "build-options": {
+      "prefix": "/usr/share/runtime",
+      "append-path": "/usr/share/runtime/share/themes/Yaru-remix/gtk-3.0/bin",
+      "config-opts": [
+        "-Dicons=false",
+        "-Dgnome-shell=false",
+        "-Ddark=false",
+        "-Dlight=false",
+        "-Dgresource=false",
+        "-Dwallpapers=false"
+      ]
+    },
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/Muqtxdir/yaru-remix.git",
+        "commit": "9f562f629c653873ad411e58bb905032132ad5e3"
+      },
+      {
+        "type": "shell",
+        "//": "GNOME only wants 3.0: rename gtk-3.20 folder as gtk-3.0, and modify meson.build accordingly",
+        "commands": [
+          "rm -r gtk/src/default/gtk-3.0",
+          "mv gtk/src/default/gtk-3.20 gtk/src/default/gtk-3.0",
+          "sed -i -e \"s/  '3.0,'/  '3.0'/\" gtk/src/meson.build",
+          "sed -i -e \"s/  '3.20'//\" gtk/src/meson.build"
+        ]
+      }
+    ]
+  }
+}

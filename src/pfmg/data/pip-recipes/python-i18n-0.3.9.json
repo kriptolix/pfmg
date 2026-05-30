@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python-i18n",
+    "version": "0.3.9",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python-i18n",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"python-i18n\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/5a/73/9a0b2974dd9a3d50788d235f10c4d73c2efcd22926036309645fc2f0db0c/python_i18n-0.3.9-py3-none-any.whl",
+        "sha256": "bda5b8d889ebd51973e22e53746417bd32783c9bd6780fd27cadbb733915651d"
+      }
+    ]
+  }
+}

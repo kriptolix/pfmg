@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "cmdargs",
+    "version": "0.10.22",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "cmdargs",
+    "buildsystem": "simple",
+    "builddir": false,
+    "build-commands": [
+      "echo '#! /usr/bin/env runhaskell' >Setup.txt",
+      "echo '> import Distribution.Simple' >>Setup.txt",
+      "echo '> main = defaultMain' >>Setup.txt",
+      "ln -s Setup.txt Setup.lhs || true",
+      "runhaskell Setup configure --prefix=/app",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "sources": [
+      {
+        "sha256": "b8b12e7f8795cf13037bb062d453b86c788eae62558586f59e9419aabe6e9bef",
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/cmdargs-0.10.22/cmdargs-0.10.22.tar.gz"
+      },
+      {
+        "dest-filename": "cmdargs.cabal",
+        "sha256": "0d1a33c3978fbcdda4f2543e62ac3ed8ad36152e141cdeebeece7e08d6529d63",
+        "type": "file",
+        "url": "https://hackage.haskell.org/package/cmdargs-0.10.22/revision/0.cabal"
+      }
+    ]
+  }
+}

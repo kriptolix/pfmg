@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "python3-pillow-avif-plugin",
+    "version": "1.5.2",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-pillow-avif-plugin",
+    "buildsystem": "simple",
+    "build-options": {
+      "cflags": "-Wno-incompatible-pointer-types"
+    },
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"pillow-avif-plugin\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/f9/32/a3bfad0537ba6f2accc6a8a2e53e09b266418347f58898f811ca2fb70bd9/pillow_avif_plugin-1.5.2.tar.gz",
+        "sha256": "811e0dc8be1e44393d2e3865ec330a8a8a1194b94eb8cfca6fa778e3f476d649"
+      }
+    ]
+  }
+}

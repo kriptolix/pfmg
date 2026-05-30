@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-dominate",
+    "version": "2.9.1",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-dominate",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"dominate==2.9.1\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/58/19/0380af745f151a1648657bbcef0fb49ac28bf09083d94498163ffd9b32dc/dominate-2.9.1-py2.py3-none-any.whl",
+        "sha256": "cb7b6b79d33b15ae0a6e87856b984879927c7c2ebb29522df4c75b28ffd9b989"
+      }
+    ]
+  }
+}

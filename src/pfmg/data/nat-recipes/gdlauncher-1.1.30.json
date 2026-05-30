@@ -1,0 +1,53 @@
+{
+  "header": {
+    "id": "gdlauncher",
+    "version": "1.1.30",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "gdlauncher",
+    "buildsystem": "simple",
+    "build-commands": [
+      "chmod +x GDLauncher-linux-setup.AppImage",
+      "./GDLauncher-linux-setup.AppImage --appimage-extract",
+      "cp -r squashfs-root /app/bin/gdlauncher",
+      "install -D gdlauncherscaled.png /app/share/icons/hicolor/512x512/apps/${FLATPAK_ID}.png",
+      "install -D ${FLATPAK_ID}.desktop -t /app/share/applications",
+      "install -D ${FLATPAK_ID}.metainfo.xml -t /app/share/metainfo",
+      "install -D gd.sh /app/bin"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://github.com/gorilla-devs/GDLauncher/releases/download/v1.1.30/GDLauncher-linux-setup.AppImage",
+        "sha256": "e1c5d3ddec61a0c00aea05b70a9c752fb726f579b414af75da019c4722d83f03",
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://api.github.com/repos/gorilla-devs/GDLauncher/releases/latest",
+          "version-query": ".tag_name | sub(\"^[vV]\"; \"\")",
+          "url-query": ".assets[] | select(.name==\"GDLauncher-linux-setup.AppImage\") | .browser_download_url\n"
+        }
+      },
+      {
+        "type": "file",
+        "path": "io.gdevs.GDLauncher.desktop"
+      },
+      {
+        "type": "file",
+        "path": "gdlauncherscaled.png"
+      },
+      {
+        "type": "file",
+        "path": "io.gdevs.GDLauncher.metainfo.xml"
+      },
+      {
+        "type": "script",
+        "commands": [
+          "zypak-wrapper /app/bin/gdlauncher/AppRun"
+        ],
+        "dest-filename": "gd.sh"
+      }
+    ]
+  }
+}

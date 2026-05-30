@@ -1,0 +1,48 @@
+{
+  "header": {
+    "id": "python-html5lib",
+    "version": "1.0.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python-html5lib",
+    "buildsystem": "simple",
+    "build-options": {
+      "arch": {
+        "i386": {
+          "env": {
+            "MAX_CONCURRENCY": "1"
+          }
+        },
+        "arm": {
+          "env": {
+            "MAX_CONCURRENCY": "1"
+          }
+        }
+      }
+    },
+    "ensure-writable": [
+      "/lib/python*/site-packages/easy-install.pth",
+      "/lib/python*/site-packages/setuptools.pth",
+      "/app/lib/python*/site-packages/easy-install.pth",
+      "/app/lib/python*/site-packages/setuptools.pth"
+    ],
+    "build-commands": [
+      "python3 setup.py install --prefix=/app --root=/"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/html5lib/html5lib-python/archive/1.0.1.tar.gz",
+        "sha256": "fabbebd6a55d07842087f13849076eeed350aa8bb6c9ec840f6a6aba9388db06"
+      },
+      {
+        "type": "shell",
+        "commands": [
+          "sed -i 's/if not platform_/if not dirs/' setup.py"
+        ]
+      }
+    ]
+  }
+}

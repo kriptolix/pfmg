@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "hack-sound-server",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "hack-sound-server",
+    "buildsystem": "meson",
+    "config-opts": [
+      "-Dsession-bus-services-dir=/app/share/dbus-1/services"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/endlessm/hack-sound-server.git",
+        "branch": "eos5",
+        "commit": "ab6f2ef4520bd5008f3ae2527dd41e956104d26a"
+      }
+    ]
+  }
+}

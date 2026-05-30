@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "luasec",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "luasec",
+    "buildsystem": "simple",
+    "build-commands": [
+      "INC_PATH=-I$FLATPAK_DEST/include/luajit-2.1 make linux",
+      "LUAPATH=$FLATPAK_DEST/share/lua/5.1 LUACPATH=$FLATPAK_DEST/lib/lua/5.1 make install"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/brunoos/luasec.git",
+        "commit": "4c06287052d68fdbe7429b8f967cdc8ee94aa44a",
+        "tag": "v1.3.2",
+        "x-checker-data": {
+          "type": "git"
+        }
+      }
+    ]
+  }
+}

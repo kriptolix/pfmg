@@ -1,0 +1,31 @@
+{
+  "header": {
+    "id": "lz4",
+    "version": "1.10.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "lz4",
+    "subdir": "lib",
+    "no-autogen": true,
+    "make-args": [
+      "lib"
+    ],
+    "make-install-args": [
+      "PREFIX=${FLATPAK_DEST}"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/lz4/lz4/archive/v1.10.0/lz4-1.10.0.tar.gz",
+        "sha256": "537512904744b35e232912055ccf8ec66d768639ff3abe5788d90d792ec5f48b",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 1865,
+          "url-template": "https://github.com/lz4/lz4/archive/v$version/lz4-$version.tar.gz"
+        }
+      }
+    ]
+  }
+}

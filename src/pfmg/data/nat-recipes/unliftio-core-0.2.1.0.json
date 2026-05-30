@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "unliftio-core",
+    "version": "0.2.1.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "unliftio-core",
+    "buildsystem": "simple",
+    "builddir": false,
+    "build-commands": [
+      "echo '#! /usr/bin/env runhaskell' >Setup.txt",
+      "echo '> import Distribution.Simple' >>Setup.txt",
+      "echo '> main = defaultMain' >>Setup.txt",
+      "ln -s Setup.txt Setup.lhs || true",
+      "runhaskell Setup configure --prefix=/app",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "sources": [
+      {
+        "sha256": "99384cba8d56d9d61b85e38a313a93ebcdb78be6566367f0930ef580597fe3e3",
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/unliftio-core-0.2.1.0/unliftio-core-0.2.1.0.tar.gz"
+      },
+      {
+        "dest-filename": "unliftio-core.cabal",
+        "sha256": "f6a2736f858b5390d9384dca43d3ea4d96e9ca17217791791ca4951ba6e8072a",
+        "type": "file",
+        "url": "https://hackage.haskell.org/package/unliftio-core-0.2.1.0/revision/4.cabal"
+      }
+    ]
+  }
+}

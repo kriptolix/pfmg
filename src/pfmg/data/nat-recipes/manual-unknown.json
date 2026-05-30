@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "manual",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "manual",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/TeXworks/manual/releases/download/2024-02-09/TeXworks-manual-html-20240209214359-496ef4a.zip",
+        "sha256": "4eb722d214068b38972d1da176db4496d27ca1ca8dd995619d5833cae4b83e9e"
+      }
+    ],
+    "buildsystem": "simple",
+    "build-commands": [
+      "install -d /app/share/doc/texworks-help",
+      "cp -ra * /app/share/doc/texworks-help"
+    ]
+  }
+}

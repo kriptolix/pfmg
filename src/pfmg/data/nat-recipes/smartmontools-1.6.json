@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "smartmontools",
+    "version": "1.6",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "smartmontools",
+    "buildsystem": "simple",
+    "build-commands": [
+      "NOCONFIGURE=1 sh autogen.sh",
+      "./configure --with-nvme-devicescan --prefix=/ --with-systemdsystemunitdir=/share",
+      "sed -i -e 's/ -g / -s /' Makefile",
+      "make -j $FLATPAK_BUILDER_N_JOBS",
+      "find . -type f | perl -lne 'print if -B and -x' | xargs strip",
+      "make install DESTDIR=$FLATPAK_DEST"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/linuxhw/build-stuff/releases/download/1.6/smartmontools-7.5.tar.gz",
+        "sha256": "690b83ca331378da9ea0d9d61008c4b22dde391387b9bbad7f29387f2595f76e"
+      }
+    ]
+  }
+}

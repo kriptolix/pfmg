@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "libglade2",
+    "version": "2.6",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libglade2",
+    "buildsystem": "autotools",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.gnome.org/sources/libglade/2.6/libglade-2.6.4.tar.bz2",
+        "sha256": "64361e7647839d36ed8336d992fd210d3e8139882269bed47dc4674980165dec"
+      },
+      {
+        "type": "shell",
+        "commands": [
+          "cp -p /usr/share/automake-*/config.{sub,guess} ."
+        ]
+      }
+    ]
+  }
+}

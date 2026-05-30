@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "gn",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "gn",
+    "buildsystem": "simple",
+    "build-commands": [
+      "python2 build/gen.py",
+      "ninja -C out",
+      "install -D out/gn -t /app/bin"
+    ],
+    "cleanup": [
+      "*"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "disable-shallow-clone": true,
+        "url": "https://gn.googlesource.com/gn",
+        "commit": "4cd7fe1509f6e8b7a60430c6c19f2f03159d7889"
+      }
+    ]
+  }
+}

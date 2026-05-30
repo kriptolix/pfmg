@@ -1,0 +1,33 @@
+{
+  "header": {
+    "id": "haskell-resourcet",
+    "version": "1.2.6",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "haskell-resourcet",
+    "buildsystem": "simple",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/resourcet-1.2.6/resourcet-1.2.6.tar.gz",
+        "sha256": "f83b35b2106854750ef5f1c34695ea8b7bba6e0572cedf9f2993c5acfdb5fd34",
+        "x-checker-data": {
+          "type": "html",
+          "url": "https://www.stackage.org/lts-21",
+          "version-pattern": ">resourcet-([\\d.]+)<",
+          "url-template": "https://hackage.haskell.org/package/resourcet-$version/resourcet-$version.tar.gz"
+        }
+      }
+    ],
+    "build-commands": [
+      "runhaskell Setup configure --prefix=/app --extra-lib-dirs=/app/lib",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "cleanup": [
+      "*"
+    ]
+  }
+}

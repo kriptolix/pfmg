@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "plutosdr",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "plutosdr",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DCMAKE_POLICY_VERSION_MINIMUM=3.5",
+      "-DINSTALL_UDEV_RULE=OFF",
+      "-DHAVE_DNS_SD=OFF"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/analogdevicesinc/libiio.git",
+        "tag": "v0.26",
+        "commit": "a0eca0d2bf10326506fb762f0eec14255b27bef5"
+      }
+    ]
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "zlib",
+    "version": "0.7.1.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "zlib",
+    "buildsystem": "simple",
+    "builddir": false,
+    "build-commands": [
+      "echo '#! /usr/bin/env runhaskell' >Setup.txt",
+      "echo '> import Distribution.Simple' >>Setup.txt",
+      "echo '> main = defaultMain' >>Setup.txt",
+      "ln -s Setup.txt Setup.lhs || true",
+      "runhaskell Setup configure --prefix=/app",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "sources": [
+      {
+        "sha256": "6edd38b6b81df8d274952aa85affa6968ae86b2231e1d429ce8bc9083e6a55bc",
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/zlib-0.7.1.0/zlib-0.7.1.0.tar.gz"
+      },
+      {
+        "dest-filename": "zlib.cabal",
+        "sha256": "bae1c5a6092d65c5e763246f91e04fef3f43e37cb055130725c9a973c88a250f",
+        "type": "file",
+        "url": "https://hackage.haskell.org/package/zlib-0.7.1.0/revision/1.cabal"
+      }
+    ]
+  }
+}

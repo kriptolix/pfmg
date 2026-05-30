@@ -1,0 +1,33 @@
+{
+  "header": {
+    "id": "sdl3",
+    "version": "3.4.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "SDL3",
+    "builddir": true,
+    "buildsystem": "cmake-ninja",
+    "cleanup": [
+      "/include",
+      "/lib/*.la",
+      "/lib/*.a",
+      "/lib/cmake",
+      "/share/aclocal",
+      "/lib/pkgconfig"
+    ],
+    "config-opts": [
+      "-DCMAKE_VERBOSE_MAKEFILE=ON",
+      "-DCMAKE_BUILD_TYPE:STRING=Release",
+      "-DCMAKE_INSTALL_LIBDIR:PATH=lib"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/libsdl-org/SDL/releases/download/release-3.4.0/SDL3-3.4.0.tar.gz",
+        "sha256": "082cbf5f429e0d80820f68dc2b507a94d4cc1b4e70817b119bbb8ec6a69584b8"
+      }
+    ]
+  }
+}

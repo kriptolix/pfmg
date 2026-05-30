@@ -1,0 +1,26 @@
+{
+  "header": {
+    "id": "openxlsx",
+    "version": "0.3.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "openxlsx",
+    "buildsystem": "simple",
+    "build-commands": [
+      "cmake -S . -B build -DBUILD_SHARED_LIBS=OFF -DCMAKE_CXX_FLAGS=\"-include cstdint\" -G Ninja",
+      "cmake --build build --target OpenXLSX",
+      "mkdir -p /app/include/OpenXLSX",
+      "cp -r OpenXLSX/headers/. /app/include/OpenXLSX/",
+      "g++ -shared -o /app/lib/libOpenXLSX.so -Wl,--whole-archive build/output/libOpenXLSX.a -Wl,--no-whole-archive"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/troldal/OpenXLSX/archive/refs/tags/v0.3.2.tar.gz",
+        "sha256": "e379f29a8ba4c4c33a2ef0589cf2fbc956411514748b2b7b45aaeff393e52cb3"
+      }
+    ]
+  }
+}

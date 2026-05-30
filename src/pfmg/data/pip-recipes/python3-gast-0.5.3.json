@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-gast",
+    "version": "0.5.3",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-gast",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"gast\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/5f/1c/b59500a88c5c3d9d601c5ca62b9df5e0964764472faed82a182958a922c5/gast-0.5.3-py3-none-any.whl",
+        "sha256": "211aac1e58c167b25d3504998f2db694454a24bb1fb1225bce99420166f21d6a"
+      }
+    ]
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "header": {
+    "id": "kubelogin",
+    "version": "0.1.4",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "kubelogin",
+    "buildsystem": "simple",
+    "build-commands": [
+      "install -Dm755 kubelogin \"${FLATPAK_DEST}/bin/kubelogin\""
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "strip-components": 2,
+        "only-arches": [
+          "x86_64"
+        ],
+        "url": "https://github.com/Azure/kubelogin/releases/download/v0.1.4/kubelogin-linux-amd64.zip",
+        "sha256": "cda67158030669963f19abe7c47edbc941d842d18790c599e444998cbab6aae7",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 341508,
+          "url-template": "https://github.com/Azure/kubelogin/releases/download/v$version/kubelogin-linux-amd64.zip"
+        }
+      },
+      {
+        "type": "archive",
+        "strip-components": 2,
+        "only-arches": [
+          "aarch64"
+        ],
+        "url": "https://github.com/Azure/kubelogin/releases/download/v0.1.4/kubelogin-linux-arm64.zip",
+        "sha256": "e66463b0ef2ec18af23daffd61c709d9c2cf16323e8e0c193270d2f281dd5825",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 341508,
+          "url-template": "https://github.com/Azure/kubelogin/releases/download/v$version/kubelogin-linux-arm64.zip"
+        }
+      }
+    ]
+  }
+}

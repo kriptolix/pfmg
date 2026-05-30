@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "communitheme",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "Communitheme",
+    "buildsystem": "meson",
+    "build-options": {
+      "prefix": "/usr/share/runtime",
+      "append-path": "/usr/share/runtime/share/themes/Communitheme/gtk-3.0/bin"
+    },
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/ubuntu/gtk-communitheme.git",
+        "commit": "38aa28793bfaf94629d562949e89719919032a94"
+      }
+    ]
+  }
+}

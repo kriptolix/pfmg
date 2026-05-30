@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-oauthlib",
+    "version": "3.2.2",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-oauthlib",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"oauthlib==3.2.2\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/7e/80/cab10959dc1faead58dc8384a781dfbf93cb4d33d50988f7a69f1b7c9bbe/oauthlib-3.2.2-py3-none-any.whl",
+        "sha256": "8139f29aac13e25d502680e9e19963e83f16838d48a0d71c287fe40e7067fbca"
+      }
+    ]
+  }
+}

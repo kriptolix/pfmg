@@ -1,0 +1,31 @@
+{
+  "header": {
+    "id": "snowflake-client",
+    "version": "2.12.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "snowflake-client",
+    "buildsystem": "simple",
+    "build-options": {
+      "append-path": "/usr/lib/sdk/golang/bin",
+      "env": {
+        "GOBIN": "/app/bin",
+        "GOROOT": "/usr/lib/sdk/golang"
+      }
+    },
+    "build-commands": [
+      "cd client && go build -mod=vendor -o snowflake-client",
+      "install -Dm755 client/snowflake-client -t ${FLATPAK_DEST}/snowflake/pts"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/snowflake/-/archive/v2.12.1/snowflake-v2.12.1.tar.gz",
+        "sha256": "655f1daa9af141264c159ce0fe79070d7a4ca46ce43e94af2218a67f826d22d5"
+      },
+      "go.mod.yml"
+    ]
+  }
+}

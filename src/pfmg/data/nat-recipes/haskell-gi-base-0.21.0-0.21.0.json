@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "haskell-gi-base-0.21.0",
+    "version": "0.21.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "haskell-gi-base-0.21.0",
+    "only-arches": [
+      "x86_64"
+    ],
+    "buildsystem": "simple",
+    "build-commands": [
+      "ghc -threaded --make Setup",
+      "./Setup configure --prefix=/app",
+      "./Setup build",
+      "./Setup install"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "sha256": "c6849fa21c2f7c740bfccb976ff382b8785b31e906b070f5876ae95df3163fef",
+        "url": "https://hackage.haskell.org/package/haskell-gi-base-0.21.0/haskell-gi-base-0.21.0.tar.gz"
+      }
+    ]
+  }
+}

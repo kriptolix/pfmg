@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "perl-net-dbus",
+    "version": "1.2.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "perl-net-dbus",
+    "buildsystem": "simple",
+    "build-commands": [
+      "perl Makefile.PL PREFIX=/app LIB=/app/lib",
+      "make",
+      "make install"
+    ],
+    "post-install": [
+      "find ${FLATPAK_DEST}/lib/ -name \\*.so -exec chmod u+w {} \\;"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://cpan.metacpan.org/authors/id/D/DA/DANBERR/Net-DBus-1.2.0.tar.gz",
+        "sha256": "e7a1ac9ef4a1235b3fdbd5888f86c347182306467bd79abc9b0756a64b441cbc"
+      }
+    ]
+  }
+}

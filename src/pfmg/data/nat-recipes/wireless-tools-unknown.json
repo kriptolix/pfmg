@@ -1,0 +1,33 @@
+{
+  "header": {
+    "id": "wireless-tools",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "wireless-tools",
+    "buildsystem": "simple",
+    "subdir": "wireless_tools",
+    "build-commands": [
+      "make",
+      "make INSTALL_DIR=\"${FLATPAK_DEST}/bin\" INSTALL_LIB=\"${FLATPAK_DEST}/lib\" INSTALL_INC=\"${FLATPAK_DEST}/include\" INSTALL_MAN=\"${FLATPAK_DEST}/share/man\" install"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/HewlettPackard/wireless-tools/archive/refs/tags/v29.tar.gz",
+        "sha256": "69c5face9ac9d3273042436408a9a057d3416a814253dedeaaef210fcbc42d40",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 5136,
+          "stable-only": true,
+          "url-template": "https://github.com/HewlettPackard/wireless-tools/archive/refs/tags/v$version.tar.gz"
+        }
+      }
+    ],
+    "cleanup": [
+      "/bin"
+    ]
+  }
+}

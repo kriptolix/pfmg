@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "nexuiz-textures",
+    "version": "2.5.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "nexuiz-textures",
+    "buildsystem": "simple",
+    "build-commands": [
+      "bsdtar -Oxf nexuiz-textures_2.5.2-13_all.deb 'data.tar.xz' | bsdtar -xf -",
+      "install -Dm644 usr/share/games/nexuiz/data/textures.pk3 -t /app/share/nexuiz/data"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://ftp.debian.org/debian/pool/main/n/nexuiz-data/nexuiz-textures_2.5.2-13_all.deb",
+        "sha256": "ea275508dd494a5fe33cded2d41aee6a919952b9ce30b876df46bb64a9997837"
+      }
+    ]
+  }
+}

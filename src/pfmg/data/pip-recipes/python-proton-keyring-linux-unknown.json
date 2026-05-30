@@ -1,0 +1,31 @@
+{
+  "header": {
+    "id": "python-proton-keyring-linux",
+    "version": "unknown",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python-proton-keyring-linux",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \".\" --no-build-isolation"
+    ],
+    "modules": [
+      "pip-resources.python-proton-keyring-linux.yaml"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/ProtonVPN/python-proton-keyring-linux",
+        "tag": "v0.2.1",
+        "commit": "1534c2f09d73ad18a073c09dd314e11c9da895e0",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 369953,
+          "tag-template": "v$version"
+        }
+      }
+    ]
+  }
+}

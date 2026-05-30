@@ -1,0 +1,20 @@
+{
+  "header": {
+    "id": "openspin",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "openspin",
+    "buildsystem": "qmake",
+    "subdir": "qmake",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/bweir/OpenSpin.git",
+        "commit": "a251700087f44faa3f2b2ef3e6add8ce95fd107e"
+      }
+    ]
+  }
+}

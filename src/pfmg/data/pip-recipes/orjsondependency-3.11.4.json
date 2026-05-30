@@ -1,0 +1,33 @@
+{
+  "header": {
+    "id": "orjsondependency",
+    "version": "3.11.4",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "orjsonDependency",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --no-deps orjson-*.whl"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "only-arches": [
+          "x86_64"
+        ],
+        "url": "https://files.pythonhosted.org/packages/aa/fd/d0733fcb9086b8be4ebcfcda2d0312865d17d0d9884378b7cffb29d0763f/orjson-3.11.4-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "sha256": "1469d254b9884f984026bd9b0fa5bbab477a4bfe558bba6848086f6d43eb5e73"
+      },
+      {
+        "type": "file",
+        "only-arches": [
+          "aarch64"
+        ],
+        "url": "https://files.pythonhosted.org/packages/55/b9/ae8d34899ff0c012039b5a7cb96a389b2476e917733294e498586b45472d/orjson-3.11.4-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl",
+        "sha256": "38aa9e65c591febb1b0aed8da4d469eba239d434c218562df179885c94e1a3ad"
+      }
+    ]
+  }
+}

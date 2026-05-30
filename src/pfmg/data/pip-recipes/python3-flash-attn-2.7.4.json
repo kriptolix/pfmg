@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "python3-flash-attn",
+    "version": "2.7.4",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-flash-attn",
+    "only-arches": [
+      "x86_64"
+    ],
+    "buildsystem": "simple",
+    "build-options": {
+      "strip": true,
+      "env": {
+        "PYTHONPATH": "/app/extensions/nvidia/lib/python3.12/site-packages:/app/lib/python3.12/site-packages"
+      }
+    },
+    "build-commands": [
+      "pip3 install --verbose --no-deps --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} flash-attn --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://github.com/Dao-AILab/flash-attention/releases/download/v2.7.4.post1/flash_attn-2.7.4.post1+cu12torch2.5cxx11abiFALSE-cp312-cp312-linux_x86_64.whl",
+        "dest-filename": "flash_attn-2.7.4.post1-cp312-cp312-linux_x86_64.whl",
+        "sha256": "a496f383c843ed0cc6e01302556a0947f56828f1ec2b54e5297c4c7eaae39357"
+      }
+    ]
+  }
+}

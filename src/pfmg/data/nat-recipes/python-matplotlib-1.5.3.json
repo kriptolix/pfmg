@@ -1,0 +1,26 @@
+{
+  "header": {
+    "id": "python-matplotlib",
+    "version": "1.5.3",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python-matplotlib",
+    "buildsystem": "simple",
+    "build-options": {
+      "cflags": "-fpermissive",
+      "cxxflags": "-fpermissive"
+    },
+    "build-commands": [
+      "pip2 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"matplotlib==1.5.3\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/75/4e/2374eed18ac34421ccd7b4907080abd3009e112ca2c11b100c18961312e0/matplotlib-1.5.3.tar.gz",
+        "sha256": "a0a5dc39f785014f2088fed2c6d2d129f0444f71afbb9c44f7bdf1b14d86ebbc"
+      }
+    ]
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "header": {
+    "id": "princepedal",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "princepedal",
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "no-make-install": true,
+    "only-arches": [
+      "x86_64"
+    ],
+    "make-args": [
+      "Prince_VST3"
+    ],
+    "config-opts": [
+      "-DCMAKE_AR=/usr/bin/gcc-ar",
+      "-DCMAKE_NM=/usr/bin/gcc-nm",
+      "-DCMAKE_RANLIB=/usr/bin/gcc-ranlib",
+      "-DCMAKE_BUILD_TYPE=Release"
+    ],
+    "post-install": [
+      "install -d ${FLATPAK_DEST}/vst3",
+      "strip Prince_artefacts/Release/VST3/*.vst3/Contents/*-linux/*.so",
+      "cp -a Prince_artefacts/Release/VST3/*.vst3 ${FLATPAK_DEST}/vst3/"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/GuitarML/PrincePedal.git",
+        "tag": "v1.0",
+        "commit": "2b7d248b83601c29fa05f8d58134aa3c236fd87f",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^v([\\d.]+)$"
+        }
+      },
+      {
+        "//": "https://github.com/GuitarML/PrincePedal/pull/1",
+        "type": "patch",
+        "path": "patches/princepedal-lv2.patch"
+      }
+    ]
+  }
+}

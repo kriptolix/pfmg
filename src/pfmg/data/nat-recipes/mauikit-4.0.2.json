@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "mauikit",
+    "version": "4.0.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "mauikit",
+    "buildsystem": "cmake-ninja",
+    "sources": [
+      {
+        "type": "archive",
+        "sha256": "054dc0e15242ffa6bb9b8b25515cebfc9a02347b679f3907dcb80673ca93dd40",
+        "url": "https://download.kde.org/stable/maui/mauikit/4.0.2/mauikit-4.0.2.tar.xz",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 242845,
+          "stable-only": true,
+          "url-template": "https://download.kde.org/stable/maui/mauikit/$version/mauikit-$version.tar.xz"
+        }
+      }
+    ]
+  }
+}

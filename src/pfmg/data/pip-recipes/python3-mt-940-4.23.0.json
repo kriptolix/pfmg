@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-mt-940",
+    "version": "4.23.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-mt-940",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install mt_940-4.23.0-py2.py3-none-any.whl"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/f2/7b/84f5fe22d7d9644a5f315127659631eafff3c784202ab4e179bd724a8900/mt_940-4.23.0-py2.py3-none-any.whl",
+        "sha256": "1f727184a12a8f289310620d9a7fbdda2737c396fb5abb356838a7d2823359b0"
+      }
+    ]
+  }
+}

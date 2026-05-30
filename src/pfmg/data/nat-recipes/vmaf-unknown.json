@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "vmaf",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "vmaf",
+    "buildsystem": "meson",
+    "subdir": "libvmaf",
+    "cleanup": [
+      "/bin"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/Netflix/vmaf.git",
+        "commit": "17a67b238ce0539bdeafdc95961abac64fa16ea8",
+        "tag": "v3.0.0"
+      }
+    ]
+  }
+}

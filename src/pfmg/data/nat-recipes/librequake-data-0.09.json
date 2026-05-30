@@ -1,0 +1,29 @@
+{
+  "header": {
+    "id": "librequake-data",
+    "version": "0.09",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "librequake-data",
+    "buildsystem": "simple",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/lavenderdotpet/LibreQuake/releases/download/v0.09-beta/full.zip",
+        "sha256": "623e463b35811216244f9ba15e0c45abc1765288650b5e3d36a899b35e4bcf3d",
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://api.github.com/repos/lavenderdotpet/LibreQuake/releases/latest",
+          "version-query": ".tag_name | sub(\"^v\"; \"\")",
+          "url-query": ".assets[] | select(.name==\"full.zip\") | .browser_download_url"
+        }
+      }
+    ],
+    "build-commands": [
+      "mkdir -p /app/share/games/librequake/id1",
+      "mv -v ./id1 /app/share/games/librequake"
+    ]
+  }
+}

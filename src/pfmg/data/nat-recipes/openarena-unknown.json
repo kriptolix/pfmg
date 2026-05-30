@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "openarena",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "openarena",
+    "buildsystem": "simple",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/ec-/Quake3e",
+        "commit": "8cd90faf798d94618c871bfb2049d70d4315ad30"
+      }
+    ],
+    "build-commands": [
+      "make USE_CODEC_VORBIS=1 USE_VOIP=1 USE_CODEC_OPUS=1 USE_OPENAL=1 USE_MUMBLE=1 USE_FREETYPE=1 \\ COPYDIR=/app/share/openarena COPYBINDIR=/app/share/openarena DEFAULT_BASEDIR=/app/share/openarena",
+      "make install \"DESTDIR=${FLATPAK_DEST}/share/openarena\""
+    ]
+  }
+}

@@ -1,0 +1,15 @@
+diff --git a/WE-Core/WECore/SongbirdFilters/SongbirdFilterModule.h b/WE-Core/WECore/SongbirdFilters/SongbirdFilterModule.h
+index d4b788f..d40d5a2 100644
+--- a/WE-Core/WECore/SongbirdFilters/SongbirdFilterModule.h
++++ b/WE-Core/WECore/SongbirdFilters/SongbirdFilterModule.h
+@@ -375,8 +375,8 @@ namespace WECore::Songbird {
+     Vowel SongbirdFilterModule<T>::getVowelDescription(int val) const {
+         Vowel tempVowel;
+ 
+-        std::copy(&_allFormants[val - 1][0],
+-                  &_allFormants[val - 1][NUM_FORMANTS_PER_VOWEL],
++        std::copy(_allFormants[val - 1].begin(),
++                  _allFormants[val - 1].end(),
+                   std::begin(tempVowel));
+ 
+         return tempVowel;

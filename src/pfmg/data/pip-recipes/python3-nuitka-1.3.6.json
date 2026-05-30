@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-nuitka",
+    "version": "1.3.6",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-nuitka",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"nuitka\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/b8/de/1045d238957a3e41d61dd233c01483a9241e9ca3b7b5d836c068936b7ee0/Nuitka-1.3.6.tar.gz",
+        "sha256": "f0dfec6c7e0f23db91d98fd477c1dde867e38592ad1a18b70c5889e65644480f"
+      }
+    ]
+  }
+}

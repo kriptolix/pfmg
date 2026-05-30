@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-yarl",
+    "version": "1.23.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-yarl",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --prefix=/app yarl-1.23.0-py3-none-any.whl"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/69/68/c8739671f5699c7dc470580a4f821ef37c32c4cb0b047ce223a7f115757f/yarl-1.23.0-py3-none-any.whl",
+        "sha256": "a2df6afe50dea8ae15fa34c9f824a3ee958d785fd5d089063d960bae1daa0a3f"
+      }
+    ]
+  }
+}

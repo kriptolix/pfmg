@@ -1,0 +1,34 @@
+{
+  "header": {
+    "id": "sol2",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "sol2",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DSOL2_LUA_VERSION=5.3",
+      "-DSOL2_BUILD_LUA=OFF",
+      "-DSOL2_TESTS_SINGLE=OFF",
+      "-DSOL2_TESTS_EXAMPLES=OFF",
+      "-Wno-dev"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/ThePhD/sol2.git",
+        "tag": "v3.5.0",
+        "commit": "9190880c593dfb018ccf5cc9729ab87739709862"
+      },
+      {
+        "type": "patch",
+        "path": "pr-1676.patch"
+      }
+    ],
+    "cleanup": [
+      "*"
+    ]
+  }
+}

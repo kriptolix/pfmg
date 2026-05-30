@@ -1,0 +1,26 @@
+{
+  "header": {
+    "id": "gssdp",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "gssdp",
+    "buildsystem": "meson",
+    "config-opts": [
+      "-Dgtk_doc=false",
+      "-Dmanpages=false",
+      "-Dexamples=false",
+      "-Dintrospection=false",
+      "-Dvapi=false"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://gitlab.gnome.org/GNOME/gssdp.git",
+        "tag": "gssdp-1.6.3"
+      }
+    ]
+  }
+}

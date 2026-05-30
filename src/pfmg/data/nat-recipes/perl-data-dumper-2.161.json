@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "perl-data-dumper",
+    "version": "2.161",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "perl-data-dumper",
+    "buildsystem": "simple",
+    "build-commands": [
+      "perl Makefile.PL",
+      "make install DESTDIR=`pwd`/INST INSTALLSITELIB=/SITELIB",
+      "chmod 777 -R ./INST",
+      "find ./INST -type f | perl -lne 'print if -B and -x' | xargs strip",
+      "mkdir -p $FLATPAK_DEST/share/perl5/",
+      "cp -fr ./INST/usr/lib/perl5/*/* $FLATPAK_DEST/share/perl5/"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://cpan.metacpan.org/authors/id/S/SM/SMUELLER/Data-Dumper-2.161.tar.gz",
+        "sha256": "3aa4ac1b042b3880438165fb2b2139d377564a8e9928ffe689ede5304ee90558"
+      }
+    ]
+  }
+}

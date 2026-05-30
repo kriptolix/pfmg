@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2014 Ryan Lerch <rlerch@redhat.com> -->
+<!--
+EmailAddress: jlp_38@yahoo.com
+SentUpstream: 2014-09-17
+-->
+<component type="desktop">
+  <id>net.blockout.BlockOutII</id>
+  <name>BlockOut II</name>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-2.0</project_license>
+  <summary>A free adaptation of the original BlockOut game</summary>
+  <description>
+    <p>
+      BlockOut II is a game where the player moves and rotate 3D polycubes
+      that are constantly falling with the objective of clearing layers of
+      blocks.
+      It is a free adaptation of the original BlockOut game released in 1989.
+    </p>
+  </description>
+  <url type="homepage">http://www.blockout.net/blockout2/</url>
+  <screenshots>
+    <screenshot type="default"><image width="512" height="384">http://www.blockout.net/blockout2/screenshots/scr1.jpg</image></screenshot>
+    <screenshot type="default"><image width="512" height="384">http://www.blockout.net/blockout2/screenshots/scr2.jpg</image></screenshot>
+  </screenshots>
+  <launchable type="desktop-id">net.blockout.BlockOutII.desktop</launchable>
+  <provides>
+    <id>net.blockout.BlockOutII.desktop</id>
+  </provides>
+  <releases>
+    <release date="2014-05-06" version="2.5"/>
+  </releases>
+  <content_rating type="oars-1.1">
+    <content_attribute id="violence-cartoon">none</content_attribute>
+    <content_attribute id="violence-fantasy">none</content_attribute>
+    <content_attribute id="violence-realistic">none</content_attribute>
+    <content_attribute id="violence-bloodshed">none</content_attribute>
+    <content_attribute id="violence-sexual">none</content_attribute>
+    <content_attribute id="violence-desecration">none</content_attribute>
+    <content_attribute id="violence-slavery">none</content_attribute>
+    <content_attribute id="violence-worship">none</content_attribute>
+    <content_attribute id="drugs-alcohol">none</content_attribute>
+    <content_attribute id="drugs-narcotics">none</content_attribute>
+    <content_attribute id="drugs-tobacco">none</content_attribute>
+    <content_attribute id="sex-nudity">none</content_attribute>
+    <content_attribute id="sex-themes">none</content_attribute>
+    <content_attribute id="sex-homosexuality">none</content_attribute>
+    <content_attribute id="sex-prostitution">none</content_attribute>
+    <content_attribute id="sex-adultery">none</content_attribute>
+    <content_attribute id="sex-appearance">none</content_attribute>
+    <content_attribute id="language-profanity">none</content_attribute>
+    <content_attribute id="language-humor">none</content_attribute>
+    <content_attribute id="language-discrimination">none</content_attribute>
+    <content_attribute id="social-chat">none</content_attribute>
+    <content_attribute id="social-info">none</content_attribute>
+    <content_attribute id="social-audio">none</content_attribute>
+    <content_attribute id="social-location">none</content_attribute>
+    <content_attribute id="social-contacts">none</content_attribute>
+    <content_attribute id="money-purchasing">none</content_attribute>
+    <content_attribute id="money-gambling">none</content_attribute>
+  </content_rating>
+
+  <!--FIXME: You can use a project or developer name if there's no company-->
+  <developer_name>Jean-Luc Pons</developer_name>
+</component>

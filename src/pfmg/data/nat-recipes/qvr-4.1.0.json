@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "qvr",
+    "version": "4.1.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "qvr",
+    "buildsystem": "cmake-ninja",
+    "subdir": "libqvr",
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://marlam.de/qvr/releases/qvr-4.1.0.tar.gz",
+        "sha256": "e6f83f89da8dccdc7dfedf726d2ee742336668549599a74574df928b162b1d53"
+      }
+    ]
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "header": {
+    "id": "farstream",
+    "version": "0.2.9",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "farstream",
+    "rm-configure": true,
+    "sources": [
+      {
+        "type": "archive",
+        "url": "http://freedesktop.org/software/farstream/releases/farstream/farstream-0.2.9.tar.gz",
+        "sha256": "cb7d112433cf7c2e37a8ec918fb24f0ea5cb293cfa1002488e431de26482f47b",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 13757,
+          "stable-only": true,
+          "url-template": "http://freedesktop.org/software/farstream/releases/farstream/farstream-$version.tar.gz"
+        }
+      },
+      {
+        "type": "patch",
+        "path": "farstream-make-4.3.patch"
+      },
+      {
+        "type": "script",
+        "commands": [
+          "autoreconf -sfi"
+        ],
+        "dest-filename": "autogen.sh"
+      }
+    ]
+  }
+}

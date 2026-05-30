@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "xdg-basedir-0.2.2",
+    "version": "0.2.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "xdg-basedir-0.2.2",
+    "only-arches": [
+      "x86_64"
+    ],
+    "buildsystem": "simple",
+    "build-commands": [
+      "ghc -threaded --make Setup",
+      "./Setup configure --prefix=/app",
+      "./Setup build",
+      "./Setup install"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "sha256": "e461c3a5c6007c55ceaea03be3be0ef3a92aa0ea1aea936da0c43671bbfaf42b",
+        "url": "https://hackage.haskell.org/package/xdg-basedir-0.2.2/xdg-basedir-0.2.2.tar.gz"
+      }
+    ]
+  }
+}

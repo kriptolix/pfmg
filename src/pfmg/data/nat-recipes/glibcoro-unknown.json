@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "glibcoro",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "glibcoro",
+    "buildsystem": "simple",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/endlessm/glibcoro.git",
+        "commit": "b7e5e73e5813fda0d6631fef594cf50972ec811b"
+      }
+    ],
+    "build-commands": [
+      "python3 ./setup.py install --prefix=/app"
+    ]
+  }
+}

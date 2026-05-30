@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "gprbuild",
+    "version": "25.0.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "gprbuild",
+    "only-arches": [
+      "x86_64"
+    ],
+    "buildsystem": "simple",
+    "build-commands": [
+      "cp -R * /usr/lib/sdk/gnat13"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/alire-project/GNAT-FSF-builds/releases/download/gprbuild-25.0.0-1/gprbuild-x86_64-linux-25.0.0-1.tar.gz",
+        "sha256": "9a2e6cfb9c4add85c7c411e95533c46728aae7de19a9a0b056abf53bd9795b0d"
+      }
+    ]
+  }
+}

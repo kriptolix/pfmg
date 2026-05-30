@@ -1,0 +1,19 @@
+{
+  "header": {
+    "id": "gswatcher",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "gswatcher",
+    "buildsystem": "meson",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/lxndr/gswatcher",
+        "commit": "8a5ee8f99d9f6cb8eaf02c83d5a4151fda4c4d2d"
+      }
+    ]
+  }
+}

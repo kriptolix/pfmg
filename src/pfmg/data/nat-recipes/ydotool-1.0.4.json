@@ -1,0 +1,53 @@
+{
+  "header": {
+    "id": "ydotool",
+    "version": "1.0.4",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "ydotool",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "archive-type": "tar-gzip",
+        "url": "https://api.github.com/repos/ReimuNotMoe/ydotool/tarball/v1.0.4",
+        "sha256": "6c6ff6d8ca997a514f86efef803ef71b2dd139eea5eba8490e8613424fee49bd",
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://api.github.com/repos/ReimuNotMoe/ydotool/releases/latest",
+          "version-query": ".tag_name",
+          "url-query": ".tarball_url"
+        }
+      }
+    ],
+    "cleanup": [
+      "/lib/systemd",
+      "/share/man"
+    ],
+    "modules": [
+      {
+        "name": "scdoc",
+        "buildsystem": "simple",
+        "build-commands": [
+          "make PREFIX=${FLATPAK_DEST}",
+          "make PREFIX=${FLATPAK_DEST} install"
+        ],
+        "sources": [
+          {
+            "type": "archive",
+            "url": "https://git.sr.ht/~sircmpwn/scdoc/archive/1.11.3.tar.gz",
+            "sha256": "4c5c6136540384e5455b250f768e7ca11b03fdba1a8efc2341ee0f1111e57612"
+          }
+        ],
+        "cleanup": [
+          "*"
+        ]
+      }
+    ]
+  }
+}

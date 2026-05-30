@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "streaming-commons-0.2.0.0",
+    "version": "0.2.0.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "streaming-commons-0.2.0.0",
+    "only-arches": [
+      "x86_64"
+    ],
+    "buildsystem": "simple",
+    "build-commands": [
+      "ghc -threaded --make Setup",
+      "./Setup configure --prefix=/app",
+      "./Setup build",
+      "./Setup install"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "sha256": "f4e2b8460325c133c83d04048e334fb502ba3627f41ffc85c05f81f1f38ace5f",
+        "url": "https://hackage.haskell.org/package/streaming-commons-0.2.0.0/streaming-commons-0.2.0.0.tar.gz"
+      }
+    ]
+  }
+}

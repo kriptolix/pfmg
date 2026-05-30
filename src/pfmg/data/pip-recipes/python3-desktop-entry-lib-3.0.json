@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "python3-desktop-entry-lib",
+    "version": "3.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-desktop-entry-lib",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"desktop-entry-lib\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/ee/71/ed5a369ecb2681ea6c1656057504bea634853cef21388afb13e829ad017c/desktop_entry_lib-3.0-py3-none-any.whl",
+        "sha256": "ad78a3fd5d07f148584c8040984893ed9d5486331aa85b76ce713bf4771c3f36",
+        "x-checker-data": {
+          "name": "desktop_entry_lib",
+          "packagetype": "bdist_wheel",
+          "type": "pypi"
+        }
+      }
+    ]
+  }
+}

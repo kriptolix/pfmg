@@ -1,0 +1,33 @@
+{
+  "header": {
+    "id": "python3-rcssmin",
+    "version": "1.2.1",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-rcssmin",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"rcssmin==1.2.1\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/89/10/1d78ee36ecf2fa1b0241c1aca13d29ae5487ae4243cc553b6212d5301a34/rcssmin-1.2.1-cp312-cp312-manylinux1_x86_64.whl",
+        "sha256": "1209c690e5c1ab781816078d3d7e4dfc8dc024a65c60327441b8d4296d8d750c",
+        "only-arches": [
+          "x86_64"
+        ]
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/fb/2e/1b3286eadee31b5ae4307ba69528e4a81d03034c0e06bcd98fc3e32ea2d3/rcssmin-1.2.1-cp312-cp312-manylinux2014_aarch64.whl",
+        "sha256": "9d89acb97605cef0c6f36b2bf2fe942abbfce8a809171258bff6d2f5064fcff0",
+        "only-arches": [
+          "aarch64"
+        ]
+      }
+    ]
+  }
+}

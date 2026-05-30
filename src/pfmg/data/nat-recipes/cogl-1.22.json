@@ -1,0 +1,31 @@
+{
+  "header": {
+    "id": "cogl",
+    "version": "1.22",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "cogl",
+    "build-options": {
+      "cflags": "-std=gnu18"
+    },
+    "config-opts": [
+      "--disable-cogl-gst",
+      "--disable-gtk-doc",
+      "--enable-xlib-egl-platform",
+      "--enable-wayland-egl-platform"
+    ],
+    "cleanup": [
+      "/share/gtk-doc",
+      "/share/cogl/examples-data"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.gnome.org/sources/cogl/1.22/cogl-1.22.8.tar.xz",
+        "sha256": "a805b2b019184710ff53d0496f9f0ce6dcca420c141a0f4f6fcc02131581d759"
+      }
+    ]
+  }
+}

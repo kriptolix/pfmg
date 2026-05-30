@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "contemporary",
+    "version": "2.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "contemporary",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/theCheeseboard/contemporary-theme/archive/v2.0.tar.gz",
+        "sha256": "4be56bfe3279503cccc6bba782225e0924c884899e316ef52c1e1e057b0639ec"
+      }
+    ]
+  }
+}

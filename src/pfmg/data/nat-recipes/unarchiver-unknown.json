@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "unarchiver",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "unarchiver",
+    "buildsystem": "simple",
+    "build-commands": [
+      "sed -s -i 's#/usr/include/GNUstep#/app/include#g' */Makefile.linux && cd XADMaster && make -j $FLATPAK_BUILDER_N_JOBS -f Makefile.linux",
+      "install -m755 XADMaster/unar /app/bin/"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://cdn.theunarchiver.com/downloads/TheUnarchiverSource.zip",
+        "sha256": "ac4cedf9b49375c0f805bda010fa03629d05ab283a0a8e35bf2dd01ae477e0a1",
+        "strip-components": 0
+      }
+    ]
+  }
+}

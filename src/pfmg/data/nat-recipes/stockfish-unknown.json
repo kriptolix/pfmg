@@ -1,0 +1,45 @@
+{
+  "header": {
+    "id": "stockfish",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "Stockfish",
+    "buildsystem": "simple",
+    "build-options": {
+      "arch": {
+        "x86_64": {
+          "env": {
+            "ARCH": "x86-64"
+          }
+        },
+        "aarch64": {
+          "env": {
+            "ARCH": "armv8"
+          }
+        }
+      }
+    },
+    "build-commands": [
+      "cp nn-5af11540bbfe.nnue ./src",
+      "cd src; make -j build ARCH=$ARCH",
+      "mkdir -p /app/bin/Engines/stockfish",
+      "cp ./src/stockfish /app/bin/Engines/stockfish/",
+      "cp ./nn-5af11540bbfe.nnue /app/bin/Engines/stockfish"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/official-stockfish/Stockfish/archive/refs/tags/sf_16.zip",
+        "sha256": "c3252184be37b7249b8c439ff1a78585c460aec533b8e5fb234b113f5bb48274"
+      },
+      {
+        "type": "file",
+        "url": "https://tests.stockfishchess.org/api/nn/nn-5af11540bbfe.nnue",
+        "sha256": "5af11540bbfefcb54e38c5dd000cab4b469dfa7599a1d55be5d2722c20a8929b"
+      }
+    ]
+  }
+}

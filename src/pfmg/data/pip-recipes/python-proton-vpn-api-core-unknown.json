@@ -1,0 +1,36 @@
+{
+  "header": {
+    "id": "python-proton-vpn-api-core",
+    "version": "unknown",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python-proton-vpn-api-core",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \".\" --no-build-isolation"
+    ],
+    "modules": [
+      "pip-resources.python-proton-vpn-api-core.yaml"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/ProtonVPN/python-proton-vpn-api-core",
+        "tag": "v5.1.2",
+        "commit": "c167ab87cae2d0184d2a0378b810776d91182533",
+        "disable-submodules": true,
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 369944,
+          "tag-template": "v$version"
+        }
+      },
+      {
+        "type": "patch",
+        "path": "patches/python-proton-vpn-api-core/fix-ip-path.patch"
+      }
+    ]
+  }
+}

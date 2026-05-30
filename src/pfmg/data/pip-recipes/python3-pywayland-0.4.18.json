@@ -1,0 +1,26 @@
+{
+  "header": {
+    "id": "python3-pywayland",
+    "version": "0.4.18",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-pywayland",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"pywayland\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/20/93/bc9b258dcb46aafc587438355a9170c3be05a6abb5cd55bf1d600d848fa0/pywayland-0.4.18.tar.gz",
+        "sha256": "598ade02783aad05a328f663b51b694c5ab68bd5d1e0926c0da3c5212c566533",
+        "x-checker-data": {
+          "name": "pywayland",
+          "type": "pypi"
+        }
+      }
+    ]
+  }
+}

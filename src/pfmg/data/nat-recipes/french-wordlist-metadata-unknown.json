@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "french-wordlist-metadata",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "French_Wordlist_Metadata",
+    "buildsystem": "simple",
+    "build-commands": [
+      "install -Dm644 word_lists/French/words.list /app/share/extra/French/words.list",
+      "install -Dm644 net.krafting.SemantiK.Lang.French.metainfo.xml -t ${FLATPAK_DEST}/share/metainfo"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "path": "net.krafting.SemantiK.Lang.French.metainfo.xml"
+      },
+      {
+        "type": "git",
+        "url": "https://gitlab.com/Krafting/semantik-gtk",
+        "tag": "1.7.3",
+        "commit": "c918d4a9712633baca5f7dfbc01c932325fe43df",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^([\\d.]+)$"
+        }
+      }
+    ]
+  }
+}

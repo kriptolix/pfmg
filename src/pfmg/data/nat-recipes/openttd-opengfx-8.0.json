@@ -1,0 +1,29 @@
+{
+  "header": {
+    "id": "openttd-opengfx",
+    "version": "8.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "openttd-opengfx",
+    "buildsystem": "simple",
+    "build-commands": [
+      "tar -x -f opengfx-*.tar && rm opengfx-*.tar",
+      "mv opengfx-* $FLATPAK_DEST/share/games/openttd/baseset/opengfx"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://cdn.openttd.org/opengfx-releases/8.0/opengfx-8.0-all.zip",
+        "sha256": "43a0c1dabf39cb865394f3a6cc36d4da5c10ecfaaf55652043104806810903be",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 9200,
+          "stable-only": true,
+          "url-template": "https://cdn.openttd.org/opengfx-releases/$version/opengfx-$version-all.zip"
+        }
+      }
+    ]
+  }
+}

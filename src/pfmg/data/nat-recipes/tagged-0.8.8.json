@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "tagged",
+    "version": "0.8.8",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "tagged",
+    "buildsystem": "simple",
+    "builddir": false,
+    "build-commands": [
+      "echo '#! /usr/bin/env runhaskell' >Setup.txt",
+      "echo '> import Distribution.Simple' >>Setup.txt",
+      "echo '> main = defaultMain' >>Setup.txt",
+      "ln -s Setup.txt Setup.lhs || true",
+      "runhaskell Setup configure --prefix=/app",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "sources": [
+      {
+        "sha256": "a083fa7835516203c168433a1c8dfc0290a94b05fedab566ad0640fc9137a6a7",
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/tagged-0.8.8/tagged-0.8.8.tar.gz"
+      },
+      {
+        "dest-filename": "tagged.cabal",
+        "sha256": "9193defbde3dda997236ccc11a1db3e073cc531fe523e13e9659df776feb0b32",
+        "type": "file",
+        "url": "https://hackage.haskell.org/package/tagged-0.8.8/revision/1.cabal"
+      }
+    ]
+  }
+}

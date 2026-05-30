@@ -1,0 +1,30 @@
+{
+  "header": {
+    "id": "libkdcraw",
+    "version": "25.12.3",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libkdcraw",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DBUILD_TESTING=OFF",
+      "-DQT_MAJOR_VERSION=6"
+    ],
+    "builddir": true,
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.kde.org/stable/release-service/25.12.3/src/libkdcraw-25.12.3.tar.xz",
+        "sha256": "23b220f14bbaa21858b6f8e18169499389835b6693e73a877f8e0d788f4499af",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 8763,
+          "stable-only": true,
+          "url-template": "https://download.kde.org/stable/release-service/$version/src/libkdcraw-$version.tar.xz"
+        }
+      }
+    ]
+  }
+}

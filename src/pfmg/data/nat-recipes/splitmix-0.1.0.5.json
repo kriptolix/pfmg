@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "splitmix",
+    "version": "0.1.0.5",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "splitmix",
+    "buildsystem": "simple",
+    "builddir": false,
+    "build-commands": [
+      "echo '#! /usr/bin/env runhaskell' >Setup.txt",
+      "echo '> import Distribution.Simple' >>Setup.txt",
+      "echo '> main = defaultMain' >>Setup.txt",
+      "ln -s Setup.txt Setup.lhs || true",
+      "runhaskell Setup configure --prefix=/app",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "sources": [
+      {
+        "sha256": "9df07a9611ef45f1b1258a0b412f4d02c920248f69d2e2ce8ccda328f7e13002",
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/splitmix-0.1.0.5/splitmix-0.1.0.5.tar.gz"
+      },
+      {
+        "dest-filename": "splitmix.cabal",
+        "sha256": "caa9b4a92abf1496c7f6a3c0f4e357426a54880077cb9f04e260a8bfa034b77b",
+        "type": "file",
+        "url": "https://hackage.haskell.org/package/splitmix-0.1.0.5/revision/1.cabal"
+      }
+    ]
+  }
+}

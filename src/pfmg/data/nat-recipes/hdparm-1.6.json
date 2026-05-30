@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "hdparm",
+    "version": "1.6",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "hdparm",
+    "buildsystem": "simple",
+    "build-commands": [
+      "make -j $FLATPAK_BUILDER_N_JOBS",
+      "make install DESTDIR=`pwd`/INST",
+      "install -D INST/sbin/hdparm $FLATPAK_DEST/sbin/hdparm"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/linuxhw/build-stuff/releases/download/1.6/hdparm-9.65.tar.gz",
+        "sha256": "d14929f910d060932e717e9382425d47c2e7144235a53713d55a94f7de535a4b"
+      }
+    ]
+  }
+}

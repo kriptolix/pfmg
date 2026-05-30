@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "pylzma",
+    "version": "unknown",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "pylzma",
+    "buildsystem": "simple",
+    "build-options": {
+      "cflags": "-Wno-int-conversion"
+    },
+    "build-commands": [
+      "python3 -m pip install --no-index --prefix=/app --no-build-isolation ."
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/fancycode/pylzma/archive/c453db0b37640c573be05b9fcab0ceda93602476.tar.gz",
+        "sha256": "94e2a50d888d4ae0c9edcd020193b4407044e27d8dd2e7c716c5f39994b4b9d9"
+      }
+    ]
+  }
+}

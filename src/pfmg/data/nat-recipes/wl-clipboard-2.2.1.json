@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "wl-clipboard",
+    "version": "2.2.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "wl-clipboard",
+    "buildsystem": "simple",
+    "build-commands": [
+      "meson setup build; cd ./build ; ninja ;DESTDIR=/app meson install",
+      "ln -s /app/usr/local/bin/wl-copy /app/bin"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/bugaevc/wl-clipboard/archive/refs/tags/v2.2.1.tar.gz",
+        "sha256": "6eb8081207fb5581d1d82c4bcd9587205a31a3d47bea3ebeb7f41aa1143783eb"
+      }
+    ]
+  }
+}

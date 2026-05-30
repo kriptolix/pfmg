@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "pytest-timeout",
+    "version": "2.3.1",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "pytest-timeout",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=/app \"pytest-timeout==2.3.1\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/03/27/14af9ef8321f5edc7527e47def2a21d8118c6f329a9342cc61387a0c0599/pytest_timeout-2.3.1-py3-none-any.whl",
+        "sha256": "68188cb703edfc6a18fad98dc25a3c61e9f24d644b0b70f33af545219fc7813e"
+      }
+    ]
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "header": {
+    "id": "amc-data",
+    "version": "5.2.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "amc-data",
+    "buildsystem": "simple",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://gitlab.com/fpiesche/amc-squad-data/-/archive/v5.2.2/amc-squad-data-v5.2.2.tar.bz2",
+        "sha256": "e4b865209def054bb662ee98f6f7d162b3e0fdff51cebdc5fc6193f3d60b71ea",
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://gitlab.com/api/v4/projects/fpiesche%2Famc-squad-data/releases",
+          "tag-query": ".[0].tag_name",
+          "version-query": "$tag | sub(\"^[vV]\"; \"\")",
+          "is-main-source": true,
+          "url-query": ".[0].assets.sources[] | select(.format==\"tar.bz2\").url"
+        }
+      }
+    ],
+    "build-commands": [
+      "desktop-file-edit --set-key=\"Exec\" --set-value=\"${FLATPAK_ID}.sh\" meta/${FLATPAK_ID}.desktop",
+      "desktop-file-edit --set-key=\"Exec\" --set-value=\"io.itch.amcsquad.mapster32.sh\" meta/io.itch.amcsquad.mapster32.desktop",
+      "desktop-file-edit --set-key=\"Icon\" --set-value=\"${FLATPAK_ID}.mapster32\" meta/io.itch.amcsquad.mapster32.desktop",
+      "install -Dm 644 meta/${FLATPAK_ID}.desktop -t /app/share/applications",
+      "install -Dm 644 meta/io.itch.amcsquad.mapster32.desktop -T /app/share/applications/${FLATPAK_ID}.mapster32.desktop",
+      "install -Dm 644 meta/${FLATPAK_ID}.png -t /app/share/icons/hicolor/256x256/apps",
+      "install -Dm 644 meta/io.itch.amcsquad.mapster32.png -T /app/share/icons/hicolor/256x256/apps/${FLATPAK_ID}.mapster32.png",
+      "install -Dm 644 meta/${FLATPAK_ID}.metainfo.xml -t /app/share/metainfo",
+      "rm -rf meta",
+      "rm -rf Media",
+      "mkdir -p /app/bin",
+      "cp -rv ./* /app/bin/"
+    ]
+  }
+}

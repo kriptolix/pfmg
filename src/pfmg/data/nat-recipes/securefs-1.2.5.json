@@ -1,0 +1,38 @@
+{
+  "header": {
+    "id": "securefs",
+    "version": "1.2.5",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "securefs",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=release",
+      "-DSECUREFS_USE_VCPKG=FALSE",
+      "-DSECUREFS_ENABLE_UNIT_TEST=FALSE",
+      "-DTCLAP_INCLUDE_DIRS=tclap/include"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/mirror/tclap/archive/refs/tags/v1.2.5.tar.gz",
+        "sha256": "7e87d13734076fa4f626f6144ce9a02717198b3f054341a6886e2107b048b235",
+        "dest": "tclap"
+      },
+      {
+        "type": "archive",
+        "url": "https://github.com/netheril96/securefs/archive/refs/tags/v2.0.0.tar.gz",
+        "sha256": "d7fac7adc70c09473173aeadee5b7041d7e63fbf392ef40bdd77888590bb12a2"
+      },
+      {
+        "type": "patch",
+        "paths": [
+          "patches/securefs.patch",
+          "patches/securefs-version.patch"
+        ]
+      }
+    ]
+  }
+}

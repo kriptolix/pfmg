@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "iproute2-ss",
+    "version": "5.18.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "iproute2-ss",
+    "no-make-install": true,
+    "build-commands": [
+      "install -Dm755 misc/ss -t ${FLATPAK_DEST}/bin/"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://www.kernel.org/pub/linux/utils/net/iproute2/iproute2-5.18.0.tar.xz",
+        "sha256": "5ba3d464d51c8c283550d507ffac3d10f7aec587b7c66b0ccb6950643646389e",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 1392,
+          "stable-only": true,
+          "url-template": "https://www.kernel.org/pub/linux/utils/net/iproute2/iproute2-$version.tar.xz"
+        }
+      },
+      {
+        "type": "shell",
+        "commands": [
+          "sed -i 's/^SUBDIRS.*=.*/SUBDIRS=lib misc/' Makefile",
+          "sed -i 's/^TARGETS.*=.*/TARGETS=ss/' misc/Makefile"
+        ]
+      }
+    ]
+  }
+}

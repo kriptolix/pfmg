@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "js-beautify",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "js-beautify",
+    "buildsystem": "simple",
+    "build-options": {
+      "append-path": "/usr/lib/sdk/node18/bin",
+      "env": {
+        "npm_config_nodedir": "/usr/lib/sdk/node18"
+      }
+    },
+    "build-commands": [
+      "npm ci --offline --cache=$FLATPAK_BUILDER_BUILDDIR/flatpak-node/npm-cache",
+      "make js",
+      "install -Dm00755 /usr/lib/sdk/node18/bin/node $FLATPAK_DEST/bin/node",
+      "install -Dm00755 js-beautify $FLATPAK_DEST/bin/js-beautify"
+    ],
+    "sources": [
+      "js-beautify-sources.json",
+      {
+        "type": "git",
+        "url": "https://github.com/coolavery/js-beautify.git",
+        "commit": "bc4dd9e787ff8ee9f4709d76633d71e44c4ac4e2"
+      }
+    ]
+  }
+}

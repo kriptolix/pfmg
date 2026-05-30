@@ -1,0 +1,33 @@
+{
+  "header": {
+    "id": "fish",
+    "version": "4.0.8",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "fish",
+    "buildsystem": "cmake-ninja",
+    "build-options": {
+      "append-path": "/usr/lib/sdk/rust-stable/bin",
+      "env": {
+        "CARGO_HOME": "/run/build/fish/cargo"
+      },
+      "ldflags": "-ltinfo"
+    },
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/fish-shell/fish-shell/releases/download/4.0.8/fish-4.0.8.tar.xz",
+        "sha256": "7f779d13aa55d2fa3afc17364c61ab9edc16faa1eac5851badeffb4e73692240",
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://api.github.com/repos/fish-shell/fish-shell/releases/latest",
+          "version-query": ".tag_name",
+          "url-query": ".assets[] | select(.name==\"fish-\\($version).tar.xz\") | .browser_download_url"
+        }
+      },
+      "cargo-sources.json"
+    ]
+  }
+}

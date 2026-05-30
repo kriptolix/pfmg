@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "libgedit-gfls",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libgedit-gfls",
+    "buildsystem": "meson",
+    "config-opts": [
+      "-Dgtk_doc=false",
+      "-Dtests=false"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://gitlab.gnome.org/World/gedit/libgedit-gfls.git",
+        "tag": "0.4.0",
+        "commit": "b292896adfb1c371aa8db0819f4754ff3bf4a848",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^0\\.4\\.\\d+$"
+        }
+      }
+    ]
+  }
+}

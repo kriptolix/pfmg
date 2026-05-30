@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "botfather",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "botfather",
+    "buildsystem": "cmake",
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release"
+    ],
+    "no-make-install": true,
+    "builddir": true,
+    "build-commands": [
+      "cp -R bin/Release/* /app/bin"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/botfatherio/botfather.git",
+        "tag": "v6.10.1"
+      }
+    ]
+  }
+}

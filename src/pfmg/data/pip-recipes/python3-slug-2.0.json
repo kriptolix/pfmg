@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-slug",
+    "version": "2.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-slug",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"slug==2.0\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/b1/91/eaae778531f529a2a75943362043c06f3bbdf069363de09243b2a4974e20/slug-2.0-py3-none-any.whl",
+        "sha256": "f55b24a0563428ce56243079f6aeb79c0dd1cc5bbf8b39b10bd6e5263ba8be5f"
+      }
+    ]
+  }
+}

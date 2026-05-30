@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-zodbpickle",
+    "version": "4.2",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-zodbpickle",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"zodbpickle==4.2\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/7f/5b/1d4e85c0b26335e8bb007285bc9123857b5af1476cf694ca6dff1ff8ffea/zodbpickle-4.2.tar.gz",
+        "sha256": "5a85144fba6c34fc67bd00c7f089d6d532dc43a03447dfc5e23846c919230a45"
+      }
+    ]
+  }
+}

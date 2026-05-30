@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "ttf-ipa-mona",
+    "version": "1.1.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "ttf-ipa-mona",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://web.archive.org/web/20111108024313if_/http://www.geocities.jp/ipa_mona/opfc-ModuleHP-1.1.1_withIPAMonaFonts-1.0.8.tar.gz",
+        "dest-filename": "ttf-ipa-mona.tar",
+        "sha256": "cb7b6975faf5caa070ffa1699a241d1c093f3b74c54696e5af23b5bc3b118a44"
+      }
+    ],
+    "buildsystem": "simple",
+    "subdir": "fonts",
+    "build-commands": [
+      "install -Dm644 ipag-mona.ttf -t \"$FLATPAK_DEST/share/fonts/TTF/\"",
+      "install -Dm644 COPYING.font.ja -t \"$FLATPAK_DEST/share/licenses/ttf-ipa-mona/\""
+    ]
+  }
+}

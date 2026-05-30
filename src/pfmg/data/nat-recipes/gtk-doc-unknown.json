@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "gtk-doc",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "gtk-doc",
+    "buildsystem": "autotools",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://gitlab.gnome.org/GNOME/gtk-doc.git",
+        "tag": "1.34.0",
+        "commit": "b7c8317bf023b5116250b4c5381737d5b9786976"
+      }
+    ],
+    "cleanup": [
+      "/bin/gtkdoc*",
+      "/share/aclocal",
+      "/share/cmake",
+      "/share/gtk-doc",
+      "/share/licenses",
+      "/share/pkgconfig"
+    ]
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "mmorph",
+    "version": "1.2.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "mmorph",
+    "buildsystem": "simple",
+    "builddir": false,
+    "build-commands": [
+      "echo '#! /usr/bin/env runhaskell' >Setup.txt",
+      "echo '> import Distribution.Simple' >>Setup.txt",
+      "echo '> main = defaultMain' >>Setup.txt",
+      "ln -s Setup.txt Setup.lhs || true",
+      "runhaskell Setup configure --prefix=/app",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "sources": [
+      {
+        "sha256": "61338058eb676b466a462ca45d59f436a77a3bd6b816e4268c6d88522b6a4280",
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/mmorph-1.2.0/mmorph-1.2.0.tar.gz"
+      },
+      {
+        "dest-filename": "mmorph.cabal",
+        "sha256": "df9b213ec18f811cb3137b478d148f3f1680ee43f841cb775835fa282fdb0295",
+        "type": "file",
+        "url": "https://hackage.haskell.org/package/mmorph-1.2.0/revision/3.cabal"
+      }
+    ]
+  }
+}

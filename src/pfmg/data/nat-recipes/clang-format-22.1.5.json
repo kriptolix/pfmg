@@ -1,0 +1,39 @@
+{
+  "header": {
+    "id": "clang-format",
+    "version": "22.1.5",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "clang-format",
+    "buildsystem": "cmake-ninja",
+    "subdir": "llvm",
+    "builddir": true,
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=MinSizeRel",
+      "-DBUILD_SHARED_LIBS=OFF",
+      "-DLLVM_ENABLE_PROJECTS=clang"
+    ],
+    "make-args": [
+      "clang-format"
+    ],
+    "no-make-install": true,
+    "build-commands": [
+      "install -Dt /app/bin bin/clang-format"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/llvm/llvm-project/releases/download/llvmorg-22.1.5/llvm-project-22.1.5.src.tar.xz",
+        "sha256": "7972b87b705a003ce70ab55f9f0fb495d156887cba0eb296d284731139118e2c",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 1830,
+          "stable-only": true,
+          "url-template": "https://github.com/llvm/llvm-project/releases/download/llvmorg-$version/llvm-project-$version.src.tar.xz"
+        }
+      }
+    ]
+  }
+}

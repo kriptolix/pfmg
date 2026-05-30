@@ -1,0 +1,31 @@
+{
+  "header": {
+    "id": "epsonscan2-non-free",
+    "version": "6.7.82.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "epsonscan2-non-free",
+    "buildsystem": "simple",
+    "build-commands": [
+      "ar xf plugins/epsonscan2-non-free-plugin_*.deb",
+      "tar Jxf data.tar.xz",
+      "chmod -R u+w usr",
+      "install -d ${FLATPAK_DEST}",
+      "cp -r usr/* ${FLATPAK_DEST}",
+      "python ./epson_patch.py"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download-center.epson.com/f/module/19dc56b2-fbdc-4569-a8c1-ccc7224e4573/epsonscan2-bundle-6.7.82.0.x86_64.deb.tar.gz",
+        "sha256": "34e728ab49e245b2a7cff8a0d1cae91c306ce8225e42ddb50eabdb22d4b06b9c"
+      },
+      {
+        "type": "file",
+        "path": "epson_patch.py"
+      }
+    ]
+  }
+}

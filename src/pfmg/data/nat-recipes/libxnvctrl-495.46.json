@@ -1,0 +1,30 @@
+{
+  "header": {
+    "id": "libxnvctrl",
+    "version": "495.46",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libXNVCtrl",
+    "buildsystem": "simple",
+    "build-commands": [
+      "make OUTPUTDIR=out PREFIX=/app -C src/libXNVCtrl",
+      "install -Dm 644 src/libXNVCtrl/*.h -t \"/app/include/NVCtrl\"",
+      "install -d \"/app/lib\"",
+      "cp -Pr src/libXNVCtrl/out/libXNVCtrl.* -t \"/app/lib\""
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/NVIDIA/nvidia-settings/archive/refs/tags/495.46.tar.gz",
+        "sha256": "a368070d496ee24303a10ded2fc9395e10c92694db46fdd6e094dddbd37b10c3"
+      },
+      {
+        "type": "patch",
+        "path": "libxnvctrl_so.patch",
+        "strip-components": 0
+      }
+    ]
+  }
+}

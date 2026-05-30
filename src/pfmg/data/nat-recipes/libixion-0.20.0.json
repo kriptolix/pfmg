@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "libixion",
+    "version": "0.20.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libixion",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://gitlab.com/api/v4/projects/ixion%2Fixion/packages/generic/source/0.20.0/libixion-0.20.0.tar.xz",
+        "sha256": "8466a05f19f60b7568641a449704666308848f7bcaf8335f92ee9474a451e4cd",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 6208,
+          "stable-only": true,
+          "url-template": "https://gitlab.com/api/v4/projects/ixion%2Fixion/packages/generic/source/$version/libixion-$version.tar.xz"
+        }
+      }
+    ]
+  }
+}

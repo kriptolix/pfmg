@@ -1,0 +1,45 @@
+{
+  "header": {
+    "id": "tumbler",
+    "version": "4.21",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "tumbler",
+    "cleanup": [
+      "/lib/systemd",
+      "/share/icons"
+    ],
+    "post-install": [
+      "sed -i '/^SystemdService=/d' /app/share/dbus-1/services/org.xfce.ristretto.*.service"
+    ],
+    "buildsystem": "meson",
+    "config-opts": [
+      "--buildtype=minsize",
+      "--auto-features=enabled",
+      "-Dcover-thumbnailer=disabled",
+      "-Dfont-thumbnailer=disabled",
+      "-Dffmpeg-thumbnailer=disabled",
+      "-Dgst-thumbnailer=disabled",
+      "-Dodf-thumbnailer=disabled",
+      "-Dpoppler-thumbnailer=disabled",
+      "-Dgepub-thumbnailer=disabled",
+      "-Dservice-name-prefix=org.xfce.ristretto",
+      "-Draw-thumbnailer=disabled"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://archive.xfce.org/src/xfce/tumbler/4.21/tumbler-4.21.1.tar.xz",
+        "sha256": "0f499f79a2a7ee49726a433584dd8a680d514101b72bd1b003360611ce1dc244",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 5014,
+          "stable-only": false,
+          "url-template": "https://archive.xfce.org/src/xfce/tumbler/$major.$minor/tumbler-$version.tar.xz"
+        }
+      }
+    ]
+  }
+}

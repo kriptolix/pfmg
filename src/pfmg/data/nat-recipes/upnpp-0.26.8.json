@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "upnpp",
+    "version": "0.26.8",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "upnpp",
+    "buildsystem": "meson",
+    "config-opts": [
+      "--buildtype=release",
+      "-Ddefault_library=static"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://www.lesbonscomptes.com/upmpdcli/downloads/libupnpp-0.26.8.tar.gz",
+        "sha256": "fc7e253b63b21f5638c73f5940c67111ffc93e018e8c7acc4f51333d78616eed"
+      }
+    ]
+  }
+}

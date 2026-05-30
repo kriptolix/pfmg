@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "xvfb-libxfont2",
+    "version": "2.0.7",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "xvfb-libXfont2",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://xorg.freedesktop.org/archive/individual/lib/libXfont2-2.0.7.tar.gz",
+        "sha256": "90b331c2fd2d0420767c4652e007d054c97a3f03a88c55e3b986bd3acfd7e338",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 17165,
+          "stable-only": true,
+          "url-template": "https://xorg.freedesktop.org/archive/individual/lib/libXfont2-$version.tar.gz"
+        }
+      }
+    ]
+  }
+}

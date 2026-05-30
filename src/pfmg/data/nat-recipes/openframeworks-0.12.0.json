@@ -1,0 +1,84 @@
+{
+  "header": {
+    "id": "openframeworks",
+    "version": "0.12.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "openframeworks",
+    "buildsystem": "simple",
+    "build-commands": [
+      "mkdir -p ${FLATPAK_DEST}/lib/oF",
+      "mv * ${FLATPAK_DEST}/lib/oF",
+      "sh ${FLATPAK_DEST}/lib/oF/scripts/linux/compileOF.sh -j$FLATPAK_BUILDER_N_JOBS"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/openframeworks/openFrameworks/releases/download/0.12.0/of_v0.12.0_linux64gcc6_release.tar.gz",
+        "sha256": "942cd299c903e0aeea5f05e429ab813702e0ba4f99a5a3d0e7c21e61be9b3b2b"
+      },
+      {
+        "type": "patch",
+        "path": "patches/oF-ofAppGLFWWindow.cpp.patch"
+      },
+      {
+        "type": "patch",
+        "path": "patches/oF-config.linux64.default.mk.patch"
+      },
+      {
+        "type": "git",
+        "url": "https://github.com/danomatika/ofxMidi.git",
+        "commit": "f9d85fd888ba23cf49207b362e2bcc8cfad352ed",
+        "dest": "addons/ofxMidi"
+      },
+      {
+        "type": "git",
+        "url": "https://github.com/macramole/ofxJSON.git",
+        "commit": "8486eee1c752422a1ffd630656c814b2bb53305f",
+        "dest": "addons/ofxJSON"
+      },
+      {
+        "type": "git",
+        "url": "https://github.com/genekogan/ofxConvexHull.git",
+        "commit": "58a1a403e873189c9fb88d9b44988b11bc580821",
+        "dest": "addons/ofxConvexHull"
+      },
+      {
+        "type": "git",
+        "url": "https://github.com/macramole/ofxImGui.git",
+        "commit": "4d2dc03ae1b4c8138caaee4711c3a9c2c71bb7d3",
+        "dest": "addons/ofxImGui"
+      },
+      {
+        "type": "git",
+        "url": "https://github.com/macramole/ofxAudioFile.git",
+        "commit": "a5ed48298f7fa972f32c35e57e5e6d422f4581c5",
+        "dest": "addons/ofxAudioFile"
+      },
+      {
+        "type": "git",
+        "url": "https://github.com/macramole/ofxPDSP.git",
+        "dest": "addons/ofxPDSP",
+        "commit": "a001999a55fe1aa0a755fd8c608334882576f5af"
+      },
+      {
+        "type": "git",
+        "url": "https://github.com/macramole/ofxAnn.git",
+        "dest": "addons/ofxAnn",
+        "commit": "3957fdc4a5f56b5da378e1d92e4704212b98f5f2"
+      },
+      {
+        "type": "git",
+        "url": "https://github.com/2bbb/ofxAbletonLink.git",
+        "dest": "addons/ofxAbletonLink",
+        "commit": "4dd95c68337509d34785d0a65eaa7822213b41d6",
+        "disable-submodules": false
+      }
+    ],
+    "cleanup": [
+      "*"
+    ]
+  }
+}

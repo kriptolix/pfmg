@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-schedule",
+    "version": "1.2.2",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-schedule",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"schedule==1.2.2\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/20/a7/84c96b61fd13205f2cafbe263cdb2745965974bdf3e0078f121dfeca5f02/schedule-1.2.2-py3-none-any.whl",
+        "sha256": "5bef4a2a0183abf44046ae0d164cadcac21b1db011bdd8102e4a0c1e91e06a7d"
+      }
+    ]
+  }
+}

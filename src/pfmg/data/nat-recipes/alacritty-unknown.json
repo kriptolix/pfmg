@@ -1,0 +1,26 @@
+{
+  "header": {
+    "id": "alacritty",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "alacritty",
+    "buildsystem": "simple",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/alacritty/alacritty.git",
+        "tag": "v0.16.1",
+        "commit": "42f49eebfd2ee1b164e773950d47e019f456e6b7"
+      },
+      "alacritty_sources.json"
+    ],
+    "build-commands": [
+      "CARGO_HOME=/run/build/alacritty/cargo cargo --offline fetch --manifest-path Cargo.toml --verbose",
+      "CARGO_HOME=/run/build/alacritty/cargo cargo --offline build --release --verbose",
+      "install -Dm755 ./target/release/alacritty -t /app/bin/"
+    ]
+  }
+}

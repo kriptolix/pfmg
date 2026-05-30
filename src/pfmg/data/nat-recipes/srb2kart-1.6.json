@@ -1,0 +1,71 @@
+{
+  "header": {
+    "id": "srb2kart",
+    "version": "1.6",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "srb2kart",
+    "buildsystem": "simple",
+    "build-options": {
+      "env": {
+        "LDFLAGS": "-L/app/lib -L/app/lib64",
+        "CPPFLAGS": "-I/app/include",
+        "CFLAGS": "-O3 -std=gnu17 -I/app/include",
+        "CXXFLAGS": "-O3 -std=gnu++17 -I/app/include",
+        "PKG_CONFIG_PATH": "/app/lib/pkgconfig:/app/share/pkgconfig"
+      },
+      "arch": {
+        "arm": {
+          "env": {
+            "ARCH_MAKE_ARGS": "LINUX=1 NONX86=1"
+          }
+        },
+        "aarch64": {
+          "env": {
+            "ARCH_MAKE_ARGS": "LINUX64=1"
+          }
+        },
+        "x86_64": {
+          "env": {
+            "ARCH_MAKE_ARGS": "LINUX64=1 X86_64=1"
+          }
+        }
+      }
+    },
+    "build-commands": [
+      "make -C src -j $FLATPAK_BUILDER_N_JOBS  NOUPX=1 SDL=1 HAVE_DISCORDRPC=1  HAVE_GME=1 GME_CFLAGS=\"-I/app/include\" GME_LDFLAGS=\"-L/app/lib -lgme\" HAVE_LIBXMP=1 LIBXMP_CFLAGS=\"-I/app/include\" LIBXMP_LDFLAGS=\"-L/app/lib -lxmp\" HAVE_FLUIDSYNTH=1 FLUID_CFLAGS=\"-I/app/include\" FLUID_LDFLAGS=\"-L/app/lib -lfluidsynth\" $ARCH_MAKE_ARGS\n",
+      "install -D -m 755 bin/Linux*/Release/lsdl2srb2kart $FLATPAK_DEST/bin/srb2kart",
+      "install -D -m 644 srb2.png $FLATPAK_DEST/share/icons/hicolor/256x256/apps/$FLATPAK_ID.png",
+      "install -D -m 755 srb2kart.sh $FLATPAK_DEST/bin/srb2kart.sh",
+      "install -D -m 644 -t $FLATPAK_DEST/share/applications $FLATPAK_ID.desktop",
+      "install -D -m 644 -t $FLATPAK_DEST/share/metainfo $FLATPAK_ID.metainfo.xml"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/STJr/Kart-Public/archive/refs/tags/v1.6.tar.gz",
+        "sha256": "924489e33ebb7e41bae3b84a65be2aae2ca01e2050938bff1e702b39848958d6",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 18640,
+          "stable-only": true,
+          "url-template": "https://github.com/STJr/Kart-Public/archive/refs/tags/v$version.tar.gz"
+        }
+      },
+      {
+        "type": "file",
+        "path": "srb2kart.sh"
+      },
+      {
+        "type": "file",
+        "path": "org.srb2.SRB2Kart.desktop"
+      },
+      {
+        "type": "file",
+        "path": "org.srb2.SRB2Kart.metainfo.xml"
+      }
+    ]
+  }
+}

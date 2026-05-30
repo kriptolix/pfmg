@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "libjson-c",
+    "version": "0.18",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libjson-c",
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DBUILD_STATIC_LIBS=OFF",
+      "-DENABLE_THREADING=ON",
+      "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://s3.amazonaws.com/json-c_releases/releases/json-c-0.18.tar.gz",
+        "sha256": "876ab046479166b869afc6896d288183bbc0e5843f141200c677b3e8dfb11724",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 1477,
+          "stable-only": true,
+          "url-template": "https://s3.amazonaws.com/json-c_releases/releases/json-c-$version.tar.gz"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "header": {
+    "id": "wxwidgets",
+    "version": "3.1.5",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "wxWidgets",
+    "rm-configure": true,
+    "config-opts": [
+      "--with-gtk=3",
+      "--disable-sdltest"
+    ],
+    "build-options": {
+      "cxxflags": "-std=c++11"
+    },
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/wxWidgets/wxWidgets/releases/download/v3.1.5/wxWidgets-3.1.5.tar.bz2",
+        "sha256": "d7b3666de33aa5c10ea41bb9405c40326e1aeb74ee725bb88f90f1d50270a224"
+      },
+      {
+        "type": "script",
+        "dest-filename": "autogen.sh",
+        "commands": [
+          "cp -p /usr/share/automake-*/config.{sub,guess} .",
+          "autoconf -f -B build/autoconf_prepend-include"
+        ]
+      }
+    ]
+  }
+}

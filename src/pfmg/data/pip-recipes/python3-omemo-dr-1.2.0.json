@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-omemo-dr",
+    "version": "1.2.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-omemo-dr",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --no-build-isolation ."
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://files.pythonhosted.org/packages/4f/6c/2e024e615cca6f5e03261cf8fa9f584a5ecd59d3fb7ac7e7bf52f2d9cee1/omemo_dr-1.2.0.tar.gz",
+        "sha256": "18b6542b3bb7ed6dce34dd02f32b16401982ba24f0146ddae091dcb92c79a484"
+      }
+    ]
+  }
+}

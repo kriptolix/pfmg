@@ -1,0 +1,26 @@
+{
+  "header": {
+    "id": "pyqt-sip",
+    "version": "12.18.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "pyqt-sip",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --no-build-isolation --verbose --prefix=${FLATPAK_DEST} ."
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://files.pythonhosted.org/packages/f3/31/5ef342de9faee0f3801088946ae103db9b9eaeba3d6a64fefd5ce74df244/pyqt5_sip-12.18.0.tar.gz",
+        "sha256": "71c37db75a0664325de149f43e2a712ec5fa1f90429a21dafbca005cb6767f94",
+        "x-checker-data": {
+          "type": "pypi",
+          "name": "pyqt5-sip"
+        }
+      }
+    ]
+  }
+}

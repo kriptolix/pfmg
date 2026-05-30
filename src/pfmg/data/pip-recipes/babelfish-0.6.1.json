@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "babelfish",
+    "version": "0.6.1",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "babelfish",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --prefix=/app babelfish-*.whl"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/95/a1/bd4f759db13cd8beb9c9f68682aced5d966781b9d7380cf514a306f56762/babelfish-0.6.1-py3-none-any.whl",
+        "sha256": "512f1501d4c8f7d38f0921f48660be7542de1a7b24abb6a6a65324a670150293",
+        "x-checker-data": {
+          "type": "pypi",
+          "name": "babelfish",
+          "packagetype": "bdist_wheel"
+        }
+      }
+    ]
+  }
+}

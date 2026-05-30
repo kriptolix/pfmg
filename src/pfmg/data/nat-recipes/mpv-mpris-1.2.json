@@ -1,0 +1,29 @@
+{
+  "header": {
+    "id": "mpv-mpris",
+    "version": "1.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "mpv-mpris",
+    "no-autogen": true,
+    "make-install-args": [
+      "SCRIPTS_DIR=/app/etc/mpv/scripts"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "archive-type": "tar",
+        "url": "https://api.github.com/repos/hoyon/mpv-mpris/tarball/1.2",
+        "sha256": "0d6ee6e310c8ed7d786fff98b64343a02a4bf76bec6786c72258360c94c4967c",
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://api.github.com/repos/hoyon/mpv-mpris/releases/latest",
+          "version-query": ".name",
+          "url-query": ".tarball_url"
+        }
+      }
+    ]
+  }
+}

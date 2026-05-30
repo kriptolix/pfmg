@@ -1,0 +1,29 @@
+{
+  "header": {
+    "id": "jsmath-fonts",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "jsmath-fonts",
+    "buildsystem": "simple",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/google/fonts.git",
+        "commit": "860390daf2d86d24984d56671c22fc8f04682d43"
+      },
+      {
+        "type": "shell",
+        "commands": [
+          "echo \"Public domain\" > \"LICENSE\";",
+          "echo \"Generated from MetaFont bitmap by mftrace 1.0.33, http://www.cs.uu.nl/~hanwen/mftrace/\" >> \"LICENSE\";"
+        ]
+      }
+    ],
+    "build-commands": [
+      "regexp=\"^jsMath.*$\";\nfind . -xtype f \\( -iname '*.otf' -o -iname '*.ttc' -o -iname '*.ttf' -o -iname '*.ttx' \\) -print0 | sort -zufV | while IFS= read -r -d '' file; do\n  f=\"$( basename \"${file}\" )\";\n  [[ \"${f%.*}\" =~ ${regexp} ]] || continue;\n  [[ ! -f \"${FLATPAK_DEST}/share/fonts/${f}\" && ! -f \"/usr/share/fonts/${f}\" ]] || continue;\n  install -p -D -m 0644 \"${file}\" -t \"${FLATPAK_DEST}/share/fonts/\";\ndone;\n"
+    ]
+  }
+}

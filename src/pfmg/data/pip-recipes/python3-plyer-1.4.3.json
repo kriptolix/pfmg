@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-plyer",
+    "version": "1.4.3",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-plyer",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"plyer<2,>=1.4.3\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/89/3f/9153265abcaa93418abee8b49284941330426d5afb2f72d75d067462af84/plyer-1.4.3-py2.py3-none-any.whl",
+        "sha256": "6192a5c15f2cc8fe42de5a7ab898ed2d2cd47315a88dd7e0f6fd90ec972b87a9"
+      }
+    ]
+  }
+}

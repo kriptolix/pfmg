@@ -1,0 +1,60 @@
+{
+  "header": {
+    "id": "etlegacy",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "etlegacy",
+    "buildsystem": "simple",
+    "build-commands": [
+      "tar -xf ./etl.tar.gz",
+      "install -Dm744 ./etlegacy-*-i386/etl.i386 -t /app/bin/",
+      "mv /app/bin/etl.i386 /app/bin/etl",
+      "install -Dm744 ./etlegacy-*-i386/etlded.i386 -t /app/bin/",
+      "mv /app/bin/etlded.i386 /app/bin/etlded",
+      "install -Dm744 ./etlegacy-*-i386/librenderer_opengl1_i386.so -t /app/bin/",
+      "cp -r ./etlegacy-*-i386/etmain /app/bin/",
+      "cp -r ./etlegacy-*-i386/legacy /app/bin/",
+      "mkdir -p  /app/share/",
+      "cp -r ./etlegacy-*-i386/applications /app/share/applications",
+      "cp -r ./etlegacy-*-i386/doc /app/share/doc",
+      "cp -r ./etlegacy-*-i386/icons /app/share/icons",
+      "cp -r ./etlegacy-*-i386/licenses /app/share/licenses",
+      "cp -r ./etlegacy-*-i386/man /app/share/man",
+      "cp -r ./etlegacy-*-i386/metainfo /app/share/metainfo",
+      "cp -r ./etlegacy-*-i386/mime /app/share/mime",
+      "mv /app/share/mime/packages/etlegacy.xml /app/share/mime/packages/com.etlegacy.ETLegacy.xml",
+      "mkdir -p  /app/extra/legacy/",
+      "ln -s /app/extra/legacy/ /app/bin/legacy",
+      "ln -s /app/extra/pak0.pk3 /app/bin/etmain/pak0.pk3",
+      "ln -s /app/extra/pak1.pk3 /app/bin/etmain/pak1.pk3",
+      "ln -s /app/extra/pak2.pk3 /app/bin/etmain/pak2.pk3",
+      "mv /app/share/applications/com.etlegacy.ETLegacy.i386.desktop /app/share/applications/com.etlegacy.ETLegacy.desktop",
+      "desktop-file-edit --set-key='Exec' --set-value='/app/bin/etl.sh +connect %u' /app/share/applications/com.etlegacy.ETLegacy.desktop",
+      "desktop-file-edit --set-key='Name' --set-value='ET: Legacy' /app/share/applications/com.etlegacy.ETLegacy.desktop",
+      "echo -e '\n[Desktop Action zink]\nName=Vulkan (Mesa 3D Zink)\nExec=env MESA_LOADER_DRIVER_OVERRIDE=zink /app/bin/etl.sh +connect %u' >> /app/share/applications/com.etlegacy.ETLegacy.desktop",
+      "desktop-file-edit --set-key='Actions' --set-value='zink' /app/share/applications/com.etlegacy.ETLegacy.desktop"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://www.etlegacy.com/download/file/702",
+        "sha256": "9da86ed0beb58b06175f45cf872fa00a7f5134daf7ac7e4390557972964ea14f",
+        "dest-filename": "etl.tar.gz"
+      },
+      {
+        "type": "git",
+        "url": "https://github.com/etlegacy/etlegacy",
+        "disable-submodules": true,
+        "commit": "d14218a47b5f7fbde9ce753184e02ed170f8849d",
+        "tag": "v2.83.2",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^v([\\d.]+)$"
+        }
+      }
+    ]
+  }
+}

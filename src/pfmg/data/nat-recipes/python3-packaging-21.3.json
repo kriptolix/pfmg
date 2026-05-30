@@ -1,0 +1,26 @@
+{
+  "header": {
+    "id": "python3-packaging",
+    "version": "21.3",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-packaging",
+    "buildsystem": "simple",
+    "build-commands": [
+      "python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://files.pythonhosted.org/packages/df/9e/d1a7217f69310c1db8fdf8ab396229f55a699ce34a203691794c5d1cad0c/packaging-21.3.tar.gz",
+        "sha256": "dd47c42927d89ab911e606518907cc2d3a1f38bbd026385970643f9c5b8ecfeb",
+        "x-checker-data": {
+          "type": "pypi",
+          "name": "packaging"
+        }
+      }
+    ]
+  }
+}

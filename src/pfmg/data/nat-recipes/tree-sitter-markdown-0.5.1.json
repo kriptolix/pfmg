@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "tree-sitter-markdown",
+    "version": "0.5.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "tree-sitter-markdown",
+    "buildsystem": "simple",
+    "build-commands": [
+      "mkdir -p /app/lib/nvim/parser",
+      "cc -shared -fPIC tree-sitter-markdown/src/parser.c tree-sitter-markdown/src/scanner.c -I tree-sitter-markdown/src -o /app/lib/nvim/parser/markdown.so",
+      "cc -shared -fPIC tree-sitter-markdown-inline/src/parser.c tree-sitter-markdown-inline/src/scanner.c -I tree-sitter-markdown-inline/src -o /app/lib/nvim/parser/markdown_inline.so"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/tree-sitter-grammars/tree-sitter-markdown/archive/v0.5.1.tar.gz",
+        "sha256": "acaffe5a54b4890f1a082ad6b309b600b792e93fc6ee2903d022257d5b15e216"
+      }
+    ]
+  }
+}

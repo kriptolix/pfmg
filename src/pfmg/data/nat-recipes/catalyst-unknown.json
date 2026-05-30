@@ -1,0 +1,26 @@
+{
+  "header": {
+    "id": "catalyst",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "Catalyst",
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "config-opts": [
+      "-DCMAKE_CXX_STANDARD:STRING=14",
+      "-DCATALYST_BUILD_TESTING:BOOL=OFF",
+      "-DCATALYST_USE_MPI:BOOL=ON",
+      "-DCATALYST_WRAP_PYTHON:BOOL=ON"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://gitlab.kitware.com/paraview/catalyst",
+        "commit": "777fe7fb5e7e86bacb96908ab33f49eeb2d01cf9"
+      }
+    ]
+  }
+}

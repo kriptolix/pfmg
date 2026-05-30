@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "pvr.mediaportal.tvserver",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "pvr.mediaportal.tvserver",
+    "buildsystem": "cmake-ninja",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/kodi-pvr/pvr.mediaportal.tvserver",
+        "commit": "b1e39354c8d042092566b1055400ada0c59ba05c"
+      }
+    ],
+    "build-options": {
+      "no-debuginfo": true,
+      "cflags": "-g0",
+      "cxxflags": "-g0"
+    },
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release"
+    ]
+  }
+}

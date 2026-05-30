@@ -1,0 +1,29 @@
+{
+  "header": {
+    "id": "python-pypillowfight",
+    "version": "unknown",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python-pypillowfight",
+    "ensure-writable": [
+      "/lib/python*/site-packages/easy-install.pth",
+      "/lib/python*/site-packages/setuptools.pth"
+    ],
+    "buildsystem": "simple",
+    "build-commands": [
+      "make version",
+      "pip3 install --disable-pip-version-check --prefix=/app --no-deps --no-build-isolation ."
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://gitlab.gnome.org/World/OpenPaperwork/libpillowfight.git",
+        "tag": "0.3.1",
+        "commit": "254018aad15710af6e9bdc5eb61aaa7dbac6f747",
+        "disable-shallow-clone": true
+      }
+    ]
+  }
+}

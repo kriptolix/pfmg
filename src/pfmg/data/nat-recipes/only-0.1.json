@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "only",
+    "version": "0.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "Only",
+    "buildsystem": "simple",
+    "builddir": false,
+    "build-commands": [
+      "echo '#! /usr/bin/env runhaskell' >Setup.txt",
+      "echo '> import Distribution.Simple' >>Setup.txt",
+      "echo '> main = defaultMain' >>Setup.txt",
+      "ln -s Setup.txt Setup.lhs || true",
+      "runhaskell Setup configure --prefix=/app",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "sources": [
+      {
+        "sha256": "ab7aa193e8c257d3bda6b0b3c1cbcf74cdaa85ab08cb20c2dd62ba248c1ab265",
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/Only-0.1/Only-0.1.tar.gz"
+      },
+      {
+        "dest-filename": "Only.cabal",
+        "sha256": "c6033d181e0f802e9e8543f683fa9c50aeb01cfdf6c83cd5bb72fb47aa863b07",
+        "type": "file",
+        "url": "https://hackage.haskell.org/package/Only-0.1/revision/2.cabal"
+      }
+    ]
+  }
+}

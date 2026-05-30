@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "pvr.vbox",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "pvr.vbox",
+    "buildsystem": "cmake-ninja",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/kodi-pvr/pvr.vbox",
+        "commit": "3ec6644a9a344fc64d17c2ed56a1b3867d0f89bc"
+      }
+    ],
+    "build-options": {
+      "no-debuginfo": true,
+      "cflags": "-g0",
+      "cxxflags": "-g0"
+    },
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release"
+    ]
+  }
+}

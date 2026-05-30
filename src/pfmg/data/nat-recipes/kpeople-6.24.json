@@ -1,0 +1,30 @@
+{
+  "header": {
+    "id": "kpeople",
+    "version": "6.24",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "kpeople",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DBUILD_TESTING=OFF",
+      "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+    ],
+    "builddir": true,
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.kde.org/stable/frameworks/6.24/kpeople-6.24.0.tar.xz",
+        "sha256": "d3e267753eb64c3bbba8e4af4a4503695ee62d015b30c2dad1a1f1343890fea4",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 8762,
+          "stable-only": true,
+          "url-template": "https://download.kde.org/stable/frameworks/$major.$minor/kpeople-$version.tar.xz"
+        }
+      }
+    ]
+  }
+}

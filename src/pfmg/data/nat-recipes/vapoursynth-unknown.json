@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "vapoursynth",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "vapoursynth",
+    "config-opts": [
+      "--disable-static",
+      "--with-python_prefix=/app"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/vapoursynth/vapoursynth.git",
+        "tag": "R71",
+        "commit": "40608b5552b035a8599e0a5fe57272287f9cf640",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^R([\\d.]+)$"
+        }
+      }
+    ]
+  }
+}

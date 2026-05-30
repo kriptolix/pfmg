@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "game-state-service",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "game-state-service",
+    "buildsystem": "meson",
+    "config-opts": [
+      "-Dsession-bus-services-dir=/app/share/dbus-1/services"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/endlessm/hack-game-state-service.git",
+        "branch": "eos5",
+        "commit": "f3a292de46fca85a02a300f3cbd4a7fbfc4d06f6"
+      }
+    ]
+  }
+}

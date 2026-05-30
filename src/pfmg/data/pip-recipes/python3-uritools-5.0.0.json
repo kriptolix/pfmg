@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-uritools",
+    "version": "5.0.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-uritools",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"uritools==5.0.0\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/8c/74/0987d204b5fbf83861affa6b36a20da22cb3fe708583b955c99ab834bd5a/uritools-5.0.0-py3-none-any.whl",
+        "sha256": "cead3a49ba8fbca3f91857343849d506d8639718f4a2e51b62e87393b493bd6f"
+      }
+    ]
+  }
+}

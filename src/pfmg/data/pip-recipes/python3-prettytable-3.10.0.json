@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "python3-prettytable",
+    "version": "3.10.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-prettytable",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"prettytable==3.10.0\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/3d/c4/a32f4bf44faf95accbbd5d7864ddef9e289749a8efbc3adaad4a4671779a/prettytable-3.10.0-py3-none-any.whl",
+        "sha256": "6536efaf0757fdaa7d22e78b3aac3b69ea1b7200538c2c6995d649365bddab92"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/fd/84/fd2ba7aafacbad3c4201d395674fc6348826569da3c0937e75505ead3528/wcwidth-0.2.13-py2.py3-none-any.whl",
+        "sha256": "3da69048e4540d84af32131829ff948f1e022c1c6bdb8d6102117aac784f6859"
+      }
+    ]
+  }
+}

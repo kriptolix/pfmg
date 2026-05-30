@@ -1,0 +1,20 @@
+{
+  "header": {
+    "id": "cava",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "cava",
+    "buildsystem": "autotools",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/karlstav/cava.git",
+        "tag": "0.10.4",
+        "commit": "1800ced16ea38ce630cd6de938295c8f85ccf722"
+      }
+    ]
+  }
+}

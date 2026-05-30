@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-pyroute2",
+    "version": "0.8.1",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-pyroute2",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"pyroute2==0.8.1\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/76/cb/0b7a8009a577eba01ea54556c921f3cbf67a52931da17b4dd97472d0e694/pyroute2-0.8.1-py3-none-any.whl",
+        "sha256": "f339be8acffc46cd87bca19217b559ea5838810b4b08836301a52cb2cb4c054b"
+      }
+    ]
+  }
+}

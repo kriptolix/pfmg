@@ -1,0 +1,30 @@
+{
+  "header": {
+    "id": "openvpn3",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "openvpn3",
+    "buildsystem": "meson",
+    "config-opts": [
+      "-Dunit_tests=disabled",
+      "-Dtest_programs=disabled",
+      "-Ddbus_policy_dir=/tmp",
+      "-Ddbus_system_service_dir=/tmp",
+      "-Dwerror=false"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://codeberg.org/OpenVPN/openvpn3-linux.git",
+        "tag": "v24.1"
+      },
+      {
+        "type": "patch",
+        "path": "0001-openvpn3-linux-v24.1.patch"
+      }
+    ]
+  }
+}

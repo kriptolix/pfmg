@@ -1,0 +1,37 @@
+{
+  "header": {
+    "id": "directxshader-compiler-build",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "directxshader-compiler-build",
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "no-make-install": true,
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DDXC_COVERAGE=Off",
+      "-C ../cmake/caches/PredefinedParams.cmake"
+    ],
+    "build-options": {
+      "cxxflags": "-fvisibility-inlines-hidden -fvisibility=hidden"
+    },
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/microsoft/DirectXShaderCompiler",
+        "tag": "v1.8.2405"
+      }
+    ],
+    "post-install": [
+      "install -Dm 755 bin/dxc /app/bin/dxc",
+      "install -Dm 755 lib/libdxcompiler.so /app/lib/libdxcompiler.so",
+      "install -D ../include/dxc/dxcapi.h /app/include/dxc/dxcapi.h",
+      "install -D ../include/dxc/dxcerrors.h /app/include/dxc/dxcerrors.h",
+      "install -D ../include/dxc/dxcisense.h /app/include/dxc/dxcisense.h",
+      "install -D ../include/dxc/WinAdapter.h /app/include/dxc/WinAdapter.h"
+    ]
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "header": {
+    "id": "billard-gl",
+    "version": "1.75",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "billard-gl",
+    "no-autogen": true,
+    "no-make-install": true,
+    "build-commands": [
+      "install -Dm755 billard-gl -t ${FLATPAK_DEST}/bin/",
+      "install -Dm644 lang/*.lang -t ${FLATPAK_DEST}/share/BillardGL/lang/",
+      "for d in 1 2 4 8; do install -Dm644 Texturen/$d/* -t ${FLATPAK_DEST}/share/BillardGL/Texturen/$d/; done",
+      "install -Dm644 ${FLATPAK_ID}.appdata.xml -t ${FLATPAK_DEST}/share/appdata/",
+      "install -Dm644 ${FLATPAK_ID}.desktop -t ${FLATPAK_DEST}/share/applications/",
+      "for s in 64 128; do install -Dm644 ${FLATPAK_ID}.${s}.png ${FLATPAK_DEST}/share/icons/hicolor/${s}x${s}/apps/${FLATPAK_ID}.png; done"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://sourceforge.net/projects/billardgl/files/billardgl/BillardGL%201.75/BillardGL-1.75.tar.gz",
+        "sha256": "9b865b1254aa30125480ec7ea2ce00d91524db066a524b78492545782856df96",
+        "strip-components": 2
+      },
+      {
+        "type": "patch",
+        "paths": [
+          "patches/01_flatten_data_path.patch",
+          "patches/02_divide-by-zero_on_alpha.patch",
+          "patches/03_config_buffer_overflows.patch",
+          "patches/04_starting_resolution.patch",
+          "patches/05_Makefile.patch",
+          "patches/06_segfault_no_home.patch",
+          "patches/99_cosmetic_fixes.patch"
+        ],
+        "strip-components": 2
+      },
+      {
+        "type": "file",
+        "path": "de.billardgl.Billardgl.64.png"
+      },
+      {
+        "type": "file",
+        "path": "de.billardgl.Billardgl.128.png"
+      },
+      {
+        "type": "file",
+        "path": "de.billardgl.Billardgl.appdata.xml"
+      },
+      {
+        "type": "file",
+        "path": "de.billardgl.Billardgl.desktop"
+      }
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "cscope",
+    "version": "15.9",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "cscope",
+    "build-options": {
+      "cflags": "-ltinfo",
+      "cxxflags": "-ltinfo"
+    },
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://sourceforge.net/projects/cscope/files/cscope/v15.9/cscope-15.9.tar.gz",
+        "sha256": "c5505ae075a871a9cd8d9801859b0ff1c09782075df281c72c23e72115d9f159"
+      }
+    ]
+  }
+}

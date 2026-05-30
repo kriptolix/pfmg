@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "mapbox-gl-qml",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "mapbox-gl-qml",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DQT_INSTALL_QML=/app/lib/qml"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/rinigus/mapbox-gl-qml.git",
+        "commit": "0ad5328c47cb717e42bbad49e6261808de8750a0"
+      }
+    ]
+  }
+}

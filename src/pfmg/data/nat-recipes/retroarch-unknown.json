@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "retroarch",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "retroarch",
+    "config-opts": [
+      "--enable-dbus"
+    ],
+    "make-args": [
+      "GLOBAL_CONFIG_DIR=/app/etc",
+      "HAVE_TRANSLATE=1",
+      "HAVE_ACCESSIBILITY=1",
+      "HAVE_UPDATE_ASSETS=0",
+      "HAVE_UPDATE_CORE_INFO=0"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/libretro/RetroArch.git",
+        "commit": "69a4f0ea1e8aaf442ae4858f2e7f2b31a1776576"
+      },
+      {
+        "type": "file",
+        "path": "retroarch.cfg"
+      }
+    ],
+    "post-install": [
+      "install -D -t /app/etc/ retroarch.cfg"
+    ]
+  }
+}

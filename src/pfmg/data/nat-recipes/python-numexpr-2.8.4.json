@@ -1,0 +1,26 @@
+{
+  "header": {
+    "id": "python-numexpr",
+    "version": "2.8.4",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python-numexpr",
+    "buildsystem": "simple",
+    "build-commands": [
+      "python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://files.pythonhosted.org/packages/45/d0/0d5216512b59f139053f2d6c941598752ac8ad50eb3737e4accca08b3b50/numexpr-2.8.4.tar.gz",
+        "sha256": "d5432537418d18691b9115d615d6daa17ee8275baef3edf1afbbf8bc69806147",
+        "x-checker-data": {
+          "type": "pypi",
+          "name": "numexpr"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>com.jetbrains.RubyMine</id>
+  <metadata_license>CC-BY-SA</metadata_license>
+  <project_license>LicenseRef-proprietary</project_license>
+  <name>RubyMine</name>
+  <summary>Enjoy first-class support for Ruby 2.x and Rails 6.x, Sinatra, React, Angular, Puppet, Docker, and more</summary>
+  <description>
+    <p>
+        RubyMine is an integrated development environment that helps you be more productive in every aspect of Ruby/Rails projects development – from writing and debugging code to testing and deploying a completed application. This section will give you a brief overview of some of the most essential features available in RubyMine.
+    </p>
+    <p>NOTE: This wrapper is not verified by, affiliated with, or supported by JetBrains s.r.o.</p>
+  </description>
+  <url type="bugtracker">https://youtrack.jetbrains.com/</url>
+  <url type="help">https://www.jetbrains.com/help/ruby/</url>
+  <url type="homepage">http://www.jetbrains.com/ruby/</url>
+  <launchable type="desktop-id">com.jetbrains.RubyMine.desktop</launchable>
+  <developer_name>JetBrains s.r.o.</developer_name>
+  <screenshots>
+    <screenshot type="default">
+      <image type="source">https://www.jetbrains.com/ruby/img/screenshots/tools_integration@2x.png</image>
+    </screenshot>
+  </screenshots>
+  <update_contact>sakcheen+flathub_AT_gmail.com</update_contact>
+  <content_rating type="oars-1.1"/>
+  <releases>  
+    <release version="2024.3.5" date="2025-03-14">
+         <description></description>  
+    </release>  
+    <release version="2024.3.4" date="2025-02-28">
+         <description/>  
+    </release>  
+    <release version="2024.3.3" date="2025-02-18">
+         <description/>  
+    </release>  
+    <release version="2024.3.2.1" date="2025-01-24">
+         <description/>  
+    </release>  
+    <release version="2024.3.2" date="2025-01-17">
+         <description/>  
+    </release>  
+    <release version="2024.3.1.1" date="2024-12-20">
+         <description/>  
+    </release>  
+    <release version="2024.3.1" date="2024-12-11">
+         <description/>  
+    </release>  
+    <release version="2024.2.2" date="2024-09-19">
+         <description/>  
+    </release>  
+    <release version="2024.2.1" date="2024-08-30">
+         <description/>  
+    </release>  
+    <release version="2024.2.0.1" date="2024-08-19">
+         <description/>  
+    </release>  
+    <release version="2024.2" date="2024-08-12">
+         <description/>  
+    </release>  
+    <release version="2024.1.6" date="2024-08-09">
+         <description/>  
+    </release>  
+    <release version="2024.1.5" date="2024-08-06">
+         <description/>  
+    </release>  
+    <release version="2024.1.4" date="2024-06-21">
+         <description/>  
+    </release>  
+    <release version="2024.1.3" date="2024-06-10">
+         <description/>  
+    </release>  
+    <release version="2024.1.2" date="2024-05-23">
+         <description/>  
+    </release>  
+    <release version="2024.1.1" date="2024-04-25"/>  
+    <release version="2024.1" date="2024-04-04"/>  
+    <release version="2023.3.6" date="2024-03-25"/>  
+    <release version="2023.3.5" date="2024-03-11"/>  
+    <release version="2023.3.4" date="2024-02-14"/>  
+    <release version="2023.3.3" date="2024-01-30"/>  
+    <release version="2023.3.2" date="2023-12-20"/>  
+    <release version="2023.3.1" date="2022-12-12"/>  
+    <release version="2023.3" date="2023-12-06"/>  
+    <release version="2023.2.4" date="2023-10-27"/>  
+    <release version="2023.2.2" date="2023-09-14"/>  
+    <release version="2023.2.1" date="2023-08-25"/>  
+    <release version="2023.2" date="2023-07-26"/>  
+    <release version="2023.1.5" date="2023-07-25"/>  
+    <release version="2023.1.4" date="2023-07-13"/>  
+    <release version="2023.1.3" date="2023-06-22"/>  
+    <release version="2023.1.1" date="2023-04-27"/>  
+    <release version="2023.1" date="2023-03-29"/>  
+    <release version="2022.3.3" date="2023-03-10"/>  
+    <release version="2022.3.2" date="2023-01-30"/>  
+    <release version="2022.3.1" date="2022-12-27"/>  
+    <release version="2022.3" date="2022-11-30"/>  
+    <release version="2022.2.4" date="2022-11-23"/>  
+    <release version="2022.2.3" date="2022-10-07"/>  
+    <release version="2022.2.2" date="2022-09-19"/>  
+    <release version="2022.2.1" date="2022-08-19"/>  
+    <release version="2022.2" date="2022-07-26"/>  
+    <release version="2022.1.4" date="2022-07-20"/>  
+    <release version="2022.1.3" date="2022-06-23"/>  
+    <release version="2022.1.2" date="2022-06-03"/>  
+    <release version="2022.1.1" date="2022-05-16"/>  
+    <release version="2022.1" date="2022-04-12"/>  
+    <release version="2021.3.3" date="2022-03-17"/>  
+    <release version="2021.3.2" date="2022-01-28"/>  
+    <release version="2021.3.1" date="2021-12-29"/>  
+    <release version="2021.3" date="2021-11-30"/>  
+    <release version="2021.2.3" date="2021-10-15"/>  
+    <release version="2021.2.2" date="2021-09-17"/>
+  </releases>
+</component>

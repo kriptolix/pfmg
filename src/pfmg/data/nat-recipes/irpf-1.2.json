@@ -1,0 +1,64 @@
+{
+  "header": {
+    "id": "irpf",
+    "version": "1.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "irpf",
+    "buildsystem": "simple",
+    "build-commands": [
+      "install -Dm755 -t /app/bin irpf",
+      "install -Dm644 -t /app/share/applications br.gov.fazenda.receita.irpf.desktop",
+      "install -Dm644 icon-64.png /app/share/icons/hicolor/64x64/apps/br.gov.fazenda.receita.irpf.png",
+      "install -Dm644 icon-128.png /app/share/icons/hicolor/128x128/apps/br.gov.fazenda.receita.irpf.png",
+      "install -Dm644 icon-256.png /app/share/icons/hicolor/256x256/apps/br.gov.fazenda.receita.irpf.png",
+      "install -Dm644 -t /app/share/metainfo br.gov.fazenda.receita.irpf.metainfo.xml",
+      "install -Dm644 -t /app/share/br.gov.fazenda.receita.irpf irpf.jar pgd-updater.jar",
+      "cp -r --no-preserve=mode help/ lib/ lib-modulos/ /app/share/br.gov.fazenda.receita.irpf",
+      "ln -s /usr/bin/xdg-open /app/bin/firefox"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://downloadirpf.receita.fazenda.gov.br/irpf/2023/irpf/arquivos/IRPF2023-1.2.zip",
+        "sha256": "d24ae893e0e3e5f680b85b0be5a663053c47af0d8148406732636fdedb8ad65e",
+        "x-checker-data": {
+          "type": "html",
+          "url": "https://www.gov.br/receitafederal/pt-br/centrais-de-conteudo/download/pgd/dirpf",
+          "version-pattern": "/arquivos/IRPF([\\d.-]+)\\.zip",
+          "url-template": "https://downloadirpf.receita.fazenda.gov.br/irpf/$major/irpf/arquivos/IRPF$version.zip",
+          "is-main-source": true
+        }
+      },
+      {
+        "type": "script",
+        "dest-filename": "irpf",
+        "commands": [
+          "exec java -jar /app/share/br.gov.fazenda.receita.irpf/irpf.jar $@"
+        ]
+      },
+      {
+        "type": "file",
+        "path": "br.gov.fazenda.receita.irpf.metainfo.xml"
+      },
+      {
+        "type": "file",
+        "path": "br.gov.fazenda.receita.irpf.desktop"
+      },
+      {
+        "type": "file",
+        "path": "icon-64.png"
+      },
+      {
+        "type": "file",
+        "path": "icon-128.png"
+      },
+      {
+        "type": "file",
+        "path": "icon-256.png"
+      }
+    ]
+  }
+}

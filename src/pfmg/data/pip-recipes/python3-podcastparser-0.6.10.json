@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-podcastparser",
+    "version": "0.6.10",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-podcastparser",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"podcastparser==0.6.10\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/33/60/1061e1af6a3cf0b7858991b2f01c926bc3f43d36251b9f87c0b4eda468e1/podcastparser-0.6.10-py2.py3-none-any.whl",
+        "sha256": "afbeb2eda5a93e2e0e2125a3580a7bae064d6bf3233e0d898525eee54dac5ded"
+      }
+    ]
+  }
+}

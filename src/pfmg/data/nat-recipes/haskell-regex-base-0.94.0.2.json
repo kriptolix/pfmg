@@ -1,0 +1,39 @@
+{
+  "header": {
+    "id": "haskell-regex-base",
+    "version": "0.94.0.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "haskell-regex-base",
+    "buildsystem": "simple",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/regex-base-0.94.0.2/regex-base-0.94.0.2.tar.gz",
+        "sha256": "7b99408f580f5bb67a1c413e0bc735886608251331ad36322020f2169aea2ef1",
+        "x-checker-data": {
+          "type": "html",
+          "url": "https://www.stackage.org/lts-21",
+          "version-pattern": ">regex-base-([\\d.]+)<",
+          "url-template": "https://hackage.haskell.org/package/regex-base-$version/regex-base-$version.tar.gz"
+        }
+      },
+      {
+        "type": "shell",
+        "commands": [
+          "sed -i '/\\bbase\\b/ s/< *4\\.17/<5/' *.cabal"
+        ]
+      }
+    ],
+    "build-commands": [
+      "runhaskell Setup configure --prefix=/app --extra-lib-dirs=/app/lib",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "cleanup": [
+      "*"
+    ]
+  }
+}

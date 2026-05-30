@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "python3-rdp",
+    "version": "0.8",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-rdp",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"rdp==0.8\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/2e/19/d7c972dfe90a353dbd3efbbe1d14a5951de80c99c9dc1b93cd998d51dc0f/numpy-2.3.1.tar.gz",
+        "sha256": "1ec9ae20a4226da374362cca3c62cd753faf2f951440b0e3b98e93c235441d2b"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/67/42/80a54cc4387256335c32b48bd42db80967ab5f40d6ffcd8167b3dd988c11/rdp-0.8.tar.gz",
+        "sha256": "19ec92f0803587891a00b439441e5e23fc9410500983f02941e4cf9ac3113e4b"
+      }
+    ]
+  }
+}

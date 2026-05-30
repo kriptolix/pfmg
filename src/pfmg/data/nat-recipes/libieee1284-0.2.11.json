@@ -1,0 +1,41 @@
+{
+  "header": {
+    "id": "libieee1284",
+    "version": "0.2.11",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libieee1284",
+    "config-opts": [
+      "--disable-static",
+      "--without-python"
+    ],
+    "cleanup": [
+      "*.la"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://downloads.sourceforge.net/project/libieee1284/libieee1284/0.2.11//libieee1284-0.2.11.tar.bz2",
+        "sha256": "7730de107782e5d2b071bdcb5b06a44da74856f00ef4a9be85d1ba4806a38f1a",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 229574,
+          "stable-only": true,
+          "url-template": "https://downloads.sourceforge.net/project/libieee1284/libieee1284/$version//libieee1284-$version.tar.bz2"
+        }
+      },
+      {
+        "type": "patch",
+        "path": "patches/libieee1284-strict-aliasing.patch"
+      },
+      {
+        "type": "shell",
+        "commands": [
+          "cp -p /usr/share/automake-*/config.{sub,guess} ."
+        ]
+      }
+    ]
+  }
+}

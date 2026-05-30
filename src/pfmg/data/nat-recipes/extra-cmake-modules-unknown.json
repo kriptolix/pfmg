@@ -1,0 +1,19 @@
+{
+  "header": {
+    "id": "extra-cmake-modules",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "extra-cmake-modules",
+    "buildsystem": "cmake-ninja",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://invent.kde.org/frameworks/extra-cmake-modules.git",
+        "tag": "v5.87.0"
+      }
+    ]
+  }
+}

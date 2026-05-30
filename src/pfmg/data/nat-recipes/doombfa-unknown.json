@@ -1,0 +1,62 @@
+{
+  "header": {
+    "id": "doombfa",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "DoomBFA",
+    "buildsystem": "cmake-ninja",
+    "subdir": "neo",
+    "builddir": true,
+    "no-make-install": true,
+    "config-opts": [
+      "--preset=linux-retail",
+      "-B .",
+      "-DMAKE_DLL=OFF",
+      "-DPACKAGED=ON",
+      "-DUSE_VCPKG=OFF",
+      "-DALL_STATIC=OFF",
+      "-DFFMPEG_FOUND=true",
+      "-DFFMPEG_AVCODEC_INCLUDE_DIR=/app/include",
+      "-DFFMPEG_LIBAVCODEC=/app/lib/libavcodec.so",
+      "-DFFMPEG_LIBAVFORMAT=/app/lib/libavformat.so",
+      "-DFFMPEG_LIBAVUTIL=/app/lib/libavutil.so",
+      "-DFFMPEG_LIBSWRESAMPLE=/app/lib/libswresample.so",
+      "-DFFMPEG_LIBSWSCALE=/app/lib/libswscale.so",
+      "-DOPENAL_FOUND=true",
+      "-DOPENAL_INCLUDE_DIR=/app/include",
+      "-DOPENAL_LIBRARY=/app/lib/libopenal.so",
+      "-DOPENAL_VERSION_STRING=1.25.1",
+      "-DUSE_SYSTEM_LIBPNG=false",
+      "-DUSE_SYSTEM_RAPIDJSON=false",
+      "-DUSE_OPENXR=OFF",
+      "-DIGNORE_IMPORTED_CONFIG=ON"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/MadDeCoDeR/Classic-RBDOOM-3-BFG.git",
+        "tag": "v1.4.2_2",
+        "commit": "7f0c700e82ba82f4c4bdde6b6e33536ed4fbb947",
+        "disable-submodules": true
+      }
+    ],
+    "modules": [
+      "shared-modules/glew/glew.json",
+      "shared-modules/glu/glu-9.json"
+    ],
+    "build-commands": [
+      "install -Dm 755 DoomBFA /app/bin/DoomBFA",
+      "mkdir -p /app/share/games/doombfa",
+      "cp -R ../../base /app/share/games/doombfa/base",
+      "cp -R ../../base_new /app/share/games/doombfa/base_NEW",
+      "cp ../../alsoft.conf /app/share/games/doombfa/alsoft.conf",
+      "rm /app/share/games/doombfa/base/generate_zBFA_s1.cfg",
+      "rm /app/share/games/doombfa/base/generate_zBFA_s2.cfg",
+      "rm /app/share/games/doombfa/base/DoomBFA.sh",
+      "rm -r /app/share/games/doombfa/base/renderprogs"
+    ]
+  }
+}

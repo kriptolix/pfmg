@@ -1,0 +1,67 @@
+{
+  "header": {
+    "id": "longbridgepro",
+    "version": "0.15.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "longbridgepro",
+    "buildsystem": "simple",
+    "build-commands": [
+      "install -D longbridgepro.sh /app/bin/longbridgepro",
+      "install -Dm644 longbridgepro.png ${FLATPAK_DEST}/share/icons/hicolor/512x512/apps/com.longbridgeapp.LongbridgePro.png",
+      "install -Dm644 com.longbridgeapp.LongbridgePro.metainfo.xml -t /app/share/metainfo",
+      "install -Dm644 fonts.conf -t /app/share/fonts/",
+      "install -Dm644 com.longbridgeapp.LongbridgePro.desktop -t /app/share/applications",
+      "install -D apply_extra -t /app/bin"
+    ],
+    "sources": [
+      {
+        "type": "script",
+        "dest-filename": "apply_extra",
+        "commands": [
+          "bsdtar -Oxf longbridgepro.deb 'data.tar.zst' |\n  bsdtar -xf -\n",
+          "mv usr/local/bin/longbridge longbridge",
+          "rm -r longbridgepro.deb usr"
+        ]
+      },
+      {
+        "type": "file",
+        "path": "com.longbridgeapp.LongbridgePro.desktop"
+      },
+      {
+        "type": "file",
+        "path": "com.longbridgeapp.LongbridgePro.metainfo.xml"
+      },
+      {
+        "type": "file",
+        "path": "longbridgepro.sh"
+      },
+      {
+        "type": "file",
+        "path": "longbridgepro.png"
+      },
+      {
+        "type": "file",
+        "path": "fonts.conf"
+      },
+      {
+        "type": "extra-data",
+        "filename": "longbridgepro.deb",
+        "only-arches": [
+          "x86_64"
+        ],
+        "url": "https://assets.lbkrs.com/github/release/longbridge-desktop/stable/longbridge-v0.15.1-linux-x86_64.deb",
+        "sha256": "81358d7a2f42ac348ffe5de5256405976236d0d9db378b86108e3c44089e872d",
+        "size": 47525946,
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://assets.lbkrs.com/github/release/longbridge-desktop/stable/latest.json",
+          "version-query": ".version",
+          "url-query": ".assets[] | select(.name | test(\"linux-x86_64\\\\.deb$\")).url"
+        }
+      }
+    ]
+  }
+}

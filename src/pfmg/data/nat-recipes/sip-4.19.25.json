@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "sip",
+    "version": "4.19.25",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "sip",
+    "buildsystem": "simple",
+    "build-commands": [
+      "python3 configure.py --sip-module PyQt5.sip -b ${FLATPAK_DEST}/bin -d ${FLATPAK_DEST}/lib/python3.12/site-packages -e ${FLATPAK_DEST}/include -v ${FLATPAK_DEST}/share/sip --stubsdir=${FLATPAK_DEST}/lib/python3.12/site-packages",
+      "make",
+      "make install"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://www.riverbankcomputing.com/static/Downloads/sip/4.19.25/sip-4.19.25.tar.gz",
+        "sha256": "b39d93e937647807bac23579edbff25fe46d16213f708370072574ab1f1b4211"
+      },
+      {
+        "type": "patch",
+        "path": "0001-Fix-compilation-against-Python-3.11.patch"
+      }
+    ]
+  }
+}

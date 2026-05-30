@@ -1,0 +1,34 @@
+{
+  "header": {
+    "id": "perl-yaml-tiny",
+    "version": "1.76",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "perl-yaml-tiny",
+    "buildsystem": "simple",
+    "build-commands": [
+      "perl Makefile.PL PREFIX=${FLATPAK_DEST} LIB=${FLATPAK_DEST}/lib",
+      "make",
+      "make install"
+    ],
+    "cleanup": [
+      "*"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://cpan.metacpan.org/authors/id/E/ET/ETHER/YAML-Tiny-1.76.tar.gz",
+        "sha256": "a8d584394cf069bf8f17cba3dd5099003b097fce316c31fb094f1b1c171c08a3",
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://fastapi.metacpan.org/v1/download_url/YAML::Tiny",
+          "version-query": ".version",
+          "url-query": ".download_url",
+          "timestamp-query": ".date"
+        }
+      }
+    ]
+  }
+}

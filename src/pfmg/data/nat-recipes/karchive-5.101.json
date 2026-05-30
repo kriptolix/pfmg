@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "karchive",
+    "version": "5.101",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "karchive",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DBUILD_TESTING=OFF"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.kde.org/stable/frameworks/5.101/karchive-5.101.0.tar.xz",
+        "sha256": "58bcb6c61bc4a3fe48a0cbeaf392d42b6b8d33e1bc4c51faf24db0912ecfa9b0"
+      }
+    ]
+  }
+}

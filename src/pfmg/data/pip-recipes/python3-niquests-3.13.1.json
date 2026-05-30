@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-niquests",
+    "version": "3.13.1",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-niquests",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"niquests==3.13.1\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/2c/b8/8afeb742e04020366f6c919dc4e20932649ac926b611bef79a27182adb7d/niquests-3.13.1-py3-none-any.whl",
+        "sha256": "a32183c98100723e7a308f6a13f4a1b857a9f38465bed7c6f06bfbaf307f0bf1"
+      }
+    ]
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "header": {
+    "id": "vector-algorithms-0.7.0.1",
+    "version": "0.7.0.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "vector-algorithms-0.7.0.1",
+    "only-arches": [
+      "x86_64"
+    ],
+    "buildsystem": "simple",
+    "build-commands": [
+      "sed -i 's/vector >= 0\\.6 \\&\\& < 0\\.12/vector >= 0\\.6 \\&\\& < 0\\.13/' vector-algorithms.cabal",
+      "ghc -threaded --make Setup",
+      "./Setup configure --prefix=/app",
+      "./Setup build",
+      "./Setup install"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "sha256": "ed460a41ca068f568bc2027579ab14185fbb72c7ac469b5179ae5f8a52719070",
+        "url": "https://hackage.haskell.org/package/vector-algorithms-0.7.0.1/vector-algorithms-0.7.0.1.tar.gz"
+      }
+    ]
+  }
+}

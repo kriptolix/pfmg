@@ -1,0 +1,29 @@
+{
+  "header": {
+    "id": "tomviz",
+    "version": "1.10.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "Tomviz",
+    "buildsystem": "cmake",
+    "builddir": true,
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE:STRING=Release"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/OpenChemistry/tomviz/releases/download/1.10.0/tomviz-1.10.0.tar.gz",
+        "sha256": "be7510dd5068f30d8334546382b58c4b2e15e04cb60288d29b560f45f6c60209",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 223480,
+          "stable-only": true,
+          "url-template": "https://github.com/OpenChemistry/tomviz/releases/download/$version/tomviz-$version.tar.gz"
+        }
+      }
+    ]
+  }
+}

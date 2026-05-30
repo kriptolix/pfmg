@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "libvips",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libvips",
+    "builddir": true,
+    "buildsystem": "meson",
+    "config-opts": [
+      "--libdir=lib",
+      "-Dmodules=disabled"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/libvips/libvips.git",
+        "commit": "0e8946a77dc7efe3b6e3bb704d17a7adabeb32ca"
+      }
+    ]
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "header": {
+    "id": "libchipcard",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libchipcard",
+    "buildsystem": "autotools",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://git.aquamaniac.de/git/libchipcard",
+        "commit": "49062eb5ff54e8eddf4840969066178fe666c379",
+        "tag": "5.1.6",
+        "x-checker-data": {
+          "is-important": true,
+          "type": "git"
+        }
+      },
+      {
+        "type": "shell",
+        "commands": [
+          "make -fMakefile.cvs"
+        ]
+      }
+    ],
+    "cleanup": [
+      "/bin"
+    ],
+    "modules": [
+      {
+        "name": "pcsc-lite",
+        "buildsystem": "meson",
+        "config-opts": [
+          "-Dlibudev=false",
+          "-Dlibsystemd=false",
+          "-Dpolkit=false"
+        ],
+        "cleanup": [
+          "/lib/libpcscspy.so",
+          "/lib/libpcsclite.so",
+          "/sbin"
+        ],
+        "sources": [
+          {
+            "type": "archive",
+            "url": "https://pcsclite.apdu.fr/files/pcsc-lite-2.4.1.tar.xz",
+            "sha256": "afd3ba68c8000d2be048dc292df99a9812df9ad2efaf0a366eea22ac1faa19a7",
+            "x-checker-data": {
+              "type": "anitya",
+              "project-id": 2611,
+              "url-template": "https://pcsclite.apdu.fr/files/pcsc-lite-$version.tar.xz"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

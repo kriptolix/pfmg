@@ -1,0 +1,29 @@
+{
+  "header": {
+    "id": "akonadi-mime",
+    "version": "25.12.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "akonadi-mime",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DBUILD_TESTING=OFF",
+      "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.kde.org/stable/release-service/25.12.2/src/akonadi-mime-25.12.2.tar.xz",
+        "sha256": "ad7456cccdad965bc7586136f3f1220b83af0746b305a1880beb5714cbf6a389",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 8763,
+          "stable-only": true,
+          "url-template": "https://download.kde.org/stable/release-service/$version/src/akonadi-mime-$version.tar.xz"
+        }
+      }
+    ]
+  }
+}

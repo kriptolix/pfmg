@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "mint-y-brown",
+    "version": "1.9.6",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "Mint-Y-Brown",
+    "buildsystem": "simple",
+    "build-commands": [
+      "ar x mint-themes.deb",
+      "tar -xf data.tar.xz",
+      "install -Dm644 usr/share/themes/Mint-Y-Brown/index.theme /usr/share/runtime/share/themes/Mint-Y-Brown/index.theme",
+      "install -Dm644 usr/share/themes/Mint-Y-Brown/gtk-3.0/gtk.css /usr/share/runtime/share/themes/Mint-Y-Brown/gtk-3.0",
+      "install -Dm644 --target-directory=/usr/share/runtime/share/themes/Mint-Y-Brown/gtk-3.0/assets usr/share/themes/Mint-Y-Brown/gtk-3.0/assets/*"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://github.com/linuxmint/mint-themes/releases/download/1.9.6/mint-themes_1.9.6_all.deb",
+        "dest-filename": "mint-themes.deb",
+        "sha256": "af6516d1dd83cb7a5bcc3547384848cdfa1cc27d4acda01b1e9b209211f62c25"
+      }
+    ]
+  }
+}

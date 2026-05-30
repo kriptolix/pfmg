@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "alacenc",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "alacenc",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/flacon/alacenc.git",
+        "tag": "v0.4.1",
+        "commit": "9dcfb54438822c0955da98077f63e36ce3d19dd8",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^v([\\d.]+)$"
+        }
+      }
+    ]
+  }
+}

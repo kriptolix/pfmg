@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "pomidaq",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "pomidaq",
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "config-opts": [
+      "-DPYTHON=OFF",
+      "-DGUI=OFF"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/bothlab/pomidaq.git",
+        "commit": "e82bbe3aed435178a3f86d2f831c1ea1b591f82b"
+      }
+    ]
+  }
+}

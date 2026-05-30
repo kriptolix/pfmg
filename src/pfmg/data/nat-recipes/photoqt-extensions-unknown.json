@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "photoqt-extensions",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "photoqt-extensions",
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "config-opts": [
+      "-DWITH_IMAGEMAGICK=ON",
+      "-DWITH_GRAPHICSMAGICK=OFF",
+      "-DWITH_EXIV2=ON",
+      "-DCMAKE_INSTALL_PREFIX=/app/lib/PhotoQt/extensions",
+      "-DINSTALL_INTO_LIB_SUBDIR=OFF"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://gitlab.com/lspies/photoqt-extensions.git",
+        "commit": "7172061b45b598e38667f999734c92ab33e4c45a",
+        "tag": "v5.3"
+      }
+    ]
+  }
+}

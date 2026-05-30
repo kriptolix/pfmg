@@ -1,0 +1,40 @@
+{
+  "header": {
+    "id": "qt-creator",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "qt-creator",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DSHOW_BUILD_DATE=ON",
+      "-DWITH_QMLDESIGNER=OFF",
+      "-DCLANGTOOLING_LINK_CLANG_DYLIB=ON",
+      "-DWITH_ONLINE_DOCS=ON",
+      "-DBUILD_DEVELOPER_DOCS=OFF",
+      "-DBUILD_DOCS_BY_DEFAULT=OFF",
+      "-DBUILD_EXECUTABLE_CMDBRIDGE=OFF",
+      "-Wno-dev"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/qt-creator/qt-creator.git",
+        "tag": "v19.0.2",
+        "commit": "41c25c247e950bb4b462948281d366af029f5a8e",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 4136,
+          "tag-template": "v$version",
+          "stable-only": true
+        }
+      }
+    ],
+    "post-install": [
+      "cp -a /usr/lib/sdk/llvm21/* /app",
+      "install -d /app/extensions"
+    ]
+  }
+}

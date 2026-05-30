@@ -1,0 +1,50 @@
+{
+  "header": {
+    "id": "chowkick",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "ChowKick",
+    "buildsystem": "cmake-ninja",
+    "no-make-install": true,
+    "config-opts": [
+      "-DCMAKE_AR=/usr/bin/gcc-ar",
+      "-DCMAKE_NM=/usr/bin/gcc-nm",
+      "-DCMAKE_RANLIB=/usr/bin/gcc-ranlib",
+      "-DCMAKE_BUILD_TYPE=Release"
+    ],
+    "build-options": {
+      "cxxflags": "-I/app/extensions/Plugins/ChowDSP-Plugins/include"
+    },
+    "make-args": [
+      "ChowKick_LV2",
+      "ChowKick_VST3",
+      "ChowKick_CLAP"
+    ],
+    "post-install": [
+      "install -d ${FLATPAK_DEST}/lv2",
+      "cp -R ./ChowKick_artefacts/Release/LV2/*.lv2 ${FLATPAK_DEST}/lv2/",
+      "strip ${FLATPAK_DEST}/lv2/ChowKick.lv2/*.so",
+      "install -d ${FLATPAK_DEST}/vst3",
+      "cp -R ./ChowKick_artefacts/Release/VST3/*.vst3 ${FLATPAK_DEST}/vst3/",
+      "strip ${FLATPAK_DEST}/vst3/ChowKick.vst3/Contents/*-linux/*.so",
+      "install -D ./ChowKick_artefacts/Release/CLAP/ChowKick.clap -t ${FLATPAK_DEST}/clap/",
+      "strip ${FLATPAK_DEST}/clap/ChowKick.clap",
+      "install -Dm644 -t $FLATPAK_DEST/share/licenses/ChowKick LICENSE"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/Chowdhury-DSP/ChowKick.git",
+        "tag": "v1.2.0",
+        "commit": "4a11869c961f1580b6cf5e8be2eb3aebdb42b1d2",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^v([\\d.]+)$"
+        }
+      }
+    ]
+  }
+}

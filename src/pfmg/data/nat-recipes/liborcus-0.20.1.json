@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "liborcus",
+    "version": "0.20.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "liborcus",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://gitlab.com/api/v4/projects/orcus%2Forcus/packages/generic/source/0.20.1/liborcus-0.20.1.tar.xz",
+        "sha256": "ec27f30e8445a2a3f307f7e829fc446fd48193150b7f8f23bb5bfb25ec6e4e27",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 1696,
+          "stable-only": true,
+          "url-template": "https://gitlab.com/api/v4/projects/orcus%2Forcus/packages/generic/source/$version/liborcus-$version.tar.xz"
+        }
+      }
+    ]
+  }
+}

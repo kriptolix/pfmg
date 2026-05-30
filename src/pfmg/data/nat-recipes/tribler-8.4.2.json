@@ -1,0 +1,60 @@
+{
+  "header": {
+    "id": "tribler",
+    "version": "8.4.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "tribler",
+    "buildsystem": "simple",
+    "build-commands": [
+      "mkdir -p /app/bin",
+      "mkdir -p /app/share",
+      "install tribler /app/bin",
+      "ar x tribler.deb",
+      "tar xf data.tar.*",
+      "cp -r usr/share/* /app/share/ && rm -R usr/share"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://github.com/Tribler/tribler/releases/download/v8.4.2/tribler_8.4.2_x64.deb",
+        "sha256": "5b37d43bc22c3e11dc792f6ff4e6014f6e2df47a0cc2e46b14b96c57ce9fb70e",
+        "dest-filename": "tribler.deb",
+        "only-arches": [
+          "x86_64"
+        ],
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 241848,
+          "stable-only": true,
+          "url-template": "https://github.com/Tribler/tribler/releases/download/v${version}/tribler_${version}_x64.deb"
+        }
+      },
+      {
+        "type": "file",
+        "url": "https://github.com/Tribler/tribler/releases/download/v8.4.2/tribler_8.4.2_aarch64.deb",
+        "sha256": "4f2663c1a77cefbb59785219d31bd15ae8b12f9b8f7e9c17f200415ffdd564d4",
+        "dest-filename": "tribler.deb",
+        "only-arches": [
+          "aarch64"
+        ],
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 241848,
+          "stable-only": true,
+          "url-template": "https://github.com/Tribler/tribler/releases/download/v${version}/tribler_${version}_aarch64.deb"
+        }
+      },
+      {
+        "type": "script",
+        "dest-filename": "tribler",
+        "commands": [
+          "export TMPDIR=\"${XDG_CACHE_HOME}\"/tmp/",
+          "exec /app/share/tribler/tribler \"$@\""
+        ]
+      }
+    ]
+  }
+}

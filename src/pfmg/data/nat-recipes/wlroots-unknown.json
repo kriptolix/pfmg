@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "wlroots",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "wlroots",
+    "builddir": true,
+    "buildsystem": "meson",
+    "config-opts": [],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://gitlab.freedesktop.org/wlroots/wlroots.git",
+        "tag": "0.20.0",
+        "commit": "c1d38536c926134698ff2615843e0d4103e84ac4"
+      }
+    ]
+  }
+}

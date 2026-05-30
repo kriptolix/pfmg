@@ -1,0 +1,34 @@
+{
+  "header": {
+    "id": "fzf",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "fzf",
+    "buildsystem": "simple",
+    "build-options": {
+      "append-path": "/usr/lib/sdk/golang/bin"
+    },
+    "build-commands": [
+      "make",
+      "install -Dm00755 target/fzf* /app/bin/fzf"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/junegunn/fzf.git",
+        "tag": "v0.67.0",
+        "commit": "2ab923f3ae04d5e915e5ff4a9cd3bd515bfd1ea5",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 15856,
+          "stable-only": true,
+          "tag-template": "v$version"
+        }
+      },
+      "modules/fzf/sources.yml"
+    ]
+  }
+}

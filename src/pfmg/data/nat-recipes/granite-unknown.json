@@ -1,0 +1,19 @@
+{
+  "header": {
+    "id": "granite",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "granite",
+    "buildsystem": "meson",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/elementary/granite.git",
+        "tag": "6.2.0"
+      }
+    ]
+  }
+}

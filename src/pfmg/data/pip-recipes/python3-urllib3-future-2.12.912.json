@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-urllib3-future",
+    "version": "2.12.912",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-urllib3-future",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"urllib3-future==2.12.912\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/89/95/c4bb5ac9b6ada65955c70caba6e13b3fa73434fd13291b71bc705c64cc6b/urllib3_future-2.12.912-py3-none-any.whl",
+        "sha256": "6eee58ce7aadf3dafdb1768f5aa801e80359f0f70eda60a782e376e66d5fc87c"
+      }
+    ]
+  }
+}

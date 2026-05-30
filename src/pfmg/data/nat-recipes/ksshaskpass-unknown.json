@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "ksshaskpass",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "ksshaskpass",
+    "buildsystem": "cmake-ninja",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/KDE/ksshaskpass.git",
+        "tag": "v6.2.91",
+        "commit": "66d56302f22e5042703bbea1215eb9e176bad95c"
+      }
+    ],
+    "cleanup": [
+      "/share/man"
+    ]
+  }
+}

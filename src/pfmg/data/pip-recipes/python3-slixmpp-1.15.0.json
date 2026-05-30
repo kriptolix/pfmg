@@ -1,0 +1,31 @@
+{
+  "header": {
+    "id": "python3-slixmpp",
+    "version": "1.15.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-slixmpp",
+    "buildsystem": "simple",
+    "build-commands": [
+      "sed -i '/^dynamic = /s/.*/version = \"1.15.0\"/' pyproject.toml",
+      "sed -i '/^optional = true$/d' pyproject.toml",
+      "pip3 install --prefix=/app --no-build-isolation ."
+    ],
+    "build-options": {
+      "append-path": "/usr/lib/sdk/rust-stable/bin",
+      "env": {
+        "CARGO_HOME": "/run/build/python3-slixmpp/cargo"
+      }
+    },
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://files.pythonhosted.org/packages/81/78/537b5e444a4ee15148f2ef97cd3a09b7d3e56f3f3ec9f73a0808db890f48/slixmpp-1.15.0.tar.gz",
+        "sha256": "592b53c1545370633d2f2b8d3ba284ad21c3cd2ccc392c9402cf4ad4307c24da"
+      },
+      "python3-slixmpp.json"
+    ]
+  }
+}

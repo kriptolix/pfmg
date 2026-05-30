@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "flatpak-builder-tools",
+    "version": "unknown",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "flatpak-builder-tools",
+    "buildsystem": "simple",
+    "build-commands": [
+      "install -Dm0755 cargo/flatpak-cargo-generator.py ${FLATPAK_DEST}/bin/flatpak-cargo-generator",
+      "install -Dm0755 gradle/flatpak-gradle-generator.py ${FLATPAK_DEST}/bin/flatpak-gradle-generator",
+      "install -Dm0755 pip/flatpak-pip-generator.py ${FLATPAK_DEST}/bin/flatpak-pip-generator",
+      "install -Dm0755 poetry/flatpak-poetry-generator.py ${FLATPAK_DEST}/bin/flatpak-poetry-generator",
+      "install -Dm0755 flatpak-json2yaml.py ${FLATPAK_DEST}/bin/flatpak-json2yaml",
+      "cd node && pip3 install --prefix=/app . --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/flatpak/flatpak-builder-tools.git",
+        "commit": "caca92bc6898ea40d6521b581fef2402ba3b3aae"
+      }
+    ]
+  }
+}

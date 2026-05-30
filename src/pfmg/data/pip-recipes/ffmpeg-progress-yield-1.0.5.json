@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "ffmpeg-progress-yield",
+    "version": "1.0.5",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "ffmpeg_progress_yield",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --prefix=/app --no-deps *.whl"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/a8/a7/a766ea8238f7e2ae43d771982bcde84a585a40bf47b58e5b0fc777d24ab0/ffmpeg_progress_yield-1.0.5-py3-none-any.whl",
+        "sha256": "46f8e6223242920c9ffe5710acbf75b64bc171c9e714b27ccf97df8814229e3a"
+      }
+    ]
+  }
+}

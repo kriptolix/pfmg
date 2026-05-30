@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "python-geographiclib",
+    "version": "1.50",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python-geographiclib",
+    "buildsystem": "simple",
+    "build-commands": [
+      "python3 setup.py build",
+      "python3 setup.py install --prefix=/app --root=/ --optimize=1"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://files.pythonhosted.org/packages/source/g/geographiclib/geographiclib-1.50.tar.gz",
+        "sha256": "12bd46ee7ec25b291ea139b17aa991e7ef373e21abd053949b75c0e9ca55c632"
+      }
+    ]
+  }
+}

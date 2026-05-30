@@ -1,0 +1,38 @@
+{
+  "header": {
+    "id": "fox",
+    "version": "1.6.57",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "fox",
+    "buildsystem": "autotools",
+    "config-opts": [
+      "--disable-static",
+      "--enable-threadsafe",
+      "--enable-release",
+      "--enable-cups",
+      "--with-xft",
+      "--with-x",
+      "--with-xcursor",
+      "--with-xrender",
+      "--with-xrandr",
+      "--with-opengl",
+      "--with-shape",
+      "--with-xshm"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "http://fox-toolkit.org/ftp/fox-1.6.57.zip",
+        "sha256": "86ce8967094f03924e6801482dbe1de3a8de2edc41094fea8313c8524bc088a0",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 11427,
+          "url-template": "http://fox-toolkit.org/ftp/fox-$version.zip"
+        }
+      }
+    ]
+  }
+}

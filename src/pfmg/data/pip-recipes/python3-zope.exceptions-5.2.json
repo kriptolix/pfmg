@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "python3-zope.exceptions",
+    "version": "5.2",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-zope.exceptions",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"zope.exceptions==5.2\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/dd/31/a54159a96776b55e7460e22fb77fb31b48b83a8c4f5a7f720adc4476c45c/zope.exceptions-5.2-py3-none-any.whl",
+        "sha256": "5c1182ad31ce5db2419cc4b6581a221f20582cb3bc8468568342661897974874"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/30/93/9210e7606be57a2dfc6277ac97dcc864fd8d39f142ca194fdc186d596fda/zope.interface-7.2.tar.gz",
+        "sha256": "8b49f1a3d1ee4cdaf5b32d2e738362c7f5e40ac8b46dd7d1a65e82a4872728fe"
+      }
+    ]
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "header": {
+    "id": "mono-basic",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "mono-basic",
+    "build-options": {
+      "env": {
+        "PATH": "/usr/bin:/usr/lib/sdk/mono6/bin"
+      }
+    },
+    "config-opts": [
+      "--prefix=/usr/lib/sdk/mono6"
+    ],
+    "no-make-install": true,
+    "build-commands": [
+      "cp class/lib/net_4_5/Microsoft.VisualBasic.dll /app/"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/mono/mono-basic.git",
+        "commit": "e31cb702937a0adcc853250a0989c5f43565f9b8"
+      }
+    ]
+  }
+}

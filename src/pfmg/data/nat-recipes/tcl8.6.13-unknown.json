@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "tcl8.6.13",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "tcl8.6.13",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://prdownloads.sourceforge.net/tcl/tcl8.6.13-src.tar.gz",
+        "sha256": "43a1fae7412f61ff11de2cfd05d28cfc3a73762f354a417c62370a54e2caf066"
+      }
+    ],
+    "subdir": "unix",
+    "post-install": [
+      "chmod +w /app/lib/libtcl8.6.so"
+    ]
+  }
+}

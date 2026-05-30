@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "qtvirtualkeyboard",
+    "version": "6.9",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "qtvirtualkeyboard",
+    "buildsystem": "cmake-ninja",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.qt.io/official_releases/qt/6.9/6.9.2/submodules/qtvirtualkeyboard-everywhere-src-6.9.2.tar.xz",
+        "sha256": "7b4100da01bafa72e20ab4e1459dcda1e6048e70b4d650b3c578613f0ffc11e3"
+      }
+    ],
+    "post-install": [
+      "rm -rd ${FLATPAK_DEST}/lib/${FLATPAK_ARCH}-linux-gnu/cmake",
+      "rm -rd ${FLATPAK_DEST}/lib/${FLATPAK_ARCH}-linux-gnu/pkgconfig",
+      "mv ${FLATPAK_DEST}/lib/${FLATPAK_ARCH}-linux-gnu/* /app/lib/",
+      "rmdir ${FLATPAK_DEST}/lib/${FLATPAK_ARCH}-linux-gnu"
+    ]
+  }
+}

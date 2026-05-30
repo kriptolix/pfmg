@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "sierra-negra",
+    "version": "0.5.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "Sierra-Negra",
+    "buildsystem": "simple",
+    "build-commands": [
+      "install -dm755 /usr/share/runtime/share/themes/Sierra-Negra/gtk-3.0",
+      "cp -aL gtk-3.0/* /usr/share/runtime/share/themes/Sierra-Negra/gtk-3.0",
+      "cp -a index.theme /usr/share/runtime/share/themes/Sierra-Negra"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/thepante/setup/releases/download/0.5.1/Sierranegra-0.5.1.zip",
+        "sha256": "676b589cd02a563e02a6baf7884a6014391c68bb171a7f28dcddba09852c9aa0"
+      }
+    ]
+  }
+}

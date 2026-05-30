@@ -1,0 +1,36 @@
+{
+  "header": {
+    "id": "qttools",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "qttools",
+    "buildsystem": "qmake",
+    "cleanup": [
+      "/bin/assistant",
+      "/bin/qhelpgenerator",
+      "/bin/qcollectiongenerator",
+      "/bin/qhelpconverter",
+      "/bin/pixeltool",
+      "/bin/designer",
+      "/bin/lrelease",
+      "/bin/lupdate",
+      "/bin/lconvert",
+      "/bin/linguist",
+      "/bin/qdoc",
+      "/bin/qtattributionsscanner",
+      "/bin/qtplugininfo",
+      "/bin/qtdiag",
+      "/bin/qdbusviewer"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://invent.kde.org/szaman/qttools.git",
+        "commit": "3cea28be7c7dfe6fd90d3eef88ac6c2307f09051"
+      }
+    ]
+  }
+}

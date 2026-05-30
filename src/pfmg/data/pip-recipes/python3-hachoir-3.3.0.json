@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-hachoir",
+    "version": "3.3.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-hachoir",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"hachoir==3.3.0\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/ef/96/9570e6604114e9b2b2e1d90a89d01d10646b9cb6f54bba78f6de5fbbceb1/hachoir-3.3.0-py3-none-any.whl",
+        "sha256": "9f721af67867d933383398b9605bc388db25f55dde1034d2bfde91f05e5d9910"
+      }
+    ]
+  }
+}

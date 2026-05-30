@@ -1,0 +1,19 @@
+{
+  "header": {
+    "id": "websocketpp",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "websocketpp",
+    "buildsystem": "cmake-ninja",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/zaphoyd/websocketpp",
+        "tag": "0.8.2"
+      }
+    ]
+  }
+}

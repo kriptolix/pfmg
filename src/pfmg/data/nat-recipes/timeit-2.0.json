@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "timeit",
+    "version": "2.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "timeit",
+    "buildsystem": "simple",
+    "builddir": false,
+    "build-commands": [
+      "echo '#! /usr/bin/env runhaskell' >Setup.txt",
+      "echo '> import Distribution.Simple' >>Setup.txt",
+      "echo '> main = defaultMain' >>Setup.txt",
+      "ln -s Setup.txt Setup.lhs || true",
+      "runhaskell Setup configure --prefix=/app",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "sources": [
+      {
+        "sha256": "a14df4e578db371e5c609f0784209144545f9cae90026d24a3398042f7c591ea",
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/timeit-2.0/timeit-2.0.tar.gz"
+      },
+      {
+        "dest-filename": "timeit.cabal",
+        "sha256": "35d7c3ce64b458bbb1200320203f21281c975c85acc636a634500601c474fded",
+        "type": "file",
+        "url": "https://hackage.haskell.org/package/timeit-2.0/revision/2.cabal"
+      }
+    ]
+  }
+}

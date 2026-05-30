@@ -1,0 +1,37 @@
+{
+  "header": {
+    "id": "player",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "player",
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
+      "-DPLAYER_VERSION_APPEND='(Flathub)'"
+    ],
+    "post-install": [
+      "mv /app/bin/{easyrpg-player,org.easyrpg.player.real}"
+    ],
+    "cleanup": [
+      "/share/bash-completion",
+      "/share/pixmaps"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/EasyRPG/Player.git",
+        "tag": "0.8.1.1",
+        "commit": "78328fa29f465315291e161130e6682f69410370",
+        "x-checker-data": {
+          "is-main-source": true,
+          "type": "git",
+          "tag-pattern": "^([\\d.]+)$"
+        }
+      }
+    ]
+  }
+}

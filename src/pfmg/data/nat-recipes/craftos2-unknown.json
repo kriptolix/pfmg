@@ -1,0 +1,37 @@
+{
+  "header": {
+    "id": "craftos2",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "craftos2",
+    "buildsystem": "simple",
+    "build-commands": [
+      "make -C craftos2-lua -j$FLATPAK_BUILDER_N_JOBS linux",
+      "./configure --without-ncurses --prefix=/app",
+      "make -j$FLATPAK_BUILDER_N_JOBS",
+      "install -D -m 755 craftos2-lua/src/liblua.so /app/lib/libcraftos2-lua.so",
+      "patchelf --replace-needed craftos2-lua/src/liblua.so libcraftos2-lua.so craftos",
+      "install -D -m 755 craftos /app/bin/craftos"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/MCJack123/craftos2.git",
+        "tag": "v2.8.3",
+        "commit": "33d29b9bcea325ea78893ca2eb781ecb5c8fc0b3",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^v([\\d.]+)$",
+          "is-main-source": true
+        }
+      },
+      {
+        "type": "patch",
+        "path": "patches/fix-poco-header-includes.patch"
+      }
+    ]
+  }
+}

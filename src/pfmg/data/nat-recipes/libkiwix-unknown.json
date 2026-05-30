@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "libkiwix",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libkiwix",
+    "buildsystem": "meson",
+    "config-opts": [
+      "--wrap-mode=nodownload"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/kiwix/libkiwix.git",
+        "tag": "14.0.0",
+        "commit": "20abebd6237fe5879bf79950a0e620edd620f33a"
+      }
+    ]
+  }
+}

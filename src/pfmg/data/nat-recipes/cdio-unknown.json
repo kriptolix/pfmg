@@ -1,0 +1,31 @@
+{
+  "header": {
+    "id": "cdio",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "cdio",
+    "buildsystem": "autotools",
+    "config-opts": [
+      "--disable-static",
+      "--enable-maintainer-mode"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://git.savannah.gnu.org/git/libcdio.git",
+        "tag": "release-2.1.0",
+        "commit": "9c7a2779846da161279bc1501e83c849cf89a594"
+      },
+      {
+        "type": "script",
+        "commands": [
+          "autoreconf -fiv"
+        ],
+        "dest-filename": "autogen.sh"
+      }
+    ]
+  }
+}

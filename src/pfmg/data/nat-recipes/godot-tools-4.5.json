@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "godot-tools",
+    "version": "4.5",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "godot-tools",
+    "buildsystem": "simple",
+    "build-commands": [
+      "python3 /app/bin/scons platform=linuxbsd CCFLAGS=-I/app/include prefix=/app unix_global_settings_path=/app progress=no builtin_freetype=no builtin_libogg=no builtin_libpng=no builtin_libtheora=no builtin_libvorbis=no builtin_libwebp=no builtin_openssl=no builtin_libvpx=no builtin_zlib=no builtin_graphite=no builtin_harfbuzz=no udev=no use_lto=yes target=editor -j \"$FLATPAK_BUILDER_N_JOBS\"",
+      "install -D -m755 bin/godot.linuxbsd.editor.* /app/bin/godot-bin"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/godotengine/godot/releases/download/4.5-stable/godot-4.5-stable.tar.xz",
+        "sha256": "2cdb383d68bfe646c832064b9063310745e8db03a2e4b59f5946ee934b95c67d"
+      }
+    ]
+  }
+}

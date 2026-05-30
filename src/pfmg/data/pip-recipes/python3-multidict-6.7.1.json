@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-multidict",
+    "version": "6.7.1",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-multidict",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --prefix=/app multidict-6.7.1-py3-none-any.whl"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/81/08/7036c080d7117f28a4af526d794aab6a84463126db031b007717c1a6676e/multidict-6.7.1-py3-none-any.whl",
+        "sha256": "55d97cc6dae627efa6a6e548885712d4864b81110ac76fa4e534c03819fa4a56"
+      }
+    ]
+  }
+}

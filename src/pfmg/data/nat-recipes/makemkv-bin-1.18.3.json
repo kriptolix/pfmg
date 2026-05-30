@@ -1,0 +1,31 @@
+{
+  "header": {
+    "id": "makemkv-bin",
+    "version": "1.18.3",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "makemkv-bin",
+    "buildsystem": "simple",
+    "build-commands": [
+      "mkdir -p tmp",
+      "echo accepted > tmp/eula_accepted",
+      "make PREFIX=/app/share/vlc/extra/makemkv install",
+      "install -Dp -m 644 src/eula_en_linux.txt --target-directory=/app/share/vlc/extra/makemkv/share/licenses"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://www.makemkv.com/download/makemkv-bin-1.18.3.tar.gz",
+        "sha256": "c1ee720ae91b276a7c89be861146c5b934631831e8d6c8f453406435724e92bd",
+        "x-checker-data": {
+          "type": "html",
+          "url": "https://www.makemkv.com/download",
+          "version-pattern": "MakeMKV v([\\d\\.]*)",
+          "url-template": "https://www.makemkv.com/download/makemkv-bin-$version.tar.gz"
+        }
+      }
+    ]
+  }
+}

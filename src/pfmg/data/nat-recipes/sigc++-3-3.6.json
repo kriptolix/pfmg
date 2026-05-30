@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "sigc++-3",
+    "version": "3.6",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "sigc++-3",
+    "buildsystem": "meson",
+    "config-opts": [
+      "-Dmaintainer-mode=false",
+      "-Dbuild-documentation=false",
+      "-Dbuild-examples=false",
+      "-Dbuild-tests=false"
+    ],
+    "cleanup": [
+      "/lib/sigc++-3.0"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.gnome.org/sources/libsigc++/3.6/libsigc++-3.6.0.tar.xz",
+        "sha256": "c3d23b37dfd6e39f2e09f091b77b1541fbfa17c4f0b6bf5c89baef7229080e17"
+      }
+    ]
+  }
+}

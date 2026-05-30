@@ -1,0 +1,71 @@
+{
+  "header": {
+    "id": "bitwarden-desktop",
+    "version": "2026.3.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "bitwarden-desktop",
+    "buildsystem": "simple",
+    "build-commands": [
+      "mkdir -p \"$FLATPAK_DEST/Bitwarden\"",
+      "tar -xzf bitwarden.tar.gz -C \"${FLATPAK_DEST}/Bitwarden\"",
+      "install -D bitwarden.sh \"${FLATPAK_DEST}/bin/bitwarden\"",
+      "install -D -m 644 \"${FLATPAK_ID}.metainfo.xml\" -t \"${FLATPAK_DEST}/share/metainfo\"",
+      "install -D -m 644 \"${FLATPAK_DEST}/Bitwarden/resources/com.bitwarden.desktop.desktop\" \"${FLATPAK_DEST}/share/applications/bitwarden.desktop\"",
+      "desktop-file-edit --set-key=Exec --set-value=\"bitwarden %U\" \"${FLATPAK_DEST}/share/applications/bitwarden.desktop\"",
+      "for icon in \"${FLATPAK_DEST}\"/Bitwarden/resources/icons/*.png; do\n  size=\"$(basename -s .png ${icon})\"\n  if [ \"${size}\" == '1024x1024' ]; then continue; fi\n  install -D -m 644 \"${icon}\" \"${FLATPAK_DEST}/share/icons/hicolor/${size}/apps/bitwarden.png\"\ndone\n",
+      "for lang in \"${FLATPAK_DEST}\"/Bitwarden/locales/*.pak; do\n  locale=\"$(basename -s .pak ${lang})\"\n  install -D -m 644 \"${lang}\" -t \"${FLATPAK_DEST}/share/runtime/locale/${locale%%-*}/\"\n  ln -sf \"${FLATPAK_DEST}/share/runtime/locale/${locale%%-*}/$(basename ${lang})\" \"${FLATPAK_DEST}/Bitwarden/locales/$(basename ${lang})\"\ndone\n"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "dest-filename": "bitwarden.tar.gz",
+        "only-arches": [
+          "x86_64"
+        ],
+        "url": "https://github.com/bitwarden/clients/releases/download/desktop-v2026.3.1/bitwarden_2026.3.1_x64.tar.gz",
+        "sha256": "3558e24b829d90c7bb73ce22962f6fac1a9483b6052c1ed3075663413ec6efab",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 179174,
+          "url-template": "https://github.com/bitwarden/clients/releases/download/desktop-v$version/bitwarden_${version}_x64.tar.gz",
+          "is-main-source": true
+        }
+      },
+      {
+        "type": "file",
+        "dest-filename": "bitwarden.tar.gz",
+        "only-arches": [
+          "aarch64"
+        ],
+        "url": "https://github.com/bitwarden/clients/releases/download/desktop-v2026.3.1/bitwarden_2026.3.1_arm64.tar.gz",
+        "sha256": "d0ad123773c8816f1125f0fd15b43c6732ad0d04c873b7d69e3f9bdcfcfc7ecc",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 179174,
+          "url-template": "https://github.com/bitwarden/clients/releases/download/desktop-v$version/bitwarden_${version}_arm64.tar.gz"
+        }
+      },
+      {
+        "type": "script",
+        "dest-filename": "bitwarden.sh",
+        "commands": [
+          "export TMPDIR=\"$XDG_RUNTIME_DIR/app/$FLATPAK_ID\"",
+          "ulimit -c 0",
+          "export ZYPAK_LD_PRELOAD=\"/app/bin/libprocess_isolation.so\"",
+          "export PROCESS_ISOLATION_LD_PRELOAD=\"/app/bin/libprocess_isolation.so\"",
+          "if [ \"$USE_X11\" != \"false\" ]; then",
+          "PARAMS=\"--ozone-platform=x11\"",
+          "fi",
+          "exec zypak-wrapper /app/Bitwarden/bitwarden-app \"$@\" \"$PARAMS\""
+        ]
+      },
+      {
+        "type": "file",
+        "path": "com.bitwarden.desktop.metainfo.xml"
+      }
+    ]
+  }
+}

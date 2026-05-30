@@ -1,0 +1,26 @@
+{
+  "header": {
+    "id": "freexl",
+    "version": "1.0.5",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "freexl",
+    "rm-configure": true,
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://www.gaia-gis.it/gaia-sins/freexl-sources/freexl-1.0.5.tar.gz",
+        "sha256": "3dc9b150d218b0e280a3d6a41d93c1e45f4d7155829d75f1e5bf3e0b0de6750d"
+      },
+      {
+        "type": "script",
+        "dest-filename": "autogen.sh",
+        "commands": [
+          "AUTOMAKE=\"automake --foreign\" autoreconf -vfi"
+        ]
+      }
+    ]
+  }
+}

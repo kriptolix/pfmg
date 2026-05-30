@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "tllist",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "tllist",
+    "builddir": true,
+    "buildsystem": "meson",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://codeberg.org/dnkl/tllist.git",
+        "commit": "8dcb0725c73eee9e350f41a921faf0bcd2ab9920",
+        "tag": "1.1.0",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^([\\d.]+)$"
+        }
+      }
+    ]
+  }
+}

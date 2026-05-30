@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "pdoc",
+    "version": "16.0.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "pdoc",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=/app \"pdoc\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/16/a1/56a17b7f9e18c2bb8df73f3833345d97083b344708b97bab148fdd7e0b82/pdoc-16.0.0-py3-none-any.whl",
+        "sha256": "070b51de2743b9b1a4e0ab193a06c9e6c12cf4151cf9137656eebb16e8556628"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/c7/21/705964c7812476f378728bdf590ca4b771ec72385c533964653c68e86bdc/pygments-2.19.2-py3-none-any.whl",
+        "sha256": "86540386c03d588bb81d44bc3928634ff26449851e99741617ecb9037ee5ec0b"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/b8/06/2697b5043c3ecb720ce0d243fc7cf5024c0b5b1e450506e9b21939019963/markdown2-2.5.4-py3-none-any.whl",
+        "sha256": "3c4b2934e677be7fec0e6f2de4410e116681f4ad50ec8e5ba7557be506d3f439"
+      }
+    ]
+  }
+}

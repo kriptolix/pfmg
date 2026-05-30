@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-zconfig",
+    "version": "4.2",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-ZConfig",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"ZConfig==4.2\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/c1/f9/99a7b04ab682f7c532fe0e53cddb7670218b0bb4ae26e4056ca5e5fc0a8c/ZConfig-4.2-py3-none-any.whl",
+        "sha256": "43ae4b70aeb30db44341863d480d739d1fba4534796a2f46f4ce4d99e075250a"
+      }
+    ]
+  }
+}

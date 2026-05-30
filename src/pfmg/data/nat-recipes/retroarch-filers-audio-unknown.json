@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "retroarch-filers-audio",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "retroarch-filers-audio",
+    "subdir": "libretro-common/audio/dsp_filters",
+    "make-install-args": [
+      "PREFIX=${FLATPAK_DEST}"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/libretro/RetroArch.git",
+        "commit": "69a4f0ea1e8aaf442ae4858f2e7f2b31a1776576"
+      }
+    ]
+  }
+}

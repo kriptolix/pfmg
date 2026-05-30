@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "unrtf",
+    "version": "0.21.10",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "unrtf",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://ftp.gnu.org/gnu/unrtf/unrtf-0.21.10.tar.gz",
+        "sha256": "b49f20211fa69fff97d42d6e782a62d7e2da670b064951f14bbff968c93734ae",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 5052,
+          "url-template": "https://ftp.gnu.org/gnu/unrtf/unrtf-$version.tar.gz"
+        }
+      },
+      {
+        "type": "patch",
+        "path": "unrtf-adjust-malloc-types.patch"
+      }
+    ]
+  }
+}

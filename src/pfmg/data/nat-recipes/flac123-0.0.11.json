@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "flac123",
+    "version": "0.0.11",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "flac123",
+    "buildsystem": "autotools",
+    "build-options": {
+      "cflags": "-Wno-error=implicit-function-declaration"
+    },
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://master.dl.sourceforge.net/project/flac-tools/flac123/0.0.11/flac123-0.0.11.tar.gz",
+        "sha256": "2f96da02c28730fcc2c71e9e6975268a4b01b0a298f1bea58a5543192f972b66"
+      }
+    ]
+  }
+}

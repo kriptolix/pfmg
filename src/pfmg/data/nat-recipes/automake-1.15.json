@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "automake",
+    "version": "1.15",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "automake",
+    "buildsystem": "simple",
+    "build-commands": [
+      "./configure --prefix=$FLATPAK_DEST",
+      "make -j $FLATPAK_BUILDER_N_JOBS",
+      "make install"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://ftp.gnu.org/gnu/automake/automake-1.15.tar.xz",
+        "sha256": "9908c75aabd49d13661d6dcb1bc382252d22cc77bf733a2d55e87f2aa2db8636"
+      }
+    ]
+  }
+}

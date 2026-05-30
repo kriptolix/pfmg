@@ -1,0 +1,20 @@
+{
+  "header": {
+    "id": "nvfbc",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "nvfbc",
+    "buildsystem": "meson",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://gitlab.com/fzwoch/obs-nvfbc.git",
+        "tag": "v0.0.7",
+        "commit": "dda5bf49c316a7c5603b7f86dc19b62794d5e588"
+      }
+    ]
+  }
+}

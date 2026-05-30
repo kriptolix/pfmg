@@ -1,0 +1,39 @@
+{
+  "header": {
+    "id": "tqsl",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "tqsl",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DTQSL_FLATPAK=Yes",
+      "-DCMAKE_BUILD_TYPE=Release"
+    ],
+    "cleanup": [
+      "/include",
+      "/share/man"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://git.code.sf.net/p/trustedqsl/tqsl",
+        "tag": "v2.8.4",
+        "commit": "172c068adde7fccd4d25e6435a28f58b5a3a0d25",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^v([\\d.]+)$"
+        }
+      }
+    ],
+    "post-install": [
+      "rm /app/share/metainfo/org.arrl.trustedqsl.metainfo.xml /app/share/app-info/icons/flatpak/*/org.arrl.trustedqsl.png",
+      "for i in 16 32 48 64 128;do mv /app/share/icons/hicolor/${i}x${i}/apps/org.arrl.trustedqsl.png /app/share/icons/hicolor/${i}x${i}/apps/io.github.foldynl.QLog.trustedqsl.png;done",
+      "mv /app/share/applications/org.arrl.trustedqsl.desktop /app/share/applications/io.github.foldynl.QLog.trustedqsl.desktop",
+      "desktop-file-edit --set-key=\"Name\" --set-value=\"TQSL (QLog)\" /app/share/applications/io.github.foldynl.QLog.trustedqsl.desktop",
+      "desktop-file-edit --set-key=\"Icon\" --set-value=\"io.github.foldynl.QLog.trustedqsl\" /app/share/applications/io.github.foldynl.QLog.trustedqsl.desktop"
+    ]
+  }
+}

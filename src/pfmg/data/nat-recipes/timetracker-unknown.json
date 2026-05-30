@@ -1,0 +1,41 @@
+{
+  "header": {
+    "id": "timetracker",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "timetracker",
+    "buildsystem": "simple",
+    "build-commands": [
+      "install -Dm755 TimeTrackerApp.sh ${FLATPAK_DEST}/bin/TimeTrackerApp.sh",
+      "install -D app.jar ${FLATPAK_DEST}/bin/app.jar",
+      "install -D com.empesol.timetracker.metainfo.xml -t ${FLATPAK_DEST}/share/metainfo",
+      "install -D com.empesol.timetracker.desktop ${FLATPAK_DEST}/share/applications/com.empesol.timetracker.desktop",
+      "install -D com.empesol.timetracker.svg ${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/com.empesol.timetracker.svg"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/TadejLogar/TimeTrackerAppDesktop.git",
+        "commit": "8f015a91f7dbfc306b1b076fcab5ab960e68bcea"
+      },
+      {
+        "type": "file",
+        "url": "https://timetracker.empesol.com/files/TimeTrackerApp-linux-x64-1.0.35-release.jar",
+        "only-arches": [
+          "x86_64"
+        ],
+        "sha256": "a5b515f2f71797e36978f0e44cb8538f544d29225b46065cc4293dd825588162",
+        "dest-filename": "app.jar",
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://timetracker.empesol.com/files/latestRelease.json",
+          "version-query": ".version",
+          "url-query": ".url"
+        }
+      }
+    ]
+  }
+}

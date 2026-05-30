@@ -1,0 +1,59 @@
+{
+  "header": {
+    "id": "lensfun",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "lensfun",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
+      "-DBUILD_FOR_SSE=0",
+      "-DBUILD_FOR_SSE2=0",
+      "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
+    ],
+    "build-options": {
+      "arch": {
+        "x86_64": {
+          "config-opts": [
+            "-DBUILD_FOR_SSE=1",
+            "-DBUILD_FOR_SSE2=1"
+          ]
+        }
+      }
+    },
+    "cleanup": [
+      "/lib/python3.*"
+    ],
+    "post-install": [
+      "pip3 install --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} lxml --ignore-installed --no-build-isolation",
+      "python3 lensfun_convert_db.py $PWD lensfun-git/data/db",
+      "rm -rf /app/share/lensfun/version_1/*",
+      "tar xvf db/version_1.tar -C /app/share/lensfun/version_1"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/lensfun/lensfun/archive/refs/tags/v0.3.4.tar.gz",
+        "sha256": "dafb39c08ef24a0e2abd00d05d7341b1bf1f0c38bfcd5a4c69cf5f0ecb6db112"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/72/14/60bf9ba4b5c6d001af3b93be17a442deea8b1ce0eab2911de839cb0dfd3f/lxml-5.0.2.tar.gz",
+        "sha256": "6399703c40ba53e2c3b72fdb56cb908d2b83c08082ecf17de839b27e68d1e598"
+      },
+      {
+        "type": "file",
+        "path": "lensfun_convert_db.py"
+      },
+      {
+        "type": "git",
+        "dest": "lensfun-git",
+        "url": "https://github.com/lensfun/lensfun.git",
+        "commit": "9b46201746f466614efe573cbc5c3d292dd5633d"
+      }
+    ]
+  }
+}

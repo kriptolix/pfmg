@@ -1,0 +1,50 @@
+{
+  "header": {
+    "id": "mono5-sil",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "mono5-sil",
+    "config-opts": [
+      "--enable-minimal=aot"
+    ],
+    "cleanup": [
+      "/include",
+      "*.a",
+      "/bin/gtk-demo",
+      "/bin/monodis",
+      "/bin/monograph",
+      "/bin/pedump",
+      "/lib/mono/2*",
+      "/lib/mono/3*",
+      "/lib/mono/4.5/dim",
+      "/lib/mono/4.5/Microsoft.CodeAnalysis.*",
+      "/lib/mono/gac/Microsoft.Build.Engine",
+      "/lib/mono/gac/Microsoft.Build",
+      "/lib/mono/gac/monodoc",
+      "/lib/mono/msbuild",
+      "/lib/mono/xbuild-frameworks",
+      "/lib/mono/xbuild",
+      "/lib/monodoc"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/sillsdev/mono.git",
+        "commit": "2672d16f8b3006a574a0108b6c324d7a090678b5"
+      },
+      {
+        "type": "archive",
+        "url": "https://download.mono-project.com/monolite/monolite-linux-1051600011-latest.tar.gz",
+        "sha512": "b48bb273f5a9107f9bb9795d47277aeaaeb458588a6e011676bb9a152b83759f305cf1031a5e74a62145854ef17026cb1aa20ea9adb5e6b15f275b9d6af585db",
+        "dest": "mcs/class/lib/monolite-linux/1051600011"
+      },
+      {
+        "type": "patch",
+        "path": "patches/mono/mono-ping-path.patch"
+      }
+    ]
+  }
+}

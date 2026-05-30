@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "gr-osmosdr",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "gr-osmosdr",
+    "buildsystem": "cmake-ninja",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://gitea.osmocom.org/sdr/gr-osmosdr.git",
+        "tag": "v0.2.6",
+        "commit": "a6afeaa3a1038e64751616d769537cd22ace015d"
+      },
+      {
+        "type": "patch",
+        "path": "patches/gr-osmosdr-airspy-multidev.patch"
+      }
+    ]
+  }
+}

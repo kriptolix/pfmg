@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "python3-multimapping",
+    "version": "5.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-MultiMapping",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"MultiMapping==5.0\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/2b/01/08bfef7c8fe8d611f8fa8760985a5f3abf6b14d7da6341418f12c0f34dd3/extensionclass-6.0.tar.gz",
+        "sha256": "e36c9863f268b812811d783e4274ec369d9e152fc9fe6ecf7396a0cf8d06b09f"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/b0/c3/a23cd25567320bde3410bdb4ab9c0d1c4a29a3d62044e157fe413261b39f/MultiMapping-5.0-py3-none-any.whl",
+        "sha256": "ed92471d33c2c2eebd6a10a3f854f4a0930a0d65756212118904f8e202d2703d"
+      }
+    ]
+  }
+}

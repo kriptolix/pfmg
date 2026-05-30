@@ -1,0 +1,51 @@
+{
+  "header": {
+    "id": "crengine-ng",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "crengine-ng",
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DCRE_BUILD_SHARED=OFF",
+      "-DCRE_BUILD_STATIC=ON",
+      "-DENABLE_LARGEFILE_SUPPORT=ON",
+      "-DUSE_COLOR_BACKBUFFER=ON",
+      "-DUSE_LOCALE_DATA=ON",
+      "-DBUILD_TOOLS=OFF",
+      "-DUSE_GIF=ON",
+      "-DUSE_NANOSVG=ON",
+      "-DUSE_CHM=ON",
+      "-DUSE_ANTIWORD=ON",
+      "-DUSE_SHASUM=OFF",
+      "-DUSE_CMARK_GFM=OFF",
+      "-DUSE_MD4C=ON",
+      "-DWITH_LIBPNG=ON",
+      "-DWITH_LIBJPEG=ON",
+      "-DWITH_LIBWEBP=ON",
+      "-DWITH_FREETYPE=ON",
+      "-DWITH_HARFBUZZ=ON",
+      "-DWITH_LIBUNIBREAK=ON",
+      "-DWITH_FRIBIDI=ON",
+      "-DWITH_ZSTD=ON",
+      "-DWITH_UTF8PROC=ON",
+      "-DUSE_FONTCONFIG=ON"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://gitlab.com/coolreader-ng/crengine-ng.git",
+        "tag": "0.9.13",
+        "commit": "ef51353d6afecc924b639ed9c8c57c5b5faa6e5d",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^([\\d.]+)$"
+        }
+      }
+    ]
+  }
+}

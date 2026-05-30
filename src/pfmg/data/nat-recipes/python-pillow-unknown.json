@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "python-pillow",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python-pillow",
+    "buildsystem": "simple",
+    "build-commands": [
+      "python3 setup.py install --prefix=/app --root=/"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/python-pillow/Pillow",
+        "tag": "11.1.0",
+        "commit": "4c1aed801e43c6b307e7135279ca1dbc02bbf052"
+      }
+    ]
+  }
+}

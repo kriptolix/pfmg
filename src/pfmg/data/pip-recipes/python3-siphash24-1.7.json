@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-siphash24",
+    "version": "1.7",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-siphash24",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"siphash24==1.7\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/0e/be/f0a0ffbb00c51c5633b41459b5ce9b017c025a9256b4403e648c18e70850/siphash24-1.7.tar.gz",
+        "sha256": "6e90fee5f199ea25b4e7303646b31872a437174fe885a93dbd4cf7784eb48164"
+      }
+    ]
+  }
+}

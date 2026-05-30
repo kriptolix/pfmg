@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "openvkl",
+    "version": "0.9.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "openvkl",
+    "buildsystem": "cmake",
+    "builddir": true,
+    "config-opts": [
+      "-DBUILD_EXAMPLES:BOOL=OFF",
+      "-DBUILD_BENCHMARKS:BOOL=OFF"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/openvkl/openvkl/archive/refs/tags/v0.9.0.tar.gz",
+        "sha256": "06aa82c8c3ff68ab93fb8240f4881a1bc238b3de681812e71145f8a1629d3fee"
+      }
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "perl-xml-twig",
+    "version": "3.54",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "perl-xml-twig",
+    "buildsystem": "simple",
+    "build-commands": [
+      "perl Makefile.PL PREFIX=/app LIB=/app/lib",
+      "make",
+      "make install"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://cpan.metacpan.org/authors/id/M/MI/MIROD/XML-Twig-3.54.tar.gz",
+        "sha256": "0b744a9737a070f95c32154afd526bf5ebe76a59feb8bc1f5dbc6cdaa5e0e529"
+      }
+    ]
+  }
+}

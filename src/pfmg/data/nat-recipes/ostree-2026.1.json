@@ -1,0 +1,30 @@
+{
+  "header": {
+    "id": "ostree",
+    "version": "2026.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "ostree",
+    "config-opts": [
+      "--disable-man",
+      "--with-systemdsystemgeneratordir=/app/lib/systemd/system-generators",
+      "--without-systemdsystemunitdir",
+      "--with-curl"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/ostreedev/ostree/releases/download/v2026.1/libostree-2026.1.tar.xz",
+        "sha256": "8e77c285dd6fa5ec5fb063130390977be727fe11107335ed8778a40385069e95",
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://api.github.com/repos/ostreedev/ostree/releases/latest",
+          "version-query": ".tag_name",
+          "url-query": ".assets | first | .browser_download_url"
+        }
+      }
+    ]
+  }
+}

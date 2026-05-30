@@ -1,0 +1,30 @@
+{
+  "header": {
+    "id": "distutils-extra",
+    "version": "unknown",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "distutils-extra",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --no-build-isolation --no-deps --verbose --prefix=${FLATPAK_DEST} ."
+    ],
+    "cleanup": [
+      "/lib"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://salsa.debian.org/python-team/packages/python-distutils-extra.git",
+        "tag": "debian/3.3",
+        "commit": "ba3502d9173dbb4c426ae29ba88a9658b9b9324f",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^debian/([\\d\\.]+)$"
+        }
+      }
+    ]
+  }
+}

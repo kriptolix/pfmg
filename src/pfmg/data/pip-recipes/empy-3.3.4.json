@@ -1,0 +1,30 @@
+{
+  "header": {
+    "id": "empy",
+    "version": "3.3.4",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "empy",
+    "cleanup": [
+      "*"
+    ],
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} empy"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/3b/95/88ed47cb7da88569a78b7d6fb9420298df7e99997810c844a924d96d3c08/empy-3.3.4.tar.gz",
+        "sha256": "73ac49785b601479df4ea18a7c79bc1304a8a7c34c02b9472cf1206ae88f01b3"
+      }
+    ],
+    "post-install": [
+      "chmod +x /app/lib/python3.9/site-packages/em.py",
+      "mkdir -p /app/bin/",
+      "ln -s /app/lib/python3.9/site-packages/em.py /app/bin/empy"
+    ]
+  }
+}

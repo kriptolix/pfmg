@@ -1,0 +1,47 @@
+{
+  "header": {
+    "id": "zig",
+    "version": "0.16.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "zig",
+    "buildsystem": "simple",
+    "build-commands": [
+      "mkdir -p /usr/lib/sdk/ziglang",
+      "cp -r ./* /usr/lib/sdk/ziglang",
+      "chmod a+x /usr/lib/sdk/ziglang/zig"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://ziglang.org/download/0.16.0/zig-x86_64-linux-0.16.0.tar.xz",
+        "sha256": "70e49664a74374b48b51e6f3fdfbf437f6395d42509050588bd49abe52ba3d00",
+        "x-checker-data": {
+          "type": "html",
+          "url": "https://ziglang.org",
+          "version-pattern": "Latest Release:\n               &nbsp;<span>(\\d+\\.\\d+\\.\\d+)</span>",
+          "url-template": "https://ziglang.org/download/$version/zig-x86_64-linux-$version.tar.xz"
+        },
+        "only-arches": [
+          "x86_64"
+        ]
+      },
+      {
+        "type": "archive",
+        "url": "https://ziglang.org/download/0.16.0/zig-aarch64-linux-0.16.0.tar.xz",
+        "sha256": "ea4b09bfb22ec6f6c6ceac57ab63efb6b46e17ab08d21f69f3a48b38e1534f17",
+        "x-checker-data": {
+          "type": "html",
+          "url": "https://ziglang.org",
+          "version-pattern": "Latest Release:\n               &nbsp;<span>(\\d+\\.\\d+\\.\\d+)</span>",
+          "url-template": "https://ziglang.org/download/$version/zig-aarch64-linux-$version.tar.xz"
+        },
+        "only-arches": [
+          "aarch64"
+        ]
+      }
+    ]
+  }
+}

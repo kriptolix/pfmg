@@ -1,0 +1,47 @@
+{
+  "header": {
+    "id": "reckoner",
+    "version": "6.3.3",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "reckoner",
+    "buildsystem": "simple",
+    "build-commands": [
+      "mkdir -p ${FLATPAK_DEST}/bin ${FLATPAK_DEST}/reckoner",
+      "if [ $(arch)=\"aarch64\"  ]; then sed -si \"/Exec=/cExec=env LIBGL_ALWAYS_SOFTWARE=1 reckoner\" reckoner-git/linux/flatpak/${FLATPAK_ID}.desktop; fi",
+      "install -Dm644 reckoner-git/linux/flatpak/${FLATPAK_ID}.png -t ${FLATPAK_DEST}/share/icons/hicolor/512x512/apps/",
+      "install -Dm644 reckoner-git/linux/flatpak/${FLATPAK_ID}.desktop -t ${FLATPAK_DEST}/share/applications/",
+      "install -Dm644 reckoner-git/linux/flatpak/${FLATPAK_ID}.appdata.xml -t ${FLATPAK_DEST}/share/appdata/",
+      "cp -R bundle/* ${FLATPAK_DEST}/reckoner/",
+      "if [ $(arch)=\"aarch64\"  ]; then echo \"#!/bin/bash\" >> ${FLATPAK_DEST}/bin/reckoner; echo \"LIBGL_ALWAYS_SOFTWARE=1 ${FLATPAK_DEST}/reckoner/reckoner\" >> ${FLATPAK_DEST}/bin/reckoner; chmod a+x ${FLATPAK_DEST}/bin/reckoner; else ln -s ${FLATPAK_DEST}/reckoner/reckoner ${FLATPAK_DEST}/bin/reckoner; fi"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "only-arches": [
+          "x86_64"
+        ],
+        "dest": "bundle",
+        "url": "https://codeberg.org/Reckoner/app/releases/download/v6.3.3/reckoner-6.3.3-linux-x86_64.tar.gz",
+        "sha256": "d8b1ef850a6ff6c8da8da3949889d24c9a4c05a5e57297df2544bd8cb9940a5b"
+      },
+      {
+        "type": "archive",
+        "only-arches": [
+          "aarch64"
+        ],
+        "dest": "bundle",
+        "url": "https://codeberg.org/Reckoner/app/releases/download/v6.3.3/reckoner-6.3.3-linux-aarch64.tar.gz",
+        "sha256": "a31d9d1a1b48609bea5031f6b93b8c7d05a0c3ee2af7f799fda7bf8c19bd2b7b"
+      },
+      {
+        "type": "git",
+        "url": "https://codeberg.org/Reckoner/app.git",
+        "dest": "reckoner-git",
+        "tag": "main"
+      }
+    ]
+  }
+}

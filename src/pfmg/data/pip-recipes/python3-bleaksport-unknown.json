@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-bleaksport",
+    "version": "unknown",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-bleaksport",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --no-index --no-deps --no-build-isolation --prefix=${FLATPAK_DEST} ."
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/luigi311/bleaksport",
+        "commit": "7d0aedacb8f116e96ba1748b8afa9f9dc4d5ee5f"
+      }
+    ]
+  }
+}

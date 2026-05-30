@@ -1,0 +1,31 @@
+{
+  "header": {
+    "id": "onevpl-intel-gpu",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "onevpl-intel-gpu",
+    "only-arches": [
+      "x86_64"
+    ],
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DBUILD_TOOLS=OFF",
+      "-DBUILD_TESTS=OFF"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/intel/vpl-gpu-rt.git",
+        "commit": "2c1fbb85554245c292b42fd1be2931f1c3dab561",
+        "tag": "intel-onevpl-26.2.0",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^intel-onevpl-([\\d.]+)$"
+        }
+      }
+    ]
+  }
+}

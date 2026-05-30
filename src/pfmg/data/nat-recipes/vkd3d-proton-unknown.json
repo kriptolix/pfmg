@@ -1,0 +1,61 @@
+{
+  "header": {
+    "id": "vkd3d-proton",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "vkd3d-proton",
+    "subdir": "vkd3d-proton",
+    "buildsystem": "meson",
+    "build-options": {
+      "ldflags": "",
+      "ldflags-override": true,
+      "config-opts": [
+        "--cross-file=../build-win64.txt",
+        "--cross-file=../meson-ccache-mingw64.txt",
+        "--libdir=lib/wine/vkd3d-proton",
+        "--bindir=lib/wine/vkd3d-proton"
+      ],
+      "prepend-path": "/usr/lib/sdk/mingw-w64/bin:/app/share/steam/compatibilitytools.d/Proton/bin"
+    },
+    "config-opts": [
+      "--buildtype=release",
+      "--strip",
+      "-Denable_d3d12=true"
+    ],
+    "post-install": [
+      "cd ${FLATPAK_BUILDER_BUILDDIR}; git submodule status -- vkd3d-proton > ${FLATPAK_DEST}/lib/wine/vkd3d-proton/version"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/ValveSoftware/Proton.git",
+        "tag": "proton-7.0-6",
+        "commit": "c5ad95671cecaf03c4a92500de84b542add585d1",
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://api.github.com/repos/ValveSoftware/Proton/git/refs/tags/proton-",
+          "tag-query": "map(select(.ref | match(\"refs/tags/proton-[0-9].*\"; \"\"))) | last | if .object.type==\"commit\" then . else error(\"not a commit\") end | .ref | sub(\"^refs/tags/\"; \"\")",
+          "version-query": "$tag | sub(\"^proton-\"; \"\")",
+          "commit-query": "map(select(.ref | match(\"refs/tags/proton-[0-9].*\"; \"\"))) | last | .object.sha",
+          "timestamp-data-url": "map(select(.ref | match(\"refs/tags/proton-[0-9].*\"; \"\"))) | last | .object.url",
+          "timestamp-query": ".committer.date",
+          "is-main-source": true,
+          "source-id": "proton-git-0"
+        }
+      },
+      {
+        "type": "file",
+        "dest": "vkd3d-proton",
+        "path": "meson-ccache-mingw32.txt"
+      },
+      {
+        "type": "file",
+        "dest": "vkd3d-proton",
+        "path": "meson-ccache-mingw64.txt"
+      }
+    ]
+  }
+}

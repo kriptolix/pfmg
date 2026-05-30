@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "wizards",
+    "version": "1.0.3",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "wizards",
+    "buildsystem": "simple",
+    "builddir": false,
+    "build-commands": [
+      "echo '#! /usr/bin/env runhaskell' >Setup.txt",
+      "echo '> import Distribution.Simple' >>Setup.txt",
+      "echo '> main = defaultMain' >>Setup.txt",
+      "ln -s Setup.txt Setup.lhs || true",
+      "runhaskell Setup configure --prefix=/app",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "sources": [
+      {
+        "sha256": "05650d7bf6dd0e6b87d0d7da6fb003601ce5d7b1f3d69571127ec3c9425b9bb2",
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/wizards-1.0.3/wizards-1.0.3.tar.gz"
+      },
+      {
+        "dest-filename": "wizards.cabal",
+        "sha256": "cb7798895ee35e06c00a69eb1cd8a3c45921e3c5fb76ffcf11a76a15fbda4365",
+        "type": "file",
+        "url": "https://hackage.haskell.org/package/wizards-1.0.3/revision/3.cabal"
+      }
+    ]
+  }
+}

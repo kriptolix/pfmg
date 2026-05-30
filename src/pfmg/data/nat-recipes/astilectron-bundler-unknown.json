@@ -1,0 +1,37 @@
+{
+  "header": {
+    "id": "astilectron-bundler",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "astilectron-bundler",
+    "buildsystem": "simple",
+    "build-options": {
+      "env": {
+        "GOBIN": "/app/bin",
+        "GO111MODULE": false,
+        "GOPATH": "/run/build/astilectron-bundler"
+      }
+    },
+    "subdir": "src/github.com/asticode/go-astilectron-bundler",
+    "build-commands": [
+      "go install -v github.com/asticode/go-astilectron-bundler/..."
+    ],
+    "sources": [
+      "generated-astilectron-bundler-sources.json",
+      {
+        "type": "git",
+        "url": "https://github.com/asticode/go-astilectron-bundler",
+        "tag": "v0.7.12",
+        "commit": "9ca0b71fdf5533e4aa17f7587fb747d3874a7315",
+        "dest": "src/github.com/asticode/go-astilectron-bundler",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^v([\\d.]+)$"
+        }
+      }
+    ]
+  }
+}

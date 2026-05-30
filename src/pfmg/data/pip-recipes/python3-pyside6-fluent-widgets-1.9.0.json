@@ -1,0 +1,47 @@
+{
+  "header": {
+    "id": "python3-pyside6-fluent-widgets",
+    "version": "1.9.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-PySide6-Fluent-Widgets",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"PySide6-Fluent-Widgets\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/f2/f2/728f041460f1b9739b85ee23b45fa5a505962ea11fd85bdbe2a02b021373/darkdetect-0.8.0-py3-none-any.whl",
+        "sha256": "a7509ccf517eaad92b31c214f593dbcf138ea8a43b2935406bbd565e15527a85",
+        "x-checker-data": {
+          "name": "darkdetect",
+          "packagetype": "bdist_wheel",
+          "type": "pypi"
+        }
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/58/8e/c04337b8a628e76efbef10a0bd25d64629054f9823be235a74a1abb14c2e/pyside6_fluent_widgets-1.9.0-py3-none-any.whl",
+        "sha256": "4571b4d3fb4e8d7b6eb3c8fd7978d43def8005f9f2efa037edf9311e5e77b10d",
+        "x-checker-data": {
+          "name": "pyside6_fluent_widgets",
+          "packagetype": "bdist_wheel",
+          "type": "pypi"
+        }
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/36/a7/d06588105e8d3ede3e892871fa06d6e0365a7f88e42388f9fdbe61ccb77b/pysidesix_frameless_window-0.7.3-py3-none-any.whl",
+        "sha256": "d39c17140bd0eef32bcf34d8697ab06244295709062db9f0b6b41f946ac5eb99",
+        "x-checker-data": {
+          "name": "pysidesix_frameless_window",
+          "packagetype": "bdist_wheel",
+          "type": "pypi"
+        }
+      }
+    ]
+  }
+}

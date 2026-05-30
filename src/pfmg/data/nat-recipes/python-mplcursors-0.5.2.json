@@ -1,0 +1,26 @@
+{
+  "header": {
+    "id": "python-mplcursors",
+    "version": "0.5.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python-mplcursors",
+    "buildsystem": "simple",
+    "build-commands": [
+      "python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://files.pythonhosted.org/packages/03/ec/f28dd523e8397ae8c55878b802380aae7bfd65448f17e5c2b30927fe6575/mplcursors-0.5.2.tar.gz",
+        "sha256": "78febb32adf2d9040e2f6fc84b5e4cfb8f96b4ede4916fc418e5fffbcfdc0957",
+        "x-checker-data": {
+          "type": "pypi",
+          "name": "mplcursors"
+        }
+      }
+    ]
+  }
+}

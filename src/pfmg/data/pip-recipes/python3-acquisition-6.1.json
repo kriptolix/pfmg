@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "python3-acquisition",
+    "version": "6.1",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-Acquisition",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"Acquisition==6.1\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/67/9a/3df1e83e6655ca6eee9920f746455b9865c7dff9ef5ca9dadb683fb38c02/acquisition-6.1.tar.gz",
+        "sha256": "e88b296d6ec5fcb63194deb91d8c4df37150dcae149ede4e1aeb115d042e9378"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/2b/01/08bfef7c8fe8d611f8fa8760985a5f3abf6b14d7da6341418f12c0f34dd3/extensionclass-6.0.tar.gz",
+        "sha256": "e36c9863f268b812811d783e4274ec369d9e152fc9fe6ecf7396a0cf8d06b09f"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/30/93/9210e7606be57a2dfc6277ac97dcc864fd8d39f142ca194fdc186d596fda/zope.interface-7.2.tar.gz",
+        "sha256": "8b49f1a3d1ee4cdaf5b32d2e738362c7f5e40ac8b46dd7d1a65e82a4872728fe"
+      }
+    ]
+  }
+}

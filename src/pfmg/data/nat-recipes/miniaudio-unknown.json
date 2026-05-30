@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "miniaudio",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "miniaudio",
+    "buildsystem": "simple",
+    "build-commands": [
+      "install -Dm644 miniaudio.h ${FLATPAK_DEST}/include/miniaudio.h"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/mackron/miniaudio.git",
+        "tag": "0.11.25",
+        "commit": "9634bedb5b5a2ca38c1ee7108a9358a4e233f14d",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^(\\d+\\.\\d+\\.\\d+)$"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "library",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "library",
+    "buildsystem": "simple",
+    "build-commands": [
+      "find ./library -type f -exec install -D '{}' '/app/share/propelleride/library/{}' \\;"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/parallaxinc/spin-standard-library.git",
+        "commit": "5a7e33f502d3e364b9b1b562be3256bb7a9a92ff"
+      }
+    ]
+  }
+}

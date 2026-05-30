@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "imath",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "Imath",
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DBUILD_TESTING=OFF",
+      "-DBUILD_SHARED_LIBS=ON"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/AcademySoftwareFoundation/Imath.git",
+        "tag": "v3.2.2"
+      }
+    ]
+  }
+}

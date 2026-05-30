@@ -1,0 +1,37 @@
+{
+  "header": {
+    "id": "python3-range-typed-integers",
+    "version": "1.0.1",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-range-typed-integers",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"range-typed-integers>=1.0.0\""
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/2e/49/565350c6fab3f5a3e2c46633290117060e70e2501544cdf3bde1d1d5d0fe/range_typed_integers-1.0.1-py3-none-any.whl",
+        "sha256": "35d39a41642503c5c5117e26798713f081b1beece1b2afd8f1ba70c8d90f63c5"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/32/c0/5b8013b5a812701c72e3b1e2b378edaa6514d06bee6704a5ab0d7fa52931/setuptools-71.1.0.tar.gz",
+        "sha256": "032d42ee9fb536e33087fb66cac5f840eb9391ed05637b3f2a76a7c8fb477936"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/8a/98/2d9906746cdc6a6ef809ae6338005b3f21bb568bea3165cfc6a243fdc25c/wheel-0.45.1.tar.gz",
+        "sha256": "661e1abd9198507b1409a20c02106d9670b2576e916d58f520316666abca6729"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/d5/ae/09427bea9227a33ec834ed5461432752fd5d02b14f93dd68406c91684622/flit_core-3.10.1.tar.gz",
+        "sha256": "66e5b87874a0d6e39691f0e22f09306736b633548670ad3c09ec9db03c5662f7"
+      }
+    ]
+  }
+}

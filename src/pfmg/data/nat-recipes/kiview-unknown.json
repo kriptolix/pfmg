@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "kiview",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "buildsystem": "cmake-ninja",
+    "name": "kiview",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://invent.kde.org/danagost/Kiview.git",
+        "commit": "e5d958eb21eab7cafafb2f526f951df38cf157c6"
+      },
+      {
+        "type": "patch",
+        "path": "40e35a4a55c929467ac9398075b5e1fdc578a013.patch"
+      }
+    ]
+  }
+}

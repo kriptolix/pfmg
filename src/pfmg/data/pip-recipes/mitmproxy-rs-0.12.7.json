@@ -1,0 +1,49 @@
+{
+  "header": {
+    "id": "mitmproxy-rs",
+    "version": "0.12.7",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "mitmproxy_rs",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=/app \"mitmproxy_rs\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/a4/2a/5baebcfb4a3adc752a8d3c68b00b2093df6125ecb19076f31bb04103dffc/mitmproxy_rs-0.12.7-cp312-abi3-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "sha256": "ea7d8b5fbb8a6263500bc2cebcfadf06efb0778acfd2ca4238a6971ea4dc8735",
+        "only-arches": [
+          "x86_64"
+        ]
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/59/85/e41e66bb0f8ed05eaa384ee9f310ae0b544c572b4e85f5644ad1bee612f6/mitmproxy_rs-0.12.7-cp312-abi3-manylinux_2_17_aarch64.manylinux2014_aarch64.whl",
+        "sha256": "948c66181038e56c451ff099e9a2fc13610f55713a64188703e631dc61770663",
+        "only-arches": [
+          "aarch64"
+        ]
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/ee/4e/f7b39e37ac21408b5761dd1a69a623182f192398a8ce8018eeb743bb57b6/mitmproxy_linux-0.12.7-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "sha256": "d1f708fadad84f36b6bc8d47850bb9501c63678bba092ea887c65d72fe49a2e0",
+        "only-arches": [
+          "x86_64"
+        ]
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/53/8d/d9b1347ce3892b9f141de749a8b65c90b9bf492f2b61f47c2d6fd9933c4d/mitmproxy_linux-0.12.7-py3-none-manylinux_2_17_aarch64.manylinux2014_aarch64.whl",
+        "sha256": "47ce06e6de8dfecffce3b9205cff45366921822ffdc3fbb88e80166d6c5209b1",
+        "only-arches": [
+          "aarch64"
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "libpeas-2",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libpeas-2",
+    "buildsystem": "meson",
+    "config-opts": [
+      "-Dgtk_doc=false",
+      "-Dlua51=false",
+      "-Dgjs=false",
+      "-Dintrospection=false",
+      "-Dpython3=false"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://gitlab.gnome.org/GNOME/libpeas.git",
+        "tag": "2.2.1",
+        "commit": "744430715e619069b3fcb6c994f2c09257700d05",
+        "x-checker-data": {
+          "type": "git",
+          "version-scheme": "semantic",
+          "tag-pattern": "^(\\d+\\.\\d*[02468]\\.\\d+)$"
+        }
+      }
+    ]
+  }
+}

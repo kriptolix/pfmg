@@ -1,0 +1,29 @@
+{
+  "header": {
+    "id": "libftdi",
+    "version": "1.5",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libftdi",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DLIB_SUFFIX=",
+      "-Wno-dev",
+      "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://www.intra2net.com/en/developer/libftdi/download/libftdi1-1.5.tar.bz2",
+        "sha256": "7c7091e9c86196148bd41177b4590dccb1510bfe6cea5bf7407ff194482eb049",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 14622,
+          "url-template": "https://www.intra2net.com/en/developer/libftdi/download/libftdi1-$version.tar.bz2"
+        }
+      }
+    ]
+  }
+}

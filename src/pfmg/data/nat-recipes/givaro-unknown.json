@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "givaro",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "givaro",
+    "buildsystem": "autotools",
+    "config-opts": [
+      "--enable-shared"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/linbox-team/givaro.git",
+        "tag": "v4.2.1rc0",
+        "commit": "c4090f55844f056ebb5d430a78232d60de5da1f6"
+      }
+    ]
+  }
+}

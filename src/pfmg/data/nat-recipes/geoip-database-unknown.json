@@ -1,0 +1,29 @@
+{
+  "header": {
+    "id": "geoip-database",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "geoip-database",
+    "buildsystem": "simple",
+    "build-commands": [
+      "gunzip GeoIP{,v6}.dat",
+      "mkdir -p ${FLATPAK_DEST}/share/GeoIP",
+      "install -m644 -t ${FLATPAK_DEST}/share/GeoIP GeoIP{,v6}.dat"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://sources.archlinux.org/other/packages/geoip-database/20250129/GeoIP.dat.gz",
+        "sha256": "3232f341cf55b60c4e377ab7dafd3685e176d016476e3481591022f8682da53d"
+      },
+      {
+        "type": "file",
+        "url": "https://sources.archlinux.org/other/packages/geoip-database/20250129/GeoIPv6.dat.gz",
+        "sha256": "b2c07f64789860bc35d167b7b1be6c5ec1ae717d7998d7c4f9baaa2affeec19b"
+      }
+    ]
+  }
+}

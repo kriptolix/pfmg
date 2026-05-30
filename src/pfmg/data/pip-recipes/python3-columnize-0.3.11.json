@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-columnize",
+    "version": "0.3.11",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-columnize",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"columnize==0.3.11\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/de/da/c1f84838ecb3e84c3c85c691f51f1e2dfcf7be745761d9f6462c909175ad/columnize-0.3.11-py3-none-any.whl",
+        "sha256": "3c474ca632e474df8f012843fb74a4c0bea4e8876d49a17f952f8e82f14cbc3d"
+      }
+    ]
+  }
+}

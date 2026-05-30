@@ -1,0 +1,19 @@
+{
+  "header": {
+    "id": "ccrypt",
+    "version": "1.11",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "ccrypt",
+    "buildsystem": "autotools",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://ccrypt.sourceforge.net/download/1.11/ccrypt-1.11.tar.gz",
+        "sha256": "b19c47500a96ee5fbd820f704c912f6efcc42b638c0a6aa7a4e3dc0a6b51a44f"
+      }
+    ]
+  }
+}

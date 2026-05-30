@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "unix-compat-0.5.1",
+    "version": "0.5.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "build-commands": [
+      "ghc -threaded --make Setup",
+      "./Setup configure --prefix=/app",
+      "./Setup build",
+      "./Setup install"
+    ],
+    "buildsystem": "simple",
+    "cleanup": [],
+    "name": "unix-compat-0.5.1",
+    "only-arches": [],
+    "sources": [
+      {
+        "sha256": "a39d0c79dd906763770b80ba5b6c5cb710e954f894350e9917de0d73f3a19c52",
+        "type": "archive",
+        "url": "https://s3.amazonaws.com/hackage.fpcomplete.com/package/unix-compat-0.5.1.tar.gz"
+      },
+      {
+        "sha256": "e54c8205ee0eb36d463990180a8127e75c8cb27b364d7cef12196ef2d82ebb9b",
+        "type": "file",
+        "url": "https://raw.githubusercontent.com/commercialhaskell/all-cabal-files/a5f22172fce750e93afa6987320f5c5be62b5670/unix-compat/0.5.1/unix-compat.cabal"
+      }
+    ]
+  }
+}

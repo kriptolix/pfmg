@@ -1,6 +1,8 @@
 {
   "extension_id": "org.freedesktop.Sdk.Extension.llvm20",
   "display_name": "llvm20.25.08",
+  "sdk_version": "25.08",
+  "ext_version": "25.08",
   "mount_path": "/usr/lib/sdk/llvm20",
   "provides_executables": [
     "FileCheck",

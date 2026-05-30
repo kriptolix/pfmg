@@ -1,0 +1,46 @@
+{
+  "header": {
+    "id": "yamagi",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "yamagi",
+    "buildsystem": "cmake-ninja",
+    "no-make-install": true,
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+    ],
+    "build-commands": [
+      "mv ./release/ /app/bin/",
+      "install -Dm 644 ./stuff/icon/Quake2.svg /app/share/icons/hicolor/scalable/apps/Quake2.svg",
+      "install -D ./stuff/mapfixes/baseq2/base2@0ae9.ent /app/bin/baseq2/maps/base2@0ae9.ent",
+      "install -D ./stuff/mapfixes/baseq2/base3@1597.ent /app/bin/baseq2/maps/base3@1597.ent",
+      "install -D ./stuff/mapfixes/baseq2/biggun@2c96.ent /app/bin/baseq2/maps/biggun@2c96.ent",
+      "install -D ./stuff/mapfixes/baseq2/city1@1555.ent /app/bin/baseq2/maps/city1@1555.ent",
+      "install -D ./stuff/mapfixes/baseq2/city2@4cc5.ent /app/bin/baseq2/maps/city2@4cc5.ent",
+      "install -D ./stuff/mapfixes/baseq2/city3@1de5.ent /app/bin/baseq2/maps/city3@1de5.ent",
+      "install -D ./stuff/mapfixes/baseq2/cool1@0250.ent /app/bin/baseq2/maps/cool1@0250.ent",
+      "install -D ./stuff/mapfixes/baseq2/hangar1@09a0.ent /app/bin/baseq2/maps/hangar1@09a0.ent",
+      "install -D ./stuff/mapfixes/baseq2/jail5@2ec5.ent /app/bin/baseq2/maps/jail5@2ec5.ent",
+      "install -D ./stuff/mapfixes/baseq2/lab@c170.ent /app/bin/baseq2/maps/lab@c170.ent",
+      "install -D ./stuff/mapfixes/baseq2/train@07c2.ent /app/bin/baseq2/maps/train@07c2.ent",
+      "install -D ./stuff/mapfixes/baseq2/waste3@6a93.ent /app/bin/baseq2/maps/waste3@6a93.ent",
+      "install -D ./stuff/mapfixes/juggernaut/jug13@7ed4.ent /app/bin/juggernaut/maps/jug13@7ed4.ent",
+      "install -D ./stuff/mapfixes/juggernaut/jug19@a903.ent /app/bin/juggernaut/maps/jug19@a903.ent"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/yquake2/yquake2/archive/refs/tags/QUAKE2_8_51.tar.gz",
+        "sha256": "54c530305dd96cf4536dee3633864f3e326a5efd33528314ac64e009201318e7",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 12336,
+          "url-template": "https://github.com/yquake2/yquake2/archive/refs/tags/QUAKE2_$version.tar.gz"
+        }
+      }
+    ]
+  }
+}

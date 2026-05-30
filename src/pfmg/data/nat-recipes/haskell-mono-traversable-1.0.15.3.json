@@ -1,0 +1,33 @@
+{
+  "header": {
+    "id": "haskell-mono-traversable",
+    "version": "1.0.15.3",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "haskell-mono-traversable",
+    "buildsystem": "simple",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/mono-traversable-1.0.15.3/mono-traversable-1.0.15.3.tar.gz",
+        "sha256": "98b220f3313d74227a4249210c8818e839678343e62b3ebb1b8c867cf2b974b7",
+        "x-checker-data": {
+          "type": "html",
+          "url": "https://www.stackage.org/lts-21",
+          "version-pattern": ">mono-traversable-([\\d.]+)<",
+          "url-template": "https://hackage.haskell.org/package/mono-traversable-$version/mono-traversable-$version.tar.gz"
+        }
+      }
+    ],
+    "build-commands": [
+      "runhaskell Setup configure --prefix=/app --extra-lib-dirs=/app/lib",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "cleanup": [
+      "*"
+    ]
+  }
+}

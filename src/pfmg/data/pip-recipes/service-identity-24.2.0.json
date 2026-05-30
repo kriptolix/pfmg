@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "service-identity",
+    "version": "24.2.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "service-identity",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --prefix=/app service_identity*.whl"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/08/2c/ca6dd598b384bc1ce581e24aaae0f2bed4ccac57749d5c3befbb5e742081/service_identity-24.2.0-py3-none-any.whl",
+        "sha256": "6b047fbd8a84fd0bb0d55ebce4031e400562b9196e1e0d3e0fe2b8a59f6d4a85",
+        "x-checker-data": {
+          "type": "pypi",
+          "name": "service-identity",
+          "packagetype": "bdist_wheel"
+        }
+      }
+    ]
+  }
+}

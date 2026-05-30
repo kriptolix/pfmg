@@ -1,0 +1,65 @@
+{
+  "header": {
+    "id": "python3-kolibri-explore-plugin",
+    "version": "7.15.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-kolibri-explore-plugin",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} kolibri-explore-plugin",
+      "mkdir -p \"${FLATPAK_DEST}/share/endless-key\"",
+      "cp -R apps-bundle -t \"${ENDLESS_KEY_DATA_DIR}\"",
+      "cp -R loading-screen -t \"${ENDLESS_KEY_DATA_DIR}\""
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://github.com/endlessm/kolibri-explore-plugin/releases/download/v7.15.0/kolibri_explore_plugin-7.15.0-py3-none-any.whl",
+        "sha256": "f9412dcb465432a9f46f53886c4a93571c2bc66d78f588a06b9510b2ed0c1fb2",
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://api.github.com/repos/endlessm/kolibri-explore-plugin/releases/latest",
+          "version-query": ".tag_name | sub(\"^[vV]\"; \"\")",
+          "url-query": ".assets[] | select(.name==\"kolibri_explore_plugin-\" + $version + \"-py3-none-any.whl\") | .browser_download_url",
+          "versions": {
+            "<": "8.0.0"
+          }
+        }
+      },
+      {
+        "type": "archive",
+        "url": "https://github.com/endlessm/kolibri-explore-plugin/releases/download/v7.15.0/apps-bundle.zip",
+        "sha256": "0fa54b1289c5354a164214ab68fb90454bad10581d980b443ab0ec4c0617d1f3",
+        "dest": "apps-bundle",
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://api.github.com/repos/endlessm/kolibri-explore-plugin/releases/latest",
+          "version-query": ".tag_name | sub(\"^[vV]\"; \"\")",
+          "url-query": ".assets[] | select(.name==\"apps-bundle.zip\") | .browser_download_url",
+          "versions": {
+            "<": "8.0.0"
+          }
+        }
+      },
+      {
+        "type": "archive",
+        "url": "https://github.com/endlessm/kolibri-explore-plugin/releases/download/v7.15.0/loading-screen.zip",
+        "sha256": "fda52a340cea3ededaab4e4527aea9b30ced26b33aa3ee45f051e6f86cf5d578",
+        "strip-components": 0,
+        "dest": "loading-screen",
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://api.github.com/repos/endlessm/kolibri-explore-plugin/releases/latest",
+          "version-query": ".tag_name | sub(\"^[vV]\"; \"\")",
+          "url-query": ".assets[] | select(.name==\"loading-screen.zip\") | .browser_download_url",
+          "versions": {
+            "<": "8.0.0"
+          }
+        }
+      }
+    ]
+  }
+}

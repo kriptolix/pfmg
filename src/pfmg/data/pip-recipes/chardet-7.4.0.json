@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "chardet",
+    "version": "7.4.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "chardet",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --prefix=/app chardet-*.whl"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/91/d7/47988d40231b41376f5a66346ef3b322c81091dfd4c0f84df5a1e3bb06b5/chardet-7.4.0.post1-py3-none-any.whl",
+        "sha256": "57a62ef50f69bc2fb3a3ea1ffffec6d10f3d2112d3b05d6e3cb15c2c9b55f6cc",
+        "x-checker-data": {
+          "type": "pypi",
+          "packagetype": "bdist_wheel",
+          "name": "chardet"
+        }
+      }
+    ]
+  }
+}

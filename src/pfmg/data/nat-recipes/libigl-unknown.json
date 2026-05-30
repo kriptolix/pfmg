@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "libigl",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libigl",
+    "buildsystem": "simple",
+    "build-commands": [
+      "mkdir ${FLATPAK_DEST}/_deps/libigl",
+      "cp -r . ${FLATPAK_DEST}/_deps/libigl"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/dgud/libigl.git",
+        "tag": "v2.1.0",
+        "commit": "f6b406427400ed7ddb56cfc2577b6af571827c8c"
+      }
+    ]
+  }
+}

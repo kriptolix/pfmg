@@ -1,0 +1,34 @@
+{
+  "header": {
+    "id": "ladspa-sdk",
+    "version": "1.17",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "ladspa-sdk",
+    "no-autogen": true,
+    "subdir": "src",
+    "make-install-args": [
+      "INSTALL_PLUGINS_DIR=/app/lib/ladspa",
+      "INSTALL_INCLUDE_DIR=/app/include",
+      "INSTALL_BINARY_DIR=/app/bin"
+    ],
+    "cleanup": [
+      "/bin"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://files.kde.org/craft/sources/libs/ladspa/ladspa_sdk_1.17.tgz",
+        "sha256": "27d24f279e4b81bd17ecbdcc38e4c42991bb388826c0b200067ce0eb59d3da5b",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 227231,
+          "stable-only": true,
+          "url-template": "https://files.kde.org/craft/sources/libs/ladspa/ladspa_sdk_$version.tgz"
+        }
+      }
+    ]
+  }
+}

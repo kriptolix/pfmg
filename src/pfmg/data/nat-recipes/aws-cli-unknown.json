@@ -1,0 +1,41 @@
+{
+  "header": {
+    "id": "aws-cli",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "aws-cli",
+    "buildsystem": "simple",
+    "build-commands": [
+      "./install -i \"${FLATPAK_DEST}/aws-cli\" -b \"${FLATPAK_DEST}/bin\""
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "only-arches": [
+          "x86_64"
+        ],
+        "url": "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip",
+        "sha256": "90d06c744f692418a37a910b265cc4d0cfed1352a6221a207d56cf28d23e2679",
+        "x-checker-data": {
+          "type": "rotating-url",
+          "url": "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip"
+        }
+      },
+      {
+        "type": "archive",
+        "only-arches": [
+          "aarch64"
+        ],
+        "url": "https://awscli.amazonaws.com/awscli-exe-linux-aarch64.zip",
+        "sha256": "25c19767deae70c91e06499be40902647e5f56ac9d2fc78ecdeced53f9a1822c",
+        "x-checker-data": {
+          "type": "rotating-url",
+          "url": "https://awscli.amazonaws.com/awscli-exe-linux-aarch64.zip"
+        }
+      }
+    ]
+  }
+}

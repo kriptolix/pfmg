@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "kms-server-proxy",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "kms-server-proxy",
+    "disabled": false,
+    "buildsystem": "simple",
+    "build-commands": [
+      "./build.sh",
+      "install -Dm755 kms-server-proxy \"$FLATPAK_DEST/bin/kms-server-proxy\""
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://dec05eba.com/snapshot/kms-server-proxy.git.r32.64615b4.tar.gz",
+        "sha512": "824d3d07372b66a979e0258de7de4fcc615c90e36f8ccfb8b3c2414b05ffa131c32a44a9c39681b48d93d941532bd8beb580f398512c4183b898bdf9b37b58f8",
+        "strip-components": 0
+      }
+    ]
+  }
+}

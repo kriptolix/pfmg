@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-sasmodels",
+    "version": "1.0.12",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-sasmodels",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --no-deps --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"sasmodels\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/28/8e/805e412f5c24a3f12927b7bd556bc8ce480f9de8d7dc6f4fb50e870c54ea/sasmodels-1.0.12-py3-none-any.whl",
+        "sha256": "7a24bbd442d4beddc0b779e8d57ad2507aad614e2c1a12656dc862e293228166"
+      }
+    ]
+  }
+}

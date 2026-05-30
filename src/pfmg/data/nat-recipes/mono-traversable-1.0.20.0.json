@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "mono-traversable",
+    "version": "1.0.20.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "mono-traversable",
+    "buildsystem": "simple",
+    "builddir": false,
+    "build-commands": [
+      "echo '#! /usr/bin/env runhaskell' >Setup.txt",
+      "echo '> import Distribution.Simple' >>Setup.txt",
+      "echo '> main = defaultMain' >>Setup.txt",
+      "ln -s Setup.txt Setup.lhs || true",
+      "runhaskell Setup configure --prefix=/app",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "sources": [
+      {
+        "sha256": "e621ea953c94b2dafc58286132e9dae7464a07c6967f0c591c916968d3f93545",
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/mono-traversable-1.0.20.0/mono-traversable-1.0.20.0.tar.gz"
+      },
+      {
+        "dest-filename": "mono-traversable.cabal",
+        "sha256": "d5b48c3b3e91c6b447473d146174fea4c1becaff15f640ea907343f3fe2645e5",
+        "type": "file",
+        "url": "https://hackage.haskell.org/package/mono-traversable-1.0.20.0/revision/0.cabal"
+      }
+    ]
+  }
+}

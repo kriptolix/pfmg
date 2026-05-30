@@ -1,0 +1,36 @@
+{
+  "header": {
+    "id": "live555",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "live555",
+    "buildsystem": "simple",
+    "build-commands": [
+      "CXXFLAGS=`sed \"s/'/\\\"/g\" /etc/flatpak-builder/defaults.json | jq -r .cxxflags` ; sed -i -e \"s|-O2|$CXXFLAGS|\" config.linux-with-shared-libraries",
+      "./genMakefiles linux-with-shared-libraries",
+      "LDFLAGS=`sed \"s/'/\\\"/g\" /etc/flatpak-builder/defaults.json | jq -r .ldflags` ; make -j4 PREFIX=/app LIBDIR=/app/lib install",
+      "chmod +x /app/lib/libliveMedia.so* /app/lib/libUsageEnvironment.so* /app/lib/libBasicUsageEnvironment.so* /app/lib/libgroupsock.so*"
+    ],
+    "cleanup": [
+      "/bin"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.videolan.org/contrib/live555/live.2020.11.05.tar.gz",
+        "sha256": "89bdfba7fd215e16be2c9d46a797bf85c5f7f7c46b53dc8af2d1171a658da5b7"
+      },
+      {
+        "type": "patch",
+        "path": "libvlc/live555-add-pkgconfig-file.patch"
+      },
+      {
+        "type": "patch",
+        "path": "libvlc/live555-nosignal.patch"
+      }
+    ]
+  }
+}

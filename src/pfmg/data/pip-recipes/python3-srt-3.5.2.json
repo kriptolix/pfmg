@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-srt",
+    "version": "3.5.2",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-srt",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"srt==3.5.2\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/18/a3/e1466f7c86a9e5d3e462ed6eb3a548917e93cc1ee212cd927f8f4e887ae9/srt-3.5.2.tar.gz",
+        "sha256": "7aa4ad5ce4126d3f53b3e7bc4edaa86653d0378bf1c0b1ab8c59f5ab41384450"
+      }
+    ]
+  }
+}

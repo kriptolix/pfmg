@@ -1,0 +1,36 @@
+{
+  "header": {
+    "id": "pngquant",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "pngquant",
+    "buildsystem": "simple",
+    "build-commands": [
+      "cargo --offline fetch --manifest-path Cargo.toml --verbose",
+      "cargo --offline build --release --verbose",
+      "install -Dm 755 target/release/pngquant -t /app/bin"
+    ],
+    "build-options": {
+      "append-path": "/usr/lib/sdk/rust-stable/bin",
+      "env": {
+        "CARGO_HOME": "/run/build/pngquant/cargo"
+      }
+    },
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/kornelski/pngquant.git",
+        "tag": "3.0.3",
+        "commit": "53a332a58f44357b6b41842a54d74aa1e245913d",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^([\\d.]+)$"
+        }
+      },
+      "pngquant-sources.json"
+    ]
+  }
+}

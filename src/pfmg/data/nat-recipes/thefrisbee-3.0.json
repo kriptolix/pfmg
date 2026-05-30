@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "thefrisbee",
+    "version": "3.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "thefrisbee",
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DCMAKE_POLICY_VERSION_MINIMUM=3.5",
+      "-DFORCE_STABLE=ON"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/theCheeseboard/theFrisbee/archive/v3.0.tar.gz",
+        "sha256": "8ac9b804b513e61ba80b0cc48f8d0c39cd65f97c7da4faf0bb2a70695363a78d"
+      }
+    ]
+  }
+}

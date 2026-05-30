@@ -1,0 +1,26 @@
+{
+  "header": {
+    "id": "pmt",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "pmt",
+    "buildsystem": "meson",
+    "config-opts": [
+      "-Denable_testing=false"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/gnuradio/pmt.git",
+        "commit": "5960738cd35827acceb5a4de9e1c4005d2d02305"
+      },
+      {
+        "type": "patch",
+        "path": "patches/pmt-refl-cpp.patch"
+      }
+    ]
+  }
+}

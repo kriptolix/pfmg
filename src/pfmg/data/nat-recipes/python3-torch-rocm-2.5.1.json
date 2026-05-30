@@ -1,0 +1,49 @@
+{
+  "header": {
+    "id": "python3-torch-rocm",
+    "version": "2.5.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-torch-rocm",
+    "only-arches": [
+      "x86_64"
+    ],
+    "buildsystem": "simple",
+    "build-options": {
+      "env": {
+        "PYTHONPATH": "/app/extensions/amd/lib/python3.12/site-packages:/app/lib/python3.12/site-packages"
+      }
+    },
+    "cleanup": [
+      "/bin"
+    ],
+    "build-commands": [
+      "set -e\nmkdir -p ${FLATPAK_DEST}/lib/python3.12/site-packages\ncd ${FLATPAK_DEST}/lib/python3.12/site-packages\nln -s ${FLATPAK_DEST}/extra/site-packages/torch torch\nln -s ${FLATPAK_DEST}/extra/site-packages/torch-2.5.1+rocm6.2.dist-info torch-2.5.1+rocm6.2.dist-info\nln -s ${FLATPAK_DEST}/extra/site-packages/functorch functorch\nln -s ${FLATPAK_DEST}/extra/site-packages/torchgen torchgen\nln -s ${FLATPAK_DEST}/extra/site-packages/torchaudio torchaudio\nln -s ${FLATPAK_DEST}/extra/site-packages/torchaudio-2.5.1+rocm6.2.dist-info torchaudio-2.5.1+rocm6.2.dist-info\nln -s ${FLATPAK_DEST}/extra/site-packages/torio torio\nln -s ${FLATPAK_DEST}/extra/site-packages/triton triton\nln -s ${FLATPAK_DEST}/extra/site-packages/pytorch_triton_rocm-3.1.0.dist-info pytorch_triton_rocm-3.1.0.dist-info\n"
+    ],
+    "sources": [
+      {
+        "type": "extra-data",
+        "url": "https://download.pytorch.org/whl/rocm6.2/torch-2.5.1%2Brocm6.2-cp312-cp312-linux_x86_64.whl",
+        "sha256": "80c7af931acb3941530a717aaa1d142985ae7f29b7660a72e47f1a890fc191fb",
+        "filename": "torch.whl",
+        "size": 3973485108
+      },
+      {
+        "type": "extra-data",
+        "url": "https://download.pytorch.org/whl/pytorch_triton_rocm-3.1.0-cp312-cp312-linux_x86_64.whl",
+        "sha256": "3b56b87886d03dcf3aeb8f78f372f5da60b29ffdffcba5cd767b4bfdec47175b",
+        "filename": "triton.whl",
+        "size": 344817184
+      },
+      {
+        "type": "extra-data",
+        "url": "https://download.pytorch.org/whl/rocm6.2/torchaudio-2.5.1%2Brocm6.2-cp312-cp312-linux_x86_64.whl",
+        "sha256": "63d1cfe70d8fb6154d85b5b44dbd055587828fc260c2f86cf924433ca897b917",
+        "filename": "torchaudio.whl",
+        "size": 1730067
+      }
+    ]
+  }
+}

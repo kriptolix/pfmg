@@ -1,0 +1,19 @@
+{
+  "header": {
+    "id": "xlnt",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "xlnt",
+    "buildsystem": "cmake-ninja",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/tfussell/xlnt",
+        "commit": "fbae8cd6c12a2a060290fe6e7ad2d372f51f4869"
+      }
+    ]
+  }
+}

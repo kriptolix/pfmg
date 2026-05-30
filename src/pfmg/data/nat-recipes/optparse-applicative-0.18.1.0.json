@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "optparse-applicative",
+    "version": "0.18.1.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "optparse-applicative",
+    "buildsystem": "simple",
+    "builddir": false,
+    "build-commands": [
+      "echo '#! /usr/bin/env runhaskell' >Setup.txt",
+      "echo '> import Distribution.Simple' >>Setup.txt",
+      "echo '> main = defaultMain' >>Setup.txt",
+      "ln -s Setup.txt Setup.lhs || true",
+      "runhaskell Setup configure --prefix=/app",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "sources": [
+      {
+        "sha256": "63811ab4fd26e829b8868364325a88be3acc79819f5bb5005b2dd3b961ecc491",
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/optparse-applicative-0.18.1.0/optparse-applicative-0.18.1.0.tar.gz"
+      },
+      {
+        "dest-filename": "optparse-applicative.cabal",
+        "sha256": "b4cf8d9018e5e67cb1f14edb5130b6d05ad8bc1b5f6bd4efaa6ec0b7f28f559d",
+        "type": "file",
+        "url": "https://hackage.haskell.org/package/optparse-applicative-0.18.1.0/revision/0.cabal"
+      }
+    ]
+  }
+}

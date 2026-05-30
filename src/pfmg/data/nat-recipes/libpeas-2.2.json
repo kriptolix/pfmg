@@ -1,0 +1,31 @@
+{
+  "header": {
+    "id": "libpeas",
+    "version": "2.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libpeas",
+    "buildsystem": "meson",
+    "cleanup": [
+      "/bin/*",
+      "/lib/peas-demo"
+    ],
+    "config-opts": [
+      "-Dgtk_doc=false",
+      "-Dlua51=false"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.gnome.org/sources/libpeas/2.2/libpeas-2.2.1.tar.xz",
+        "sha256": "589eca89b437006edf3755478df037c740a2a84cfa5d202dbad6095e828e2488",
+        "x-checker-data": {
+          "type": "gnome",
+          "name": "libpeas"
+        }
+      }
+    ]
+  }
+}

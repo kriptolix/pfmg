@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "libgphoto",
+    "version": "2.5.33",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libgphoto",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/gphoto/libgphoto2/releases/download/v2.5.33/libgphoto2-2.5.33.tar.bz2",
+        "sha256": "c55504e725cf44b6ca67e1cd7504ad36dc98d7a0469a9e8d627fd0fb3848aa1d",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 12558,
+          "stable-only": true,
+          "url-template": "https://github.com/gphoto/libgphoto2/releases/download/v$version/libgphoto2-$version.tar.bz2"
+        }
+      },
+      {
+        "type": "patch",
+        "path": "libgphoto_fix-canon-logic.patch"
+      }
+    ]
+  }
+}

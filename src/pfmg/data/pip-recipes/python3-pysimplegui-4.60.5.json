@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-pysimplegui",
+    "version": "4.60.5",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-PySimpleGUI",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"PySimpleGUI\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/45/58/98c9e80860dfb0086289b318207d7c1c47afd60718065a7041381bb5af07/PySimpleGUI-4.60.5-py3-none-any.whl",
+        "sha256": "004f33311ee685a5287fad54f500f7290b40d7c806044e478b1384f85dedce64"
+      }
+    ]
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "header": {
+    "id": "armadillo",
+    "version": "15.2.6",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "armadillo",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DBUILD_SMOKE_TEST=OFF"
+    ],
+    "builddir": true,
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://sourceforge.net/projects/arma/files/armadillo-15.2.6.tar.xz",
+        "sha256": "97cb8ef708541f632e861d005a462dd0367240f81ff96f8e63ebbdd75c8ce55f",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 7006,
+          "url-template": "https://sourceforge.net/projects/arma/files/armadillo-$version.tar.xz",
+          "stable-only": true
+        }
+      }
+    ],
+    "modules": [
+      {
+        "name": "lapack",
+        "buildsystem": "cmake",
+        "builddir": true,
+        "config-opts": [
+          "-DCMAKE_BUILD_TYPE=Release",
+          "-DBUILD_SHARED_LIBS=ON",
+          "-DBUILD_TESTING=OFF",
+          "-DCMAKE_Fortran_COMPILER=gfortran",
+          "-DLAPACKE=ON",
+          "-DCBLAS=ON"
+        ],
+        "sources": [
+          {
+            "type": "git",
+            "url": "https://github.com/Reference-LAPACK/lapack.git",
+            "tag": "v3.12.1",
+            "x-checker-data": {
+              "type": "git"
+            },
+            "commit": "6ec7f2bc4ecf4c4a93496aa2fa519575bc0e39ca"
+          }
+        ],
+        "cleanup": [
+          "/lib/cmake"
+        ]
+      }
+    ]
+  }
+}

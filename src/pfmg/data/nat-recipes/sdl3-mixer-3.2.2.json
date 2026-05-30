@@ -1,0 +1,42 @@
+{
+  "header": {
+    "id": "sdl3-mixer",
+    "version": "3.2.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "sdl3-mixer",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DBUILD_SHARED_LIBS=ON",
+      "-DSDLMIXER_INSTALL=ON",
+      "-DSDLMIXER_INSTALL_MAN=ON",
+      "-DSDLMIXER_DEPS_SHARED=ON",
+      "-DSDLMIXER_VENDORED=OFF",
+      "-DSDLMIXER_STRICT=ON",
+      "-DSDLMIXER_TESTS=OFF",
+      "-DSDLMIXER_EXAMPLES=OFF",
+      "-DSDLMIXER_EXAMPLES_INSTALL=OFF",
+      "-DSDLMIXER_GME=OFF",
+      "-DSDLMIXER_MOD_XMP=OFF",
+      "-DSDLMIXER_MIDI_FLUIDSYNTH=OFF"
+    ],
+    "cleanup": [
+      "/lib/cmake"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/libsdl-org/SDL_mixer/releases/download/release-3.2.2/SDL3_mixer-3.2.2.tar.gz",
+        "sha256": "cdb6d2a9f01bb3c1b98c957ee12109dd6ec1a1157682c9bc8523b0fe8ab2da1e",
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://api.github.com/repos/libsdl-org/SDL_mixer/releases/latest",
+          "version-query": ".tag_name | sub(\"^release-\"; \"\")",
+          "url-query": ".assets[] | select(.name==\"SDL3_mixer-\" + $version + \".tar.gz\") | .browser_download_url"
+        }
+      }
+    ]
+  }
+}

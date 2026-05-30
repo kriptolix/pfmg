@@ -1,0 +1,82 @@
+{
+  "header": {
+    "id": "python3-aeneas",
+    "version": "1.7.3.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-aeneas",
+    "buildsystem": "simple",
+    "build-commands": [
+      "python3 -m pip install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"meson-python\" \"pyproject-metadata\"",
+      "python3 -m pip install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"numpy\" --no-build-isolation",
+      "tar -xzf aeneas-1.7.3.0.tar.gz",
+      "cd aeneas-1.7.3.0 && patch -p0 < ../remove-numpy-import-check.patch && cd ..",
+      "tar -czf aeneas-1.7.3.0-patched.tar.gz aeneas-1.7.3.0",
+      "python3 -m pip install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} aeneas-1.7.3.0-patched.tar.gz --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/28/58/66db620a8a7ccb32633de9f403fe49f1b63c68ca94e5c340ec5cceeb9821/meson_python-0.18.0-py3-none-any.whl",
+        "sha256": "3b0fe051551cc238f5febb873247c0949cd60ded556efa130aa57021804868e2"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/c0/57/e69a1de45ec7a99a707e9f1a5defa035a48de0cae2d8582451c72d2db456/pyproject_metadata-0.10.0-py3-none-any.whl",
+        "sha256": "b1e439a9f7560f9792ee5975dcf5e89d2510b1fc84a922d7e5d665aa9102d966"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/e5/92/88d421001bb257588df4864ceca24d570e2e822db4f40f48737a78b648b2/aeneas-1.7.3.0.tar.gz",
+        "sha256": "b492d8ba36f12cce69c29c35e7075857a9d036c4743cc8f4689922be980826da"
+      },
+      {
+        "type": "file",
+        "path": "patches/aeneas/remove-numpy-import-check.patch"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/d1/c2/fe97d779f3ef3b15f05c94a2f1e3d21732574ed441687474db9d342a7315/soupsieve-2.6-py3-none-any.whl",
+        "sha256": "e72c4ff06e4fb6e4b5a9f0f55fe6e81514581fca1515028625d0f299c602ccc9"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/e7/6b/20c3a4b24751377aaa6307eb230b66701024012c29dd374999cc92983269/lxml-5.3.0.tar.gz",
+        "sha256": "4e109ca30d1edec1ac60cdbe341905dc3b8f55b16855e03a54aaf59e51ec8c6f"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/65/6e/09db70a523a96d25e115e71cc56a6f9031e7b8cd166c1ac8438307c14058/numpy-1.26.4.tar.gz",
+        "sha256": "2a02aba9ed12e4ac4eb3ea9421c420301a0c6460d9830d74a9df87efa4912010"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/b1/fe/e8c672695b37eecc5cbf43e1d0638d88d66ba3a44c4d321c796f4e59167f/beautifulsoup4-4.12.3-py3-none-any.whl",
+        "sha256": "b80878c9f40111313e55da8ba20bdba06d8fa3969fc68304167741bbf9e082ed"
+      }
+    ],
+    "modules": [
+      {
+        "name": "espeak",
+        "no-autogen": true,
+        "subdir": "src",
+        "cleanup": [
+          "*.a"
+        ],
+        "sources": [
+          {
+            "type": "git",
+            "url": "https://salsa.debian.org/a11y-team/espeak.git",
+            "commit": "0dd86a59e84a475bdd809a3aec7bc95a460ad5a6"
+          },
+          {
+            "type": "patch",
+            "path": "patches/espeak/FlatpakEspeak.patch"
+          }
+        ]
+      }
+    ]
+  }
+}

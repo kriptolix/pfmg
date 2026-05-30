@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "vector-0.12.0.2",
+    "version": "0.12.0.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "build-commands": [
+      "ghc -threaded --make Setup",
+      "./Setup configure --prefix=/app",
+      "./Setup build",
+      "./Setup install"
+    ],
+    "buildsystem": "simple",
+    "cleanup": [],
+    "name": "vector-0.12.0.2",
+    "only-arches": [],
+    "sources": [
+      {
+        "sha256": "52e89dacaff10bedb8653181963cae928f9674a099bb706713dae83994bbc0f3",
+        "type": "archive",
+        "url": "https://s3.amazonaws.com/hackage.fpcomplete.com/package/vector-0.12.0.2.tar.gz"
+      },
+      {
+        "sha256": "6a898f00b9850fb84836f187324fac1e64c998fb4eac290d4aa91b50a4c586f5",
+        "type": "file",
+        "url": "https://raw.githubusercontent.com/commercialhaskell/all-cabal-files/a5f22172fce750e93afa6987320f5c5be62b5670/vector/0.12.0.2/vector.cabal"
+      }
+    ]
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "pgadmin4-server",
+    "version": "9.15",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "pgadmin4-server",
+    "buildsystem": "simple",
+    "build-commands": [
+      "bsdtar -Oxf pgadmin-server.deb 'data.tar.xz' | bsdtar --exclude 'usr/pgadmin4/venv' -xf -",
+      "cp -r usr/* ${FLATPAK_DEST}/",
+      "mv ${FLATPAK_DEST}/pgadmin4 ${FLATPAK_DEST}/pgAdmin4",
+      "cat usr/pgadmin4/web/config_distro.py config_distro.py > ${FLATPAK_DEST}/pgAdmin4/web/config_distro.py"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://ftp.postgresql.org/pub/pgadmin/pgadmin4/apt/trixie/dists/pgadmin4/main/binary-amd64/pgadmin4-server_9.15-1.trixie_amd64.deb",
+        "dest-filename": "pgadmin-server.deb",
+        "sha256": "e6ca715bf4356c635e66c6defdbad39d47f817b4cd02b3b7575008b1dc330846",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 6603,
+          "url-template": "https://ftp.postgresql.org/pub/pgadmin/pgadmin4/apt/trixie/dists/pgadmin4/main/binary-amd64/pgadmin4-server_${version}-1.trixie_amd64.deb"
+        }
+      },
+      {
+        "type": "file",
+        "path": "config_distro.py"
+      }
+    ]
+  }
+}

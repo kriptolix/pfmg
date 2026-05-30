@@ -1,0 +1,29 @@
+{
+  "header": {
+    "id": "eventviews",
+    "version": "25.12.3",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "eventviews",
+    "config-opts": [
+      "-DBUILD_TESTING=OFF",
+      "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+    ],
+    "buildsystem": "cmake-ninja",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.kde.org/stable/release-service/25.12.3/src/eventviews-25.12.3.tar.xz",
+        "sha256": "c2e776f55e485b346d256a9f21fd244af2b75e18c489ec811e334050cccbca6a",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 8763,
+          "stable-only": true,
+          "url-template": "https://download.kde.org/stable/release-service/$version/src/eventviews-$version.tar.xz"
+        }
+      }
+    ]
+  }
+}

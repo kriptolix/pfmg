@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "tirpc",
+    "version": "1.3.3",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "tirpc",
+    "buildsystem": "autotools",
+    "config-opts": [
+      "--disable-gssapi"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://sourceforge.net/projects/libtirpc/files/libtirpc/1.3.3/libtirpc-1.3.3.tar.bz2",
+        "sha256": "6474e98851d9f6f33871957ddee9714fdcd9d8a5ee9abb5a98d63ea2e60e12f3",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 1740,
+          "stable-only": true,
+          "url-template": "https://sourceforge.net/projects/libtirpc/files/libtirpc/$version/libtirpc-$version.tar.bz2"
+        }
+      }
+    ]
+  }
+}

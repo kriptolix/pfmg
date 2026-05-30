@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "libspelling-1",
+    "version": "0.4",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libspelling-1",
+    "buildsystem": "meson",
+    "config-opts": [
+      "--wrap-mode=nofallback"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "archive-type": "tar-xz",
+        "url": "https://download.gnome.org/sources/libspelling/0.4/libspelling-0.4.10.tar.xz",
+        "sha256": "56e3f01a3a18b575beea4c34349f99cdaba316e1f7c271b1231f7bcf5d9af73b"
+      }
+    ]
+  }
+}

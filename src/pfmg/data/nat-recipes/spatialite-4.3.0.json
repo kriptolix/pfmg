@@ -1,0 +1,50 @@
+{
+  "header": {
+    "id": "spatialite",
+    "version": "4.3.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "spatialite",
+    "config-opts": [
+      "--enable-libxml2",
+      "CFLAGS=-DACCEPT_USE_OF_DEPRECATED_PROJ_API_H=1"
+    ],
+    "rm-configure": true,
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://www.gaia-gis.it/gaia-sins/libspatialite-sources/libspatialite-4.3.0a.tar.gz",
+        "sha256": "88900030a4762904a7880273f292e5e8ca6b15b7c6c3fb88ffa9e67ee8a5a499"
+      },
+      {
+        "type": "script",
+        "dest-filename": "autogen.sh",
+        "commands": [
+          "AUTOMAKE=\"automake --foreign\" autoreconf -vfi"
+        ]
+      }
+    ],
+    "modules": [
+      {
+        "name": "freexl",
+        "rm-configure": true,
+        "sources": [
+          {
+            "type": "archive",
+            "url": "https://www.gaia-gis.it/gaia-sins/freexl-sources/freexl-1.0.5.tar.gz",
+            "sha256": "3dc9b150d218b0e280a3d6a41d93c1e45f4d7155829d75f1e5bf3e0b0de6750d"
+          },
+          {
+            "type": "script",
+            "dest-filename": "autogen.sh",
+            "commands": [
+              "AUTOMAKE=\"automake --foreign\" autoreconf -vfi"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

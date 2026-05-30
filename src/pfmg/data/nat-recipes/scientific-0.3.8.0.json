@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "scientific",
+    "version": "0.3.8.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "scientific",
+    "buildsystem": "simple",
+    "builddir": false,
+    "build-commands": [
+      "echo '#! /usr/bin/env runhaskell' >Setup.txt",
+      "echo '> import Distribution.Simple' >>Setup.txt",
+      "echo '> main = defaultMain' >>Setup.txt",
+      "ln -s Setup.txt Setup.lhs || true",
+      "runhaskell Setup configure --prefix=/app",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "sources": [
+      {
+        "sha256": "13b343bca8aa26d7718e52e622e5a118056653edafcbc7ccc5333be7217218cf",
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/scientific-0.3.8.0/scientific-0.3.8.0.tar.gz"
+      },
+      {
+        "dest-filename": "scientific.cabal",
+        "sha256": "2148e2e6ab1f1fd2ecee25067e0ee60da886be89736e8a54d49556407d7113ce",
+        "type": "file",
+        "url": "https://hackage.haskell.org/package/scientific-0.3.8.0/revision/1.cabal"
+      }
+    ]
+  }
+}

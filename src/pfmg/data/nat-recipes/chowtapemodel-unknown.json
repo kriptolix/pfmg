@@ -1,0 +1,60 @@
+{
+  "header": {
+    "id": "chowtapemodel",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "ChowTapeModel",
+    "buildsystem": "cmake-ninja",
+    "no-make-install": true,
+    "subdir": "Plugin",
+    "config-opts": [
+      "-DCMAKE_AR=/usr/bin/gcc-ar",
+      "-DCMAKE_NM=/usr/bin/gcc-nm",
+      "-DCMAKE_RANLIB=/usr/bin/gcc-ranlib",
+      "-DCMAKE_BUILD_TYPE=Release"
+    ],
+    "build-options": {
+      "cxxflags": "-I/app/extensions/Plugins/ChowDSP-Plugins/include"
+    },
+    "make-args": [
+      "CHOWTapeModel_CLAP",
+      "CHOWTapeModel_LV2",
+      "CHOWTapeModel_VST3"
+    ],
+    "post-install": [
+      "install -d ${FLATPAK_DEST}/lv2",
+      "cp -R ./CHOWTapeModel_artefacts/Release/LV2/*.lv2 ${FLATPAK_DEST}/lv2/",
+      "strip ${FLATPAK_DEST}/lv2/CHOWTapeModel.lv2/*.so",
+      "install -d ${FLATPAK_DEST}/vst3",
+      "cp -R ./CHOWTapeModel_artefacts/Release/VST3/*.vst3 ${FLATPAK_DEST}/vst3/",
+      "strip ${FLATPAK_DEST}/vst3/CHOWTapeModel.vst3/Contents/*-linux/*.so",
+      "install -Dm755 -t ${FLATPAK_DEST}/clap ./CHOWTapeModel_artefacts/Release/CLAP/*.clap",
+      "strip ${FLATPAK_DEST}/clap/CHOWTapeModel.clap",
+      "install -Dm644 -t $FLATPAK_DEST/share/licenses/ChowTapeModel ../LICENSE"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "disable-shallow-clone": true,
+        "url": "https://github.com/jatinchowdhury18/AnalogTapeModel.git",
+        "tag": "v2.11.4",
+        "commit": "604372e4ffd9690c3e283362e4598cb43edbb475",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^v([\\d.]+)$"
+        }
+      },
+      {
+        "type": "patch",
+        "path": "patches/juce-616-header.patch",
+        "options": [
+          "-d",
+          "Plugin/modules"
+        ]
+      }
+    ]
+  }
+}

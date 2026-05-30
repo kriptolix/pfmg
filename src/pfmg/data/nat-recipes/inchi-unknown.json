@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "inchi",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "inchi",
+    "buildsystem": "simple",
+    "build-commands": [
+      "cd INCHI_EXE/inchi-1/gcc/ && make"
+    ],
+    "post-install": [
+      "install -Dm755 INCHI_EXE/bin/Linux/inchi-1 ${FLATPAK_DEST}/bin/inchi-1"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "http://www.inchi-trust.org/download/106/INCHI-1-SRC.zip",
+        "sha256": "4874e310c0f2f81b881e90dd0c534752e1b9421d7d92ccfb037710022c7e7efd"
+      }
+    ]
+  }
+}

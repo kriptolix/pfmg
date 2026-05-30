@@ -1,0 +1,50 @@
+{
+  "header": {
+    "id": "fftw-float",
+    "version": "3.3.10",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "fftw-float",
+    "config-opts": [
+      "--disable-doc",
+      "--enable-shared",
+      "--disable-static",
+      "--enable-threads",
+      "--enable-float",
+      "--enable-openmp"
+    ],
+    "build-options": {
+      "arch": {
+        "x86_64": {
+          "config-opts": [
+            "--enable-avx",
+            "--enable-sse"
+          ]
+        },
+        "aarch64": {
+          "config-opts": [
+            "--enable-neon"
+          ]
+        }
+      }
+    },
+    "cleanup": [
+      "/bin"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://www.fftw.org/fftw-3.3.10.tar.gz",
+        "sha256": "56c932549852cddcfafdab3820b0200c7742675be92179e59e6215b340e26467",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 803,
+          "stable-only": true,
+          "url-template": "https://www.fftw.org/fftw-$version.tar.gz"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "header": {
+    "id": "volk",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "volk",
+    "buildsystem": "cmake-ninja",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/gnuradio/volk.git",
+        "tag": "v3.2.0",
+        "commit": "308948abf8384bb4bf6467e14b585df708789782"
+      }
+    ]
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "header": {
+    "id": "mariadb-libs",
+    "version": "12.3.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "mariadb-libs",
+    "x-comment": "for mysql-boost",
+    "config-opts": [
+      "-DCOMPILATION_COMMENT=\"Flathub - QGIS\"",
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DFORCE_INSOURCE_BUILD=1",
+      "-DWITH_EDITLINE=bundled",
+      "-DWITH_PCRE2=system",
+      "-DWITH_SSL=system",
+      "-DWITH_ZLIB=system",
+      "-DWITH_LIBFMT=system",
+      "-DWITH_UNIT_TESTS=OFF",
+      "-DPLUGIN_FEDERATED=NO",
+      "-DWITHOUT_SERVER=ON"
+    ],
+    "cleanup": [
+      "/bin"
+    ],
+    "buildsystem": "cmake-ninja",
+    "builddir": false,
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://archive.mariadb.org/mariadb-12.3.1/source/mariadb-12.3.1.tar.gz",
+        "sha256": "2da62b57da70975d0865d4a1ae4ae4cf422e1b7dcc709eba855cf14f5104617e",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 1887,
+          "stable-only": true,
+          "url-template": "https://archive.mariadb.org/mariadb-$version/source/mariadb-$version.tar.gz"
+        }
+      }
+    ]
+  }
+}

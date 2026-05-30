@@ -1,0 +1,19 @@
+{
+  "header": {
+    "id": "com.github.rajsolai.textsnatcher",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "com.github.rajsolai.textsnatcher",
+    "buildsystem": "meson",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/muelli/TextSnatcher.git",
+        "commit": "5d771056436ace7babbbbe259f5abeaa4c1a6103"
+      }
+    ]
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "header": {
+    "id": "blackcoin",
+    "version": "13.2.3",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "blackcoin",
+    "buildsystem": "simple",
+    "build-commands": [
+      "install -m 0744 -D -t /app/bin/internal bin/blackmore-qt",
+      "install -m 0744 -D -t /app/bin/internal bin/blackmored",
+      "install -m 0744 -D -t /app/bin/internal bin/blackmore-cli",
+      "install -m 0744 -D -t /app/bin/internal bin/blackmore-tx"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "only-arches": [
+          "x86_64"
+        ],
+        "url": "https://github.com/CoinBlack/blackcoin-more/releases/download/v13.2.3/blackcoin-more-13.2.3-x86_64-linux-gnu.tar.gz",
+        "sha256": "8e1839e7d64e2b9264f3fba356b6b5e3916903d9cab40fd39c8c5aa9274500b6"
+      },
+      {
+        "type": "archive",
+        "only-arches": [
+          "aarch64"
+        ],
+        "url": "https://github.com/CoinBlack/blackcoin-more/releases/download/v13.2.3/blackcoin-more-13.2.3-aarch64-linux-gnu.tar.gz",
+        "sha256": "4dd4495de806a4bde23eba30c91d1a06a55988f298bb2aeed1b041301ce99e9b"
+      }
+    ]
+  }
+}

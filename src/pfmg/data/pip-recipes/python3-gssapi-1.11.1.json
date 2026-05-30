@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-gssapi",
+    "version": "1.11.1",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-gssapi",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --no-build-isolation ."
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://files.pythonhosted.org/packages/23/52/c1e90623c259a42ab0587078bb04f959867b970add46ff66750ead8fc7c5/gssapi-1.11.1.tar.gz",
+        "sha256": "2049ee4b1d0c363163a1344b7282a363f9f4094e51d2c36de0cf01d4735e0ae2"
+      }
+    ]
+  }
+}

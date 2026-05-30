@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "lucid",
+    "version": "2.11.20230408",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "lucid",
+    "buildsystem": "simple",
+    "builddir": false,
+    "build-commands": [
+      "echo '#! /usr/bin/env runhaskell' >Setup.txt",
+      "echo '> import Distribution.Simple' >>Setup.txt",
+      "echo '> main = defaultMain' >>Setup.txt",
+      "ln -s Setup.txt Setup.lhs || true",
+      "runhaskell Setup configure --prefix=/app",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "sources": [
+      {
+        "sha256": "0f112990fee9c5b1c62c64c926147272534781ed8a7225d39dd0248a670f441d",
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/lucid-2.11.20230408/lucid-2.11.20230408.tar.gz"
+      },
+      {
+        "dest-filename": "lucid.cabal",
+        "sha256": "d2757a8c190a942d4931350692643a5f94ecfeded467969a03d105d9c36c0e8e",
+        "type": "file",
+        "url": "https://hackage.haskell.org/package/lucid-2.11.20230408/revision/2.cabal"
+      }
+    ]
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "header": {
+    "id": "python3-rpds-py-bin",
+    "version": "0.30.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-rpds_py-bin",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"rpds_py\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/b7/de/f7192e12b21b9e9a68a6d0f249b4af3fdcdff8418be0767a627564afa1f1/rpds_py-0.30.0-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "sha256": "9027da1ce107104c50c81383cae773ef5c24d296dd11c99e2629dbd7967a20c6",
+        "only_arches": [
+          "x86_64"
+        ],
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://pypi.org/pypi/rpds_py/json",
+          "version-query": ".info.version",
+          "url-query": ".releases | .[$version][] | select(.filename==\"rpds_py-\" + $version + \"-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl\") | .url"
+        }
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/58/70/faed8186300e3b9bdd138d0273109784eea2396c68458ed580f885dfe7ad/rpds_py-0.30.0-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl",
+        "sha256": "2771c6c15973347f50fece41fc447c054b7ac2ae0502388ce3b6738cd366e3d4",
+        "only_arches": [
+          "aarch64"
+        ],
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://pypi.org/pypi/rpds_py/json",
+          "version-query": ".info.version",
+          "url-query": ".releases | .[$version][] | select(.filename==\"rpds_py-\" + $version + \"-cp313-cp313-manylinux_2_17_aarch64.manylinux2014_aarch64.whl\") | .url"
+        }
+      }
+    ]
+  }
+}

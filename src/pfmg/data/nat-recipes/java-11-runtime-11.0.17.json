@@ -1,0 +1,34 @@
+{
+  "header": {
+    "id": "java-11-runtime",
+    "version": "11.0.17",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "java-11-runtime",
+    "buildsystem": "simple",
+    "build-commands": [
+      "mkdir -p             /app/jre",
+      "cp -r {bin,lib,conf} /app/jre"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.bell-sw.com/java/11.0.17+7/bellsoft-jre11.0.17+7-linux-amd64-full.tar.gz",
+        "sha256": "f3578ddb8fc53053d6c12507c7235e777d6a104d85f8b104fa043c81978d0cb9",
+        "only-arches": [
+          "x86_64"
+        ]
+      },
+      {
+        "type": "archive",
+        "url": "https://download.bell-sw.com/java/11.0.17+7/bellsoft-jre11.0.17+7-linux-aarch64-full.tar.gz",
+        "sha256": "2a2269e04716ddfb29404a3c5ba8a766b744dbac16c8df9c879adf3ea308d942",
+        "only-arches": [
+          "aarch64"
+        ]
+      }
+    ]
+  }
+}

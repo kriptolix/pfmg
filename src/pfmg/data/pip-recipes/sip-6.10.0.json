@@ -1,0 +1,176 @@
+{
+  "header": {
+    "id": "sip",
+    "version": "6.10.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "sip",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"sip\" --no-build-isolation"
+    ],
+    "cleanup": [
+      "/bin"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/04/85/317e2d2a3e926e928c85ea935bc5991ae09181ebdc724b4144546656fbce/sip-6.10.0-1-py3-none-any.whl",
+        "sha256": "3bd6e5ab6e5bc8e5531bbf4ff299781bc2ee5c39da876072e0465efdad215896"
+      }
+    ],
+    "modules": [
+      {
+        "name": "python",
+        "config-opts": [
+          "--enable-shared",
+          "--without-static-libpython"
+        ],
+        "sources": [
+          {
+            "type": "archive",
+            "url": "https://www.python.org/ftp/python/3.13.12/Python-3.13.12.tar.xz",
+            "sha256": "2a84cd31dd8d8ea8aaff75de66fc1b4b0127dd5799aa50a64ae9a313885b4593",
+            "x-checker-data": {
+              "type": "anitya",
+              "project-id": 13254,
+              "stable-only": true,
+              "versions": {
+                "<": "3.14"
+              },
+              "url-template": "https://www.python.org/ftp/python/$version/Python-$version.tar.xz"
+            }
+          }
+        ]
+      },
+      {
+        "name": "python-flit-core",
+        "buildsystem": "simple",
+        "build-commands": [
+          "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"flit_core\" --no-build-isolation"
+        ],
+        "cleanup": [
+          "/bin"
+        ],
+        "sources": [
+          {
+            "type": "file",
+            "url": "https://files.pythonhosted.org/packages/69/59/b6fc2188dfc7ea4f936cd12b49d707f66a1cb7a1d2c16172963534db741b/flit_core-3.12.0.tar.gz",
+            "sha256": "18f63100d6f94385c6ed57a72073443e1a71a4acb4339491615d0f16d6ff01b2",
+            "x-checker-data": {
+              "type": "pypi",
+              "name": "flit_core"
+            }
+          }
+        ]
+      },
+      {
+        "name": "python-packaging",
+        "buildsystem": "simple",
+        "build-commands": [
+          "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"packaging\" --no-build-isolation"
+        ],
+        "cleanup": [
+          "/bin"
+        ],
+        "sources": [
+          {
+            "type": "file",
+            "url": "https://files.pythonhosted.org/packages/65/ee/299d360cdc32edc7d2cf530f3accf79c4fca01e96ffc950d8a52213bd8e4/packaging-26.0.tar.gz",
+            "sha256": "00243ae351a257117b6a241061796684b084ed1c516a08c48a3f7e147a9d80b4",
+            "x-checker-data": {
+              "type": "pypi",
+              "name": "packaging"
+            }
+          }
+        ]
+      },
+      {
+        "name": "python-wheel",
+        "buildsystem": "simple",
+        "build-commands": [
+          "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"wheel\" --no-build-isolation"
+        ],
+        "cleanup": [
+          "/bin"
+        ],
+        "sources": [
+          {
+            "type": "file",
+            "url": "https://files.pythonhosted.org/packages/89/24/a2eb353a6edac9a0303977c4cb048134959dd2a51b48a269dfc9dde00c8a/wheel-0.46.3.tar.gz",
+            "sha256": "e3e79874b07d776c40bd6033f8ddf76a7dad46a7b8aa1b2787a83083519a1803",
+            "x-checker-data": {
+              "type": "pypi",
+              "name": "wheel"
+            }
+          }
+        ]
+      },
+      {
+        "name": "python-setuptools",
+        "buildsystem": "simple",
+        "build-commands": [
+          "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"setuptools\" --no-build-isolation"
+        ],
+        "cleanup": [
+          "/bin"
+        ],
+        "sources": [
+          {
+            "type": "file",
+            "url": "https://files.pythonhosted.org/packages/4f/db/cfac1baf10650ab4d1c111714410d2fbb77ac5a616db26775db562c8fab2/setuptools-82.0.1.tar.gz",
+            "sha256": "7d872682c5d01cfde07da7bccc7b65469d3dca203318515ada1de5eda35efbf9",
+            "x-checker-data": {
+              "type": "pypi",
+              "name": "setuptools"
+            }
+          }
+        ]
+      },
+      {
+        "name": "python-ply",
+        "buildsystem": "simple",
+        "build-commands": [
+          "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"ply\" --no-build-isolation"
+        ],
+        "cleanup": [
+          "/bin"
+        ],
+        "sources": [
+          {
+            "type": "file",
+            "url": "https://files.pythonhosted.org/packages/e5/69/882ee5c9d017149285cab114ebeab373308ef0f874fcdac9beb90e0ac4da/ply-3.11.tar.gz",
+            "sha256": "00c7c1aaa88358b9c765b6d3000c6eec0ba42abca5351b095321aef446081da3",
+            "x-checker-data": {
+              "type": "pypi",
+              "name": "ply"
+            }
+          }
+        ]
+      },
+      {
+        "name": "python-toml",
+        "buildsystem": "simple",
+        "build-commands": [
+          "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"toml\" --no-build-isolation"
+        ],
+        "cleanup": [
+          "/bin"
+        ],
+        "sources": [
+          {
+            "type": "file",
+            "url": "https://files.pythonhosted.org/packages/be/ba/1f744cdc819428fc6b5084ec34d9b30660f6f9daaf70eead706e3203ec3c/toml-0.10.2.tar.gz",
+            "sha256": "b3bda1d108d5dd99f4a20d24d9c348e91c4db7ab1b749200bded2f839ccbe68f",
+            "x-checker-data": {
+              "type": "pypi",
+              "name": "toml"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "ia32",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "ia32",
+    "buildsystem": "simple",
+    "build-commands": [
+      "bsdtar -xf addition.tar",
+      "chmod 755 -R .",
+      "mkdir -p ${FLATPAK_DEST}/formats",
+      "mv peazip*/{arc,lpaq,paq,quad,zpaq} ${FLATPAK_DEST}/formats",
+      "export LD_LIBRARY_PATH=$LIB_DIR\ncd ${FLATPAK_DEST}/formats\nldd */* 2>/dev/null | grep -oE \"=> [^=[:space:]]+\" | grep \"/usr/lib/i386\" | cut -b 4- | sort -u > ia32.txt\necho /usr/lib/i386-linux-gnu/ld-linux.so.? >> ia32.txt\ncat ia32.txt | xargs -i install -C -Dvm755 -t $LIB_DIR {}\n"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "dest-filename": "addition.tar",
+        "url": "https://downloads.sourceforge.net/project/peazip/Resources/PeaZip%20Additional%20Formats%20Plugin/peazip-additional-formats-plugin.5.LINUX.tar",
+        "sha256": "837c68362cb5d258f91216aebfee5716677b77465361adf21f5cc4660d99a759"
+      }
+    ]
+  }
+}

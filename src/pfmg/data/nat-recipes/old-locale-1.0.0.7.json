@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "old-locale",
+    "version": "1.0.0.7",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "old-locale",
+    "buildsystem": "simple",
+    "builddir": false,
+    "build-commands": [
+      "echo '#! /usr/bin/env runhaskell' >Setup.txt",
+      "echo '> import Distribution.Simple' >>Setup.txt",
+      "echo '> main = defaultMain' >>Setup.txt",
+      "ln -s Setup.txt Setup.lhs || true",
+      "runhaskell Setup configure --prefix=/app",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "sources": [
+      {
+        "sha256": "dbaf8bf6b888fb98845705079296a23c3f40ee2f449df7312f7f7f1de18d7b50",
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/old-locale-1.0.0.7/old-locale-1.0.0.7.tar.gz"
+      },
+      {
+        "dest-filename": "old-locale.cabal",
+        "sha256": "fa998be2c7e00cd26a6e9075bea790caaf3932caa3e9497ad69bc20380dd6911",
+        "type": "file",
+        "url": "https://hackage.haskell.org/package/old-locale-1.0.0.7/revision/2.cabal"
+      }
+    ]
+  }
+}

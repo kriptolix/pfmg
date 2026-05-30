@@ -1,0 +1,31 @@
+{
+  "header": {
+    "id": "meek-client",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "meek-client",
+    "buildsystem": "simple",
+    "build-options": {
+      "append-path": "/usr/lib/sdk/golang/bin",
+      "env": {
+        "GOBIN": "/app/bin/",
+        "GO11MODULE": true,
+        "GOROOT": "/usr/lib/sdk/golang"
+      }
+    },
+    "build-commands": [
+      ". /usr/lib/sdk/golang/enable.sh && go build -mod=vendor -o /app/bin/meek-client ./meek-client"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://gitlab.torproject.org/tpo/anti-censorship/pluggable-transports/meek.git",
+        "tag": "v0.38.0"
+      },
+      "meek-client/go.mod.yml"
+    ]
+  }
+}

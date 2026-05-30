@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-oldmemo",
+    "version": "2.1.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-oldmemo",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --prefix=/app oldmemo-2.1.0-py3-none-any.whl"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/79/7d/ea851d1d967e7427153dec064b44143f52167d496c70c6251caa2b5f053f/oldmemo-2.1.0-py3-none-any.whl",
+        "sha256": "8081164ff9d2d621624841efbb4b9b0b26ab59b32225ee0ca9351d4d265ca70a"
+      }
+    ]
+  }
+}

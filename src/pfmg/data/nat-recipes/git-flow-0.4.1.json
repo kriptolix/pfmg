@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "git-flow",
+    "version": "0.4.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "git-flow",
+    "buildsystem": "simple",
+    "build-commands": [
+      "install -m 0755 git-flow ${FLATPAK_DEST}/bin",
+      "install -m 0644 git-flow-init git-flow-feature git-flow-hotfix git-flow-release git-flow-support git-flow-version gitflow-common ${FLATPAK_DEST}/bin"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/nvie/gitflow/archive/refs/tags/0.4.1.tar.gz",
+        "sha256": "c1271b0ba2c6655e4ad4d79562f6a910c3b884f3d4e16985e227e67f8d95c180"
+      }
+    ]
+  }
+}

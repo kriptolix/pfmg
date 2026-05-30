@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "modularcalculator",
+    "version": "1.5.1",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "modularcalculator",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/JordanL2/ModularCalculator/archive/refs/tags/1.5.1.tar.gz",
+        "sha256": "e51c14bdca18b507c08d01bfb9f285b949a81792f978ced8a74336d8e4eb7dc4"
+      }
+    ],
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --no-deps --no-build-isolation --no-index --find-links . --prefix=${FLATPAK_DEST} ."
+    ]
+  }
+}

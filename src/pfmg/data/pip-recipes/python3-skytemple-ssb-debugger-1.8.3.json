@@ -1,0 +1,117 @@
+{
+  "header": {
+    "id": "python3-skytemple-ssb-debugger",
+    "version": "1.8.3",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-skytemple-ssb-debugger",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"skytemple-ssb-debugger==1.8.3\""
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/3b/00/2344469e2084fb287c2e0b57b72910309874c3245463acd6cf5e3db69324/appdirs-1.4.4-py2.py3-none-any.whl",
+        "sha256": "a841dacd6b99318a741b166adb07e19ee71a274450e68237b4650ca1055ab128"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/12/fe/c5a97ebb13459cfeac5ed0df508ebffba22670aecc6f802d5fa9f5de3e2f/dungeon_eos-0.0.5-py3-none-any.whl",
+        "sha256": "210de2aeea9fb0bdebe1f9264b9208f9d765a44934beb9fa876f16612bd35c78"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/07/01/c60b57a0aa66074552acbbc16786b34c93caa72f3fdda64fada11866482a/ndspy-4.2.0-py3-none-any.whl",
+        "sha256": "d3b03e57ef5ba450e766035e1908293f7a6ba1a738736fae42b2c66952abb85b"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/a0/c4/c2971a3ba4c6103a3d10c4b0f24f461ddc027f0f09763220cf35ca1401b3/nest_asyncio-1.6.0-py3-none-any.whl",
+        "sha256": "87af6efd6b5e897c81050477ef65c62e2b2f35d51703cae01aff2905b1852e1c"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/f3/af/c097e544e7bd278333db77933e535098c259609c4eb3b85381109602fb5b/pillow-11.1.0.tar.gz",
+        "sha256": "368da70808b36d73b4b390a8ffac11069f8a5c85f29eff1f1b01bcf3ef5b2a20"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/76/30/8de2e0dda61a9bf2cd6b54f6a6f75950c6e69692c6b9084fb3103eb9af15/pmdsky_debug_py-10.0.48-py3-none-any.whl",
+        "sha256": "4d7ec0213dbd10aa2764f22d74a831ecae0db82b175a0b156882fbc2a834c37a"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/3c/1a/c0478ecab31baae50fda9956547788afbd0ca563adc52c9b03cab30f17eb/pycairo-1.18.2.tar.gz",
+        "sha256": "dcb853fd020729516e8828ad364084e752327d4cff8505d20b13504b32b16531"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/54/4c/a741dddab6ad96f257d90cb4d23067ffadac526c9cab3a99ca6ce3c05477/pyenchant-3.2.2-py3-none-any.whl",
+        "sha256": "5facc821ece957208a81423af7d6ec7810dad29697cb0d77aae81e4e11c8e5a6"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/2b/58/d34e67a79631177e3c08e7d02b5165147f590171f2cae6769502af5f7f7e/pygobject-3.50.0.tar.gz",
+        "sha256": "4500ad3dbf331773d8dedf7212544c999a76fc96b63a91b3dcac1e5925a1d103"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/85/d4/610e9b4be60bac8f5a155a9553a982c3462a6b3eb117e9903f59e9389fac/pygtkspellcheck-5.0.3-py3-none-any.whl",
+        "sha256": "5bd6fb3bdfcb3ce13825535ba6f1dc5d2e07a3e5d87d3034d8478d8bc884902c"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/2e/49/565350c6fab3f5a3e2c46633290117060e70e2501544cdf3bde1d1d5d0fe/range_typed_integers-1.0.1-py3-none-any.whl",
+        "sha256": "35d39a41642503c5c5117e26798713f081b1beece1b2afd8f1ba70c8d90f63c5"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/eb/c4/73827aae5d1c64d1a413efd86367daea3d235449baf27dea6ae718dfd438/skytemple_files-1.8.5-py3-none-any.whl",
+        "sha256": "757452b470b9a55c6ccf900b1955255e9df4f63b0360df2e41f78584b4b43277"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/02/e9/4092eda871a2beb76e3c7cb3177273552bb96b81e6f69a91c92090c3a12c/skytemple_icons-1.3.2-py3-none-any.whl",
+        "sha256": "47c4c217ab801bcd9fb44eda00f03d826db1546353b0d2db85494863a1a2124f"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/48/c6/f816ed78defda01784e011967ab5cfda0dd77e36d6f000252841b68ccd31/skytemple_ssb_debugger-1.8.3-py3-none-any.whl",
+        "sha256": "659ddef24d59f488df4181626aef743000cd464d17665a866f5f2cd2323642b1"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/24/99/4772b8e00a136f3e01236de33b0efda31ee7077203ba5967fcc76da94d65/texttable-1.7.0-py2.py3-none-any.whl",
+        "sha256": "72227d592c82b3d7f672731ae73e4d1f88cd8e2ef5b075a7a7f01a23a3743917"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/32/c0/5b8013b5a812701c72e3b1e2b378edaa6514d06bee6704a5ab0d7fa52931/setuptools-71.1.0.tar.gz",
+        "sha256": "032d42ee9fb536e33087fb66cac5f840eb9391ed05637b3f2a76a7c8fb477936"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/8a/98/2d9906746cdc6a6ef809ae6338005b3f21bb568bea3165cfc6a243fdc25c/wheel-0.45.1.tar.gz",
+        "sha256": "661e1abd9198507b1409a20c02106d9670b2576e916d58f520316666abca6729"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/d5/ae/09427bea9227a33ec834ed5461432752fd5d02b14f93dd68406c91684622/flit_core-3.10.1.tar.gz",
+        "sha256": "66e5b87874a0d6e39691f0e22f09306736b633548670ad3c09ec9db03c5662f7"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/cd/74/ad3d526f3bf7b6d3f408b73fde271ec69dfac8b81341a318ce825f2b3812/pillow-10.4.0.tar.gz",
+        "sha256": "166c1cd4d24309b30d61f79f4a9114b7b2313d7450912277855ff5dfd7cd4a06"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/84/4d/b720d6000f4ca77f030bd70f12550820f0766b568e43f11af7f7ad9061aa/cython-3.0.11.tar.gz",
+        "sha256": "7146dd2af8682b4ca61331851e6aebce9fe5158e75300343f80c07ca80b1faff"
+      }
+    ]
+  }
+}

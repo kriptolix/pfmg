@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-mistune",
+    "version": "3.2.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-mistune",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"mistune==3.2.0\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/9b/f7/4a5e785ec9fbd65146a27b6b70b6cdc161a66f2024e4b04ac06a67f5578b/mistune-3.2.0-py3-none-any.whl",
+        "sha256": "febdc629a3c78616b94393c6580551e0e34cc289987ec6c35ed3f4be42d0eee1"
+      }
+    ]
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "libglu",
+    "version": "9.0.3",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libglu",
+    "buildsystem": "meson",
+    "cleanup": [
+      "/bin",
+      "/share"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://mesa.freedesktop.org/archive/glu/glu-9.0.3.tar.xz",
+        "sha256": "bd43fe12f374b1192eb15fe20e45ff456b9bc26ab57f0eee919f96ca0f8a330f"
+      }
+    ]
+  }
+}

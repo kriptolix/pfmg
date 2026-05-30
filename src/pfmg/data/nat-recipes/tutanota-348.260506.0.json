@@ -1,0 +1,38 @@
+{
+  "header": {
+    "id": "tutanota",
+    "version": "348.260506.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "tutanota",
+    "buildsystem": "simple",
+    "sources": [
+      {
+        "dest-filename": "tutanota-unpacked-linux.tar.gz",
+        "type": "file",
+        "sha256": "6ebc1d1331ca9e25b705c80f39ecf264be647fd2de3e7dedbb39482de7ec9722",
+        "url": "https://github.com/tutao/tutanota/releases/download/tutanota-desktop-release-348.260506.0/tutanota-desktop-348.260506.0-unpacked-linux.tar.gz"
+      },
+      {
+        "type": "script",
+        "dest-filename": "tutanota-desktop.sh",
+        "commands": [
+          "export TMPDIR=\"$XDG_RUNTIME_DIR/app/${FLATPAK_ID}\"",
+          "exec zypak-wrapper /app/lib/tutanota/tutanota-desktop --ozone-platform-hint=auto \"$@\""
+        ]
+      }
+    ],
+    "build-commands": [
+      "tar -xf tutanota-unpacked-linux.tar.gz",
+      "rm tutanota-unpacked-linux.tar.gz",
+      "mkdir -p /app/lib/",
+      "cp -r linux-unpacked /app/lib/tutanota",
+      "install -Dm644 linux-unpacked/resources/icons/icon/512.png /app/share/icons/hicolor/512x512/apps/com.tutanota.Tutanota.png",
+      "install -Dm644 linux-unpacked/resources/icons/icon/64.png /app/share/icons/hicolor/64x64/apps/com.tutanota.Tutanota.png",
+      "install -Dm755 tutanota-desktop.sh /app/bin/tutanota-desktop",
+      "rm -rf ./linux-unpacked"
+    ]
+  }
+}

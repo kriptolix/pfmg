@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-rebulk",
+    "version": "3.2.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-rebulk",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"rebulk\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/84/4d/df073d593f7e7e4a5a7e19148b2e9b4ae63b4ddcbb863f1e7bb2b6f19c62/rebulk-3.2.0-py3-none-any.whl",
+        "sha256": "6bc31ae4b37200623c5827d2f539f9ec3e52b50431322dad8154642a39b0a53e"
+      }
+    ]
+  }
+}

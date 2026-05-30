@@ -1,0 +1,63 @@
+{
+  "header": {
+    "id": "mapiah",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "mapiah",
+    "buildsystem": "simple",
+    "build-options": {
+      "arch": {
+        "x86_64": {
+          "env": {
+            "BUNDLE_PATH": "build/linux/x64/release/bundle"
+          }
+        },
+        "aarch64": {
+          "env": {
+            "BUNDLE_PATH": "build/linux/arm64/release/bundle"
+          }
+        }
+      },
+      "append-path": "/usr/lib/sdk/llvm19/bin:/var/lib/flutter/bin",
+      "prepend-ld-library-path": "/usr/lib/sdk/llvm19/lib",
+      "env": {
+        "PUB_CACHE": "/run/build/mapiah/.pub-cache"
+      }
+    },
+    "build-commands": [
+      "setup-flutter.sh",
+      "setup-flutter.sh",
+      "flutter build linux --release --no-pub --dart-define=isFlathub=true",
+      "install -D $BUNDLE_PATH/mapiah /app/bin/mapiah",
+      "cp -r $BUNDLE_PATH/lib /app/bin/lib",
+      "cp -r $BUNDLE_PATH/data /app/bin/data",
+      "install -Dm644 io.github.rsevero.mapiah.metainfo.xml -t /app/share/metainfo",
+      "install -Dm644 packaging/linux/io.github.rsevero.mapiah.desktop -t /app/share/applications",
+      "install -Dm644 assets/icons/m-64x64.png /app/share/icons/hicolor/64x64/apps/io.github.rsevero.mapiah.png",
+      "install -Dm644 assets/icons/m-128x128.png /app/share/icons/hicolor/128x128/apps/io.github.rsevero.mapiah.png",
+      "install -Dm644 assets/icons/m-256x256.png /app/share/icons/hicolor/256x256/apps/io.github.rsevero.mapiah.png",
+      "install -Dm644 assets/icons/m-512x512.png /app/share/icons/hicolor/512x512/apps/io.github.rsevero.mapiah.png",
+      "# Therion extra tree (equivalent to old Setup/texmf/tex)\nfor d in Setup/texmf/tex setup/texmf/tex therion/Setup/texmf/tex; do\n  if [ -d \"$d\" ]; then\n    install -d /app/texlive/texmf\n    cp -a \"$d\" /app/texlive/texmf/tex\n    break\n  fi\ndone\n"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/rsevero/mapiah.git",
+        "tag": "v0.3.0",
+        "commit": "f4a7c0a0c4984e84f40213c99883bfe23511c597"
+      },
+      {
+        "type": "file",
+        "path": "io.github.rsevero.mapiah.metainfo.xml"
+      },
+      "generated/sources/pubspec.json",
+      "generated/sources/pubspec.json"
+    ],
+    "modules": [
+      "generated/modules/flutter-sdk-3.41.3.json"
+    ]
+  }
+}

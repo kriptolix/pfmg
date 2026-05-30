@@ -1,0 +1,43 @@
+{
+  "header": {
+    "id": "xournalpp",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "xournalpp",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
+      "-DFETCHCONTENT_SOURCE_DIR_CPPTRACE=/run/build/xournalpp/cpptrace-src"
+    ],
+    "builddir": true,
+    "post-install": [
+      "./cmake/postinst configure"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/xournalpp/xournalpp",
+        "commit": "008db5846be8984ff361107e0f1821ec11cf7168",
+        "tag": "v1.3.4",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^v([\\d.]+)$"
+        }
+      },
+      {
+        "type": "git",
+        "url": "https://github.com/jeremy-rifkin/cpptrace.git",
+        "commit": "3db8da80111171c219ab5839905771386bee06b3",
+        "tag": "v1.0.4",
+        "dest": "cpptrace-src",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^v([\\d.]+)$"
+        }
+      }
+    ]
+  }
+}

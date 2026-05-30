@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "data-default-instances-dlist",
+    "version": "0.0.1.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "data-default-instances-dlist",
+    "buildsystem": "simple",
+    "builddir": false,
+    "build-commands": [
+      "echo '#! /usr/bin/env runhaskell' >Setup.txt",
+      "echo '> import Distribution.Simple' >>Setup.txt",
+      "echo '> main = defaultMain' >>Setup.txt",
+      "ln -s Setup.txt Setup.lhs || true",
+      "runhaskell Setup configure --prefix=/app",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "sources": [
+      {
+        "sha256": "b9d64f06f2ca8f9daff31a5ed81d2beb8d2622ca1e871bc331c0cd2c28ab5451",
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/data-default-instances-dlist-0.0.1.1/data-default-instances-dlist-0.0.1.1.tar.gz"
+      },
+      {
+        "dest-filename": "data-default-instances-dlist.cabal",
+        "sha256": "8f3e2ec7c3203c61eded2202c43dee43d4f139cbba54f0823b57446d984ebf71",
+        "type": "file",
+        "url": "https://hackage.haskell.org/package/data-default-instances-dlist-0.0.1.1/revision/0.cabal"
+      }
+    ]
+  }
+}

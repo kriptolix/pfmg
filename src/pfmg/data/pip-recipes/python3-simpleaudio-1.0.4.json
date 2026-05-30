@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-simpleaudio",
+    "version": "1.0.4",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-simpleaudio",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"simpleaudio>=1.0.4,<2\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/94/1b/4dc29653733202b68c09d9c6ca085cf67ac54859ee860647ef21ac1ff3dc/simpleaudio-1.0.4.tar.gz",
+        "sha256": "691c88649243544db717e7edf6a9831df112104e1aefb5f6038a5d071e8cf41d"
+      }
+    ]
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "header": {
+    "id": "daemon",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "daemon",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DBUILD_GAME_NACL=FALSE",
+      "-DBUILD_GAME_NACL_NEXE=FALSE",
+      "-DBUILD_GAME_NATIVE_DLL=FALSE",
+      "-DBUILD_GAME_NATIVE_EXE=FALSE",
+      "-DBUILD_TTY_CLIENT=FALSE",
+      "-DBUILD_SERVER=FALSE",
+      "-DUSE_EXTERNAL_DEPS_LIBS=FALSE",
+      "-DUSE_CURSES=TRUE",
+      "-DUSE_CURSES_NCURSES=FALSE",
+      "-DUSE_HARDENING=TRUE",
+      "-DUSE_LTO=TRUE",
+      "-DUSE_OPENMP=TRUE"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/DaemonEngine/Daemon.git",
+        "tag": "unvanquished/0.56.2"
+      },
+      {
+        "type": "file",
+        "path": "net.unvanquished.Unvanquished.metainfo.xml"
+      },
+      {
+        "type": "file",
+        "path": "net.unvanquished.Unvanquished.desktop"
+      },
+      {
+        "type": "file",
+        "url": "https://raw.githubusercontent.com/Unvanquished/Unvanquished/e1b0a1f9a7306126940dffb94d6ced036fe970b2/dist/icons/512x512/unvanquished.png",
+        "sha256": "d49b6edb49917f7a87497129e8e71ce396027361016fac01c093fb5564f7dee1"
+      },
+      {
+        "type": "archive",
+        "dest": "external_deps/linux-amd64-default_11",
+        "url": "https://dl.unvanquished.net/deps/linux-amd64-default_11.tar.xz",
+        "sha512": "02524ccb4e2fdbb36c052fb527ed42e1424a07b182bbd13d23ee0f763f45331ef33455893763bd691d7b1ee480013e4e2385a59438c691aec3d860cd8f6c4999"
+      }
+    ],
+    "no-make-install": true,
+    "post-install": [
+      "for f in daemon nacl_loader nacl_helper_bootstrap; do\n  install -Dm0755 -t /app/lib/ $f\ndone\n",
+      "install -Dm0644 -t /app/lib/ irt_core-amd64.nexe",
+      "install -Dm0644 -t /app/share/applications/ net.unvanquished.Unvanquished.desktop",
+      "install -Dm0644 -t /app/share/metainfo/ net.unvanquished.Unvanquished.metainfo.xml",
+      "install -Dm0644 unvanquished.png /app/share/icons/hicolor/512x512/apps/$FLATPAK_ID.png"
+    ]
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "header": {
+    "id": "gstreamer",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "gstreamer",
+    "buildsystem": "meson",
+    "config-opts": [
+      "--buildtype=release",
+      "-Dbase=enabled",
+      "-Dgood=enabled",
+      "-Dbad=enabled",
+      "-Dugly=disabled",
+      "-Dlibav=disabled",
+      "-Dvaapi=disabled",
+      "-Dsharp=disabled",
+      "-Drs=disabled",
+      "-Dpython=disabled",
+      "-Ddevtools=disabled",
+      "-Dges=disabled",
+      "-Drtsp_server=disabled",
+      "-Dgst-examples=disabled",
+      "-Dqt5=disabled",
+      "-Dtests=disabled",
+      "-Dexamples=disabled",
+      "-Dintrospection=disabled",
+      "-Ddoc=disabled",
+      "-Dgtk_doc=disabled",
+      "-Dgst-plugins-bad:bz2=disabled",
+      "-Dgst-plugins-bad:curl=disabled",
+      "-Dgst-plugins-bad:dash=disabled",
+      "-Dgst-plugins-bad:decklink=disabled",
+      "-Dgst-plugins-bad:dtls=disabled",
+      "-Dgst-plugins-bad:dvb=disabled",
+      "-Dgst-plugins-bad:examples=disabled",
+      "-Dgst-plugins-bad:fbdev=disabled",
+      "-Dgst-plugins-bad:gl=disabled",
+      "-Dgst-plugins-bad:hls=disabled",
+      "-Dgst-plugins-bad:introspection=disabled",
+      "-Dgst-plugins-bad:kms=disabled",
+      "-Dgst-plugins-bad:openal=disabled",
+      "-Dgst-plugins-bad:rsvg=disabled",
+      "-Dgst-plugins-bad:smoothstreaming=disabled",
+      "-Dgst-plugins-bad:sndfile=disabled",
+      "-Dgst-plugins-bad:vulkan=disabled",
+      "-Dgst-plugins-bad:wayland=disabled",
+      "-Dgst-plugins-bad:webp=disabled",
+      "-Dgst-plugins-bad:orc=disabled",
+      "-Dgst-plugins-bad:soundtouch=enabled"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://gitlab.freedesktop.org/gstreamer/gstreamer.git",
+        "tag": "1.22.6",
+        "commit": "ddb4fbe43149b157efb52b6472313f48308c1dbc",
+        "disable-submodules": true
+      }
+    ],
+    "cleanup": [
+      "/include",
+      "*.la",
+      "*.a",
+      "/lib/gstreamer-1.0/include",
+      "/lib/pkgconfig",
+      "/share/aclocal",
+      "/share/gtk-doc",
+      "/share/man"
+    ]
+  }
+}

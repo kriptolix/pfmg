@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-nanobind",
+    "version": "2.9.2",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-nanobind",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"nanobind==2.9.2\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/05/20/f8944f162df48a20f8f533f4e4faed63891aa368ceca8cc8b32d4c785ed4/nanobind-2.9.2-py3-none-any.whl",
+        "sha256": "c37957ffd5eac7eda349cff3622ecd32e5ee1244ecc912c99b5bc8188bafd16e"
+      }
+    ]
+  }
+}

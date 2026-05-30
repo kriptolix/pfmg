@@ -1,0 +1,20 @@
+{
+  "header": {
+    "id": "bionic-translation",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "bionic_translation",
+    "buildsystem": "meson",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://gitlab.com/android_translation_layer/bionic_translation.git",
+        "commit": "ee37eb21c91409fe0eed833d0a5a0aa6b931bb7b",
+        "disable-submodules": true
+      }
+    ]
+  }
+}

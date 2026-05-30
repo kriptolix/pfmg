@@ -1,0 +1,197 @@
+{
+  "header": {
+    "id": "plexapi",
+    "version": "unknown",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "PlexAPI",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --no-build-isolation --prefix=/app ./"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/tijder/python-plexapi",
+        "commit": "cadb3d2a399702ae3908cad70e52e439d9b665a2"
+      }
+    ],
+    "modules": [
+      {
+        "name": "idna",
+        "buildsystem": "simple",
+        "build-commands": [
+          "pip3 install --prefix=/app idna-*.whl"
+        ],
+        "sources": [
+          {
+            "type": "file",
+            "url": "https://files.pythonhosted.org/packages/0e/61/66938bbb5fc52dbdf84594873d5b51fb1f7c7794e9c0f5bd885f30bc507b/idna-3.11-py3-none-any.whl",
+            "sha256": "771a87f49d9defaf64091e6e6fe9c18d4833f140bd19464795bc32d966ca37ea",
+            "x-checker-data": {
+              "type": "pypi",
+              "packagetype": "bdist_wheel",
+              "name": "idna"
+            }
+          }
+        ]
+      },
+      {
+        "name": "certifi",
+        "buildsystem": "simple",
+        "build-commands": [
+          "pip3 install --prefix=/app certifi-*.whl"
+        ],
+        "sources": [
+          {
+            "type": "file",
+            "url": "https://files.pythonhosted.org/packages/9a/3c/c17fb3ca2d9c3acff52e30b309f538586f9f5b9c9cf454f3845fc9af4881/certifi-2026.2.25-py3-none-any.whl",
+            "sha256": "027692e4402ad994f1c42e52a4997a9763c646b73e4096e4d5d6db8af1d6f0fa",
+            "x-checker-data": {
+              "type": "pypi",
+              "packagetype": "bdist_wheel",
+              "name": "certifi"
+            }
+          }
+        ]
+      },
+      {
+        "name": "chardet",
+        "buildsystem": "simple",
+        "build-commands": [
+          "pip3 install --prefix=/app chardet-*.whl"
+        ],
+        "sources": [
+          {
+            "type": "file",
+            "url": "https://files.pythonhosted.org/packages/91/d7/47988d40231b41376f5a66346ef3b322c81091dfd4c0f84df5a1e3bb06b5/chardet-7.4.0.post1-py3-none-any.whl",
+            "sha256": "57a62ef50f69bc2fb3a3ea1ffffec6d10f3d2112d3b05d6e3cb15c2c9b55f6cc",
+            "x-checker-data": {
+              "type": "pypi",
+              "packagetype": "bdist_wheel",
+              "name": "chardet"
+            }
+          }
+        ]
+      },
+      {
+        "name": "urllib3",
+        "buildsystem": "simple",
+        "build-commands": [
+          "pip3 install --prefix=/app urllib3-*.whl"
+        ],
+        "sources": [
+          {
+            "type": "file",
+            "url": "https://files.pythonhosted.org/packages/39/08/aaaad47bc4e9dc8c725e68f9d04865dbcb2052843ff09c97b08904852d84/urllib3-2.6.3-py3-none-any.whl",
+            "sha256": "bf272323e553dfb2e87d9bfd225ca7b0f467b919d7bbd355436d3fd37cb0acd4",
+            "x-checker-data": {
+              "type": "pypi",
+              "packagetype": "bdist_wheel",
+              "name": "urllib3"
+            }
+          }
+        ]
+      },
+      {
+        "name": "requests",
+        "buildsystem": "simple",
+        "build-commands": [
+          "pip3 install --prefix=/app requests-*.whl"
+        ],
+        "sources": [
+          {
+            "type": "file",
+            "url": "https://files.pythonhosted.org/packages/56/5d/c814546c2333ceea4ba42262d8c4d55763003e767fa169adc693bd524478/requests-2.33.0-py3-none-any.whl",
+            "sha256": "3324635456fa185245e24865e810cecec7b4caf933d7eb133dcde67d48cee69b",
+            "x-checker-data": {
+              "type": "pypi",
+              "packagetype": "bdist_wheel",
+              "name": "requests"
+            }
+          }
+        ],
+        "modules": [
+          {
+            "name": "charset-normalizer",
+            "buildsystem": "simple",
+            "build-commands": [
+              "pip3 install --prefix=/app charset_normalizer-*.whl"
+            ],
+            "sources": [
+              {
+                "type": "file",
+                "url": "https://files.pythonhosted.org/packages/2a/68/687187c7e26cb24ccbd88e5069f5ef00eba804d36dde11d99aad0838ab45/charset_normalizer-3.4.6-py3-none-any.whl",
+                "sha256": "947cf925bc916d90adba35a64c82aace04fa39b46b52d4630ece166655905a69",
+                "x-checker-data": {
+                  "type": "pypi",
+                  "packagetype": "bdist_wheel",
+                  "name": "charset-normalizer"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "tqdm",
+        "buildsystem": "simple",
+        "build-commands": [
+          "pip3 install --prefix=/app tqdm-*.whl"
+        ],
+        "sources": [
+          {
+            "type": "file",
+            "url": "https://files.pythonhosted.org/packages/16/e1/3079a9ff9b8e11b846c6ac5c8b5bfb7ff225eee721825310c91b3b50304f/tqdm-4.67.3-py3-none-any.whl",
+            "sha256": "ee1e4c0e59148062281c49d80b25b67771a127c85fc9676d3be5f243206826bf",
+            "x-checker-data": {
+              "type": "pypi",
+              "packagetype": "bdist_wheel",
+              "name": "tqdm"
+            }
+          }
+        ]
+      },
+      {
+        "name": "six",
+        "buildsystem": "simple",
+        "build-commands": [
+          "pip3 install --prefix=/app six-*.whl"
+        ],
+        "sources": [
+          {
+            "type": "file",
+            "url": "https://files.pythonhosted.org/packages/b7/ce/149a00dd41f10bc29e5921b496af8b574d8413afcd5e30dfa0ed46c2cc5e/six-1.17.0-py2.py3-none-any.whl",
+            "sha256": "4721f391ed90541fddacab5acf947aa0d3dc7d27b2e1e8eda2be8970586c3274",
+            "x-checker-data": {
+              "type": "pypi",
+              "packagetype": "bdist_wheel",
+              "name": "six"
+            }
+          }
+        ]
+      },
+      {
+        "name": "websocket-client",
+        "buildsystem": "simple",
+        "build-commands": [
+          "pip3 install --prefix=/app websocket_client-*.whl"
+        ],
+        "sources": [
+          {
+            "type": "file",
+            "url": "https://files.pythonhosted.org/packages/34/db/b10e48aa8fff7407e67470363eac595018441cf32d5e1001567a7aeba5d2/websocket_client-1.9.0-py3-none-any.whl",
+            "sha256": "af248a825037ef591efbf6ed20cc5faa03d3b47b9e5a2230a529eeee1c1fc3ef",
+            "x-checker-data": {
+              "type": "pypi",
+              "packagetype": "bdist_wheel",
+              "name": "websocket-client"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

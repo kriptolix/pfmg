@@ -1,0 +1,31 @@
+{
+  "header": {
+    "id": "proot",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "proot",
+    "buildsystem": "simple",
+    "build-commands": [
+      "mv uthash/src/* src",
+      "make -C src proot",
+      "install -d /app/lib",
+      "install -Dm755 src/proot -t /app/bin"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/troydhanson/uthash/archive/refs/tags/v2.3.0.tar.gz",
+        "sha256": "e10382ab75518bad8319eb922ad04f907cb20cccb451a3aa980c9d005e661acc",
+        "dest": "uthash"
+      },
+      {
+        "type": "git",
+        "url": "https://github.com/termux/proot",
+        "commit": "5c462a6ecfddd629b1439f38fbb61216d6fcb359"
+      }
+    ]
+  }
+}

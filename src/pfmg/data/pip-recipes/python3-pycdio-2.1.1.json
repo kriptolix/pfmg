@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-pycdio",
+    "version": "2.1.1",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-pycdio",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"pycdio\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/73/02/e482cd03681c641aba3863216029814443c023ac772ea5c638b3ff8e699f/pycdio-2.1.1.tar.gz",
+        "sha256": "61734db8c554b7b1a2cb2da2e2c15d3f9f5973a57cfb06f8854c38029004a9f8"
+      }
+    ]
+  }
+}

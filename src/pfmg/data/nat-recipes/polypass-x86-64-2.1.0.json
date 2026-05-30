@@ -1,0 +1,31 @@
+{
+  "header": {
+    "id": "polypass-x86-64",
+    "version": "2.1.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "polypass-x86_64",
+    "only-arches": [
+      "x86_64"
+    ],
+    "buildsystem": "simple",
+    "build-commands": [
+      "cp -r Polypass /app/",
+      "chmod +x /app/Polypass/polypass",
+      "mkdir -p /app/bin",
+      "ln -s /app/Polypass/polypass /app/bin/polypass"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "dest": "Polypass",
+        "archive-type": "tar-gzip",
+        "strip-components": 0,
+        "url": "https://github.com/polypixeldev/polypass/releases/download/v2.1.0/polypass-linux-x64.tar.gz",
+        "sha256": "5fca7af64f1229ecdd2a2b037844eb86b4c6ebc40891ed33fb9c2046464abb0e"
+      }
+    ]
+  }
+}

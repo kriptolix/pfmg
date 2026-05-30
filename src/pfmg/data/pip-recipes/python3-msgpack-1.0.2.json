@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-msgpack",
+    "version": "1.0.2",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-msgpack",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"msgpack\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/59/04/87fc6708659c2ed3b0b6d4954f270b6e931def707b227c4554f99bd5401e/msgpack-1.0.2.tar.gz",
+        "sha256": "fae04496f5bc150eefad4e9571d1a76c55d021325dcd484ce45065ebbdd00984"
+      }
+    ]
+  }
+}

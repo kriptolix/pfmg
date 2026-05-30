@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "swiftlint",
+    "version": "0.55.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "SwiftLint",
+    "buildsystem": "simple",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/realm/SwiftLint/releases/download/0.55.1/swiftlint_linux.zip",
+        "sha256": "7a9ba94b35cd444f39f3d8b346958830a7da7bb4eee42a5fb2c153f5106bc7b4"
+      }
+    ],
+    "build-commands": [
+      "cp swiftlint /usr/lib/sdk/swift5/bin/"
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "xword-dl",
+    "version": "unknown",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "xword-dl",
+    "buildsystem": "simple",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/thisisparker/xword-dl.git",
+        "commit": "0230250f297dfc40a8e31391a8099677d0a4ec7a"
+      }
+    ],
+    "build-commands": [
+      "export PYTHONPATH=${FLATPAK_DEST}/lib/python3.12/site-packages:${PYTHONPATH} && pip3 install --no-deps --ignore-installed --prefix=${FLATPAK_DEST} --no-build-isolation ."
+    ]
+  }
+}

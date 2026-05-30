@@ -1,0 +1,26 @@
+{
+  "header": {
+    "id": "summary-files",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "summary-files",
+    "buildsystem": "simple",
+    "build-commands": [
+      "install -Dm0644 summary/beta.summary ${FLATPAK_DEST}/share/flathub/flathub-beta.summary",
+      "install -Dm0644 summary/stable.summary ${FLATPAK_DEST}/share/flathub/flathub-stable.summary"
+    ],
+    "cleanup": [
+      "*"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/flathub-infra/summary-files.git",
+        "branch": "main"
+      }
+    ]
+  }
+}

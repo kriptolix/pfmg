@@ -1,0 +1,29 @@
+{
+  "header": {
+    "id": "varnam",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "varnam",
+    "buildsystem": "cmake-ninja",
+    "builddir": false,
+    "post-install": [
+      "export VARNAM_SUGGESTIONS_DIR=/etc/varnam",
+      "./varnamc --compile schemes/ml",
+      "./varnamc --compile schemes/hi",
+      "./varnamc --compile schemes/ta",
+      "./varnamc --compile schemes/te",
+      "./varnamc --compile schemes/bn",
+      "cmake -P cmake_install.cmake"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/subins2000/libvarnam.git",
+        "commit": "cccafe2426d5b48a26f6853a551ec21eb149c693"
+      }
+    ]
+  }
+}

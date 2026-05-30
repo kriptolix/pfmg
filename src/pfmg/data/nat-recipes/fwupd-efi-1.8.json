@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "fwupd-efi",
+    "version": "1.8",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "fwupd-efi",
+    "buildsystem": "meson",
+    "build-options": {
+      "ldflags-override": true
+    },
+    "config-opts": [
+      "-Defi-includedir=/app/include/efi",
+      "-Defi-ldsdir=/app/lib",
+      "-Defi-libdir=/app/lib"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/fwupd/fwupd-efi/archive/refs/tags/1.8.tar.gz",
+        "sha256": "c9f1f9b9b967ea50eb0b478f0d7693d6673d4cd76c8e7eb80c55fc44ec928925",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 326081,
+          "url-template": "https://github.com/fwupd/fwupd-efi/archive/refs/tags/$version.tar.gz"
+        }
+      }
+    ]
+  }
+}

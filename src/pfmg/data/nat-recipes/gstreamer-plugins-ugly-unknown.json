@@ -1,0 +1,29 @@
+{
+  "header": {
+    "id": "gstreamer-plugins-ugly",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "gstreamer-plugins-ugly",
+    "buildsystem": "meson",
+    "config-opts": [
+      "--libdir=lib",
+      "--wrap-mode=nodownload",
+      "-Dauto_features=disabled",
+      "-Dx264=enabled",
+      "-Dgpl=enabled"
+    ],
+    "subdir": "subprojects/gst-plugins-ugly",
+    "sources": [
+      {
+        "type": "git",
+        "tag": "1.26.10",
+        "url": "https://gitlab.freedesktop.org/gstreamer/gstreamer.git",
+        "commit": "bfdc62185e243d3633aa916187a566d03a587792",
+        "disable-submodules": true
+      }
+    ]
+  }
+}

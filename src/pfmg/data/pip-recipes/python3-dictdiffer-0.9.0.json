@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-dictdiffer",
+    "version": "0.9.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-dictdiffer",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"dictdiffer==0.9.0\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/47/ef/4cb333825d10317a36a1154341ba37e6e9c087bac99c1990ef07ffdb376f/dictdiffer-0.9.0-py2.py3-none-any.whl",
+        "sha256": "442bfc693cfcadaf46674575d2eba1c53b42f5e404218ca2c2ff549f2df56595"
+      }
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "python3-bsddb3",
+    "version": "6.2.9",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-bsddb3",
+    "buildsystem": "simple",
+    "build-options": {
+      "no-debuginfo": true,
+      "env": {
+        "BERKELEYDB_DIR": "/app"
+      }
+    },
+    "build-commands": [
+      "pip3 install --no-deps --no-build-isolation --prefix=/app ."
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://files.pythonhosted.org/packages/f0/24/92034482656945fc6ceb10551222b43a0ff8d0c87e15839120487820067e/bsddb3-6.2.9.tar.gz",
+        "sha256": "70d05ec8dc568f42e70fc919a442e0daadc2a905a1cfb7ca77f549d49d6e7801"
+      }
+    ]
+  }
+}

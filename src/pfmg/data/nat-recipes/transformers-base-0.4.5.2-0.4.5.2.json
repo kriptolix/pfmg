@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "transformers-base-0.4.5.2",
+    "version": "0.4.5.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "transformers-base-0.4.5.2",
+    "only-arches": [
+      "x86_64"
+    ],
+    "buildsystem": "simple",
+    "build-commands": [
+      "ghc -threaded --make Setup",
+      "./Setup configure --prefix=/app",
+      "./Setup build",
+      "./Setup install"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "sha256": "d0c80c63fdce6a077dd8eda4f1ff289b85578703a3f1272e141d400fe23245e8",
+        "url": "https://hackage.haskell.org/package/transformers-base-0.4.5.2/transformers-base-0.4.5.2.tar.gz"
+      }
+    ]
+  }
+}

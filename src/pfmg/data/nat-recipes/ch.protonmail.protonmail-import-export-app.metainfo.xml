@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>ch.protonmail.protonmail-import-export-app</id>
+  <name>ProtonMail Import-Export app</name>
+  <project_license>GPL-3.0</project_license>
+  <metadata_license>CC0-1.0</metadata_license>
+  <developer_name>Proton AG</developer_name>
+  <developer id="ch.protonmail">
+    <name>Proton AG</name>
+  </developer>
+  <url type="homepage">https://proton.me/easyswitch/</url>
+  <url type="bugtracker">
+    https://github.com/ProtonMail/proton-bridge/issues
+  </url>
+  <url type="help">
+    https://proton.me/support/import-emails-import-export-app
+  </url>
+
+  <summary>
+    Sync your emails, calendars, and contacts securely with Proton in one click
+  </summary>
+
+  <launchable type="desktop-id">
+    ch.protonmail.protonmail-import-export-app.desktop
+  </launchable>
+
+  <description>
+    <p>
+      Keep your personal email history private and secure by migrating it to ProtonMail using the Import-Export app.
+    </p>
+
+    <ul>
+      <li>Bring your mailbox:
+
+      Your email is a record of your personal conversations and important milestones. Bring those memories with you when you upgrade to a secure and private inbox with ProtonMail.</li>
+
+      <li>Keep only whats important:
+
+      Old newsletters, random receipts, special offers - your inbox can fill up fast. The Import-Export app lets you easily select which messages you want to import. </li>
+
+      <li>Secure conversation history:
+
+      When you import your emails, the Import-Export app automatically encrypts them before they leave your device. That way only you can access your personal messages. </li>
+    </ul>
+  </description>
+
+  <screenshots>
+    <screenshot type="default">
+      <image type="source">
+        https://raw.githubusercontent.com/flathub/ch.protonmail.protonmail-import-export-app/master/screenshots/main.png
+      </image>
+    </screenshot>
+    <screenshot>
+      <image type="source">
+        https://raw.githubusercontent.com/flathub/ch.protonmail.protonmail-import-export-app/master/screenshots/settings.png
+      </image>
+    </screenshot>
+  </screenshots>
+
+  <releases>
+    <release version="1.3.3" date="2022-04-07"/>
+    <release version="1.3.3" date="2021-06-14"/>
+    <release version="1.3.1" date="2021-03-17"/>
+    <release version="1.2.3" date="2020-12-28">
+      <description>
+        <p>Release Notes:</p>
+        <ul>
+          <li>Allow an import of already encrypted messages (as cypher text)</li>
+          <li>Cosmetic GUI changes</li>
+          <li>Better error handling</li>
+        </ul>
+        <p>Fixed bugs:</p>
+        <ul>
+          <li>Installation issues on linux</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.2.2" date="2020-11-30">
+      <description>
+        <p>Release Notes:</p>
+        <ul>
+          <li>Improvements to the import from large mbox files with multiple labels</li>
+          <li>Not allow to run multiple instances of the app or transfers at the same time</li>
+          <li>Better handling and displaying of skipped messages</li>
+          <li>Various enhancements of the import process related to parsing</li>
+          <li>Cosmetic GUI changes</li>
+          <li>Better error handling</li>
+        </ul>
+        <p>Fixed bugs:</p>
+        <ul>
+          <li>Linux font issues - Fedora specific</li>
+          <li>App response to the user pausing and canceling import or export</li>
+          <li>Upgrade errors</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.1.2" date="2020-10-06">
+      <description>
+        <p>Release Notes:</p>
+        <ul>
+          <li>Speed up import by implementing parallel processing (parallel fetch, encrypt and upload of messages)</li>
+          <li>Optimising the initial fetch of messages from external accounts</li>
+          <li>Better handling of attachments and non-standard formatting</li>
+          <li>Improved stability of the message parser</li>
+          <li>Added persistent anonymous API cookies</li>
+        </ul>
+        <p>Fixed bugs:</p>
+        <ul>
+          <li>Import from mbox files with long lines</li>
+          <li>Improvements to import from Yahoo accounts</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.0.0" date="2020-09-09"/>
+  </releases>
+
+  <content_rating type="oars-1.1"/>
+  <update_contact>msandova_at_protonmail.com</update_contact>
+</component>

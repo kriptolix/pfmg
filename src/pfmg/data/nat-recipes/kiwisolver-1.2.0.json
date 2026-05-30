@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "kiwisolver",
+    "version": "1.2.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "kiwisolver",
+    "buildsystem": "simple",
+    "build-commands": [
+      "python3 setup.py install --prefix=/app --root=/"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://files.pythonhosted.org/packages/62/b8/db619d97819afb52a3ff5ff6ad3f7de408cc83a8ec2dfb31a1731c0a97c2/kiwisolver-1.2.0.tar.gz",
+        "sha256": "247800260cd38160c362d211dcaf4ed0f7816afb5efe56544748b21d6ad6d17f"
+      }
+    ]
+  }
+}

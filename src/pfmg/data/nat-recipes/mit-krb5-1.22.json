@@ -1,0 +1,38 @@
+{
+  "header": {
+    "id": "mit-krb5",
+    "version": "1.22",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "mit-krb5",
+    "buildsystem": "simple",
+    "subdir": "src",
+    "build-commands": [
+      "autoreconf -i",
+      "./configure --prefix=/app --disable-static --without-system-verto --without-libedit",
+      "make",
+      "make install"
+    ],
+    "cleanup": [
+      "/share/man",
+      "/share/examples",
+      "/share/et",
+      "*.a",
+      "*.la"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/krb5/krb5/archive/refs/tags/krb5-1.22-final.tar.gz",
+        "sha256": "686f7251da4b1ffcba1112b4b25c888890dac3227f9b84151bb41fce4ffc2d78",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 13287,
+          "url-template": "https://github.com/krb5/krb5/archive/refs/tags/krb5-$version-final.tar.gz"
+        }
+      }
+    ]
+  }
+}

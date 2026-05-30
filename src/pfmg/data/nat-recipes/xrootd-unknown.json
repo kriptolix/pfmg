@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "xrootd",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "xrootd",
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "config-opts": [
+      "-DINSTALL_PYTHON_BINDINGS=OFF"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/xrootd/xrootd.git",
+        "commit": "8486cecd6450eb8695c579bfe03f3d2c68ab44cf",
+        "tag": "v6.0.0"
+      }
+    ]
+  }
+}

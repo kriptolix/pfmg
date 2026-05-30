@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "icon-file",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "icon-file",
+    "buildsystem": "simple",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/space-wizards/asset-dump.git",
+        "commit": "5ffb49a2f4f3e6805a0b7bef31247eedebfe1043"
+      }
+    ],
+    "build-commands": [
+      "install -Dm644 -T icon-new.svg /app/share/icons/hicolor/scalable/apps/com.spacestation14.Launcher.svg"
+    ]
+  }
+}

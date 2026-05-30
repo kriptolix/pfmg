@@ -1,0 +1,21 @@
+{
+  "header": {
+    "id": "fdkaac",
+    "version": "2.0.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "fdkaac",
+    "config-opts": [
+      "--disable-static"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/mstorsjo/fdk-aac/archive/v2.0.2.tar.gz",
+        "sha256": "7812b4f0cf66acda0d0fe4302545339517e702af7674dd04e5fe22a5ade16a90"
+      }
+    ]
+  }
+}

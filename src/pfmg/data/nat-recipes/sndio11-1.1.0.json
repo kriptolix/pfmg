@@ -1,0 +1,33 @@
+{
+  "header": {
+    "id": "sndio11",
+    "version": "1.1.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "sndio11",
+    "config-opts": [
+      "--with-libbsd"
+    ],
+    "cleanup": [
+      "/bin"
+    ],
+    "build-options": {
+      "cflags": "-Wno-error=implicit-function-declaration"
+    },
+    "sources": [
+      {
+        "type": "archive",
+        "url": "http://archive.ubuntu.com/ubuntu/pool/universe/s/sndio/sndio_1.1.0.orig.tar.gz",
+        "sha256": "fcd7f845ff70f38c2898d737450b8aa3e1bb0afb9d147e8429ef22c0b2c2db57"
+      },
+      {
+        "type": "shell",
+        "commands": [
+          "for i in libsndio aucat midicat; do\n  sed 's/cp /cp -f /g' -i $i/Makefile.in\ndone\n"
+        ]
+      }
+    ]
+  }
+}

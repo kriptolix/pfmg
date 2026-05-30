@@ -1,0 +1,20 @@
+{
+  "header": {
+    "id": "fifechan",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "fifechan",
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/fifengine/fifechan.git",
+        "tag": "0.1.5"
+      }
+    ]
+  }
+}

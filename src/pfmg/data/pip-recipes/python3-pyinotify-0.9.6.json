@@ -1,0 +1,30 @@
+{
+  "header": {
+    "id": "python3-pyinotify",
+    "version": "0.9.6",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-pyinotify",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"pyinotify\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/e3/c0/fd5b18dde17c1249658521f69598f3252f11d9d7a980c5be8619970646e1/pyinotify-0.9.6.tar.gz",
+        "sha256": "9c998a5d7606ca835065cdabc013ae6c66eb9ea76a00a1e3bc6e0cfe2b4f71f4",
+        "x-checker-data": {
+          "type": "pypi",
+          "name": "pyinotify"
+        }
+      }
+    ],
+    "cleanup": [
+      "/bin",
+      "/share/man/man1"
+    ]
+  }
+}

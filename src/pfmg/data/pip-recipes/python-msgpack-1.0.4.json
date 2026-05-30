@@ -1,0 +1,26 @@
+{
+  "header": {
+    "id": "python-msgpack",
+    "version": "1.0.4",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python-msgpack",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"msgpack\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/22/44/0829b19ac243211d1d2bd759999aa92196c546518b0be91de9cacc98122a/msgpack-1.0.4.tar.gz",
+        "sha256": "f5d869c18f030202eb412f08b28d2afeea553d6613aee89e200d7aca7ef01f5f",
+        "x-checker-data": {
+          "type": "pypi",
+          "name": "msgpack"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "header": {
+    "id": "libappindicator",
+    "version": "12.10",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libappindicator",
+    "config-opts": [
+      "--with-gtk=3",
+      "--disable-gtk-doc-html",
+      "--disable-mono-test",
+      "--disable-static",
+      "--disable-tests"
+    ],
+    "rm-configure": true,
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://launchpad.net/libappindicator/12.10/12.10.0/+download/libappindicator-12.10.0.tar.gz",
+        "sha256": "d5907c1f98084acf28fd19593cb70672caa0ca1cf82d747ba6f4830d4cc3b49f"
+      },
+      {
+        "type": "patch",
+        "path": "no-python.patch"
+      },
+      {
+        "type": "script",
+        "commands": [
+          "autoreconf -vfi"
+        ],
+        "dest-filename": "autogen.sh"
+      }
+    ]
+  }
+}

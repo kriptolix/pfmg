@@ -1,0 +1,21 @@
+{
+  "header": {
+    "id": "gtksourceviewmm",
+    "version": "3.21",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "gtksourceviewmm",
+    "config-opts": [
+      "--disable-documentation"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://ftp.acc.umu.se/pub/GNOME/sources/gtksourceviewmm/3.21/gtksourceviewmm-3.21.3.tar.xz",
+        "sha256": "dbb00b1c28e0407cc27d8b07a2ed0b4ea22f92e4b3e3006431cbd6726b6256b5"
+      }
+    ]
+  }
+}

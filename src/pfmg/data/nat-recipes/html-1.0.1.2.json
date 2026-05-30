@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "html",
+    "version": "1.0.1.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "html",
+    "buildsystem": "simple",
+    "builddir": false,
+    "build-commands": [
+      "echo '#! /usr/bin/env runhaskell' >Setup.txt",
+      "echo '> import Distribution.Simple' >>Setup.txt",
+      "echo '> main = defaultMain' >>Setup.txt",
+      "ln -s Setup.txt Setup.lhs || true",
+      "runhaskell Setup configure --prefix=/app",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "sources": [
+      {
+        "sha256": "0c35495ea33d65e69c69bc7441ec8e1af69fbb43433c2aa3406c0a13a3ab3061",
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/html-1.0.1.2/html-1.0.1.2.tar.gz"
+      },
+      {
+        "dest-filename": "html.cabal",
+        "sha256": "b6164bd09d2c561f2271599dc53ed9ce243ae6926a5d8896dee58ed1e2353c99",
+        "type": "file",
+        "url": "https://hackage.haskell.org/package/html-1.0.1.2/revision/0.cabal"
+      }
+    ]
+  }
+}

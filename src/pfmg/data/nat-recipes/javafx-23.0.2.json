@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "javafx",
+    "version": "23.0.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "javafx",
+    "buildsystem": "simple",
+    "build-commands": [
+      "mkdir -p /app/javafx",
+      "mv -f ./lib /app/javafx",
+      "ls -l /app/javafx"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "only-arches": [
+          "x86_64"
+        ],
+        "url": "https://download2.gluonhq.com/openjfx/23.0.2/openjfx-23.0.2_linux-x64_bin-sdk.zip",
+        "sha256": "8268d8c6ba13c452a4a9a3448cb5c6c62484ab782b34e448d414d7b6224e4309"
+      },
+      {
+        "type": "archive",
+        "only-arches": [
+          "aarch64"
+        ],
+        "url": "https://download2.gluonhq.com/openjfx/23.0.2/openjfx-23.0.2_linux-aarch64_bin-sdk.zip",
+        "sha256": "7066df6467c0d042bae6ff3cdce7dacda18e5b499f641957d3c44cd0ecc282c5"
+      }
+    ]
+  }
+}

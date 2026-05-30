@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-jsonformatter",
+    "version": "0.3.4",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-jsonformatter",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"jsonformatter~=0.3.4\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/f4/2d/efe13a6a42128f31f920f0058857294bb28179e1e2c4c756782701932feb/jsonformatter-0.3.4.tar.gz",
+        "sha256": "af71ae1534a80d6f60f8d5ee7bfa70c2e45389ed803ed94239f4305b7c68105d"
+      }
+    ]
+  }
+}

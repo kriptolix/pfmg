@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "math-functions",
+    "version": "0.3.4.4",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "math-functions",
+    "buildsystem": "simple",
+    "builddir": false,
+    "build-commands": [
+      "echo '#! /usr/bin/env runhaskell' >Setup.txt",
+      "echo '> import Distribution.Simple' >>Setup.txt",
+      "echo '> main = defaultMain' >>Setup.txt",
+      "ln -s Setup.txt Setup.lhs || true",
+      "runhaskell Setup configure --prefix=/app",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "sources": [
+      {
+        "sha256": "2441d8dd50eff445356048b2a0cdf88c4a7ba0f56614293d4975e1b081faf8fa",
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/math-functions-0.3.4.4/math-functions-0.3.4.4.tar.gz"
+      },
+      {
+        "dest-filename": "math-functions.cabal",
+        "sha256": "859a4f623c5f238e345f241e38c551cc4776cadc59b1e511880bbf7968f7419f",
+        "type": "file",
+        "url": "https://hackage.haskell.org/package/math-functions-0.3.4.4/revision/0.cabal"
+      }
+    ]
+  }
+}

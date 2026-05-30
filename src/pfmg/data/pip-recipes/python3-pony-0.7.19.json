@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-pony",
+    "version": "0.7.19",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-pony",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"pony\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/16/cb/0ef8429024309fe6f5edf1debc7cf63adeaeb34b2242490cc18710658abd/pony-0.7.19-py3-none-any.whl",
+        "sha256": "5112b4cf40d3f24e93ae66dc5ab7dc6813388efa870e750928d60dc699873cf5"
+      }
+    ]
+  }
+}

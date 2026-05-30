@@ -1,0 +1,19 @@
+{
+  "header": {
+    "id": "libfaad",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libfaad",
+    "buildsystem": "cmake-ninja",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://salsa.debian.org/multimedia-team/faad2.git",
+        "tag": "debian/2.11.2-1"
+      }
+    ]
+  }
+}

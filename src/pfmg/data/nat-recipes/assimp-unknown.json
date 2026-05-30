@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "assimp",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "assimp",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DASSIMP_BUILD_ASSIMP_TOOLS=0",
+      "-DASSIMP_BUILD_TESTS=0"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/assimp/assimp.git",
+        "tag": "v5.3.1"
+      }
+    ]
+  }
+}

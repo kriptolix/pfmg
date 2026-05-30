@@ -1,0 +1,57 @@
+{
+  "header": {
+    "id": "chowphaser",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "ChowPhaser",
+    "buildsystem": "cmake-ninja",
+    "no-make-install": true,
+    "config-opts": [
+      "-DCMAKE_AR=/usr/bin/gcc-ar",
+      "-DCMAKE_NM=/usr/bin/gcc-nm",
+      "-DCMAKE_RANLIB=/usr/bin/gcc-ranlib",
+      "-DCMAKE_BUILD_TYPE=Release"
+    ],
+    "build-options": {
+      "cxxflags": "-I/app/extensions/Plugins/ChowDSP-Plugins/include"
+    },
+    "make-args": [
+      "ChowPhaserMono_VST3",
+      "ChowPhaserStereo_VST3"
+    ],
+    "post-install": [
+      "install -d ${FLATPAK_DEST}/vst3",
+      "cp -R ./ChowPhaser*_artefacts/Release/VST3/*.vst3 ${FLATPAK_DEST}/vst3/",
+      "strip ${FLATPAK_DEST}/vst3/ChowPhaser*.vst3/Contents/*-linux/*.so",
+      "install -Dm644 -t $FLATPAK_DEST/share/licenses/ChowPhaser LICENSE"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/jatinchowdhury18/ChowPhaser.git",
+        "disable-submodules": true,
+        "tag": "v1.1.1",
+        "commit": "80cf75a1f8b96eb1b1264a8114d925aaa7d5474e",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^v([\\d.]+)$"
+        }
+      },
+      {
+        "type": "git",
+        "url": "https://github.com/juce-framework/JUCE.git",
+        "dest": "modules/JUCE",
+        "commit": "99112cf71f0cc3aafa4622b62cf81f2b7df38f0b"
+      },
+      {
+        "type": "git",
+        "url": "https://github.com/Chowdhury-DSP/foleys_gui_magic.git",
+        "dest": "modules/foleys_gui_magic",
+        "commit": "9cab1a439d86cbf7942981b24ab59c60a55b7dcd"
+      }
+    ]
+  }
+}

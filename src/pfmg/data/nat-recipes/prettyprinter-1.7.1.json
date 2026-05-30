@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "prettyprinter",
+    "version": "1.7.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "prettyprinter",
+    "buildsystem": "simple",
+    "builddir": false,
+    "build-commands": [
+      "echo '#! /usr/bin/env runhaskell' >Setup.txt",
+      "echo '> import Distribution.Simple' >>Setup.txt",
+      "echo '> main = defaultMain' >>Setup.txt",
+      "ln -s Setup.txt Setup.lhs || true",
+      "runhaskell Setup configure --prefix=/app",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "sources": [
+      {
+        "sha256": "5e6ea6903114fa118fcc359633dfb7ecddecb92c06c853d02a77b72b251f0b45",
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/prettyprinter-1.7.1/prettyprinter-1.7.1.tar.gz"
+      },
+      {
+        "dest-filename": "prettyprinter.cabal",
+        "sha256": "9c43c9d8c3cd9f445596e5a2379574bba87f935a4d1fa41b5407ee3cf4edc743",
+        "type": "file",
+        "url": "https://hackage.haskell.org/package/prettyprinter-1.7.1/revision/0.cabal"
+      }
+    ]
+  }
+}

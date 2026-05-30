@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "yaru-prussiangreen-dark",
+    "version": "22.04.4",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "Yaru-prussiangreen-dark",
+    "buildsystem": "simple",
+    "build-commands": [
+      "ar x yaru-gtk-theme.deb",
+      "tar -xf data.tar.zst",
+      "install -dm755 /usr/share/runtime/share/themes/Yaru-prussiangreen-dark/gtk-3.0",
+      "cp -aL usr/share/themes/Yaru-prussiangreen-dark/gtk-3.0/* /usr/share/runtime/share/themes/Yaru-prussiangreen-dark/gtk-3.0",
+      "cp -a usr/share/themes/Yaru-prussiangreen-dark/index.theme /usr/share/runtime/share/themes/Yaru-prussiangreen-dark"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://launchpad.net/ubuntu/+archive/primary/+files/yaru-theme-gtk_22.04.4_all.deb",
+        "dest-filename": "yaru-gtk-theme.deb",
+        "sha256": "a77949122ec8121a80fafc838f9868302d76ed214a66722d99b73ef56eae5972"
+      }
+    ]
+  }
+}

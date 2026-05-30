@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "python3-rpyc",
+    "version": "4.1.5",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-rpyc",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"rpyc\""
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/99/0f/10be0ffe552cf422561adef1d03a303a98b2ba929191d14d5023b0514bfd/plumbum-1.6.9-py2.py3-none-any.whl",
+        "sha256": "91418dcc66b58ab9d2e3b04b3d1e0d787dc45923154fb8b4a826bd9316dba0d6"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/a4/ee/dbfdd5392db9330971756229ebf05ae8fbf38f70f4617dfc678fd9d4473a/rpyc-4.1.5-py3-none-any.whl",
+        "sha256": "397bb0d6f73fd20a2aa4f2aa89d2776ea76ba4a3da7c1ba40696d17288b1001b"
+      }
+    ]
+  }
+}

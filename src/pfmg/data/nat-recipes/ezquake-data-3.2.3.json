@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "ezquake-data",
+    "version": "3.2.3",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "ezquake-data",
+    "buildsystem": "simple",
+    "build-commands": [
+      "mkdir -p /app/share",
+      "mv ezquake /app/share/ezquake",
+      "mv id1 /app/share/id1",
+      "mv qw /app/share/qw",
+      "rm /app/share/id1/'copy your pak0.pak and pak1.pak files here.txt'",
+      "install -Dm 644 io.github.ezQuake.appdata.xml -t /app/share/metainfo"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "path": "io.github.ezQuake.appdata.xml"
+      },
+      {
+        "type": "archive",
+        "strip-components": 0,
+        "url": "https://github.com/QW-Group/ezquake-source/releases/download/3.2.3/ezquake-ubuntu-3.2.3-full.tar.gz",
+        "sha256": "d58f26ed912166615420f0d0b208a10fd2539a84b90e85edfcb1aedc94615af5"
+      }
+    ]
+  }
+}

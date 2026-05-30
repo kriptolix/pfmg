@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "pycairo",
+    "version": "1.25.1",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "pycairo",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --no-index --no-build-isolation --prefix=${FLATPAK_DEST} ."
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://files.pythonhosted.org/packages/c7/7c/de4d40316ee563e4f15a0f05f28c8458833fbef80c4588b9dd51f39b78ee/pycairo-1.25.1.tar.gz",
+        "sha256": "7e2be4fbc3b4536f16db7a11982cbf713e75069a4d73d44fe5a49b68423f5c0c"
+      }
+    ]
+  }
+}

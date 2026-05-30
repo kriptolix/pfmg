@@ -1,0 +1,26 @@
+{
+  "header": {
+    "id": "robin-map",
+    "version": "1.4.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "robin-map",
+    "buildsystem": "cmake-ninja",
+    "build-options": {
+      "env": {
+        "CC": "clang",
+        "CXX": "clang++",
+        "ASM": "clang"
+      }
+    },
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/Tessil/robin-map/archive/refs/tags/v1.4.1.tar.gz",
+        "sha256": "0e3f53a377fdcdc5f9fed7a4c0d4f99e82bbb64175233bd13427fef9a771f4a1"
+      }
+    ]
+  }
+}

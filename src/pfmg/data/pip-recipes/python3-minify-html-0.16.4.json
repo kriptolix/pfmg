@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-minify-html",
+    "version": "0.16.4",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-minify_html",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"minify_html\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/69/96/06987da1547c8fe76a8a12e915ac02e3a021a3533ee0fb5bf713ca13a11c/minify_html-0.16.4-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "sha256": "630d117cac42ef4f8816b0d1ada77936b1008e59054cecd039aa78eece8a7964"
+      }
+    ]
+  }
+}

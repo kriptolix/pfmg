@@ -1,0 +1,76 @@
+{
+  "header": {
+    "id": "lrzsz",
+    "version": "0.12.20",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "lrzsz",
+    "buildsystem": "simple",
+    "build-commands": [
+      ">> config.rpath",
+      "rm missing",
+      "rm acconfig.h",
+      "export ACLOCAL_PATH=\"/usr/share/gettext/m4/:/usr/share/aclocal/\"; autoreconf -vfi",
+      "./configure --prefix=/app --program-transform-name=s/l//",
+      "make",
+      "make install"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://www.ohse.de/uwe/releases/lrzsz-0.12.20.tar.gz",
+        "sha256": "c28b36b14bddb014d9e9c97c52459852f97bd405f89113f30bee45ed92728ff1"
+      },
+      {
+        "type": "patch",
+        "path": "./lrzsz-patches/lrzsz-autotools.patch"
+      },
+      {
+        "type": "patch",
+        "path": "./lrzsz-patches/lrzsz-implicit-decl.patch"
+      },
+      {
+        "type": "patch",
+        "path": "./lrzsz-patches/lrzsz-0.12.20-automake-1.12.patch"
+      },
+      {
+        "type": "patch",
+        "path": "./lrzsz-patches/lrzsz-0.12.20-automake-1.13.patch"
+      },
+      {
+        "type": "patch",
+        "path": "./lrzsz-patches/lrzsz-0.12.20-gettext-0.20.patch"
+      },
+      {
+        "type": "patch",
+        "path": "./lrzsz-patches/lrzsz-0.12.20-AR.patch"
+      },
+      {
+        "type": "patch",
+        "path": "./lrzsz-patches/lrzsz-0.12.20-gettext-0.22.patch"
+      },
+      {
+        "type": "patch",
+        "path": "./lrzsz-patches/lrzsz-0.12.20-disable-nls.patch"
+      },
+      {
+        "type": "patch",
+        "path": "./lrzsz-patches/lrzsz-0.12.20-c99.patch"
+      },
+      {
+        "type": "patch",
+        "path": "./lrzsz-patches/lrzsz-0.12.20-fix-integer-overflow.patch"
+      },
+      {
+        "type": "patch",
+        "path": "./lrzsz-patches/lrzsz-0.12.20-c23.patch"
+      }
+    ],
+    "cleanup": [
+      "/share/man",
+      "/man"
+    ]
+  }
+}

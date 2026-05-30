@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "python2-libxml2",
+    "version": "2.9.12",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python2-libxml2",
+    "cleanup": [
+      "*"
+    ],
+    "config-opts": [
+      "--with-python=/app/share/gimp/2.0/help"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "ftp://xmlsoft.org/libxml2/libxml2-2.9.12.tar.gz",
+        "sha256": "c8d6681e38c56f172892c85ddc0852e1fd4b53b4209e7f4ebf17f7e2eae71d92"
+      }
+    ]
+  }
+}

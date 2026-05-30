@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "xfce4-dev-tools",
+    "version": "4.20",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "xfce4-dev-tools",
+    "cleanup": [
+      "*"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://archive.xfce.org/src/xfce/xfce4-dev-tools/4.20/xfce4-dev-tools-4.20.0.tar.bz2",
+        "sha256": "1fba39a08a0ecc771eaa3a3b6e4272a4f0b9e7c67d0f66e780cd6090cd4466aa",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 15888,
+          "stable-only": true,
+          "url-template": "https://archive.xfce.org/src/xfce/xfce4-dev-tools/$major.$minor/xfce4-dev-tools-$version.tar.bz2"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "libftdi1",
+    "version": "1.5",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libftdi1",
+    "buildsystem": "cmake-ninja",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/ikarustechnologies/libftdi/archive/refs/tags/v1.5.tar.gz",
+        "sha256": "09b622f9e7fc40e68a15f9c4495d840dc646a974de2f64f68efad63532e88cae",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 14622,
+          "stable-only": true,
+          "url-template": "https://github.com/ikarustechnologies/libftdi/archive/refs/tags/v$version.tar.gz"
+        }
+      }
+    ]
+  }
+}

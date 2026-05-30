@@ -1,0 +1,37 @@
+{
+  "header": {
+    "id": "jrosetta",
+    "version": "1.0.4",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "jrosetta",
+    "buildsystem": "simple",
+    "build-options": {
+      "env": {
+        "JAVA_HOME": "/usr/lib/sdk/openjdk17/jvm/openjdk-17",
+        "PATH": "/usr/lib/sdk/openjdk17/bin:/usr/bin:/bin"
+      }
+    },
+    "build-commands": [
+      "mkdir -p build/api",
+      "javac -source 8 -target 8 -d build/api $(find modules/jrosetta-api/src/main/java -name \"*.java\")",
+      "jar cf jrosetta-api.jar -C build/api .",
+      "mkdir -p build/engine",
+      "javac -source 8 -target 8 -cp build/api -d build/engine $(find modules/jrosetta-engine/src/main/java -name \"*.java\")",
+      "jar cf jrosetta-engine.jar -C build/engine .",
+      "mkdir -p /app/share/java",
+      "cp jrosetta-api.jar /app/share/java/",
+      "cp jrosetta-engine.jar /app/share/java/"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "http://deb.debian.org/debian/pool/main/libj/libjrosetta-java/libjrosetta-java_1.0.4.orig.tar.bz2",
+        "sha256": "57e214b3788520b0c9718e817a7277e732a90de25f78a7eb044595bb6b4b4fce",
+        "strip-components": 1
+      }
+    ]
+  }
+}

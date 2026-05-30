@@ -1,0 +1,20 @@
+{
+  "header": {
+    "id": "libsrtp",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libsrtp",
+    "buildsystem": "autotools",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/cisco/libsrtp.git",
+        "tag": "v2.4.2",
+        "commit": "90d05bf8980d16e4ac3f16c19b77e296c4bc207b"
+      }
+    ]
+  }
+}

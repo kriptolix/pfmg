@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop">
+  <id>org.openfodder.OpenFodder</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0</project_license>
+  <name>OpenFodder</name>
+  <developer_name>Robert Crossfield</developer_name>
+  <summary>Source port of Cannon Fodder</summary>
+  <description>
+    <p>Open Fodder is an open source version of the Cannon Fodder engine, for modern operating systems.</p>
+    <p>The game is military-themed and based on shooting action but with a strategy game-style control system. The player directs troops through numerous missions, battling enemy infantry, vehicles and installations.</p>
+  </description>
+  <url type="homepage">https://openfodder.com/</url>
+  <url type="bugtracker">https://github.com/openfodder/openfodder/issues</url>
+  <content_rating type="oars-1.1">
+    <content_attribute id="violence-realistic">intense</content_attribute>
+    <content_attribute id="violence-bloodshed">intense</content_attribute>
+  </content_rating>
+  <releases>
+    <release date="2025-12-16" version="2.0.0">
+      <url>https://github.com/OpenFodder/openfodder/releases/tag/2.0.0</url>
+    </release>
+    <release date="2024-06-02" version="1.9.2">
+      <url>https://github.com/OpenFodder/openfodder/releases/tag/1.9.2</url>
+    </release>
+    <release date="2024-06-02" version="1.9.1">
+      <url>https://github.com/OpenFodder/openfodder/releases/tag/1.9.1</url>
+    </release>
+    <release date="2024-06-01" version="1.9.0">
+      <url>https://github.com/OpenFodder/openfodder/releases/tag/1.9.0</url>
+    </release>
+    <release date="2023-08-26" version="1.8.0">
+      <url>https://github.com/OpenFodder/openfodder/releases/tag/1.8.0</url>
+    </release>
+  </releases>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://user-images.githubusercontent.com/1327406/49718991-f1bd6e00-fcaf-11e8-88e3-68136828c2d1.png</image>
+    </screenshot>
+  </screenshots>
+  <launchable type="desktop-id">org.openfodder.OpenFodder.desktop</launchable>
+</component>

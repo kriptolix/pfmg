@@ -1,0 +1,36 @@
+{
+  "header": {
+    "id": "spring-launcher",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "spring-launcher",
+    "buildsystem": "simple",
+    "build-commands": [
+      "cp -r /app/chobby/dist_cfg/* src/\nfor dir in bin files build; do\n  mkdir -p $dir\n  if [ -d src/$dir/ ]; then\n    mv src/$dir/* $dir/\n    rm -rf src/$dir\n  fi\ndone\n",
+      "export PACKAGE_VERSION=$(cat /app/chobby/PACKAGE_VERSION)\necho \"Making build for version: $PACKAGE_VERSION\"\nnode /app/chobby/build/make_package_json.js package.json /app/chobby/dist_cfg/config.json $GITHUB_REPOSITORY $PACKAGE_VERSION\n",
+      "jq '.build.linux.target=\"dir\"' <<<$(<package.json) > package.json\njq '.build.files+=[\"!flatpak-node/**\"]' <<<$(<package.json) > package.json\ncat package.json\n",
+      "npm ci --ignore-scripts\n",
+      ". flatpak-node/electron-builder-arch-args.sh\nnode_modules/.bin/electron-builder -- $ELECTRON_BUILDER_ARCH_ARGS --linux --dir\n",
+      "cp -a dist/linux*unpacked /app/main\n"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/beyond-all-reason/spring-launcher",
+        "commit": "2c0a6e17b50ab04ea592c53963c571e5ccb071ba"
+      },
+      "generated-sources.json"
+    ],
+    "build-options": {
+      "env": {
+        "XDG_CACHE_HOME": "/run/build/spring-launcher/flatpak-node/cache",
+        "npm_config_cache": "/run/build/spring-launcher/flatpak-node/npm-cache",
+        "npm_config_nodedir": "/usr/lib/sdk/node20",
+        "npm_config_offline": "true"
+      }
+    }
+  }
+}

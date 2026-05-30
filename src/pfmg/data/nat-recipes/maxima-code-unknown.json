@@ -1,0 +1,31 @@
+{
+  "header": {
+    "id": "maxima-code",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "maxima-code",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://git.code.sf.net/p/maxima/code",
+        "commit": "27066b39dddaf0df8b6c464857f6505dfdc183b6"
+      }
+    ],
+    "build-options": {
+      "env": {
+        "SBCL_HOME": "/app/sbcl/usr/local/lib/sbcl"
+      }
+    },
+    "config-opts": [
+      "--enable-sbcl",
+      "--with-sbcl=/app/sbcl/usr/local/bin/sbcl"
+    ],
+    "build-commands": [
+      "cp -ar . /app/maxima-code",
+      "ln -s /app/maxima-code /app/quicklisp/local-projects/maxima-code"
+    ]
+  }
+}

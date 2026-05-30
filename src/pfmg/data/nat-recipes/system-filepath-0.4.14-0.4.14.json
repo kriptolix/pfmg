@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "system-filepath-0.4.14",
+    "version": "0.4.14",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "system-filepath-0.4.14",
+    "only-arches": [
+      "x86_64"
+    ],
+    "buildsystem": "simple",
+    "build-commands": [
+      "ghc -threaded --make Setup",
+      "./Setup configure --prefix=/app",
+      "./Setup build",
+      "./Setup install"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "sha256": "1656ce3c0d585650784ceb3f794748286e19fb635f557e7b29b0897f8956d993",
+        "url": "https://hackage.haskell.org/package/system-filepath-0.4.14/system-filepath-0.4.14.tar.gz"
+      }
+    ]
+  }
+}

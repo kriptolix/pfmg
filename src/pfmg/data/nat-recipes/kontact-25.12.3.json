@@ -1,0 +1,37 @@
+{
+  "header": {
+    "id": "kontact",
+    "version": "25.12.3",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "kontact",
+    "config-opts": [
+      "-DBUILD_TESTING=OFF",
+      "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+    ],
+    "buildsystem": "cmake-ninja",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.kde.org/stable/release-service/25.12.3/src/kontact-25.12.3.tar.xz",
+        "sha256": "4124c873d26a9047332aeeac8002a5619a1455f19280538f191efbf6edeef604",
+        "x-checker-data": {
+          "is-main-source": true,
+          "type": "anitya",
+          "project-id": 8763,
+          "stable-only": true,
+          "url-template": "https://download.kde.org/stable/release-service/$version/src/kontact-$version.tar.xz"
+        }
+      },
+      {
+        "type": "file",
+        "path": "run_kontact.sh"
+      }
+    ],
+    "post-install": [
+      "install run_kontact.sh /app/bin/run_kontact.sh"
+    ]
+  }
+}

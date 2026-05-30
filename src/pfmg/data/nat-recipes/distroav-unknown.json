@@ -1,0 +1,38 @@
+{
+  "header": {
+    "id": "distroav",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "distroav",
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DENABLE_FRONTEND_API=ON",
+      "-DENABLE_QT=ON",
+      "-DCMAKE_CXX_FLAGS='-Wno-error=deprecated-declarations'"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/DistroAV/DistroAV.git",
+        "tag": "6.2.1",
+        "commit": "038d9d6bf8bff36018ffac8ddc3d15f3bb3ef9e8",
+        "x-checker-data": {
+          "type": "git",
+          "is-main-source": true,
+          "tag-pattern": "^([\\d.]+)$"
+        }
+      },
+      {
+        "type": "shell",
+        "commands": [
+          "sed -i 's|/usr|/app/plugins/DistroAV/extra|g' src/plugin-main.cpp"
+        ]
+      }
+    ]
+  }
+}

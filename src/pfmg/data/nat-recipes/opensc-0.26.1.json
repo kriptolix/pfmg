@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "opensc",
+    "version": "0.26.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "opensc",
+    "buildsystem": "autotools",
+    "cleanup": [],
+    "config-opts": [
+      "--disable-assert",
+      "--disable-fuzzing",
+      "--disable-man",
+      "--disable-strict"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/OpenSC/OpenSC/releases/download/0.26.1/opensc-0.26.1.tar.gz",
+        "sha256": "f16291a031d86e570394762e9f35eaf2fcbc2337a49910f3feae42d54e1688cb",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 13287,
+          "stable-only": true,
+          "url-template": "https://github.com/OpenSC/OpenSC/tags/${version0}.${version1}.${version2}"
+        }
+      }
+    ]
+  }
+}

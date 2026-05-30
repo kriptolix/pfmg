@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "rogue",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "rogue",
+    "buildsystem": "cmake-ninja",
+    "no-make-install": true,
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
+      "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
+    ],
+    "build-commands": [
+      "install -D ./game.so /app/bin/rogue/game.so",
+      "install -D ./stuff/mapfixes/rammo1.ent /app/bin/rogue/maps/rammo1.ent",
+      "install -D ./stuff/mapfixes/rhangar2.ent /app/bin/rogue/maps/rhangar2.ent",
+      "install -D ./stuff/mapfixes/rmine1.ent /app/bin/rogue/maps/rmine1.ent",
+      "install -D ./stuff/mapfixes/rsewer2.ent /app/bin/rogue/maps/rsewer2.ent",
+      "install -D ./stuff/mapfixes/rware2.ent /app/bin/rogue/maps/rware2.ent"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/yquake2/rogue/archive/refs/tags/ROGUE_2_14.tar.gz",
+        "sha256": "5026a0ba9f9c91cd038f7ca3f45848ea4a579b86701f13126af01ba81b52a59d"
+      }
+    ]
+  }
+}

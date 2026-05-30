@@ -1,0 +1,30 @@
+{
+  "header": {
+    "id": "libenet",
+    "version": "1.3.18",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libenet",
+    "sources": [
+      {
+        "sha256": "28603c895f9ed24a846478180ee72c7376b39b4bb1287b73877e5eae7d96b0dd",
+        "type": "archive",
+        "url": "https://github.com/lsalzman/enet/archive/v1.3.18.tar.gz",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 696,
+          "url-template": "https://github.com/lsalzman/enet/archive/v$version.tar.gz"
+        }
+      },
+      {
+        "type": "script",
+        "dest-filename": "autogen.sh",
+        "commands": [
+          "autoreconf -ifv"
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "qtimageformats",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "qtimageformats",
+    "buildsystem": "qmake",
+    "cleanup": [
+      "/bin"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://invent.kde.org/qt/qt/qtimageformats.git",
+        "commit": "adbc372b890ed90f006a6c4f3ca56bf0cba477ef"
+      }
+    ]
+  }
+}

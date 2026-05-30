@@ -1,0 +1,36 @@
+{
+  "header": {
+    "id": "oxipng",
+    "version": "10.1.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "oxipng",
+    "buildsystem": "simple",
+    "build-commands": [
+      "cargo --offline fetch --manifest-path Cargo.toml --verbose",
+      "cargo --offline build --release --verbose",
+      "install -Dm 755 target/release/oxipng -t /app/bin"
+    ],
+    "build-options": {
+      "append-path": "/usr/lib/sdk/rust-stable/bin",
+      "env": {
+        "CARGO_HOME": "/run/build/oxipng/cargo"
+      }
+    },
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/shssoichiro/oxipng/archive/refs/tags/v10.1.1.tar.gz",
+        "sha256": "ce19b1f060d586ceb3ea682f27d00e41675ec4093d8ac200a61ccd9d967d0999",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 209796,
+          "url-template": "https://github.com/shssoichiro/oxipng/archive/refs/tags/v$version.tar.gz"
+        }
+      },
+      "oxipng-sources.json"
+    ]
+  }
+}

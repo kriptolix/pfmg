@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "netplay-auth",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "netplay-auth",
+    "buildsystem": "simple",
+    "build-commands": [
+      "cp auth.txt /app"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://m64p.s3.amazonaws.com/auth.txt",
+        "sha256": "480330e487e86fbaccbd844b77cebc98b124a7a8b0e88344f7a6ae2938b997c3"
+      }
+    ]
+  }
+}

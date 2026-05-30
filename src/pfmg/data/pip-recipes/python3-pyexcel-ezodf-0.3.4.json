@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "python3-pyexcel-ezodf",
+    "version": "0.3.4",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-pyexcel-ezodf",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"pyexcel-ezodf\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/e7/6b/20c3a4b24751377aaa6307eb230b66701024012c29dd374999cc92983269/lxml-5.3.0.tar.gz",
+        "sha512": "7f8a3717645893bc6f790cc9adfb8fdab91c352dc4dc23c0ccb4af9a0d138acf9ef5054e9786af497955f10079e9242dbd63ea9ac39c33bfd71ca2fe4ef4a7c0"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/5b/fd/4a1583b47a7527669f5c9d45c031c3b4ae35a4cd34b2113ed98b1b9f1bce/pyexcel_ezodf-0.3.4-py2.py3-none-any.whl",
+        "sha512": "26d5454cafbf681b0a2755a7cde68f88e6ebc2b086cc5f1d98e5e58558864853ff8396cf16160272eaa5a192fa3246d7fe0db76c0a49f1f2be71e0977bf9b4d1"
+      }
+    ]
+  }
+}

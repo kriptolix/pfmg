@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "gnat",
+    "version": "13.2.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "gnat",
+    "only-arches": [
+      "x86_64"
+    ],
+    "buildsystem": "simple",
+    "build-commands": [
+      "cp -R * /usr/lib/sdk/gnat13"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/alire-project/GNAT-FSF-builds/releases/download/gnat-13.2.0-2/gnat-x86_64-linux-13.2.0-2.tar.gz",
+        "sha256": "a27fd7945ac9ead50abdd8e4564d133d00f635536bf9dfdf1e00af5e08a0c494"
+      }
+    ]
+  }
+}

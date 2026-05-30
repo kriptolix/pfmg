@@ -1,0 +1,96 @@
+{
+  "header": {
+    "id": "motrix",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "motrix",
+    "buildsystem": "simple",
+    "build-options": {
+      "append-path": "/usr/lib/sdk/node20/bin:/app/yarn/bin:/run/build/motrix/flatpak-node/chromedrive",
+      "env": {
+        "XDG_CACHE_HOME": "/run/build/motrix/flatpak-node/cache",
+        "npm_config_offline": "true",
+        "npm_config_no_save": "true",
+        "npm_config_cache": "/run/build/motrix/flatpak-node/npm-cache",
+        "npm_config_loglevel": "verbose",
+        "CXX": "ccache g++",
+        "CC": "ccache gcc"
+      },
+      "arch": {
+        "i386": {
+          "env": {
+            "npm_config_arch": "ia32",
+            "npm_config_target_arch": "ia32"
+          }
+        },
+        "x86_64": {
+          "env": {
+            "npm_config_arch": "x64",
+            "npm_config_target_arch": "x64"
+          }
+        },
+        "arm": {
+          "env": {
+            "npm_config_arch": "armv7l",
+            "npm_config_target_arch": "armv7l"
+          }
+        },
+        "aarch64": {
+          "env": {
+            "npm_config_arch": "arm64",
+            "npm_config_target_arch": "arm64"
+          }
+        }
+      }
+    },
+    "build-commands": [
+      "HOME=$PWD yarn config --offline set yarn-offline-mirror $FLATPAK_BUILDER_BUILDDIR/flatpak-node/yarn-mirror",
+      "yarn --offline --pure-lockfile --$npm_config_arch",
+      "node $FLATPAK_BUILDER_BUILDDIR/.electron-vue/build.js",
+      "yarn --offline run electron-builder --linux dir --$npm_config_arch -c.linux.target=dir --publish=never",
+      "rm $FLATPAK_BUILDER_BUILDDIR/release/linux*-unpacked/chrome-sandbox",
+      "cp -r $FLATPAK_BUILDER_BUILDDIR/release/linux*-unpacked $FLATPAK_DEST/motrix",
+      "for size in 512; do [[ -e \"static/${size}x${size}.png\" ]] && install -Dm644 \"$FLATPAK_BUILDER_BUILDDIR/static/${size}x${size}.png\" \"/app/share/icons/hicolor/${size}x${size}/apps/${FLATPAK_ID}.png\"; done",
+      "install -Dm644 \"$FLATPAK_BUILDER_BUILDDIR/static/mo-tray-dark-normal@2x.png\" \"/app/share/icons/hicolor/symbolic/apps/${FLATPAK_ID}-symbolic.png\"",
+      "install -Dm644 $FLATPAK_BUILDER_BUILDDIR/extra/linux/x64/engine/aria2.conf $FLATPAK_DEST/motrix/engine/aria2.conf",
+      "for lang in ${FLATPAK_DEST}/motrix/locales/*.pak\ndo\n  locale=\"$(basename -s .pak $lang)\"\n  install -Dm644 -t \"${FLATPAK_DEST}/share/runtime/locale/${locale%%-*}/\" \"$lang\"\n  ln -sf \"${FLATPAK_DEST}/share/runtime/locale/${locale%%-*}/$(basename $lang)\" \"${FLATPAK_DEST}/motrix/locales/$(basename $lang)\"\ndone\n",
+      "install -Dm 755 start-motrix.sh $FLATPAK_DEST/bin/start-motrix",
+      "install -Dm644 net.agalwood.Motrix.metainfo.xml $FLATPAK_DEST/share/metainfo/$FLATPAK_ID.metainfo.xml",
+      "install -Dm644 net.agalwood.Motrix.desktop $FLATPAK_DEST/share/applications/$FLATPAK_ID.desktop"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/agalwood/Motrix.git",
+        "tag": "v1.8.19",
+        "commit": "a0a1fe90f7e9f6d305ed2b512f62c8d36c2fb95a",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 197314,
+          "tag-template": "v$version",
+          "stable-only": true
+        }
+      },
+      "generated-sources.json",
+      {
+        "type": "script",
+        "dest-filename": "start-motrix.sh",
+        "commands": [
+          "export TMPDIR=$XDG_RUNTIME_DIR/app/$FLATPAK_ID",
+          "zypak-wrapper /app/motrix/motrix --ozone-platform-hint=auto --enable-features=WaylandWindowDecorations --gtk-version=4 \"$@\""
+        ]
+      },
+      {
+        "type": "file",
+        "path": "net.agalwood.Motrix.metainfo.xml"
+      },
+      {
+        "type": "file",
+        "path": "net.agalwood.Motrix.desktop"
+      }
+    ]
+  }
+}

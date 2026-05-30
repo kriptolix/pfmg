@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "guile-lib",
+    "version": "0.2.7",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "guile-lib",
+    "buildsystem": "autotools",
+    "config-opts": [
+      "--with-guile-site"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "http://download.savannah.nongnu.org/releases/guile-lib/guile-lib-0.2.7.tar.gz",
+        "sha256": "e4ef3b845f121882c7c0cf04f81a1cb8fd360c6f64b56b868de5546214f904de"
+      }
+    ]
+  }
+}

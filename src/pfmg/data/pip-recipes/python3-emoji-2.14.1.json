@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-emoji",
+    "version": "2.14.1",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-emoji",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"emoji\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/91/db/a0335710caaa6d0aebdaa65ad4df789c15d89b7babd9a30277838a7d9aac/emoji-2.14.1-py3-none-any.whl",
+        "sha256": "35a8a486c1460addb1499e3bf7929d3889b2e2841a57401903699fef595e942b"
+      }
+    ]
+  }
+}

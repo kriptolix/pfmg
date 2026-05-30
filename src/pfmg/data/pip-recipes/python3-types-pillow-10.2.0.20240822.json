@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-types-pillow",
+    "version": "10.2.0.20240822",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-types-pillow",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"types-pillow==10.2.0.20240822\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/66/23/e81a5354859831fcf54d488d33b80ba6133ea84f874a9c0ec40a4881e133/types_Pillow-10.2.0.20240822-py3-none-any.whl",
+        "sha256": "d9dab025aba07aeb12fd50a6799d4eac52a9603488eca09d7662543983f16c5d"
+      }
+    ]
+  }
+}

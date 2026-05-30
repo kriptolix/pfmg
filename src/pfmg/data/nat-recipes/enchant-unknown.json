@@ -1,0 +1,40 @@
+{
+  "header": {
+    "id": "enchant",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "enchant",
+    "config-opts": [
+      "--with-hunspell",
+      "--with-myspell-dir=/usr/share/hunspell"
+    ],
+    "build-options": {
+      "cflags": "-fpermissive"
+    },
+    "cleanup": [
+      "/include",
+      "/lib/pkgconfig",
+      "/bin/enchant"
+    ],
+    "post-install": [
+      "install -p -D -m 0644 COPYING.LIB -t ${FLATPAK_DEST}/share/licenses/enchant/"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/AbiWord/enchant.git",
+        "//": "tags/enchant-1-6-0",
+        "commit": "02f3b4a85560b93d9a0aa593ef70e5496d0f029c"
+      },
+      {
+        "type": "shell",
+        "commands": [
+          "autoreconf -vfi"
+        ]
+      }
+    ]
+  }
+}

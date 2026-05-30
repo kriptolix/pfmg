@@ -1,0 +1,33 @@
+{
+  "header": {
+    "id": "osgearth",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "osgearth",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DBUILD_OSGEARTHQT=ON",
+      "-DOSGEARTH_ENABLE_FASTDXT=False"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/gwaldron/osgearth",
+        "tag": "osgearth-2.10.2",
+        "commit": "f7a922ba17e9d956ddb4558a81154e2c01759aab"
+      },
+      {
+        "type": "patch",
+        "path": "patches/osgearth_osgearthqt.patch"
+      },
+      {
+        "type": "patch",
+        "path": "patches/osgearth-cpp.patch"
+      }
+    ]
+  }
+}

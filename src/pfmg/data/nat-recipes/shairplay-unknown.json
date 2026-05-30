@@ -1,0 +1,72 @@
+{
+  "header": {
+    "id": "shairplay",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "shairplay",
+    "cleanup": [
+      "/include",
+      "/bin",
+      "*.a",
+      "*.la",
+      "/lib/*.so",
+      "/share/runtime/locale"
+    ],
+    "build-options": {
+      "env": {
+        "C_INCLUDE_PATH": "/app/include/avahi-compat-libdns_sd:/app/include"
+      }
+    },
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/juhovh/shairplay/",
+        "commit": "096b61ad14c90169f438e690d096e3fcf87e504e"
+      }
+    ],
+    "modules": [
+      {
+        "name": "avahi",
+        "cleanup": [
+          "/include",
+          "/bin",
+          "*.a",
+          "*.la",
+          "/lib/*.so",
+          "/share/runtime/locale"
+        ],
+        "config-opts": [
+          "--with-distro=none",
+          "--disable-libdaemon",
+          "--disable-libsystemd",
+          "--disable-nls",
+          "--disable-core-docs",
+          "--disable-manpages",
+          "--disable-mono",
+          "--disable-libevent",
+          "--disable-qt4",
+          "--disable-qt5",
+          "--disable-python",
+          "--disable-gtk",
+          "--disable-gtk3",
+          "--enable-compat-libdns_sd"
+        ],
+        "sources": [
+          {
+            "type": "archive",
+            "url": "https://github.com/avahi/avahi/archive/refs/tags/v0.9-rc4.tar.gz",
+            "sha256": "08fcc57377ed05416ec4b3d8a179da716a7a9376821551a5ae16f8276a1ef0b5",
+            "x-checker-data": {
+              "type": "anitya",
+              "project-id": 147,
+              "url-template": "https://github.com/avahi/avahi/archive/refs/tags/v$version.tar.gz"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

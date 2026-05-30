@@ -1,0 +1,21 @@
+{
+  "header": {
+    "id": "synfigstudio",
+    "version": "1.5.3",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "synfigstudio",
+    "post-install": [
+      "install -Dm644 /app/share/synfig/icons/classic/128x128/sif_icon.png /app/share/icons/hicolor/128x128/mimetypes/org.synfig.SynfigStudio.png"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/synfig/synfig/releases/download/v1.5.3/synfigstudio-1.5.3.tar.gz",
+        "sha256": "7f43003a36ea0bc917e60b75448012afc1b8ea07fcee07cc7e813a448bf7bbe5"
+      }
+    ]
+  }
+}

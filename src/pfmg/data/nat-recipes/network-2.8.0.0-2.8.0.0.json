@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "network-2.8.0.0",
+    "version": "2.8.0.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "build-commands": [
+      "ghc -threaded --make Setup",
+      "./Setup configure --prefix=/app",
+      "./Setup build",
+      "./Setup install"
+    ],
+    "buildsystem": "simple",
+    "cleanup": [],
+    "name": "network-2.8.0.0",
+    "only-arches": [],
+    "sources": [
+      {
+        "sha256": "c8905268b7e3b4cf624a40245bf11b35274a6dd836a5d4d531b5760075645303",
+        "type": "archive",
+        "url": "https://s3.amazonaws.com/hackage.fpcomplete.com/package/network-2.8.0.0.tar.gz"
+      },
+      {
+        "sha256": "aae171e6c6028a7791dbe4de5b9d2da398056359e3cc7927465ffa3cdae1aa0b",
+        "type": "file",
+        "url": "https://raw.githubusercontent.com/commercialhaskell/all-cabal-files/a5f22172fce750e93afa6987320f5c5be62b5670/network/2.8.0.0/network.cabal"
+      }
+    ]
+  }
+}

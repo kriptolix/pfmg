@@ -1,7 +1,5 @@
+
 adicionar modulo como recipe
-
-permitir rodar com --require= coisa1, coisa2, etc para poder testar a resolução com múltiplas dependencies. O comportamento deve ser resolvers os requires, adicionar como modulo antes do pacote que esta sendo testado e ver se builda.  
-
 
 modulo exibido no terminal pode ver truncado, deve conter texto avisando que pode estar truncado e para usar o --outptdir para salvar completo
 

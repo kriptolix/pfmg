@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "unibilium",
+    "version": "2.1.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "unibilium",
+    "no-autogen": true,
+    "make-install-args": [
+      "PREFIX=/app"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/neovim/unibilium/archive/v2.1.1.tar.gz",
+        "sha256": "6f0ee21c8605340cfbb458cbd195b4d074e6d16dd0c0e12f2627ca773f3cabf1"
+      }
+    ]
+  }
+}

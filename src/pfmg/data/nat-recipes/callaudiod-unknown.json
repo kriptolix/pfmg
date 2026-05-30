@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "callaudiod",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "callaudiod",
+    "buildsystem": "meson",
+    "cleanup": [
+      "/bin"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://gitlab.com/mobian1/callaudiod.git",
+        "tag": "0.1.99",
+        "commit": "8d262597f41ff787359059ec6a15acd48b7433f6",
+        "x-checker-data": {
+          "type": "git",
+          "version-scheme": "semantic"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2005-2017 by Enrico Tröger, Nick Treleaven, Colomban Wendling, Matthew Brush and Frank Lanitz -->
+<component type="desktop-application">
+  <id>org.geany.Geany</id>
+  <launchable type="desktop-id">geany.desktop</launchable>
+  <metadata_license>CC0-1.0</metadata_license>
+  <name>Geany</name>
+  <project_license>GPL-2.0+</project_license>
+  <summary>Fast and lightweight IDE</summary>
+  <developer_name>Geany Team</developer_name>
+  <url type="homepage">https://geany.org/</url>
+  <description>
+    <p>
+      A versatile IDE with extensive support for the most popular languages, 
+      with its entire catalog of plugins already installed, allowing you to 
+      easily manage its features using its plugin manager.
+    </p>
+    <p>Geany includes the following features:</p>
+    <ul>
+      <li>Syntax highlighting</li>
+      <li>Code completion</li>
+      <li>Auto completion of often used constructs like if, for and while</li>
+      <li>Auto completion of XML and HTML tags</li>
+      <li>Call tips</li>
+      <li>Code folding</li>
+      <li>Many supported filetypes like C, Java, PHP, HTML, Python, Perl, Pascal</li>
+      <li>Symbol lists</li>
+      <li>Embedded terminal emulation</li>
+      <li>Extensibility through plugins</li>
+    </ul>
+  </description>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://bztd.github.io/Flathub/GEANY/Init.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://bztd.github.io/Flathub/GEANY/Dpurar.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://bztd.github.io/Flathub/GEANY/Md.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://bztd.github.io/Flathub/GEANY/Web.png</image>
+    </screenshot>
+    <screenshot>
+      <image>https://bztd.github.io/Flathub/GEANY/Latex.png</image>
+    </screenshot>
+  </screenshots>
+  <translation type="gettext">geany</translation>
+  <releases>
+    <release version="2.1.0" date="2025-07-06"/>
+    <release version="2.0" date="2023-10-19"/>
+    <release version="1.38" date="2021-10-09"/>
+  </releases>
+  <content_rating type="oars-1.1"/>
+</component>

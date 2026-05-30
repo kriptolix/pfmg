@@ -1,0 +1,31 @@
+{
+  "header": {
+    "id": "astilectron-bundler-electron-arm64",
+    "version": "20.2.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "astilectron-bundler-electron-arm64",
+    "buildsystem": "simple",
+    "only-arches": [
+      "aarch64"
+    ],
+    "build-options": {
+      "env": {
+        "BUNDLER_CACHE": "/app/lib/astibundler/cache"
+      }
+    },
+    "build-commands": [
+      "install -Dm 644 electron-linux-arm64-20.2.0.zip ${BUNDLER_CACHE}/electron-linux-arm64-20.2.0.zip"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://github.com/electron/electron/releases/download/v20.2.0/electron-v20.2.0-linux-arm64.zip",
+        "sha256": "1d2dd05f060786eae5ce687794aa071df8a5f5733b7b2efa1481de8db75d7738",
+        "dest-filename": "electron-linux-arm64-20.2.0.zip"
+      }
+    ]
+  }
+}

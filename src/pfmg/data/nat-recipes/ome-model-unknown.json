@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "ome-model",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "ome-model",
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "config-opts": [
+      "-DBUILD_TESTS=OFF",
+      "-Dxmldom=qt6"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://gitlab.com/codelibre/ome/ome-model.git",
+        "commit": "99ab3fd25c27b3b625047bb0bc535201a611cd01"
+      }
+    ]
+  }
+}

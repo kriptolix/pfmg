@@ -1,0 +1,21 @@
+{
+  "header": {
+    "id": "pocketsphinx",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "pocketsphinx",
+    "config-opts": [
+      "--without-python"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/cmusphinx/pocketsphinx.git",
+        "commit": "3bf4fe66ed7c31e020ffbd340f5fc1646ecd7dfb"
+      }
+    ]
+  }
+}

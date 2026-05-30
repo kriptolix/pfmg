@@ -1,0 +1,31 @@
+{
+  "header": {
+    "id": "sfml2",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "sfml2",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DBUILD_SHARED_LIBS=ON"
+    ],
+    "builddir": true,
+    "post-install": [
+      "mkdir /app/plugins/devtools/include/SFML2",
+      "mv /app/plugins/devtools/include/SFML /app/plugins/devtools/include/SFML2/",
+      "mkdir -p /app/plugins/devtools/SFML2",
+      "mv /app/plugins/devtools/lib/* /app/plugins/devtools/SFML2/",
+      "mv /app/plugins/devtools/SFML2 /app/plugins/devtools/lib/"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/SFML/SFML.git",
+        "commit": "5383d2b3948f805af55c9f8a4587ac72ec5981d1",
+        "tag": "2.6.2"
+      }
+    ]
+  }
+}

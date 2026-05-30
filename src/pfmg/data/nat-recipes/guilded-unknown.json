@@ -1,0 +1,51 @@
+{
+  "header": {
+    "id": "guilded",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "guilded",
+    "buildsystem": "simple",
+    "build-commands": [
+      "install -Dm644 guilded.png /app/share/icons/hicolor/128x128/apps/${FLATPAK_ID}.png",
+      "install -Dm644 ${FLATPAK_ID}.desktop /app/share/applications/${FLATPAK_ID}.desktop",
+      "install -Dm644 gg.guilded.Guilded.appdata.xml /app/share/appdata/gg.guilded.Guilded.appdata.xml",
+      "install -Dm755 guilded.sh /app/bin/guilded",
+      "install -Dm755 apply_extra.sh /app/bin/apply_extra",
+      "install -Dm755 /usr/bin/ar -t /app/bin/",
+      "install -Dm755 /usr/lib/$(gcc -print-multiarch)/libbfd-*.so -t /app/lib/",
+      "install -Dm755 /usr/bin/desktop-file-edit -t /app/bin/"
+    ],
+    "sources": [
+      {
+        "type": "extra-data",
+        "filename": "Guilded-Linux.deb",
+        "url": "https://www.guilded.gg/downloads/Guilded-Linux.deb",
+        "sha256": "3b5ec4574dc99ce6ab1c295088247d684bbb5d42281535af2d5c8b7b74358c1a",
+        "size": 78678630
+      },
+      {
+        "type": "file",
+        "path": "apply_extra.sh"
+      },
+      {
+        "type": "file",
+        "path": "guilded.sh"
+      },
+      {
+        "type": "file",
+        "path": "gg.guilded.Guilded.appdata.xml"
+      },
+      {
+        "type": "file",
+        "path": "guilded.png"
+      },
+      {
+        "type": "file",
+        "path": "gg.guilded.Guilded.desktop"
+      }
+    ]
+  }
+}

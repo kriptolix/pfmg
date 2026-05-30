@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-rtree",
+    "version": "1.4.1",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-rtree",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"rtree==1.4.1\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/95/09/7302695875a019514de9a5dd17b8320e7a19d6e7bc8f85dcfb79a4ce2da3/rtree-1.4.1.tar.gz",
+        "sha256": "c6b1b3550881e57ebe530cc6cffefc87cd9bf49c30b37b894065a9f810875e46"
+      }
+    ]
+  }
+}

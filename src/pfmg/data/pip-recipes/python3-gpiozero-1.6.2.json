@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "python3-gpiozero",
+    "version": "1.6.2",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-gpiozero",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} gpiozero"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/b3/ca/688824a06e8c4d04c7d2fd2af2d8da27bed51af20ee5f094154e1d680334/colorzero-2.0.tar.gz",
+        "sha256": "e7d5a5c26cd0dc37b164ebefc609f388de24f8593b659191e12d85f8f9d5eb58"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/86/e1/88d1fde5ce042a12e231ff032ae1aace89670ad15497672b28a6eb5699e9/gpiozero-1.6.2.tar.gz",
+        "sha256": "0eb95a9db372146813276f92de7f43c883a3e9fe69597fc3d29c04ef3d5d5f9e"
+      }
+    ]
+  }
+}

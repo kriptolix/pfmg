@@ -1,0 +1,38 @@
+{
+  "header": {
+    "id": "obsvkcapture-32bit",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "OBSVkCapture-32bit",
+    "buildsystem": "cmake-ninja",
+    "build-options": {
+      "prepend-pkg-config-path": "/app/lib32/pkgconfig:/usr/lib/i386-linux-gnu/pkgconfig",
+      "append-path": "/usr/lib/sdk/toolchain-i386/bin",
+      "env": {
+        "CC": "ccache i686-unknown-linux-gnu-gcc",
+        "CXX": "ccache i686-unknown-linux-gnu-g++"
+      },
+      "libdir": "lib/i386-linux-gnu"
+    },
+    "config-opts": [
+      "-DBUILD_PLUGIN=off",
+      "-DCMAKE_BUILD_TYPE=Release"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/nowrep/obs-vkcapture.git",
+        "tag": "v1.3.0",
+        "commit": "1d6c3c8c8ee152ecdbad4af368b9774d36385b77",
+        "x-checker-data": {
+          "type": "git",
+          "is-main-source": true,
+          "tag-pattern": "^v([\\d.]+)$"
+        }
+      }
+    ]
+  }
+}

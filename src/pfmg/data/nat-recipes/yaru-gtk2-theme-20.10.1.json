@@ -1,0 +1,31 @@
+{
+  "header": {
+    "id": "yaru-gtk2-theme",
+    "version": "20.10.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "yaru-gtk2-theme",
+    "// NOTE": "This is used by Ubuntu",
+    "buildsystem": "meson",
+    "config-opts": [
+      "-Dicons=false",
+      "-Dsounds=false",
+      "-Dgnome-shell=false",
+      "-Dsessions=false"
+    ],
+    "cleanup": [
+      "/share/themes/Yaru*/gtk-3.0",
+      "/share/themes/Yaru*/gtk-3.20",
+      "/share/themes/Yaru*/unity"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/ubuntu/yaru/archive/20.10.1.tar.gz",
+        "sha256": "9da2605088674edf2694a8215b7344fb5209b308dd8220ea21667a914dc8c55d"
+      }
+    ]
+  }
+}

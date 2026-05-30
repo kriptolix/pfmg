@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "perl-timedate",
+    "version": "2.30",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "perl-timedate",
+    "buildsystem": "simple",
+    "build-commands": [
+      "perl Makefile.PL",
+      "make install DESTDIR=`pwd`/INST INSTALLSITELIB=/SITELIB",
+      "mkdir -p $FLATPAK_DEST/share/perl5/",
+      "cp -fr ./INST/SITELIB/* $FLATPAK_DEST/share/perl5/"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://cpan.metacpan.org/authors/id/G/GB/GBARR/TimeDate-2.30.tar.gz",
+        "sha256": "75bd254871cb5853a6aa0403ac0be270cdd75c9d1b6639f18ecba63c15298e86"
+      }
+    ]
+  }
+}

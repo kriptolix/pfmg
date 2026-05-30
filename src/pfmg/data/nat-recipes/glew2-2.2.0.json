@@ -1,0 +1,37 @@
+{
+  "header": {
+    "id": "glew2",
+    "version": "2.2.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "glew2",
+    "no-autogen": true,
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://downloads.sourceforge.net/project/glew/glew/2.2.0/glew-2.2.0.tgz",
+        "sha256": "d4fc82893cfb00109578d0a1a2337fb8ca335b3ceccf97b97e5cc7f08e4353e1"
+      }
+    ],
+    "make-args": [
+      "GLEW_PREFIX=${FLATPAK_DEST}",
+      "GLEW_DEST=${FLATPAK_DEST}",
+      "LIBDIR=${FLATPAK_DEST}/lib",
+      "CFLAGS.EXTRA:=${CFLAGS} -fPIC",
+      "LDFLAGS.EXTRA=${LDFLAGS}",
+      "glew.lib.static"
+    ],
+    "make-install-args": [
+      "GLEW_PREFIX=${FLATPAK_DEST}",
+      "GLEW_DEST=${FLATPAK_DEST}",
+      "LIBDIR=${FLATPAK_DEST}/lib",
+      "CFLAGS.EXTRA:=${CFLAGS} -fPIC",
+      "LDFLAGS.EXTRA=${LDFLAGS}"
+    ],
+    "cleanup": [
+      "/lib/pkgconfig"
+    ]
+  }
+}

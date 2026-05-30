@@ -1,0 +1,105 @@
+{
+  "header": {
+    "id": "libxfce4ui",
+    "version": "4.20",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libxfce4ui",
+    "modules": [
+      {
+        "name": "libxfce4util",
+        "cleanup": [
+          "/sbin"
+        ],
+        "config-opts": [
+          "--disable-debug"
+        ],
+        "sources": [
+          {
+            "type": "archive",
+            "url": "https://archive.xfce.org/src/xfce/libxfce4util/4.20/libxfce4util-4.20.1.tar.bz2",
+            "sha256": "84bfc4daab9e466193540c3665eee42b2cf4d24e3f38fc3e8d1e0a2bebe3b8f1",
+            "x-checker-data": {
+              "type": "anitya",
+              "project-id": 232001,
+              "stable-only": true,
+              "url-template": "https://archive.xfce.org/src/xfce/libxfce4util/$major.$minor/libxfce4util-$version.tar.bz2"
+            }
+          }
+        ]
+      },
+      {
+        "name": "xfconf",
+        "buildsystem": "meson",
+        "config-opts": [
+          "-Dgtk-doc=false",
+          "-Dintrospection=false",
+          "-Dvala=disabled"
+        ],
+        "cleanup": [
+          "/bin",
+          "/share/bash-completion"
+        ],
+        "sources": [
+          {
+            "type": "git",
+            "url": "https://gitlab.xfce.org/xfce/xfconf.git",
+            "tag": "xfconf-4.21.0",
+            "commit": "aa1a5b5f327c616eb8d5abe4d458d971461f0576",
+            "x-checker-data": {
+              "type": "anitya",
+              "project-id": 14854,
+              "stable-only": true,
+              "tag-template": "xfconf-$version"
+            }
+          }
+        ],
+        "modules": [
+          {
+            "name": "xfce4-dev-tools",
+            "cleanup": [
+              "*"
+            ],
+            "sources": [
+              {
+                "type": "archive",
+                "url": "https://archive.xfce.org/src/xfce/xfce4-dev-tools/4.20/xfce4-dev-tools-4.20.0.tar.bz2",
+                "sha256": "1fba39a08a0ecc771eaa3a3b6e4272a4f0b9e7c67d0f66e780cd6090cd4466aa",
+                "x-checker-data": {
+                  "type": "anitya",
+                  "project-id": 15888,
+                  "stable-only": true,
+                  "url-template": "https://archive.xfce.org/src/xfce/xfce4-dev-tools/$major.$minor/xfce4-dev-tools-$version.tar.bz2"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "cleanup": [
+      "/bin",
+      "/etc",
+      "/share/icons",
+      "/share/applications"
+    ],
+    "config-opts": [
+      "--disable-debug"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://archive.xfce.org/src/xfce/libxfce4ui/4.20/libxfce4ui-4.20.2.tar.bz2",
+        "sha256": "5d3d67b1244a10cee0e89b045766c05fe1035f7938f0410ac6a3d8222b5df907",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 232000,
+          "stable-only": true,
+          "url-template": "https://archive.xfce.org/src/xfce/libxfce4ui/$major.$minor/libxfce4ui-$version.tar.bz2"
+        }
+      }
+    ]
+  }
+}

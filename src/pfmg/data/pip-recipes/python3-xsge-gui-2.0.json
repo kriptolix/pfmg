@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-xsge-gui",
+    "version": "2.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-xsge_gui",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"xsge_gui\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/99/60/e59cd358ded0bff68627d058cd6b94f23e27bcbb3841a5246693ddeb38b3/xsge_gui-2.0.tar.gz",
+        "sha256": "3d2006bd1e87cd8886fb2558b6c51f1250d4f6b5430127b997cea49b63401fc4"
+      }
+    ]
+  }
+}

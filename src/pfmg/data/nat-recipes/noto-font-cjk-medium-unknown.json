@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "noto-font-cjk-medium",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "noto-font-cjk-medium",
+    "buildsystem": "simple",
+    "build-commands": [
+      "mkdir -p /app/share/fonts",
+      "install -D NotoSansCJK-Medium.ttc /app/share/fonts/"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://noto-website-2.storage.googleapis.com/pkgs/NotoSansCJK-Medium.ttc.zip",
+        "sha256": "d7590637168e1cff4fd3a15422e483308d7ba2a7120ccaf96ead274c3b40e1b3"
+      }
+    ]
+  }
+}

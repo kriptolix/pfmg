@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "lasem",
+    "version": "0.5",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "lasem",
+    "cleanup": [
+      "/include",
+      "/lib/pkgconfig",
+      "/doc",
+      "/share/gir-1.0",
+      "/share/gtk-doc",
+      "/share/man",
+      "/bin/lasem*"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.gnome.org/sources/lasem/0.5/lasem-0.5.1.tar.xz",
+        "sha256": "51f019984bc94b8a0dec70bb7af2950345759304584a5cc3d990d9ff2c66b443",
+        "x-checker-data": {
+          "type": "gnome",
+          "name": "lasem",
+          "versions": {
+            "<": "0.6"
+          },
+          "stable-only": false
+        }
+      }
+    ]
+  }
+}

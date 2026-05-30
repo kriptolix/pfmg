@@ -1,0 +1,72 @@
+{
+  "header": {
+    "id": "python3-zodb",
+    "version": "6.0.1",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-ZODB",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"ZODB==6.0.1\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/4b/bd/5dd0c5bd5ac2d518c18bc3f4746028f931d77b4d4b83cbcb8c4271ab465b/btrees-6.1.tar.gz",
+        "sha256": "e18746f8641869a20f45328c9b5f97dc6c71a1195960356aef63b75f5c8d445f"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/c1/f9/99a7b04ab682f7c532fe0e53cddb7670218b0bb4ae26e4056ca5e5fc0a8c/ZConfig-4.2-py3-none-any.whl",
+        "sha256": "43ae4b70aeb30db44341863d480d739d1fba4534796a2f46f4ce4d99e075250a"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/fc/97/c783634659c2920c3fc70419e3af40972dbaf758daa229a7d6ea6135c90d/cffi-1.17.1.tar.gz",
+        "sha256": "1c39c6016c32bc48dd54561950ebd6836e1670f2ae46128f67cf49e789c52824"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/d3/4d/80e14d3f34a603c70d79f22ad5d14b5e77f7660c92d6f0ba405ca719c259/persistent-6.1.1.tar.gz",
+        "sha256": "2d321b60eb07ef900f85a96cf071ff8c3b9aee6e679becc48c46f3457e8d9d2f"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/13/a3/a812df4e2dd5696d1f351d58b8fe16a405b234ad2886a0dab9183fb78109/pycparser-2.22-py3-none-any.whl",
+        "sha256": "c3702b6d3dd8c7abc1afa565d7e63d53a1d0bd86cdc24edd75470f4de499cfcc"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/ae/2a/b531f79737312fedf0af878e38bfd42be3a31a7cc74bc89c5f22173ce2ad/transaction-5.0-py3-none-any.whl",
+        "sha256": "b4c0b2d49a042d86235fa76531c3356b66d7635bb0e9f29ba2512915fc7b7a42"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/a7/aa/47f00f32605177a945f3a1b36a1b2bb9a39260566541280fcee27cbff5cf/zc.lockfile-3.0.post1-py3-none-any.whl",
+        "sha256": "ddb2d71088c061dc8a5edbaa346b637d742ca1e1564be75cb98e7dcae715de19"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/3d/90/d65b2b42d28d8496b6e2d43d3713aa6b7342a1f4e0648e6dbf7285ea6855/zodb-6.0.1-py3-none-any.whl",
+        "sha256": "484132ca9273894615606974cce4c0efa80e6cde9ba9b38fa2cbe6849bab1d33"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/7f/5b/1d4e85c0b26335e8bb007285bc9123857b5af1476cf694ca6dff1ff8ffea/zodbpickle-4.2.tar.gz",
+        "sha256": "5a85144fba6c34fc67bd00c7f089d6d532dc43a03447dfc5e23846c919230a45"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/d2/46/eef421ceda2ef2e892bad63fa4dbc698bb2d23d78ce68d4ce21e4c158208/zope_deferredimport-5.1-py3-none-any.whl",
+        "sha256": "ecbea24c6801eee56bbc06d64262a541c2bd10b9653bcae69e6d33c010868056"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/30/93/9210e7606be57a2dfc6277ac97dcc864fd8d39f142ca194fdc186d596fda/zope.interface-7.2.tar.gz",
+        "sha256": "8b49f1a3d1ee4cdaf5b32d2e738362c7f5e40ac8b46dd7d1a65e82a4872728fe"
+      }
+    ]
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "toml++",
+    "version": "3.3.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "toml++",
+    "buildsystem": "meson",
+    "builddir": true,
+    "config-opts": [
+      "--libdir=lib"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/marzer/tomlplusplus/archive/refs/tags/v3.3.0.tar.gz",
+        "sha256": "fc1a5eb410f3c67e90e5ad1264a1386d020067cfb01b633cc8c0441789aa6cf2"
+      }
+    ]
+  }
+}

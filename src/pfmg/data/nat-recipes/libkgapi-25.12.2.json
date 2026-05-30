@@ -1,0 +1,29 @@
+{
+  "header": {
+    "id": "libkgapi",
+    "version": "25.12.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libkgapi",
+    "config-opts": [
+      "-DBUILD_TESTING=OFF",
+      "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+    ],
+    "buildsystem": "cmake-ninja",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.kde.org/stable/release-service/25.12.2/src/libkgapi-25.12.2.tar.xz",
+        "sha256": "42086c3f5cec31be3c379b43ae80e32beb29055159d1670e00ad7f0892632c1c",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 8763,
+          "stable-only": true,
+          "url-template": "https://download.kde.org/stable/release-service/$version/src/libkgapi-$version.tar.xz"
+        }
+      }
+    ]
+  }
+}

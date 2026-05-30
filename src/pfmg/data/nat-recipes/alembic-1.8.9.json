@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "alembic",
+    "version": "1.8.9",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "Alembic",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DUSE_TESTS:BOOL=OFF",
+      "-DUSE_HDF5:BOOL=ON"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/alembic/alembic/archive/refs/tags/1.8.9.tar.gz",
+        "sha256": "8c59c10813feee917d262c71af77d6fa3db1acaf7c5fecfd4104167077403955"
+      }
+    ]
+  }
+}

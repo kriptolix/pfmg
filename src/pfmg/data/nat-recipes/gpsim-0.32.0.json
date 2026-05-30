@@ -1,0 +1,53 @@
+{
+  "header": {
+    "id": "gpsim",
+    "version": "0.32.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "gpsim",
+    "buildsystem": "autotools",
+    "config-opts": [
+      "--disable-static",
+      "--disable-gui",
+      "--with-pic"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "http://downloads.sourceforge.net/project/gpsim/gpsim/0.32.0/gpsim-0.32.1.tar.gz",
+        "sha256": "c704d923ae771fabb7f63775a564dfefd7018a79c914671c4477854420b32e69",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 8928,
+          "stable-only": true,
+          "url-template": "http://downloads.sourceforge.net/project/gpsim/gpsim/${major}.${minor}.0/gpsim-$version.tar.gz"
+        }
+      }
+    ],
+    "modules": [
+      {
+        "name": "popt",
+        "buildsystem": "autotools",
+        "config-opts": [
+          "--disable-static",
+          "--enable-werror"
+        ],
+        "sources": [
+          {
+            "type": "archive",
+            "url": "http://ftp.rpm.org/popt/releases/popt-1.x/popt-1.19.tar.gz",
+            "sha256": "c25a4838fc8e4c1c8aacb8bd620edb3084a3d63bf8987fdad3ca2758c63240f9",
+            "x-checker-data": {
+              "type": "anitya",
+              "project-id": 3689,
+              "stable-only": true,
+              "url-template": "http://ftp.rpm.org/popt/releases/popt-1.x/popt-$version.tar.gz"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

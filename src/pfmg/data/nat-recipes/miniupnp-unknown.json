@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "miniupnp",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "miniupnp",
+    "subdir": "miniupnpc",
+    "buildsystem": "cmake-ninja",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/miniupnp/miniupnp.git",
+        "tag": "miniupnpd_2_3_9-0-gd66872e34d9ff83a07f8b71371b13419b2089953"
+      }
+    ],
+    "cleanup": [
+      "/bin/external-ip.sh",
+      "/bin/upnp*"
+    ]
+  }
+}

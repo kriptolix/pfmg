@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=IRPF 2023
+GenericName=Imposto de Renda Pessoa Física
+Comment=Programa de Declaração de Imposto sobre a Renda da Pessoa Física
+Icon=br.gov.fazenda.receita.irpf
+Exec=irpf
+Categories=Network;
+Keywords=dirpf;irpf;receitanet;
+Type=Application
+Terminal=false

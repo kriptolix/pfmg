@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "gst-libav",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "gst-libav",
+    "buildsystem": "meson",
+    "builddir": true,
+    "config-opts": [
+      "-Dgtk_doc=disabled",
+      "--prefix=/app",
+      "--buildtype=release"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://gitlab.freedesktop.org/gstreamer/gst-libav.git",
+        "branch": "1.16.3"
+      }
+    ]
+  }
+}

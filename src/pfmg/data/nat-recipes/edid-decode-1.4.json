@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "edid-decode",
+    "version": "1.4",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "edid-decode",
+    "buildsystem": "simple",
+    "build-commands": [
+      "sed -i -e 's/ -g / -s /' Makefile",
+      "make -j $FLATPAK_BUILDER_N_JOBS",
+      "make install DESTDIR=$FLATPAK_DEST bindir=/bin mandir=/share/man"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/linuxhw/build-stuff/releases/download/1.4/edid-decode-20180622.tar.gz",
+        "sha256": "ab44c58a3712beca8ffa0ac937dc24d337cb0ecd18e703b4ddf3a10b0df35e1e"
+      }
+    ]
+  }
+}

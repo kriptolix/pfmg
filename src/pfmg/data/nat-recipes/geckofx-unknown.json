@@ -1,0 +1,26 @@
+{
+  "header": {
+    "id": "geckofx",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "geckofx",
+    "buildsystem": "simple",
+    "build-commands": [
+      "set -xueo pipefail\npwd\nls -FC\nmsbuild /p:Configuration=Release_Linux /p:Platform=\"Any CPU\" Geckofx.sln\n# copy where these can be found by the BloomDesktop nuget package code\ninstall -d /app/geckofx\ninstall Geckofx-Winforms/bin/Release_Linux/Geckofx-Core.dll /app/geckofx\ninstall Geckofx-Winforms/bin/Release_Linux/Geckofx-Core.dll.config /app/geckofx\ninstall Geckofx-Winforms/bin/Release_Linux/Geckofx-Core.pdb /app/geckofx\ninstall Geckofx-Winforms/bin/Release_Linux/Geckofx-Winforms.dll /app/geckofx\ninstall Geckofx-Winforms/bin/Release_Linux/Geckofx-Winforms.dll.config /app/geckofx\ninstall Geckofx-Winforms/bin/Release_Linux/Geckofx-Winforms.pdb /app/geckofx\n"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/StephenMcConnel/Geckofx60.git",
+        "commit": "a77e5ba72728630ee02b95892d5fd0c219f87c98"
+      },
+      {
+        "type": "patch",
+        "path": "patches/geckofx/FixesForFlatpak.patch"
+      }
+    ]
+  }
+}

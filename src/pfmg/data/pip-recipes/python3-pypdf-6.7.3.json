@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-pypdf",
+    "version": "6.7.3",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-pypdf",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"pypdf\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/b0/90/3308a9b8b46c1424181fdf3f4580d2b423c5471425799e7fc62f92d183f4/pypdf-6.7.3-py3-none-any.whl",
+        "sha256": "cd25ac508f20b554a9fafd825186e3ba29591a69b78c156783c5d8a2d63a1c0a"
+      }
+    ]
+  }
+}

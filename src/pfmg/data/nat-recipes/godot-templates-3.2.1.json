@@ -1,0 +1,26 @@
+{
+  "header": {
+    "id": "godot-templates",
+    "version": "3.2.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "godot-templates",
+    "buildsystem": "simple",
+    "cleanup": [
+      "*"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "sha256": "c6883b2dd8848b4ea90d869b971a98364296482d2223ae20e61cb492fe082abb",
+        "url": "https://github.com/godotengine/godot/releases/download/3.2.1-stable/Godot_v3.2.1-stable_export_templates.tpz",
+        "dest-filename": "templates.zip"
+      }
+    ],
+    "build-commands": [
+      "install -Dm755 -t /app/share/godot/templates/3.2.1.stable/ linux_x11_*"
+    ]
+  }
+}

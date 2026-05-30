@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "gitfourchette",
+    "version": "unknown",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "gitfourchette",
+    "buildsystem": "simple",
+    "build-commands": [
+      "python update_resources.py --freeze pyqt6",
+      "python -m pip install --verbose --no-index --prefix=${FLATPAK_DEST} '.[pyqt6,pygments,mfusepy]' --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/jorio/gitfourchette.git",
+        "commit": "745f839a9306a0326327f095e6f6d2a42290c8c4",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^v([\\d.]+)$"
+        }
+      }
+    ],
+    "post-install": [
+      "install -D ./pkg/flatpak/org.gitfourchette.gitfourchette.desktop      ${FLATPAK_DEST}/share/applications/org.gitfourchette.gitfourchette.desktop",
+      "install -D ./pkg/flatpak/org.gitfourchette.gitfourchette.png          ${FLATPAK_DEST}/share/icons/hicolor/256x256/apps/org.gitfourchette.gitfourchette.png",
+      "install -D ./pkg/flatpak/org.gitfourchette.gitfourchette.metainfo.xml ${FLATPAK_DEST}/share/metainfo/org.gitfourchette.gitfourchette.metainfo.xml"
+    ]
+  }
+}

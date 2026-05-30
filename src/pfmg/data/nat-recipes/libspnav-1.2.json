@@ -1,0 +1,21 @@
+{
+  "header": {
+    "id": "libspnav",
+    "version": "1.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libspnav",
+    "config-opts": [
+      "--disable-debug"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/FreeSpacenav/libspnav/archive/v1.2/libspnav-1.2.tar.gz",
+        "sha256": "e675a2476bd407b8d97a33f93c6651ad3ecdfd422916f260bd620f2aec7ca45f"
+      }
+    ]
+  }
+}

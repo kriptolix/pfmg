@@ -1,0 +1,40 @@
+{
+  "header": {
+    "id": "mujs",
+    "version": "16.0.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "mujs",
+    "no-autogen": true,
+    "make-args": [
+      "release"
+    ],
+    "make-install-args": [
+      "prefix=/app",
+      "install-shared"
+    ],
+    "cleanup": [
+      "/bin"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://codeberg.org/ccxvii/mujs/archive/1.3.8.tar.gz",
+        "sha256": "10e8548033924ada0828a821777371861ea3e127d472e8423ad87426118291d9"
+      },
+      {
+        "//note": "The unicode character database files are downloaded in the makefile rules `UnicodeData.txt` and `SpecialCasing.txt`.",
+        "type": "file",
+        "url": "https://www.unicode.org/Public/16.0.0/ucd/UnicodeData.txt",
+        "sha256": "ff58e5823bd095166564a006e47d111130813dcf8bf234ef79fa51a870edb48f"
+      },
+      {
+        "type": "file",
+        "url": "https://www.unicode.org/Public/16.0.0/ucd/SpecialCasing.txt",
+        "sha256": "8d5de354eef79f2395a54c9c7dcebbaf3d30fc962d0f85611ea97aa973a0c451"
+      }
+    ]
+  }
+}

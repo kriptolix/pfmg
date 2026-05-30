@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "pyopengl-accelerate",
+    "version": "3.1.5",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "pyopengl-accelerate",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://files.pythonhosted.org/packages/a2/3c/f42a62b7784c04b20f8b88d6c8ad04f4f20b0767b721102418aad94d8389/PyOpenGL-accelerate-3.1.5.tar.gz",
+        "sha256": "12e5518b0216a478527c7ce5ddce623c3d0517adeb87226da767772e8b7f2f06"
+      }
+    ],
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip2 install --prefix=/app ."
+    ],
+    "build-options": {
+      "cflags": "-Wno-error=incompatible-pointer-types"
+    }
+  }
+}

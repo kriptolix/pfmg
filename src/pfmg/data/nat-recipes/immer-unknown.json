@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "immer",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "immer",
+    "buildsystem": "simple",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/arximboldi/immer.git",
+        "tag": "v0.8.1"
+      }
+    ],
+    "build-commands": [
+      "cp -r immer /app/include/"
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-coverage",
+    "version": "6.3.3",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-coverage",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"coverage\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/f4/14/33067650d3be989870acacbd3ec3f493a15d350f90b6607dd8b3b26a0194/coverage-6.3.3.tar.gz",
+        "sha256": "2781c43bffbbec2b8867376d4d61916f5e9c4cc168232528562a61d1b4b01879"
+      }
+    ]
+  }
+}

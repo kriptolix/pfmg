@@ -1,0 +1,40 @@
+{
+  "header": {
+    "id": "haskell-vector-stream",
+    "version": "0.1.0.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "haskell-vector-stream",
+    "buildsystem": "simple",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/vector-stream-0.1.0.0/vector-stream-0.1.0.0.tar.gz",
+        "sha256": "a888210f6467f155090653734be5cc920406a07227e0d3adb59096716fdb806c",
+        "x-checker-data": {
+          "type": "html",
+          "url": "https://www.stackage.org/lts-21",
+          "version-pattern": ">vector-stream-([\\d.]+)<",
+          "url-template": "https://hackage.haskell.org/package/vector-stream-$version/vector-stream-$version.tar.gz"
+        }
+      },
+      {
+        "type": "shell",
+        "commands": [
+          "sed -i '/\\bbase\\b/ s/< *4\\.17/<5/' *.cabal",
+          "sed -i '/\\bghc-prim\\b/ s/< *0\\.9/<0.10/' *.cabal"
+        ]
+      }
+    ],
+    "build-commands": [
+      "runhaskell Setup configure --prefix=/app --extra-lib-dirs=/app/lib",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "cleanup": [
+      "*"
+    ]
+  }
+}

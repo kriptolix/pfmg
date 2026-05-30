@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-tornado",
+    "version": "6.4.1",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-tornado",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"tornado\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/ee/66/398ac7167f1c7835406888a386f6d0d26ee5dbf197d8a571300be57662d3/tornado-6.4.1.tar.gz",
+        "sha512": "294b4fff8a6d1b9592d355f7faf78f1a94a2aaea1b54414b7e81884b8d4069713a28f6105ae36f27be78abf4c47a1fceab3801bc92b5429374f7a534f104c437"
+      }
+    ]
+  }
+}

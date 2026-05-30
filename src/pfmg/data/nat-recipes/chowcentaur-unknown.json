@@ -1,0 +1,47 @@
+{
+  "header": {
+    "id": "chowcentaur",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "ChowCentaur",
+    "buildsystem": "cmake-ninja",
+    "no-make-install": true,
+    "config-opts": [
+      "-DCMAKE_AR=/usr/bin/gcc-ar",
+      "-DCMAKE_NM=/usr/bin/gcc-nm",
+      "-DCMAKE_RANLIB=/usr/bin/gcc-ranlib",
+      "-DCMAKE_BUILD_TYPE=Release"
+    ],
+    "build-options": {
+      "cxxflags": "-I/app/extensions/Plugins/ChowDSP-Plugins/include"
+    },
+    "make-args": [
+      "ChowCentaur_LV2",
+      "ChowCentaur_VST3"
+    ],
+    "post-install": [
+      "install -d ${FLATPAK_DEST}/lv2",
+      "cp -R ./ChowCentaur/ChowCentaur_artefacts/Release/LV2/*.lv2 ${FLATPAK_DEST}/lv2/",
+      "strip ${FLATPAK_DEST}/lv2/ChowCentaur.lv2/*.so",
+      "install -d ${FLATPAK_DEST}/vst3",
+      "cp -R ./ChowCentaur/ChowCentaur_artefacts/Release/VST3/*.vst3 ${FLATPAK_DEST}/vst3/",
+      "strip ${FLATPAK_DEST}/vst3/ChowCentaur.vst3/Contents/*-linux/*.so",
+      "install -Dm644 -t $FLATPAK_DEST/share/licenses/ChowCentaur LICENSE"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/jatinchowdhury18/KlonCentaur.git",
+        "tag": "v1.4.0",
+        "commit": "fdc026f8110d11b5a53fedf93d517316b57f4332",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^v([\\d.]+)$"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "libkmod",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libkmod",
+    "buildsystem": "simple",
+    "build-commands": [
+      "./configure --disable-debug --disable-python --disable-logging --disable-test-modules --disable-manpages --prefix=/",
+      "sed -i -e 's/ -g / -s /' Makefile",
+      "make -j $FLATPAK_BUILDER_N_JOBS",
+      "find . -type f | perl -lne 'print if -B and -x' | xargs strip",
+      "make install DESTDIR=$FLATPAK_DEST",
+      "install -D ./tools/lsmod $FLATPAK_DEST/bin/lsmod"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://cdn.kernel.org/pub/linux/utils/kernel/kmod/kmod-12.tar.xz",
+        "sha256": "c6189dd8c5a1e8d9224e8506bd188c0cd5dfa119fd6b7e5869b3640cbe8bf92f"
+      }
+    ]
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "header": {
+    "id": "python3-cchardet",
+    "version": "2.1.7",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-cchardet",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"cchardet\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/a8/5d/090c9f0312b7988a9433246c9cf0b566b1ae1374368cfb8ac897218a4f65/cchardet-2.1.7.tar.gz",
+        "sha256": "c428b6336545053c2589f6caf24ea32276c6664cb86db817e03a94c60afa0eaf",
+        "x-checker-data": {
+          "name": "cchardet",
+          "type": "pypi"
+        }
+      }
+    ],
+    "cleanup": [
+      "/bin",
+      "/share/man/man1"
+    ]
+  }
+}

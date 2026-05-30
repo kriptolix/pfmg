@@ -1,0 +1,34 @@
+{
+  "header": {
+    "id": "libpci",
+    "version": "3.6.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libpci",
+    "cleanup": [
+      "/sbin",
+      "/man"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://www.kernel.org/pub/software/utils/pciutils/pciutils-3.6.2.tar.xz",
+        "md5": "77963796d1be4f451b83e6da28ba4f82"
+      }
+    ],
+    "no-autogen": true,
+    "make-args": [
+      "SHARED=yes",
+      "PREFIX=/app",
+      "SHAREDIR=/app/share/hwdata"
+    ],
+    "make-install-args": [
+      "SHARED=yes",
+      "PREFIX=/app",
+      "SHAREDIR=/app/share/hwdata",
+      "install-lib"
+    ]
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "header": {
+    "id": "luarocks-luafilesystem",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "luarocks-luafilesystem",
+    "buildsystem": "simple",
+    "build-options": {
+      "prepend-path": "/app/automations/DependencyControl/bin"
+    },
+    "build-commands": [
+      "luarocks build"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/lunarmodules/luafilesystem",
+        "tag": "v1_9_0",
+        "commit": "a186cca5833691e830ed255e38ace8ff6b870dbf"
+      }
+    ]
+  }
+}

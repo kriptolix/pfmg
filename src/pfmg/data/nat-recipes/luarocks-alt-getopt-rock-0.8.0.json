@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "luarocks-alt-getopt-rock",
+    "version": "0.8.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "luarocks-alt-getopt_rock",
+    "buildsystem": "simple",
+    "build-options": {
+      "prepend-path": "/app/automations/DependencyControl/bin"
+    },
+    "build-commands": [
+      "luarocks build ./alt-getopt-0.8.0-1.src.rock"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://luarocks.org/manifests/mpeterv/alt-getopt-0.8.0-1.src.rock",
+        "sha512": "501168c6a53094b0d49805ae69bd59722c75155c41d5d71d9a8ad93120fcb8a516b67909702331df838216f817e20c941e26a76de7c643743525e71e9e2dc0b2"
+      }
+    ]
+  }
+}

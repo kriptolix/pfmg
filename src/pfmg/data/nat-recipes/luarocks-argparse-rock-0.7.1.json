@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "luarocks-argparse-rock",
+    "version": "0.7.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "luarocks-argparse_rock",
+    "buildsystem": "simple",
+    "build-options": {
+      "prepend-path": "/app/automations/DependencyControl/bin"
+    },
+    "build-commands": [
+      "luarocks build ./argparse-0.7.1-1.src.rock"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://luarocks.org/manifests/argparse/argparse-0.7.1-1.src.rock",
+        "sha512": "0397e8d14baa93f0736baf5c995bc940ae345e309262adac191fae8902d7d275cc882ae556f72b0660d308d0ceaea6dcd41602a56f211a4fbf5fb9b768bccbf7"
+      }
+    ]
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "header": {
+    "id": "openblas",
+    "version": "0.3.23",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "openblas",
+    "no-autogen": true,
+    "make-args": [
+      "DYNAMIC_ARCH=1",
+      "FC=gfortran",
+      "NO_LAPACKE=1",
+      "USE_OPENMP=0"
+    ],
+    "make-install-args": [
+      "PREFIX=/app"
+    ],
+    "post-install": [
+      "rm /app/lib/*.a"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/xianyi/OpenBLAS/archive/refs/tags/v0.3.23.tar.gz",
+        "sha256": "5d9491d07168a5d00116cdc068a40022c3455bf9293c7cb86a65b1054d7e5114"
+      }
+    ]
+  }
+}

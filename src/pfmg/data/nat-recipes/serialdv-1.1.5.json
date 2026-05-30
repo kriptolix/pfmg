@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "serialdv",
+    "version": "1.1.5",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "serialdv",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-Wno-dev"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/f4exb/serialDV/archive/refs/tags/v1.1.5.tar.gz",
+        "sha256": "9ff90d85ff613e81659a2d661515e01d3c1f3ad1cade58908838b97fdd7ab5d2"
+      }
+    ]
+  }
+}

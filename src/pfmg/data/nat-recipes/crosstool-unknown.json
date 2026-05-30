@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "crosstool",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "crosstool",
+    "buildsystem": "autotools",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/crosstool-ng/crosstool-ng.git",
+        "tag": "620b909cd0713f68084378b63cf61b5232757b90"
+      },
+      {
+        "type": "shell",
+        "commands": [
+          "sed -i 's/-O2 -g/-O2/' scripts/crosstool-NG.sh",
+          "sed -i 's/-g -O2/-O2/' scripts/build/cc/gcc.sh",
+          "sed -i '/# Cleanup/a rm -r \"$(readlink \"${kernel_path}\")\"' scripts/build/kernel/linux.sh",
+          "sed -i '2228i CT_DoExecLog FILE rm \"$(readlink -f \"${file}\")\"' scripts/functions",
+          "sed -i '/CT_ExtractPatch GCC/a CT_Pushd \"${CT_SRC_DIR}/gcc/gcc/testsuite/\";CT_DoExecLog ALL rm -rf $(ls -1 | grep -v selftests);CT_Popd' scripts/build/cc/gcc.sh"
+        ]
+      }
+    ],
+    "cleanup": [
+      "*"
+    ]
+  }
+}

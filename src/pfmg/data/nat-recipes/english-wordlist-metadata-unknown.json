@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "english-wordlist-metadata",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "English_Wordlist_Metadata",
+    "buildsystem": "simple",
+    "build-commands": [
+      "install -Dm644 word_lists/English/english.list /app/share/extra/English/words.list",
+      "install -Dm644 net.krafting.SemantiK.Lang.English.metainfo.xml -t ${FLATPAK_DEST}/share/metainfo"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "path": "net.krafting.SemantiK.Lang.English.metainfo.xml"
+      },
+      {
+        "type": "git",
+        "url": "https://gitlab.com/Krafting/semantik-gtk",
+        "tag": "1.7.4",
+        "commit": "86870d6b62730c303e4b590984809cd3a3fd6b45",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^([\\d.]+)$"
+        }
+      }
+    ]
+  }
+}

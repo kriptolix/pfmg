@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-zope.deprecation",
+    "version": "5.1",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-zope.deprecation",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"zope.deprecation==5.1\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/30/88/5fc32633682a452260f50417da3d4be26137dd220ef617bbd8ed52f0cfa9/zope.deprecation-5.1-py3-none-any.whl",
+        "sha256": "60f957b964d8f947a4a592c647d51ce0f4f844d1f041657956ddde0d9fa9a76a"
+      }
+    ]
+  }
+}

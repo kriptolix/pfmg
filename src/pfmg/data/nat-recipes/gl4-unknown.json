@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "gl4",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "gl4",
+    "buildsystem": "simple",
+    "build-commands": [
+      "make",
+      "install -D ./release/ref_gl4.so /app/bin/ref_gl4.so"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/yquake2/ref_gl4",
+        "commit": "3bb925b3cd07d7b14dc7b44b45950bd42ebd0642"
+      }
+    ]
+  }
+}

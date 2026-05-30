@@ -1,0 +1,38 @@
+{
+  "header": {
+    "id": "bdwgc",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "bdwgc",
+    "buildsystem": "autotools",
+    "build-options": {
+      "no-debuginfo": true
+    },
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/ivmai/bdwgc.git",
+        "commit": "ee59af3722e56de8404de6cd0c21c2493cc4d855",
+        "tag": "v8.2.8",
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://api.github.com/repos/ivmai/bdwgc/releases/latest",
+          "tag-query": ".tag_name",
+          "version-query": "$tag | sub(\"^jq-\"; \"\")",
+          "timestamp-query": ".published_at"
+        }
+      }
+    ],
+    "cleanup": [
+      "*.a",
+      "*.la",
+      "/include",
+      "/share/info",
+      "/share/doc",
+      "/lib/pkgconfig"
+    ]
+  }
+}

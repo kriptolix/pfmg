@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "libobjc2",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libobjc2",
+    "buildsystem": "cmake-ninja",
+    "build-options": {
+      "env": {
+        "CC": "clang",
+        "CXX": "clang++"
+      }
+    },
+    "config-opts": [
+      "-DTESTS=on",
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DGNUSTEP_INSTALL_TYPE=NONE",
+      "-DEMBEDDED_BLOCKS_RUNTIME=ON",
+      "-DOLDABI_COMPAT=OFF"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/gnustep/libobjc2.git",
+        "commit": "62e3a80b8e93818c2ac3250beab211c4d294cc87"
+      }
+    ]
+  }
+}

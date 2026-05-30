@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-bsdiff4",
+    "version": "1.2.6",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-bsdiff4",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"bsdiff4\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/53/b9/4559ede9a4c8c4451688303544da84654643fdc7f28790aca85be80b4b7c/bsdiff4-1.2.6.tar.gz",
+        "sha256": "2ab57d01a78b39e29e5accc9cfead4130982ded9dccbc4261bd0e9c51d6b751d"
+      }
+    ]
+  }
+}

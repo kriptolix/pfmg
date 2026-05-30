@@ -1,0 +1,33 @@
+{
+  "header": {
+    "id": "python3-rjsmin",
+    "version": "1.2.4",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-rjsmin",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"rjsmin==1.2.4\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/f1/db/97a18a7c497835afef0efbb59ea39bfdbc9e9168d7c3e6e37305ee96d9e0/rjsmin-1.2.4-cp312-cp312-manylinux1_x86_64.whl",
+        "sha256": "7f2ee075d0d589c978ea210c234e92161a99ebd6bbf6eebaa25cff5383deda45",
+        "only-arches": [
+          "x86_64"
+        ]
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/84/b9/aa8e4bf9d4e840d44a2c54dc0482177afd290c3f1d4508c9a2dee31e8e7b/rjsmin-1.2.4-cp312-cp312-manylinux2014_aarch64.whl",
+        "sha256": "7fd8412349a577104e1ddfd75179fac4906ea22b920f8ae8e2b6e6388dac41ce",
+        "only-arches": [
+          "aarch64"
+        ]
+      }
+    ]
+  }
+}

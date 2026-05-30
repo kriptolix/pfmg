@@ -1,0 +1,97 @@
+{
+  "header": {
+    "id": "python3-zexceptions",
+    "version": "5.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-zExceptions",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"zExceptions==5.0\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/9a/d6/d547a7004b81fa0b2aafa143b09196f6635e4105cd9d2c641fa8a4051c05/multipart-1.3.0-py3-none-any.whl",
+        "sha256": "439bf4b00fd7cb2dbff08ae13f49f4f49798931ecd8d496372c63537fa19f304"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/0d/e7/70b80ec3480b9c453366a396e31eaa2f00b5a6824e1600d23f796e848b6b/python_gettext-5.0-py3-none-any.whl",
+        "sha256": "083d4c72c5e72a6bd83b0570770792b9a1e572d8ab3e9cba554e0cd4781aa84a"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/81/c4/34e93fe5f5429d7570ec1fa436f1986fb1f00c3e0f43a589fe2bbcd22c3f/pytz-2025.2-py2.py3-none-any.whl",
+        "sha256": "5ddf76296dd8c44c26eb8f4b6f35488f3ccbf6fbbd7adee0b7262d43f0ec2f00"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/6c/4d/8158d3f93c7eac8c94e0cff3ce5472335f46c5dc2f8c572742e9996e7aa1/zExceptions-5.0-py3-none-any.whl",
+        "sha256": "bbd11d5544f6611ae1045214f9fe5d0d95cd6c479a555de509fa1d41199491de"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/16/6e/3850c13cec46ae5ac5f63f348a7902d81b54984a3a6426aececdb153d62e/zope.browser-3.1-py3-none-any.whl",
+        "sha256": "c2f08da5a7514877878e3f02ad2dd984e7504c326b9c401ee03d2d92e4b4fec0"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/a0/ea/18a5e07ce7f66714aa289ba21c5bc52221bffc3a77d6e4318d50e8a0a3f7/zope.component-6.0-py3-none-any.whl",
+        "sha256": "96d0a04db39643caf2dfaec152340f3e914df1dc3fa32fbb913782620dc6c3c6"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/97/32/ec9fe5c67a5b549d7088d523dc3429392e3b57b0d6055f781e7ed2e42803/zope.configuration-6.0-py3-none-any.whl",
+        "sha256": "1b99b4845c987fbb8e329a5548b7c4aa3b75ee5531dcc5f69674365a2f5e5306"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/94/70/9d3c8c2f86658b02066678d46b0a7715c01f247d8dbd0efc9d71dd8146ef/zope.contenttype-5.2-py3-none-any.whl",
+        "sha256": "c3b2589a80f5d2100bc9365c9d7bda1ea3cfe05dd268b5e7bf5e7a8f239cc35f"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/30/88/5fc32633682a452260f50417da3d4be26137dd220ef617bbd8ed52f0cfa9/zope.deprecation-5.1-py3-none-any.whl",
+        "sha256": "60f957b964d8f947a4a592c647d51ce0f4f844d1f041657956ddde0d9fa9a76a"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/00/ed/d8c3f56c1edb0ee9b51461dd08580382e9589850f769b69f0dedccff5215/zope_event-5.1-py3-none-any.whl",
+        "sha256": "53de8f0e9f61dc0598141ac591f49b042b6d74784dab49971b9cc91d0f73a7df"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/dd/31/a54159a96776b55e7460e22fb77fb31b48b83a8c4f5a7f720adc4476c45c/zope.exceptions-5.2-py3-none-any.whl",
+        "sha256": "5c1182ad31ce5db2419cc4b6581a221f20582cb3bc8468568342661897974874"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/75/a0/76a8f77857272ee7b706d9ed3fb58be52fded1e0d2d998db71040ed033d1/zope_i18n-5.3-py3-none-any.whl",
+        "sha256": "35aa309da4823e82e8ea8d034a5b44a4a87e26c893e2090ecd12efae5048727f"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/30/93/9210e7606be57a2dfc6277ac97dcc864fd8d39f142ca194fdc186d596fda/zope.interface-7.2.tar.gz",
+        "sha256": "8b49f1a3d1ee4cdaf5b32d2e738362c7f5e40ac8b46dd7d1a65e82a4872728fe"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/45/3e/fcbb944ec263a1609034aaa6244ae75e1d5cff08c5dc7374e896eee233da/zope.location-5.1-py3-none-any.whl",
+        "sha256": "e67aaba85d108a9e2228f01fa2aced55325a3a26c28a3ab6c03c8281708aef20"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/21/aa/7c0ab8354204b8236591e3a2fce88359e225cbb4815dbca114d39bb8944e/zope.publisher-7.3-py3-none-any.whl",
+        "sha256": "da1eb6a5e0a3a6438a3ea77605220b4e32154449908206096e8a0e2d2427e3e8"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/4b/80/5cec1172d3eb392652821cc1f689e9e24b199edd148315acd1c501cfe77d/zope_schema-7.1-py3-none-any.whl",
+        "sha256": "0b23034abc5a55411d5ac241b54a626143d43fe8e8016b69dae4d41811ab8b34"
+      }
+    ]
+  }
+}

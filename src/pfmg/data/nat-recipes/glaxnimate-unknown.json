@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "glaxnimate",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "glaxnimate",
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
+      "-DPotrace_PREFIX=/app",
+      "-DLibav_PREFIX=/app",
+      "-DCMAKE_PREFIX_PATH=/app",
+      "-DQT_MAJOR_VERSION=6"
+    ],
+    "post-install": [
+      "mkdir -p $FLATPAK_DEST/share/licenses/$FLATPAK_ID/glaxnimate/",
+      "cp ../LICENSES/* $FLATPAK_DEST/share/licenses/$FLATPAK_ID/glaxnimate/"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://invent.kde.org/graphics/glaxnimate.git",
+        "disable-shallow-clone": true,
+        "commit": "d6d3373778954785afd8de3a78ae59ea8413704e"
+      }
+    ]
+  }
+}

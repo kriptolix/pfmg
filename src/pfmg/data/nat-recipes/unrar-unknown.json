@@ -1,0 +1,30 @@
+{
+  "header": {
+    "id": "unrar",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "unrar",
+    "no-autogen": true,
+    "no-make-install": true,
+    "make-args": [
+      "lib"
+    ],
+    "post-install": [
+      "install -D dll.hpp /app/include/unrar/dll.hpp",
+      "install -D libunrar.a /app/lib/libunrar.a"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/aawc/unrar.git",
+        "tag": "v7.0.9"
+      }
+    ],
+    "cleanup": [
+      "*"
+    ]
+  }
+}

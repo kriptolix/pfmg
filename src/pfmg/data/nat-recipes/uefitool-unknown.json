@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "uefitool",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "UEFITool",
+    "buildsystem": "cmake",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/LongSoft/UEFITool",
+        "tag": "A74",
+        "commit": "6857133378d0efac485fb20159b80e0ca9eeb392",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "(^A\\d+$)",
+          "is-main-source": true
+        }
+      }
+    ]
+  }
+}

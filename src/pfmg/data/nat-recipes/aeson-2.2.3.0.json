@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "aeson",
+    "version": "2.2.3.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "aeson",
+    "buildsystem": "simple",
+    "builddir": false,
+    "build-commands": [
+      "echo '#! /usr/bin/env runhaskell' >Setup.txt",
+      "echo '> import Distribution.Simple' >>Setup.txt",
+      "echo '> main = defaultMain' >>Setup.txt",
+      "ln -s Setup.txt Setup.lhs || true",
+      "runhaskell Setup configure --prefix=/app",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "sources": [
+      {
+        "sha256": "daa25cf428256ad05d21f2bfa44077c1b14d6c784b7930a202ee901f11cc6baa",
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/aeson-2.2.3.0/aeson-2.2.3.0.tar.gz"
+      },
+      {
+        "dest-filename": "aeson.cabal",
+        "sha256": "011fa2d67d7a821aa5ec5c825adc919bb067d42dde8fac7c6e5db23239a58866",
+        "type": "file",
+        "url": "https://hackage.haskell.org/package/aeson-2.2.3.0/revision/2.cabal"
+      }
+    ]
+  }
+}

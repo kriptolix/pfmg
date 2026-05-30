@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-authencoding",
+    "version": "6.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-AuthEncoding",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"AuthEncoding==6.0\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/65/15/716495cf0759c1dd8e449afb26cda840e3378b7b5afd47f63c8045434d1e/AuthEncoding-6.0-py3-none-any.whl",
+        "sha256": "4c1a8c3db8222a9892a947d77fde7db3b4be224bbcf0765762e44abdb4da3a0c"
+      }
+    ]
+  }
+}

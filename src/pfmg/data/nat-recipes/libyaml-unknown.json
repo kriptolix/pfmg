@@ -1,0 +1,18 @@
+{
+  "header": {
+    "id": "libyaml",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libyaml",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/yaml/libyaml.git",
+        "tag": "0.2.5"
+      }
+    ]
+  }
+}

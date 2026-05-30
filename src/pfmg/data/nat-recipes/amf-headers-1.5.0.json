@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "amf-headers",
+    "version": "1.5.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "amf-headers",
+    "buildsystem": "simple",
+    "build-commands": [
+      "cp -av amf/public/include/. /app/include/AMF"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/GPUOpen-LibrariesAndSDKs/AMF/archive/refs/tags/v1.5.0.tar.gz",
+        "sha256": "bf80ee4a77a731c5a2351b4dd74f524a18806a70099ba66a8058d91aac1150b5",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 138182,
+          "stable-only": true,
+          "url-template": "https://github.com/GPUOpen-LibrariesAndSDKs/AMF/archive/refs/tags/v$version.tar.gz"
+        }
+      }
+    ]
+  }
+}

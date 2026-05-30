@@ -1,0 +1,38 @@
+{
+  "header": {
+    "id": "wv",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "wv",
+    "cleanup": [
+      "/include",
+      "/share/man",
+      "/share/wv",
+      "/lib/pkgconfig",
+      "/bin/wv*"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/AbiWord/wv.git",
+        "tag": "wv-1-2-9",
+        "commit": "30692affae5ee38f4804e1621e10e1f4f58d3fd3"
+      },
+      {
+        "type": "shell",
+        "commands": [
+          "touch AUTHORS ChangeLog"
+        ]
+      },
+      {
+        "type": "shell",
+        "commands": [
+          "autoreconf -vfi"
+        ]
+      }
+    ]
+  }
+}

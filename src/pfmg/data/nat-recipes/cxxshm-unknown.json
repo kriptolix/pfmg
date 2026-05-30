@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "cxxshm",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "cxxshm",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DCLANG_FORMAT=OFF",
+      "-DCOMPILER_WARNINGS=OFF",
+      "-DCLANG_TIDY=OFF",
+      "-DBUILD_DOC=OFF",
+      "-DENABLE_TEST=OFF"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "tag": "v2.0.4",
+        "url": "https://github.com/NikolasK-source/cxxshm.git",
+        "commit": "2bce9d6cc80a9903fecf35048d43d950bc91b8fc",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^v([\\d.]+)$"
+        }
+      }
+    ]
+  }
+}

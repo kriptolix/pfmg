@@ -1,0 +1,36 @@
+{
+  "header": {
+    "id": "lcdf-typetools",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "lcdf-typetools",
+    "buildsystem": "autotools",
+    "config-opts": [
+      "--without-kpathsea",
+      "--disable-adobe-code",
+      "--disable-cfftot1",
+      "--disable-mmafm",
+      "--disable-mmpfb",
+      "--disable-otftotfm",
+      "--disable-t1dotlessj",
+      "--disable-t1lint",
+      "--disable-t1rawafm",
+      "--disable-t1reencode",
+      "--disable-t1testpage",
+      "--disable-ttftotype42"
+    ],
+    "cleanup": [
+      "*.a"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://salsa.debian.org/fonts-team/lcdf-typetools.git",
+        "commit": "635cbab327dbff73a7b1acd4b322c850f202b7bd"
+      }
+    ]
+  }
+}

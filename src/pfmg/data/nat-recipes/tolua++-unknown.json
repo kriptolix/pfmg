@@ -1,0 +1,26 @@
+{
+  "header": {
+    "id": "tolua++",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "tolua++",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/LuaDist/toluapp.git",
+        "tag": "1.0.93",
+        "commit": "9feb31ab8b97eda9561846508ee9e3a2caff8da7"
+      }
+    ],
+    "cleanup": [
+      "/bin/toluapp"
+    ]
+  }
+}

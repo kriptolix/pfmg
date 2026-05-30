@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "cxxbridge",
+    "version": "1.0.186",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "cxxbridge",
+    "buildsystem": "simple",
+    "build-commands": [
+      "cargo install --root ${FLATPAK_DEST} --path ."
+    ],
+    "build-options": {
+      "env": {
+        "CARGO_HOME": "/run/build/cxxbridge/cargo"
+      }
+    },
+    "cleanup": [
+      "*"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "archive-type": "tar-gzip",
+        "url": "https://crates.io/api/v1/crates/cxxbridge-cmd/1.0.186/download",
+        "sha256": "077f5ee3d3bfd8d27f83208fdaa96ddd50af7f096c77077cc4b94da10bfacefd"
+      },
+      "cxxbridge-generated-sources.json"
+    ]
+  }
+}

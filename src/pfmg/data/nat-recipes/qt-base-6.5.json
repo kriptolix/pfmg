@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "qt-base",
+    "version": "6.5",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "qt-base",
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
+      "-DQT_BUILD_EXAMPLES=OFF",
+      "-DQT_BUILD_TESTS=OFF"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.qt.io/archive/qt/6.5/6.5.8/src/submodules/qtbase-everywhere-opensource-src-6.5.8.tar.xz",
+        "sha256": "5d35f8f37dfb3dff387cce31725b3a363894e3b6ea9d86aa54d9e7fd34e1b888"
+      }
+    ],
+    "cleanup": [
+      "/bin"
+    ]
+  }
+}

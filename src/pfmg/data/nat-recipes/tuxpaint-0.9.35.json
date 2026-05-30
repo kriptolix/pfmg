@@ -1,0 +1,51 @@
+{
+  "header": {
+    "id": "tuxpaint",
+    "version": "0.9.35",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "tuxpaint",
+    "no-autogen": true,
+    "no-parallel-make": true,
+    "make-args": [
+      "LDFLAGS=-L/app/lib",
+      "PREFIX=/app"
+    ],
+    "make-install-args": [
+      "LDFLAGS=-L/app/lib",
+      "PREFIX=/app",
+      "ARCH_INSTALL=install-man install-importscript"
+    ],
+    "sources": [
+      {
+        "x-checker-data": {
+          "is-main-source": true,
+          "type": "html",
+          "url": "https://sourceforge.net/projects/tuxpaint/rss?path=/tuxpaint",
+          "pattern": "(https://sourceforge.net/projects/tuxpaint/files/tuxpaint/(\\d+\\.\\d+\\.\\d+)/tuxpaint-\\2.tar.gz)"
+        },
+        "type": "archive",
+        "url": "https://sourceforge.net/projects/tuxpaint/files/tuxpaint/0.9.35/tuxpaint-0.9.35.tar.gz",
+        "sha256": "c1c18af91be77e94fdaab2c928204c4c39ba39ac5da2f441aaf2ecab6d8bd0ad"
+      },
+      {
+        "type": "patch",
+        "path": "Expose-SDL2_gfx-to-magic-plugins.patch"
+      },
+      {
+        "type": "file",
+        "path": "tuxpaint.conf"
+      }
+    ],
+    "post-install": [
+      "install -m644 -Dt /app/share/icons/hicolor/scalable/apps data/images/tuxpaint-icon.svg",
+      "for size in 192 128 96 64 48 32 22 16; do install -m644 -D data/images/icon${size}x${size}.png /app/share/icons/hicolor/${size}x${size}/apps/tuxpaint.png; done",
+      "desktop-file-edit --set-key=Keywords --set-value=tuxpaint src/tuxpaint.desktop",
+      "install -m644 -Dt /app/share/applications src/tuxpaint.desktop",
+      "install -m644 -Dt /app/share/metainfo src/org.tuxpaint.Tuxpaint.appdata.xml",
+      "install -m644 -Dt /app/etc/tuxpaint tuxpaint.conf"
+    ]
+  }
+}

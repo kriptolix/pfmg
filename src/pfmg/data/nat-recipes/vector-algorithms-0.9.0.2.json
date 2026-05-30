@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "vector-algorithms",
+    "version": "0.9.0.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "vector-algorithms",
+    "buildsystem": "simple",
+    "builddir": false,
+    "build-commands": [
+      "echo '#! /usr/bin/env runhaskell' >Setup.txt",
+      "echo '> import Distribution.Simple' >>Setup.txt",
+      "echo '> main = defaultMain' >>Setup.txt",
+      "ln -s Setup.txt Setup.lhs || true",
+      "runhaskell Setup configure --prefix=/app",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "sources": [
+      {
+        "sha256": "82ee0d0cb8734944781d3cac186cc2fe45aac7859b2af365f2f8ea32a17a253a",
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/vector-algorithms-0.9.0.2/vector-algorithms-0.9.0.2.tar.gz"
+      },
+      {
+        "dest-filename": "vector-algorithms.cabal",
+        "sha256": "636267cf6236c945160779e08c03d52f45bb84f8a0133a97590cb6d0cc6e6e87",
+        "type": "file",
+        "url": "https://hackage.haskell.org/package/vector-algorithms-0.9.0.2/revision/1.cabal"
+      }
+    ]
+  }
+}

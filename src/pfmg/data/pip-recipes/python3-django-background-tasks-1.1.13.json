@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "python3-django-background-tasks",
+    "version": "1.1.13",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-django-background-tasks",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"django-background-tasks==1.1.13\""
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/ee/ff/48bde5c0f013094d729fe4b0316ba2a24774b3ff1c52d924a8a4cb04078a/six-1.15.0-py2.py3-none-any.whl",
+        "sha256": "8b74bedcbbbaca38ff6d7491d76f2b06b3592611af620f8426e82dddb04a5ced"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/6b/03/84a887c67dbaf8b9fe7a876f44b2c6050c2a247e34e5fad6791fd15cf12f/django-compat-1.0.15.tar.gz",
+        "sha256": "3ac9a3bedc56b9365d9eb241bc5157d0c193769bf995f9a78dc1bc24e7c2331b"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/51/f1/bab33181318bda7b54e733b71d3863ef512a1fe8a713068d2ba78ec10df4/django-background-tasks-1.1.13.tar.gz",
+        "sha256": "6487f0d6ccf6a4e690a2decb23f868fe57e7bcf0c3abf0d94dcaed7341ebe96a"
+      }
+    ]
+  }
+}

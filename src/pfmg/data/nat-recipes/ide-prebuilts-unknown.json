@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "ide-prebuilts",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "ide-prebuilts",
+    "buildsystem": "simple",
+    "build-commands": [
+      "install -D linux/bin/bstc /app/bin/bstc",
+      "install -D linux/bin/bstl /app/bin/bstl"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/bweir/ide-prebuilts.git",
+        "commit": "09ef54d09ce1c5bf1fd66589d4a453bd15c79a0d"
+      }
+    ]
+  }
+}

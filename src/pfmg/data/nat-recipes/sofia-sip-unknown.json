@@ -1,0 +1,31 @@
+{
+  "header": {
+    "id": "sofia-sip",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "sofia-sip",
+    "buildsystem": "autotools",
+    "cleanup": [
+      "/bin"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/freeswitch/sofia-sip.git",
+        "tag": "v1.13.17",
+        "commit": "6198851a610b7889c17e2d98fb84617bc1dd7aec",
+        "x-checker-data": {
+          "type": "git",
+          "version-scheme": "semantic"
+        }
+      },
+      {
+        "type": "patch",
+        "path": "sofia-sip-gcc14-backport.patch"
+      }
+    ]
+  }
+}

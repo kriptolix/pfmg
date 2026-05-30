@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop">
+  <id>net.pcsx2.PCSX2</id>
+  <launchable type="desktop-id">net.pcsx2.PCSX2.desktop</launchable>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0</project_license>
+  <translation type="gettext">pcsx2_Main</translation>
+  <name>PCSX2</name>
+  <developer_name>PCSX2</developer_name>
+  <summary>A Playstation 2 emulator</summary>
+  <description>
+    <p>PCSX2 is a Playstation 2 'emulator', a free program that tries to replicate the Playstation 2 console to enable you to play PS2 games on your PC.</p>
+    <p>Advantages over the Playstation 2 console:</p>
+    <ul>
+      <li>Custom resolutions, up to 4096x4096, Anti Aliasing, and Texture filtering</li>
+      <li>Unlimited memory cards</li>
+      <li>Save states, enabling you to quick save and load practically anywhere in your game</li>
+      <li>Easy cheating using our pnach patching system</li>
+      <li>Use any controller or keyboards and mice</li>
+      <li>Increase or decrease the game speed by using the built-in frame-limiter</li>
+      <li>Ability to record in full HD with the built-in video recorder (F12 using the GSdx plugin)</li>
+    </ul>
+    <p>Copy your PS2 BIOS files to the default BIOS search path "$HOME/.var/app/net.pcsx2.PCSX2/config/PCSX2/bios".</p>
+  </description>
+  <url type="homepage">https://pcsx2.net</url>
+  <url type="bugtracker">https://github.com/PCSX2/pcsx2/issues</url>
+  <releases>
+    <release version="1.7.4401" date="2023-04-21"/>
+    <release version="1.7.4400" date="2023-04-20"/>
+    <release version="1.7.4397" date="2023-04-18"/>
+    <release version="1.7.4395" date="2023-04-17"/>
+    <release version="1.7.4391" date="2023-04-16"/>
+    <release version="1.7.4382" date="2023-04-15"/>
+    <release version="1.7.4378" date="2023-04-14"/>
+    <release version="1.7.4373" date="2023-04-13"/>
+    <release version="1.7.4372" date="2023-04-12"/>
+    <release version="1.7.4370" date="2023-04-11"/>
+    <release version="1.7.4366" date="2023-04-10"/>
+    <release version="1.7.4355" date="2023-04-09"/>
+    <release version="1.7.4349" date="2023-04-08"/>
+    <release version="1.7.4344" date="2023-04-07"/>
+    <release version="1.7.4336" date="2023-04-06"/>
+    <release version="1.7.4331" date="2023-04-05"/>
+    <release version="1.7.4326" date="2023-04-04"/>
+    <release version="1.7.4322" date="2023-04-03"/>
+    <release version="1.7.4316" date="2023-04-02"/>
+    <release version="1.7.4309" date="2023-04-01"/>
+    <release version="1.7.4298" date="2023-03-31"/>
+    <release version="1.7.4288" date="2023-03-30"/>
+    <release version="1.7.4284" date="2023-03-29"/>
+    <release version="1.7.4280" date="2023-03-28"/>
+    <release version="1.7.4277" date="2023-03-27"/>
+    <release version="1.7.4274" date="2023-03-26"/>
+    <release version="1.7.4272" date="2023-03-25"/>
+    <release version="1.7.4269" date="2023-03-24"/>
+    <release version="1.7.4268" date="2023-03-23"/>
+    <release version="1.7.4266" date="2023-03-22"/>
+    <release version="1.7.4263" date="2023-03-21"/>
+    <release version="1.7.4257" date="2023-03-20"/>
+    <release version="1.7.4249" date="2023-03-19"/>
+    <release version="1.7.4240" date="2023-03-18"/>
+    <release version="1.7.4234" date="2023-03-16"/>
+    <release version="1.7.4232" date="2023-03-15"/>
+    <release version="1.7.4229" date="2023-03-14"/>
+    <release version="1.7.4224" date="2023-03-13"/>
+    <release version="1.7.4217" date="2023-03-12"/>
+    <release version="1.7.4207" date="2023-03-11"/>
+    <release version="1.7.4199" date="2023-03-09"/>
+    <release version="1.7.4198" date="2023-03-08"/>
+    <release version="1.7.4196" date="2023-03-07"/>
+    <release version="1.7.4152" date="2023-02-27"/>
+    <release version="1.7.4145" date="2023-02-26"/>
+    <release version="1.7.4135" date="2023-02-25"/>
+    <release version="1.7.4134" date="2023-02-24"/>
+    <release version="1.7.4126" date="2023-02-23"/>
+    <release version="1.7.4125" date="2023-02-22"/>
+    <release version="1.7.4119" date="2023-02-21"/>
+    <release version="1.7.4118" date="2023-02-20"/>
+    <release version="1.7.4115" date="2023-02-19"/>
+    <release version="1.7.4107" date="2023-02-18"/>
+    <release version="1.7.4100" date="2023-02-17"/>
+    <release version="1.7.4096" date="2023-02-16"/>
+    <release version="1.7.4089" date="2023-02-15"/>
+    <release version="1.7.4081" date="2023-02-14"/>
+    <release version="1.7.4073" date="2023-02-13"/>
+    <release version="1.7.4063" date="2023-02-12"/>
+    <release version="1.7.4042" date="2023-02-10"/>
+    <release version="1.7.4026" date="2023-02-09"/>
+    <release version="1.7.4023" date="2023-02-08"/>
+    <release version="1.7.4017" date="2023-02-07"/>
+    <release version="1.7.4013" date="2023-02-06"/>
+    <release version="1.7.4009" date="2023-02-05"/>
+    <release version="1.7.4005" date="2023-02-04"/>
+    <release version="1.7.3999" date="2023-02-03"/>
+    <release version="1.7.3994" date="2023-02-02"/>
+    <release version="1.7.3989" date="2023-02-01"/>
+    <release version="1.7.3986" date="2023-01-31"/>
+    <release version="1.7.3980" date="2023-01-30"/>
+    <release version="1.7.3977" date="2023-01-29"/>
+    <release version="1.7.3973" date="2023-01-28"/>
+    <release version="1.7.3964" date="2023-01-27"/>
+    <release version="1.7.3959" date="2023-01-26"/>
+    <release version="1.7.3951" date="2023-01-25"/>
+    <release version="1.7.3948" date="2023-01-24"/>
+    <release version="1.7.3941" date="2023-01-23"/>
+    <release version="1.7.3935" date="2023-01-22"/>
+    <release version="1.7.3929" date="2023-01-21"/>
+    <release version="1.7.3923" date="2023-01-20"/>
+    <release version="1.7.3919" date="2023-01-19"/>
+    <release version="1.7.3917" date="2023-01-18"/>
+    <release version="1.7.3914" date="2023-01-17"/>
+    <release version="1.7.3909" date="2023-01-16"/>
+    <release version="1.7.3903" date="2023-01-15"/>
+    <release version="1.7.3900" date="2023-01-14"/>
+    <release version="1.7.3892" date="2023-01-13"/>
+    <release version="1.7.3888" date="2023-01-12"/>
+    <release version="1.7.3882" date="2023-01-11"/>
+    <release version="1.7.3877" date="2023-01-10"/>
+    <release version="1.7.3876" date="2023-01-09"/>
+    <release version="1.7.3872" date="2023-01-08"/>
+    <release version="1.7.3869" date="2023-01-07"/>
+    <release version="1.7.3858" date="2023-01-06"/>
+    <release version="1.7.3852" date="2023-01-05"/>
+    <release version="1.7.3849" date="2023-01-04"/>
+    <release version="1.7.3842" date="2023-01-03"/>
+    <release version="1.7.3836" date="2023-01-02"/>
+    <release version="1.7.3829" date="2023-01-01"/>
+    <release version="1.7.3821" date="2022-12-31"/>
+    <release version="1.7.3819" date="2022-12-30"/>
+    <release version="1.7.3808" date="2022-12-29"/>
+    <release version="1.7.3799" date="2022-12-28"/>
+    <release version="1.7.3797" date="2022-12-27"/>
+    <release version="1.7.3795" date="2022-12-26"/>
+    <release version="1.7.3768" date="2022-12-24"/>
+    <release version="1.7.3761" date="2022-12-23"/>
+    <release version="1.7.3754" date="2022-12-22"/>
+    <release version="1.7.3751" date="2022-12-21"/>
+    <release version="1.7.3744" date="2022-12-20"/>
+    <release version="1.7.3737" date="2022-12-19"/>
+    <release version="1.7.3727" date="2022-12-18"/>
+    <release version="1.7.3726" date="2022-12-17"/>
+    <release version="1.7.3716" date="2022-12-16"/>
+    <release version="1.7.3715" date="2022-12-15"/>
+    <release version="1.7.3714" date="2022-12-14"/>
+    <release version="1.7.3712" date="2022-12-13"/>
+    <release version="1.7.3700" date="2022-12-12"/>
+    <release version="1.7.3695" date="2022-12-11"/>
+    <release version="1.7.3693" date="2022-12-09"/>
+    <release version="1.7.3667" date="2022-12-03"/>
+    <release version="1.7.3664" date="2022-12-02"/>
+    <release version="1.7.3662" date="2022-12-01"/>
+    <release version="1.7.3661" date="2022-11-30"/>
+    <release version="1.7.3655" date="2022-11-29"/>
+    <release version="1.7.3651" date="2022-11-28"/>
+    <release version="1.7.3646" date="2022-11-27"/>
+    <release version="1.7.3634" date="2022-11-26"/>
+    <release version="1.7.3626" date="2022-11-25"/>
+    <release version="1.7.3623" date="2022-11-24"/>
+    <release version="1.7.3613" date="2022-11-23"/>
+    <release version="1.7.3606" date="2022-11-22"/>
+    <release version="1.7.3603" date="2022-11-21"/>
+    <release version="1.7.3573" date="2022-11-18"/>
+    <release version="1.7.3566" date="2022-11-17"/>
+    <release version="1.7.3563" date="2022-11-16"/>
+    <release version="1.7.3557" date="2022-11-15"/>
+    <release version="1.7.3556" date="2022-11-14"/>
+    <release version="1.7.3554" date="2022-11-13"/>
+    <release version="1.7.3550" date="2022-11-11"/>
+    <release version="1.7.3547" date="2022-11-10"/>
+    <release version="1.7.3541" date="2022-11-09"/>
+    <release version="1.7.3538" date="2022-11-08"/>
+    <release version="1.7.3532" date="2022-11-07"/>
+    <release version="1.7.3531" date="2022-11-06"/>
+    <release version="1.7.3527" date="2022-11-05"/>
+    <release version="1.7.3522" date="2022-11-04"/>
+    <release version="1.7.3514" date="2022-11-03"/>
+    <release version="1.7.3511" date="2022-11-02"/>
+    <release version="1.7.3505" date="2022-11-01"/>
+    <release version="1.7.3500" date="2022-10-31"/>
+    <release version="1.7.3495" date="2022-10-30"/>
+    <release version="1.7.3485" date="2022-10-25"/>
+    <release version="1.7.3376" date="2022-10-07"/>
+    <release version="1.7.3358" date="2022-10-02"/>
+  </releases>
+  <screenshots>
+    <screenshot type="default"><image>https://user-images.githubusercontent.com/3315070/149651911-0406adae-97f1-412f-858f-14c5726ac487.png</image></screenshot>
+    <screenshot><image>https://user-images.githubusercontent.com/16314399/144776281-b5fafb1b-0325-4a20-853b-8fc48917ef18.png</image></screenshot>
+    <screenshot><image>https://user-images.githubusercontent.com/4414625/158374240-1d35d33d-b9cc-417f-8361-4b46cc15877a.png</image></screenshot>
+    <screenshot><image>https://user-images.githubusercontent.com/24227051/158498599-39fda627-2d89-419d-a17a-c9351d188113.png</image></screenshot>
+    </screenshots>
+  <content_rating type="oars-1.1"/>
+  <update_contact>tingping_at_tingping.se</update_contact>
+</component>

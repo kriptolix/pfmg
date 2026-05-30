@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "th-abstraction",
+    "version": "0.7.0.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "th-abstraction",
+    "buildsystem": "simple",
+    "builddir": false,
+    "build-commands": [
+      "echo '#! /usr/bin/env runhaskell' >Setup.txt",
+      "echo '> import Distribution.Simple' >>Setup.txt",
+      "echo '> main = defaultMain' >>Setup.txt",
+      "ln -s Setup.txt Setup.lhs || true",
+      "runhaskell Setup configure --prefix=/app",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "sources": [
+      {
+        "sha256": "b2854c612f2fa4adfa1ecbb4089a2211fd9cb3210aec17ba4a455ae486b22721",
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/th-abstraction-0.7.0.0/th-abstraction-0.7.0.0.tar.gz"
+      },
+      {
+        "dest-filename": "th-abstraction.cabal",
+        "sha256": "4d80fe53ed140866018278c81e1c0c9bc8fc73d8f2a530321a588f24be491fc4",
+        "type": "file",
+        "url": "https://hackage.haskell.org/package/th-abstraction-0.7.0.0/revision/0.cabal"
+      }
+    ]
+  }
+}

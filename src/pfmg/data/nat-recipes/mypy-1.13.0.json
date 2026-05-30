@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "mypy",
+    "version": "1.13.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "mypy",
+    "buildsystem": "simple",
+    "build-commands": [
+      "python3 setup.py install --prefix=/app"
+    ],
+    "cleanup": [
+      "*"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://files.pythonhosted.org/packages/e8/21/7e9e523537991d145ab8a0a2fd98548d67646dc2aaaf6091c31ad883e7c1/mypy-1.13.0.tar.gz",
+        "sha256": "0291a61b6fbf3e6673e3405cfcc0e7650bebc7939659fdca2702958038bd835e"
+      }
+    ]
+  }
+}

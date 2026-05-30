@@ -1,0 +1,88 @@
+{
+  "header": {
+    "id": "jdbc-drivers",
+    "version": "12.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "jdbc-drivers",
+    "buildsystem": "simple",
+    "build-commands": [
+      "mkdir -p /app/jdbc-drivers",
+      "cp * /app/jdbc-drivers/"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://repo1.maven.org/maven2/org/apache/derby/derbyclient/10.16.1.1/derbyclient-10.16.1.1.jar",
+        "sha256": "b7243184b1df01b946eaf89eb904ed724d1f7493eb7467e85f4c6ffb4a09142b"
+      },
+      {
+        "type": "file",
+        "url": "https://repo1.maven.org/maven2/org/apache/derby/derbyshared/10.16.1.1/derbyshared-10.16.1.1.jar",
+        "sha256": "27d4be683a45f6c15940167277ce39bb7e26b9f6dc0bc05efbcf813cac5d2b8f"
+      },
+      {
+        "type": "file",
+        "url": "https://repo1.maven.org/maven2/org/apache/derby/derbytools/10.16.1.1/derbytools-10.16.1.1.jar",
+        "sha256": "db052f92508e966ee8b0c5c9eca84cb11cbf0b0d78e608dc89340d4bb6c07314"
+      },
+      {
+        "type": "file",
+        "url": "https://repo1.maven.org/maven2/org/apache/derby/derby/10.16.1.1/derby-10.16.1.1.jar",
+        "sha256": "ede804cb04e871d7c52d2414e952ab939f9ef243abb7bd0ce7dbeb6e1e28bd0b"
+      },
+      {
+        "type": "file",
+        "url": "https://repo1.maven.org/maven2/com/ingres/jdbc/iijdbc/12.0-4.4.4/iijdbc-12.0-4.4.4.jar",
+        "sha256": "e32a3634e25cf4c9d708f181303e175b03be1b5b4f2d4f40adc13503e7b849d3"
+      },
+      {
+        "type": "file",
+        "url": "https://repo1.maven.org/maven2/com/h2database/h2/2.1.214/h2-2.1.214.jar",
+        "sha256": "d623cdc0f61d218cf549a8d09f1c391ff91096116b22e2475475fce4fbe72bd0"
+      },
+      {
+        "type": "file",
+        "url": "https://repo1.maven.org/maven2/org/hsqldb/hsqldb/2.7.2/hsqldb-2.7.2.jar",
+        "sha256": "aa455133e664f6a7e6f30cd0cd4f8ad83dfbd94eb717c438548e446784614a92"
+      },
+      {
+        "type": "file",
+        "url": "https://repo1.maven.org/maven2/net/sourceforge/jtds/jtds/1.3.1/jtds-1.3.1.jar",
+        "sha256": "aac05ebf5504c91b29420129b02dd878a86c52f8fa6eccf9235e0bfd7a60bef1"
+      },
+      {
+        "type": "file",
+        "url": "https://repo1.maven.org/maven2/com/mckoi/mckoisqldb/1.0.5/mckoisqldb-1.0.5.jar",
+        "sha256": "2364501975815fffcb4b20c62b31c1e8c90bad72f9a717e3a76ffe34cd588d29"
+      },
+      {
+        "type": "file",
+        "url": "https://repo1.maven.org/maven2/com/microsoft/sqlserver/mssql-jdbc/11.2.3.jre17/mssql-jdbc-11.2.3.jre17.jar",
+        "sha256": "1a3f5e073d57c91dbe22ba05f4f334f4e7438161b9025e41def5a8ae50e44918"
+      },
+      {
+        "type": "file",
+        "url": "https://repo1.maven.org/maven2/org/mariadb/jdbc/mariadb-java-client/3.1.4/mariadb-java-client-3.1.4.jar",
+        "sha256": "eb88b5d727d82e25117e2b6fabcec1daf734633b0a576456c73215884c189ad4"
+      },
+      {
+        "type": "file",
+        "url": "https://repo1.maven.org/maven2/org/xerial/sqlite-jdbc/3.42.0.0/sqlite-jdbc-3.42.0.0.jar",
+        "sha256": "53174d76087bb73cc29db9c02766fb921fd7fc652f7952f3609e0018e3dd5ded"
+      },
+      {
+        "type": "file",
+        "url": "https://repo1.maven.org/maven2/org/postgresql/postgresql/42.6.0/postgresql-42.6.0.jar",
+        "sha256": "b817c67a40c94249fd59d4e686e3327ed0d3d3fae426b20da0f1e75652cfc461"
+      },
+      {
+        "type": "file",
+        "url": "https://repo1.maven.org/maven2/com/mysql/mysql-connector-j/8.0.33/mysql-connector-j-8.0.33.jar",
+        "sha256": "e2a3b2fc726a1ac64e998585db86b30fa8bf3f706195b78bb77c5f99bf877bd9"
+      }
+    ]
+  }
+}

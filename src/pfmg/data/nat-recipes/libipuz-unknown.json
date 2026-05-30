@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "libipuz",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libipuz",
+    "buildsystem": "meson",
+    "config-opts": [
+      "-Dbuildtype=release",
+      "-Dsandboxed=true"
+    ],
+    "sources": [
+      "cargo-sources.json",
+      {
+        "type": "git",
+        "url": "https://gitlab.gnome.org/jrb/libipuz.git",
+        "tag": "0.5.4"
+      }
+    ]
+  }
+}

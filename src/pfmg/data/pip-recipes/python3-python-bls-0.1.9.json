@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-python-bls",
+    "version": "0.1.9",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-python-bls",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"python-bls==0.1.9\""
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/45/b8/5f98b3c9bc8450ad5b1b10ded618f6a82a9e0288c688d0f4344922bcf423/python-bls-0.1.9.tar.gz",
+        "sha256": "f1dddf9f2208591588a167907ef4c13b22f9d8d91d980ca5977eb70961f04154"
+      }
+    ]
+  }
+}

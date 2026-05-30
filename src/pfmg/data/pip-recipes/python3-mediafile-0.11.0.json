@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "python3-mediafile",
+    "version": "0.11.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-mediafile",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"mediafile==0.11.0\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/5a/db/f08befa54604a8192fbd4fc009f99585c693f43bd175f73162695978ee30/mediafile-0.11.0-py3-none-any.whl",
+        "sha256": "88aa75595f5ff568173b914de0677ba58586c5babe319fb04ca68651a4a931df"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/03/ee/114d7016d2e34f341e212fefb5e7bd87785077ebcfff0ad23a497c70eea1/mutagen-1.46.0-py3-none-any.whl",
+        "sha256": "8af0728aa2d5c3ee5a727e28d0627966641fddfe804c23eabb5926a4d770aed5"
+      }
+    ]
+  }
+}

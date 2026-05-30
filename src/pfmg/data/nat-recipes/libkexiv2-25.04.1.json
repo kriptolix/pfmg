@@ -1,0 +1,26 @@
+{
+  "header": {
+    "id": "libkexiv2",
+    "version": "25.04.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libkexiv2",
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.kde.org/stable/release-service/25.04.1/src/libkexiv2-25.04.1.tar.xz",
+        "sha256": "f0669527d1fe7ef22c3ef7c8270ef29deafb0923ec782a22f1ced1b775367190",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 8763,
+          "stable-only": true,
+          "url-template": "https://download.kde.org/stable/release-service/$version/src/libkexiv2-$version.tar.xz"
+        }
+      }
+    ]
+  }
+}

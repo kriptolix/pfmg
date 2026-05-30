@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "ibis",
+    "version": "0.15.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "ibis",
+    "buildsystem": "meson",
+    "config-opts": [
+      "-Ddoc=false",
+      "--wrap-mode=nofallback"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "archive-type": "tar-xz",
+        "url": "https://sourceforge.net/projects/pidgin/files/ibis/0.15.0/ibis-0.15.0.tar.xz/download",
+        "sha256": "2dc7209f4aad52b0549ba829c3fbe057178f3a30fcf7d65238d02d1c3e2cbebe"
+      }
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "cohomcalg",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "cohomcalg",
+    "buildsystem": "simple",
+    "build-commands": [
+      "make",
+      "cp ./bin/cohomcalg /app/plugins/pack1/bin/"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/BenjaminJurke/cohomCalg.git",
+        "tag": "v0.32",
+        "commit": "c663c8e37cceab3cc0b2bcc57d35cb895930ab1f"
+      }
+    ]
+  }
+}

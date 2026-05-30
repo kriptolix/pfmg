@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "psqueues-0.2.7.1",
+    "version": "0.2.7.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "build-commands": [
+      "ghc -threaded --make Setup",
+      "./Setup configure --prefix=/app",
+      "./Setup build",
+      "./Setup install"
+    ],
+    "buildsystem": "simple",
+    "cleanup": [],
+    "name": "psqueues-0.2.7.1",
+    "only-arches": [],
+    "sources": [
+      {
+        "sha256": "047e42ecd50d09fef99d1db9f8b1e511b64ea4b41afc435ad5fdd373d2ea8ec1",
+        "type": "archive",
+        "url": "https://s3.amazonaws.com/hackage.fpcomplete.com/package/psqueues-0.2.7.1.tar.gz"
+      },
+      {
+        "sha256": "7ee401e558e0ec0f5e7c0584d9d31fd66dc5c1ec8316bf87b064f738596a660c",
+        "type": "file",
+        "url": "https://raw.githubusercontent.com/commercialhaskell/all-cabal-files/a5f22172fce750e93afa6987320f5c5be62b5670/psqueues/0.2.7.1/psqueues.cabal"
+      }
+    ]
+  }
+}

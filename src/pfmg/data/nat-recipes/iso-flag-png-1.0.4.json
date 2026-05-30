@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "iso-flag-png",
+    "version": "1.0.4",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "iso-flag-png",
+    "buildsystem": "simple",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "http://packages.linuxmint.com/pool/main/f/flags/flags_1.0.4.tar.xz",
+        "sha256": "594f22f076d8e34ca5730d3a4cb5e76d6dc2828b633cd2ea090fc0e0c5786993"
+      }
+    ],
+    "build-commands": [
+      "cp -r usr/share $FLATPAK_DEST"
+    ]
+  }
+}

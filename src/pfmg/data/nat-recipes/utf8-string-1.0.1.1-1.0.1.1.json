@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "utf8-string-1.0.1.1",
+    "version": "1.0.1.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "build-commands": [
+      "ghc -threaded --make Setup",
+      "./Setup configure --prefix=/app",
+      "./Setup build",
+      "./Setup install"
+    ],
+    "buildsystem": "simple",
+    "cleanup": [],
+    "name": "utf8-string-1.0.1.1",
+    "only-arches": [],
+    "sources": [
+      {
+        "sha256": "fb0b9e3acbe0605bcd1c63e51f290a7bbbe6628dfa3294ff453e4235fbaef140",
+        "type": "archive",
+        "url": "https://s3.amazonaws.com/hackage.fpcomplete.com/package/utf8-string-1.0.1.1.tar.gz"
+      },
+      {
+        "sha256": "68cc6cf665e7212334a51b63d6936daeaca023b2cfe8637d130acfe95f91700b",
+        "type": "file",
+        "url": "https://raw.githubusercontent.com/commercialhaskell/all-cabal-files/a5f22172fce750e93afa6987320f5c5be62b5670/utf8-string/1.0.1.1/utf8-string.cabal"
+      }
+    ]
+  }
+}

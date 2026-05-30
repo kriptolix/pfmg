@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "python3-zope.tal",
+    "version": "5.1.1",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-zope.tal",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"zope.tal==5.1.1\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/30/93/9210e7606be57a2dfc6277ac97dcc864fd8d39f142ca194fdc186d596fda/zope.interface-7.2.tar.gz",
+        "sha256": "8b49f1a3d1ee4cdaf5b32d2e738362c7f5e40ac8b46dd7d1a65e82a4872728fe"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/8e/d9/9411d3d38c14ce0fb4e4aac67eca5751164335cf6689bcd7840c6694f6e5/zope.tal-5.1.1-py3-none-any.whl",
+        "sha256": "e36ccbdd3139d0c3a9649f96261d3e08b8d61a0ccf665c13fef125b432eb2067"
+      }
+    ]
+  }
+}

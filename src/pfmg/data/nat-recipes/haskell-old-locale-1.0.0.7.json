@@ -1,0 +1,39 @@
+{
+  "header": {
+    "id": "haskell-old-locale",
+    "version": "1.0.0.7",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "haskell-old-locale",
+    "buildsystem": "simple",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/old-locale-1.0.0.7/old-locale-1.0.0.7.tar.gz",
+        "sha256": "dbaf8bf6b888fb98845705079296a23c3f40ee2f449df7312f7f7f1de18d7b50",
+        "x-checker-data": {
+          "type": "html",
+          "url": "https://www.stackage.org/lts-21",
+          "version-pattern": ">old-locale-([\\d.]+)<",
+          "url-template": "https://hackage.haskell.org/package/old-locale-$version/old-locale-$version.tar.gz"
+        }
+      },
+      {
+        "type": "shell",
+        "commands": [
+          "sed -i '/\\bbase\\b/ s/< *4\\.9/<5/' *.cabal"
+        ]
+      }
+    ],
+    "build-commands": [
+      "runhaskell Setup configure --prefix=/app --extra-lib-dirs=/app/lib",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "cleanup": [
+      "*"
+    ]
+  }
+}

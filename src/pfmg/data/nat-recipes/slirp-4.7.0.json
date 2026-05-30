@@ -1,0 +1,19 @@
+{
+  "header": {
+    "id": "slirp",
+    "version": "4.7.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "slirp",
+    "buildsystem": "meson",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://gitlab.freedesktop.org/slirp/libslirp/-/archive/v4.7.0.tar.gz",
+        "sha256": "ccfd4e330b3d59be19e0cce25b0da000d61bcee2cfb608eb23418920d991a6da"
+      }
+    ]
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "leptonica",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "leptonica",
+    "buildsystem": "autotools",
+    "config-opts": [
+      "--disable-static",
+      "--disable-programs"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/DanBloomberg/leptonica.git",
+        "tag": "1.86.0"
+      }
+    ]
+  }
+}

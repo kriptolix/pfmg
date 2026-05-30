@@ -1,0 +1,47 @@
+{
+  "header": {
+    "id": "pyside6",
+    "version": "6.10.3",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "pyside6",
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "build-options": {
+      "append-path": "/usr/lib/sdk/llvm21/bin",
+      "append-ld-library-path": "/usr/lib/sdk/llvm21/lib"
+    },
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
+      "-DBUILD_TESTS=OFF"
+    ],
+    "post-install": [
+      "libpath=$(ls -d /app/lib/python3.*/site-packages) || exit $?\nfor pkg in PySide6 shiboken6; do\n  version=$(python3 -c \"import ${pkg}; print(${pkg}.__version__)\") || exit $?\n  printf 'Metadata-Version: 1.0\\nName: %s\\nVersion: %s\\n' \"${pkg}\" \"${version}\" > \"${libpath}/${pkg}.egg-info\" || exit $?\ndone\n"
+    ],
+    "cleanup": [
+      "/bin"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.qt.io/official_releases/QtForPython/pyside6/PySide6-6.10.3-src/pyside-setup-everywhere-src-6.10.3.tar.xz",
+        "sha256": "2c7462fe0cecb5b8ac0a3d92014b8d0b88bd4d9f8646709dab5286d9416f45bc",
+        "x-checker-data": {
+          "type": "html",
+          "url": "https://download.qt.io/official_releases/QtForPython/pyside6/",
+          "version-pattern": ">PySide6-(6\\.10\\.[\\d.]*)-src/<",
+          "url-template": "https://download.qt.io/official_releases/QtForPython/pyside6/PySide6-$version-src/pyside-setup-everywhere-src-$version0.$version1.$version2.tar.xz"
+        }
+      },
+      {
+        "type": "shell",
+        "commands": [
+          "sed -i 's|\\(--include-paths=\\)|\\1/app/include/qt:|' sources/pyside6/cmake/Macros/PySideModules.cmake",
+          "sed -i '/--sys-path\\b/ a \"${pysidebindings_BINARY_DIR}/..\"' sources/pyside6/cmake/Macros/PySideModules.cmake"
+        ]
+      }
+    ]
+  }
+}

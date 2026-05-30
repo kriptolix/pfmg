@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "python3-xcaplib",
+    "version": "unknown",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-xcaplib",
+    "buildsystem": "simple",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/AGProjects/python3-xcaplib",
+        "tag": "2.0.2",
+        "commit": "2bdce48bcec6c80618da1b04cd9a437297993e56"
+      }
+    ],
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --prefix=\"${FLATPAK_DEST}\" --no-build-isolation ."
+    ]
+  }
+}

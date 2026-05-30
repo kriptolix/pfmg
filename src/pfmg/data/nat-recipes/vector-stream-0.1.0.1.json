@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "vector-stream",
+    "version": "0.1.0.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "vector-stream",
+    "buildsystem": "simple",
+    "builddir": false,
+    "build-commands": [
+      "echo '#! /usr/bin/env runhaskell' >Setup.txt",
+      "echo '> import Distribution.Simple' >>Setup.txt",
+      "echo '> main = defaultMain' >>Setup.txt",
+      "ln -s Setup.txt Setup.lhs || true",
+      "runhaskell Setup configure --prefix=/app",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "sources": [
+      {
+        "sha256": "d0f507334bdea5431a2f07f525a97f29e76522c32210f5de6d5a2b4f1d42bf7c",
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/vector-stream-0.1.0.1/vector-stream-0.1.0.1.tar.gz"
+      },
+      {
+        "dest-filename": "vector-stream.cabal",
+        "sha256": "16a69e2ed71d7b35e16860fac520f94fa4da120eb973d9f8fbf0aa3a703d4a9f",
+        "type": "file",
+        "url": "https://hackage.haskell.org/package/vector-stream-0.1.0.1/revision/1.cabal"
+      }
+    ]
+  }
+}

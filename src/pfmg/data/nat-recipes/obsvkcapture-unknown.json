@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "obsvkcapture",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "OBSVkCapture",
+    "buildsystem": "cmake-ninja",
+    "build-options": {
+      "libdir": "lib/x86_64-linux-gnu"
+    },
+    "config-opts": [
+      "-DBUILD_PLUGIN=off",
+      "-DCMAKE_BUILD_TYPE=Release"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/nowrep/obs-vkcapture.git",
+        "tag": "v1.3.0",
+        "commit": "1d6c3c8c8ee152ecdbad4af368b9774d36385b77",
+        "x-checker-data": {
+          "type": "git",
+          "is-main-source": true,
+          "tag-pattern": "^v([\\d.]+)$"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "chessmd-opening",
+    "version": "1.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "chessmd-opening",
+    "buildsystem": "simple",
+    "sources": [
+      {
+        "type": "file",
+        "path": "start.sh"
+      },
+      {
+        "type": "archive",
+        "url": "https://github.com/ChessMD/ChessMD/releases/download/v1.0/ChessMD_portable.zip",
+        "sha256": "05d8953f912f76126a677b12aa89a08131e0d8252ec8d513091808c79fc0e70b"
+      }
+    ],
+    "build-commands": [
+      "install -Dm755 start.sh /app/bin/start.sh",
+      "install -D opening/openings.bin /app/opening/openings.bin",
+      "install -D opening/openings.headers /app/opening/openings.headers"
+    ]
+  }
+}

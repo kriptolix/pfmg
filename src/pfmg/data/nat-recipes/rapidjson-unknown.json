@@ -1,0 +1,31 @@
+{
+  "header": {
+    "id": "rapidjson",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "rapidjson",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DRAPIDJSON_BUILD_DOC=OFF",
+      "-DRAPIDJSON_BUILD_EXAMPLES=OFF",
+      "-DRAPIDJSON_BUILD_TESTS=OFF",
+      "-DRAPIDJSON_BUILD_THIRDPARTY_GTEST=OFF"
+    ],
+    "cleanup": [
+      "/include",
+      "/lib/cmake",
+      "/lib/pkgconfig",
+      "/share/doc"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/Tencent/rapidjson.git",
+        "commit": "24b5e7a8b27f42fa16b96fc70aade9106cf7102f"
+      }
+    ]
+  }
+}

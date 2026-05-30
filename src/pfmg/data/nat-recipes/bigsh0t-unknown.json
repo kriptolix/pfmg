@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "bigsh0t",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "bigsh0t",
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "no-make-install": true,
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DBUILD_TESTING=OFF"
+    ],
+    "post-install": [
+      "cp -v bigsh0t-*-linux/lib/frei0r-1/*.so /app/lib/frei0r-1"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://bitbucket.org/leo_sutic/bigsh0t",
+        "commit": "d973312f2c1f4bc6ed7d20e11c3f6cebb510a77b"
+      }
+    ]
+  }
+}

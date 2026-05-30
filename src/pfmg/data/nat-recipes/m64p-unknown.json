@@ -1,0 +1,30 @@
+{
+  "header": {
+    "id": "m64p",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "m64p",
+    "buildsystem": "simple",
+    "build-options": {
+      "cflags-override": true,
+      "cppflags-override": true,
+      "cxxflags-override": true,
+      "ldflags-override": true
+    },
+    "build-commands": [
+      "./build.sh nozip",
+      "mv mupen64plus /app"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/m64p/m64p.git",
+        "tag": "v2022.08.9",
+        "commit": "fbf2c912a7f2f8bdfd26a686bd679418a0ed3270"
+      }
+    ]
+  }
+}

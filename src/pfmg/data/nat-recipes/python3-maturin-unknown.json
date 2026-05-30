@@ -1,0 +1,34 @@
+{
+  "header": {
+    "id": "python3-maturin",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-maturin",
+    "buildsystem": "simple",
+    "build-options": {
+      "append-path": "/usr/lib/sdk/rust-stable/bin",
+      "env": {
+        "CARGO_HOME": "/run/build/python3-maturin/cargo",
+        "RUSTFLAGS": "-L /app/lib/"
+      }
+    },
+    "build-commands": [
+      "cargo --offline fetch --manifest-path Cargo.toml --verbose",
+      "cargo --offline build --release --verbose",
+      "install -Dm755 target/release/maturin -t ${FLATPAK_DEST}/bin",
+      "install -Dm644 maturin/__init__.py -t ${FLATPAK_DEST}/lib/python$(python -c 'import sys; print(\"%s.%s\" %sys.version_info[0:2])')/site-packages/maturin/"
+    ],
+    "sources": [
+      "maturin-cargo.json",
+      {
+        "type": "git",
+        "url": "https://github.com/PyO3/maturin/",
+        "tag": "v1.12.4",
+        "commit": "8495767a57c5060fbcdf5a33d670efe2d5af1f0b"
+      }
+    ]
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "quickcheck",
+    "version": "2.15.0.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "QuickCheck",
+    "buildsystem": "simple",
+    "builddir": false,
+    "build-commands": [
+      "echo '#! /usr/bin/env runhaskell' >Setup.txt",
+      "echo '> import Distribution.Simple' >>Setup.txt",
+      "echo '> main = defaultMain' >>Setup.txt",
+      "ln -s Setup.txt Setup.lhs || true",
+      "runhaskell Setup configure --prefix=/app",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "sources": [
+      {
+        "sha256": "a3b2216ddbaf481dbc82414b6120f8b726d969db3f0b51f20a7a45425ef36e7f",
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/QuickCheck-2.15.0.1/QuickCheck-2.15.0.1.tar.gz"
+      },
+      {
+        "dest-filename": "QuickCheck.cabal",
+        "sha256": "ff732606dd8b3f76e3cb87a26516583d183729bf540085228c82adf037aca8bf",
+        "type": "file",
+        "url": "https://hackage.haskell.org/package/QuickCheck-2.15.0.1/revision/0.cabal"
+      }
+    ]
+  }
+}

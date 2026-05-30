@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "kadas-print-plugin",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "kadas-print-plugin",
+    "buildsystem": "simple",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/kadas-albireo/kadas-print-plugin.git",
+        "commit": "f196a0af072658661e7e1c9d1d65441333ef1b7c"
+      }
+    ],
+    "build-commands": [
+      "mkdir -p /app/share/kadas/python/plugins/",
+      "cp -r kadas_* /app/share/kadas/python/plugins/"
+    ]
+  }
+}

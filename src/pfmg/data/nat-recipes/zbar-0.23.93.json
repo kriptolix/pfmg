@@ -1,0 +1,40 @@
+{
+  "header": {
+    "id": "zbar",
+    "version": "0.23.93",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "zbar",
+    "config-opts": [
+      "--without-qt",
+      "--without-qt5",
+      "--without-gtk",
+      "--without-xv",
+      "--without-imagemagick",
+      "--without-dbus",
+      "--disable-video",
+      "--without-java",
+      "--without-python",
+      "--with-doc=no",
+      "--disable-doc",
+      "--with-introspection=no",
+      "--enable-codes=qrcode"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://linuxtv.org/downloads/zbar/zbar-0.23.93.tar.gz",
+        "sha256": "78ae427a529f0399561bc198de5c2c7ca3f11d05fa9e903e65e501168433d218"
+      },
+      {
+        "type": "script",
+        "dest-filename": "autogen.sh",
+        "commands": [
+          "autoreconf -vfi -W none"
+        ]
+      }
+    ]
+  }
+}

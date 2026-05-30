@@ -1,0 +1,20 @@
+{
+  "header": {
+    "id": "scrape",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "scrape",
+    "buildsystem": "cmake",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/scraterpreter/scrape.git",
+        "tag": "20.09.0"
+      }
+    ],
+    "builddir": true
+  }
+}

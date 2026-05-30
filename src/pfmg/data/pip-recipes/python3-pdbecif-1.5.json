@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-pdbecif",
+    "version": "1.5",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-pdbecif",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"pdbecif\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/7e/6c/a0fd6140df4d45e2ed5e31a3e347fb70653c5f516f2a4853d11dc16418e0/PDBeCif-1.5-py3-none-any.whl",
+        "sha256": "1fe5db0a0c6736f0e7eba5476c94687fdd629b7fe2f4ab71af0d41749da43752"
+      }
+    ]
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "header": {
+    "id": "haskell-unliftio-core",
+    "version": "0.2.1.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "haskell-unliftio-core",
+    "buildsystem": "simple",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/unliftio-core-0.2.1.0/unliftio-core-0.2.1.0.tar.gz",
+        "sha256": "99384cba8d56d9d61b85e38a313a93ebcdb78be6566367f0930ef580597fe3e3",
+        "x-checker-data": {
+          "type": "html",
+          "url": "https://www.stackage.org/lts-21",
+          "version-pattern": ">unliftio-core-([\\d.]+)<",
+          "url-template": "https://hackage.haskell.org/package/unliftio-core-$version/unliftio-core-$version.tar.gz"
+        }
+      },
+      {
+        "type": "shell",
+        "commands": [
+          "sed -i '/\\bbase\\b/ s/< *4\\.17/<5/' *.cabal"
+        ]
+      }
+    ],
+    "build-commands": [
+      "runhaskell Setup configure --prefix=/app --extra-lib-dirs=/app/lib",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "cleanup": [
+      "*"
+    ]
+  }
+}

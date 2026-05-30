@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "libxaw",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libXaw",
+    "buildsystem": "autotools",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://gitlab.freedesktop.org/xorg/lib/libxaw.git",
+        "commit": "f14ba54e9c7e415a05e33dd0b3b5f96e5de05c8b",
+        "tag": "libXaw-1.0.16",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 1766,
+          "tag-template": "libXaw-$version"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "libwebsockets",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libwebsockets",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-D LWS_WITHOUT_TESTAPPS=ON"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://libwebsockets.org/repo/libwebsockets",
+        "tag": "v4.5.2",
+        "commit": "85c6f7959fd40d8aaf7a50be3c9b75f08389a01c"
+      }
+    ]
+  }
+}

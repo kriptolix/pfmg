@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-pip-system-certs",
+    "version": "5.3",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-pip-system-certs",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"pip-system-certs\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/9f/57/752b63c609affae8f26ae0f1d1103d6ea7e707ad45943f62f7422936071d/pip_system_certs-5.3-py3-none-any.whl",
+        "sha256": "3fbb5de62e374a99b688b1ad06e64ee5c4aeb633ef23e3a677d32e3e84fd863c"
+      }
+    ]
+  }
+}

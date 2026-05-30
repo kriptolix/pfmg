@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "ca-certificates",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "ca-certificates",
+    "sources": [
+      {
+        "type": "file",
+        "url": "http://us.archive.ubuntu.com/ubuntu/pool/main/c/ca-certificates/ca-certificates_20230311ubuntu1_all.deb",
+        "sha256": "afb91d57ac5a34a2f65faa890f28f9596127d1b4131d64aab13acbadb1d5e023"
+      }
+    ],
+    "buildsystem": "simple",
+    "build-commands": [
+      "set -xueo pipefail\nar x ca-certificates_*all.deb\ntar xf data.tar.zst\ncat usr/share/ca-certificates/mozilla/*.crt >ca-certificates.crt\ninstall -d /app/share/ca-certificates\ninstall ca-certificates.crt /app/share/ca-certificates\n"
+    ]
+  }
+}

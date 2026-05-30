@@ -1,0 +1,30 @@
+{
+  "header": {
+    "id": "revealjs",
+    "version": "5.2.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "revealjs",
+    "buildsystem": "simple",
+    "build-commands": [
+      "mkdir -p /app/share/apostrophe/libs/reveal.js/",
+      "cp -r * /app/share/apostrophe/libs/reveal.js/"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "archive-type": "tar-gzip",
+        "url": "https://api.github.com/repos/hakimel/reveal.js/tarball/5.2.1",
+        "sha512": "4e0de08e6b44348d4c242363d899eb353131b36ab3e83ce24266740edad245210a4ef87550ece50dd95bff1e55ad24d9bcffc6fff600df8bae14424e1ddde2a8",
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://api.github.com/repos/hakimel/reveal.js/releases/latest",
+          "version-query": ".tag_name",
+          "url-query": ".tarball_url"
+        }
+      }
+    ]
+  }
+}

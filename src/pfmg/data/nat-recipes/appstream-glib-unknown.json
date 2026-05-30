@@ -1,0 +1,34 @@
+{
+  "header": {
+    "id": "appstream-glib",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "appstream-glib",
+    "buildsystem": "meson",
+    "config-opts": [
+      "-Dgtk-doc=false",
+      "-Dbuilder=false",
+      "-Drpm=false",
+      "-Dman=false"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/hughsie/appstream-glib/archive/refs/tags/appstream_glib_0_8_3.tar.gz",
+        "sha256": "15ad7690b0132d883bd066699a7b55f6cef4c0f266d18d781ce5d8112fb4ee63",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 14018,
+          "url-template": "https://github.com/hughsie/appstream-glib/archive/refs/tags/appstream_glib_$version.tar.gz"
+        }
+      }
+    ],
+    "cleanup": [
+      "/share/bash-completion",
+      "/share/aclocal"
+    ]
+  }
+}

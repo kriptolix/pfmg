@@ -1,0 +1,29 @@
+{
+  "header": {
+    "id": "audiofile",
+    "version": "0.3.6",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "audiofile",
+    "cleanup": [
+      "/include",
+      "/lib/pkgconfig",
+      "/share/man",
+      "*.la",
+      "*.a"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "http://audiofile.68k.org/audiofile-0.3.6.tar.gz",
+        "sha256": "cdc60df19ab08bfe55344395739bb08f50fc15c92da3962fac334d3bff116965"
+      },
+      {
+        "type": "patch",
+        "path": "audiofile-gcc6.patch"
+      }
+    ]
+  }
+}

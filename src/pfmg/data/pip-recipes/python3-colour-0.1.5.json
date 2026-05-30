@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "python3-colour",
+    "version": "0.1.5",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-colour",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"colour\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/74/46/e81907704ab203206769dee1385dc77e1407576ff8f50a0681d0a6b541be/colour-0.1.5-py2.py3-none-any.whl",
+        "sha256": "33f6db9d564fadc16e59921a56999b79571160ce09916303d35346dddc17978c",
+        "x-checker-data": {
+          "type": "pypi",
+          "name": "colour",
+          "packagetype": "bdist_wheel"
+        }
+      }
+    ]
+  }
+}

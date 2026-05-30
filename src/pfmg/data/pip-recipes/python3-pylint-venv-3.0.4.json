@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-pylint-venv",
+    "version": "3.0.4",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-pylint-venv",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"pylint-venv==3.0.4\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/a6/10/040e1928236e3d34b26639e3427df88c7249a85aadc621cea2158589b4f8/pylint_venv-3.0.4-py3-none-any.whl",
+        "sha256": "31006a3df398f58f962c9e5620e756b284e8b2bc490594ce5ee5da41920cb32c"
+      }
+    ]
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "wine-staging",
+    "version": "11.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "wine-staging",
+    "buildsystem": "simple",
+    "build-commands": [
+      "mkdir -p wine-staging",
+      "tar xf wine-staging.tar.xz -C wine-staging --strip-components=1",
+      "cp -r wine-staging/bin/* /app/bin/",
+      "cp -r wine-staging/lib/* /app/lib/",
+      "cp -r wine-staging/share/* /app/share/"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://github.com/Kron4ek/Wine-Builds/releases/download/11.1/wine-11.1-staging-amd64-wow64.tar.xz",
+        "dest-filename": "wine-staging.tar.xz",
+        "sha256": "65d83e5ea0fb71cc88c54e19b7d694eeba67fc25dad73a38e58acd90de9e2f5b"
+      }
+    ]
+  }
+}

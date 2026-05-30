@@ -1,0 +1,19 @@
+{
+  "header": {
+    "id": "soapy-uhd",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "soapy_uhd",
+    "buildsystem": "cmake-ninja",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/pothosware/SoapyUHD.git",
+        "commit": "2a5d381f68fd05d5b3c0e7db56c36892ea99b4ae"
+      }
+    ]
+  }
+}

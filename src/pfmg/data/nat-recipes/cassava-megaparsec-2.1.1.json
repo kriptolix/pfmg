@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "cassava-megaparsec",
+    "version": "2.1.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "cassava-megaparsec",
+    "buildsystem": "simple",
+    "builddir": false,
+    "build-commands": [
+      "echo '#! /usr/bin/env runhaskell' >Setup.txt",
+      "echo '> import Distribution.Simple' >>Setup.txt",
+      "echo '> main = defaultMain' >>Setup.txt",
+      "ln -s Setup.txt Setup.lhs || true",
+      "runhaskell Setup configure --prefix=/app",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "sources": [
+      {
+        "sha256": "4631963337675db145c2bf9752bf27b4bae68b7c48ffcac60b428f557b63e786",
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/cassava-megaparsec-2.1.1/cassava-megaparsec-2.1.1.tar.gz"
+      },
+      {
+        "dest-filename": "cassava-megaparsec.cabal",
+        "sha256": "8afa1f9313cf1ed4d0ab4e193387ce80a7c225cea672b04ab83cc5009c9fb8fd",
+        "type": "file",
+        "url": "https://hackage.haskell.org/package/cassava-megaparsec-2.1.1/revision/0.cabal"
+      }
+    ]
+  }
+}

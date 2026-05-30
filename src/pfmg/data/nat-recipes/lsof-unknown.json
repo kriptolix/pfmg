@@ -1,0 +1,30 @@
+{
+  "header": {
+    "id": "lsof",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "lsof",
+    "buildsystem": "simple",
+    "build-commands": [
+      "./Configure -n linux",
+      "make CC=\"cc ${CFLAGS} ${CPPFLAGS} ${LDFLAGS}\"",
+      "install -Dm755 lsof -t /app/bin"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/lsof-org/lsof",
+        "commit": "b173315c8f94bf61d52094857ea3fe7d0f5aaff9",
+        "tag": "4.99.6",
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://api.github.com/repos/lsof-org/lsof/releases/latest",
+          "tag-query": ".tag_name"
+        }
+      }
+    ]
+  }
+}

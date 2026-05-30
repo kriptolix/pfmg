@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "primitive-0.6.3.0",
+    "version": "0.6.3.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "primitive-0.6.3.0",
+    "only-arches": [
+      "x86_64"
+    ],
+    "buildsystem": "simple",
+    "build-commands": [
+      "ghc -threaded --make Setup",
+      "./Setup configure --prefix=/app",
+      "./Setup build",
+      "./Setup install"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "sha256": "cddeff804e0f577f1be0179d5d145dfc170f8bfb66f663b9fba67104a45d9555",
+        "url": "https://hackage.haskell.org/package/primitive-0.6.3.0/primitive-0.6.3.0.tar.gz"
+      }
+    ]
+  }
+}

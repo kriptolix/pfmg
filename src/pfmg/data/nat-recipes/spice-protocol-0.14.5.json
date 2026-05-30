@@ -1,0 +1,19 @@
+{
+  "header": {
+    "id": "spice-protocol",
+    "version": "0.14.5",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "spice-protocol",
+    "buildsystem": "meson",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://www.spice-space.org/download/releases/spice-protocol-0.14.5.tar.xz",
+        "sha256": "baf58449f6e89d19f475899ad5fb9196fdc46c03cc53233f4e39cf2978f9cff7"
+      }
+    ]
+  }
+}

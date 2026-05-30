@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "hledger-lib",
+    "version": "1.40",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "hledger-lib",
+    "buildsystem": "simple",
+    "builddir": false,
+    "build-commands": [
+      "echo '#! /usr/bin/env runhaskell' >Setup.txt",
+      "echo '> import Distribution.Simple' >>Setup.txt",
+      "echo '> main = defaultMain' >>Setup.txt",
+      "ln -s Setup.txt Setup.lhs || true",
+      "runhaskell Setup configure --prefix=/app",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "sources": [
+      {
+        "sha256": "71a38a8fe56b9ef5004461b3d43a53a7a92060c412346ae4f10352f9e6b96a16",
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/hledger-lib-1.40/hledger-lib-1.40.tar.gz"
+      },
+      {
+        "dest-filename": "hledger-lib.cabal",
+        "sha256": "c3e0b19d5d11805db48624e38ea35d1714f01a4740788903cc3ce35bc90c5d26",
+        "type": "file",
+        "url": "https://hackage.haskell.org/package/hledger-lib-1.40/revision/0.cabal"
+      }
+    ]
+  }
+}

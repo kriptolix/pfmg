@@ -1,0 +1,29 @@
+{
+  "header": {
+    "id": "libgravatar",
+    "version": "25.12.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libgravatar",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DBUILD_TESTING=OFF",
+      "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.kde.org/stable/release-service/25.12.2/src/libgravatar-25.12.2.tar.xz",
+        "sha256": "086f3a32695442b49a2716daa354752630e2ac055f9810988a423be51ba5d037",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 8763,
+          "stable-only": true,
+          "url-template": "https://download.kde.org/stable/release-service/$version/src/libgravatar-$version.tar.xz"
+        }
+      }
+    ]
+  }
+}

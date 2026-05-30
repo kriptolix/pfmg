@@ -1,0 +1,26 @@
+{
+  "header": {
+    "id": "libcbor",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libcbor",
+    "buildsystem": "cmake",
+    "cleanup": [
+      "/include",
+      "/lib/pkgconfig",
+      "/lib/cmake",
+      "/lib/*.a"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/PJK/libcbor",
+        "tag": "v0.13.0",
+        "commit": "9826a4315116a588f7416912db9da6fcecd8da11"
+      }
+    ]
+  }
+}

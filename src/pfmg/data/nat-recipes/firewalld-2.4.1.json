@@ -1,0 +1,47 @@
+{
+  "header": {
+    "id": "firewalld",
+    "version": "2.4.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "firewalld",
+    "config-opts": [
+      "--disable-schemas-compile",
+      "--disable-docs",
+      "--disable-systemd",
+      "--disable-nls",
+      "--without-iptables",
+      "--without-iptables-restore",
+      "--without-ip6tables",
+      "--without-ip6tables-restore",
+      "--without-ebtables",
+      "--without-ebtables-restore",
+      "--without-ipset",
+      "--with-python_prefix=/app",
+      "--with-python_exec_prefix=/app"
+    ],
+    "cleanup": [
+      "/bin",
+      "/etc",
+      "/include",
+      "/lib/pkgconfig",
+      "/share",
+      "/sbin"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/firewalld/firewalld/releases/download/v2.4.1/firewalld-2.4.1.tar.bz2",
+        "sha256": "453230c49b961853144dd7614d59e82fafbcc52c314c39ec66d1316274a33001",
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://api.github.com/repos/firewalld/firewalld/releases/latest",
+          "version-query": ".tag_name | sub(\"^v\"; \"\")",
+          "url-query": ".assets[] | select(.name==\"firewalld-\" + $version + \".tar.bz2\") | .browser_download_url"
+        }
+      }
+    ]
+  }
+}

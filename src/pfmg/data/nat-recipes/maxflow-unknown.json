@@ -1,0 +1,26 @@
+{
+  "header": {
+    "id": "maxflow",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "maxflow",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/gerddie/maxflow.git",
+        "commit": "6ac148f164b9567ac81fbb4ebb36112f850c902b"
+      }
+    ],
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
+    ],
+    "cleanup": [
+      "/include",
+      "/lib/pkgconfig"
+    ]
+  }
+}

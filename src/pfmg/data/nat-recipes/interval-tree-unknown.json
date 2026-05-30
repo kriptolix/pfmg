@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "interval-tree",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "interval-tree",
+    "buildsystem": "simple",
+    "build-commands": [
+      "mkdir -p /app/include",
+      "cp -r include/interval-tree /app/include/interval-tree"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/5cript/interval-tree.git",
+        "tag": "v3.1.1",
+        "commit": "dab26b24cd1b163b5640cf6dd9d52968b3532869"
+      }
+    ]
+  }
+}

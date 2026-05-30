@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "string-theory",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "string_theory",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DST_BUILD_TESTS=OFF",
+      "-Wno-dev"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/zrax/string_theory.git",
+        "tag": "3.9",
+        "commit": "42e68a9709936ab379eac4dd6ba53deb2b322e03"
+      }
+    ],
+    "cleanup": [
+      "*"
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "typed-process-0.2.2.0",
+    "version": "0.2.2.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "typed-process-0.2.2.0",
+    "only-arches": [
+      "x86_64"
+    ],
+    "buildsystem": "simple",
+    "build-commands": [
+      "ghc -threaded --make Setup",
+      "./Setup configure --prefix=/app",
+      "./Setup build",
+      "./Setup install"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "sha256": "42ed06889c15aa07577a0e8e3632659e343be95b77afa252b48b592ff7dbcf30",
+        "url": "https://hackage.haskell.org/package/typed-process-0.2.2.0/typed-process-0.2.2.0.tar.gz"
+      }
+    ]
+  }
+}

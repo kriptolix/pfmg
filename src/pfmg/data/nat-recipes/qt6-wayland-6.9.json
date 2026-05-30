@@ -1,0 +1,36 @@
+{
+  "header": {
+    "id": "qt6-wayland",
+    "version": "6.9",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "qt6-wayland",
+    "buildsystem": "cmake-ninja",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "http://download.qt.io/archive/qt/6.9/6.9.2/submodules/qtwayland-everywhere-src-6.9.2.tar.xz",
+        "mirror-urls": [
+          "https://repo.steampowered.com/steamlink/qtwayland-everywhere-src-6.9.2.tar.xz"
+        ],
+        "sha256": "cad79806565568f12f9983fed69219416abcee9d5deef4abdfcf94aa2eef7781"
+      },
+      {
+        "type": "patch",
+        "path": "patches/org.kde.Sdk/qtwayland-use-adwaita-decorations-on-gnome-by-default.patch"
+      }
+    ],
+    "cleanup": [
+      "/bin",
+      "/include",
+      "/lib/*.a",
+      "/lib/*.la",
+      "/lib/*.prl",
+      "/lib/cmake",
+      "/lib/mkspecs",
+      "/lib/pkgconfig"
+    ]
+  }
+}

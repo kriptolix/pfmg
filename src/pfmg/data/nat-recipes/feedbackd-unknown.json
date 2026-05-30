@@ -1,0 +1,31 @@
+{
+  "header": {
+    "id": "feedbackd",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "feedbackd",
+    "buildsystem": "meson",
+    "config-opts": [
+      "-Ddaemon=false",
+      "-Dtests=false"
+    ],
+    "cleanup": [
+      "/bin"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://gitlab.freedesktop.org/agx/feedbackd.git",
+        "tag": "v0.8.9",
+        "commit": "1be162a2e5aad10760f34b734e062c4fa250b159",
+        "x-checker-data": {
+          "type": "git",
+          "version-scheme": "semantic"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "soapyremote",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "SoapyRemote",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-Wno-dev"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/pothosware/SoapyRemote.git",
+        "commit": "40c3ef9053b63885b7444ce7e9ef00d2c7964c9d"
+      }
+    ]
+  }
+}

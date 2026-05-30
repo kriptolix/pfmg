@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "rpi-externals",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "rpi-externals",
+    "buildsystem": "simple",
+    "subdir": "l2ork_addons/raspberry_pi",
+    "build-commands": [
+      "./makeall.sh",
+      "cp -f disis_gpio_dummy/disis_gpio.pd_linux /app/lib/pd-l2ork/extra/disis_gpio.pd_linux",
+      "cp -f disis_gpio/disis_gpio-help.pd /app/lib/pd-l2ork/extra/disis_gpio-help.pd",
+      "cp -f disis_spi/disis_spi.pd_linux /app/lib/pd-l2ork/extra/disis_spi.pd_linux",
+      "cp -f disis_spi/disis_spi-help.pd /app/lib/pd-l2ork/extra/disis_spi-help.pd"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/pd-l2ork/pd-l2ork/",
+        "tag": "20260425",
+        "commit": "5b463522eae95c45bae613f8695da92855424e7f"
+      }
+    ]
+  }
+}

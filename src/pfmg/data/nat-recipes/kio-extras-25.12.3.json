@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "kio-extras",
+    "version": "25.12.3",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "kio-extras",
+    "buildsystem": "cmake-ninja",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.kde.org/stable/release-service/25.12.3/src/kio-extras-25.12.3.tar.xz",
+        "sha256": "b161e363320f96cffba0195e4045a88049fc3c5b93272532dce5ab6ce886916a",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 8763,
+          "stable-only": true,
+          "url-template": "https://download.kde.org/stable/release-service/$version/src/kio-extras-$version.tar.xz"
+        }
+      }
+    ]
+  }
+}

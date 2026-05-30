@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "python3-jsbeautifier",
+    "version": "1.15.4",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-jsbeautifier",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"jsbeautifier==1.15.4\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/96/fd/a40c621ff207f3ce8e484aa0fc8ba4eb6e3ecf52e15b42ba764b457a9550/editorconfig-0.17.1-py3-none-any.whl",
+        "sha256": "1eda9c2c0db8c16dbd50111b710572a5e6de934e39772de1959d41f64fc17c82"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/2d/14/1c65fccf8413d5f5c6e8425f84675169654395098000d8bddc4e9d3390e1/jsbeautifier-1.15.4-py3-none-any.whl",
+        "sha256": "72f65de312a3f10900d7685557f84cb61a9733c50dcc27271a39f5b0051bf528"
+      }
+    ]
+  }
+}

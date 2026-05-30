@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "vkbasalt-cli",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "vkbasalt-cli",
+    "buildsystem": "simple",
+    "build-commands": [
+      "python3 setup.py install --prefix=/app --root=/"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://gitlab.com/TheEvilSkeleton/vkbasalt-cli",
+        "tag": "v3.1.1",
+        "commit": "bba740f77357cfa3558f02f6b8decd8f5a8eaf4e",
+        "x-checker-data": {
+          "type": "git",
+          "is-important": true,
+          "tag-pattern": "^v([\\d.]+)$"
+        }
+      }
+    ]
+  }
+}

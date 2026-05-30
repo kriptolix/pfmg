@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "python3-propcache-arm",
+    "version": "0.4.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-propcache-arm",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"propcache==0.4.0\" --no-build-isolation"
+    ],
+    "only-arches": [
+      "aarch64"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/9f/8e/e0a0bd376c3440476b924eca517589ee535bb4520420d178268bf88558ba/propcache-0.4.0-cp312-cp312-manylinux2014_aarch64.manylinux_2_17_aarch64.manylinux_2_28_aarch64.whl",
+        "sha256": "d9a8d277dc218ddf04ec243a53ac309b1afcebe297c0526a8f82320139b56289"
+      }
+    ]
+  }
+}

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+    <id>com.jetbrains.WebStorm</id>
+    <metadata_license>CC0-1.0</metadata_license>
+    <project_license>LicenseRef-proprietary</project_license>
+    <name>WebStorm</name>
+    <launchable type="desktop-id">com.jetbrains.WebStorm.desktop</launchable>
+    <update_contact>idea@jetbrains.com</update_contact>
+    <summary>JavaScript and TypeScript IDE</summary>
+    <url type="bugtracker">https://youtrack.jetbrains.com/issues/WEB/</url>
+    <url type="help">https://www.jetbrains.com/help/webstorm</url>
+    <url type="homepage">https://www.jetbrains.com/webstorm/</url>
+    <url type="contact">https://www.jetbrains.com/company/contacts</url>
+    <developer id="com.jetbrains">
+        <name>JetBrains s.r.o.</name>
+    </developer>
+    <content_rating type="oars-1.1">
+        <content_attribute id="social-info">moderate</content_attribute>
+    </content_rating>
+    <branding>
+        <color scheme_preference="light" type="primary">#f0eb18</color>
+        <color scheme_preference="dark" type="primary">#00c4f4</color>
+    </branding>
+    <categories>
+        <category>Development</category>
+        <category>IDE</category>
+    </categories>
+    <keywords>
+        <keyword>javascript</keyword>
+        <keyword>typescript</keyword>
+        <keyword>development</keyword>
+        <keyword>ide</keyword>
+    </keywords>
+    <requires>
+        <memory>2048</memory>
+        <control>keyboard</control>
+        <control>pointing</control>
+        <display_length compare="ge">768</display_length>
+    </requires>
+    <recommends>
+        <memory>8192</memory>
+        <display_length compare="ge">1080</display_length>
+        <internet>always</internet>
+    </recommends>
+    <supports>
+        <internet>offline-only</internet>
+    </supports>
+    <description>
+        <p>**This is a community package of WebStorm and not officially supported by JetBrains s.r.o.**</p>
+        <p>Integrated development environment for JavaScript, TypeScript, and related technologies, is one of the most popular software development tools from JetBrains. It lets you get straight to coding and makes it easy to tackle the most challenging tasks, like Git merge conflict resolution or renaming a symbol across multiple files.</p>
+        <p>Here are some key features you get with WebStorm:</p>
+        <ul>
+            <li>Out-of-the-box support for JavaScript, TypeScript, React, Vue, Angular, Node.js, HTML, style sheets, and others.</li>
+            <li>Smart editor with code completion, on-the-fly error detection, safe code refactorings.</li>
+            <li>Navigation and search across the entire codebase helps you save time moving around as your projects grow in size and complexity.</li>
+            <li>Integrated developer tools that allow you to debug and test your client-side and Node.js apps as well as to work with version control, linters, build tools, terminal, and HTTP client.</li>
+            <li>AI Assistant provides context-aware support and AI-powered features to help you streamline time-consuming tasks. It can generate documentation and tests, explain parts of the code, and generate commit messages.</li>
+            <li>Collaborative and remote development, including a service for real time collaborative development and pair programming.</li>
+            <li>Customize your workspace the way you like with different themes, customizable shortcuts, and plugins.</li>
+        </ul>
+    </description>
+    <screenshots>
+        <screenshot type="default">
+            <image type="source">https://raw.githubusercontent.com/flathub/com.jetbrains.WebStorm/refs/heads/master/screenshots/code-completion.png</image>
+            <caption>Code completion</caption>
+        </screenshot>
+        <screenshot>
+            <image type="source">https://raw.githubusercontent.com/flathub/com.jetbrains.WebStorm/refs/heads/master/screenshots/code-quality.png</image>
+            <caption>Code quality analysis</caption>
+        </screenshot>
+        <screenshot>
+            <image type="source">https://raw.githubusercontent.com/flathub/com.jetbrains.WebStorm/refs/heads/master/screenshots/rename-refactoring.png</image>
+            <caption>Safe refactorings</caption>
+        </screenshot>
+        <screenshot>
+            <image type="source">https://raw.githubusercontent.com/flathub/com.jetbrains.WebStorm/refs/heads/master/screenshots/quick-documentation.png</image>
+            <caption>Quick documentation</caption>
+        </screenshot>
+        <screenshot>
+            <image type="source">https://raw.githubusercontent.com/flathub/com.jetbrains.WebStorm/refs/heads/master/screenshots/code-boosters.png</image>
+            <caption>Efficiency-boosting features</caption>
+        </screenshot>
+    </screenshots>
+    <releases>
+        <release version="2026.1.1" date="2026-04-24">
+            <url type="details">https://youtrack.jetbrains.com/articles/WEB-A-233538738/WebStorm-2026.1.1-261.23567.141-build-Release-Notes</url>
+            <description>
+                <ul>
+                    <li>Enable --strict by default</li>
+                    <li>React Add Ability To Extract Component To Its Own File</li>
+                    <li>Svelte: improve support for namespaced components</li>
+                    <li>Svelte 5: TypeScript in markup expressions</li>
+                    <li>LSP: support LSP server-based symbol rename (textDocument/rename request)</li>
+                    <li>Allow automatic reporting of exceptions for remote development</li>
+                    <li>When using an HTTP proxy, the IDE should prompt to re-enter authentication credentials if the proxy server returns a 407 status code</li>
+                    <li>[MCP Server] Run tests tool</li>
+                </ul>
+            </description>
+        </release>
+        <release version="2026.1" date="2026-03-25">
+            <url type="details">https://blog.jetbrains.com/webstorm/2026/03/webstorm-2026-1/</url>
+            <description>
+                <ul>
+                    <li>Junie, Claude Agent, and Codex available directly in the AI chat</li>
+                    <li>ACP Registry for discovering and installing agents</li>
+                    <li>Next edit suggestions</li>
+                    <li>Service-powered TypeScript engine enabled by default</li>
+                    <li>Alignment with TypeScript 6</li>
+                    <li>String-literal import/export support</li>
+                    <li>Highlighting for new React directives</li>
+                    <li>Angular 21 template syntax</li>
+                    <li>Vue TypeScript integration updates</li>
+                    <li>Astro language server configuration</li>
+                    <li>Svelte generics support</li>
+                    <li>Support for modern CSS color spaces</li>
+                </ul>
+                <p>This release also includes numerous fixes and quality-of-life improvements to the support for TypeScript, React, Angular, Vue, Astro, Prettier, and more.</p>
+            </description>
+        </release>
+        <release version="2025.3.4" date="2026-03-18">
+            <url type="details">https://youtrack.jetbrains.com/articles/WEB-A-233538729/WebStorm-2025.3.4-253.32098.39-build-Release-Notes</url>
+            <description>
+                <ul>
+                    <li>Astro: Use component prop completion from Language Server</li>
+                    <li>Advanced option to disable interactive environment variables in IJent</li>
+                </ul>
+            </description>
+        </release>
+        <release version="2025.3.3" date="2026-02-19">
+            <url type="details">https://youtrack.jetbrains.com/articles/WEB-A-233538722/WebStorm-2025.3.3-253.31033.133-build-Release-Notes</url>
+            <description>
+                <ul>
+                    <li>Allow customers to bundle their own plugins in IDE distributions</li>
+                    <li>Make Shift+Enter insert a new line in ClaudeCode</li>
+                </ul>
+            </description>
+        </release>
+        <release version="2025.3.2" date="2026-01-22">
+            <url type="details">https://youtrack.jetbrains.com/articles/WEB-A-233538708/WebStorm-2025.3.2-253.30387.83-build-Release-Notes</url>
+            <description>
+                <ul>
+                    <li>Detection of the “use no memo” and “use memo” directives</li>
+                    <li>Bump @vue/typescript-plugin 3.1.8</li>
+                    <li>When using an HTTP proxy, the IDE should prompt to re-enter authentication credentials if the proxy server returns a 407 status code</li>
+                    <li>Implement support for synchronized output mode</li>
+                    <li>Terragrunt Syntax Support in Terraform Plugin</li>
+                    <li>Stabilize progress bar position between single and multiple progresses</li>
+                    <li>Implement new progresses design</li>
+                </ul>
+            </description>
+        </release>
+    </releases>
+</component>

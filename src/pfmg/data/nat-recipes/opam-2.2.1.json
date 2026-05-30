@@ -1,0 +1,36 @@
+{
+  "header": {
+    "id": "opam",
+    "version": "2.2.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "opam",
+    "buildsystem": "simple",
+    "sources": [
+      {
+        "type": "file",
+        "dest-filename": "opam",
+        "only-arches": [
+          "x86_64"
+        ],
+        "url": "https://github.com/ocaml/opam/releases/download/2.2.1/opam-2.2.1-x86_64-linux",
+        "sha256": "01d6a02adcfe978f7a2ee5f82aa8e807e0ac26cf6bb8b4ede4781318b6405e3f"
+      },
+      {
+        "type": "file",
+        "dest-filename": "opam",
+        "only-arches": [
+          "aarch64"
+        ],
+        "url": "https://github.com/ocaml/opam/releases/download/2.2.1/opam-2.2.1-arm64-linux",
+        "sha256": "cbfa6d5c1869715a9e3454879d59e0f32a020a3224bbbc43eb9ddb3a069813ee"
+      }
+    ],
+    "build-commands": [
+      "chmod +x opam",
+      "mv opam* ${FLATPAK_DEST}/bin"
+    ]
+  }
+}

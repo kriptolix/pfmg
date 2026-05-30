@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "pyqt5-sip",
+    "version": "12.10.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "PyQt5_sip",
+    "buildsystem": "simple",
+    "build-commands": [
+      "python3 setup.py install --prefix=${FLATPAK_DEST} --root=/"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://files.pythonhosted.org/packages/a3/82/08a09deda701feb930aa6462f2f22e07cbcb9aa7c1ef361a090221b4587e/PyQt5_sip-12.10.1.tar.gz",
+        "sha256": "97e008795c453488f51a5c97dbff29cda7841afb1ca842c9e819d8e6cc0ae724"
+      }
+    ]
+  }
+}

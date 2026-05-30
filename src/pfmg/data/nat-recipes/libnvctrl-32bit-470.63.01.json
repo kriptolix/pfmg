@@ -1,0 +1,45 @@
+{
+  "header": {
+    "id": "libnvctrl-32bit",
+    "version": "470.63.01",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libNVCtrl-32bit",
+    "build-options": {
+      "append-path": "/usr/lib/sdk/toolchain-i386/bin",
+      "env": {
+        "CC": "ccache i686-unknown-linux-gnu-gcc",
+        "CXX": "ccache i686-unknown-linux-gnu-g++",
+        "LIB": "lib/i386-linux-gnu"
+      }
+    },
+    "no-autogen": true,
+    "no-make-install": true,
+    "build-commands": [
+      "mkdir -p ${FLATPAK_DEST}/$LIB",
+      "cp -a libXNVCtrl.so* ${FLATPAK_DEST}/$LIB/",
+      "install -D *.h -t ${FLATPAK_DEST}/include/NVCtrl"
+    ],
+    "subdir": "src/libXNVCtrl",
+    "sources": [
+      {
+        "type": "archive",
+        "archive-type": "tar",
+        "url": "https://api.github.com/repos/NVIDIA/nvidia-settings/tarball/refs/tags/470.63.01",
+        "sha256": "0ede63515851d85ac0d1ed5f00e355f539968e6d1fd226120a27b2c66c3575de"
+      },
+      {
+        "type": "patch",
+        "path": "patches/libxnvctrl_so_0.patch",
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://api.github.com/repos/NVIDIA/nvidia-settings/tags",
+          "url-query": ".[0].tarball_url",
+          "version-query": ".[0].name"
+        }
+      }
+    ]
+  }
+}

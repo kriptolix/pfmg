@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop">
+    <id>com.thewavewarden.Odin2</id>
+    <name>Odin2</name>
+    <summary>Odin 2 Synthesizer</summary>
+    <description>
+      <p>Odin 2: A Synth to Please the Gods.</p>
+      <p>The sound of this 24-voice polyphonic beast will take you
+      from your studio right to Valhalla. Earth shattering basses,
+      exquisite leads or mad FX, Odin's got them all! Use the classic
+      sound of analog waveforms - or draw your own. High quality
+      emulations of legendary analog filters like the Moog-ladder or
+      the Korg-35 further shape your signal. Round your sound off with
+      four onboard FX, or get crazy with modulation. There's much to
+      discover in Odin 2.</p>
+      <p>This is the Standalone version.</p>
+    </description>
+    <developer_name>Odin2 Developers</developer_name>
+    <project_license>GPL-3.0-or-later</project_license>
+    <metadata_license>CC0-1.0</metadata_license>
+    <update_contact>hub_AT_figuiere.net</update_contact>
+    <launchable type="desktop-id">com.thewavewarden.Odin2.desktop</launchable>
+    <screenshots>
+      <screenshot type="default">
+        <image>https://cdn.shopify.com/s/files/1/0641/1304/9835/files/odin2_fading.png</image>
+        <caption>The main user interface</caption>
+      </screenshot>
+    </screenshots>
+    <url type="homepage">https://www.thewavewarden.com/odin2</url>
+    <content_rating type="oars-1.1"/>
+    <releases>
+        <release version="2.4.1" date="2025-05-30" />
+        <release version="2.4.0" date="2025-05-11" />
+        <release version="2.3.4" date="2022-08-08"/>
+        <release version="2.3.3" date="2022-06-14"/>
+        <release version="2.3.2" date="2022-02-24"/>
+        <release version="2.3.1" date="2021-07-17"/>
+        <release version="2.2.4" date="2020-10-22"/>
+    </releases>
+</component>

@@ -1,0 +1,33 @@
+{
+  "header": {
+    "id": "haskell-utf8-string",
+    "version": "1.0.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "haskell-utf8-string",
+    "buildsystem": "simple",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/utf8-string-1.0.2/utf8-string-1.0.2.tar.gz",
+        "sha256": "ee48deada7600370728c4156cb002441de770d0121ae33a68139a9ed9c19b09a",
+        "x-checker-data": {
+          "type": "html",
+          "url": "https://www.stackage.org/lts-21",
+          "version-pattern": ">utf8-string-([\\d.]+)<",
+          "url-template": "https://hackage.haskell.org/package/utf8-string-$version/utf8-string-$version.tar.gz"
+        }
+      }
+    ],
+    "build-commands": [
+      "runhaskell Setup configure --prefix=/app --extra-lib-dirs=/app/lib",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "cleanup": [
+      "*"
+    ]
+  }
+}

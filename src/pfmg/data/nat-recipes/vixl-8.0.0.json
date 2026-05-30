@@ -1,0 +1,31 @@
+{
+  "header": {
+    "id": "vixl",
+    "version": "8.0.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "vixl",
+    "buildsystem": "meson",
+    "build-options": {
+      "config-opts": [
+        "-Dsimulator=none"
+      ]
+    },
+    "only-arches": [
+      "aarch64"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/Linaro/vixl/archive/refs/tags/8.0.0.tar.gz",
+        "sha256": "6aebbebcd9b66686ea246b450af529e1fc50fe25209522cc9ab42beae2377d38"
+      },
+      {
+        "type": "patch",
+        "path": "patches/vixl_meson_support.patch"
+      }
+    ]
+  }
+}

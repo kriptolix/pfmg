@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "commons-text",
+    "version": "1.15.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "commons-text",
+    "buildsystem": "simple",
+    "build-commands": [
+      "mkdir -p ${FLATPAK_DEST}/commons-text",
+      "cp -r commons-text/* ${FLATPAK_DEST}/commons-text"
+    ],
+    "cleanup": [
+      "/commons-text"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://archive.apache.org/dist/commons/text/binaries/commons-text-1.15.0-bin.tar.gz",
+        "sha512": "6d1fcbd85a85f38e95ea33c9ab7f58798723b0e6357077246a135c417e75c7b39e278ebdb77fcc8f9b56b52b1eeff113eea9463eaaaee8d38df9afdc149b6421",
+        "dest": "commons-text"
+      }
+    ]
+  }
+}

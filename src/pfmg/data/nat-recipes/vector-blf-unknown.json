@@ -1,0 +1,20 @@
+{
+  "header": {
+    "id": "vector-blf",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "vector_blf",
+    "buildsystem": "cmake-ninja",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/Murmele/vector_blf.git",
+        "tag": "2c1a8e649328f2e06ce4d45c6223628bc39fd178",
+        "commit": "2c1a8e649328f2e06ce4d45c6223628bc39fd178"
+      }
+    ]
+  }
+}

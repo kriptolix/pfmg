@@ -1,0 +1,29 @@
+{
+  "header": {
+    "id": "libyubikey",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libyubikey",
+    "buildsystem": "autotools",
+    "config-opts": [
+      "--disable-static",
+      "--disable-documentation"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/Yubico/yubico-c.git",
+        "commit": "e4334554857b0367085cbf845bf87dd92433e020"
+      },
+      {
+        "type": "shell",
+        "commands": [
+          "autoreconf --install"
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "dvdauthor",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "dvdauthor",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://codeberg.org/daniel_foster/dvdauthor/archive/a99e785cb9b73f4d9a477eb39662fa1e1e2c7c52.tar.gz",
+        "sha512": "65c749b3b8bbccc01754101a2b38f29934e8ddfb251ebba81a81fbd7742325ef1c4b2413ac70064bc52ab0334dd47116a9e711066990899ad6b25abd11f6d5d5"
+      }
+    ],
+    "config-opts": [
+      "-Dbuildtype=release",
+      "-Db_lto=true"
+    ],
+    "buildsystem": "meson"
+  }
+}

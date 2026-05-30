@@ -1,0 +1,31 @@
+{
+  "header": {
+    "id": "qcmbackend",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "QcmBackend",
+    "build-options": {
+      "append-path": "/usr/lib/sdk/rust-stable/bin",
+      "env": {
+        "CARGO_HOME": "/run/build/QcmBackend/cargo"
+      }
+    },
+    "buildsystem": "simple",
+    "build-commands": [
+      "cargo --offline fetch --manifest-path Cargo.toml --verbose",
+      "cargo --offline build --release --verbose",
+      "install -Dm755 ./target/release/QcmBackend -t /app/bin/"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/hypengw/QcmBackend.git",
+        "commit": "8d69528de10a980d351e847aab644da8ccb21ffc"
+      },
+      "./cargo-sources.json"
+    ]
+  }
+}

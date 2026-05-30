@@ -1,0 +1,19 @@
+{
+  "header": {
+    "id": "gresg",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "gresg",
+    "buildsystem": "meson",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://gitlab.com/esodan/gresg.git",
+        "tag": "0.6.0"
+      }
+    ]
+  }
+}

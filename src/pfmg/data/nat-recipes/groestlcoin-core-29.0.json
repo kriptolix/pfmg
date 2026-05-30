@@ -1,0 +1,43 @@
+{
+  "header": {
+    "id": "groestlcoin-core",
+    "version": "29.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "groestlcoin-core",
+    "buildsystem": "simple",
+    "build-commands": [
+      "install -m 0744 -D -t /app/bin/internal bin/groestlcoind",
+      "install -m 0744 -D -t /app/bin/internal bin/groestlcoin-qt",
+      "install -m 0744 -D -t /app/bin/internal bin/groestlcoin-cli"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "only-arches": [
+          "x86_64"
+        ],
+        "url": "https://github.com/Groestlcoin/groestlcoin/releases/download/v29.0/groestlcoin-29.0-x86_64-linux-gnu.tar.gz",
+        "sha256": "e0b3e3d96caf908060779c0d9964c777ccc4b7364af54404ff1768e018e56768",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^v([\\d.]+)$"
+        }
+      },
+      {
+        "type": "archive",
+        "only-arches": [
+          "aarch64"
+        ],
+        "url": "https://github.com/Groestlcoin/groestlcoin/releases/download/v29.0/groestlcoin-29.0-aarch64-linux-gnu.tar.gz",
+        "sha256": "43b67b0945eb63c26bf0106ce3e302d4fe0720900cd8658e84f5d7954899a2a8",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^v([\\d.]+)$"
+        }
+      }
+    ]
+  }
+}

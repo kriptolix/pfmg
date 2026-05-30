@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "recutils",
+    "version": "1.9",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "recutils",
+    "buildsystem": "autotools",
+    "build-options": {
+      "cflags": "-Wno-error=incompatible-pointer-types -Wno-error=implicit-function-declaration"
+    },
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://ftp.gnu.org/gnu/recutils/recutils-1.9.tar.gz",
+        "sha512": "775b3b8925a4e5c6f04c6376291b966bdc271f172be2bca06b1f02155ecba12d916c22219f85fe0393f7f9f200f3788ab5fa5d522da2b84b2a0c0ec198318809",
+        "x-checker-data": {
+          "type": "rotating-url",
+          "url": "https://ftp.gnu.org/gnu/recutils/recutils-1.9.tar.gz",
+          "pattern": "https://ftp.gnu.org/gnu/recutils/recutils-([0-9.]+).tar.gz"
+        }
+      }
+    ]
+  }
+}

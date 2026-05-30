@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-pyvirtualdisplay",
+    "version": "3.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-PyVirtualDisplay",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"PyVirtualDisplay\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/90/eb/c3b8deb661cb3846db63288c99bbb39f217b7807fc8acb2fd058db41e2e6/PyVirtualDisplay-3.0-py3-none-any.whl",
+        "sha256": "40d4b8dfe4b8de8552e28eb367647f311f88a130bf837fe910e7f180d5477f0e"
+      }
+    ]
+  }
+}

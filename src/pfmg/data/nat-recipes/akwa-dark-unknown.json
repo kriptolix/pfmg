@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "akwa-dark",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "Akwa-dark",
+    "buildsystem": "simple",
+    "build-commands": [
+      "install -dm755 /usr/share/runtime/share/themes/Akwa-dark/gtk-3.0",
+      "cp -a Akwa-dark/index.theme /usr/share/runtime/share/themes/Akwa-dark/",
+      "cp -a Akwa-dark/gtk-3.0/** /usr/share/runtime/share/themes/Akwa-dark/gtk-3.0"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/berkiyo/akwa.git"
+      }
+    ]
+  }
+}

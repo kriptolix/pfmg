@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "pyasn1-modules",
+    "version": "0.4.2",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "pyasn1-modules",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --prefix=/app pyasn1_modules*.whl"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/47/8d/d529b5d697919ba8c11ad626e835d4039be708a35b0d22de83a269a6682c/pyasn1_modules-0.4.2-py3-none-any.whl",
+        "sha256": "29253a9207ce32b64c3ac6600edc75368f98473906e8fd1043bd6b5b1de2c14a",
+        "x-checker-data": {
+          "type": "pypi",
+          "name": "pyasn1-modules",
+          "packagetype": "bdist_wheel"
+        }
+      }
+    ]
+  }
+}

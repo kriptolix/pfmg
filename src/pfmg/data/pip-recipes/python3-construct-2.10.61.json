@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-construct",
+    "version": "2.10.61",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-construct",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"construct==2.10.61\""
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/13/92/517dd8f4b4f79d75a15b1c9c68e510cb323da0ff098f7ed62d2fdda525db/construct-2.10.61.tar.gz",
+        "sha256": "d75384a04cb36ae5417dd34ce230c392e6085d872ab8a99ebd756c34bac0dff5"
+      }
+    ]
+  }
+}

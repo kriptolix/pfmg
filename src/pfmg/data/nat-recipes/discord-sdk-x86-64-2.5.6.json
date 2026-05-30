@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "discord-sdk-x86-64",
+    "version": "2.5.6",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "discord-sdk-x86_64",
+    "only-arches": [
+      "x86_64"
+    ],
+    "buildsystem": "simple",
+    "build-commands": [
+      "mkdir -p /app/discord",
+      "mv lib /app/discord"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://dl-game-sdk.discordapp.net/2.5.6/discord_game_sdk.zip",
+        "sha256": "426eb5fa70647d884f461c63825b63668349efb4bc68a16e70bc4a24e119b92e",
+        "strip-components": 0
+      }
+    ]
+  }
+}

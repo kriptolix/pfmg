@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "gtksourceview3",
+    "version": "3.24",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "gtksourceview3",
+    "config-opts": [
+      "--enable-gtk-doc=no",
+      "--enable-introspection=yes"
+    ],
+    "cleanup": [
+      "/include",
+      "/lib/pkgconfig",
+      "/share/gtk-doc",
+      "*.la"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.gnome.org/sources/gtksourceview/3.24/gtksourceview-3.24.11.tar.xz",
+        "sha256": "691b074a37b2a307f7f48edc5b8c7afa7301709be56378ccf9cc9735909077fd"
+      },
+      {
+        "type": "patch",
+        "path": "patches/gtksourceview3-0001-gcc14.patch"
+      }
+    ]
+  }
+}

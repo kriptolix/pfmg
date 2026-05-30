@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "lerc",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "lerc",
+    "buildsystem": "cmake-ninja",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/Esri/lerc.git",
+        "tag": "v4.1.0",
+        "x-checker-data": {
+          "type": "git"
+        },
+        "commit": "fa0ae1b00903cc55e321d5c0165746310092adf8"
+      }
+    ]
+  }
+}

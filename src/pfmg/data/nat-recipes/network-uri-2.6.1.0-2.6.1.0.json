@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "network-uri-2.6.1.0",
+    "version": "2.6.1.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "network-uri-2.6.1.0",
+    "only-arches": [
+      "x86_64"
+    ],
+    "buildsystem": "simple",
+    "build-commands": [
+      "ghc -threaded --make Setup",
+      "./Setup configure --prefix=/app",
+      "./Setup build",
+      "./Setup install"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "sha256": "423e0a2351236f3fcfd24e39cdbc38050ec2910f82245e69ca72a661f7fc47f0",
+        "url": "https://hackage.haskell.org/package/network-uri-2.6.1.0/network-uri-2.6.1.0.tar.gz"
+      }
+    ]
+  }
+}

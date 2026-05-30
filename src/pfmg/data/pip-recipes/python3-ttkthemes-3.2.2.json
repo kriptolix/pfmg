@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "python3-ttkthemes",
+    "version": "3.2.2",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-ttkthemes",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"ttkthemes\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/fa/45/ab8ada55281af99a03bc0f8be53a502eb37ee34b94819a9ced89e8b0c12f/ttkthemes-3.2.2.tar.gz",
+        "sha256": "01daed001f2ff0e4f32832a0d9ea48176c0c505203b030756bdde3bd1bcb21d2",
+        "x-checker-data": {
+          "type": "pypi",
+          "name": "ttkthemes"
+        }
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/af/cb/bb5c01fcd2a69335b86c22142b2bccfc3464087efb7fd382eee5ffc7fdf7/pillow-11.2.1.tar.gz",
+        "sha256": "a64dd61998416367b7ef979b73d3a85853ba9bec4c2925f74e588879a58716b6",
+        "x-checker-data": {
+          "type": "pypi",
+          "name": "Pillow"
+        }
+      }
+    ]
+  }
+}

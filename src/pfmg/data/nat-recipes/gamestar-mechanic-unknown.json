@@ -1,0 +1,40 @@
+{
+  "header": {
+    "id": "gamestar-mechanic",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "gamestar-mechanic",
+    "buildsystem": "simple",
+    "build-options": {
+      "env": {
+        "XDG_CACHE_HOME": "/run/build/gamestar-mechanic/flatpak-node/cache"
+      }
+    },
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/endlessm/gamestar-mechanic-linux.git",
+        "commit": "7c1b5877965bc9d1931d2e125150c3c9d63ec791",
+        "tag": "v1.3.2",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^v([\\d.]+)$"
+        }
+      },
+      "generated-sources.json"
+    ],
+    "build-commands": [
+      "env HOME=$PWD yarn --offline config set yarn-offline-mirror \"${FLATPAK_BUILDER_BUILDDIR}/flatpak-node/yarn-mirror\"",
+      "yarn --offline install --immutable --immutable-cache --inline-builds",
+      "yarn --offline run pack --linux",
+      "cp -a dist/linux*unpacked ${FLATPAK_DEST}/main",
+      "install -m644 res/icon/com.gamestarmechanic.gamestarmechanic.png -Dt ${FLATPAK_DEST}/share/icons/hicolor/512x512/apps",
+      "install -m644 res/com.gamestarmechanic.gamestarmechanic.desktop -Dt ${FLATPAK_DEST}/share/applications",
+      "install -m644 res/com.gamestarmechanic.gamestarmechanic.metainfo.xml -Dt ${FLATPAK_DEST}/share/metainfo",
+      "desktop-file-edit --set-key=\"Exec\" --set-value=\"gamestarmechanic-wrapper %u\" ${FLATPAK_DEST}/share/applications/com.gamestarmechanic.gamestarmechanic.desktop"
+    ]
+  }
+}

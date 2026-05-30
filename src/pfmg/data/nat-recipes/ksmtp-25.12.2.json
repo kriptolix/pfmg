@@ -1,0 +1,29 @@
+{
+  "header": {
+    "id": "ksmtp",
+    "version": "25.12.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "ksmtp",
+    "config-opts": [
+      "-DBUILD_TESTING=OFF",
+      "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+    ],
+    "buildsystem": "cmake-ninja",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.kde.org/stable/release-service/25.12.2/src/ksmtp-25.12.2.tar.xz",
+        "sha256": "331c237109d63c30a16293841cdfad263a0bdccb60f767831078a6ffe6489e41",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 8763,
+          "stable-only": true,
+          "url-template": "https://download.kde.org/stable/release-service/$version/src/ksmtp-$version.tar.xz"
+        }
+      }
+    ]
+  }
+}

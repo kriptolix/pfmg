@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "python3-sqlobject",
+    "version": "3.13.1",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-sqlobject",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"sqlobject\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/6f/7e/31b40531ae4bae04f795f849b6428245ee49a49bcd8472f9839fb2602ff4/FormEncode-2.1.1-py3-none-any.whl",
+        "sha256": "2194d0c9bfe15c3bf9c331cca0cb73de3746f64d327cff06f097a5abb8552d2d"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/66/0e/9ee7bc0b48ec45d93b302fa2d787830dca4dc454d31a237faa5815995988/PyDispatcher-2.0.7-py3-none-any.whl",
+        "sha256": "96543bea04115ffde08f851e1d45cacbfd1ee866ac42127d9b476dc5aefa7de0"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/fa/ae/e15346b14a06582d2a1002a511a7266e8e3cf346c23ff49a6ccc8194241f/sqlobject-3.13.1-py2.py3-none-any.whl",
+        "sha256": "51a1897203c39584578b0121180fd1be611e0f7d18ceff7b3f9f5432c7e20816"
+      }
+    ]
+  }
+}

@@ -1,0 +1,79 @@
+{
+  "header": {
+    "id": "timidity",
+    "version": "2.15.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "timidity",
+    "buildsystem": "autotools",
+    "build-options": {
+      "cflags": "-Wno-error=incompatible-pointer-types -Wno-error=implicit-function-declaration"
+    },
+    "config-opts": [
+      "--enable-alsa",
+      "--enable-alsaseq",
+      "--enable-audio=alsa,pulse",
+      "--enable-interface=server,alsaseq"
+    ],
+    "cleanup": [
+      "*.la",
+      "*.a",
+      "/include",
+      "/lib/pkgconfig",
+      "/share/man",
+      "/share/doc"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://sourceforge.net/projects/timidity/files/TiMidity++/TiMidity++-2.15.0/TiMidity++-2.15.0.tar.bz2",
+        "sha256": "161fc0395af16b51f7117ad007c3e434c825a308fa29ad44b626ee8f9bb1c8f5"
+      },
+      {
+        "type": "shell",
+        "commands": [
+          "sed -i '/int line_fold();/d' utils/nkflib.c"
+        ]
+      },
+      {
+        "type": "inline",
+        "dest-filename": "custom-timidity.cfg",
+        "contents": "dir /app/share/soundfonts\nsource /app/share/soundfonts/fluid3gm.cfg\nopt EFresamp=d\nopt EFvlpf=d\nopt EFreverb=d\n"
+      },
+      {
+        "type": "patch",
+        "path": "patches/0001-timidity-fix-missing-includes.patch"
+      },
+      {
+        "type": "inline",
+        "dest-filename": "heroic-midi-wrapper",
+        "contents": "#!/bin/bash\n\ndetect_midi_game() {\n  local game_dir=\"$1\"\n  if [[ ! -d \"$game_dir\" ]]; then return 1; fi\n  if find \"$game_dir\" -iname \"*.mid\" -o -iname \"*.midi\" | grep -q .; then\n    echo \"Found MIDI files in game directory\"\n    return 0\n  fi\n  if find \"$game_dir\" -name \"*.cfg\" -o -name \"*.conf\" -o -name \"*.ini\" | \\\n    xargs grep -l -i \"midi\\|timidity\\|mpu-401\\|sound.*midi\" 2>/dev/null | grep -q .; then\n    echo \"Found MIDI configuration references\"  \n    return 0\n  fi\n  return 1\n}\n\nstart_timidity() {\n  if ! pgrep -f \"timidity.*-iA\" > /dev/null; then\n    echo \"Auto-starting TiMidity++ for MIDI-enabled game\"\n    /app/bin/timidity -iA &\n    TIMIDITY_PID=$!\n    sleep 2\n    echo \"TiMidity++ ready for MIDI playback\"\n  fi\n}\n\ncleanup() {\n  if [[ -n \"$TIMIDITY_PID\" ]] && kill -0 \"$TIMIDITY_PID\" 2>/dev/null; then\n    echo \"Stopping TiMidity++ (PID: $TIMIDITY_PID)\"\n    kill \"$TIMIDITY_PID\" 2>/dev/null\n  fi\n}\n\ntrap cleanup EXIT INT TERM\n\nif [[ -n \"$STEAM_COMPAT_INSTALL_PATH\" ]]; then\n  if detect_midi_game \"$STEAM_COMPAT_INSTALL_PATH\"; then\n    start_timidity\n  fi\nfi\n\n/app/bin/gamemoderun-original \"$@\" &\nGAME_PID=$!\n\nwait $GAME_PID\nGAME_EXIT_CODE=$?\n\ncleanup\nexit $GAME_EXIT_CODE\n"
+      }
+    ],
+    "post-install": [
+      "install -d ${FLATPAK_DEST}/share/timidity",
+      "install -Dm644 custom-timidity.cfg ${FLATPAK_DEST}/share/timidity/timidity.cfg",
+      "mv ${FLATPAK_DEST}/bin/gamemoderun ${FLATPAK_DEST}/bin/gamemoderun-original",
+      "install -Dm755 heroic-midi-wrapper ${FLATPAK_DEST}/bin/gamemoderun",
+      "install -d ${FLATPAK_DEST}/share/alsa",
+      "cp -ar /usr/share/alsa/* ${FLATPAK_DEST}/share/alsa/",
+      "install -d ${FLATPAK_DEST}/etc",
+      "ln -sf /app/share/alsa/alsa.conf ${FLATPAK_DEST}/etc/asound.conf",
+      "install -d ${FLATPAK_DEST}/lib/x86_64-linux-gnu/alsa-lib",
+      "cp -a /usr/lib/x86_64-linux-gnu/alsa-lib/*.so ${FLATPAK_DEST}/lib/x86_64-linux-gnu/alsa-lib/",
+      "install -d ${FLATPAK_DEST}/lib/i386-linux-gnu/alsa-lib",
+      "cp -a /usr/lib/i386-linux-gnu/alsa-lib/*.so ${FLATPAK_DEST}/lib/i386-linux-gnu/alsa-lib/",
+      "install -d ${FLATPAK_DEST}/lib/x86_64-linux-gnu",
+      "cp -a /usr/lib/x86_64-linux-gnu/libpulse.so* ${FLATPAK_DEST}/lib/x86_64-linux-gnu/",
+      "cp -a /usr/lib/x86_64-linux-gnu/libsndfile.so* ${FLATPAK_DEST}/lib/x86_64-linux-gnu/",
+      "cp -a /usr/lib/x86_64-linux-gnu/libogg.so* ${FLATPAK_DEST}/lib/x86_64-linux-gnu/",
+      "cp -a /usr/lib/x86_64-linux-gnu/libvorbis*.so* ${FLATPAK_DEST}/lib/x86_64-linux-gnu/",
+      "cp -a /usr/lib/x86_64-linux-gnu/libFLAC.so* ${FLATPAK_DEST}/lib/x86_64-linux-gnu/",
+      "cp -a /usr/lib/x86_64-linux-gnu/libopus.so* ${FLATPAK_DEST}/lib/x86_64-linux-gnu/",
+      "install -d ${FLATPAK_DEST}/lib/x86_64-linux-gnu/pulseaudio",
+      "cp -a /usr/lib/x86_64-linux-gnu/pulseaudio/libpulsecommon*.so ${FLATPAK_DEST}/lib/x86_64-linux-gnu/pulseaudio/"
+    ]
+  }
+}

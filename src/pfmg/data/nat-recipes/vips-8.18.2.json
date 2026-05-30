@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "vips",
+    "version": "8.18.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "vips",
+    "buildsystem": "meson",
+    "config-opts": [
+      "-Ddeprecated=false",
+      "-Dexamples=false",
+      "-Dintrospection=disabled"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/libvips/libvips/releases/download/v8.18.2/vips-8.18.2.tar.xz",
+        "sha256": "a30d4aede16f1c2899c1a2241870f8a7409feafa38484bcdcdac113d6d6f8ff5"
+      }
+    ]
+  }
+}

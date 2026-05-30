@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "hashtables",
+    "version": "1.3.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "hashtables",
+    "buildsystem": "simple",
+    "builddir": false,
+    "build-commands": [
+      "echo '#! /usr/bin/env runhaskell' >Setup.txt",
+      "echo '> import Distribution.Simple' >>Setup.txt",
+      "echo '> main = defaultMain' >>Setup.txt",
+      "ln -s Setup.txt Setup.lhs || true",
+      "runhaskell Setup configure --prefix=/app",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "sources": [
+      {
+        "sha256": "6f3d40eb22ab87279b9a0bf51c22307706b240c90a664c82bfae2392268c59c3",
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/hashtables-1.3.1/hashtables-1.3.1.tar.gz"
+      },
+      {
+        "dest-filename": "hashtables.cabal",
+        "sha256": "0c0a5620c2c1114dd63cb3130e4af4939c7b8fe624552f3ca48e66d95c75be1f",
+        "type": "file",
+        "url": "https://hackage.haskell.org/package/hashtables-1.3.1/revision/0.cabal"
+      }
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "kicad-doc",
+    "version": "5.1.9",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "kicad-doc",
+    "build-commands": [
+      "find . -type f -exec install -Dm644 \"{}\" \"${FLATPAK_DEST}/{}\" \\;"
+    ],
+    "buildsystem": "simple",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://kicad-downloads.s3.cern.ch/docs/kicad-doc-5.1.9.tar.gz",
+        "sha256": "61571f260bba67e26b9f7456ad6eb5da7c3b406412f506e7857d0ca70ca66393"
+      }
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "libdab",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libdab",
+    "subdir": "library",
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "config-opts": [
+      "-Wno-dev"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/srcejon/dab-cmdline.git",
+        "commit": "4c7ab58857a1de71f585728ffcbc4916db9b56c7"
+      }
+    ]
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "vault-0.3.1.2",
+    "version": "0.3.1.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "build-commands": [
+      "ghc -threaded --make Setup",
+      "./Setup configure --prefix=/app",
+      "./Setup build",
+      "./Setup install"
+    ],
+    "buildsystem": "simple",
+    "cleanup": [],
+    "name": "vault-0.3.1.2",
+    "only-arches": [],
+    "sources": [
+      {
+        "sha256": "9e00e52ec0b054cfb9b1e44d8ce2eefb499cc1dcd4bcdd0d434b370d635e551c",
+        "type": "archive",
+        "url": "https://s3.amazonaws.com/hackage.fpcomplete.com/package/vault-0.3.1.2.tar.gz"
+      },
+      {
+        "sha256": "aa0869aa80026d0bfbbeee44a6381ccd2a2c960ce3ef7d484b14270e054ca79a",
+        "type": "file",
+        "url": "https://raw.githubusercontent.com/commercialhaskell/all-cabal-files/a5f22172fce750e93afa6987320f5c5be62b5670/vault/0.3.1.2/vault.cabal"
+      }
+    ]
+  }
+}

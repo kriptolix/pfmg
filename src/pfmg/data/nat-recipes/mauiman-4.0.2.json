@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "mauiman",
+    "version": "4.0.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "mauiman",
+    "buildsystem": "cmake-ninja",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.kde.org/stable/maui/mauiman/4.0.2/mauiman-4.0.2.tar.xz",
+        "sha256": "81f9f25fbc959040b7efcca1d9d127c5894c6a6baf2ffe53ccba42d682258f00",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 315311,
+          "stable-only": true,
+          "url-template": "https://download.kde.org/stable/maui/mauiman/$version/mauiman-$version.tar.xz"
+        }
+      }
+    ]
+  }
+}

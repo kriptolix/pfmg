@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "youtube-dl",
+    "version": "2021.12.17",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "youtube-dl",
+    "no-autogen": true,
+    "no-make-install": true,
+    "make-args": [
+      "youtube-dl",
+      "PYTHON=/usr/bin/python3"
+    ],
+    "post-install": [
+      "install -Dm755 youtube-dl -t /app/bin"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/ytdl-org/youtube-dl/releases/download/2021.12.17/youtube-dl-2021.12.17.tar.gz",
+        "sha256": "9f3b99c8b778455165b4525f21505e86c7ff565f3ac319e19733d810194135df",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 5292,
+          "url-template": "https://github.com/ytdl-org/youtube-dl/releases/download/$version/youtube-dl-$version.tar.gz"
+        }
+      }
+    ]
+  }
+}

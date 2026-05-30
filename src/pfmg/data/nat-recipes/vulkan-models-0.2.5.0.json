@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "vulkan-models",
+    "version": "0.2.5.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "vulkan-models",
+    "buildsystem": "simple",
+    "build-commands": [
+      "mkdir /app/bin/models; mv *.{bin,param} /app/bin/models"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/xinntao/Real-ESRGAN/releases/download/v0.2.5.0/realesrgan-ncnn-vulkan-20220424-ubuntu.zip",
+        "sha256": "e5aa6eb131234b87c0c51f82b89390f5e3e642b7b70f2b9bbe95b6a285a40c96"
+      }
+    ]
+  }
+}

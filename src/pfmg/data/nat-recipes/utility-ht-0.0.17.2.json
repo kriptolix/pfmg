@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "utility-ht",
+    "version": "0.0.17.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "utility-ht",
+    "buildsystem": "simple",
+    "builddir": false,
+    "build-commands": [
+      "echo '#! /usr/bin/env runhaskell' >Setup.txt",
+      "echo '> import Distribution.Simple' >>Setup.txt",
+      "echo '> main = defaultMain' >>Setup.txt",
+      "ln -s Setup.txt Setup.lhs || true",
+      "runhaskell Setup configure --prefix=/app",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "sources": [
+      {
+        "sha256": "0a8ec081956d18f8ca84f58aacf39a5ab1a7dc08302e2ce28b4ac3768bb0372c",
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/utility-ht-0.0.17.2/utility-ht-0.0.17.2.tar.gz"
+      },
+      {
+        "dest-filename": "utility-ht.cabal",
+        "sha256": "ee925ec38eebd2d6f0ff2017d3f9fecde6e27c07f29c64b5b4f9a678ff5fd15e",
+        "type": "file",
+        "url": "https://hackage.haskell.org/package/utility-ht-0.0.17.2/revision/0.cabal"
+      }
+    ]
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "screensaver.biogenesis",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "screensaver.biogenesis",
+    "buildsystem": "cmake-ninja",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/xbmc/screensaver.biogenesis",
+        "commit": "128c9706f0ea529b83421590c947e23ce2b8367a"
+      }
+    ],
+    "build-options": {
+      "no-debuginfo": true,
+      "cflags": "-g0",
+      "cxxflags": "-g0"
+    },
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release"
+    ]
+  }
+}

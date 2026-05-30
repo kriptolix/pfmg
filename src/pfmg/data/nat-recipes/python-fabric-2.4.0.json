@@ -1,0 +1,42 @@
+{
+  "header": {
+    "id": "python-fabric",
+    "version": "2.4.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python-fabric",
+    "buildsystem": "simple",
+    "build-options": {
+      "arch": {
+        "i386": {
+          "env": {
+            "MAX_CONCURRENCY": "1"
+          }
+        },
+        "arm": {
+          "env": {
+            "MAX_CONCURRENCY": "1"
+          }
+        }
+      }
+    },
+    "ensure-writable": [
+      "/lib/python*/site-packages/easy-install.pth",
+      "/lib/python*/site-packages/setuptools.pth",
+      "/app/lib/python*/site-packages/easy-install.pth",
+      "/app/lib/python*/site-packages/setuptools.pth"
+    ],
+    "build-commands": [
+      "python3 setup.py install --prefix=/app --root=/"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/fabric/fabric/archive/2.4.0.tar.gz",
+        "sha256": "cb562fe648c8a473be8684a5a36494c0b8d1d2b3654776f1628df2c0808f236b"
+      }
+    ]
+  }
+}

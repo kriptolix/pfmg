@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "vte",
+    "version": "0.82",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "vte",
+    "buildsystem": "meson",
+    "config-opts": [
+      "--buildtype=release",
+      "-Dgtk3=false",
+      "-Dgtk4=true",
+      "-Dglade=false",
+      "-Dgir=false",
+      "-Dvapi=false"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.gnome.org/sources/vte/0.82/vte-0.82.3.tar.xz",
+        "sha256": "6dc6278f6fee30d07d1a03e2ba3335b1ea4e8d2956ceb59d861943115d930a85",
+        "x-checker-data": {
+          "type": "gnome",
+          "version-scheme": "odd-minor-is-unstable",
+          "name": "vte"
+        }
+      }
+    ]
+  }
+}

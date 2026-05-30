@@ -1,0 +1,33 @@
+{
+  "header": {
+    "id": "libmtp",
+    "version": "1.1.22",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libmtp",
+    "buildsystem": "autotools",
+    "config-opts": [
+      "--with-udev=/app/lib/udev"
+    ],
+    "cleanup": [
+      "/share/doc",
+      "*.a",
+      "*.la"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/libmtp/libmtp/releases/download/v1.1.22/libmtp-1.1.22.tar.gz",
+        "sha256": "c3fcf411aea9cb9643590cbc9df99fa5fe30adcac695024442973d76fa5f87bc",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 10017,
+          "stable-only": true,
+          "url-template": "https://github.com/libmtp/libmtp/releases/download/v$version/libmtp-$version.tar.gz"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "libxml2-legacy",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libxml2-legacy",
+    "buildsystem": "meson",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://gitlab.gnome.org/GNOME/libxml2.git",
+        "tag": "v2.13.9",
+        "commit": "04af2cabb9f859c198b8a553c028a87481199410"
+      },
+      {
+        "type": "patch",
+        "path": "libxml2-legacy-0001-meson-Build-fixes.patch"
+      }
+    ]
+  }
+}

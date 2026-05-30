@@ -1,0 +1,31 @@
+{
+  "header": {
+    "id": "qtkeychain",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "qtkeychain",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DBUILD_WITH_QT6=ON",
+      "-DUSE_CREDENTIAL_STORE=ON",
+      "-DBUILD_SHARED_LIBS=OFF",
+      "-DBUILD_TRANSLATIONS=OFF",
+      "-DCMAKE_CXX_FLAGS=-fPIC"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/frankosterfeld/qtkeychain",
+        "tag": "0.15.0",
+        "commit": "ad7344c45a86a4f66cbafc4b081b5f7b876cb0b7",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^([\\d.]+)$"
+        }
+      }
+    ]
+  }
+}

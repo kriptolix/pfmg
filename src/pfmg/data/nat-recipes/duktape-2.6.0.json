@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "duktape",
+    "version": "2.6.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "duktape",
+    "buildsystem": "simple",
+    "build-commands": [
+      "mv Makefile.sharedlibrary Makefile",
+      "sed 's#INSTALL_PREFIX = /usr/local#INSTALL_PREFIX = /app#g' -i Makefile",
+      "CFLAGS='$CFLAGS -D DUK_USE_FASTINT -w' INSTALL_PREFIX=/app make",
+      "CFLAGS='$CFLAGS -D DUK_USE_FASTINT -w' INSTALL_PREFIX=/app make install"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://duktape.org/duktape-2.6.0.tar.xz",
+        "sha256": "96f4a05a6c84590e53b18c59bb776aaba80a205afbbd92b82be609ba7fe75fa7"
+      }
+    ]
+  }
+}

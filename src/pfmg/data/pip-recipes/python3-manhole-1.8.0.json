@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-manhole",
+    "version": "1.8.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-manhole",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"manhole\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/9c/66/fdccda930b31bf74f1f17509ad60d277f199663c14e96245e654370957e0/manhole-1.8.0-py2.py3-none-any.whl",
+        "sha256": "a17f62f9d47bd9a53438f655d351d7d2b0d6e9d805665fc775e4cb6cbbb4440b"
+      }
+    ]
+  }
+}

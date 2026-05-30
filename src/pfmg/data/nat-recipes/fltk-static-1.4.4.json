@@ -1,0 +1,40 @@
+{
+  "header": {
+    "id": "fltk-static",
+    "version": "1.4.4",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "fltk-static",
+    "buildsystem": "autotools",
+    "config_opts": [
+      "--enable-threads",
+      "--enable-cairo",
+      "--disable-wayland",
+      "--disable-shared"
+    ],
+    "build-options": {
+      "cflags": "-fPIC",
+      "cxxflags": "-fPIC"
+    },
+    "cleanup": [
+      "/bin",
+      "/include",
+      "/man",
+      "/share/doc",
+      "/share/man",
+      "/lib/pkgconfig",
+      "*.so",
+      "*.la",
+      "*.a"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/fltk/fltk/releases/download/release-1.4.4/fltk-1.4.4-source.tar.bz2",
+        "sha256": "2b302c80b7ea937a8bdc01ed6718fd995035bf63e9a2895491c1001821725f1f"
+      }
+    ]
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "these",
+    "version": "1.2.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "these",
+    "buildsystem": "simple",
+    "builddir": false,
+    "build-commands": [
+      "echo '#! /usr/bin/env runhaskell' >Setup.txt",
+      "echo '> import Distribution.Simple' >>Setup.txt",
+      "echo '> main = defaultMain' >>Setup.txt",
+      "ln -s Setup.txt Setup.lhs || true",
+      "runhaskell Setup configure --prefix=/app",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "sources": [
+      {
+        "sha256": "17d6d933365edabf801a16842c1403bdd37cc5300faa2fcca980decdab22e4de",
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/these-1.2.1/these-1.2.1.tar.gz"
+      },
+      {
+        "dest-filename": "these.cabal",
+        "sha256": "c04f573531b37864506b071046e010a7a6aad11650cf895467f9f279d0130b8b",
+        "type": "file",
+        "url": "https://hackage.haskell.org/package/these-1.2.1/revision/1.cabal"
+      }
+    ]
+  }
+}

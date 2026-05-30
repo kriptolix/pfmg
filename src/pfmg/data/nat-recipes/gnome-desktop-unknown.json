@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "gnome-desktop",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "gnome-desktop",
+    "buildsystem": "meson",
+    "config-opts": [
+      "-Ddebug_tools=true",
+      "-Dudev=disabled"
+    ],
+    "cleanup": [
+      "/libexec/gnome-desktop-debug"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://gitlab.gnome.org/GNOME/gnome-desktop.git",
+        "commit": "33516379260c09db7435432c7a250ce64afaad6e",
+        "tag": "44.4"
+      }
+    ]
+  }
+}

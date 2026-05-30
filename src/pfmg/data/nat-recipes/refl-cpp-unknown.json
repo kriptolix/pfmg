@@ -1,0 +1,21 @@
+{
+  "header": {
+    "id": "refl-cpp",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "refl-cpp",
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/veselink1/refl-cpp.git",
+        "tag": "v0.12.4",
+        "commit": "27fbd7d2e6d86bc135b87beef6b5f7ce53afd4fc"
+      }
+    ]
+  }
+}

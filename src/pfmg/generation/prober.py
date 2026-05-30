@@ -1,5 +1,5 @@
 """
-pfmg.generation.prober
+pfmg.probe.probe
 ~~~~~~~~~~~~~~~~~~~
 
 Orchestrates the full sandbox probe sequence for a set of Python packages:
@@ -14,7 +14,7 @@ Orchestrates the full sandbox probe sequence for a set of Python packages:
        f. Attempt ``python -c "import <pkg>"`` inside the sandbox (informational)
   3. Collate all errors into a SandboxProbeReport with high-level verdicts
 
-Module generation (step 2e) is delegated to ``pfmg.generation.collector.build_pip_module``
+Module generation (step 2e) is delegated to ``pfmg.probe.module.build_pip_module``
 which fully mirrors flatpak-pip-generator (transitive deps, sdist swap, VCS sources).
 
 The prober skips gracefully when:
@@ -47,8 +47,8 @@ from pfmg.utils.models import (
 
 from pfmg.sandbox.runner import SandboxRunner
 from pfmg.sandbox.parser import parse_errors
-from pfmg.generation.collector import build_pip_module
-from pfmg.utils import get_logger, is_available
+from pfmg.generation.collector import build_pip_module, resolve_import_to_pypi_name
+from pfmg.utils.logging import get_logger
 
 if TYPE_CHECKING:
     from pfmg.sandbox.runner import RunResult
@@ -118,6 +118,18 @@ class BuildSandboxProber:
     """
     Probes a set of Python packages inside a real Flatpak build environment.
 
+    Usage::
+
+        prober = BuildSandboxProber(
+            runtime="org.freedesktop.Platform",
+            runtime_version="24.08",
+            sdk="org.freedesktop.Sdk",
+        )
+        report = prober.probe(packages)
+        if report.ran:
+            for err in report.errors:
+                print(err)
+
     After a successful probe, ``report.modules`` contains ready-to-use
     Flatpak module dicts.  Call ``prober.write_modules(report, output_dir)``
     to persist them as JSON (or YAML) files.
@@ -126,7 +138,7 @@ class BuildSandboxProber:
     def __init__(
         self,
         runtime: str = "org.freedesktop.Platform",
-        runtime_version: str = "25.08",
+        runtime_version: str = "24.08",
         sdk: str = "org.freedesktop.Sdk",
         sdk_extensions: Optional[list[str]] = None,
         work_dir: Optional[Path] = None,
@@ -134,6 +146,10 @@ class BuildSandboxProber:
         command_timeout: int = 120,
         build_timeout: int = 600,
         use_uv: bool = True,
+        # Explicit build-time dependencies supplied by the user via --build-dep.
+        # Each entry is a PyPI package name (e.g. "meson-python").
+        # These are probed and added as modules above the main package.
+        build_deps: Optional[list[str]] = None,
         # Module generation options (mirror flatpak-pip-generator CLI flags)
         module_cleanup: Optional[str] = None,
         module_ignore_installed: bool = False,
@@ -150,6 +166,10 @@ class BuildSandboxProber:
         self._build_timeout = build_timeout
         self._use_uv = use_uv
         self._owned_work_dir: Optional[Path] = None
+        # build_deps: list of PyPI package names supplied explicitly by the user
+        # via --build-dep (e.g. ["meson-python", "ninja"]).  These are probed
+        # and added as modules above the main package in the generated manifest.
+        self._build_deps: list[str] = build_deps or []
         # Module generation options forwarded to build_pip_module()
         self._module_cleanup = module_cleanup
         self._module_ignore_installed = module_ignore_installed
@@ -158,7 +178,11 @@ class BuildSandboxProber:
 
     # ------------------------------------------------------------------
     # Public API
-    # ------------------------------------------------------------------    
+    # ------------------------------------------------------------------
+
+    def is_available(self) -> bool:
+        """Return True if flatpak is available on the host."""
+        return shutil.which("flatpak") is not None
 
     def probe(
         self,
@@ -213,7 +237,7 @@ class BuildSandboxProber:
         report = SandboxProbeReport(probed_packages=[p.name for p in packages])
 
         # --- preflight ---
-        if not is_available():
+        if not self.is_available():
             report.ran = False
             report.skip_reason = (
                 "flatpak not found. "
@@ -253,6 +277,21 @@ class BuildSandboxProber:
             _apply_errors_to_report(report, errors)
             logger.error("Sandbox init failed — probe aborted")
             return report
+
+        # --- probe build-time dependencies first ---
+        # Packages supplied via --build-dep (or auto-resolved in a previous
+        # run) must be probed before the main packages so their modules are
+        # present in report.modules when _try_build_module assembles the test
+        # manifest.  We skip any dep whose name matches one of the main
+        # packages to avoid double-probing.
+        main_names = {p.name.lower().replace("-", "_") for p in packages}
+        for dep_pypi_name in list(self._build_deps):
+            norm = dep_pypi_name.lower().replace("-", "_")
+            if norm in main_names:
+                continue
+            dep_pkg = ResolvedPackage(name=dep_pypi_name, version="")
+            logger.info("Probing build dep: %s", dep_pypi_name)
+            self._probe_package(dep_pkg, runner, report)
 
         # --- probe each package ---
         for pkg in packages:
@@ -387,12 +426,18 @@ class BuildSandboxProber:
 
         # --- 5. Build test ---
         # Run the generated module through flatpak-builder to catch errors that
-        # a silent pip install hides: missing compilers, headers, native libs.
+        # a silent pip install hides: missing compilers, headers, native libs,
+        # and build-time Python dependencies (PEP 517 backend packages).
         # Only runs when a module was actually generated (no blocking errors).
-        # Errors are informational — they refine the report but do not change
-        # build_possible (ldd + pkgconfig already set that verdict above).
         if not has_blocking:
-            build_result = self._try_build_module(pkg, module_dict, runner)
+            # Collect any build-deps already known (from --build-dep or a
+            # previous auto-resolution pass stored in self._build_deps).
+            known_build_dep_modules = self._collect_build_dep_modules(report)
+
+            build_result = self._try_build_module(
+                pkg, module_dict, runner,
+                extra_modules=known_build_dep_modules,
+            )
             report.stdout += build_result.stdout
             report.stderr += build_result.stderr
 
@@ -412,10 +457,34 @@ class BuildSandboxProber:
                     )]
                 report.errors.extend(build_errors)
                 _apply_errors_to_report(report, build_errors)
+
+                # --- 5a. Auto-resolve missing Python build deps ---
+                # For each MISSING_PYTHON_PKG, IMPORT_ERROR, or MISSING_EXECUTABLE
+                # error, try to find the PyPI package name automatically.
+                # MISSING_EXECUTABLE covers tools like 'pythran' that meson looks
+                # for via Program() — they are often pure-Python packages on PyPI.
+                # Resolved deps get their module prepended above the main package
+                # in report.modules.  Unresolved ones are reported with a hint.
+                missing_py = [
+                    e for e in build_errors
+                    if e.error_type in (
+                        SandboxErrorType.MISSING_PYTHON_PKG,
+                        SandboxErrorType.IMPORT_ERROR,
+                        SandboxErrorType.MISSING_EXECUTABLE,
+                    )
+                ]
+                for err in missing_py:
+                    self._try_resolve_build_dep(err.missing, pkg.name, report)
+
                 logger.info(
                     "Build test failed for %s: %s",
                     pkg.name, build_result.stderr[-120:].strip(),
                 )
+
+        # --- 6. Reorder modules: build-deps first, target package last ---
+        # Ensures the final report.modules dict is ordered so that any
+        # build-time dependency module appears before the package that needs it.
+        _reorder_modules(report, pkg.name)
 
     # ------------------------------------------------------------------
     # Internal — individual probe actions
@@ -448,6 +517,7 @@ class BuildSandboxProber:
         pkg: ResolvedPackage,
         module_dict: dict,
         runner: SandboxRunner,
+        extra_modules: Optional[list[dict]] = None,
     ) -> RunResult:
         """
         Validate a generated module by building it inside a real Flatpak
@@ -460,18 +530,114 @@ class BuildSandboxProber:
         build-commands pipeline and reports every failure via stderr in the
         same format that parse_errors already understands.
 
+        ``extra_modules``, when provided, are prepended to the manifest
+        modules list so that build-time dependencies are available when
+        the main package is built.
+
         Returns the RunResult from the builder invocation.
         """
         flatpak_module = _module_dict_to_flatpak(module_dict)
+        dep_modules = [_module_dict_to_flatpak(m) for m in (extra_modules or [])]
         manifest = FlatpakManifest(
             app_id=f"org.pfmg.Test.{pkg.name}",
             runtime=self.runtime,
             runtime_version=self.runtime_version,
             sdk=self.sdk,
             sdk_extensions=self.sdk_extensions,
-            modules=[flatpak_module],
+            modules=dep_modules + [flatpak_module],
         )
         return runner.build_manifest(manifest, timeout=self._build_timeout)
+
+    def _collect_build_dep_modules(self, report: SandboxProbeReport) -> list[dict]:
+        """
+        Return module dicts for all build-deps that have already been
+        successfully generated in this probe session (either from a previous
+        auto-resolution or from --build-dep supplied by the user at startup).
+        These are passed as ``extra_modules`` to ``_try_build_module`` so the
+        builder can find them.
+        """
+        result = []
+        for pypi_name in self._build_deps:
+            # Normalise: package names in report.modules use the original
+            # ResolvedPackage.name, which may differ in casing/hyphenation.
+            normalised = pypi_name.lower().replace("-", "_")
+            for mod_name, mod_dict in report.modules.items():
+                if mod_name.lower().replace("-", "_") == normalised:
+                    result.append(mod_dict)
+                    break
+        return result
+
+    def _try_resolve_build_dep(
+        self,
+        import_name: str,
+        context_pkg: str,
+        report: SandboxProbeReport,
+    ) -> None:
+        """
+        Attempt to resolve a missing Python build-time dependency.
+
+        1. If ``import_name`` is already covered by a user-supplied
+           ``--build-dep``, skip — the module will be present via
+           ``_collect_build_dep_modules`` on the next run.
+        2. Try the PyPI JSON API: GET /pypi/{import_name}/json.
+           On success, record the canonical name and note it in the report.
+        3. On failure (404 / network error), annotate the relevant
+           SandboxError with a hint pointing the user to ``--build-dep``.
+        """
+        # Normalise for comparison
+        norm = import_name.lower().replace("-", "_")
+
+        # Already covered by a user-supplied --build-dep?
+        for dep in self._build_deps:
+            if dep.lower().replace("-", "_") == norm:
+                logger.debug(
+                    "Build dep '%s' already supplied via --build-dep, skipping auto-resolve",
+                    import_name,
+                )
+                return
+
+        # Already resolved automatically in a previous call?
+        if any(
+            k.lower().replace("-", "_") == norm
+            for k in report.modules
+        ):
+            return
+
+        logger.debug("Attempting PyPI auto-resolve for build dep '%s'", import_name)
+        pypi_name = resolve_import_to_pypi_name(import_name)
+
+        if pypi_name:
+            logger.info(
+                "Auto-resolved build dep '%s' → PyPI '%s' for %s",
+                import_name, pypi_name, context_pkg,
+            )
+            # Record so _collect_build_dep_modules picks it up on reruns
+            # within the same session and for report display.
+            if pypi_name not in self._build_deps:
+                self._build_deps.append(pypi_name)
+            # Annotate the report so the user sees it was resolved.
+            report.resolved_build_deps = getattr(report, "resolved_build_deps", {})
+            report.resolved_build_deps[import_name] = pypi_name
+        else:
+            # Could not resolve — annotate matching errors with the hint.
+            hint = (
+                f"If you know the name of the Python package that provides "
+                f"'{import_name}', use: --build-dep <package-name>"
+            )
+            for err in report.errors:
+                if (
+                    err.missing == import_name
+                    and err.error_type in (
+                        SandboxErrorType.MISSING_PYTHON_PKG,
+                        SandboxErrorType.IMPORT_ERROR,
+                    )
+                    and hint not in err.context
+                ):
+                    err.context = (err.context + "\n" + hint).strip()
+            logger.info(
+                "Could not auto-resolve build dep '%s' for %s — hint added to report",
+                import_name, context_pkg,
+            )
 
     # ------------------------------------------------------------------
     # Internal — output serialisation
@@ -498,6 +664,22 @@ class BuildSandboxProber:
 # ---------------------------------------------------------------------------
 # Helpers
 # ---------------------------------------------------------------------------
+
+def _reorder_modules(report: SandboxProbeReport, target_pkg_name: str) -> None:
+    """
+    Reorder ``report.modules`` so that build-dep modules appear before the
+    target package module.  This preserves the correct installation order
+    when the caller writes the modules into a Flatpak manifest.
+
+    The target package's module is moved to the end; all other modules
+    (build-deps resolved automatically or via --build-dep) stay at the front
+    in the order they were inserted.
+    """
+    if target_pkg_name not in report.modules:
+        return
+    target_module = report.modules.pop(target_pkg_name)
+    # Re-insert at the end (dict preserves insertion order in Python 3.7+)
+    report.modules[target_pkg_name] = target_module
 
 def _module_dict_to_flatpak(module_dict: dict) -> FlatpakModule:
     """

@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "python3-turtle",
+    "version": "3.9.9",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-turtle",
+    "buildsystem": "simple",
+    "build-commands": [
+      "cp turtle.py ${FLATPAK_DEST}/lib/python3.11/site-packages"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://raw.githubusercontent.com/python/cpython/v3.9.9/Lib/turtle.py",
+        "dest-filename": "turtle.py",
+        "sha256": "fb3209395b13b2a45a3371606d604079e66da241be4453b6034a85960c186182"
+      }
+    ]
+  }
+}

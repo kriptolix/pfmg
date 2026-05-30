@@ -1,0 +1,99 @@
+{
+  "header": {
+    "id": "wineopenxr",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "wineopenxr",
+    "subdir": "wineopenxr",
+    "config-opts": [
+      "--nosource-fix",
+      "--nolower-include",
+      "--nodlls",
+      "--nomsvcrt",
+      "-L${FLATPAK_LIBDIR}",
+      "-L${FLATPAK_LIBDIR_WINE_ELF}",
+      "-I${FLATPAK_DEST}/include",
+      "-I${FLATPAK_DEST}/include/wine",
+      "-I${FLATPAK_DEST}/include/wine/windows",
+      "-I../wine/include",
+      "-lopenxr_loader",
+      "-ldxgi",
+      "-lvulkan",
+      "--dll",
+      "."
+    ],
+    "build-commands": [
+      "winebuild --dll --fake-module -E wineopenxr.spec -o wineopenxr.dll.fake"
+    ],
+    "no-make-install": true,
+    "post-install": [
+      "install -Dm755 wineopenxr.dll.so -t ${FLATPAK_LIBDIR_WINE_ELF}/",
+      "install -Dm755 wineopenxr.dll.fake ${FLATPAK_LIBDIR_WINE_PE}/wineopenxr.dll"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/ValveSoftware/Proton.git",
+        "tag": "proton-7.0-6",
+        "commit": "c5ad95671cecaf03c4a92500de84b542add585d1",
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://api.github.com/repos/ValveSoftware/Proton/git/refs/tags/proton-",
+          "tag-query": "map(select(.ref | match(\"refs/tags/proton-[0-9].*\"; \"\"))) | last | if .object.type==\"commit\" then . else error(\"not a commit\") end | .ref | sub(\"^refs/tags/\"; \"\")",
+          "version-query": "$tag | sub(\"^proton-\"; \"\")",
+          "commit-query": "map(select(.ref | match(\"refs/tags/proton-[0-9].*\"; \"\"))) | last | .object.sha",
+          "timestamp-data-url": "map(select(.ref | match(\"refs/tags/proton-[0-9].*\"; \"\"))) | last | .object.url",
+          "timestamp-query": ".committer.date",
+          "is-main-source": true,
+          "source-id": "proton-git-0"
+        }
+      },
+      {
+        "type": "shell",
+        "dest": "wine",
+        "commands": [
+          "tools/make_requests",
+          "dlls/winevulkan/make_vulkan --xml vk.xml"
+        ]
+      },
+      {
+        "type": "file",
+        "path": "winemaker-configure.sh",
+        "dest": "wineopenxr",
+        "dest-filename": "configure"
+      }
+    ],
+    "modules": [
+      {
+        "name": "openxr",
+        "subdir": "OpenXR-SDK",
+        "buildsystem": "cmake-ninja",
+        "config-opts": [
+          "-DBUILD_WITH_STD_FILESYSTEM=OFF"
+        ],
+        "sources": [
+          {
+            "type": "git",
+            "url": "https://github.com/ValveSoftware/Proton.git",
+            "tag": "proton-7.0-6",
+            "commit": "c5ad95671cecaf03c4a92500de84b542add585d1",
+            "x-checker-data": {
+              "type": "json",
+              "url": "https://api.github.com/repos/ValveSoftware/Proton/git/refs/tags/proton-",
+              "tag-query": "map(select(.ref | match(\"refs/tags/proton-[0-9].*\"; \"\"))) | last | if .object.type==\"commit\" then . else error(\"not a commit\") end | .ref | sub(\"^refs/tags/\"; \"\")",
+              "version-query": "$tag | sub(\"^proton-\"; \"\")",
+              "commit-query": "map(select(.ref | match(\"refs/tags/proton-[0-9].*\"; \"\"))) | last | .object.sha",
+              "timestamp-data-url": "map(select(.ref | match(\"refs/tags/proton-[0-9].*\"; \"\"))) | last | .object.url",
+              "timestamp-query": ".committer.date",
+              "is-main-source": true,
+              "source-id": "proton-git-0"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

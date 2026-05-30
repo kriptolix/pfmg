@@ -1,0 +1,29 @@
+{
+  "header": {
+    "id": "docs",
+    "version": "19.0.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "docs",
+    "buildsystem": "simple",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/qt-creator/qt-creator/releases/download/v19.0.2/qtcreator-linux-x64-19.0.2.7z",
+        "sha256": "e4035aa9998c27a0f886360cd933ae42288d8c7776aaa60f537c2e01b3425b9c",
+        "strip-components": 0,
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 4136,
+          "url-template": "https://github.com/qt-creator/qt-creator/releases/download/v$version/qtcreator-linux-x64-$version.7z",
+          "stable-only": true
+        }
+      }
+    ],
+    "build-commands": [
+      "cp -r share/doc/qtcreator $FLATPAK_DEST/share/doc"
+    ]
+  }
+}

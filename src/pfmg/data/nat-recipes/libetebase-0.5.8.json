@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "libetebase",
+    "version": "0.5.8",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libetebase",
+    "buildsystem": "simple",
+    "build-commands": [
+      "mkdir .cargo",
+      "cp cargo/config .cargo/",
+      "mv libetebase-Cargo.lock Cargo.lock",
+      "cargo --offline fetch --manifest-path Cargo.toml",
+      "cargo --offline build --release",
+      "PREFIX=/app/evolution/extensions/evolution-etesync make V=1 VERBOSE=1 pkgconfig",
+      "PREFIX=/app/evolution/extensions/evolution-etesync make V=1 VERBOSE=1 install",
+      "mv /app/evolution/extensions/evolution-etesync/lib/libetebase.so /app/evolution/extensions/evolution-etesync/lib/libetebase.so.0",
+      "ln -s /app/evolution/extensions/evolution-etesync/lib/libetebase.so.0 /app/evolution/extensions/evolution-etesync/lib/libetebase.so"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/etesync/libetebase/archive/v0.5.8.tar.gz",
+        "sha256": "4f2623a6e194aa3df69307d13ad00c42ec853a1af02ca329e35cd829ff472145"
+      },
+      {
+        "type": "file",
+        "path": "libetebase-Cargo.lock"
+      },
+      "libetebase-cargo-sources.json"
+    ]
+  }
+}

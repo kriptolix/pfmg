@@ -1,0 +1,37 @@
+{
+  "header": {
+    "id": "ola",
+    "version": "0.10.9",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "ola",
+    "build-options": {
+      "env": {
+        "PYTHON": "python3"
+      }
+    },
+    "config-opts": [
+      "--disable-unittests",
+      "--disable-examples",
+      "--disable-osc",
+      "--disable-http",
+      "--enable-python-libs"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/OpenLightingProject/ola/releases/download/0.10.9/ola-0.10.9.tar.gz",
+        "sha256": "44073698c147fe641507398253c2e52ff8dc7eac8606cbf286c29f37939a4ebf"
+      },
+      {
+        "type": "script",
+        "dest-filename": "autogen.sh",
+        "commands": [
+          "autoreconf -fi"
+        ]
+      }
+    ]
+  }
+}

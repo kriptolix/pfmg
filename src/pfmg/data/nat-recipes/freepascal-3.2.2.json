@@ -1,0 +1,43 @@
+{
+  "header": {
+    "id": "freepascal",
+    "version": "3.2.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "freepascal",
+    "buildsystem": "simple",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://sourceforge.net/projects/freepascal/files/Linux/3.2.2/fpc-3.2.2.x86_64-linux.tar",
+        "sha256": "5adac308a5534b6a76446d8311fc340747cbb7edeaacfe6b651493ff3fe31e83",
+        "only-arches": [
+          "x86_64"
+        ],
+        "x-checker-data": {
+          "type": "html",
+          "url": "https://www.freepascal.org/download.html",
+          "version-pattern": "The latest release is <b>([^<]+)</b>",
+          "url-template": "https://sourceforge.net/projects/freepascal/files/Linux/$version/fpc-$version.x86_64-linux.tar"
+        }
+      },
+      {
+        "type": "archive",
+        "url": "https://downloads.freepascal.org/fpc/beta/3.2.4-rc1/aarch64-linux/fpc-3.2.4-rc1.aarch64-linux.tar",
+        "sha256": "2e0a2a4c2a28e5a19357ee6c447180212e0e31ce067eceb4e21cd385116daab4",
+        "only-arches": [
+          "aarch64"
+        ]
+      }
+    ],
+    "build-commands": [
+      "printf '%s\\n' /app n n | ./install.sh",
+      "LIBDIR=\"/app/lib/fpc/$(fpc -iV)\"\n\"${LIBDIR}/samplecfg\" \"${LIBDIR}\" /app/lib/fpc/etc\n"
+    ],
+    "cleanup": [
+      "*"
+    ]
+  }
+}

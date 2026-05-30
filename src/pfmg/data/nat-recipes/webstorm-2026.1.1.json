@@ -1,0 +1,65 @@
+{
+  "header": {
+    "id": "webstorm",
+    "version": "2026.1.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "webstorm",
+    "build-commands": [
+      "cp -a WebStorm-*/* ${FLATPAK_DEST}",
+      "cat idea.properties >> ${FLATPAK_DEST}/bin/idea.properties",
+      "install -Dm644 -t ${FLATPAK_DEST}/share/applications/ ${FLATPAK_ID}.desktop",
+      "install -Dm644 -t ${FLATPAK_DEST}/share/metainfo/ ${FLATPAK_ID}.metainfo.xml",
+      "install -Dm644 -t ${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/ ${FLATPAK_ID}.svg"
+    ],
+    "buildsystem": "simple",
+    "sources": [
+      {
+        "type": "archive",
+        "strip-components": 0,
+        "only-arches": [
+          "x86_64"
+        ],
+        "sha256": "afd5deb63ade141eaa53b5506c7b052e7edba0a859ca57f21ac7cf36e985419c",
+        "url": "https://download.jetbrains.com/webstorm/WebStorm-2026.1.1.tar.gz",
+        "x-checker-data": {
+          "code": "WS",
+          "is-main-source": true,
+          "type": "jetbrains"
+        }
+      },
+      {
+        "type": "archive",
+        "strip-components": 0,
+        "only-arches": [
+          "aarch64"
+        ],
+        "sha256": "0da9aadecbf008eac4f9f4c105563cbe2ff5bed149145a85b12590858f4bff1e",
+        "url": "https://download.jetbrains.com/webstorm/WebStorm-2026.1.1-aarch64.tar.gz",
+        "x-checker-data": {
+          "code": "WS",
+          "is-main-source": true,
+          "type": "jetbrains"
+        }
+      },
+      {
+        "type": "file",
+        "path": "com.jetbrains.WebStorm.desktop"
+      },
+      {
+        "type": "file",
+        "path": "com.jetbrains.WebStorm.svg"
+      },
+      {
+        "type": "file",
+        "path": "com.jetbrains.WebStorm.metainfo.xml"
+      },
+      {
+        "type": "file",
+        "path": "idea.properties"
+      }
+    ]
+  }
+}

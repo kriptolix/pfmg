@@ -1,0 +1,30 @@
+{
+  "header": {
+    "id": "subversion",
+    "version": "1.14.5",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "subversion",
+    "config-opts": [
+      "--with-lz4=internal",
+      "--with-serf"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://downloads.apache.org/subversion/subversion-1.14.5.tar.bz2",
+        "sha256": "e78a29e7766b8b7b354497d08f71a55641abc53675ce1875584781aae35644a1",
+        "x-checker-data": {
+          "type": "html",
+          "url": "https://downloads.apache.org/subversion/",
+          "pattern": "(subversion-([\\d.]+).tar.bz2)"
+        }
+      }
+    ],
+    "post-install": [
+      "cp -v /app/share/pkgconfig/*.pc /app/lib/pkgconfig"
+    ]
+  }
+}

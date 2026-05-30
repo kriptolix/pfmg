@@ -1,0 +1,21 @@
+{
+  "header": {
+    "id": "retroarch-assets",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "retroarch-assets",
+    "make-install-args": [
+      "PREFIX=/app"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/libretro/retroarch-assets.git",
+        "commit": "76cc6cf03507429c5a136cb50d83a14e05430fcd"
+      }
+    ]
+  }
+}

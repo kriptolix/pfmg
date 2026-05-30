@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "pandoc-amd64",
+    "version": "3.1.12",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "pandoc-amd64",
+    "cleanup": [
+      "*.a"
+    ],
+    "only-arches": [
+      "x86_64"
+    ],
+    "buildsystem": "simple",
+    "build-commands": [
+      "mv -v bin/pandoc /app/bin/pandoc"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/jgm/pandoc/releases/download/3.1.12/pandoc-3.1.12-linux-amd64.tar.gz",
+        "sha256": "e30d20cc3f9aefa117bf2183fe74cfc7cb043237d56eb63272b82bf76b537991"
+      }
+    ]
+  }
+}

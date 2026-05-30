@@ -1,0 +1,38 @@
+{
+  "header": {
+    "id": "topcom",
+    "version": "1.1.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "topcom",
+    "buildsystem": "autotools",
+    "config-opts": [
+      "--enable-qsoptex",
+      "--disable-static"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "http://deb.debian.org/debian/pool/main/t/topcom/topcom_1.1.2+ds.orig.tar.xz",
+        "sha256": "b81e1fa3cca9bf41852faabdd34d8774c8ed2fd103dfd11018c9ab271b73da0f"
+      },
+      {
+        "type": "patch",
+        "paths": [
+          "patches/topcom/dont-build-libraries.patch",
+          "patches/topcom/rename-binaries.patch",
+          "patches/topcom/shared-library.patch"
+        ]
+      },
+      {
+        "type": "shell",
+        "commands": [
+          "rm aclocal.m4",
+          "autoreconf -vfi"
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "nsm",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "nsm",
+    "no-autogen": true,
+    "no-parallel-make": true,
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/nifty-site-manager/nsm-flatpak.git",
+        "tag": "v2.4.12",
+        "commit": "c6cc086986a38278d0957acaaf6a5f301a8db926"
+      },
+      {
+        "type": "patch",
+        "path": "patches/nsm-fixes.patch"
+      }
+    ]
+  }
+}

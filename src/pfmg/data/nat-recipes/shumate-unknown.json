@@ -1,0 +1,20 @@
+{
+  "header": {
+    "id": "shumate",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "shumate",
+    "buildsystem": "meson",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://gitlab.gnome.org/GNOME/libshumate.git",
+        "tag": "1.5.0",
+        "commit": "570222efec093a1e9df928f62113e0756aa302a0"
+      }
+    ]
+  }
+}

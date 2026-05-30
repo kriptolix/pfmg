@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "pyqt6-sip",
+    "version": "1.6",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "PyQt6_sip",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --no-deps --no-use-pep517 --prefix=$FLATPAK_DEST ."
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/linuxhw/build-stuff/releases/download/1.6/PyQt6_sip-13.2.1.tar.gz",
+        "sha256": "b7bce59900b2e0a04f70246de2ccf79ee7933036b6b9183cf039b62eeae2b858"
+      }
+    ]
+  }
+}

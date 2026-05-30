@@ -1,0 +1,33 @@
+{
+  "header": {
+    "id": "fira",
+    "version": "4.202",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "fira",
+    "buildsystem": "simple",
+    "build-commands": [
+      "mkdir -p /app/share/fonts/",
+      "install -D otf/FiraSans-Regular.otf /app/share/fonts/",
+      "install -D otf/FiraMono-Regular.otf /app/share/fonts/",
+      "install -D otf/FiraMono-Bold.otf /app/share/fonts/",
+      "install -D otf/FiraMono-Medium.otf /app/share/fonts/"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "archive-type": "tar-gzip",
+        "url": "https://api.github.com/repos/mozilla/Fira/tarball/4.202",
+        "sha512": "ab9f00c7290aa252448b0730cecccfea07cd99daec09883d261cc49b88b1dadd13e951511517a359646ebd94e6cd13861f468437d26465a079cf2b86ab999356",
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://api.github.com/repos/mozilla/Fira/releases/latest",
+          "version-query": ".tag_name",
+          "url-query": ".tarball_url"
+        }
+      }
+    ]
+  }
+}

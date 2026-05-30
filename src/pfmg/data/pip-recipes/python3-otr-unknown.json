@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "python3-otr",
+    "version": "unknown",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-otr",
+    "buildsystem": "simple",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/AGProjects/python3-otr",
+        "tag": "2.1.0",
+        "commit": "0a950d29b91daa98c30ab93bb93fb87d2831e2a5"
+      }
+    ],
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --prefix=\"${FLATPAK_DEST}\" --no-build-isolation ."
+    ]
+  }
+}

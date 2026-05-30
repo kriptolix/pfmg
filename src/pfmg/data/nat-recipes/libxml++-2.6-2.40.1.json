@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "libxml++-2.6",
+    "version": "2.40.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libxml++-2.6",
+    "config-opts": [
+      "--disable-documentation"
+    ],
+    "cleanup": [
+      "/lib/libxml++-2.6"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://launchpad.net/ubuntu/+archive/primary/+sourcefiles/libxml++2.6/2.40.1-2/libxml++2.6_2.40.1.orig.tar.xz",
+        "sha256": "4ad4abdd3258874f61c2e2a41d08e9930677976d303653cd1670d3e9f35463e9"
+      }
+    ]
+  }
+}

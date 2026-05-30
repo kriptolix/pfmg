@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "python3-bleak",
+    "version": "0.21.1",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-bleak",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"bleak==0.21.1\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/08/4a/7b6ff6710ec58f6709000b1fbc27b763e3921a1e5f23032aebe2531366fa/bleak-0.21.1-py3-none-any.whl",
+        "sha256": "ccec260a0f5ec02dd133d68b0351c0151b2ecf3ddd0bcabc4c04a1cdd7f33256"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/0a/37/a27e7f2dc6a18b5dcee70ffb08013a33770c2154a51fb5e2c04a7f4169fa/dbus_fast-2.24.3.tar.gz",
+        "sha256": "9042a1b565ecac4f8e04df79376de1d1d31e4c82eddb6e71e8b8d82d0c94dd3d"
+      }
+    ]
+  }
+}

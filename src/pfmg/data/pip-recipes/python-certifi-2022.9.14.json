@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python-certifi",
+    "version": "2022.9.14",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python-certifi",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --no-index --no-build-isolation --prefix=\"${FLATPAK_DEST}\" ."
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://files.pythonhosted.org/packages/ca/48/88ec470f8b68319b6782ca3a0570789886ad5ca24c1af2f3771699135baa/certifi-2022.9.14.tar.gz",
+        "sha256": "36973885b9542e6bd01dea287b2b4b3b21236307c56324fcc3f1160f2d655ed5"
+      }
+    ]
+  }
+}

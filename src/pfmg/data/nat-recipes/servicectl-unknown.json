@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "servicectl",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "servicectl",
+    "buildsystem": "simple",
+    "build-commands": [
+      "install -Dm755 serviced -t /app/bin",
+      "install -Dm755 servicectl -t /app/bin"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/AtomsDevs/servicectl.git",
+        "commit": "fda22d97a65bb881d83f4ba10a78ce54867eeed4"
+      }
+    ]
+  }
+}

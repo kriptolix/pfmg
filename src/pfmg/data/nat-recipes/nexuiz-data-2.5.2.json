@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "nexuiz-data",
+    "version": "2.5.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "nexuiz-data",
+    "buildsystem": "simple",
+    "build-commands": [
+      "bsdtar -Oxf nexuiz-data_2.5.2-13_all.deb 'data.tar.xz' | bsdtar -xf -",
+      "install -Dm644 usr/share/games/nexuiz/data/data.pk3 -t /app/share/nexuiz/data"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://ftp.debian.org/debian/pool/main/n/nexuiz-data/nexuiz-data_2.5.2-13_all.deb",
+        "sha256": "0e67d441ad52e479e11f4b4d0cdea57bfb69840bc036f341aaccfaf0be1b97bb"
+      }
+    ]
+  }
+}

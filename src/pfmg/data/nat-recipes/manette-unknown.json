@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "manette",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "manette",
+    "buildsystem": "meson",
+    "config-opts": [
+      "-Dgudev=disabled"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://gitlab.gnome.org/GNOME/libmanette.git",
+        "tag": "0.2.6",
+        "commit": "f3fc99a3582845725dc3f56fe7ffdc1ae3019d0f"
+      }
+    ]
+  }
+}

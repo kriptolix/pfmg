@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "ttf-freefonts",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "ttf-freefonts",
+    "buildsystem": "simple",
+    "build-commands": [
+      "mkdir -p /app/share/fonts/truetype/freefont",
+      "install -m 644 *.ttf /app/share/fonts/truetype/freefont/",
+      "install -m 644 README /app/share/doc/gnu-freefont/ || true"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://ftp.gnu.org/gnu/freefont/freefont-ttf-20051206.tar.gz",
+        "sha256": "247af4ab5be736df63d9572665ea341251e8afaf924f384ddcb18c3549113ed3"
+      }
+    ]
+  }
+}

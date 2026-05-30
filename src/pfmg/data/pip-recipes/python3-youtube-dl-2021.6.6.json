@@ -1,0 +1,29 @@
+{
+  "header": {
+    "id": "python3-youtube-dl",
+    "version": "2021.6.6",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-youtube-dl",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=file://${PWD} --prefix=${FLATPAK_DEST} youtube-dl --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/c6/75/05979677d9abc76851d13d8db3951e39017ac223545adab6e8576fa0cbe7/youtube_dl-2021.6.6.tar.gz",
+        "sha256": "cb2d3ee002158ede783e97a82c95f3817594df54367ea6a77ce5ceea4772f0ab",
+        "x-checker-data": {
+          "type": "pypi",
+          "name": "youtube_dl"
+        }
+      }
+    ],
+    "cleanup": [
+      "/share/doc/*"
+    ]
+  }
+}

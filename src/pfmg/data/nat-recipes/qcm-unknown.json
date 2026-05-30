@@ -1,0 +1,33 @@
+{
+  "header": {
+    "id": "qcm",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "Qcm",
+    "buildsystem": "cmake-ninja",
+    "build-options": {
+      "append-path": "/usr/lib/sdk/llvm21/bin",
+      "prepend-ld-library-path": "/usr/lib/sdk/llvm21/lib"
+    },
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
+      "-DQML_INSTALL_DIR=/app/lib/qml",
+      "-DCMAKE_CXX_COMPILER=clang++",
+      "-DCMAKE_PROJECT_TOP_LEVEL_INCLUDES=cmake/flatpak-provider.cmake",
+      "-DCMAKE_MODULE_PATH=/run/build/Qcm/cmake",
+      "-DQCM_BUILD_TESTS=OFF",
+      "-DQML_MATERIAL_BUILD_TYPE=STATIC"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/hypengw/Qcm.git",
+        "commit": "e1a7fe40cd4481ac11e522c06bde144f541f6494"
+      },
+      "./flaptak-sources.json"
+    ]
+  }
+}

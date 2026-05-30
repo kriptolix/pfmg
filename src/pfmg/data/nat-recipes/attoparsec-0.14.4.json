@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "attoparsec",
+    "version": "0.14.4",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "attoparsec",
+    "buildsystem": "simple",
+    "builddir": false,
+    "build-commands": [
+      "echo '#! /usr/bin/env runhaskell' >Setup.txt",
+      "echo '> import Distribution.Simple' >>Setup.txt",
+      "echo '> main = defaultMain' >>Setup.txt",
+      "ln -s Setup.txt Setup.lhs || true",
+      "runhaskell Setup configure --prefix=/app",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "sources": [
+      {
+        "sha256": "3f337fe58624565de12426f607c23e60c7b09c86b4e3adfc827ca188c9979e6c",
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/attoparsec-0.14.4/attoparsec-0.14.4.tar.gz"
+      },
+      {
+        "dest-filename": "attoparsec.cabal",
+        "sha256": "ec709539b881d6431620bd7c40fbfa680aaf4a98c6f35b51536d8f455682b1ae",
+        "type": "file",
+        "url": "https://hackage.haskell.org/package/attoparsec-0.14.4/revision/5.cabal"
+      }
+    ]
+  }
+}

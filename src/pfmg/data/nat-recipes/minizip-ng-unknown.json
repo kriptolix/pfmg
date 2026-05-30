@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "minizip-ng",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "minizip-ng",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DBUILD_SHARED_LIBS=ON",
+      "-DMZ_ZLIB=ON"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/zlib-ng/minizip-ng",
+        "tag": "4.1.0",
+        "commit": "cf4b58e17ebdcff8c6fbce1a9c3af5bf0485423c"
+      }
+    ]
+  }
+}

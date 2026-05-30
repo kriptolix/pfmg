@@ -1,0 +1,29 @@
+diff -ur CalculiX/ccx_2.23/src/Makefile_MT CalculiX_new/ccx_2.23/src/Makefile_MT
+--- CalculiX/ccx_2.23/src/Makefile_MT   2025-10-19 13:21:26.351426949 -0300
++++ CalculiX_new/ccx_2.23/src/Makefile_MT       2026-03-27 07:44:40.710909503 -0300
+@@ -1,6 +1,6 @@
+ 
+-CFLAGS = -Wall -O2 -fopenmp -I ../SPOOLES.2.2 -DARCH="Linux" -DSPOOLES -DARPACK -DMATRIXSTORAGE -DUSE_MT=1 
+-FFLAGS = -Wall -O2 -fopenmp -cpp
++CFLAGS = -Wall -Wno-return-mismatch -Wno-implicit -O2 -fopenmp -DARCH="Linux" -DSPOOLES -DARPACK -DMATRIXSTORAGE -DUSE_MT=1
++FFLAGS = -Wall -O2 -fopenmp -cpp -fallow-argument-mismatch
+ 
+ CC=cc
+ FC=gfortran
+@@ -18,12 +18,11 @@ OCCXF = $(SCCXF:.f=.o)
+ OCCXC = $(SCCXC:.c=.o)
+ OCCXMAIN = $(SCCXMAIN:.c=.o)
+ 
+-DIR=../SPOOLES.2.2
+-
+ LIBS = \
+-       $(DIR)/MT/src/spoolesMT.a \
+-       $(DIR)/spooles.a \
+-       ../ARPACK/libarpack_INTEL.a \
++       /app/lib/spoolesMT.a \
++       /app/lib/spooles.a \
++       /app/lib/libarpack.a \
++       /app/lib/libopenblas.a \
+        -lpthread -lm
+ 
+ ccx_2.23_MT: $(OCCXMAIN) ccx_2.23_MT.a  $(LIBS)

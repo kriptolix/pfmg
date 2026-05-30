@@ -1,0 +1,30 @@
+{
+  "header": {
+    "id": "stylesheet",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "stylesheet",
+    "buildsystem": "meson",
+    "cleanup": [
+      "/share/metainfo"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/elementary/stylesheet.git",
+        "tag": "8.2.2",
+        "commit": "9cfb767873d583f6ed29e96cf27728bb69fd9237",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^([\\d.]+)$"
+        }
+      }
+    ],
+    "post-install": [
+      "ln -s /app/share/themes/io.elementary.stylesheet.blueberry /app/share/themes/elementary"
+    ]
+  }
+}

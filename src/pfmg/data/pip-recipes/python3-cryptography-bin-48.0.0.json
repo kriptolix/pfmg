@@ -1,0 +1,45 @@
+{
+  "header": {
+    "id": "python3-cryptography-bin",
+    "version": "48.0.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-cryptography-bin",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"cryptography\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/84/9e/500463e87abb7a0a0f9f256ec21123ecde0a7b5541a15e840ea54551fd81/cryptography-48.0.0-cp311-abi3-manylinux_2_34_aarch64.whl",
+        "sha256": "7e8eac43dfca5c4cccc6dad9a80504436fca53bb9bc3100a2386d730fbe6b602",
+        "only-arches": [
+          "aarch64"
+        ],
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://pypi.org/pypi/cryptography/json",
+          "version-query": ".info.version",
+          "url-query": ".releases | .[$version][] | select(.filename==\"cryptography-\" + $version + \"-cp311-abi3-manylinux_2_34_aarch64.whl\") | .url"
+        }
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/d0/c0/7101d3b7215edcdc90c45da544961fd8ed2d6448f77577460fa75a8443f7/cryptography-48.0.0-cp311-abi3-manylinux_2_34_x86_64.whl",
+        "sha256": "bd72e68b06bb1e96913f97dd4901119bc17f39d4586a5adf2d3e47bc2b9d58b5",
+        "only-arches": [
+          "x86_64"
+        ],
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://pypi.org/pypi/cryptography/json",
+          "version-query": ".info.version",
+          "url-query": ".releases | .[$version][] | select(.filename==\"cryptography-\" + $version + \"-cp311-abi3-manylinux_2_34_x86_64.whl\") | .url"
+        }
+      }
+    ]
+  }
+}

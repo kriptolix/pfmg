@@ -1,0 +1,66 @@
+{
+  "header": {
+    "id": "helium-dark",
+    "version": "1.8.72",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "Helium-dark",
+    "buildsystem": "simple",
+    "build-options": {
+      "append-path": "/usr/share/runtime/share/themes/Helium-dark/gtk-3.0/bin"
+    },
+    "build-commands": [
+      "meson builddir -Dgtk4=false -Dshell=false && cd builddir && meson compile",
+      "cp builddir/Helium/gtk-3.0/gtk-dark.css ${FLATPAK_DEST}/gtk.css"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://api.github.com/repos/tau-OS/tau-helium/tarball/1.8.72",
+        "dest-filename": "Helium-dark.tar.gz",
+        "sha256": "66fdd7a4c5278dece9015f7f22fb8948b093383b9b483af675621a1242808438",
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://api.github.com/repos/tau-OS/tau-helium/releases/latest",
+          "tag-query": ".tag_name",
+          "version-query": "$tag",
+          "url-query": ".tarball_url"
+        }
+      }
+    ],
+    "modules": [
+      {
+        "name": "sass",
+        "cleanup": [
+          "*"
+        ],
+        "buildsystem": "simple",
+        "build-commands": [
+          "install -D -m755 sass ${FLATPAK_DEST}/bin/sass",
+          "install -D -m755 src/dart ${FLATPAK_DEST}/bin/src/dart",
+          "install -D -m755 src/sass.snapshot ${FLATPAK_DEST}/bin/src/sass.snapshot"
+        ],
+        "sources": [
+          {
+            "type": "archive",
+            "url": "https://github.com/sass/dart-sass/releases/download/1.77.4/dart-sass-1.77.4-linux-x64.tar.gz",
+            "sha256": "d7a8a926ecb23725dd8c564b470af95db4e9f608271171b988f2e18c1e656873",
+            "only-arches": [
+              "x86_64"
+            ]
+          },
+          {
+            "type": "archive",
+            "url": "https://github.com/sass/dart-sass/releases/download/1.77.4/dart-sass-1.77.4-linux-arm64.tar.gz",
+            "sha256": "d3387f4a7dc8ccbd9cfe519cd7c2f19031a1d235cf6d93913c3e6bcc9eaa2e43",
+            "only-arches": [
+              "aarch64"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

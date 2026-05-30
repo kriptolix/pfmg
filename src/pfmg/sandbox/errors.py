@@ -130,6 +130,16 @@ _P_MESON_DEP = re.compile(
     re.IGNORECASE,
 )
 
+# Meson program lookup failure:
+#   "../meson.build:184:12: ERROR: Program 'pythran' not found or not executable"
+#   "ERROR: Program 'cmake' not found or not executable"
+# Must be checked before _P_FLATPAK_MODULE_FAILED so it isn't swallowed by
+# the generic module-failure catch-all.
+_P_MESON_PROG_NOT_FOUND = re.compile(
+    r"ERROR:\s+Program\s+'?(?P<prog>[^'\s]+)'?\s+not found or not executable",
+    re.IGNORECASE,
+)
+
 # CMake "Could NOT find <Foo>"
 _P_CMAKE_NOT_FOUND = re.compile(
     r"Could NOT find\s+(?P<dep>\S+)",

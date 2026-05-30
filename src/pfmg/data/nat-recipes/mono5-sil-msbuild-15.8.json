@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "mono5-sil-msbuild",
+    "version": "15.8",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "mono5-sil-msbuild",
+    "buildsystem": "simple",
+    "build-commands": [
+      "for package in *.deb; do\n  mkdir \"${package}-dir\" &&\n    (cd \"${package}-dir\" && ar x ../\"${package}\") &&\n    tar -C /app -x -f \"${package}-dir\"/data.tar.xz \\\n      --strip-components=3 ./opt/mono5-sil\ndone\n",
+      "perl -pi -e 's#/opt/mono5-sil#/./././././app#g' /app/bin/*"
+    ],
+    "cleanup": [
+      "/lib/mono/msbuild",
+      "/lib/mono/xbuild"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "http://linux.lsdev.sil.org/ubuntu/pool/main/m/mono5-sil-msbuild/mono5-sil-msbuild_15.8+xamarinxplat.2018.07.31.22.43-0xamarin5+ubuntu1804b1_all.deb",
+        "sha256": "758274d8bc438f325fc5fc808c0482ab50eb2bdaf02f61747888e190760753de"
+      }
+    ]
+  }
+}

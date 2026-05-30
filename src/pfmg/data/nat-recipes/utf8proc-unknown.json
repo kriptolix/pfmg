@@ -1,0 +1,30 @@
+{
+  "header": {
+    "id": "utf8proc",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "utf8proc",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DBUILD_SHARED_LIBS=ON",
+      "-DUTF8PROC_INSTALL=ON",
+      "-DUTF8PROC_ENABLE_TESTING=OFF"
+    ],
+    "builddir": true,
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/JuliaStrings/utf8proc.git",
+        "tag": "v2.11.3",
+        "commit": "e5e799221b45bbb90f5fdc5c69b6b8dfbf017e78",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^v([\\d.]+)$"
+        }
+      }
+    ]
+  }
+}

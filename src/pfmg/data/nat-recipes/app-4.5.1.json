@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "app",
+    "version": "4.5.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "app",
+    "buildsystem": "simple",
+    "build-commands": [
+      "install -d /app/bin/",
+      "cp -r * /app/bin/"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/BleuBleu/FamiStudio/releases/download/4.5.1/FamiStudio451-LinuxAMD64.zip",
+        "sha256": "90343f9c067697e662028b6fb18fffd863995d214c86f3b3a70bbc40220b99c3",
+        "strip-components": 0,
+        "x-checker-data": {
+          "is-main-source": true,
+          "type": "json",
+          "url": "https://api.github.com/repos/BleuBleu/FamiStudio/releases/latest",
+          "version-query": ".tag_name",
+          "url-query": ".assets[] | select(.name|endswith(\"LinuxAMD64.zip\")) | .browser_download_url",
+          "timestamp-query": ".published_at"
+        }
+      }
+    ]
+  }
+}

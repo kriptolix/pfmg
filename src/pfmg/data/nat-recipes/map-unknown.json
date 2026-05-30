@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "map",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "map",
+    "buildsystem": "simple",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/MUME/arda.git",
+        "tag": "42"
+      }
+    ],
+    "build-commands": [
+      "cp arda.xml /app/"
+    ]
+  }
+}

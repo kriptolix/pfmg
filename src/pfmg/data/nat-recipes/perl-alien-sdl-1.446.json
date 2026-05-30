@@ -1,0 +1,30 @@
+{
+  "header": {
+    "id": "perl-alien-sdl",
+    "version": "1.446",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "perl-alien-sdl",
+    "no-autogen": true,
+    "cleanup": [
+      "/bin"
+    ],
+    "make-args": [
+      "BUILD_ARGS=--travis"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://search.cpan.org/CPAN/authors/id/F/FR/FROGGS/Alien-SDL-1.446.tar.gz",
+        "sha256": "c9aa2c9dc3c63d89773c7d7203f2a46d1b924d0c72d9f801af147a3dc8bc512a"
+      },
+      {
+        "type": "file",
+        "path": "perl-BuildPL-Makefile",
+        "dest-filename": "Makefile"
+      }
+    ]
+  }
+}

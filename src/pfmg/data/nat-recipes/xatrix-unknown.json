@@ -1,0 +1,30 @@
+{
+  "header": {
+    "id": "xatrix",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "xatrix",
+    "buildsystem": "cmake-ninja",
+    "no-make-install": true,
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
+      "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
+    ],
+    "build-commands": [
+      "install -D ./game.so /app/bin/xatrix/game.so",
+      "install -D ./stuff/mapfixes/industry.ent /app/bin/xatrix/maps/industry.ent",
+      "install -D ./stuff/mapfixes/w_treat.ent /app/bin/xatrix/maps/w_treat.ent",
+      "install -D ./stuff/mapfixes/xintell.ent /app/bin/xatrix/maps/xintell.ent"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/yquake2/xatrix/archive/refs/tags/XATRIX_2_15.tar.gz",
+        "sha256": "23d173d6fb7c7fbf1a509d41fdffcad2af21c0ef346910af764c0877e618373c"
+      }
+    ]
+  }
+}

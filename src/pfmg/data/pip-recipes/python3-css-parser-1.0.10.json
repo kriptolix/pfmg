@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-css-parser",
+    "version": "1.0.10",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-css-parser",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"css-parser==1.0.10\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/7c/01/4a633580393fa23e17c22f5782886e898c0fdbdb9e77736552a7a12637b5/css_parser-1.0.10-py2.py3-none-any.whl",
+        "sha256": "d2e955a114829f0a327cc5535c2e65fe2e40b883b892881017d419a3b6dd05b7"
+      }
+    ]
+  }
+}

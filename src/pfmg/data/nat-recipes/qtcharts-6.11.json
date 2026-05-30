@@ -1,0 +1,30 @@
+{
+  "header": {
+    "id": "qtcharts",
+    "version": "6.11",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "qtcharts",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
+      "-DQT_BUILD_EXAMPLES=OFF",
+      "-DQT_BUILD_TESTS=OFF"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.qt.io/archive/qt/6.11/6.11.1/submodules/qtcharts-everywhere-src-6.11.1.tar.xz",
+        "sha256": "3fe3ed318c2a86d1417c5c29cf7494275e8fd4b537cd37453f5599c57365515c",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 7927,
+          "stable-only": true,
+          "url-template": "https://download.qt.io/archive/qt/$major.$minor/$version/submodules/qtcharts-everywhere-src-$version.tar.xz"
+        }
+      }
+    ]
+  }
+}

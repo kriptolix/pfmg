@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "pcap",
+    "version": "1.10.5",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "pcap",
+    "buildsystem": "autotools",
+    "config-opts": [
+      "--disable-shared",
+      "--disable-dbus"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://www.tcpdump.org/release/libpcap-1.10.5.tar.gz",
+        "sha512": "e599a31f2f1c03bdf386defa613ea9f08f80459c87068c2dd36c55c1bd678e2622cdce6333f0a776f16812df7bd4d6747820d1c35c7a2f1d7ad4a2ffb45dbe24"
+      }
+    ]
+  }
+}

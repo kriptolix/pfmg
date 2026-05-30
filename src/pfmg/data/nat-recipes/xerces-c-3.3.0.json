@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "xerces-c",
+    "version": "3.3.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "xerces-c",
+    "no-autogen": true,
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://dlcdn.apache.org//xerces/c/3/sources/xerces-c-3.3.0.tar.xz",
+        "sha256": "a83e12af82dc4fea09c592979fdbb6f206eeaa968562d7d18a0a4dd032c51267",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 5182,
+          "url-template": "https://dlcdn.apache.org//xerces/c/$major/sources/xerces-c-$version.tar.xz",
+          "stable-only": true
+        }
+      }
+    ]
+  }
+}

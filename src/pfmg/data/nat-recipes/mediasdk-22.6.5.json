@@ -1,0 +1,45 @@
+{
+  "header": {
+    "id": "mediasdk",
+    "version": "22.6.5",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "mediasdk",
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DCMAKE_INSTALL_LIBDIR=lib",
+      "-DBUILD_SAMPLES=OFF",
+      "-DBUILD_TESTS=OFF",
+      "-DBUILD_TOOLS=OFF",
+      "-DBUILD_TESTS=OFF",
+      "-DMFX_ENABLE_SW_FALLBACK=OFF"
+    ],
+    "build-options": {
+      "prefix": "/app/extensions/IntelMediaSDK",
+      "prepend-pkg-config-path": "/app/extensions/IntelMediaSDK/lib/pkgconfig",
+      "strip": true
+    },
+    "post-install": [
+      "install -Dp -m 644 ${FLATPAK_BUILDER_BUILDDIR}/fr.handbrake.ghb.Plugin.IntelMediaSDK.metainfo.xml --target-directory=${FLATPAK_DEST}/share/metainfo"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/Intel-Media-SDK/MediaSDK/archive/refs/tags/intel-mediasdk-22.6.5.tar.gz",
+        "sha256": "3a671cc692da5111c041088f5e32528b4346e122e8a134fad71310c572705106"
+      },
+      {
+        "type": "patch",
+        "path": "intel-mediasdk-gcc13.patch"
+      },
+      {
+        "type": "file",
+        "path": "fr.handbrake.ghb.Plugin.IntelMediaSDK.metainfo.xml"
+      }
+    ]
+  }
+}

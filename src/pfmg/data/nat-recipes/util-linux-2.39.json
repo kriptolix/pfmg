@@ -1,0 +1,30 @@
+{
+  "header": {
+    "id": "util-linux",
+    "version": "2.39",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "util-linux",
+    "buildsystem": "simple",
+    "build-commands": [
+      "./configure --prefix=/",
+      "sed -i -e 's/ -g / -s /' Makefile",
+      "make -j $FLATPAK_BUILDER_N_JOBS dmesg",
+      "make -j $FLATPAK_BUILDER_N_JOBS lscpu",
+      "make -j $FLATPAK_BUILDER_N_JOBS lsblk",
+      "find . -type f | grep -v img.xz | perl -lne 'print if -B and -x' | xargs strip",
+      "install -D ./dmesg $FLATPAK_DEST/bin/dmesg",
+      "install -D ./lscpu $FLATPAK_DEST/bin/lscpu",
+      "install -D ./lsblk $FLATPAK_DEST/bin/lsblk"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://mirrors.edge.kernel.org/pub/linux/utils/util-linux/v2.39/util-linux-2.39.1.tar.xz",
+        "sha256": "890ae8ff810247bd19e274df76e8371d202cda01ad277681b0ea88eeaa00286b"
+      }
+    ]
+  }
+}

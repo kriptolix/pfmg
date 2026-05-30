@@ -1,0 +1,19 @@
+{
+  "header": {
+    "id": "ggmorse",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "ggmorse",
+    "buildsystem": "cmake-ninja",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/f4exb/ggmorse.git",
+        "commit": "3662036c7ee37223f29d59a653a571d2c399eea0"
+      }
+    ]
+  }
+}

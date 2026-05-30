@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "python3-babelgladeextractor",
+    "version": "0.7.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-BabelGladeExtractor",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 freeze",
+      "pip3 wheel --no-build-isolation --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\"   BabelGladeExtractor*.tar.bz2",
+      "ls -la",
+      "pip3 install --no-build-isolation --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"BabelGladeExtractor\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/60/2e/dec1cc18c51b8df33c7c4d0a321b084cf38e1733b98f9d15018880fb4970/pytz-2022.1-py2.py3-none-any.whl",
+        "sha256": "e68985985296d9a66a881eb3193b0906246245294a881e7c8afe623866ac6a5c"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/c5/7b/2c9fc1e18cb97676c7bedaa872447eb720e0c6e0e48190b4fba7eccdc1a8/Babel-2.10.1-py3-none-any.whl",
+        "sha256": "3f349e85ad3154559ac4930c3918247d319f21910d5ce4b25d439ed8693b98d2"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/92/d1/322c28eec415ac3469edf3293958b4a57e7028cb78c5eaa6cd010cffa380/BabelGladeExtractor-0.7.0.tar.bz2",
+        "sha256": "bcf805e28b4bb18c8b6909a65a7cf5c7c2bcbf4ae50b164878c9682d22271798"
+      }
+    ]
+  }
+}

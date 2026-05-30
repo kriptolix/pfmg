@@ -1,0 +1,49 @@
+{
+  "header": {
+    "id": "grilo-plugins",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "grilo-plugins",
+    "buildsystem": "meson",
+    "config-opts": [
+      "-Denable-filesystem=no",
+      "-Denable-optical-media=no",
+      "-Denable-youtube=no",
+      "-Denable-bookmarks=no",
+      "-Denable-metadata-store=no",
+      "-Denable-vimeo=no",
+      "-Denable-tracker=no",
+      "-Denable-local-metadata=no",
+      "-Denable-dleyna=no",
+      "-Denable-thetvdb=no",
+      "-Denable-tmdb=no",
+      "-Denable-freebox=no",
+      "-Denable-opensubtitles=no",
+      "-Denable-gravatar=no",
+      "-Denable-jamendo=no",
+      "-Denable-raitv=no",
+      "-Denable-magnatune=no",
+      "-Denable-shoutcast=no",
+      "-Denable-dmap=no",
+      "-Denable-flickr=no",
+      "-Denable-podcasts=no",
+      "-Denable-chromaprint=no",
+      "-Denable-lua-factory=yes",
+      "--wrap-mode=nodownload"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://gitlab.gnome.org/GNOME/grilo-plugins.git",
+        "tag": "grilo-plugins-0.3.12",
+        "commit": "2e8a97e73aed257ef3cbb09340d22478c4cd25e2"
+      }
+    ],
+    "cleanup": [
+      "/include"
+    ]
+  }
+}

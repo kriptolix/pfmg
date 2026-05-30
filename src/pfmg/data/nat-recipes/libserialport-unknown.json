@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "libserialport",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libserialport",
+    "buildsystem": "autotools",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/sigrokproject/libserialport",
+        "tag": "libserialport-0.1.2",
+        "commit": "bc8f88ef3399b76da7992a99badebada419d0e19",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^libserialport-([\\d.]+)$"
+        }
+      }
+    ]
+  }
+}

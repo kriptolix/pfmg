@@ -1,0 +1,29 @@
+{
+  "header": {
+    "id": "libburn",
+    "version": "1.5.8",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libburn",
+    "build-options": {
+      "cflags": "-std=gnu17",
+      "config-opts": [
+        "--disable-static"
+      ]
+    },
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://files.libburnia-project.org/releases/libburn-1.5.8.tar.gz",
+        "sha512": "fa290de9c9e5270eea7752418caaf6d8ac9b9291e71ea043637f78493d91bf1daa3ec23f3c4e7b584d0134b123f3ca279c02cbb44ad3027e7e7d439966512280",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 1568,
+          "url-template": "https://files.libburnia-project.org/releases/libburn-$version.tar.gz"
+        }
+      }
+    ]
+  }
+}

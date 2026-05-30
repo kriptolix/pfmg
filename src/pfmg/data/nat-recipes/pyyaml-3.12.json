@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "pyyaml",
+    "version": "3.12",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "PyYAML",
+    "buildsystem": "simple",
+    "build-commands": [
+      "python3 setup.py install --prefix=/app --root=/"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://pypi.python.org/packages/4a/85/db5a2df477072b2902b0eb892feb37d88ac635d36245a72a6a69b23b383a/PyYAML-3.12.tar.gz#md5=4c129761b661d181ebf7ff4eb2d79950",
+        "sha256": "592766c6303207a20efc445587778322d7f73b161bd994f227adaa341ba212ab"
+      }
+    ]
+  }
+}

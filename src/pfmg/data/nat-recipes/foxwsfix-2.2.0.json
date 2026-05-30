@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "foxwsfix",
+    "version": "2.2.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "foxwsfix",
+    "buildsystem": "simple",
+    "build-commands": [
+      "install -Dm644 foxWSFix\\ Readme.txt foxWSFix.u -t /app/share/games/ut2004/foxwsfix"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/alexstrout/foxWSFix-UT2k4/releases/download/v2.2.0/foxWSFix-v2.2.0.7z",
+        "sha256": "00c9ef230154ee9ce1325a6ce68136ec8622d149cfcef202f13bc0948e1134d6"
+      }
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "libgringotts",
+    "version": "1.2.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libgringotts",
+    "buildsystem": "autotools",
+    "config-opts": [
+      "--disable-static"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://downloads.sourceforge.net/project/gringotts.berlios/libgringotts-1.2.1.tar.bz2",
+        "sha256": "a75e6f757b975d3da662fe7ea2d985f358f31ad2dede1a222bb4aa403d0dbfd1"
+      },
+      {
+        "type": "shell",
+        "commands": [
+          "cp -p /usr/share/automake-*/config.{sub,guess} ."
+        ]
+      }
+    ]
+  }
+}

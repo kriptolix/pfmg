@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "fcitx5-qt",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "fcitx5-qt",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DENABLE_QT4=Off",
+      "-DENABLE_QT5=Off",
+      "-DENABLE_QT6=On",
+      "-DCMAKE_INSTALL_QT6PLUGINDIR=/app/lib/plugins"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/fcitx/fcitx5-qt",
+        "tag": "5.1.13",
+        "commit": "51cc53b68c792a87bebee60e29e09593044b67ed"
+      }
+    ]
+  }
+}

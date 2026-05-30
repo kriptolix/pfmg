@@ -1,0 +1,31 @@
+{
+  "header": {
+    "id": "libphonenumber",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libphonenumber",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DREGENERATE_METADATA=OFF",
+      "-DUSE_BOOST=OFF",
+      "-DBUILD_TESTING=OFF",
+      "-DFETCHCONTENT_FULLY_DISCONNECTED=ON"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/google/libphonenumber.git",
+        "tag": "v9.0.30",
+        "commit": "5f37c1dbde13062c661bdbece0260d4790fb30a5",
+        "x-checker-data": {
+          "type": "git",
+          "version-scheme": "semantic"
+        }
+      }
+    ],
+    "subdir": "cpp"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-configupdater",
+    "version": "3.2",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-ConfigUpdater",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"ConfigUpdater==3.2\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/e7/f0/b59cb7613d9d0f866b6ff247c5953ad78363c27ff5d684a2a98899ab8220/ConfigUpdater-3.2-py2.py3-none-any.whl",
+        "sha256": "0f65a041627d7693840b4dd743581db4c441c97195298a29d075f91b79539df2"
+      }
+    ]
+  }
+}

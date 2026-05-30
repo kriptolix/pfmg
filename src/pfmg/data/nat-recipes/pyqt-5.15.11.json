@@ -1,0 +1,44 @@
+{
+  "header": {
+    "id": "pyqt",
+    "version": "5.15.11",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "pyqt",
+    "buildsystem": "simple",
+    "build-commands": [
+      ". ${FLATPAK_BUILDER_BUILDDIR}/build"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://files.pythonhosted.org/packages/0e/07/c9ed0bd428df6f87183fca565a79fee19fa7c88c7f00a7f011ab4379e77a/PyQt5-5.15.11.tar.gz",
+        "sha256": "fda45743ebb4a27b4b1a51c6d8ef455c4c1b5d610c90d2934c7802b5c1557c52",
+        "x-checker-data": {
+          "type": "pypi",
+          "name": "pyqt5"
+        }
+      },
+      {
+        "type": "file",
+        "path": "pyqt-build",
+        "dest-filename": "build"
+      },
+      {
+        "type": "shell",
+        "commands": [
+          "echo '[tool.sip.bindings.QtGui]' >> pyproject.toml",
+          "echo 'disabled-features = [\"PyQt_Desktop_OpenGL\"]' >> pyproject.toml"
+        ],
+        "only-arches": [
+          "aarch64"
+        ]
+      }
+    ],
+    "cleanup": [
+      "/bin"
+    ]
+  }
+}

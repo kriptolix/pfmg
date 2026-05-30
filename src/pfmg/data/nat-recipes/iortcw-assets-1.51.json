@@ -1,0 +1,30 @@
+{
+  "header": {
+    "id": "iortcw-assets",
+    "version": "1.51",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "iortcw-assets",
+    "buildsystem": "simple",
+    "build-commands": [
+      "ls -la",
+      "cp ./main/mp_bin0.pk3 /app/bin/main/",
+      "cp ./main/mp_rend2_shaders0.pk3 /app/bin/main/",
+      "cp ./main/sp_rend2_shaders0.pk3 /app/bin/main/"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/iortcw/iortcw/releases/download/1.51c/iortcw-1.51c-linux-x86_64.zip",
+        "sha256": "b322dcfd997c5e3e5a5b3f86d1b3525190b1fb5aee36fe4afa65a01b7cec845e",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 16908,
+          "url-template": "https://github.com/iortcw/iortcw/releases/download/$version/iortcw-$version-linux-x86_64.zip"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "libfilezilla",
+    "version": "0.54.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libfilezilla",
+    "sources": [
+      {
+        "x-checker-data": {
+          "type": "html",
+          "//": "filezilla-project.org blocks fedc user agent",
+          "url": "https://packages.debian.org/source/sid/libfilezilla",
+          "pattern": "<a href=\"(https://ftp.debian.org/debian/pool/main/libf/libfilezilla/libfilezilla_([^\"]+).orig.tar.xz)\">",
+          "is-important": true
+        },
+        "type": "archive",
+        "url": "https://ftp.debian.org/debian/pool/main/libf/libfilezilla/libfilezilla_0.54.1.orig.tar.xz",
+        "sha512": "9f123cc74ad158fd2510fdd067fe6983feb01f787acc983d86d5d81065a9b042614a9c4cd7aecd9f77178482e0327f17623d2019d9269bceb33be887b0dc7d7f"
+      }
+    ]
+  }
+}

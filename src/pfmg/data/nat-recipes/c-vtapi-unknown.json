@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "c-vtapi",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "c-vtapi",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/VirusTotal/c-vtapi.git",
+        "commit": "226eda8f40143f579ab8a182ccfa71f7013ad3a6"
+      },
+      {
+        "type": "script",
+        "dest-filename": "autogen.sh",
+        "commands": [
+          "autoreconf -ifv"
+        ]
+      }
+    ]
+  }
+}

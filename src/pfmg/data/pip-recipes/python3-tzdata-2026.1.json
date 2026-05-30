@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-tzdata",
+    "version": "2026.1",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-tzdata",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"tzdata==2026.1\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/b0/70/d460bd685a170790ec89317e9bd33047988e4bce507b831f5db771e142de/tzdata-2026.1-py2.py3-none-any.whl",
+        "sha256": "4b1d2be7ac37ceafd7327b961aa3a54e467efbdb563a23655fbfe0d39cfc42a9"
+      }
+    ]
+  }
+}

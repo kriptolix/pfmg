@@ -1,0 +1,34 @@
+{
+  "header": {
+    "id": "python3-matplotlib",
+    "version": "3.8.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-matplotlib",
+    "buildsystem": "simple",
+    "build-commands": [
+      "python3 setup.py install --prefix=/app --root=/"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "dest": "build/qhull-2020.2",
+        "url": "http://www.qhull.org/download/qhull-2020-src-8.0.2.tgz",
+        "sha256": "b5c2d7eb833278881b952c8a52d20179eab87766b00b865000469a45c1838b7e"
+      },
+      {
+        "type": "archive",
+        "url": "https://downloads.sourceforge.net/project/freetype/freetype2/2.6.1/freetype-2.6.1.tar.gz",
+        "dest": "build/freetype-2.6.1",
+        "sha256": "0a3c7dfbda6da1e8fce29232e8e96d987ababbbf71ebc8c75659e4132c367014"
+      },
+      {
+        "type": "archive",
+        "url": "https://files.pythonhosted.org/packages/b4/1b/1b80fcc6b7f33a4c7fa025e944416f8b63fa8d278fad32470c82a2edf319/matplotlib-3.8.1.tar.gz",
+        "sha256": "044df81c1f6f3a8e52d70c4cfcb44e77ea9632a10929932870dfaa90de94365d"
+      }
+    ]
+  }
+}

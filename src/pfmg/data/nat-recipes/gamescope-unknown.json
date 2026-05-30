@@ -1,0 +1,129 @@
+{
+  "header": {
+    "id": "gamescope",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "gamescope",
+    "buildsystem": "meson",
+    "config-opts": [
+      "-Dpipewire=enabled",
+      "-Dforce_fallback_for=stb,wlroots,libliftoff,vkroots"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/ValveSoftware/gamescope.git",
+        "commit": "f8b33d38c5acc35825c7966b208222770c4a623e",
+        "tag": "3.16.23",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^([\\d.]+)$",
+          "is-main-source": true
+        }
+      },
+      {
+        "type": "archive",
+        "url": "https://github.com/nothings/stb/archive/5736b15f7ea0ffb08dd38af21067c314d6a3aae9/stb.tar.gz",
+        "sha256": "d00921d49b06af62aa6bfb97c1b136bec661dd11dd4eecbcb0da1f6da7cedb4c",
+        "dest": "subprojects/stb",
+        "x-checker-data": {
+          "type": "html",
+          "url": "https://raw.githubusercontent.com/ValveSoftware/gamescope/refs/heads/master/subprojects/stb.wrap",
+          "version-pattern": "revision\\s*=\\s*([a-f0-9]+)",
+          "url-template": "https://github.com/nothings/stb/archive/$version/stb.tar.gz"
+        }
+      },
+      {
+        "type": "archive",
+        "url": "https://github.com/g-truc/glm/archive/0af55ccecd98d4e5a8d1fad7de25ba429d60e863/glm.tar.gz",
+        "sha256": "e7f187d83523f505eb38dd25d297ea6c0d4ed856d733e808f18253f5a8fa88a0",
+        "dest": "subprojects/glm",
+        "x-checker-data": {
+          "type": "html",
+          "url": "https://raw.githubusercontent.com/ValveSoftware/gamescope/refs/heads/master/subprojects/glm.wrap",
+          "version-pattern": "revision\\s*=\\s*([a-f0-9]+)",
+          "url-template": "https://github.com/g-truc/glm/archive/$version/glm.tar.gz"
+        }
+      },
+      {
+        "type": "shell",
+        "commands": [
+          "echo -n 'Checking stb version ' && grep 5736b15f7ea0ffb08dd38af21067c314d6a3aae9 subprojects/stb.wrap",
+          "echo -n 'Checking glm version ' && grep 0af55ccecd98d4e5a8d1fad7de25ba429d60e863 subprojects/glm.wrap",
+          "meson subprojects packagefiles --apply"
+        ]
+      },
+      {
+        "type": "patch",
+        "path": "gamescope_wlroots_libinput.diff"
+      }
+    ],
+    "cleanup": [
+      "/include",
+      "/lib/pkgconfig",
+      "/lib/*.a",
+      "/share/pkgconfig",
+      "/share/applications",
+      "/bin/di-edid-decode"
+    ],
+    "post-install": [
+      "mv ${FLATPAK_DEST}/bin/gamescope ${FLATPAK_DEST}/bin/gamescope-brokey"
+    ],
+    "modules": [
+      {
+        "name": "xmu",
+        "sources": [
+          {
+            "type": "archive",
+            "url": "https://www.x.org/archive/individual/lib/libXmu-1.3.1.tar.xz",
+            "sha256": "81a99e94c4501e81c427cbaa4a11748b584933e94b7a156830c3621256857bc4",
+            "x-checker-data": {
+              "type": "anitya",
+              "project-id": 1785,
+              "url-template": "https://www.x.org/archive/individual/lib/libXmu-$version.tar.xz"
+            }
+          }
+        ],
+        "cleanup": [
+          "/include",
+          "/lib/*.la",
+          "/lib/*.a",
+          "/share",
+          "/lib/pkgconfig"
+        ]
+      },
+      {
+        "name": "google-benchmark",
+        "disabled": true,
+        "buildsystem": "cmake-ninja",
+        "config-opts": [
+          "-DBENCHMARK_ENABLE_GTEST_TESTS=OFF",
+          "-DBENCHMARK_USE_BUNDLED_GTEST=OFF",
+          "-DCMAKE_CXX_FLAGS="
+        ],
+        "sources": [
+          {
+            "type": "archive",
+            "url": "https://github.com/google/benchmark/archive/v1.9.5/google-benchmark-1.9.5.tar.gz",
+            "sha256": "9631341c82bac4a288bef951f8b26b41f69021794184ece969f8473977eaa340",
+            "x-checker-data": {
+              "type": "anitya",
+              "project-id": 18299,
+              "url-template": "https://github.com/google/benchmark/archive/v$version/google-benchmark-$version.tar.gz"
+            }
+          }
+        ],
+        "cleanup": [
+          "/include",
+          "/lib/*.a",
+          "/share",
+          "/lib/cmake",
+          "/lib/pkgconfig"
+        ]
+      }
+    ]
+  }
+}

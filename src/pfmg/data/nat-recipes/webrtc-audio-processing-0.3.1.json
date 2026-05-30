@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "webrtc-audio-processing",
+    "version": "0.3.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "webrtc-audio-processing",
+    "buildsystem": "autotools",
+    "config-opts": [
+      "--enable-neon=no"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://gitlab.freedesktop.org/pulseaudio/webrtc-audio-processing/-/archive/v0.3.1/webrtc-audio-processing-v0.3.1.tar.gz",
+        "sha256": "a532a38f04a76004ca4e258989d556911e41370060e47a9cb33cb03b72859195"
+      }
+    ]
+  }
+}

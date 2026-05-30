@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "boost",
+    "version": "1.82.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "boost",
+    "buildsystem": "simple",
+    "build-commands": [
+      "./bootstrap.sh --with-toolset=gcc --with-icu --with-python-version=3.10",
+      "./b2 stage --prefix=\"${FLATPAK_DEST}\" --with-python --with-iostreams --with-random variant=release threading=multi link=shared toolset=gcc  debug-symbols=off",
+      "./b2 install --prefix=\"${FLATPAK_DEST}\" --with-python --with-iostreams --with-random variant=release  threading=multi link=shared toolset=gcc debug-symbols=off"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://archives.boost.io/release/1.82.0/source/boost_1_82_0.tar.bz2",
+        "sha256": "a6e1ab9b0860e6a2881dd7b21fe9f737a095e5f33a3a874afc6a345228597ee6"
+      }
+    ]
+  }
+}

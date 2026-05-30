@@ -1,0 +1,31 @@
+{
+  "header": {
+    "id": "lapack",
+    "version": "3.10.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "lapack",
+    "buildsystem": "cmake",
+    "builddir": true,
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DBUILD_SHARED_LIBS=ON",
+      "-DBUILD_TESTING=OFF",
+      "-DCMAKE_Fortran_COMPILER=gfortran",
+      "-DLAPACKE=ON",
+      "-DCBLAS=ON"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/Reference-LAPACK/lapack/archive/refs/tags/v3.10.1.tar.gz",
+        "sha512": "0500bbbb48483208c0a35b74972ff0059c389da6032824a2079637266a99fa980882eedf7f1fc490219ee4ff27812ac8c6afe118e25f40a9c2387e7b997762fb"
+      }
+    ],
+    "cleanup": [
+      "/lib/cmake"
+    ]
+  }
+}

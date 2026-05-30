@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "python3-dbus-notification",
+    "version": "2025.5.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-dbus-notification",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"dbus-notification>=2025.3.0\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/c1/1c/299c0ea5c41614d04330da2f7c76d08679a4d87cb22c8db27f7e90f1d79e/dbus_notification-2025.5.0-py3-none-any.whl",
+        "sha256": "d8946173f98f18fe76b8ddfa143691a4801f5d560f53a5da7dbdb155a6e4a658"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/b2/a3/e137168c9c44d18eff0376253da9f1e9234d0239e0ee230d2fee6cea8e55/jeepney-0.9.0-py3-none-any.whl",
+        "sha256": "97e5714520c16fc0a45695e5365a2e11b81ea79bba796e26f9f1d178cb182683"
+      }
+    ]
+  }
+}

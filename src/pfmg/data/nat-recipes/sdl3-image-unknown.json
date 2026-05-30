@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "sdl3-image",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "sdl3-image",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DSDL3IMAGE_INSTALL=ON"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/libsdl-org/SDL_image.git",
+        "tag": "release-3.4.4",
+        "commit": "bec9134a26c7d0f31b36d6083c25296e04cabff5",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^release-([\\d.]+)$"
+        }
+      }
+    ]
+  }
+}

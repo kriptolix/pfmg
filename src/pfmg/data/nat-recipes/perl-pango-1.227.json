@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "perl-pango",
+    "version": "1.227",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "perl-pango",
+    "buildsystem": "simple",
+    "build-commands": [
+      "perl Makefile.PL PREFIX=/app LIB=/app/lib",
+      "make",
+      "make test",
+      "make install"
+    ],
+    "post-install": [
+      "find ${FLATPAK_DEST}/lib/ -name \\*.so -exec chmod u+w {} \\;"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://cpan.metacpan.org/authors/id/X/XA/XAOC/Pango-1.227.tar.gz",
+        "sha256": "34b0a422df3fecd7597587048552457d48ae764c43bbefd2a9d62ceb6c8bac71"
+      }
+    ]
+  }
+}

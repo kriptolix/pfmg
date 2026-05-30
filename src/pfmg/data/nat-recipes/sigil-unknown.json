@@ -1,0 +1,51 @@
+{
+  "header": {
+    "id": "sigil",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "sigil",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DUSE_SYSTEM_PYTHON=1",
+      "-DUSE_SYSTEM_LIBS=0",
+      "-DDISABLE_UPDATE_CHECK=1",
+      "-DINSTALL_HICOLOR_ICONS=1"
+    ],
+    "post-install": [
+      "install -Dm644 ${FLATPAK_ID}.metainfo.xml -t ${FLATPAK_DEST}/share/metainfo"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/Sigil-Ebook/Sigil.git",
+        "tag": "2.7.6",
+        "commit": "178ce73cb24524e07884c830e7effae420ab0c00",
+        "disable-shallow-clone": true,
+        "x-checker-data": {
+          "type": "json",
+          "is-main-source": true,
+          "url": "https://api.github.com/repos/Sigil-Ebook/Sigil/releases/latest",
+          "tag-query": ".tag_name",
+          "timestamp-query": ".published_at"
+        }
+      },
+      {
+        "type": "shell",
+        "commands": [
+          "sed -i \"s/sigil.desktop/$FLATPAK_ID.desktop/g\" src/main.cpp"
+        ]
+      },
+      {
+        "type": "file",
+        "path": "com.sigil_ebook.Sigil.metainfo.xml"
+      }
+    ],
+    "modules": [
+      "dependencies/sigil-pypi-dependencies.yaml",
+      "dependencies/python3-tkinter.yaml"
+    ]
+  }
+}

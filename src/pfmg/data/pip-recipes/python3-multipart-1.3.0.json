@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-multipart",
+    "version": "1.3.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-multipart",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"multipart==1.3.0\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/9a/d6/d547a7004b81fa0b2aafa143b09196f6635e4105cd9d2c641fa8a4051c05/multipart-1.3.0-py3-none-any.whl",
+        "sha256": "439bf4b00fd7cb2dbff08ae13f49f4f49798931ecd8d496372c63537fa19f304"
+      }
+    ]
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "dlist",
+    "version": "1.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "dlist",
+    "buildsystem": "simple",
+    "builddir": false,
+    "build-commands": [
+      "echo '#! /usr/bin/env runhaskell' >Setup.txt",
+      "echo '> import Distribution.Simple' >>Setup.txt",
+      "echo '> main = defaultMain' >>Setup.txt",
+      "ln -s Setup.txt Setup.lhs || true",
+      "runhaskell Setup configure --prefix=/app",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "sources": [
+      {
+        "sha256": "173d637328bb173fcc365f30d29ff4a94292a1e0e5558aeb3dfc11de81510115",
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/dlist-1.0/dlist-1.0.tar.gz"
+      },
+      {
+        "dest-filename": "dlist.cabal",
+        "sha256": "854727594c5a816ab3d10f15b1bc4fedaf9e3f7d1ef517a2bb9011f29ba261d2",
+        "type": "file",
+        "url": "https://hackage.haskell.org/package/dlist-1.0/revision/2.cabal"
+      }
+    ]
+  }
+}

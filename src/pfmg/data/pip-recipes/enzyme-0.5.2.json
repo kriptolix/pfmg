@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "enzyme",
+    "version": "0.5.2",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "enzyme",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --prefix=/app enzyme-*.whl"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/67/bc/be0fbce0eb198f4361f462520122151b0ec347ecaeb5d349cf36ae0ac751/enzyme-0.5.2-py3-none-any.whl",
+        "sha256": "5a85306c136368d78f299bb74bf0c5f5d37e2689adc5caec5aba5ee2f029296b",
+        "x-checker-data": {
+          "type": "pypi",
+          "name": "enzyme",
+          "packagetype": "bdist_wheel"
+        }
+      }
+    ]
+  }
+}

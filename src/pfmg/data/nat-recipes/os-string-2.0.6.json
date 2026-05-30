@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "os-string",
+    "version": "2.0.6",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "os-string",
+    "buildsystem": "simple",
+    "builddir": false,
+    "build-commands": [
+      "echo '#! /usr/bin/env runhaskell' >Setup.txt",
+      "echo '> import Distribution.Simple' >>Setup.txt",
+      "echo '> main = defaultMain' >>Setup.txt",
+      "ln -s Setup.txt Setup.lhs || true",
+      "runhaskell Setup configure --prefix=/app",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "sources": [
+      {
+        "sha256": "22fcc7d5fc66676b5dfc57b714d2caf93cce2d5a79d242168352f9eb0fe2f18a",
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/os-string-2.0.6/os-string-2.0.6.tar.gz"
+      },
+      {
+        "dest-filename": "os-string.cabal",
+        "sha256": "7699e7ae9bf74d056a62f384ceef8dfb2aa660f3f7c8016e9703f3b995e5e030",
+        "type": "file",
+        "url": "https://hackage.haskell.org/package/os-string-2.0.6/revision/0.cabal"
+      }
+    ]
+  }
+}

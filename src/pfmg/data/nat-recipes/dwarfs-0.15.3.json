@@ -1,0 +1,39 @@
+{
+  "header": {
+    "id": "dwarfs",
+    "version": "0.15.3",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "dwarfs",
+    "buildsystem": "simple",
+    "cleanup": [
+      "dwarfs"
+    ],
+    "build-commands": [
+      "install -Dm755 dwarfs/bin/dwarfsextract -t ${FLATPAK_DEST}/bin/",
+      "install -Dm755 dwarfs/bin/dwarfsck -t ${FLATPAK_DEST}/bin/"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "sha256": "2dba61946786ec563c96783f719316199eeb55a4cbde1436e1b5796f28494fa8",
+        "url": "https://github.com/mhx/dwarfs/releases/download/v0.15.3/dwarfs-0.15.3-Linux-x86_64.tar.xz",
+        "dest": "dwarfs",
+        "only-arches": [
+          "x86_64"
+        ]
+      },
+      {
+        "type": "archive",
+        "sha256": "70edc89104233aa8afe7548c4b83c97625baf44c34f625fa99deff4b4b01f89f",
+        "url": "https://github.com/mhx/dwarfs/releases/download/v0.15.3/dwarfs-0.15.3-Linux-aarch64.tar.xz",
+        "dest": "dwarfs",
+        "only-arches": [
+          "aarch64"
+        ]
+      }
+    ]
+  }
+}

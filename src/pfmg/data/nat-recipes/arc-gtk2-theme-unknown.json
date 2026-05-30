@@ -1,0 +1,56 @@
+{
+  "header": {
+    "id": "arc-gtk2-theme",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "arc-gtk2-theme",
+    "// NOTE": "This is used by Solus and is popular",
+    "// FIXME": "This has a dependency on inkscape and my patch isn't quite good enough sadly",
+    "disabled": true,
+    "config-opts": [
+      "--disable-gnome-shell",
+      "--disable-cinnamon",
+      "--disable-gtk3",
+      "--disable-metacity",
+      "--disable-xfwm",
+      "--disable-plank",
+      "--disable-openbox",
+      "--disable-unity"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/jnsh/arc-theme/releases/download/20200513/arc-theme-20200513.tar.xz",
+        "sha256": "cd268b878d6ad7c81b7acc0f89b66e26ee9a9a92eafb03b792318d51707f1962"
+      },
+      {
+        "type": "patch",
+        "path": "arc-gtk2-theme-Replace-Inkscape-dependency-with-rsvg-convert.patch"
+      },
+      {
+        "type": "shell",
+        "commands": [
+          "sed -i 's|\"$srcdir/configure\" $@||' autogen.sh"
+        ]
+      }
+    ],
+    "modules": [
+      {
+        "name": "optipng",
+        "cleanup": [
+          "*"
+        ],
+        "sources": [
+          {
+            "type": "archive",
+            "url": "https://prdownloads.sourceforge.net/optipng/optipng-0.7.7.tar.gz",
+            "sha256": "4f32f233cef870b3f95d3ad6428bfe4224ef34908f1b42b0badf858216654452"
+          }
+        ]
+      }
+    ]
+  }
+}

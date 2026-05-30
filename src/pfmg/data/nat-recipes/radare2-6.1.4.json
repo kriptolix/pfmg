@@ -1,0 +1,44 @@
+{
+  "header": {
+    "id": "radare2",
+    "version": "6.1.4",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "radare2",
+    "buildsystem": "autotools",
+    "build-options": {
+      "cflags": "-O3"
+    },
+    "config-opts": [
+      "--with-checks-level=0"
+    ],
+    "post-install": [
+      "mkdir -p /app/share/iaito/webui",
+      "mv /app/share/radare2/*.*.*/www /app/share/iaito/webui/",
+      "ln -s ../../iaito/webui/www /app/share/radare2/*.*.*/",
+      "install -Dpm644 -t /app/share/iaito/webui/share/metainfo org.radare.iaito.webui.metainfo.xml",
+      "appstreamcli compose --no-net --prefix=/ --components=org.radare.iaito.webui --origin=org.radare.iaito.webui --result-root=/app/share/iaito/webui --data-dir=/app/share/iaito/webui/share/app-info/xmls /app/share/iaito/webui"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/radareorg/radare2/releases/download/6.1.4/radare2-6.1.4.tar.xz",
+        "archive-type": "tar-xz",
+        "sha256": "d2884ba3632b4264d241cc2eee64c54ba674590869aa25ea6163f4b60ffed072",
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://api.github.com/repos/radareorg/radare2/releases/latest",
+          "timestamp-query": ".published_at",
+          "version-query": ".tag_name",
+          "url-query": ".assets[] | select(.name==\"radare2-\" + $version + \".tar.xz\") | .browser_download_url"
+        }
+      },
+      {
+        "type": "file",
+        "path": "extensions/org.radare.iaito.webui.metainfo.xml"
+      }
+    ]
+  }
+}

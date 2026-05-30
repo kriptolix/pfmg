@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "python3-idna-bin",
+    "version": "3.13",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-idna-bin",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"idna\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/5d/13/ad7d7ca3808a898b4612b6fe93cde56b53f3034dcde235acb1f0e1df24c6/idna-3.13-py3-none-any.whl",
+        "sha256": "892ea0cde124a99ce773decba204c5552b69c3c67ffd5f232eb7696135bc8bb3",
+        "x-checker-data": {
+          "type": "pypi",
+          "name": "idna",
+          "packagetype": "bdist_wheel"
+        }
+      }
+    ]
+  }
+}

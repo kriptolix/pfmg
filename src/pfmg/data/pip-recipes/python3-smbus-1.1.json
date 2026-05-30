@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-smbus",
+    "version": "1.1",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-smbus",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"smbus==1.1.post2\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/4d/5c/70e14aa4f0c586efc017e1d1aa6e2f7921eefc7602fc2d03368ff912aa91/smbus-1.1.post2.tar.gz",
+        "sha256": "f96d345e0aa10053a8a4917634f1dc37ba1f656fa5cace7629b71777e90855c6"
+      }
+    ]
+  }
+}

@@ -1,0 +1,38 @@
+--- geographiclib/src/SphericalEngine.cpp-orig	2021-12-27 11:28:48.128883835 -0500
++++ geographiclib/src/SphericalEngine.cpp	2021-12-27 11:27:34.840412315 -0500
+@@ -130,6 +130,8 @@
+  * cartesian coordinates.
+  **********************************************************************/
+ 
++#include <ios>
++
+ #include <GeographicLib/SphericalEngine.hpp>
+ #include <GeographicLib/CircularEngine.hpp>
+ #include <GeographicLib/Utility.hpp>
+@@ -409,22 +411,22 @@
+                 SphericalEngine::coeff::Csize(N0, M )) * sizeof(double);
+     if (N == N0) {
+       Utility::readarray<double, real, false>(stream, C);
+-      if (skip) stream.seekg(std::ios::streamoff(skip), ios::cur);
++      if (skip) stream.seekg(std::streamoff(skip), ios::cur);
+       Utility::readarray<double, real, false>(stream, S);
+-      if (skip) stream.seekg(std::ios::streamoff(skip), ios::cur);
++      if (skip) stream.seekg(std::streamoff(skip), ios::cur);
+     } else {
+       for (int m = 0, k = 0; m <= M; ++m) {
+         Utility::readarray<double, real, false>(stream, &C[k], N + 1 - m);
+         stream.seekg((N0 - N) * sizeof(double), ios::cur);
+         k += N + 1 - m;
+       }
+-      if (skip) stream.seekg(std::ios::streamoff(skip), ios::cur);
++      if (skip) stream.seekg(std::streamoff(skip), ios::cur);
+       for (int m = 1, k = 0; m <= M; ++m) {
+         Utility::readarray<double, real, false>(stream, &S[k], N + 1 - m);
+         stream.seekg((N0 - N) * sizeof(double), ios::cur);
+         k += N + 1 - m;
+       }
+-      if (skip) stream.seekg(std::ios::streamoff(skip), ios::cur);
++      if (skip) stream.seekg(std::streamoff(skip), ios::cur);
+     }
+     return;
+   }

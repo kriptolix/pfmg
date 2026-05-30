@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "tree-sitter-query",
+    "version": "0.7.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "tree-sitter-query",
+    "buildsystem": "simple",
+    "build-commands": [
+      "mkdir -p /app/lib/nvim/parser",
+      "cc -shared -fPIC src/parser.c -I src -o /app/lib/nvim/parser/query.so"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/nvim-treesitter/tree-sitter-query/archive/v0.7.0.tar.gz",
+        "sha256": "79285847e8350ee9fe1f6f6c9eb64bc14320f70f7b9b65037193fc58f2638613"
+      }
+    ]
+  }
+}

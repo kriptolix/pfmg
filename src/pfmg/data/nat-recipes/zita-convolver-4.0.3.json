@@ -1,0 +1,60 @@
+{
+  "header": {
+    "id": "zita-convolver",
+    "version": "4.0.3",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "zita-convolver",
+    "no-autogen": true,
+    "subdir": "source",
+    "make-install-args": [
+      "PREFIX=${FLATPAK_DEST}",
+      "LIBDIR=${FLATPAK_DEST}/lib"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://kokkinizita.linuxaudio.org/linuxaudio/downloads/zita-convolver-4.0.3.tar.bz2",
+        "sha512": "62d7841757f10c094e43ed755e187f947c5743f302ed2a1ee6064a850c18921466f4505d8a2a7b3ad23619db7f1ad7307e1dfb2e8a1e7685e60ece2ffff4f6ca"
+      },
+      {
+        "type": "patch",
+        "path": "patch/zita-convolver/0001-Fix-makefile.patch"
+      }
+    ],
+    "modules": [
+      "shared-modules/linux-audio/fftw3f.json",
+      "shared-modules/linux-audio/lv2.json",
+      "shared-modules/linux-audio/lilv.json",
+      "shared-modules/linux-audio/ladspa.json",
+      {
+        "name": "bs2b",
+        "rm-configure": true,
+        "sources": [
+          {
+            "type": "archive",
+            "url": "https://downloads.sourceforge.net/sourceforge/bs2b/libbs2b-3.1.0.tar.gz",
+            "sha256": "6aaafd81aae3898ee40148dd1349aab348db9bfae9767d0e66e0b07ddd4b2528"
+          },
+          {
+            "type": "script",
+            "dest-filename": "autogen.sh",
+            "commands": [
+              "cp -p /usr/share/automake-*/config.{sub,guess} build-aux",
+              "autoreconf -vfi"
+            ]
+          },
+          {
+            "type": "patch",
+            "path": "patch/bs2b/001-fix-automake-dist-lzma.patch"
+          }
+        ],
+        "cleanup": [
+          "/bin"
+        ]
+      }
+    ]
+  }
+}

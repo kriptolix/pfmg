@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "gnustep-base",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "gnustep-base",
+    "build-options": {
+      "env": {
+        "CC": "clang",
+        "CXX": "clang++"
+      }
+    },
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/gnustep/libs-base.git",
+        "commit": "caa0816846937a0ad4724eba12cd0d69786b2e54"
+      }
+    ]
+  }
+}

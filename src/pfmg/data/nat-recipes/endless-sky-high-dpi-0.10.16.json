@@ -1,0 +1,29 @@
+{
+  "header": {
+    "id": "endless-sky-high-dpi",
+    "version": "0.10.16",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "endless-sky-high-dpi",
+    "buildsystem": "simple",
+    "build-commands": [
+      "cp -r endless-sky-high-dpi/* ${FLATPAK_DEST}"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/endless-sky/endless-sky-high-dpi/archive/refs/tags/v0.10.16.tar.gz",
+        "sha256": "10f1b4b5fd3b54a67df55909103b53c36cf65d0224f997ca41a2c4c3e7098d57",
+        "dest": "endless-sky-high-dpi",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 10359,
+          "stable-only": true,
+          "url-template": "https://github.com/endless-sky/endless-sky-high-dpi/archive/refs/tags/v$version.tar.gz"
+        }
+      }
+    ]
+  }
+}

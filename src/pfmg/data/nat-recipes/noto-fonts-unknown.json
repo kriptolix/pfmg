@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "noto-fonts",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "noto-fonts",
+    "buildsystem": "simple",
+    "build-commands": [
+      "mkdir -p /app/share/fonts",
+      "install -D NotoSans-Bold.ttf /app/share/fonts/",
+      "install -D NotoSans-Medium.ttf /app/share/fonts/",
+      "install -D NotoSans-Regular.ttf /app/share/fonts/",
+      "install -D NotoSans-ExtraCondensed.ttf /app/share/fonts/",
+      "install -D NotoSans-ExtraCondensedBold.ttf /app/share/fonts/"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://noto-website-2.storage.googleapis.com/pkgs/NotoSans-hinted.zip",
+        "sha256": "02e5f834c526f815f3b9f90f98e2b5b09f17cec107cc751c3b58fc3a2c0b2942"
+      }
+    ]
+  }
+}

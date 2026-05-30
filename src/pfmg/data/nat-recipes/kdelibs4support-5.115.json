@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "kdelibs4support",
+    "version": "5.115",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "kdelibs4support",
+    "buildsystem": "cmake-ninja",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.kde.org/stable/frameworks/5.115/portingAids/kdelibs4support-5.115.0.tar.xz",
+        "sha256": "72a2fa16c9044fffa7548f349e5e19f16996787673e6bd978fdca260e5512f14",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 8762,
+          "stable-only": true,
+          "url-template": "https://download.kde.org/stable/frameworks/$major.$minor/portingAids/kdelibs4support-$version.tar.xz"
+        }
+      }
+    ]
+  }
+}

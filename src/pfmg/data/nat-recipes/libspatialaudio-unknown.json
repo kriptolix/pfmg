@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "libspatialaudio",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libspatialaudio",
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/ddennedy/libspatialaudio.git",
+        "commit": "3affdb8b50bfb4cb0437324dcee933c53cb1b4c0"
+      }
+    ]
+  }
+}

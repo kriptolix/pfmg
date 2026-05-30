@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-poetry-core",
+    "version": "2.1.1",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-poetry-core",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"poetry-core\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/19/ad/e3123a6351e8e23a36cc69c8d4e7891becb1932e4ab48ddbb7f709409c1c/poetry_core-2.1.1-py3-none-any.whl",
+        "sha256": "bc3b0382ab4d00d5d780277fd0aad1580eb4403613b37fc60fec407b5bee1fe6"
+      }
+    ]
+  }
+}

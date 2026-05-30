@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "cereal",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "cereal",
+    "buildsystem": "cmake",
+    "config-opts": [
+      "-D CMAKE_C_COMPILER=gcc",
+      "-D CMAKE_CXX_COMPILER=g++",
+      "-D SKIP_PERFORMANCE_COMPARISON=ON",
+      "-D SKIP_PORTABILITY_TEST=ON"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/USCiLab/cereal.git",
+        "commit": "a56bad8bbb770ee266e930c95d37fff2a5be7fea"
+      }
+    ]
+  }
+}

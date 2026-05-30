@@ -1,0 +1,39 @@
+{
+  "header": {
+    "id": "kadas-gpkg-plugin",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "kadas-gpkg-plugin",
+    "buildsystem": "simple",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/kadas-albireo/kadas-gpkg-plugin.git",
+        "commit": "fb538a7431dcd661170d8b855e4b79a37efc87e5"
+      }
+    ],
+    "build-commands": [
+      "mkdir -p /app/share/kadas/python/plugins/",
+      "cp -r kadas_* /app/share/kadas/python/plugins/"
+    ],
+    "modules": [
+      {
+        "name": "python3-lxml",
+        "buildsystem": "simple",
+        "build-commands": [
+          "pip3 install --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} lxml"
+        ],
+        "sources": [
+          {
+            "type": "file",
+            "url": "https://files.pythonhosted.org/packages/36/14/4e58e16122dd50577a2bfa883c19bd781e223714d55a0d97f56ea506763c/lxml-4.3.5.tar.gz",
+            "sha256": "738862e9724d201f1aa8394cb666d8136d666198e97d6e1e5c9876ad884a86b3"
+          }
+        ]
+      }
+    ]
+  }
+}

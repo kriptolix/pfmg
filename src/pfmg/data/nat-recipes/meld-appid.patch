@@ -1,0 +1,13 @@
+diff --git a/meld/meldapp.py b/meld/meldapp.py
+index de099d3b..13d7e650 100644
+--- a/meld/meldapp.py
++++ b/meld/meldapp.py
+@@ -41,7 +41,7 @@
+ 
+     def __init__(self):
+         super().__init__(
+-            application_id=meld.conf.APPLICATION_ID,
++            
+             flags=Gio.ApplicationFlags.HANDLES_COMMAND_LINE,
+         )
+         GLib.set_application_name(meld.conf.APPLICATION_NAME)

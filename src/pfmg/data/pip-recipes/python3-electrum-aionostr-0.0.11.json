@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-electrum-aionostr",
+    "version": "0.0.11",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-electrum_aionostr",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"electrum_aionostr\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/9b/54/1e6d5b3745a681b34b5256c332535f4c10749f34f49d526d8ae206acc6a6/electrum_aionostr-0.0.11.tar.gz",
+        "sha256": "0eeb1d01e55d4bab2c116268965a0b2c11490659e969fd864c453104558bcf81"
+      }
+    ]
+  }
+}

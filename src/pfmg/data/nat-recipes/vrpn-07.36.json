@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "vrpn",
+    "version": "07.36",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "vrpn",
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DVRPN_BUILD_CLIENTS=OFF",
+      "-DVRPN_BUILD_SERVERS=OFF",
+      "-DVRPN_BUILD_SERVER_LIBRARY=OFF",
+      "-DVRPN_BUILD_TEST_RPC_GENERATION=OFF",
+      "-DVRPN_BUILD_PYTHON_HANDCODED_3X=OFF"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/vrpn/vrpn/archive/refs/tags/v07.36.tar.gz",
+        "sha256": "bed00ae060fc7c0cfdaa2fa01f6f2db4976d431971e8824b710eb63cfbba0df7"
+      }
+    ]
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "certifi",
+    "version": "2026.2.25",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "certifi",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --prefix=/app certifi-*.whl"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/9a/3c/c17fb3ca2d9c3acff52e30b309f538586f9f5b9c9cf454f3845fc9af4881/certifi-2026.2.25-py3-none-any.whl",
+        "sha256": "027692e4402ad994f1c42e52a4997a9763c646b73e4096e4d5d6db8af1d6f0fa",
+        "x-checker-data": {
+          "type": "pypi",
+          "packagetype": "bdist_wheel",
+          "name": "certifi"
+        }
+      }
+    ]
+  }
+}

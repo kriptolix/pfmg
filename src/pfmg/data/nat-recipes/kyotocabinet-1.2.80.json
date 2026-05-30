@@ -1,0 +1,30 @@
+{
+  "header": {
+    "id": "kyotocabinet",
+    "version": "1.2.80",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "kyotocabinet",
+    "config-opts": [
+      "--disable-opt",
+      "--disable-static"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://dbmx.net/kyotocabinet/pkg/kyotocabinet-1.2.80.tar.gz",
+        "sha512": "9fe0a92c9a76db5ce06ef4d5a551c05930f2a9c065ab695b030fdaf45692bfe88d91f1b75791f50d0772c699567744cd74f3ef407172874d4bba467989d54328",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 1530,
+          "url-template": "https://dbmx.net/kyotocabinet/pkg/kyotocabinet-${version}.tar.gz"
+        }
+      }
+    ],
+    "post-install": [
+      "rm ${FLATPAK_DEST}/lib/*.a"
+    ]
+  }
+}

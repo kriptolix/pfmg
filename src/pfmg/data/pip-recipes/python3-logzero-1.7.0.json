@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-logzero",
+    "version": "1.7.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-logzero",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"logzero\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/b3/68/aa714515d65090fcbcc9a1f3debd5a644b14aad11e59238f42f00bd4b298/logzero-1.7.0-py2.py3-none-any.whl",
+        "sha256": "23eb1f717a2736f9ab91ca0d43160fd2c996ad49ae6bad34652d47aba908769d"
+      }
+    ]
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "header": {
+    "id": "cuda-extras",
+    "version": "9.5.1.17",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "cuda-extras",
+    "only-arches": [
+      "x86_64"
+    ],
+    "buildsystem": "simple",
+    "build-commands": [
+      "mkdir -p ${FLATPAK_DEST}/cuda/targets/x86_64-linux/lib",
+      "set -e\ncd ${FLATPAK_DEST}/cuda/targets/x86_64-linux/lib\nln -s ${FLATPAK_DEST}/extra/cudnn/libcudnn_adv.so.9.5.1 libcudnn_adv.so.9.5.1\nln -s ${FLATPAK_DEST}/extra/cudnn/libcudnn_adv.so.9.5.1 libcudnn_adv.so.9\nln -s ${FLATPAK_DEST}/extra/cudnn/libcudnn_adv.so.9.5.1 libcudnn_adv.so\nln -s ${FLATPAK_DEST}/extra/cudnn/libcudnn_cnn.so.9.5.1 libcudnn_cnn.so.9.5.1\nln -s ${FLATPAK_DEST}/extra/cudnn/libcudnn_cnn.so.9.5.1 libcudnn_cnn.so.9\nln -s ${FLATPAK_DEST}/extra/cudnn/libcudnn_cnn.so.9.5.1 libcudnn_cnn.so\nln -s ${FLATPAK_DEST}/extra/cudnn/libcudnn_engines_precompiled.so.9.5.1 libcudnn_engines_precompiled.so.9.5.1\nln -s ${FLATPAK_DEST}/extra/cudnn/libcudnn_engines_precompiled.so.9.5.1 libcudnn_engines_precompiled.so.9\nln -s ${FLATPAK_DEST}/extra/cudnn/libcudnn_engines_precompiled.so.9.5.1 libcudnn_engines_precompiled.so\nln -s ${FLATPAK_DEST}/extra/cudnn/libcudnn_engines_runtime_compiled.so.9.5.1 libcudnn_engines_runtime_compiled.so.9.5.1\nln -s ${FLATPAK_DEST}/extra/cudnn/libcudnn_engines_runtime_compiled.so.9.5.1 libcudnn_engines_runtime_compiled.so.9\nln -s ${FLATPAK_DEST}/extra/cudnn/libcudnn_engines_runtime_compiled.so.9.5.1 libcudnn_engines_runtime_compiled.so\nln -s ${FLATPAK_DEST}/extra/cudnn/libcudnn_graph.so.9.5.1 libcudnn_graph.so.9.5.1\nln -s ${FLATPAK_DEST}/extra/cudnn/libcudnn_graph.so.9.5.1 libcudnn_graph.so.9\nln -s ${FLATPAK_DEST}/extra/cudnn/libcudnn_graph.so.9.5.1 libcudnn_graph.so\nln -s ${FLATPAK_DEST}/extra/cudnn/libcudnn_heuristic.so.9.5.1 libcudnn_heuristic.so.9.5.1\nln -s ${FLATPAK_DEST}/extra/cudnn/libcudnn_heuristic.so.9.5.1 libcudnn_heuristic.so.9\nln -s ${FLATPAK_DEST}/extra/cudnn/libcudnn_heuristic.so.9.5.1 libcudnn_heuristic.so\nln -s ${FLATPAK_DEST}/extra/cudnn/libcudnn_ops.so.9.5.1 libcudnn_ops.so.9.5.1\nln -s ${FLATPAK_DEST}/extra/cudnn/libcudnn_ops.so.9.5.1 libcudnn_ops.so.9\nln -s ${FLATPAK_DEST}/extra/cudnn/libcudnn_ops.so.9.5.1 libcudnn_ops.so\nln -s ${FLATPAK_DEST}/extra/cudnn/libcudnn.so.9.5.1 libcudnn.so.9.5.1\nln -s ${FLATPAK_DEST}/extra/cudnn/libcudnn.so.9.5.1 libcudnn.so.9\nln -s ${FLATPAK_DEST}/extra/cudnn/libcudnn.so.9.5.1 libcudnn.so\n",
+      "set -e\ncd ${FLATPAK_DEST}/cuda/targets/x86_64-linux/lib\nln -s ${FLATPAK_DEST}/extra/nccl/libnccl.so.2.26.5 libnccl.so.2.26.5\nln -s ${FLATPAK_DEST}/extra/nccl/libnccl.so.2.26.5 libnccl.so.2\nln -s ${FLATPAK_DEST}/extra/nccl/libnccl.so.2.26.5 libnccl.so\n"
+    ],
+    "sources": [
+      {
+        "type": "extra-data",
+        "url": "https://developer.download.nvidia.com/compute/cudnn/redist/cudnn/linux-x86_64/cudnn-linux-x86_64-9.5.1.17_cuda12-archive.tar.xz",
+        "filename": "cudnn.tar.xz",
+        "sha256": "35dd20b9c68324ae1288ac36f66ab1f318d2bfecfafb703a82617aa283272be4",
+        "size": 744697316
+      },
+      {
+        "type": "extra-data",
+        "url": "https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/x86_64/libnccl2_2.26.5-1+cuda12.9_amd64.deb",
+        "filename": "nccl.deb",
+        "sha256": "9ac19284ba6678e601679b20be8e0187d3b4929c9d65572df538bfc67f00ff2a",
+        "size": 206186488
+      }
+    ]
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "mauikit-archiver",
+    "version": "4.0.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "mauikit-archiver",
+    "buildsystem": "cmake-ninja",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.kde.org/stable/maui/mauikit-archiver/4.0.2/mauikit-archiver-4.0.2.tar.xz",
+        "sha256": "eb191e4e5cbe3b6d2541f703b267ac6e79d845f9b727dfeae81115650afc8890",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 242845,
+          "stable-only": true,
+          "url-template": "https://download.kde.org/stable/maui/mauikit-archiver/$version/mauikit-archiver-$version.tar.xz"
+        }
+      }
+    ]
+  }
+}

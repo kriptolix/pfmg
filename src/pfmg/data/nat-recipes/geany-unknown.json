@@ -1,0 +1,31 @@
+{
+  "header": {
+    "id": "geany",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "geany",
+    "buildsystem": "autotools",
+    "config-opts": [
+      "--disable-html-docs"
+    ],
+    "post-install": [
+      "install -Dm644 -t /app/share/appdata org.geany.Geany.appdata.xml",
+      "mv /app/bin/geany /app/bin/geany-bin"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/geany/geany.git",
+        "commit": "cb5ff3cf0b63971010e60ea2feedd1a0181c1ace",
+        "tag": "2.1.0"
+      },
+      {
+        "type": "file",
+        "path": "org.geany.Geany.appdata.xml"
+      }
+    ]
+  }
+}

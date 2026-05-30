@@ -1,0 +1,26 @@
+{
+  "header": {
+    "id": "cabextract",
+    "version": "1.11",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "cabextract",
+    "build-options": {
+      "strip": true
+    },
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://www.cabextract.org.uk/cabextract-1.11.tar.gz",
+        "sha256": "b5546db1155e4c718ff3d4b278573604f30dd64c3c5bfd4657cd089b823a3ac6",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 245,
+          "url-template": "https://www.cabextract.org.uk/cabextract-$version.tar.gz"
+        }
+      }
+    ]
+  }
+}

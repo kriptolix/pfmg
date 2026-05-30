@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "python3-notify-py",
+    "version": "0.3.39",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-notify-py",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"notify-py\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/ae/72/2a1e2290f1ab1e06f71f3d0f1646c9e4634e70e1d37491535e19266e8dc9/jeepney-0.8.0-py3-none-any.whl",
+        "sha256": "c0a454ad016ca575060802ee4d590dd912e35c122fa04e70306de3d076cce755"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/6d/48/0a7d5847e3de329f1d0134baf707b689700b53bd3066a5a8cfd94b3c9fc8/loguru-0.5.3-py3-none-any.whl",
+        "sha256": "f8087ac396b5ee5f67c963b495d615ebbceac2796379599820e324419d53667c"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/ec/db/2339f889fe0984cb3a48561a9b2b9861a0dddbe0eac04a3207f2018257f6/notify_py-0.3.39-py3-none-any.whl",
+        "sha256": "4b94e61b3333da21b7ce06511e4e0456abffe14a090ce6555b34b05bed8b836c"
+      }
+    ]
+  }
+}

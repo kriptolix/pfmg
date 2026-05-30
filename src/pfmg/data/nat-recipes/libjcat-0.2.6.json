@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "libjcat",
+    "version": "0.2.6",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libjcat",
+    "buildsystem": "meson",
+    "config-opts": [
+      "-Dintrospection=false",
+      "-Dgtkdoc=false",
+      "-Dtests=false",
+      "-Dcli=false",
+      "--sysconfdir=/app/etc",
+      "--localstatedir=/var/data"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/hughsie/libjcat/releases/download/0.2.6/libjcat-0.2.6.tar.xz",
+        "sha256": "d54ad936ceb654e99f59b0227e4d1974b858970d250d98c6484abcfdc8334722",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 229583,
+          "url-template": "https://github.com/hughsie/libjcat/releases/download/$version/libjcat-$version.tar.xz"
+        }
+      }
+    ]
+  }
+}

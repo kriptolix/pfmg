@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "perl-net-http",
+    "version": "6.22",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "perl-net-http",
+    "buildsystem": "simple",
+    "build-commands": [
+      "perl Makefile.PL",
+      "make install DESTDIR=`pwd`/INST INSTALLSITELIB=/SITELIB",
+      "mkdir -p $FLATPAK_DEST/share/perl5/",
+      "cp -fr ./INST/SITELIB/* $FLATPAK_DEST/share/perl5/"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://cpan.metacpan.org/authors/id/O/OA/OALDERS/Net-HTTP-6.22.tar.gz",
+        "sha256": "62faf9a5b84235443fe18f780e69cecf057dea3de271d7d8a0ba72724458a1a2"
+      }
+    ]
+  }
+}

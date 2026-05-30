@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "cxxsemaphore",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "cxxsemaphore",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DCLANG_FORMAT=OFF",
+      "-DCOMPILER_WARNINGS=OFF",
+      "-DCLANG_TIDY=OFF",
+      "-DBUILD_DOC=OFF",
+      "-DENABLE_TEST=OFF"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "tag": "v2.0.4",
+        "url": "https://github.com/NikolasK-source/cxxsemaphore.git",
+        "commit": "013d56fb690df3bcf77f35bddd68f165272b9867",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^v([\\d.]+)$"
+        }
+      }
+    ]
+  }
+}

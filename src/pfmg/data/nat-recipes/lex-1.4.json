@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "lex",
+    "version": "1.4",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "lex",
+    "buildsystem": "simple",
+    "build-commands": [
+      "NOCONFIGURE=1 sh autogen.sh",
+      "./configure",
+      "make -j $FLATPAK_BUILDER_N_JOBS",
+      "install -D src/flex $FLATPAK_DEST/bin/lex"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/linuxhw/build-stuff/releases/download/1.4/flex-20181004.tar.gz",
+        "sha256": "bd7d248de7792dd2de2089a16b7ea60f94b2056e721e1f0f1b28083f4792e902"
+      }
+    ]
+  }
+}

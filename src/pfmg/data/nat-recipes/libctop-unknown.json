@@ -1,0 +1,20 @@
+{
+  "header": {
+    "id": "libctop",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libctop",
+    "buildsystem": "cmake",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/paolostivanin/libcotp.git",
+        "tag": "v2.0.0",
+        "commit": "c413038ec0491e7286d0c2849b8fe60c7ad75520"
+      }
+    ]
+  }
+}

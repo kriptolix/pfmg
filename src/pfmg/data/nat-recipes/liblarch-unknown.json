@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "liblarch",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "liblarch",
+    "buildsystem": "simple",
+    "build-commands": [
+      "python3 setup.py install --prefix /app"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/getting-things-gnome/liblarch",
+        "tag": "v3.2.0",
+        "commit": "628f5887da9b3d3fe4dcf9d021d85539d0ede279"
+      }
+    ]
+  }
+}

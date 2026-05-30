@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "libwww-perl",
+    "version": "6.36",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libwww-perl",
+    "buildsystem": "simple",
+    "build-commands": [
+      "perl Makefile.PL",
+      "make install DESTDIR=`pwd`/INST INSTALLSITELIB=/SITELIB",
+      "mkdir -p $FLATPAK_DEST/share/perl5/",
+      "cp -fr ./INST/SITELIB/* $FLATPAK_DEST/share/perl5/"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://cpan.metacpan.org/authors/id/E/ET/ETHER/libwww-perl-6.36.tar.gz",
+        "sha256": "75c034ab4b37f4b9506dc644300697505582cf9545bcf2e2079e7263f675290a"
+      }
+    ]
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "header": {
+    "id": "alif-compiler",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "alif-compiler",
+    "buildsystem": "simple",
+    "build-commands": [
+      "g++ -m64 -std=c++11 -finput-charset=utf-8 -I\"/app/include\" -I\"/app/usr/local/include/aliflibwx\" -I\"/app/usr/local/include/\" -I\"/usr/local/include/\" -I\"./\" \"alif.cpp\" -o \"alif\"",
+      "install alif /app/bin/alif",
+      "mkdir -p /app/usr/local/bin",
+      "ln -s /app/bin/alif /app/usr/local/bin/alif"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/alifcommunity/compiler.git",
+        "branch": "flatpak-fork-unstable",
+        "commit": "f09b9a2cabf3f3a1907070d20874f14df4635b13"
+      }
+    ]
+  }
+}

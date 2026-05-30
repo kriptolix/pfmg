@@ -1,0 +1,42 @@
+{
+  "header": {
+    "id": "dolphin",
+    "version": "25.12.3",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "dolphin",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DFLATPAK=ON"
+    ],
+    "post-install": [
+      "mv /app/bin/{dolphin,dolphin-bin}",
+      "install run_dolphin.sh /app/bin/dolphin"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.kde.org/stable/release-service/25.12.3/src/dolphin-25.12.3.tar.xz",
+        "sha256": "9961de7cc076d9d7d598bb7f53afdebcfba20567093231f42ba72e031e089a3b",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 8763,
+          "stable-only": true,
+          "url-template": "https://download.kde.org/stable/release-service/$version/src/dolphin-$version.tar.xz"
+        }
+      },
+      {
+        "type": "shell",
+        "commands": [
+          "sed -e 's/org.kde.dolphin.FileManager1/org.freedesktop.FileManager1/g' -i CMakeLists.txt"
+        ]
+      },
+      {
+        "type": "file",
+        "path": "run_dolphin.sh"
+      }
+    ]
+  }
+}

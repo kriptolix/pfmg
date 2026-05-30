@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "libxcrypt",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libxcrypt",
+    "buildsystem": "autotools",
+    "config-opts": [
+      "--enable-obsolete-api=glibc"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/besser82/libxcrypt.git",
+        "tag": "v4.4.36"
+      }
+    ]
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "header": {
+    "id": "python3-jdtranslationhelper",
+    "version": "3.2",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-jdTranslationHelper",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"jdTranslationHelper\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/75/de/51077de26aa0b24cfdd2d0e8c52b4f42c6d570eab46d214b8ddb6d91248e/jdTranslationHelper-3.2-py3-none-any.whl",
+        "sha256": "19faac7316f2d9f2ddc69141fe71606def397c833d8bc831b84fdcad7e06c720",
+        "x-checker-data": {
+          "type": "pypi",
+          "name": "jdTranslationHelper",
+          "packagetype": "bdist_wheel"
+        }
+      }
+    ],
+    "cleanup": [
+      "/bin",
+      "/share/man/man1"
+    ]
+  }
+}

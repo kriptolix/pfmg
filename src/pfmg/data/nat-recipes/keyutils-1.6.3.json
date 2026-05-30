@@ -1,0 +1,30 @@
+{
+  "header": {
+    "id": "keyutils",
+    "version": "1.6.3",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "keyutils",
+    "buildsystem": "simple",
+    "build-commands": [
+      "sed -i 's|$(LNS) $(LIBDIR)/|$(LNS) |' Makefile && make DESTDIR=/app LIBDIR=/lib NO_ARLIB=1 install"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://git.kernel.org/pub/scm/linux/kernel/git/dhowells/keyutils.git/snapshot/keyutils-1.6.3.tar.gz",
+        "sha256": "a61d5706136ae4c05bd48f86186bcfdbd88dd8bd5107e3e195c924cfc1b39bb4"
+      }
+    ],
+    "cleanup": [
+      "/bin",
+      "/etc",
+      "/sbin",
+      "/usr",
+      "/share/request-key-debug.sh",
+      "/share/man"
+    ]
+  }
+}

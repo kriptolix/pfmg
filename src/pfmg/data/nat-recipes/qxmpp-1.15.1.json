@@ -1,0 +1,76 @@
+{
+  "header": {
+    "id": "qxmpp",
+    "version": "1.15.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "qxmpp",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DBUILD_TESTING=OFF",
+      "-DBUILD_EXAMPLES=OFF",
+      "-DBUILD_OMEMO=ON",
+      "-DWITH_GSTREAMER=ON"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.kde.org/unstable/qxmpp/qxmpp-1.15.1.tar.xz",
+        "sha256": "0747758a4f5b5ea4c60686c65b390766f1909d09e1a5a457c8e80ef272730c46",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 4149,
+          "stable-only": true,
+          "url-template": "https://download.kde.org/unstable/qxmpp/qxmpp-$version.tar.xz"
+        }
+      }
+    ],
+    "modules": [
+      {
+        "name": "libomemo-c",
+        "buildsystem": "cmake-ninja",
+        "config-opts": [
+          "-DBUILD_SHARED_LIBS=ON",
+          "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
+        ],
+        "sources": [
+          {
+            "type": "archive",
+            "url": "https://github.com/dino/libomemo-c/archive/refs/tags/v0.5.1.tar.gz",
+            "sha256": "d1b65dbf7bccc67523abfd5e429707f540b2532932d128b2982f0246be2b22a0",
+            "x-checker-data": {
+              "type": "anitya",
+              "project-id": 359676,
+              "stable-only": true,
+              "url-template": "https://github.com/dino/libomemo-c/archive/refs/tags/v$version.tar.gz"
+            }
+          }
+        ],
+        "modules": [
+          {
+            "name": "libprotobuf-c",
+            "buildsystem": "autotools",
+            "config-opts": [
+              "--disable-protoc"
+            ],
+            "sources": [
+              {
+                "type": "archive",
+                "url": "https://github.com/protobuf-c/protobuf-c/archive/refs/tags/v1.5.2.tar.gz",
+                "sha256": "cea46eeaa19c52924938b582c5d128a6ed3b6fb5b3f4677476a1781cc06e03f3",
+                "x-checker-data": {
+                  "type": "anitya",
+                  "project-id": 3716,
+                  "stable-only": true,
+                  "url-template": "https://github.com/protobuf-c/protobuf-c/archive/refs/tags/v$version.tar.gz"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

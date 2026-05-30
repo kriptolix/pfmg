@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "android-tools",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "android-tools",
+    "buildsystem": "simple",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://dl.google.com/android/repository/platform-tools_r35.0.2-linux.zip",
+        "sha256": "acfdcccb123a8718c46c46c059b2f621140194e5ec1ac9d81715be3d6ab6cd0a"
+      }
+    ],
+    "build-commands": [
+      "install -Dm755 adb /app/lib/python3.11/site-packages/openandroidinstaller/bin/adb",
+      "install -Dm755 fastboot /app/lib/python3.11/site-packages/openandroidinstaller/bin/fastboot"
+    ]
+  }
+}

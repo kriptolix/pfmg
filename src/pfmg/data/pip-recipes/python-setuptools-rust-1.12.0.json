@@ -1,0 +1,47 @@
+{
+  "header": {
+    "id": "python-setuptools-rust",
+    "version": "1.12.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python-setuptools-rust",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} typing_extensions --no-build-isolation",
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} semantic_version --no-build-isolation",
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} setuptools_rust --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/18/67/36e9267722cc04a6b9f15c7f3441c2363321a3ea07da7ae0c0707beb2a9c/typing_extensions-4.15.0-py3-none-any.whl",
+        "sha256": "f0fa19c6845758ab08074a0cfa8b7aecb71c999ca73d62883bc25cc018c4e548",
+        "x-checker-data": {
+          "type": "pypi",
+          "name": "typing_extensions",
+          "packagetype": "bdist_wheel"
+        }
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/7d/31/f2289ce78b9b473d582568c234e104d2a342fd658cc288a7553d83bb8595/semantic_version-2.10.0.tar.gz",
+        "sha256": "bdabb6d336998cbb378d4b9db3a4b56a1e3235701dc05ea2690d9a997ed5041c",
+        "x-checker-data": {
+          "type": "pypi",
+          "name": "semantic_version"
+        }
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/bc/c4/8d3d282cee60d3ea0369fa15ce27387810040360adb4133e31990a7a2aba/setuptools_rust-1.12.0.tar.gz",
+        "sha256": "d94a93f0c97751c17014565f07bdc324bee45d396cd1bba83d8e7af92b945f0c",
+        "x-checker-data": {
+          "type": "pypi",
+          "name": "setuptools-rust"
+        }
+      }
+    ]
+  }
+}

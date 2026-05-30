@@ -1,0 +1,29 @@
+{
+  "header": {
+    "id": "ssh-askpass",
+    "version": "10.3",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "ssh-askpass",
+    "buildsystem": "simple",
+    "build-commands": [
+      "make -C contrib gnome-ssh-askpass3",
+      "install -Dm755 contrib/gnome-ssh-askpass3 ${FLATPAK_DEST}/libexec/openssh/gnome-ssh-askpass"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "sha256": "56682a36bb92dcf4b4f016fd8ec8e74059b79a8de25c15d670d731e7d18e45f4",
+        "url": "https://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-10.3p1.tar.gz",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 2565,
+          "stable-only": true,
+          "url-template": "https://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-$version.tar.gz"
+        }
+      }
+    ]
+  }
+}

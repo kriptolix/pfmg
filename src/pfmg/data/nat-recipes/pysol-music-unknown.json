@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "pysol-music",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "PySol-Music",
+    "buildsystem": "simple",
+    "build-commands": [
+      "install -Dm644 data/music/* -t /app/share/PySolFC/music/"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/shlomif/pysol-music",
+        "commit": "108d6dcbb931f2b709f5a1590ea7ea6190f98d9e",
+        "tag": "4.50",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^([\\d.]+)$"
+        }
+      }
+    ]
+  }
+}

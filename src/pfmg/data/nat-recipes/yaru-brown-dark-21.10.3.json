@@ -1,0 +1,33 @@
+{
+  "header": {
+    "id": "yaru-brown-dark",
+    "version": "21.10.3",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "Yaru-Brown-dark",
+    "buildsystem": "meson",
+    "build-options": {
+      "prefix": "/usr/share/runtime",
+      "append-path": "/usr/share/runtime/share/themes/Yaru-Brown-dark/gtk-3.0/bin",
+      "config-opts": [
+        "-Dicons=false",
+        "-Dgnome-shell=false",
+        "-Dsounds=false",
+        "-Dsessions=false",
+        "-Ddark=false",
+        "-Dgtksourceview=false",
+        "-Dmetacity=false"
+      ]
+    },
+    "sources": [
+      {
+        "type": "archive",
+        "archive-type": "tar-gzip",
+        "url": "https://api.github.com/repos/Jannomag/Yaru-Colors/tarball/21.10.3ubuntu5",
+        "sha256": "78168a11d52932bfd7dce967120155290d4f1dbdc55cdd35644b8d40d0e9c534"
+      }
+    ]
+  }
+}

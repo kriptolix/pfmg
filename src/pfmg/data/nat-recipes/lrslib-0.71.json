@@ -1,0 +1,26 @@
+{
+  "header": {
+    "id": "lrslib",
+    "version": "0.71",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "lrslib",
+    "buildsystem": "simple",
+    "build-options": {
+      "cflags": "-std=c17 -D_GNU_SOURCE"
+    },
+    "build-commands": [
+      "make",
+      "make install prefix=/app/plugins/pack1"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "http://deb.debian.org/debian/pool/main/l/lrslib/lrslib_0.71b.orig.tar.gz",
+        "sha256": "df22682cd742315fe04f866cfe4804d5950f7dc7f514d5b5f36f5b7f5aff9188"
+      }
+    ]
+  }
+}

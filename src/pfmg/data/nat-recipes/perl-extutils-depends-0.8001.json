@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "perl-extutils-depends",
+    "version": "0.8001",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "perl-ExtUtils-Depends",
+    "buildsystem": "simple",
+    "build-commands": [
+      "perl Makefile.PL PREFIX=/app LIB=/app/lib",
+      "make",
+      "make test",
+      "make install"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://cpan.metacpan.org/authors/id/X/XA/XAOC/ExtUtils-Depends-0.8001.tar.gz",
+        "sha256": "673c4387e7896c1a216099c1fbb3faaa7763d7f5f95a1a56a60a2a2906c131c5"
+      }
+    ]
+  }
+}

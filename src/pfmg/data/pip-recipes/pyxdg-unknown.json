@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "pyxdg",
+    "version": "unknown",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "pyxdg",
+    "buildsystem": "simple",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://gitlab.freedesktop.org/xdg/pyxdg.git",
+        "tag": "rel-0.27",
+        "commit": "f097a66923a65e93640c48da83e6e9cfbddd86ba"
+      }
+    ],
+    "build-commands": [
+      "pip3 install --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} --no-build-isolation ."
+    ]
+  }
+}

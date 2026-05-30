@@ -1,0 +1,26 @@
+{
+  "header": {
+    "id": "libdicom",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libdicom",
+    "builddir": true,
+    "buildsystem": "meson",
+    "config-opts": [
+      "--buildtype=release",
+      "--libdir=lib",
+      "-Dtests=false"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/ImagingDataCommons/libdicom.git",
+        "tag": "v1.2.1",
+        "commit": "04bf7d4267943ae60b8f3dd0159f4f75e9825af8"
+      }
+    ]
+  }
+}

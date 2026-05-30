@@ -1,0 +1,177 @@
+{
+  "header": {
+    "id": "python3-skytemple-files",
+    "version": "1.8.5",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-skytemple-files",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"skytemple-files[spritecollab]==1.8.5\""
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/2f/c2/f9e977608bdf958650638c3f1e28f85a1b075f075ebbe77db8555463787b/Brotli-1.1.0.tar.gz",
+        "sha256": "81de08ac11bcb85841e440c13611c00b67d3bf82698314928d0b676362546724"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/15/14/13c65b1bd59f7e707e0cc0964fbab45c003f90292ed267d159eeeeaa2224/aiodns-3.2.0-py3-none-any.whl",
+        "sha256": "e443c0c27b07da3174a109fd9e736d69058d808f144d3c9d56dbd1776964c5f5"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/b9/74/fbb6559de3607b3300b9be3cc64e97548d55678e44623db17820dbd20002/aiohappyeyeballs-2.4.4-py3-none-any.whl",
+        "sha256": "a980909d50efcd44795c4afeca523296716d50cd756ddca6af8c65b996e27de8"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/fe/ed/f26db39d29cd3cb2f5a3374304c713fe5ab5a0e4c8ee25a0c45cc6adf844/aiohttp-3.11.11.tar.gz",
+        "sha256": "bb49c7f1e6ebf3821a42d81d494f538107610c3a705987f53068546b0e90303e"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/ec/6a/bc7e17a3e87a2985d3e8f4da4cd0f481060eb78fb08596c42be62c90a4d9/aiosignal-1.3.2-py2.py3-none-any.whl",
+        "sha256": "45cde58e409a301715980c2b01d0c28bdde3770d8290b5eb2173759d9acb31a5"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/a0/7a/4daaf3b6c08ad7ceffea4634ec206faeff697526421c20f07628c7372156/anyio-4.7.0-py3-none-any.whl",
+        "sha256": "ea60c3723ab42ba6fff7e8ccb0488c898ec538ff4df1f1d5e642c3601d07e352"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/3b/00/2344469e2084fb287c2e0b57b72910309874c3245463acd6cf5e3db69324/appdirs-1.4.4-py2.py3-none-any.whl",
+        "sha256": "a841dacd6b99318a741b166adb07e19ee71a274450e68237b4650ca1055ab128"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/89/aa/ab0f7891a01eeb2d2e338ae8fecbe57fcebea1a24dbb64d45801bfab481d/attrs-24.3.0-py3-none-any.whl",
+        "sha256": "ac96cd038792094f438ad1f6ff80837353805ac950cd2aa0e0625ef19850c308"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/df/73/b6e24bd22e6720ca8ee9a85a0c4a2971af8497d8f3193fa05390cbd46e09/backoff-2.2.1-py3-none-any.whl",
+        "sha256": "63579f9a0628e06278f7e47b7d7d5b6ce20dc65c5e96a6f3ca99a6adca0396e8"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/fc/97/c783634659c2920c3fc70419e3af40972dbaf758daa229a7d6ea6135c90d/cffi-1.17.1.tar.gz",
+        "sha256": "1c39c6016c32bc48dd54561950ebd6836e1670f2ae46128f67cf49e789c52824"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/12/fe/c5a97ebb13459cfeac5ed0df508ebffba22670aecc6f802d5fa9f5de3e2f/dungeon_eos-0.0.5-py3-none-any.whl",
+        "sha256": "210de2aeea9fb0bdebe1f9264b9208f9d765a44934beb9fa876f16612bd35c78"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/8f/ed/0f4cec13a93c02c47ec32d81d11c0c1efbadf4a471e3f3ce7cad366cbbd3/frozenlist-1.5.0.tar.gz",
+        "sha256": "81d5af29e61b9c8348e876d442253723928dce6433e0e76cd925cd83f1b4b817"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/74/fb/01a200e1c31b79690427c8e983014e4220d2652b4372a46fe4598e1d7a8e/gql-3.5.0-py2.py3-none-any.whl",
+        "sha256": "70dda5694a5b194a8441f077aa5fb70cc94e4ec08016117523f013680901ecb7"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/e3/dc/078bd6b304de790618ebb95e2aedaadb78f4527ac43a9ad8815f006636b6/graphql_core-3.2.5-py3-none-any.whl",
+        "sha256": "2f150d5096448aa4f8ab26268567bbfeef823769893b39c1a2e1409590939c8a"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/76/c6/c88e154df9c4e1a2a66ccf0005a88dfb2650c1dffb6f5ce603dfbd452ce3/idna-3.10-py3-none-any.whl",
+        "sha256": "946d195a0d259cbba61165e88e65941f16e9b36ea6ddb97f00452bae8b1287d3"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/96/e3/42c87871920602a3c8300915bd0292f76eccc66c38f782397acbf8a62088/lru-dict-1.3.0.tar.gz",
+        "sha256": "54fd1966d6bd1fcde781596cb86068214edeebff1db13a2cea11079e3fd07b6b"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/d6/be/504b89a5e9ca731cd47487e91c469064f8ae5af93b7259758dcfc2b9c848/multidict-6.1.0.tar.gz",
+        "sha256": "22ae2ebf9b0c69d206c003e2f6a914ea33f0a932d4aa16f236afc049d9958f4a"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/07/01/c60b57a0aa66074552acbbc16786b34c93caa72f3fdda64fada11866482a/ndspy-4.2.0-py3-none-any.whl",
+        "sha256": "d3b03e57ef5ba450e766035e1908293f7a6ba1a738736fae42b2c66952abb85b"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/f3/af/c097e544e7bd278333db77933e535098c259609c4eb3b85381109602fb5b/pillow-11.1.0.tar.gz",
+        "sha256": "368da70808b36d73b4b390a8ffac11069f8a5c85f29eff1f1b01bcf3ef5b2a20"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/76/30/8de2e0dda61a9bf2cd6b54f6a6f75950c6e69692c6b9084fb3103eb9af15/pmdsky_debug_py-10.0.48-py3-none-any.whl",
+        "sha256": "4d7ec0213dbd10aa2764f22d74a831ecae0db82b175a0b156882fbc2a834c37a"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/20/c8/2a13f78d82211490855b2fb303b6721348d0787fdd9a12ac46d99d3acde1/propcache-0.2.1.tar.gz",
+        "sha256": "3f77ce728b19cb537714499928fe800c3dda29e8d9428778fc7c186da4c09a64"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/d7/b1/94daaa50b6d2fa14c6b4981ca24fa4e7aa33a7519962c76170072ffb06ee/pycares-4.5.0.tar.gz",
+        "sha256": "025b6c2ffea4e9fb8f9a097381c2fecb24aff23fbd6906e70da22ec9ba60e19d"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/13/a3/a812df4e2dd5696d1f351d58b8fe16a405b234ad2886a0dab9183fb78109/pycparser-2.22-py3-none-any.whl",
+        "sha256": "c3702b6d3dd8c7abc1afa565d7e63d53a1d0bd86cdc24edd75470f4de499cfcc"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/2e/49/565350c6fab3f5a3e2c46633290117060e70e2501544cdf3bde1d1d5d0fe/range_typed_integers-1.0.1-py3-none-any.whl",
+        "sha256": "35d39a41642503c5c5117e26798713f081b1beece1b2afd8f1ba70c8d90f63c5"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/eb/c4/73827aae5d1c64d1a413efd86367daea3d235449baf27dea6ae718dfd438/skytemple_files-1.8.5-py3-none-any.whl",
+        "sha256": "757452b470b9a55c6ccf900b1955255e9df4f63b0360df2e41f78584b4b43277"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/e9/44/75a9c9421471a6c4805dbf2356f7c181a29c1879239abab1ea2cc8f38b40/sniffio-1.3.1-py3-none-any.whl",
+        "sha256": "2f6da418d1f1e0fddd844478f41680e794e6051915791a034ff65e5f100525a2"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/24/99/4772b8e00a136f3e01236de33b0efda31ee7077203ba5967fcc76da94d65/texttable-1.7.0-py2.py3-none-any.whl",
+        "sha256": "72227d592c82b3d7f672731ae73e4d1f88cd8e2ef5b075a7a7f01a23a3743917"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/b7/9d/4b94a8e6d2b51b599516a5cb88e5bc99b4d8d4583e468057eaa29d5f0918/yarl-1.18.3.tar.gz",
+        "sha256": "ac1801c45cbf77b6c99242eeff4fffb5e4e73a800b5c4ad4fc0be5def634d2e1"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/32/c0/5b8013b5a812701c72e3b1e2b378edaa6514d06bee6704a5ab0d7fa52931/setuptools-71.1.0.tar.gz",
+        "sha256": "032d42ee9fb536e33087fb66cac5f840eb9391ed05637b3f2a76a7c8fb477936"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/8a/98/2d9906746cdc6a6ef809ae6338005b3f21bb568bea3165cfc6a243fdc25c/wheel-0.45.1.tar.gz",
+        "sha256": "661e1abd9198507b1409a20c02106d9670b2576e916d58f520316666abca6729"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/d5/ae/09427bea9227a33ec834ed5461432752fd5d02b14f93dd68406c91684622/flit_core-3.10.1.tar.gz",
+        "sha256": "66e5b87874a0d6e39691f0e22f09306736b633548670ad3c09ec9db03c5662f7"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/cd/74/ad3d526f3bf7b6d3f408b73fde271ec69dfac8b81341a318ce825f2b3812/pillow-10.4.0.tar.gz",
+        "sha256": "166c1cd4d24309b30d61f79f4a9114b7b2313d7450912277855ff5dfd7cd4a06"
+      }
+    ]
+  }
+}

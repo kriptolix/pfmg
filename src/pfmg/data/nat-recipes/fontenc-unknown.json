@@ -1,0 +1,29 @@
+{
+  "header": {
+    "id": "fontenc",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "fontenc",
+    "buildsystem": "autotools",
+    "build-options": {
+      "env": {
+        "ACLOCAL_PATH": "/app/share/aclocal:/app/utils/gamescope/share/aclocal"
+      }
+    },
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://gitlab.freedesktop.org/xorg/lib/libfontenc.git",
+        "tag": "libfontenc-1.1.7",
+        "commit": "68300c3452592a9e7bf60b4edb008785c4c891c4",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^libfontenc-([\\d.]+)$"
+        }
+      }
+    ]
+  }
+}

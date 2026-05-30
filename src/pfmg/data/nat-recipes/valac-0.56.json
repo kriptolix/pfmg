@@ -1,0 +1,79 @@
+{
+  "header": {
+    "id": "valac",
+    "version": "0.56",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "valac",
+    "buildsystem": "autotools",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.gnome.org/sources/vala/0.56/vala-0.56.18.tar.xz",
+        "sha256": "f2affe7d40ab63db8e7b9ecc3f6bdc9c2fc7e3134c84ff2d795f482fe926a382",
+        "x-checker-data": {
+          "type": "gnome",
+          "name": "vala",
+          "stable-only": true,
+          "is-main-source": true,
+          "is-important": true
+        }
+      }
+    ],
+    "run-tests": false,
+    "build-options": {
+      "cppflags": "-I/usr/lib/sdk/vala/include/"
+    },
+    "modules": [
+      {
+        "name": "graphviz",
+        "buildsystem": "autotools",
+        "sources": [
+          {
+            "type": "archive",
+            "url": "https://gitlab.com/graphviz/graphviz/-/archive/13.1.2/graphviz-13.1.2.tar.gz",
+            "sha256": "0e79b8402e8ea13f05c0fc0e30604f1d0731cd3f60f85850cedac7e0ee420ef8",
+            "x-checker-data": {
+              "type": "anitya",
+              "project-id": 1249,
+              "stable-only": true,
+              "url-template": "https://gitlab.com/graphviz/graphviz/-/archive/$version/graphviz-$version.tar.gz",
+              "is-important": false
+            }
+          }
+        ],
+        "cleanup": [
+          "/share/graphviz/doc",
+          "/bin",
+          "/lib/pkgconfig"
+        ]
+      },
+      {
+        "name": "dbus-run-session",
+        "config-opts": [
+          "-Dsystemd=disabled"
+        ],
+        "sources": [
+          {
+            "type": "archive",
+            "url": "https://gitlab.freedesktop.org/dbus/dbus/-/archive/dbus-1.16.2/dbus-dbus-1.16.2.tar.gz",
+            "sha256": "d77cc71acd93e85f2bd2a6fe3a40e5bd023519e3e9fa9b5361e7109f42b74060",
+            "x-checker-data": {
+              "type": "anitya",
+              "project-id": 5356,
+              "stable-only": true,
+              "url-template": "https://gitlab.freedesktop.org/dbus/dbus/-/archive/dbus-$version/dbus-dbus-$version.tar.gz",
+              "is-important": false
+            }
+          }
+        ],
+        "buildsystem": "meson",
+        "cleanup": [
+          "*"
+        ]
+      }
+    ]
+  }
+}

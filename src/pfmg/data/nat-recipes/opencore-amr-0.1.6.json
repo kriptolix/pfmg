@@ -1,0 +1,21 @@
+{
+  "header": {
+    "id": "opencore-amr",
+    "version": "0.1.6",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "opencore-amr",
+    "config-opts": [
+      "--disable-static"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://downloads.sourceforge.net/sourceforge/opencore-amr/opencore-amr-0.1.6.tar.gz",
+        "sha256": "483eb4061088e2b34b358e47540b5d495a96cd468e361050fae615b1809dc4a1"
+      }
+    ]
+  }
+}

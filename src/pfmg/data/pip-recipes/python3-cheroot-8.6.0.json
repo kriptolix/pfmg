@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "python3-cheroot",
+    "version": "8.6.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-cheroot",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"cheroot\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/fb/36/5b86ff4d8013596bd5276f7c1bcf500dc5993a2a9d07d5d3307f5f44e29f/jaraco.functools-3.5.0-py3-none-any.whl",
+        "sha256": "141f95c490a18eb8aab86caf7a2728f02f604988a26dc36652e3d9fa9e4c49fa"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/bd/3f/c4b3dbd315e248f84c388bd4a72b131a29f123ecacc37ffb2b3834546e42/more_itertools-8.13.0-py3-none-any.whl",
+        "sha256": "c5122bffc5f104d37c1626b8615b511f3427aa5389b94d61e5ef8236bfbc3ddb"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/d3/87/8c5a471a82dfd1c82b4cb6605fcad90e1f0e938b14c0516da3504701a2b4/cheroot-8.6.0-py2.py3-none-any.whl",
+        "sha256": "62cbced16f07e8aaf512673987cd6b1fc5ad00073345e9ed6c4e2a5cc2a3a22d"
+      }
+    ]
+  }
+}

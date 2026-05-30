@@ -1,0 +1,29 @@
+{
+  "header": {
+    "id": "freeimage",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "freeimage",
+    "buildsystem": "autotools",
+    "build-options": {
+      "cxxflags": "-std=c++14",
+      "cflags": "-Wno-implicit-function-declaration"
+    },
+    "no-autogen": true,
+    "sources": [
+      {
+        "type": "archive",
+        "url": "http://downloads.sourceforge.net/freeimage/FreeImage3180.zip",
+        "sha256": "f41379682f9ada94ea7b34fe86bf9ee00935a3147be41b6569c9605a53e438fd"
+      },
+      {
+        "type": "patch",
+        "path": "freeimage-fix-install.patch",
+        "strip-components": 0
+      }
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "pxlib",
+    "version": "0.6.8",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "pxlib",
+    "build-options": {
+      "cflags": "-fpermissive"
+    },
+    "config-opts": [
+      "--disable-static"
+    ],
+    "cleanup": [
+      "/include",
+      "*.la"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.sourceforge.net/project/pxlib/pxlib/0.6.8/pxlib-0.6.8.tar.gz",
+        "sha256": "5f9b58a5c3d9e5e60faad16dfbc5172ee14ae57a978732378660c0f2c9e74ef9"
+      }
+    ]
+  }
+}

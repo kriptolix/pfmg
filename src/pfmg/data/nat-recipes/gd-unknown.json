@@ -1,0 +1,18 @@
+{
+  "header": {
+    "id": "gd",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "gd",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/libgd/libgd",
+        "commit": "c2867fd56dd3198ca4d09572913166d60fb657f9"
+      }
+    ]
+  }
+}

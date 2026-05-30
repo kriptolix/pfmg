@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "python3-django-js-reverse",
+    "version": "0.9.1",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-django-js-reverse",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"django-js-reverse\""
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/4f/a4/879454d49688e2fad93e59d7d4efda580b783c745fd2ec2a3adf87b0808d/pytz-2020.1-py2.py3-none-any.whl",
+        "sha256": "a494d53b6d39c3c6e44c3bec237336e14305e4f29bbf800b599253057fbb79ed"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/49/49/178daa8725d29c475216259eb19e90b2aa0b8c0431af8c7e9b490ae6481d/Django-1.11.29-py2.py3-none-any.whl",
+        "sha256": "014e3392058d94f40569206a24523ce254d55ad2f9f46c6550b0fe2e4f94cf3f"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/17/e0/283b0553f445bd3b45997d3c4d91ffb1a39855e5d7174a0879587a06674c/django_js_reverse-0.9.1-py2.py3-none-any.whl",
+        "sha256": "8134c2ab6307c945edfa90671ca65e85d6c1754d48566bdd6464be259cc80c30"
+      }
+    ]
+  }
+}

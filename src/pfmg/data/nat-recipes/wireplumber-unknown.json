@@ -1,0 +1,26 @@
+{
+  "header": {
+    "id": "wireplumber",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "wireplumber",
+    "builddir": true,
+    "buildsystem": "meson",
+    "config-opts": [
+      "-Dbuildtype=release",
+      "-Dsystem-lua=true",
+      "-Dsystem-lua-version=5.4"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/PipeWire/wireplumber.git",
+        "tag": "0.5.14",
+        "commit": "07e730b279ac7a520699ae9f6b0797848a731b30"
+      }
+    ]
+  }
+}

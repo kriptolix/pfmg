@@ -1,0 +1,37 @@
+{
+  "header": {
+    "id": "libdwarf",
+    "version": "2.3.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libdwarf",
+    "buildsystem": "autotools",
+    "config-opts": [
+      "--disable-debug",
+      "--disable-docs",
+      "--disable-dependency-tracking",
+      "--disable-silent-rules",
+      "--enable-shared",
+      "--disable-static",
+      "--disable-Werror"
+    ],
+    "build-options": {
+      "cflags": "-O2 -fno-strict-aliasing -Wno-narrowing -fPIC -DNDEBUG"
+    },
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://www.prevanders.net/libdwarf-2.3.1.tar.xz",
+        "sha256": "28cf9a5d27aceff5c1f906244a4fe7ae208e41d20a6d8fc7e091c633a40b6e97",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 1597,
+          "stable-only": true,
+          "url-template": "https://www.prevanders.net/libdwarf-$version.tar.xz"
+        }
+      }
+    ]
+  }
+}

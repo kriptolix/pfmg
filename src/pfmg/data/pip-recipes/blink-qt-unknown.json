@@ -1,0 +1,26 @@
+{
+  "header": {
+    "id": "blink-qt",
+    "version": "unknown",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "blink-qt",
+    "buildsystem": "simple",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/AGProjects/blink-qt",
+        "tag": "6.0.6",
+        "commit": "640faebb3dbe5a58d0736f6f939286a8b9cc0090"
+      }
+    ],
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --prefix=\"${FLATPAK_DEST}\" --no-build-isolation .",
+      "desktop-file-edit --set-icon=${FLATPAK_ID} debian/blink.desktop",
+      "install -Dm 644 debian/blink.desktop \"${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop\"",
+      "install -Dm 644 resources/icons/blink.png \"${FLATPAK_DEST}/share/icons/hicolor/512x512/apps/${FLATPAK_ID}.png\""
+    ]
+  }
+}

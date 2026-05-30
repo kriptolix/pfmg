@@ -1,0 +1,31 @@
+{
+  "header": {
+    "id": "libiff",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libiff",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/svanderburg/libiff.git",
+        "commit": "b5f542a83c824f26e0816770c9a17c22bd388606"
+      },
+      {
+        "type": "shell",
+        "commands": [
+          "perl -i -pe 'BEGIN{$m=0} $m=1 if s|doc/Makefile\\s*||; $m=1 if s|src/iffjoin/Makefile\\s*||; $m=1 if s|src/iffpp/Makefile\\s*||; $m=1 if s|tests/Makefile\\s*||; END{ if(!$m){ warn \"Patch failed on $ARGV\\n\"; exit 1 } }' configure.ac",
+          "perl -i -pe 'BEGIN{$m=0} $m=1 if s|SUBDIRS = doc src tests|SUBDIRS = src|; END{ if(!$m){ warn \"Patch failed on $ARGV\\n\"; exit 1 } }' Makefile.am",
+          "perl -i -pe 'BEGIN{$m=0} $m=1 if s|SUBDIRS = libiff iffjoin iffpp|SUBDIRS = libiff|; END{ if(!$m){ warn \"Patch failed on $ARGV\\n\"; exit 1 } }' src/Makefile.am",
+          "./bootstrap"
+        ]
+      }
+    ],
+    "cleanup": [
+      "/include",
+      "/lib/pkgconfig"
+    ]
+  }
+}

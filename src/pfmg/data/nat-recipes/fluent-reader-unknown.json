@@ -1,0 +1,46 @@
+{
+  "header": {
+    "id": "fluent-reader",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "fluent-reader",
+    "buildsystem": "simple",
+    "build-options": {
+      "append-path": "/usr/lib/sdk/node14/bin",
+      "env": {
+        "XDG_CACHE_HOME": "/run/build/fluent-reader/flatpak-node/cache"
+      }
+    },
+    "build-commands": [
+      "npm install --offline --cache=$FLATPAK_BUILDER_BUILDDIR/flatpak-node/npm-cache",
+      ". flatpak-node/electron-builder-arch-args.sh; npm run --offline build; $(npm bin)/electron-builder --dir -p never -- $ELECTRON_BUILDER_ARCH_ARGS",
+      "cp -r bin/linux/*/linux*unpacked /app/fluent-reader",
+      "install -Dm 755 start-fluent-reader.sh /app/bin/start-fluent-reader",
+      "install -Dm644 dist/icons/logo.svg /app/share/icons/hicolor/scalable/apps/me.hyliu.fluentreader.svg"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/yang991178/fluent-reader.git",
+        "tag": "v1.1.4",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 148566,
+          "tag-template": "v$version"
+        },
+        "commit": "9fd12a9fb21e67f4829253ef918fb060d5ecc6aa"
+      },
+      "generated-sources.json",
+      {
+        "type": "script",
+        "dest-filename": "start-fluent-reader.sh",
+        "commands": [
+          "exec zypak-wrapper /app/fluent-reader/fluent-reader --ozone-platform-hint=auto \"$@\""
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "header": {
+    "id": "mcclim",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "mcclim",
+    "buildsystem": "simple",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/McCLIM/McCLIM",
+        "commit": "8d3591ecd267ac9acb5572a7f20d335c1d93e1e1"
+      }
+    ],
+    "build-options": {
+      "env": {
+        "SBCL_HOME": "/app/sbcl/usr/local/lib/sbcl"
+      }
+    },
+    "build-commands": [
+      "cp -ar . /app/McCLIM",
+      "ln -s /app/McCLIM /app/quicklisp/local-projects",
+      "sed -i 's/\"libfontconfig\\.so\"/(:or \"libfontconfig\\.so\\.1\" \"libfontconfig\\.so\")/' /app/McCLIM/Extensions/fontconfig/src/functions.lisp",
+      "sed -i 's/\"libharfbuzz\\.so\"/(:or \"libharfbuzz\\.so\\.0\" \"libharfbuzz\\.so\")/' /app/McCLIM/Extensions/harfbuzz/src/functions.lisp"
+    ]
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "cegui",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "cegui",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DCMAKE_CXX_FLAGS=-std=c++11",
+      "-DCEGUI_BUILD_RENDERER_OPENGL=FALSE",
+      "-DCEGUI_BUILD_RENDERER_OPENGLES=FALSE",
+      "-DCEGUI_BUILD_RENDERER_OPENGL3=FALSE",
+      "-DCEGUI_BUILD_IMAGECODEC_FREEIMAGE=FALSE",
+      "-DCEGUI_OPTION_DEFAULT_IMAGECODEC=OgreRenderer-0",
+      "-DCEGUI_SAMPLES_ENABLED=FALSE",
+      "-DCEGUI_BUILD_PYTHON_MODULES=OFF",
+      "-DCEGUI_LIB_INSTALL_DIR=lib"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/tomluchowski/cegui.git",
+        "tag": "scissors_test_disabled",
+        "commit": "d8c7290c0eabc62e4319af4168a81757c6267403"
+      }
+    ]
+  }
+}

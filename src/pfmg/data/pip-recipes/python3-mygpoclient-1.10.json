@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-mygpoclient",
+    "version": "1.10",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-mygpoclient",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"mygpoclient==1.10\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/e3/9f/8f450e33f63c394daf4ee692df45783033dcc53fbff87e65b44363c1da2f/mygpoclient-1.10-py3-none-any.whl",
+        "sha256": "53ca113b257c178bf538264dacfcc2a7404e885e53bf93855c0affd83ffb6175"
+      }
+    ]
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "header": {
+    "id": "rabbitcommon",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "RabbitCommon",
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DBUILD_MimeTypeBrowser=OFF",
+      "-DBUILD_APP=OFF",
+      "-DBUILD_TEST=OFF"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/KangLin/RabbitCommon.git",
+        "commit": "3eb0542582f0b265086101cdba9a33c4802c8a6b"
+      }
+    ]
+  }
+}

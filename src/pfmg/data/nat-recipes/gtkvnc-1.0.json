@@ -1,0 +1,19 @@
+{
+  "header": {
+    "id": "gtkvnc",
+    "version": "1.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "gtkvnc",
+    "buildsystem": "meson",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.gnome.org/sources/gtk-vnc/1.0/gtk-vnc-1.0.0.tar.xz",
+        "sha256": "a81a1f1a79ad4618027628ffac27d3391524c063d9411c7a36a5ec3380e6c080"
+      }
+    ]
+  }
+}

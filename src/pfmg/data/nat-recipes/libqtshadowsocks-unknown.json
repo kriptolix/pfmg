@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "libqtshadowsocks",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libQtShadowsocks",
+    "buildsystem": "cmake",
+    "config-opts": [
+      "-DUSE_BOTAN2=ON"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/shadowsocks/libQtShadowsocks.git",
+        "tag": "v2.1.0",
+        "commit": "2594d83ea02f9ca6b19e682a228344205fb478bf"
+      }
+    ]
+  }
+}

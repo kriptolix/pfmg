@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-extension-helpers",
+    "version": "1.4.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-extension_helpers",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"extension_helpers\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/f8/fb/f9a88ccea5377736d5d1e53c8a6c70207178cdc1ebbf305a50a610cbb751/extension_helpers-1.4.0-py3-none-any.whl",
+        "sha256": "27600eb1da0b079db451c78553b750c1b1d8a8b6d86b597a003728229ea1b852"
+      }
+    ]
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "header": {
+    "id": "adw-gtk3",
+    "version": "6.5",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "adw-gtk3",
+    "buildsystem": "simple",
+    "no-autogen": true,
+    "build-commands": [
+      "install -d /usr/share/runtime/share/themes/adw-gtk3",
+      "cp -a adw-gtk3/gtk-3.0 /usr/share/runtime/share/themes/adw-gtk3"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "strip-components": 0,
+        "url": "https://github.com/lassekongo83/adw-gtk3/releases/download/v6.5/adw-gtk3v6.5.tar.xz",
+        "sha256": "a81780fadfc432be0fc3d89c4ebb41aa28e4f032d42c36f9789c57dd10cfa41c",
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://api.github.com/repos/lassekongo83/adw-gtk3/releases/latest",
+          "version-query": ".tag_name | sub(\"v\"; \"\")",
+          "url-query": ".assets[] | select(.name==\"adw-gtk3v\" + $version + \".tar.xz\") | .browser_download_url"
+        }
+      }
+    ]
+  }
+}

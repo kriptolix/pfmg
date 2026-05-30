@@ -1,0 +1,33 @@
+{
+  "header": {
+    "id": "lsp-dsp-lib",
+    "version": "1.0.25",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "lsp-dsp-lib",
+    "buildsystem": "simple",
+    "build-options": {
+      "no-debuginfo": true
+    },
+    "build-commands": [
+      "make PREFIX=${FLATPAK_DEST} config",
+      "make PREFIX=${FLATPAK_DEST} -j $FLATPAK_BUILDER_N_JOBS",
+      "make PREFIX=${FLATPAK_DEST} install"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/lsp-plugins/lsp-dsp-lib/releases/download/1.0.25/lsp-dsp-lib-src-1.0.25.tar.gz",
+        "sha256": "b9750dcd5a7b415222161eae8534f612ecca9aef489f3e2b9343773a43cd04c1",
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://api.github.com/repos/lsp-plugins/lsp-dsp-lib/releases/latest",
+          "version-query": ".tag_name",
+          "url-query": ".assets[] | select(.name==\"lsp-dsp-lib-src-\" + $version + \".tar.gz\") | .browser_download_url"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "sane-backends",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "sane-backends",
+    "buildsystem": "autotools",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://gitlab.com/sane-project/backends.git",
+        "commit": "c7e4b5e35e3d614d2b1181d760a717bfc395a203",
+        "tag": "1.4.0",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^([\\d.]+)$"
+        }
+      }
+    ]
+  }
+}

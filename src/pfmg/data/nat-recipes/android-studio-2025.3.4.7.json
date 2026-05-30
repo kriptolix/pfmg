@@ -1,0 +1,57 @@
+{
+  "header": {
+    "id": "android-studio",
+    "version": "2025.3.4.7",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "android-studio",
+    "buildsystem": "simple",
+    "build-commands": [
+      "install -D -t ${FLATPAK_DEST}/bin/ apply_extra android-studio-wrapper",
+      "install -Dm644 -t ${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/ ${FLATPAK_ID}.svg",
+      "install -Dm644 -t ${FLATPAK_DEST}/share/metainfo/ ${FLATPAK_ID}.metainfo.xml",
+      "install -Dm644 -t ${FLATPAK_DEST}/share/applications/ ${FLATPAK_ID}.desktop"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "path": "com.google.AndroidStudio.desktop"
+      },
+      {
+        "type": "file",
+        "path": "com.google.AndroidStudio.metainfo.xml"
+      },
+      {
+        "type": "file",
+        "path": "com.google.AndroidStudio.svg"
+      },
+      {
+        "type": "extra-data",
+        "filename": "android-studio.tar.gz",
+        "size": 1471167296,
+        "only-arches": [
+          "x86_64"
+        ],
+        "url": "https://dl.google.com/dl/android/studio/ide-zips/2025.3.4.7/android-studio-panda4-patch1-linux.tar.gz",
+        "sha256": "aae8f332f124afd23ca495dc770915a456da7480c8f859e01535ad42fcb4ca06"
+      },
+      {
+        "type": "script",
+        "dest-filename": "apply_extra",
+        "commands": [
+          "tar xzf android-studio.tar.gz --strip-components=1",
+          "rm -f android-studio.tar.gz"
+        ]
+      },
+      {
+        "type": "script",
+        "dest-filename": "android-studio-wrapper",
+        "commands": [
+          "/app/extra/bin/studio $@"
+        ]
+      }
+    ]
+  }
+}

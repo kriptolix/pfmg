@@ -1,0 +1,20 @@
+{
+  "header": {
+    "id": "capi20",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "capi20",
+    "buildsystem": "meson",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://gitlab.com/tabos/libcapi.git",
+        "tag": "v3.2.3",
+        "commit": "9e7eb7789fef8ce712aa64f290aacbbececf2dfe"
+      }
+    ]
+  }
+}

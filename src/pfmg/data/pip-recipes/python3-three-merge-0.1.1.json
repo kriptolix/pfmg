@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "python3-three-merge",
+    "version": "0.1.1",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-three-merge",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"three-merge==0.1.1\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/f7/bb/2aa9b46a01197398b901e458974c20ed107935c26e44e37ad5b0e5511e44/diff_match_patch-20241021-py3-none-any.whl",
+        "sha256": "93cea333fb8b2bc0d181b0de5e16df50dd344ce64828226bda07728818936782"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/23/be/a52588102605ec52b4e88340d65a290b6465c1dbcd2d943ab149b012908b/three_merge-0.1.1-py2.py3-none-any.whl",
+        "sha256": "dd219f4696aa0bbec6099ac3528b4de0450ff9bde862dd8f6d6f52e745f83464"
+      }
+    ]
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "pvr.iptvsimple",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "pvr.iptvsimple",
+    "buildsystem": "cmake-ninja",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/kodi-pvr/pvr.iptvsimple",
+        "commit": "5a438f6223a7ccbff3626e17792ebb5b8b08efcf"
+      }
+    ],
+    "build-options": {
+      "no-debuginfo": true,
+      "cflags": "-g0",
+      "cxxflags": "-g0 -Wp,-U_GLIBCXX_ASSERTIONS"
+    },
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release"
+    ]
+  }
+}

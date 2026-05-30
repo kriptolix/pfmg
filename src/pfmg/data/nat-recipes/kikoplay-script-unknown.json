@@ -1,0 +1,26 @@
+{
+  "header": {
+    "id": "kikoplay-script",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "kikoplay-script",
+    "buildsystem": "simple",
+    "build-options": {
+      "no-debuginfo": true
+    },
+    "build-commands": [
+      "mkdir -p /app/bin/extension/script",
+      "cp -a * /app/bin/extension/script/"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/KikoPlayProject/KikoPlayScript.git",
+        "commit": "602b9074c3594f2c1f4d65aa83d84f70dfec4740"
+      }
+    ]
+  }
+}

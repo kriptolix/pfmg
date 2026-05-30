@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "audacious",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "audacious",
+    "buildsystem": "meson",
+    "config-opts": [
+      "-D=buildstamp=Flathub package",
+      "-D=gtk=true"
+    ],
+    "post-install": [
+      "install -Dpm644 ../contrib/audacious.appdata.xml /app/share/metainfo/${FLATPAK_ID}.metainfo.xml"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/audacious-media-player/audacious.git",
+        "tag": "audacious-4.5.1",
+        "commit": "354946d0fe96d9a477f1b0c76a374667a155d1af",
+        "x-checker-data": {
+          "type": "git",
+          "url": "https://github.com/audacious-media-player/audacious.git",
+          "tag-pattern": "^(audacious-[\\d.]+)$"
+        }
+      }
+    ]
+  }
+}

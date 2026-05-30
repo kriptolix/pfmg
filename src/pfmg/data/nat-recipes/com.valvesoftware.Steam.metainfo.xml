@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright 2017 Cosimo Cecchi -->
+<!-- Copyright 2021 Collabora Ltd. -->
+<component type="desktop-application">
+  <id>com.valvesoftware.Steam.desktop</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <name>Steam</name>
+  <summary>Launcher for the Steam software distribution service</summary>
+  <summary xml:lang="pt-BR">Jogue jogos populares e os últimos lançamentos</summary>
+  <summary xml:lang="es">Juega a los juegos populares y los últimos lanzamientos</summary>
+  <description>
+    <p>**Note: This is a community package of Steam gaming platform not officially supported by Valve.**</p>
+    <p>Steam is a software distribution service with an online store, automated installation, automatic updates, achievements, SteamCloud synchronized savegame and screenshot functionality, and many social features.</p>
+    <p xml:lang="pt-BR">Este é um pacote de comunidade da plataforma de jogos Steam não oficialmente suportada pela Valve. Relate bugs por meio do rastreador de problemas vinculado.</p>
+    <p xml:lang="pt-BR">O Steam é uma plataforma popular para comprar, baixar e jogar jogos e conversar com outros jogadores. </p>
+    <p xml:lang="pt-BR">Muitos jogos exigem uma compra online, mas alguns jogos populares, como o Team Fortress 2, são gratuitos. Ao pesquisar na loja, certifique-se de restringir os resultados pelo sistema operacional SteamOS/Linux. Nem todos os jogos Linux são compatíveis com o seu sistema, portanto, verifique os requisitos antes de comprar jogos.</p>
+    <p xml:lang="pt-BR">Este es un paquete comunitario de la plataforma de juegos Steam que no es oficialmente soportado por Valve. Informar errores a través del rastreador de problemas, ver enlace.</p>
+    <p xml:lang="pt-BR">Steam es una plataforma popular para comprar, descargar y jugar juegos y conversar con otros jugadores. </p>
+    <p xml:lang="pt-BR">Muchos juegos requieren una compra en línea, pero algunos juegos populares, como el Team Fortress 2, son gratuitos. Al buscar en la tienda, asegúrese de restringir los resultados por el sistema operativo SteamOS/Linux. No todos los juegos de Linux son compatibles con su sistema, así que compruebe los requisitos antes de comprar juegos.</p>
+  </description>
+  <categories>
+    <category>Game</category>
+    <category>PackageManager</category>
+  </categories>
+  <url type="homepage">https://store.steampowered.com/</url>
+  <url type="help">https://github.com/flathub/com.valvesoftware.Steam/wiki</url>
+  <url type="bugtracker">https://github.com/flathub/com.valvesoftware.Steam/issues</url>
+  <project_license>LicenseRef-proprietary</project_license>
+  <developer_name>Valve Corporation</developer_name>
+  <screenshots>
+    <screenshot type="default">
+      <caption>The main Steam library window</caption>
+      <image type="source" width="1200" height="1026">https://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/27766192/27b935179076c418c2f62f9440aba9c06161e4c0.jpg</image>
+    </screenshot>
+    <screenshot>
+      <caption>Steam Store interface</caption>
+      <image type="source" width="1280" height="720">https://raw.githubusercontent.com/flathub/com.valvesoftware.Steam/master/images/com.valvesoftware.Steam.screenshot-1.png</image>
+    </screenshot>
+    <screenshot>
+      <image type="source" width="1200" height="582">https://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/27766192/ac26dea63042eec4886d5fa27854517ce374b11e.jpg</image>
+    </screenshot>
+    <screenshot>
+      <image type="source" width="1200" height="717">https://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/27766192/85bab8a696ad635859ae5e84b4339db95bcdf47d.jpg</image>
+    </screenshot>
+    <screenshot>
+      <image type="source" width="1200" height="535">https://steamcdn-a.akamaihd.net/steamcommunity/public/images/clans/27766192/563daff788965a9f0aa4525190ef12d8c10832d6.jpg</image>
+    </screenshot>
+  </screenshots>
+  <metadata>
+    <value key="GnomeSoftware::popular-background">https://raw.githubusercontent.com/flathub/com.valvesoftware.Steam/master/images/com.valvesoftware.Steam-thumb.png</value>
+  </metadata>
+  <releases>
+    <release version="1.0.0.85" date="2025-09-30">
+      <description></description>
+    </release>
+    <release version="1.0.0.84" date="2025-08-19">
+      <description/>
+    </release>
+    <release version="1.0.0.83" date="2025-04-24">
+      <description/>
+    </release>
+    <release version="1.0.0.82" date="2024-10-03">
+      <description/>
+    </release>
+    <release version="1.0.0.81" date="2024-08-15">
+      <description/>
+    </release>
+  </releases>
+  <content_rating type="oars-1.1">
+    <content_attribute id="social-chat">intense</content_attribute>
+    <content_attribute id="social-info">intense</content_attribute>
+    <content_attribute id="social-audio">intense</content_attribute>
+    <content_attribute id="money-purchasing">intense</content_attribute>
+  </content_rating>
+  <launchable type="desktop-id">com.valvesoftware.Steam.desktop</launchable>
+</component>

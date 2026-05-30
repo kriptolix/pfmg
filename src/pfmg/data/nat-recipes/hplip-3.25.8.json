@@ -1,0 +1,94 @@
+{
+  "header": {
+    "id": "hplip",
+    "version": "3.25.8",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "hplip",
+    "config-opts": [
+      "--disable-static",
+      "--disable-doc-build",
+      "--disable-hpijs-install",
+      "--disable-hpcups-install",
+      "--disable-new-hpcups",
+      "--disable-hpps-install",
+      "--disable-gui-build",
+      "--disable-fax-build",
+      "--disable-cups11-build",
+      "--disable-foomatic-ppd-install",
+      "--disable-foomatic-drv-install",
+      "--disable-cups-drv-install",
+      "--disable-cups-ppd-install",
+      "--disable-foomatic-rip-hplip-install",
+      "--disable-qt3",
+      "--disable-qt4",
+      "--disable-qt5",
+      "--enable-dbus-build",
+      "--enable-network-build",
+      "--enable-pp-build",
+      "--enable-scan-build",
+      "--with-pic",
+      "--with-cupsfilterdir=/app/lib/cups/filter",
+      "--with-cupsbackenddir=/app/lib/cups/backend"
+    ],
+    "build-options": {
+      "cflags": "-std=gnu18 -Wno-error=implicit-function-declaration",
+      "cppflags": "-I/app/include/libusb-1.0"
+    },
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://downloads.sourceforge.net/sourceforge/hplip/hplip-3.25.8.tar.gz",
+        "sha256": "1cf6d6c28735435c8eb6646e83bcfb721e51c4b1f0e8cf9105a6faf96dc9ad25",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 1327,
+          "stable-only": true,
+          "url-template": "https://downloads.sourceforge.net/sourceforge/hplip/hplip-$version.tar.gz"
+        }
+      },
+      {
+        "type": "patch",
+        "paths": [
+          "patches/0001-hplip-scan-hpaio-include.patch",
+          "patches/0002-hplip-hpaio-gcc14.patch",
+          "patches/0003-hplip-scan-orblite-c99.patch",
+          "patches/0004-hplip-covscan.patch",
+          "patches/0005-hplip-orblite-use-const.patch",
+          "patches/0017-Workaround-patch-for-missing-Python3-transition-of-t.patch",
+          "patches/0099-flatpak.patch"
+        ]
+      },
+      {
+        "type": "shell",
+        "commands": [
+          "sed -i -re '/^[[:blank:]]*(@HPLIP_BUILD_TRUE@)?halpredir[[:blank:]]*=/s!/usr/share/!$(datadir)/!' Makefile*;",
+          "sed -i -re '/^[[:blank:]]*(@HPLIP_BUILD_TRUE@)?rulessystemdir[[:blank:]]*=/s!/usr/lib/!$(libdir)/!' Makefile*;"
+        ]
+      },
+      {
+        "type": "shell",
+        "commands": [
+          "find * -xtype f | xargs -I{} grep -El '(^|[^A-Za-z)])/etc' '{}' | xargs -I{} sed -i -re '/(^|[^A-Za-z)])\\/etc/s!(/etc)!/app\\1!g' '{}';"
+        ]
+      },
+      {
+        "type": "shell",
+        "commands": [
+          "[ $(grep -c 'SAVE_CPPFLAGS=\"$CPPFLAGS\"' configure.in) -eq 1 ];",
+          "sed -i -e 's/SAVE_CPPFLAGS=\"$CPPFLAGS\"/save_CFLAGS=\"$CFLAGS\"/' configure.in;"
+        ]
+      }
+    ],
+    "post-install": [
+      "[ -f \"${FLATPAK_DEST}/etc/hp/hplip.conf\" ] || install -p -D \"hplip.conf\" -t \"${FLATPAK_DEST}/etc/hp/\";",
+      "echo 'hpaio' > hpaio && install -p -D hpaio -t \"${FLATPAK_DEST}/etc/sane.d/dll.d/\";"
+    ],
+    "cleanup": [
+      "/lib/cups",
+      "/share/ppd"
+    ]
+  }
+}

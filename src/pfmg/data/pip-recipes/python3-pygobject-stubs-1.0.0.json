@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-pygobject-stubs",
+    "version": "1.0.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-PyGObject-stubs",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"PyGObject-stubs==1.0.0\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/8a/c7/8bb078c495c1f6b31819fbbdf5371a674954698fdf8ec03a15066dd6da7a/PyGObject_stubs-1.0.0-py3-none-any.whl",
+        "sha256": "ac7862fa455376ea394b206db5d4810ff812a6ae7866ccc75948a9460945eeae"
+      }
+    ]
+  }
+}

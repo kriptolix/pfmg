@@ -1,0 +1,26 @@
+{
+  "header": {
+    "id": "python3-configobj",
+    "version": "5.0.9",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-configobj",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"configobj\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/f5/c4/c7f9e41bc2e5f8eeae4a08a01c91b2aea3dfab40a3e14b25e87e7db8d501/configobj-5.0.9.tar.gz",
+        "sha256": "03c881bbf23aa07bccf1b837005975993c4ab4427ba57f959afdd9d1a2386848",
+        "x-checker-data": {
+          "type": "pypi",
+          "name": "configobj"
+        }
+      }
+    ]
+  }
+}

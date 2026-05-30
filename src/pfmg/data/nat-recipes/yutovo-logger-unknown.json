@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "yutovo-logger",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "yutovo-logger",
+    "buildsystem": "cmake",
+    "build-options": {
+      "env": {
+        "YUTOVO_DEPLOY": "/app"
+      }
+    },
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/denprog/yutovo-logger.git",
+        "tag": "v1.0.6"
+      }
+    ],
+    "config-opts": [
+      "-DCMAKE_INSTALL_PREFIX=/app",
+      "-DCMAKE_BUILD_TYPE=Release"
+    ]
+  }
+}

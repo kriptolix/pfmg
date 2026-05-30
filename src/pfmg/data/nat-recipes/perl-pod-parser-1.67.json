@@ -1,0 +1,34 @@
+{
+  "header": {
+    "id": "perl-pod-parser",
+    "version": "1.67",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "perl-pod-parser",
+    "buildsystem": "simple",
+    "build-commands": [
+      "perl Makefile.PL PREFIX=${FLATPAK_DEST} LIB=${FLATPAK_DEST}/lib",
+      "make",
+      "make install"
+    ],
+    "cleanup": [
+      "*"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://cpan.metacpan.org/authors/id/M/MA/MAREKR/Pod-Parser-1.67.tar.gz",
+        "sha256": "5deccbf55d750ce65588cd211c1a03fa1ef3aaa15d1ac2b8d85383a42c1427ea",
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://fastapi.metacpan.org/v1/download_url/Pod::Parser",
+          "version-query": ".version",
+          "url-query": ".download_url",
+          "timestamp-query": ".date"
+        }
+      }
+    ]
+  }
+}

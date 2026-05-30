@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "perl-glib",
+    "version": "1.3294",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "perl-glib",
+    "buildsystem": "simple",
+    "build-commands": [
+      "perl Makefile.PL PREFIX=/app LIB=/app/lib",
+      "make",
+      "make test",
+      "make install"
+    ],
+    "post-install": [
+      "find ${FLATPAK_DEST}/lib/ -name \\*.so -exec chmod u+w {} \\;"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://cpan.metacpan.org/authors/id/X/XA/XAOC/Glib-1.3294.tar.gz",
+        "sha256": "d715f5a86bcc187075de85e7ae5bc07b0714d6edc196a92da43986efa44e5cbb"
+      }
+    ]
+  }
+}

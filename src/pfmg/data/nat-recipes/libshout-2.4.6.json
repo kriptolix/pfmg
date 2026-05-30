@@ -1,0 +1,26 @@
+{
+  "header": {
+    "id": "libshout",
+    "version": "2.4.6",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libshout",
+    "rm-configure": true,
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://downloads.xiph.org/releases/libshout/libshout-2.4.6.tar.gz",
+        "sha256": "39cbd4f0efdfddc9755d88217e47f8f2d7108fa767f9d58a2ba26a16d8f7c910"
+      },
+      {
+        "type": "script",
+        "commands": [
+          "autoreconf -fiv"
+        ],
+        "dest-filename": "autogen.sh"
+      }
+    ]
+  }
+}

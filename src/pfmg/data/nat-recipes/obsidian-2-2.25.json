@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "obsidian-2",
+    "version": "2.25",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "Obsidian-2",
+    "buildsystem": "simple",
+    "build-commands": [
+      "tar -xf obsidian-2-theme.tar.xz",
+      "install -Dm644 Obsidian-2/gtk-3.20/gtk.css /usr/share/runtime/share/themes/Obsidian-2/gtk-3.0",
+      "install -Dm644 Obsidian-2/gtk-3.0/colAccents.css /usr/share/runtime/share/themes/Obsidian-2/gtk-3.0",
+      "install -Dm644 Obsidian-2/gtk-3.0/colCommon.css /usr/share/runtime/share/themes/Obsidian-2/gtk-3.0",
+      "install -Dm644 --target-directory=/usr/share/runtime/share/themes/Obsidian-2/gtk-3.0/assets Obsidian-2/gtk-3.0/assets/*",
+      "install -Dm644 Obsidian-2/index.theme /usr/share/runtime/share/themes/Obsidian-2/index.theme"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://github.com/madmaxms/theme-obsidian-2/releases/download/v2.25/obsidian-2-theme.tar.xz",
+        "dest-filename": "obsidian-2-theme.tar.xz",
+        "sha256": "1da8f3d9b15cb22fbd9128f1b99e896aff2ded2eadac3505e72262bf0f95ca9c"
+      }
+    ]
+  }
+}

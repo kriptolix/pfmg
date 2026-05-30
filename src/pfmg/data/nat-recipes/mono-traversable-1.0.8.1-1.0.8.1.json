@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "mono-traversable-1.0.8.1",
+    "version": "1.0.8.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "mono-traversable-1.0.8.1",
+    "only-arches": [
+      "x86_64"
+    ],
+    "buildsystem": "simple",
+    "build-commands": [
+      "ghc -threaded --make Setup",
+      "./Setup configure --prefix=/app",
+      "./Setup build",
+      "./Setup install"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "sha256": "991290797bd77ce2f2e23dd5dea32fb159c6cb9310615f64a0703ea4c6373935",
+        "url": "https://hackage.haskell.org/package/mono-traversable-1.0.8.1/mono-traversable-1.0.8.1.tar.gz"
+      }
+    ]
+  }
+}

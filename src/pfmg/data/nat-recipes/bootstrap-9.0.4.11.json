@@ -1,0 +1,57 @@
+{
+  "header": {
+    "id": "bootstrap",
+    "version": "9.0.4.11",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "bootstrap",
+    "buildsystem": "simple",
+    "cleanup": [
+      "*"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "only-arches": [
+          "i386"
+        ],
+        "url": "https://fedorapeople.org/~mbooth/bootstrap_jdk/bootstrap-openjdk-9.0.4.11-6.fc28.i686.tar.bz2",
+        "dest-filename": "java-openjdk.tar.bz2",
+        "sha512": "5aa970aaabdf6d6028b48e835d481fdf5265ff3fb6790f37fc4f748037b9ae37d70cc6c25b7f5d222e7c84dd2748ea626e66303aa9430eb2077ba5fb1d8f4fd6"
+      },
+      {
+        "type": "file",
+        "only-arches": [
+          "x86_64"
+        ],
+        "url": "https://fedorapeople.org/~mbooth/bootstrap_jdk/bootstrap-openjdk-9.0.4.11-6.fc28.x86_64.tar.bz2",
+        "dest-filename": "java-openjdk.tar.bz2",
+        "sha512": "e139b46e2e318f75627886a1ad8b14ae3d23acda310e2e596b70c57df64b084c7f2c428f9912cff24105d7262c8371a6339dc25ae97d5a2502ba7fcb28e39d27"
+      },
+      {
+        "type": "file",
+        "only-arches": [
+          "arm"
+        ],
+        "url": "https://fedorapeople.org/~mbooth/bootstrap_jdk/bootstrap-openjdk-9.0.4.11-6.fc28.armv7hl.tar.bz2",
+        "dest-filename": "java-openjdk.tar.bz2",
+        "sha512": "2855169678f5b300fda14d520bd73aeef9d8a95a9f2cb38317856e98547154348f31bae9b6923eba7428d0d7d922fe823bbaba908c32a507d0a27f6b487c7a72"
+      },
+      {
+        "type": "file",
+        "only-arches": [
+          "aarch64"
+        ],
+        "url": "https://fedorapeople.org/~mbooth/bootstrap_jdk/bootstrap-openjdk-9.0.4.11-6.fc28.aarch64.tar.bz2",
+        "dest-filename": "java-openjdk.tar.bz2",
+        "sha512": "31d926b707683a66bd6bf2c709b3e4694ea8dc4d305a3e13a2e35b0e6112393fc2c4f461f211e8d3d266c7d6f15f3f34e6c58e439e8021e6ac2fbc0bcdb8319c"
+      }
+    ],
+    "build-commands": [
+      "mkdir -p $FLATPAK_DEST/bootstrap-java",
+      "tar xf java-openjdk.tar.bz2 --strip-components=4 --directory=$FLATPAK_DEST/bootstrap-java"
+    ]
+  }
+}

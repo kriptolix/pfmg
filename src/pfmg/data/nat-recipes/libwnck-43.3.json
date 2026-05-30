@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "libwnck",
+    "version": "43.3",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libwnck",
+    "buildsystem": "meson",
+    "cleanup": [
+      "/bin",
+      "/include",
+      "/lib/pkgconfig"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.gnome.org/sources/libwnck/43/libwnck-43.3.tar.xz",
+        "sha256": "6af8ac41a8f067ade1d3caaed254a83423b5f61ad3f7a460fcacbac2e192bdf7"
+      }
+    ]
+  }
+}

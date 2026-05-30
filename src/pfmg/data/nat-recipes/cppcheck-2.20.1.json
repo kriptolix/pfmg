@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "cppcheck",
+    "version": "2.20.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "cppcheck",
+    "buildsystem": "cmake-ninja",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/danmar/cppcheck/archive/refs/tags/2.20.1.tar.gz",
+        "sha256": "97634b598b8adf23e6cbd75aec5a8ac2d8b5f49f53e6a145b1c8380525c48a91",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 357,
+          "stable-only": true,
+          "url-template": "https://github.com/danmar/cppcheck/archive/refs/tags/$version.tar.gz"
+        }
+      }
+    ]
+  }
+}

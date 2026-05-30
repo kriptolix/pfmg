@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "nng",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "nng",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
+      "-DBUILD_SHARED_LIBS=ON"
+    ],
+    "cleanup": [
+      "/bin",
+      "/include"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/nanomsg/nng.git",
+        "tag": "v1.11",
+        "commit": "84aa701f42968bf536141a24e826da66963b571a",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^v([\\d\\.]+)$"
+        }
+      }
+    ]
+  }
+}

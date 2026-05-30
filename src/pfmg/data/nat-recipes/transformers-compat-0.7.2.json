@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "transformers-compat",
+    "version": "0.7.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "transformers-compat",
+    "buildsystem": "simple",
+    "builddir": false,
+    "build-commands": [
+      "echo '#! /usr/bin/env runhaskell' >Setup.txt",
+      "echo '> import Distribution.Simple' >>Setup.txt",
+      "echo '> main = defaultMain' >>Setup.txt",
+      "ln -s Setup.txt Setup.lhs || true",
+      "runhaskell Setup configure --prefix=/app",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "sources": [
+      {
+        "sha256": "b62c7304c9f3cbc9463d0739aa85cb9489f217ea092b9d625d417514fbcc9d6a",
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/transformers-compat-0.7.2/transformers-compat-0.7.2.tar.gz"
+      },
+      {
+        "dest-filename": "transformers-compat.cabal",
+        "sha256": "044fb9955f63ee138fcebedfdcbe54afe741f2d5892a2d0bdf3a8052bd342643",
+        "type": "file",
+        "url": "https://hackage.haskell.org/package/transformers-compat-0.7.2/revision/0.cabal"
+      }
+    ]
+  }
+}

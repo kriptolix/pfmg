@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "fonts-sil-andika-new-basic",
+    "version": "5.500",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "fonts-sil-andika-new-basic",
+    "buildsystem": "simple",
+    "build-commands": [
+      "mkdir -p /app/share/fonts/truetype/andika-new-basic",
+      "cp --verbose --force -a *.ttf /app/share/fonts/truetype/andika-new-basic"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://software.sil.org/downloads/r/andika/AndikaNewBasic-5.500.zip",
+        "sha512": "53513c782889fd7e87903cab43f1e419a87cfbc425fd722b621cbdb1b1928584b5ce82ecc56e6f6aa1073ed30268993c46c451dfd8b198b430a54a5cf1eb10a1"
+      }
+    ]
+  }
+}

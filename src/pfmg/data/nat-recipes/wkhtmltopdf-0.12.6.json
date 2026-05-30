@@ -1,0 +1,39 @@
+{
+  "header": {
+    "id": "wkhtmltopdf",
+    "version": "0.12.6",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "wkhtmltopdf",
+    "buildsystem": "simple",
+    "build-commands": [
+      "ar x wkhtmltox_*.deb",
+      "tar -xf data.tar.xz",
+      "cp -r ./usr/local/* /app/"
+    ],
+    "cleanup": [
+      "/lib/libwkhtmltox.*",
+      "/bin/wkhtmltoimage"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "only-arches": [
+          "x86_64"
+        ],
+        "url": "https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6-1/wkhtmltox_0.12.6-1.buster_amd64.deb",
+        "sha256": "3e7a93a2ae4a2dd5cccb1b7bcce0eb462c75f05efa314a29499dadfdc5ebc59e"
+      },
+      {
+        "type": "file",
+        "only-arches": [
+          "aarch64"
+        ],
+        "url": "https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6-1/wkhtmltox_0.12.6-1.buster_arm64.deb",
+        "sha256": "d2929792fdc95fa66d637ecbf9cd0dce874f53d783d5ddcf947a86c007c81c95"
+      }
+    ]
+  }
+}

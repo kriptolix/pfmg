@@ -1,0 +1,68 @@
+{
+  "header": {
+    "id": "waylandpp",
+    "version": "1.0.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "waylandpp",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DCMAKE_INSTALL_LIBDIR=lib",
+      "-DBUILD_DOCUMENTATION=OFF"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/NilsBrause/waylandpp/archive/1.0.1.tar.gz",
+        "sha512": "32c334cc5349c0f15efb5ebc192b60909580ab90b1359c905ca693fe0006747be2a8c7053ffcfc14eaafeeb6aa0b61d1e07a6a3bd9c351d1abb059b2d7c6191b",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 16969,
+          "url-template": "https://github.com/NilsBrause/waylandpp/archive/$version.tar.gz"
+        }
+      }
+    ],
+    "modules": [
+      {
+        "name": "pugixml",
+        "buildsystem": "cmake-ninja",
+        "config-opts": [
+          "-DBUILD_SHARED_LIBS=ON",
+          "-DCMAKE_INSTALL_LIBDIR=lib"
+        ],
+        "sources": [
+          {
+            "type": "archive",
+            "url": "https://github.com/zeux/pugixml/archive/v1.15.tar.gz",
+            "sha256": "b39647064d9e28297a34278bfb897092bf33b7c487906ddfc094c9e8868bddcb",
+            "x-checker-data": {
+              "type": "anitya",
+              "project-id": 3728,
+              "url-template": "https://github.com/zeux/pugixml/archive/v$version.tar.gz"
+            }
+          }
+        ]
+      },
+      {
+        "name": "pcre",
+        "config-opts": [
+          "--enable-unicode-properties"
+        ],
+        "sources": [
+          {
+            "type": "archive",
+            "url": "http://prdownloads.sourceforge.net/pcre/pcre-8.45.tar.bz2",
+            "sha512": "91bff52eed4a2dfc3f3bfdc9c672b88e7e2ffcf3c4b121540af8a4ae8c1ce05178430aa6b8000658b9bb7b4252239357250890e20ceb84b79cdfcde05154061a",
+            "x-checker-data": {
+              "type": "anitya",
+              "project-id": 2610,
+              "url-template": "http://prdownloads.sourceforge.net/pcre/pcre-$version.tar.bz2"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

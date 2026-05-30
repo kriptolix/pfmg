@@ -1,0 +1,36 @@
+{
+  "header": {
+    "id": "onevpl",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "onevpl",
+    "only-arches": [
+      "x86_64"
+    ],
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DBUILD_TOOLS=OFF",
+      "-DBUILD_TESTS=OFF",
+      "-DBUILD_EXAMPLES=OFF",
+      "-DINSTALL_EXAMPLE_CODE=OFF"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/intel/libvpl.git",
+        "commit": "778a66d6c6537f08eabb91955dbbf1bce3812894",
+        "tag": "v2.16.0",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^v([\\d.]+)$",
+          "versions": {
+            "<": "2000.0.0"
+          }
+        }
+      }
+    ]
+  }
+}

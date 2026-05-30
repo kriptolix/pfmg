@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "coin",
+    "version": "4.0.8",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "coin",
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
+    ],
+    "cleanup": [
+      "/bin"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/coin3d/coin/releases/download/v4.0.8/coin-4.0.8-src.tar.gz",
+        "sha256": "aff6c7edf24cfb935edba46574ec5f83b543c47ff79e40c21fb92dc709b0f2c4"
+      }
+    ]
+  }
+}

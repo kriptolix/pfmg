@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "gtk-sharp",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "gtk-sharp",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/mono/gtk-sharp.git",
+        "commit": "3440993e00c89791c5401ae0dcc7508d81347739"
+      },
+      {
+        "type": "patch",
+        "path": "gtk-sharp2-2.12.12-glib-include.patch"
+      },
+      {
+        "type": "patch",
+        "path": "window.patch"
+      },
+      {
+        "type": "shell",
+        "commands": [
+          "./bootstrap-2.12 --prefix=/usr"
+        ]
+      }
+    ]
+  }
+}

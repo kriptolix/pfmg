@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop">
+  <id>org.codeblocks.codeblocks</id>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>GPL-3.0+</project_license>
+  <name>Code::Blocks</name>
+  <summary>IDE for C, C++ and Fortran</summary>
+  <description>
+    <p>
+     Code::Blocks is a highly extensible Integrated Development Environment (IDE) 
+     for the C, C++ and Fortran programming languages. It features support for 
+     a wide range of compilers, parallel builds, multi-target projects, and also 
+     provides an interface with GNU GDB.
+    </p>
+    <p>
+     Note: Code::Blocks runs in an isolated space from the main system, it has the 
+     tools provided by the SDK and its extensions, it also has a plugin that can
+     be installed to add more dependencies. More information at 
+     https://github.com/flathub/org.codeblocks.codeblocks.
+    </p>
+  </description>
+  <screenshots>
+    <screenshot type="default">
+      <image>https://bztd.github.io/Flathub/C::B/def.png</image>
+      <caption>Editor's view</caption>
+    </screenshot>
+    <screenshot>
+      <image>https://bztd.github.io/Flathub/C::B/raylib.png</image>
+      <caption>Using Raylib provided by the plugin</caption>
+    </screenshot>
+  </screenshots>
+  <update_contact>jens_at_codeblocks.org</update_contact>
+  <developer_name>The Code::Blocks team</developer_name>
+  <url type="homepage">https://codeblocks.org/</url>
+  <url type="help">https://codeblocks.org/user-manual/</url>
+  <url type="bugtracker">https://github.com/flathub/org.codeblocks.codeblocks/issues</url>
+  <launchable type="desktop-id">codeblocks.desktop</launchable>
+  <releases>
+    <release date="2025-03-31" version="25.03"/>
+  </releases>
+  <content_rating type="oars-1.1"/>
+</component>

@@ -1,0 +1,61 @@
+{
+  "header": {
+    "id": "mediainfo",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "mediainfo",
+    "subdir": "Project/GNU/CLI",
+    "sources": [
+      {
+        "type": "git",
+        "commit": "efdde33b336394d058fe6a75447d3cca3ac81900",
+        "url": "https://github.com/MediaArea/MediaInfo.git"
+      }
+    ],
+    "modules": [
+      {
+        "name": "libzen",
+        "cleanup": [
+          "/bin",
+          "/include",
+          "/lib/pkgconfig"
+        ],
+        "subdir": "Project/GNU/Library",
+        "config-opts": [
+          "--enable-shared",
+          "--disable-static"
+        ],
+        "sources": [
+          {
+            "type": "git",
+            "commit": "1250d326306f4036d78dfdb7b24b344e729eb9f3",
+            "url": "https://github.com/MediaArea/ZenLib.git"
+          }
+        ]
+      },
+      {
+        "name": "libmediainfo",
+        "cleanup": [
+          "/bin",
+          "/include",
+          "/lib/pkgconfig"
+        ],
+        "subdir": "Project/GNU/Library",
+        "config-opts": [
+          "--enable-shared",
+          "--disable-static"
+        ],
+        "sources": [
+          {
+            "type": "git",
+            "commit": "a475e4ee71901e0f377688024c128e1634f180e1",
+            "url": "https://github.com/MediaArea/MediaInfoLib.git"
+          }
+        ]
+      }
+    ]
+  }
+}

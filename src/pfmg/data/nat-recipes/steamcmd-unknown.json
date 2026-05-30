@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "steamcmd",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "steamcmd",
+    "build-options": {
+      "strip": false,
+      "no-debuginfo": true
+    },
+    "buildsystem": "simple",
+    "build-commands": [
+      "set -e\nchmod -R u+w steamcmd/linux32\ncp -ax steamcmd /app/\nln -s steamcmd-wrapper /app/bin/steamcmd\n"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "strip-components": 0,
+        "dest": "steamcmd",
+        "url": "https://steamcdn-a.akamaihd.net/client/installer/steamcmd_linux.tar.gz",
+        "sha256": "cebf0046bfd08cf45da6bc094ae47aa39ebf4155e5ede41373b579b8f1071e7c"
+      }
+    ]
+  }
+}

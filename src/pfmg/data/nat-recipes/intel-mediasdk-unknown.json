@@ -1,0 +1,38 @@
+{
+  "header": {
+    "id": "intel-mediasdk",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "intel-mediasdk",
+    "only-arches": [
+      "x86_64"
+    ],
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DBUILD_SAMPLES=OFF",
+      "-DBUILD_TESTS=OFF",
+      "-DBUILD_TUTORIALS=OFF",
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DENABLE_X11=OFF"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/Intel-Media-SDK/MediaSDK.git",
+        "commit": "869b60a6c3d7b5e9f7c3b3b914986322dca4bbae",
+        "tag": "intel-mediasdk-23.2.2",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^intel-mediasdk-([\\d.]+)$"
+        }
+      },
+      {
+        "type": "patch",
+        "path": "data/intel-mediasdk-gcc13.patch"
+      }
+    ]
+  }
+}

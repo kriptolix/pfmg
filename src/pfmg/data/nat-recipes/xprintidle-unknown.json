@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "xprintidle",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "xprintidle",
+    "buildsystem": "meson",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/g0hl1n/xprintidle",
+        "tag": "0.3.0",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^([\\d.]+)$"
+        },
+        "commit": "bb9b38808598454dcc348d2fff2c133f4e332fd1"
+      }
+    ]
+  }
+}

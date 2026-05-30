@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-mss",
+    "version": "10.0.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-mss",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"mss>=7.0.1\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/29/aa/b897ae9e1c1616e4df9fb319637ef6a9d07cca6d46de6b59c80209f006a4/mss-10.0.0-py3-none-any.whl",
+        "sha256": "82cf6460a53d09e79b7b6d871163c982e6c7e9649c426e7b7591b74956d5cb64"
+      }
+    ]
+  }
+}

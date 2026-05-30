@@ -1,0 +1,54 @@
+{
+  "header": {
+    "id": "mpack-lua",
+    "version": "1.0.13",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "mpack-lua",
+    "no-autogen": true,
+    "make-args": [
+      "USE_SYSTEM_MPACK=yes",
+      "LUA_INCLUDE=-I/app/include/luajit-2.1/"
+    ],
+    "make-install-args": [
+      "USE_SYSTEM_MPACK=yes"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/libmpack/libmpack-lua/archive/1.0.13.tar.gz",
+        "sha256": "436a6a3973207403d3f20082002c32e74c25d9149ff2516dc06b0b41514044bf"
+      },
+      {
+        "type": "shell",
+        "commands": [
+          "sed -i 's|/usr/lib|/app/lib|' ./Makefile"
+        ]
+      }
+    ],
+    "cleanup": [
+      "*"
+    ],
+    "modules": [
+      {
+        "name": "mpack",
+        "no-autogen": true,
+        "make-install-args": [
+          "PREFIX=/app"
+        ],
+        "sources": [
+          {
+            "type": "archive",
+            "url": "https://github.com/libmpack/libmpack/archive/1.0.5.tar.gz",
+            "sha256": "4ce91395d81ccea97d3ad4cb962f8540d166e59d3e2ddce8a22979b49f108956"
+          }
+        ],
+        "cleanup": [
+          "*"
+        ]
+      }
+    ]
+  }
+}

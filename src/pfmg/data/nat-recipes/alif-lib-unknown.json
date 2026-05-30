@@ -1,0 +1,30 @@
+{
+  "header": {
+    "id": "alif-lib",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "alif-lib",
+    "buildsystem": "simple",
+    "build-commands": [
+      "mkdir -p /app/share/icons/hicolor/128x128/apps/ /app/usr/share/icons/hicolor/128x128/apps/ /app/share/{metainfo,applications} /app/usr/local/include/aliflibwx/ /app/usr/local/share/{aliflang,alifstudio} /app/usr/local/lib/aliflib/",
+      "install alif-pkg/usr/share/icons/hicolor/128x128/apps/org.aliflang.lang.png /app/share/icons/hicolor/128x128/apps/",
+      "install alif-pkg/usr/share/icons/hicolor/128x128/apps/org.aliflang.lang.png /app/usr/share/icons/hicolor/128x128/apps/",
+      "install alif-pkg/usr/share/metainfo/org.aliflang.lang.metainfo.xml /app/share/metainfo/",
+      "install alif-pkg/usr/share/applications/org.aliflang.lang.desktop /app/share/applications/",
+      "cp -r alif-pkg/usr/local/include/aliflibwx/{utf8,utf8.h} /app/usr/local/include/aliflibwx/",
+      "cp -r alif-pkg/usr/local/share/aliflang/{linux_alif_version.inf,Alif_Arabic_Programming_Language.pdf,copyright} /app/usr/local/share/aliflang/",
+      "cp -r alif-pkg/usr/local/share/alifstudio/{alifstudio_theme.xml,alifstudio_settings.xml} /app/usr/local/share/alifstudio/",
+      "cp -r alif-pkg/usr/local/lib/aliflib/* /app/usr/local/lib/aliflib/"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/alifcommunity/packages",
+        "commit": "dff5f31a5101b4230e6aa9fe7cfbdf277d0c68e2"
+      }
+    ]
+  }
+}

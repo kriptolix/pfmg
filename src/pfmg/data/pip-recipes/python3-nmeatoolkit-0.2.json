@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-nmeatoolkit",
+    "version": "0.2",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-nmeatoolkit",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"nmeatoolkit\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/58/49/74e6fe18f34e770f759eae05bbcf9bfceaf415d9c3737a27d96aa61edfeb/nmeatoolkit-0.2-py3-none-any.whl",
+        "sha256": "ae7c746e8116032feb03f2b418cf106aed2707be88fff09969c745cf126ed502"
+      }
+    ]
+  }
+}

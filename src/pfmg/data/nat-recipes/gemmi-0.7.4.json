@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "gemmi",
+    "version": "0.7.4",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "gemmi",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DUSE_PYTHON=ON",
+      "-DPYTHON_INSTALL_DIR=/app/lib/python3.13/site-packages"
+    ],
+    "build-options": {
+      "cxxflags": "-fPIC -O3"
+    },
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/project-gemmi/gemmi/archive/refs/tags/v0.7.4.tar.gz",
+        "sha256": "58ed9023e0f75033ebec1da630461bc6e1af661f29f0c41deed66c20315ebe2a"
+      }
+    ]
+  }
+}

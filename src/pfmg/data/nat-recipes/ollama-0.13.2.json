@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "ollama",
+    "version": "0.13.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "ollama",
+    "buildsystem": "simple",
+    "build-commands": [
+      "cp -rf --remove-destination ./* ${FLATPAK_DEST}/"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/ollama/ollama/releases/download/v0.13.2/ollama-linux-amd64.tgz",
+        "sha256": "ee655079ed20b90c7fb0de5c337ece4d4e85d58167338edf44a991f7bd81c3e0",
+        "strip-components": 0,
+        "only-arches": [
+          "x86_64"
+        ]
+      },
+      {
+        "type": "archive",
+        "url": "https://github.com/ollama/ollama/releases/download/v0.13.2/ollama-linux-arm64.tgz",
+        "sha256": "5422155b63da19adb5e3dd5679f6700ab5813a8ab2c268bbb0d1326e7709f810",
+        "strip-components": 0,
+        "only-arches": [
+          "aarch64"
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>com.makemkv.MakeMKV</id>
+  <launchable type="desktop-id">com.makemkv.MakeMKV.desktop</launchable>
+  <name>MakeMKV</name>
+  <metadata_license>CC0-1.0</metadata_license>
+  <summary>DVD and Blu-ray to MKV converter and network streamer</summary>
+  <description>
+    <p>**This is a community package of MakeMKV and not officially supported by GuinpinSoft inc.**</p>
+    <p>
+      MakeMKV is your one-click solution to convert video that you own
+      into free and patents-unencumbered format that can be played
+      everywhere. MakeMKV is a format converter, otherwise called
+      "transcoder". It converts the video clips from proprietary (and
+      usually encrypted) disc into a set of MKV files, preserving most
+      information but not changing it in any way. The MKV format can
+      store multiple video/audio tracks with all meta-information and
+      preserve chapters.
+    </p>
+    <p>
+      Additionally MakeMKV can instantly stream decrypted video
+      without intermediate conversion to wide range of players, so you
+      may watch Blu-ray and DVD discs with your favorite player on
+      your favorite OS or on your favorite device.
+    </p>
+    <p>NOTE: users of this software must accept the terms of the "End
+    User License Agreement".
+    </p>
+  </description>
+  <url type="homepage">https://www.makemkv.com</url>
+  <project_license>LicenseRef-proprietary AND GPL-2.0 AND LGPL-2.1-only</project_license>
+  <developer id="com.makemkv">
+  	<name>GuinpinSoft inc</name>
+  </developer>
+  <content_rating type="oars-1.1"/>
+  <screenshots>
+    <screenshot type="default">
+      <caption>The makemkv main window</caption>
+      <image type="source" width="1152" height="685">https://negativo17.org/appstream/makemkv-0.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Analyzing Blu-ray disc</caption>
+      <image type="source" width="1152" height="685">https://negativo17.org/appstream/makemkv-1.png</image>
+    </screenshot>
+    <screenshot>
+      <caption>Content selection for backup</caption>
+      <image type="source" width="1152" height="685">https://negativo17.org/appstream/makemkv-2.png</image>
+    </screenshot>
+  </screenshots>
+  <releases>
+    <release version="1.18.3" date="2026-01-25">
+        <description>
+          <p>Changes:</p>
+          <ul>
+            <li>Updated LibreDrive and AACS runtime</li>
+            <li>Small improvements and bugfixes</li>
+          </ul>
+          <p>Notable bug fixes:</p>
+          <ul>
+            <li>Reading certain MKV files as input was very slow</li>
+          </ul>
+        </description>
+    </release>
+    <release version="1.18.2" date="2025-09-25">
+        <description>
+          <p>Changes:</p>
+          <ul>
+            <li>Improved handling for discs with mastering errors</li>
+            <li>Small improvements and bugfixes</li>
+          </ul>
+        </description>
+    </release>
+    <release version="1.18.1" date="2025-04-05">
+        <description>
+          <p>Changes:</p>
+          <ul>
+            <li>Bugfix for 1.18.0</li>
+          </ul>
+        </description>
+    </release>
+    <release version="1.18.0" date="2025-04-04">
+        <description>
+          <p>Changes:</p>
+          <ul>
+            <li>Added support for AACS v82</li>
+            <li>Improved handling for discs with mastering errors</li>
+            <li>Fixed crash on Mac OS 15.4</li>
+          </ul>
+        </description>
+    </release>
+    <release version="1.17.9" date="2025-02-01">
+        <description>
+          <p>Changes:</p>
+          <ul>
+            <li>Version bump, no changes</li>
+            <li>Updated translations</li>
+          </ul>
+        </description>
+    </release>
+    <release version="1.17.8" date="2024-09-30">
+        <description>
+          <p>Changes:</p>
+          <ul>
+            <li>Improved handling for discs with mastering errors and with structure protection</li>
+            <li>Small improvements and bugfixes</li>
+          </ul>
+          <p>Notable bug fixes:</p>
+          <ul>
+            <li>Audio transcoding failed on Linux when built with recent ffmpeg</li>
+          </ul>
+        </description>
+    </release>
+    <release version="1.17.7" date="2024-05-15">
+        <description>
+        <p>Changes:</p>
+        <ul>
+            <li>Version bump, no changes</li>
+        </ul>
+        </description>
+    </release>
+    <release version="1.17.6" date="2024-01-20">
+      <description>
+        <p>Changes:</p>
+        <ul>
+          <li>Improved handling for discs with mastering errors</li>
+          <li>Small improvements and bugfixes</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.17.5" date="2023-09-25">
+      <description>
+        <p>Changes:</p>
+        <ul>
+          <li>Improved handling for discs with mastering errors</li>
+          <li>Fixed several bughs related to HD-DVD handling (just about time...)</li>
+          <li>Fixed Linux ARM64 executabe crashing on certain hardware configurations</li>
+          <li>Small improvements and bugfixes</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.17.4" date="2023-05-29">
+      <description>
+        <p>Changes:</p>
+        <ul>
+          <li>Added support for AACSv81</li>
+          <li>Small improvements and bugfixes</li>
+        </ul>
+        <p>Notable bug fixes:</p>
+        <ul>
+          <li>4K BDAV discs with 4K-only content could fail to open</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.17.3" date="2023-02-01">
+      <description>
+        <p>Changes:</p>
+        <ul>
+          <li>Added support for 4K BDAV discs</li>
+          <li>Small improvements and bugfixes</li>
+        </ul>
+        <p>Notable bug fixes:</p>
+        <ul>
+          <li>DV HEVC streams with certain encoding were processed in a non-compatible way</li>
+          <li>CellWalk scan faild on some DVDs</li>
+          <li>Linux AArch64 version crashed on Raspberry PI3</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.17.2" date="2022-10-10">
+      <description>
+        <p>Changes:</p>
+        <ul>
+          <li>Improved handling for discs with mastering errors</li>
+          <li>Small improvements and bugfixes</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.17.1" date="2022-07-13">
+      <description>
+        <p>Changes:</p>
+        <ul>
+          <li>Small improvements and bugfixes</li>
+        </ul>
+        <p>Bug fixes:</p>
+        <ul>
+          <li>Program could hang when scanning certain protected DVD discs using CellWallk method</li>
+          <li>Some titles were truncated on DVDs with structure protection, when using CellWallk method</li>
+          <li>Small bugfixes</li>
+        </ul>
+        <p>1.17.0 regressions:</p>
+        <ul>
+          <li>On some UHD HEVC streams program spitted thousands of invalid "Corrupt" messages, appearing to hang</li>
+          <li>Program crashed decoding certain AC3 (DD) streams, usually during transcoding</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.17.0" date="2022-06-27">
+      <description>
+        <p>Changes:</p>
+        <ul>
+          <li>Improved handling for discs with mastering errors</li>
+          <li>A new, rewritten DVD engine - much better handling for discs with structure protection</li>
+          <li>Many internal improvements and small bugfixes</li>
+        </ul>
+        <p>Notable bug fixes:</p>
+        <ul>
+          <li>Program failed to recognize some exotic USB drives</li>
+          <li>Program failed on some DVD streams recorded from sattelite feed (TiVO DVD)</li>
+          <li>Program could hang if internet connection wasn't available</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.16.7" date="2022-02-27">
+      <description>
+        <p>Changes:</p>
+        <ul>
+          <li>Improved handling for discs with mastering errors</li>
+          <li>Many internal improvements and small bugfixes</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.16.5" date="2021-11-01">
+      <description>
+        <p>Changes:</p>
+        <ul>
+          <li>Miscellaneous UI improvements</li>
+          <li>WinCDArb update, fixes occasional "no optical drives" error</li>
+          <li>LibMMBD stability improvements</li>
+          <li>Many small bug-fixes</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.16.4" date="2021-07-08">
+      <description>
+        <p>Changes:</p>
+        <ul>
+          <li>Much better support for discs with Java playlist obfuscation</li>
+          <li>Any Java runtime version is now supported, including Java 16</li>
+          <li>Mac OS: Support for Mac OS 12.0 Monterey</li>
+          <li>Some small improvements</li>
+        </ul>
+        <p>Bug fixes:</p>
+        <ul>
+          <li>Program failed to recognize some AAC streams with exotic channel encoding</li>
+          <li>Picture dimensions were displayed incorrectly for some exotic HEVC streams</li>
+          <li>Conversion of some DVDs could fail at the very end of title</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.16.3" date="2021-03-18">
+      <description>
+        <p>Bug fixes:</p>
+        <ul>
+          <li>Some non-English messages were displayed incorrectly</li>
+          <li>Opening DVD in manual mode from GUI was broken in 1.16.0</li>
+          <li>Some E-AC3 streams with surround channels were ignored when opening M2TS files</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.16.2" date="2021-03-17">
+      <description>
+        <p>Bug fixes:</p>
+        <ul>
+          <li>Mac OS: Program produced random errors when running on OS X 10.11 El Captain or earlier versions</li>
+          <li>Linux: ccextractor is now part of OSS package</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.16.1" date="2021-03-04">
+      <description>
+        <p>Changes:</p>
+        <ul>
+          <li>Some small improvements</li>
+        </ul>
+        <p>Bug fixes:</p>
+        <ul>
+          <li>Mac OS: Program could fail to start</li>
+          <li>Mac OS: ccextractor helper app failed to start</li>
+          <li>Windows XP: Program failed to start</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.16.0" date="2021-02-27">
+      <description>
+        <p>Changes:</p>
+        <ul>
+          <li>ARM port, support for Apple silicon, Linux on ARM</li>
+          <li>MMMBD on OSX - support for applications with hardened runtime (Handbrake)</li>
+          <li>Some internal improvements and small bugfixes</li>
+        </ul>
+      </description>
+    </release>
+  <release version="1.15.4" date="2020-12-08">
+      <description>
+        <p>Changes:</p>
+        <ul>
+          <li>Improved handling for discs with mastering errors</li>
+          <li>Many internal improvements and small bugfixes</li>
+          <li>Implemented seamless joining of TrueHD streams with overlapping frames based on Dominik Mydlil's idea</li>
+          <li>MakeMKV now recognizes and converts double-track Dolby Vision MKV files</li>
+        </ul>
+        <p>Bug fixes:</p>
+        <ul>
+          <li>Program could fail when processing TrueHD streams from MKV file</li>
+          <li>DTS core was not extracted from DTS-HD streams (1.15.0 regression)</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.15.3" date="2020-10-01">
+      <description>
+        <p>Changes:</p>
+        <ul>
+          <li>Massive internal rewrite, many bugfixes</li>
+          <li>Improved handling for discs with mastering errors</li>
+          <li>Brand new network code, it is now possible to set proxy server in preferences, to access network over TOR/VPN</li>
+          <li>MakeMKV now can extract Dolby Vision metadata from elementary stream data and rebuild missing or invalid DV descriptors</li>
+          <li>Drive speed control update - MakeMKV now forces low speed when reading data around disc edges, working around firmware bugs</li>
+        </ul>
+        <p>Bug fixes:</p>
+        <ul>
+          <li>Program could hang or crash when converting files with many audio streams</li>
+          <li>On some multi-segment sources with LPCM audio program failed to produce MKV file</li>
+          <li>Program could crash when producing testdump or when conversion failed</li>
+          <li>On 32-bit x86 system program could run out of memory on big mult-segment sources</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.15.2" date="2020-07-20">
+      <description>
+        <p>Changes:</p>
+        <ul>
+          <li>Massive internal rewrite, some improvements and small bugfixes</li>
+          <li>Muxer updated to the latest matroska specification</li>
+        </ul>
+        <p>Advanced usage changes:</p>
+        <ul>
+          <li>Sdftool included as standalone executable</li>
+          <li>Drive speed control option</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.15.1" date="2020-04-15">
+      <description>
+        <p>Changes:</p>
+        <ul>
+          <li>Added support for AACS v76 (for those poor souls without LibreDrive)</li>
+          <li>Improved handling for discs with mastering errors</li>
+		  <li>Many internal improvements and small bugfixes</li>
+        </ul>
+        <p>Bug fixes:</p>
+        <ul>
+          <li>For some HD audio streams frames were dropped incorrectly on segment boundaries</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.15.0" date="2020-03-03">
+      <description>
+        <p>Changes:</p>
+        <ul>
+          <li>User interface update</li>
+          <li>New preferences page for LibMMBD integation</li>
+          <li>Improved handling for discs with mastering errors</li>
+          <li>Better tolerance for corrupted input data</li>
+          <li>Many internal improvements</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.14.7" date="2019-12-04">
+      <description>
+        <p>Changes:</p>
+        <ul>
+          <li>Better compatibility for decrypted AACS 2.1 FMTS files</li>
+          <li>Fixed variable expansion bug for default file name template</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.14.6" date="2019-12-02">
+      <description>
+        <p>Changes:</p>
+        <ul>
+          <li>Added support for AACS 2.1</li>
+          <li>Many small bugfixes and improvements</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.14.5" date="2019-09-06">
+      <description>
+        <p>Changes:</p>
+        <ul>
+          <li>Some small miscellaneous improvements</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.14.4" date="2019-06-06">
+      <description>
+        <p>Changes:</p>
+        <ul>
+          <li>Added support for AACS v70 (for those poor souls without LibreDrive)</li>
+          <li>Many small improvements, program should work a bit faster now</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.14.3" date="2019-03-10">
+      <description>
+        <p>Changes:</p>
+        <ul>
+          <li>Added support for AACS v68</li>
+          <li>Many small miscellaneous improvements</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.14.2" date="2018-12-01">
+      <description>
+        <p>Changes:</p>
+        <ul>
+          <li>Support for BDAV AVCREC discs</li>
+          <li>Improved handling for DVD discs with mastering errors</li>
+          <li>Some small miscellaneous improvements</li>
+        </ul>
+        <p>Bug fixes for 1.14.0 regressions:</p>
+        <ul>
+          <li>On DVD discs some titles could fail to open, sometimes even crashing the program</li>
+          <li>Opening most 3D blu-ray discs could fail in both backup and MKV mode</li>
+        </ul>
+        <p>Bug Fixes:</p>
+        <ul>
+          <li>Program failed on interlaced h.264 video streams with exotic encoding</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.14.1" date="2018-09-11">
+      <description>
+        <p>Bug Fixes:</p>
+        <ul>
+          <li>MakeMKV could crash during non-decrypted full disc backup</li>
+          <li>Some discs caused extensive reads and very slow operation at the start of MKV file creation</li>
+        </ul>
+      </description>
+    </release>
+    <release version="1.14.0" date="2018-05-11">
+      <description>
+        <p>New Features:</p>
+        <ul>
+          <li>Added support for AACS v66</li>
+          <li>MakeMKV now extracts closed captions and saves them as text subtitles</li>
+          <li>New video processing engine, MakeMKV should be much more tolerant for MPEG files with errors (BDAV)</li>
+          <li>libmmbd: Added compatibility for latest libaacs API (Kodi no longer crashes)</li>
+          <li>Small miscellaneous improvements</li>
+        </ul>
+        <p>Bug fixes for 1.12.3 regressions:</p>
+        <ul>
+          <li>With some discs MKV creation failed with DBG_ASSERT or DEBUG_CODE 45045000</li>
+          <li>With 3D blu-ray invalid hashcheck errors were produced</li>
+          <li>Audio transcoding could fail with newer ffmpeg versions</li>
+        </ul>
+        <p>Bug fixes:</p>
+        <ul>
+          <li>MKV creation failed for BDAV discs authored in a certain way</li>
+          <li>Transcoding to AC3 displayed incorrectly with custom conversion profiles</li>
+          <li>MakeMKV GUI could crash on exit</li>
+          <li>MakeMKV could hang at the very end of MKV file creation in some rare cases</li>
+          <li>Linux: Fixed complilation errors with ffmpeg 4</li>
+        </ul>
+        <p>Expert mode features:</p>
+        <ul>
+          <li>Default output file name can be customized using template</li>
+          <li>VC1 video can be saved as raw elementary stream, without
+          FOURCC AVI encapsulation</li>
+        </ul>
+        <p>Obsolete features:</p>
+        <ul>
+          <li>Removed UPNP streaming (Use VLC or Kodi with libmmbd instead)</li>
+          <li>Linux: Removed mmdtsdec/libdcadec (Use latest ffmpeg
+          instead)</li>
+        </ul>
+      </description>
+    </release>
+  </releases>
+</component>

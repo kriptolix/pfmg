@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "worldcoin",
+    "version": "0.17.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "worldcoin",
+    "buildsystem": "simple",
+    "build-commands": [
+      "install -m 0744 -D -t /app/bin/internal bin/worldcoin-qt",
+      "install -m 0744 -D -t /app/bin/internal bin/worldcoind",
+      "install -m 0744 -D -t /app/bin/internal bin/worldcoin-cli",
+      "install -m 0744 -D -t /app/bin/internal bin/worldcoin-tx"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "only-arches": [
+          "x86_64"
+        ],
+        "url": "https://github.com/expatjedi/wdc-flatpak-data/releases/download/0.17.1/worldcoin-core-0.17.1-x86_64-linux-gnu.tar.gz",
+        "sha256": "e5ca87c5828fa3f2f64bdec89c51f6928b626321b49d4d68705bd06c3c1f393b"
+      }
+    ]
+  }
+}

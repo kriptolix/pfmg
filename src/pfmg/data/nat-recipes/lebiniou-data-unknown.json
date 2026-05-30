@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "lebiniou-data",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "lebiniou-data",
+    "buildsystem": "autotools",
+    "config-opts": [
+      "--enable-flatpak"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://gitlab.com/lebiniou/lebiniou-data.git",
+        "tag": "version-3.67.0"
+      }
+    ]
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "header": {
+    "id": "liblcf",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "liblcf",
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
+      "-DLIBLCF_ENABLE_TOOLS=OFF",
+      "-DLIBLCF_WITH_XML=OFF",
+      "-DLIBLCF_ENABLE_TESTS=OFF",
+      "-DLIBLCF_UPDATE_MIMEDB=OFF"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/EasyRPG/liblcf.git",
+        "tag": "0.8.1",
+        "commit": "92c4450a1bc1acb58bd02bbb99b57e5036919cdf",
+        "x-checker-data": {
+          "is-main-source": true,
+          "type": "git",
+          "tag-pattern": "^([\\d.]+)$"
+        }
+      }
+    ],
+    "cleanup": [
+      "/share"
+    ]
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "header": {
+    "id": "opencamlib",
+    "version": "2023.01.11",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "opencamlib",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --exists-action=i --ignore-installed --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} . --no-build-isolation"
+    ],
+    "build-options": {
+      "env": [
+        {
+          "CMAKE_ARGS": "${CMAKE_ARGS} -D BUILD_DOC:BOOL=OFF -D VERSION_STRING:STRING=2023.01.11"
+        }
+      ]
+    },
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/aewallin/opencamlib/archive/2023.01.11/opencamlib-2023.01.11.tar.gz",
+        "sha256": "07fd9b61c39c4d600e441d67edbafc1015e9e3fabd88b561a647f98fedf31d41"
+      },
+      {
+        "type": "patch",
+        "path": "patches/opencamlib-boost-shared-no-git-version-command.patch"
+      }
+    ]
+  }
+}

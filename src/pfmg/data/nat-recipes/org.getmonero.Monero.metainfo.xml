@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+    <id>org.getmonero.Monero</id>
+    <metadata_license>CC0-1.0</metadata_license>
+    <project_license>BSD-3-Clause</project_license>
+    <content_rating type="oars-1.1"/>
+    <developer id="org.getmonero">
+        <name>The Monero Project</name>
+    </developer>
+    <categories>
+        <category>Network</category>
+        <category>Qt</category>
+        <category>Finance</category>
+        <category>Office</category>
+    </categories>
+    <name>Monero GUI</name>
+    <summary>Monero: the secure, private, untraceable cryptocurrency</summary>
+    
+    <description>
+        <p>Monero is a private, secure, untraceable, decentralised digital currency. You
+            are your bank, you control your funds, and nobody can trace your transfers
+            unless you allow them to do so.</p>
+
+        <p>Privacy: Monero uses a cryptographically sound system to allow you to send
+            and receive funds without your transactions being easily revealed on the
+            blockchain (the ledger of transactions that everyone has). This ensures that
+            your purchases, receipts, and all transfers remain absolutely private by
+            default.</p>
+
+        <p>Security: Using the power of a distributed peer-to-peer consensus network,
+            every transaction on the network is cryptographically secured. Individual
+            wallets have a 25 word mnemonic seed that is only displayed once, and can be
+            written down to backup the wallet. Wallet files are encrypted with a passphrase
+            to ensure they are useless if stolen.</p>
+
+        <p>Untraceability: By taking advantage of ring signatures, a special property of
+            a certain type of cryptography, Monero is able to ensure that transactions are
+            not only untraceable, but have an optional measure of ambiguity that ensures
+            that transactions cannot easily be tied back to an individual user or computer.</p>
+    </description>
+
+    <launchable type="desktop-id">org.getmonero.Monero.desktop</launchable>
+
+    <screenshots>
+        <screenshot type="default">
+            <caption>A screenshot of the Monero GUI wallet</caption>
+            <image>https://raw.githubusercontent.com/monero-project/monero-site/master/img/downloads/gui.png</image>
+        </screenshot>
+    </screenshots>
+
+    <url type="homepage">https://getmonero.org</url>
+    <url type="bugtracker">https://github.com/monero-project/monero-gui/issues</url>
+    <url type="donation">https://getmonero.org/get-started/contributing</url>
+    <url type="faq">https://getmonero.org/get-started/faq</url>
+    <url type="help">https://getmonero.org/resources/user-guides</url>
+    <url type="contact">https://getmonero.org/community/hangouts</url>
+    <url type="contribute">https://getmonero.org/get-started/contributing</url>
+
+    <releases>
+        <release version="0.18.4.7" date="2026-03-11">
+            <description>
+                <ul>
+                    <li>Fix GUI getting stuck during exit on macOS (#4558)</li>
+                    <li>Fix lack of focus during password dialog (#4549)</li>
+                    <li>Set password for temporary wallet during wizard wallet creation (#4556, #4571)</li>
+                    <li>Improve blockchain size estimate accuracy (#4552)</li>
+                    <li>Update Qt to 5.15.18 (#4565)</li>
+                    <li>Update p2pool to v4.14 (#4570)</li>
+                    <li>Minor bug fixes</li>
+                </ul>
+            </description>
+        </release>
+
+        <release version="0.18.4.5" date="2026-01-11">
+            <description>
+                <ul>
+                    <li>Fix Ledger Monero app crash (#4534)</li>
+                    <li>Add support for Ledger Nano Gen5 (#4539)</li>
+                    <li>Update P2Pool to v4.13 (#4543)</li>
+                    <li>Improve macOS dark mode support (#4537)</li>
+                    <li>Minor bug fixes</li>
+                </ul>
+            </description>
+        </release>
+
+        <release version="0.18.4.4" date="2025-11-19">
+            <description>
+                <ul>
+                    <li>Fix Ledger hardware wallet bug when rejecting secret view key export</li>
+                    <li>Update P2Pool to v4.12 (#4519)</li>
+                    <li>Minor bug fixes</li>
+                </ul>
+            </description>
+        </release>
+
+        <release version="0.18.4.3" date="2025-10-08">
+            <description>
+                <ul>
+                    <li>Add support for Ledger Flex (#4494)</li>
+                    <li>Update Qt to 5.15.17 (#4498)</li>
+                    <li>Update P2Pool to v4.11 (#4505)</li>
+                    <li>Minor bug fixes</li>
+                </ul>
+            </description>
+        </release>
+
+        <release version="0.18.4.2" date="2025-08-26">
+            <description>
+                <ul>
+                    <li>Fix privacy leak with malicious remote node</li>
+                    <li>Add background sync when locked functionality (#4050)</li>
+                    <li>Update P2Pool to v4.9.1, fix Linux permission bug (#4490)</li>
+                    <li>Add P2Pool nano sidechain (#4482)</li>
+                    <li>Minor bug fixes</li>
+                </ul>
+            </description>
+        </release>
+
+        <release version="0.18.4.1" date="2025-07-25">
+            <description>
+                <ul>
+                    <li>Update P2Pool to v4.8.1 (#4462)</li>
+                    <li>Minor bug fixes</li>
+                </ul>
+            </description>
+        </release>
+        
+        <release version="0.18.4.0" date="2025-04-06">
+            <description>
+                <ul>
+                    <li>Fix "Create Wallet" button getting stuck in some cases (#4351)</li>
+                    <li>Fix testnet wallet detection (#4411)</li>
+                    <li>Update P2Pool to v4.4 (#4417)</li>
+                    <li>Update Qt to 5.15.16 (#4377)</li>
+                </ul>
+            </description>
+        </release>
+
+        <release version="0.18.3.4" date="2024-08-22">
+            <description>
+                <ul>
+                    <li>Add support for Trezor Safe 5 (#4332)</li>
+                    <li>Enable pruning by default (#4320)</li>
+                    <li>Allow @ in OpenAlias domain (#4308)</li>
+                    <li>Fix stagenet restore height estimation (#4310)</li>
+                    <li>Fix an edge case with desktop entry (#4300)</li>
+                    <li>Update P2Pool to v4.1 (#4334)</li>
+                    <li>Update Qt to 5.15.14 (#4321)</li>
+                </ul>
+            </description>
+        </release>
+
+        <release version="0.18.3.3" date="2024-04-02">
+            <description>
+                <ul>
+                    <li>Fix fix connecting to password protected nodes (#4291)</li>
+                    <li>Update Qt to 5.15.13 (#4290)</li>
+                </ul>
+            </description>
+        </release>
+
+        <release version="0.18.3.2" date="2024-03-10">
+            <description>
+                <ul>
+                    <li>Fix automatic fee selection (#4283)</li>
+                    <li>Add support for Trezor Safe 3 (#4255)</li>
+                    <li>OpenAlias domains starting with a digit can now be recognized (#4243)</li>
+                    <li>Fix Tails detection (#4281)</li>
+                    <li>Fix a crash on macOS ARM (#4283)</li>
+                    <li>Update Qt to 5.15.12 (#4261)</li>
+                    <li>Update p2pool to v3.8 (#4260)</li>
+                    <li>Minor bug fixes and UI improvements</li>
+                </ul>
+            </description>
+        </release>
+
+        <release version="0.18.3.1" date="2023-10-11">
+            <description>
+                <ul>
+                    <li>Add macOS ARM support</li>
+                    <li>Display error when Scan Transaction is used on older tx via untrusted daemon (#4051)</li>
+                    <li>Add image when Ledger Stax is selected in wizard (#4146)</li>
+                    <li>Add more detailed P2Pool failure messages, fix a rare crash (#4147)</li>
+                    <li>Update Qt to 5.15.10 (#4143)</li>
+                    <li>Update p2pool to v3.7 (#4219)</li>
+                    <li>Minor bug fixes and UI improvements</li>
+                </ul>
+            </description>
+        </release>
+
+        <release version="0.18.2.2" date="2023-04-10">
+            <description>
+                <ul>
+                    <li>Add support for Ledger Stax (#4130)</li>
+                    <li>Update p2pool to v3.2 (#4142)</li>
+                    <li>Minor bug fixes and UI improvements</li>
+                </ul>
+            </description>
+        </release>
+
+        <release version="0.18.2.0" date="2023-03-01">
+            <description>
+                <ul>
+                    <li>Update P2Pool to 3.0, add support for the upcoming P2Pool network upgrade (#4112)</li>
+                    <li>Redesign seed page, ask for seed confirmation on wallet creation (#3878)</li>
+                    <li>Android: disable local node usage (#4043)</li>
+                    <li>Fix creating view only wallet from existing wallet</li>
+                    <li>Take priority into account when estimating fee</li>
+                    <li>Take dataDir into account when sending cmd to avoid creating log file (#4047)</li>
+                    <li>Update Qt to 5.15.8 (#4103)</li>
+                    <li>Update hidapi to 0.13.1 on Linux and Windows (#4109, #4120)</li>
+                    <li>Add open folder button after CSV export (#4077)</li>
+                    <li>Skip proxy when setting localhost remote node (#4085)</li>
+                    <li>Override desktop theming to fix UI bugs with KDE (#4091)</li>
+                    <li>P2Pool: restart monerod only when needed and with proper args (#3936)</li>
+                    <li>Minor bug fixes and UI improvements</li>
+                </ul>
+            </description>
+        </release>
+
+        <release version="0.18.1.2" date="2022-09-29">
+            <description>
+                <ul>
+                    <li>Fix a bug that causes the wallet to display "wrong version"</li>
+                    <li>Improve behavior when switching nodes (#4036)</li>
+                    <li>Use different colors for different subaccounts (#4040)</li>
+                    <li>Minor bug fixes and UI improvements</li>
+                </ul>
+            </description>
+        </release>
+
+        <release version="0.18.1.1" date="2022-09-19">
+            <description>
+                <ul>
+                    <li>Skip nodes that are behind last checkpoint in Simple Mode</li>
+                    <li>Warn when connecting to an outdated node</li>
+                    <li>Update Qt to 5.15.6 on Windows and Linux (#4025)</li>
+                    <li>Allow to use Windows Installer on ARM64 systems (#4026)</li>
+                    <li>Update translations (#4031)</li>
+                    <li>Minor bug fixes and UI improvements</li>
+                </ul>
+            </description>
+        </release>
+
+        <release version="0.18.1.0" date="2022-08-11">
+            <description>
+                <ul>
+                    <li>Add Ledger support for v0.18, requires app v1.8.0</li>
+                    <li>Add Trezor support for v0.18, requires firmware v2.5.2</li>
+                    <li>Speed up time between wallet opening and refresh (#3994)</li>
+                    <li>Add option to skip stop local node screen (#3734)</li>
+                    <li>Minor bug fixes and UI improvements</li>
+                </ul>
+            </description>
+        </release>
+
+        <release version="0.18.0.0" date="2022-07-20">
+            <description>
+                <ul>
+                    <li>Add support for v0.18 network upgrade (#3972)</li>
+                    <li>Add scan transaction option (#3932)</li>
+                    <li>Fix payment proof button (#3910)</li>
+                    <li>Fix restoring from default restore height (#3902)</li>
+                    <li>Display wallet files with a dot in name #3968)</li>
+                    <li>Add separate Ledger Nano S+ entry (#3903)</li>
+                    <li>Fix stagenet approximated block height (#3846)</li>
+                    <li>Update Mac icon (#3560)</li>
+                    <li>Update p2pool to v2.2.1 (#3966)</li>
+                    <li>Only kill p2pool when we started it (#3917)</li>
+                    <li>Minor bug fixes and UI improvements</li>
+                </ul>
+            </description>
+        </release>
+
+        <release version="0.17.3.2" date="2022-04-30">
+            <description>
+                <ul>
+                    <li>Integrate experimental support for P2Pool mining (#3829)</li>
+                    <li>Warn against high fees during transaction creation (#3897)</li>
+                    <li>Improvements against wallet getting stuck on exit (#3890, #3889)</li>
+                    <li>Add support for Ledger Nano S Plus</li>
+                    <li>Add support for reserve proof (#3828)</li>
+                    <li>Add a lock wallet button to the title bar (#3859)</li>
+                    <li>Fix offline signing (#3862)</li>
+                    <li>Fix adding a new address book entry (#3865)</li>
+                    <li>Update translations, add support for 5 new languages (#3832)</li>
+                    <li>Minor bug fixes and UI improvements</li>
+                </ul>
+            </description>
+        </release>
+
+        <release version="0.17.3.1" date="2022-01-07">
+            <description>
+                <ul>
+                    <li>Fix startup crash on Apple Silicon (#3804)</li>
+                    <li>Fix wizard password not resetting after wallet creation (#3795)</li>
+                    <li>Update translations (#3811)</li>
+                    <li>Minor bug fixes and UI improvements</li>
+                </ul>
+            </description>
+        </release>
+
+        <release version="0.17.3.0" date="2021-12-07">
+            <description>
+                <ul>
+                    <li>Add import / export output function (#3435)</li>
+                    <li>Export all key images by default (#3282)</li>
+                    <li>Update translations (#3773)</li>
+                    <li>Add description to CSV export (#3572)</li>
+                    <li>Add colors to password strength meter (#3682)</li>
+                    <li>Add Cut, Copy, Delete and Select All to context menu (#3689)</li>
+                    <li>Fix buffer overflow in zxcvbn library (#3735)</li>
+                    <li>Fix font issue on Arch Linux (#3753)</li>
+                    <li>Fix compilation for Apple ARM (#3697, #3723, #3731)</li>
+                    <li>Mining page design tweaks (#3742)</li>
+                    <li>Minor bug fixes and UI improvements</li>
+                </ul>
+            </description>
+        </release>
+
+        <release version="0.17.2.3" date="2021-09-01">
+            <description>
+                <ul>
+                    <li>Add payment request functionality to receive page (#3650)</li>
+                    <li>Display images on create hardware wallet page (#3618)</li>
+                    <li>Reenable password strength meter in release binaries (#3562)</li>
+                    <li>Automatically correct incorrectly typed restore dates (#3564)</li>
+                    <li>Add tooltips to all buttons (#3490)</li>
+                    <li>Add search transactions button on receive and account page (#3216, #3546)</li>
+                    <li>Set an unused wallet name in wizard (#3544)</li>
+                    <li>Fix bug not accepting new restore height (#3563)</li>
+                    <li>Fix get / check proof on Sign / Verify page (#3674)</li>
+                    <li>Fix scanning QR codes that miss an URI prefix (#3598)</li>
+                    <li>Various date picker improvements</li>
+                    <li>Accessibility improvements (#3611, #3603)</li>
+                    <li>Minor bug fixes and UI improvements</li>
+                </ul>
+            </description>
+        </release>
+
+        <release version="0.17.2.2" date="2021-05-14">
+            <description>
+                <ul>
+                    <li>Add basic menubar support on macOS (#2242)</li>
+                    <li>Fix GUI being invisible on systems with multiple monitors (#3404, #3447)</li>
+                    <li>New view progress button after transfer (#3208)</li>
+                    <li>Tooltips on transfer page (#3401)</li>
+                    <li>Fix missing icons in low graphics mode (#3423)</li>
+                    <li>Display selected subaddress on merchant page (#3424)</li>
+                    <li>Minor bug fixes and UI improvements</li>
+                </ul>
+            </description>
+        </release>
+
+        <release version="0.17.2.1" date="2021-04-14">
+            <description>
+                <ul>
+                    <li>Fix transfer on macOS (#3390)</li>
+                    <li>Minor bug fixes</li>
+                </ul>
+            </description>
+        </release>
+
+        <release version="0.17.2.0" date="2021-05-14">
+            <description>
+                <ul>
+                    <li>Allow sending to multiple receipients (#3332)</li>
+                    <li>Add support for pruning of new databases in wizard (#3345)</li>
+                    <li>Add support for storing multiple remote nodes (#3373)</li>
+                    <li>New "Grab QR code from screen" functionality (#3292)</li>
+                    <li>Improve search functionality on Transactions page (#3215)</li>
+                    <li>Fix a memory leak on Linux (#3326)</li>
+                    <li>Fix incorrect fiat price api usage with Kraken (#3298)</li>
+                    <li>Enable dns block list in simple mode (#3314)</li>
+                    <li>Restrict max window width / height, fix initial window alignment (#3302)</li>
+                    <li>Updated translations from Weblate (#3342)</li>
+                    <li>Update monero submodule to v0.17.2.0 (#3382)</li>
+                    <li>Minor design improvements</li>
+                </ul>
+            </description>
+        </release>
+
+        <release version="0.17.1.9" date="2021-01-08">
+            <description>
+                <ul>
+                    <li>Update monero submodule to v0.17.1.9</li>
+                    <li>Windows GUI binary is now reproducible</li>
+                    <li>Add high DPI support on Windows</li>
+                </ul>
+            </description>
+        </release>
+    </releases>
+</component>

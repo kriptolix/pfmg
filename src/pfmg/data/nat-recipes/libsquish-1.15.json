@@ -1,0 +1,45 @@
+{
+  "header": {
+    "id": "libsquish",
+    "version": "1.15",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libsquish",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DCMAKE_POLICY_VERSION_MINIMUM=3.5",
+      "-DBUILD_SQUISH_WITH_OPENMP=ON",
+      "-DBUILD_SHARED_LIBS=ON"
+    ],
+    "build-options": {
+      "arch": {
+        "x86_64": {
+          "config-opts": [
+            "-DBUILD_SQUISH_WITH_SSE2=ON"
+          ]
+        },
+        "aarch64": {
+          "config-opts": [
+            "-DBUILD_SQUISH_WITH_SSE2=OFF"
+          ]
+        }
+      }
+    },
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://downloads.sourceforge.net/project/libsquish/libsquish-1.15.tgz",
+        "sha256": "628796eeba608866183a61d080d46967c9dda6723bc0a3ec52324c85d2147269",
+        "strip-components": 0,
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 21493,
+          "stable-only": true,
+          "url-template": "https://downloads.sourceforge.net/project/libsquish/libsquish-$version.tgz"
+        }
+      }
+    ]
+  }
+}

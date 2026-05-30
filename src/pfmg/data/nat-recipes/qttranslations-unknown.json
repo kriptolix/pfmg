@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "qttranslations",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "qttranslations",
+    "buildsystem": "qmake",
+    "cleanup": [
+      "/bin"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://invent.kde.org/qt/qt/qttranslations.git",
+        "commit": "c38edd3a5501bcd53132e1e4abb7d25a98e0e1a9"
+      }
+    ]
+  }
+}

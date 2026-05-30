@@ -1,0 +1,49 @@
+{
+  "header": {
+    "id": "koncentro",
+    "version": "1.1.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "koncentro",
+    "buildsystem": "simple",
+    "build-commands": [
+      "python -m compileall .",
+      "for qrc_file in koncentro/src/resources/*.qrc; do\n    base_name=$(basename \"$qrc_file\" .qrc)\n    /lib/libexec/rcc -g python \"$qrc_file\" -o \"koncentro/src/resources/${base_name}_rc.py\"\ndone\n",
+      "desktop-file-edit --set-key=\"Exec\" --set-value=\"run.sh\" \"koncentro/installer-scripts/linux/common/koncentro.desktop\"",
+      "desktop-file-edit --set-key=\"Icon\" --set-value=\"/usr/share/icons/hicolor/512x512/koncentro/koncentro\" \"koncentro/installer-scripts/linux/common/koncentro.desktop\"",
+      "desktop-file-edit --set-key=\"Categories\" --set-value=\"Utility;Office;\" \"koncentro/installer-scripts/linux/common/koncentro.desktop\"",
+      "install -Dm644 \"koncentro/installer-scripts/linux/common/koncentro.desktop\" ${FLATPAK_DEST}/share/applications/koncentro.desktop",
+      "install -Dm644 koncentro/installer-scripts/linux/common/com.bishwasaha.Koncentro.metainfo.xml ${FLATPAK_DEST}/share/metainfo/com.bishwasaha.Koncentro.metainfo.xml",
+      "install -Dm644 koncentro/assets/logo_512x512.png ${FLATPAK_DEST}/share/icons/hicolor/512x512/apps/koncentro.png",
+      "install -Dm644 koncentro/assets/logo_256x256.png ${FLATPAK_DEST}/share/icons/hicolor/256x256/apps/koncentro.png",
+      "install -Dm644 koncentro/assets/logo_128x128.png ${FLATPAK_DEST}/share/icons/hicolor/128x128/apps/koncentro.png",
+      "install -Dm644 koncentro/assets/logo_64x64.png ${FLATPAK_DEST}/share/icons/hicolor/64x64/apps/koncentro.png",
+      "install -Dm644 koncentro/assets/logo_48x48.png ${FLATPAK_DEST}/share/icons/hicolor/48x48/apps/koncentro.png",
+      "install -Dm644 koncentro/assets/logo_32x32.png ${FLATPAK_DEST}/share/icons/hicolor/32x32/apps/koncentro.png",
+      "install -Dm644 koncentro/assets/logo_24x24.png ${FLATPAK_DEST}/share/icons/hicolor/24x24/apps/koncentro.png",
+      "install -Dm644 koncentro/assets/logo_16x16.png ${FLATPAK_DEST}/share/icons/hicolor/16x16/apps/koncentro.png",
+      "install -Dm755 run.sh ${FLATPAK_DEST}/bin/run.sh",
+      "mkdir -p ${FLATPAK_DEST}/koncentro",
+      "mv koncentro/src ${FLATPAK_DEST}/koncentro/src",
+      "mv koncentro/alembic.ini ${FLATPAK_DEST}/koncentro/alembic.ini",
+      "mv koncentro/LICENSE ${FLATPAK_DEST}/koncentro/LICENSE"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/kun-codes/Koncentro/archive/refs/tags/v1.1.0.tar.gz",
+        "dest": "koncentro",
+        "sha256": "4e18ccaa408cc03e3abde7e2c3c379b4f7b4c49d17bb4253cd6f223629c1bae0"
+      },
+      {
+        "type": "script",
+        "commands": [
+          "python /app/koncentro/src/__main__.py \"$@\""
+        ],
+        "dest-filename": "run.sh"
+      }
+    ]
+  }
+}

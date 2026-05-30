@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "dtc",
+    "version": "1.7.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "dtc",
+    "buildsystem": "meson",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://git.kernel.org/pub/scm/utils/dtc/dtc.git/snapshot/v1.7.2.tar.gz",
+        "sha256": "04a30bd38b426ed771b8a8b5d9b773e54976d4f5d51a80a9e76a45b20c9a8272",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 16911,
+          "url-template": "https://git.kernel.org/pub/scm/utils/dtc/dtc.git/snapshot/v$version.tar.gz"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "header": {
+    "id": "gengetopt",
+    "version": "2.23",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "gengetopt",
+    "rm-configure": true,
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://ftp.gnu.org/gnu/gengetopt/gengetopt-2.23.tar.xz",
+        "sha256": "b941aec9011864978dd7fdeb052b1943535824169d2aa2b0e7eae9ab807584ac"
+      },
+      {
+        "type": "script",
+        "dest-filename": "autogen.sh",
+        "commands": [
+          "autoreconf -vfi"
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "clock",
+    "version": "0.8.4",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "clock",
+    "buildsystem": "simple",
+    "builddir": false,
+    "build-commands": [
+      "echo '#! /usr/bin/env runhaskell' >Setup.txt",
+      "echo '> import Distribution.Simple' >>Setup.txt",
+      "echo '> main = defaultMain' >>Setup.txt",
+      "ln -s Setup.txt Setup.lhs || true",
+      "runhaskell Setup configure --prefix=/app",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "sources": [
+      {
+        "sha256": "6ae9898afe788a5e334cd5fad5d18a3c2e8e59fa09aaf7b957dbb38a4767df2e",
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/clock-0.8.4/clock-0.8.4.tar.gz"
+      },
+      {
+        "dest-filename": "clock.cabal",
+        "sha256": "b938655b00cf204ce69abfff946021bed111d2609a9f7a9c22e28a1a202e9115",
+        "type": "file",
+        "url": "https://hackage.haskell.org/package/clock-0.8.4/revision/0.cabal"
+      }
+    ]
+  }
+}

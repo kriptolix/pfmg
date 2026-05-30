@@ -1,0 +1,19 @@
+{
+  "header": {
+    "id": "tesseract-ocr",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "tesseract-ocr",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/tesseract-ocr/tesseract",
+        "tag": "5.5.1",
+        "commit": "3b7c70e34dea179549ed3e995872e2e019eb8477"
+      }
+    ]
+  }
+}

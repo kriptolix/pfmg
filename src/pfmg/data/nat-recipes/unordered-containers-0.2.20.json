@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "unordered-containers",
+    "version": "0.2.20",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "unordered-containers",
+    "buildsystem": "simple",
+    "builddir": false,
+    "build-commands": [
+      "echo '#! /usr/bin/env runhaskell' >Setup.txt",
+      "echo '> import Distribution.Simple' >>Setup.txt",
+      "echo '> main = defaultMain' >>Setup.txt",
+      "ln -s Setup.txt Setup.lhs || true",
+      "runhaskell Setup configure --prefix=/app",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "sources": [
+      {
+        "sha256": "d9cfb287cf00592d39dc9c3cac8b99627ea08f2c01798e70130fc39f7c90f11d",
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/unordered-containers-0.2.20/unordered-containers-0.2.20.tar.gz"
+      },
+      {
+        "dest-filename": "unordered-containers.cabal",
+        "sha256": "c7fe9cba405ed9905e12d89c7add3b3eb9868dfba7975e70ba0cdd64b7b11abc",
+        "type": "file",
+        "url": "https://hackage.haskell.org/package/unordered-containers-0.2.20/revision/3.cabal"
+      }
+    ]
+  }
+}

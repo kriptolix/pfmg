@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "popplerdata",
+    "version": "0.4.12",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "popplerdata",
+    "buildsystem": "cmake-ninja",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://poppler.freedesktop.org/poppler-data-0.4.12.tar.gz",
+        "sha256": "c835b640a40ce357e1b83666aabd95edffa24ddddd49b8daff63adb851cdab74",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 3687,
+          "url-template": "https://poppler.freedesktop.org/poppler-data-$version.tar.gz"
+        }
+      }
+    ]
+  }
+}

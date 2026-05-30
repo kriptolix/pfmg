@@ -1,0 +1,53 @@
+Description: Fix ftbfs with libxml 2.14.x
+Author: Arthur Zamarin <arthurzam@gentoo.org>
+Origin: https://gitweb.gentoo.org/repo/gentoo.git/tree/media-video/vcdimager/files/vcdimager-2.0.1-libxml2-2.14.patch
+Bug-Debian: http://bugs.debian.org/1106624
+
+Index: vcdimager-2.0.1+dfsg/frontends/xml/vcd_xml_common.c
+===================================================================
+--- vcdimager-2.0.1+dfsg.orig/frontends/xml/vcd_xml_common.c
++++ vcdimager-2.0.1+dfsg/frontends/xml/vcd_xml_common.c
+@@ -242,17 +242,43 @@ _convert (const char in[], const char en
+ 
+   temp = size - 1;
+   if (from) {
++#if defined(LIBXML_VERSION) && LIBXML_VERSION >= 21400
++    if (!(handler->flags & 2) && NULL != handler->output.func)
++      ret = handler->output.func (handler->outputCtxt, out, &out_size, (const unsigned char *) in, &temp, 1);
++    if ((handler->flags & 2) && NULL != handler->output.legacyFunc)
++      ret = handler->output.legacyFunc (out, &out_size, (const unsigned char *) in, &temp);
++    else {
++      xmlCharEncCloseFunc(handler);
++      return strdup(in);
++    }
++#else
+     if (NULL != handler->output)
+       ret = handler->output (out, &out_size, (const unsigned char *) in, &temp);
+     else
+       return strdup(in);
++#endif
+   } else {
++#if defined(LIBXML_VERSION) && LIBXML_VERSION >= 21400
++    if (!(handler->flags & 2) && NULL != handler->input.func)
++      ret = handler->input.func (handler->inputCtxt, out, &out_size, (const unsigned char *) in, &temp, 1);
++    if ((handler->flags & 2) && NULL != handler->input.legacyFunc)
++      ret = handler->input.legacyFunc (out, &out_size, (const unsigned char *) in, &temp);
++    else {
++      xmlCharEncCloseFunc(handler);
++      return strdup(in);
++    }
++#else
+     if (NULL != handler->input)
+       ret = handler->input (out, &out_size, (const unsigned char *) in, &temp);
+     else
++#endif
+       return strdup(in);
+   }
+ 
++#if defined(LIBXML_VERSION) && LIBXML_VERSION >= 21400
++  xmlCharEncCloseFunc(handler);
++#endif
++
+   if (ret < 0 || (temp - size + 1))
+     {
+       free (out);

@@ -1,0 +1,30 @@
+{
+  "header": {
+    "id": "addr2line",
+    "version": "2.46.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "addr2line",
+    "buildsystem": "autotools",
+    "builddir": true,
+    "no-make-install": true,
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://ftp.gnu.org/pub/gnu/binutils/binutils-2.46.0.tar.gz",
+        "sha256": "8608fe44ab7de645f6ad0a898313b75338842490d609adb85c9fb2827c376af2",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 7981,
+          "stable-only": true,
+          "url-template": "https://ftp.gnu.org/pub/gnu/binutils/binutils-$version.tar.gz"
+        }
+      }
+    ],
+    "post-install": [
+      "install -Dm755 binutils/addr2line /app/bin/addr2line"
+    ]
+  }
+}

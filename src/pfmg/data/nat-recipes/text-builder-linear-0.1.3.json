@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "text-builder-linear",
+    "version": "0.1.3",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "text-builder-linear",
+    "buildsystem": "simple",
+    "builddir": false,
+    "build-commands": [
+      "echo '#! /usr/bin/env runhaskell' >Setup.txt",
+      "echo '> import Distribution.Simple' >>Setup.txt",
+      "echo '> main = defaultMain' >>Setup.txt",
+      "ln -s Setup.txt Setup.lhs || true",
+      "runhaskell Setup configure --prefix=/app",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "sources": [
+      {
+        "sha256": "49cbbbbf4515ecebe3839710e5bf6240273e09c3de3bbb5da67ee61cbf7a82db",
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/text-builder-linear-0.1.3/text-builder-linear-0.1.3.tar.gz"
+      },
+      {
+        "dest-filename": "text-builder-linear.cabal",
+        "sha256": "66c7b74554b207a1ea97e5eecc3c60400b0e99a54a1139a8563fed53c4a185f4",
+        "type": "file",
+        "url": "https://hackage.haskell.org/package/text-builder-linear-0.1.3/revision/0.cabal"
+      }
+    ]
+  }
+}

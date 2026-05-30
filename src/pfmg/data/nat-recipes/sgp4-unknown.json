@@ -1,0 +1,19 @@
+{
+  "header": {
+    "id": "sgp4",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "sgp4",
+    "buildsystem": "cmake-ninja",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/dnwrnr/sgp4.git",
+        "commit": "d176906dbfaf8361eee1f83bd1dc1bacc6582798"
+      }
+    ]
+  }
+}

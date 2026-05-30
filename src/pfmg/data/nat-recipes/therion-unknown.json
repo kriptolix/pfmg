@@ -1,0 +1,33 @@
+{
+  "header": {
+    "id": "therion",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "therion",
+    "buildsystem": "cmake",
+    "builddir": true,
+    "config-opts": [
+      "-DCMAKE_INSTALL_PREFIX=/app",
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DUSE_BUNDLED_CATCH2=ON",
+      "-DBUILD_LOCH=OFF",
+      "-DBUILD_THBOOK=OFF",
+      "-DBUILD_XTHERION=OFF"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/therion/therion.git",
+        "tag": "v6.3.4",
+        "commit": "17059ab27ce491f1edac150da2b7e2011f79b800"
+      },
+      {
+        "type": "patch",
+        "path": "flatpak-v634-conditional-components.patch"
+      }
+    ]
+  }
+}

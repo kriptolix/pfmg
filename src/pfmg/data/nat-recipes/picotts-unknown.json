@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "picotts",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "picotts",
+    "buildsystem": "autotools",
+    "subdir": "pico",
+    "post-install": [
+      "sed -i 's/\\bthis\\b/that/g' ${FLATPAK_DEST}/include/pico*.h"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/cyberbotics/picotts.git",
+        "commit": "470531ab6296a3cb7c83ae5e6ef0db8573b54a8d"
+      }
+    ]
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "libzim-glib",
+    "version": "4.0.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libzim-glib",
+    "buildsystem": "meson",
+    "builddir": true,
+    "cleanup": [
+      "/share"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/birros/libzim-glib/archive/v4.0.0.tar.gz",
+        "sha256": "f5699b35fa4fce9acedb10a518b487c6b7b0050daf25ba661c0a5d9b817de7e5"
+      }
+    ]
+  }
+}

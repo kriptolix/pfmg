@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "pretty-show-1.7",
+    "version": "1.7",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "pretty-show-1.7",
+    "only-arches": [
+      "x86_64"
+    ],
+    "buildsystem": "simple",
+    "build-commands": [
+      "ghc -threaded --make Setup",
+      "./Setup configure --prefix=/app",
+      "./Setup build",
+      "./Setup install"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "sha256": "382b6ef4a78e4059611b5c86674ad72a6bfce821e8852da4f00b628cfbbc272f",
+        "url": "https://hackage.haskell.org/package/pretty-show-1.7/pretty-show-1.7.tar.gz"
+      }
+    ]
+  }
+}

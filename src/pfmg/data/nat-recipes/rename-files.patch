@@ -1,0 +1,87 @@
+diff --git a/share/CMakeLists.txt b/share/CMakeLists.txt
+index 4bc1eed5..a55ef682 100644
+--- a/share/CMakeLists.txt
++++ b/share/CMakeLists.txt
+@@ -1,8 +1,8 @@
+ 
+ foreach(size 32x32 48x48 64x64 128x128 256x256)
+-	install(FILES icons/hicolor/${size}/apps/hatari.png
++	install(FILES icons/hicolor/${size}/apps/org.tuxfamily.hatari.png
+ 		DESTINATION ${ICONDIR}/${size}/apps)
+-	install(FILES icons/hicolor/${size}/mimetypes/application-x-st-disk-image.png
++	install(FILES icons/hicolor/${size}/mimetypes/org.tuxfamily.hatari.application-x-st-disk-image.png
+ 		DESTINATION ${ICONDIR}/${size}/mimetypes)
+ 	foreach(type vnd.msa vnd.fastcopy x-stx)
+ 		install(CODE "execute_process(COMMAND \"${CMAKE_COMMAND}\" -E create_symlink
+@@ -12,9 +12,9 @@ foreach(size 32x32 48x48 64x64 128x128 256x256)
+ 	endforeach()
+ endforeach()
+ 
+-install(FILES icons/hicolor/scalable/apps/hatari.svg
++install(FILES icons/hicolor/scalable/apps/org.tuxfamily.hatari.svg
+ 	DESTINATION ${ICONDIR}/scalable/apps)
+-install(FILES icons/hicolor/scalable/mimetypes/application-x-st-disk-image.svg
++install(FILES icons/hicolor/scalable/mimetypes/org.tuxfamily.hatari.application-x-st-disk-image.svg
+ 	DESTINATION ${ICONDIR}/scalable/mimetypes)
+ foreach(type vnd.msa vnd.fastcopy x-stx)
+ 	install(CODE "execute_process(COMMAND \"${CMAKE_COMMAND}\" -E create_symlink
+@@ -22,6 +22,6 @@ foreach(type vnd.msa vnd.fastcopy x-stx)
+ 			\$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/${ICONDIR}/scalable/mimetypes/application-${type}-disk-image.svg)
+ 			")
+ endforeach()
+-install(FILES mime/packages/hatari.xml DESTINATION share/mime/packages)
++install(FILES mime/packages/org.tuxfamily.hatari.xml DESTINATION share/mime/packages)
+ 
+ install(FILES applications/hatari.desktop DESTINATION share/applications)
+diff --git a/share/icons/hicolor/128x128/apps/hatari.png b/share/icons/hicolor/128x128/apps/org.tuxfamily.hatari.png
+similarity index 100%
+rename from share/icons/hicolor/128x128/apps/hatari.png
+rename to share/icons/hicolor/128x128/apps/org.tuxfamily.hatari.png
+diff --git a/share/icons/hicolor/128x128/mimetypes/application-x-st-disk-image.png b/share/icons/hicolor/128x128/mimetypes/org.tuxfamily.hatari.application-x-st-disk-image.png
+similarity index 100%
+rename from share/icons/hicolor/128x128/mimetypes/application-x-st-disk-image.png
+rename to share/icons/hicolor/128x128/mimetypes/org.tuxfamily.hatari.application-x-st-disk-image.png
+diff --git a/share/icons/hicolor/256x256/apps/hatari.png b/share/icons/hicolor/256x256/apps/org.tuxfamily.hatari.png
+similarity index 100%
+rename from share/icons/hicolor/256x256/apps/hatari.png
+rename to share/icons/hicolor/256x256/apps/org.tuxfamily.hatari.png
+diff --git a/share/icons/hicolor/256x256/mimetypes/application-x-st-disk-image.png b/share/icons/hicolor/256x256/mimetypes/org.tuxfamily.hatari.application-x-st-disk-image.png
+similarity index 100%
+rename from share/icons/hicolor/256x256/mimetypes/application-x-st-disk-image.png
+rename to share/icons/hicolor/256x256/mimetypes/org.tuxfamily.hatari.application-x-st-disk-image.png
+diff --git a/share/icons/hicolor/32x32/apps/hatari.png b/share/icons/hicolor/32x32/apps/org.tuxfamily.hatari.png
+similarity index 100%
+rename from share/icons/hicolor/32x32/apps/hatari.png
+rename to share/icons/hicolor/32x32/apps/org.tuxfamily.hatari.png
+diff --git a/share/icons/hicolor/32x32/mimetypes/application-x-st-disk-image.png b/share/icons/hicolor/32x32/mimetypes/org.tuxfamily.hatari.application-x-st-disk-image.png
+similarity index 100%
+rename from share/icons/hicolor/32x32/mimetypes/application-x-st-disk-image.png
+rename to share/icons/hicolor/32x32/mimetypes/org.tuxfamily.hatari.application-x-st-disk-image.png
+diff --git a/share/icons/hicolor/48x48/apps/hatari.png b/share/icons/hicolor/48x48/apps/org.tuxfamily.hatari.png
+similarity index 100%
+rename from share/icons/hicolor/48x48/apps/hatari.png
+rename to share/icons/hicolor/48x48/apps/org.tuxfamily.hatari.png
+diff --git a/share/icons/hicolor/48x48/mimetypes/application-x-st-disk-image.png b/share/icons/hicolor/48x48/mimetypes/org.tuxfamily.hatari.application-x-st-disk-image.png
+similarity index 100%
+rename from share/icons/hicolor/48x48/mimetypes/application-x-st-disk-image.png
+rename to share/icons/hicolor/48x48/mimetypes/org.tuxfamily.hatari.application-x-st-disk-image.png
+diff --git a/share/icons/hicolor/64x64/apps/hatari.png b/share/icons/hicolor/64x64/apps/org.tuxfamily.hatari.png
+similarity index 100%
+rename from share/icons/hicolor/64x64/apps/hatari.png
+rename to share/icons/hicolor/64x64/apps/org.tuxfamily.hatari.png
+diff --git a/share/icons/hicolor/64x64/mimetypes/application-x-st-disk-image.png b/share/icons/hicolor/64x64/mimetypes/org.tuxfamily.hatari.application-x-st-disk-image.png
+similarity index 100%
+rename from share/icons/hicolor/64x64/mimetypes/application-x-st-disk-image.png
+rename to share/icons/hicolor/64x64/mimetypes/org.tuxfamily.hatari.application-x-st-disk-image.png
+diff --git a/share/icons/hicolor/scalable/apps/hatari.svg b/share/icons/hicolor/scalable/apps/org.tuxfamily.hatari.svg
+similarity index 100%
+rename from share/icons/hicolor/scalable/apps/hatari.svg
+rename to share/icons/hicolor/scalable/apps/org.tuxfamily.hatari.svg
+diff --git a/share/icons/hicolor/scalable/mimetypes/application-x-st-disk-image.svg b/share/icons/hicolor/scalable/mimetypes/org.tuxfamily.hatari.application-x-st-disk-image.svg
+similarity index 100%
+rename from share/icons/hicolor/scalable/mimetypes/application-x-st-disk-image.svg
+rename to share/icons/hicolor/scalable/mimetypes/org.tuxfamily.hatari.application-x-st-disk-image.svg
+diff --git a/share/mime/packages/hatari.xml b/share/mime/packages/org.tuxfamily.hatari.xml
+similarity index 100%
+rename from share/mime/packages/hatari.xml
+rename to share/mime/packages/org.tuxfamily.hatari.xml

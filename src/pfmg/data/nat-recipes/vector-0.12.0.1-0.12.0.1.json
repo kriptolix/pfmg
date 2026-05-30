@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "vector-0.12.0.1",
+    "version": "0.12.0.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "vector-0.12.0.1",
+    "only-arches": [
+      "x86_64"
+    ],
+    "buildsystem": "simple",
+    "build-commands": [
+      "ghc -threaded --make Setup",
+      "./Setup configure --prefix=/app",
+      "./Setup build",
+      "./Setup install"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "sha256": "b100ee79b9da2651276278cd3e0f08a3c152505cc52982beda507515af173d7b",
+        "url": "https://hackage.haskell.org/package/vector-0.12.0.1/vector-0.12.0.1.tar.gz"
+      }
+    ]
+  }
+}

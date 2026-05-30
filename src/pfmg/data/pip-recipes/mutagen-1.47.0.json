@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "mutagen",
+    "version": "1.47.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "mutagen",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --no-build-isolation --prefix=/app ."
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/quodlibet/mutagen/archive/refs/tags/release-1.47.0.tar.gz",
+        "sha256": "f7489e19d375c31ba1962ab19e11eca8b9f86f05bfd99cef467f8dd875d8941e",
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://api.github.com/repos/quodlibet/mutagen/releases/latest",
+          "version-query": ".tag_name",
+          "url-query": "\"https://github.com/quodlibet/mutagen/archive/refs/tags/\" + $version + \".tar.gz\""
+        }
+      }
+    ]
+  }
+}

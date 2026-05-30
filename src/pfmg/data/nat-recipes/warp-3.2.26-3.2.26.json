@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "warp-3.2.26",
+    "version": "3.2.26",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "build-commands": [
+      "ghc -threaded --make Setup",
+      "./Setup configure --prefix=/app",
+      "./Setup build",
+      "./Setup install"
+    ],
+    "buildsystem": "simple",
+    "cleanup": [],
+    "name": "warp-3.2.26",
+    "only-arches": [],
+    "sources": [
+      {
+        "sha256": "4ca338568a3b867e36d6f01255bf562429f25d8f1373e79122881bcd461803e9",
+        "type": "archive",
+        "url": "https://s3.amazonaws.com/hackage.fpcomplete.com/package/warp-3.2.26.tar.gz"
+      },
+      {
+        "sha256": "c450cb770f33819eda56e0d2025567ac0928dc77edce24ab36343c8dccef3b56",
+        "type": "file",
+        "url": "https://raw.githubusercontent.com/commercialhaskell/all-cabal-files/a5f22172fce750e93afa6987320f5c5be62b5670/warp/3.2.26/warp.cabal"
+      }
+    ]
+  }
+}

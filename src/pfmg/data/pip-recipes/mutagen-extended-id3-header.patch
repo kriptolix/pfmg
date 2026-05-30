@@ -1,0 +1,29 @@
+From cc18b4b5a874e8e46cf598bd269c6057b4f53441 Mon Sep 17 00:00:00 2001
+From: Philipp Wolfer <ph.wolfer@gmail.com>
+Date: Thu, 28 Sep 2023 18:48:13 +0200
+Subject: [PATCH] ID3: Consider size of extended header when reading ID3 data
+
+Fixes #630
+
+(knuxify: dropped test case updates due to lack of binary diff support)
+---
+ mutagen/id3/_file.py                  |   5 ++++-
+ 3 files changed, 9 insertions(+), 1 deletion(-)
+ create mode 100644 tests/data/id3v24_extended_header.id3
+
+diff --git a/mutagen/id3/_file.py b/mutagen/id3/_file.py
+index a2737e8f..95c460f2 100644
+--- a/mutagen/id3/_file.py
++++ b/mutagen/id3/_file.py
+@@ -166,7 +166,10 @@ class XMYF(Frame): ...
+             if known_frames is not None:
+                 self._header._known_frames = known_frames
+ 
+-            data = read_full(fileobj, self.size - 10)
++            size = self.size - 10
++            if self.f_extended:
++                size -= 4 + len(self._header._extdata)
++            data = read_full(fileobj, size)
+             remaining_data = self._read(self._header, data)
+             self._padding = len(remaining_data)
+ 

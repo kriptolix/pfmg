@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "pyqt-webengine",
+    "version": "6.2.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "pyqt-webengine",
+    "buildsystem": "simple",
+    "build-options": {
+      "env": [
+        "QMAKEPATH=/app"
+      ]
+    },
+    "build-commands": [
+      "sip-install --target-dir=/app/lib/python3.9/site-packages/ --verbose --no-docstrings --concatenate=1 --build-dir=\"${FLATPAK_BUILDER_BUILDDIR}/tmp\" --scripts-dir=\"${FLATPAK_DEST}/bin\" --target-dir=/app/lib/python3.9/site-packages/ --disable=QtWebEngineQuick --qmake-setting=QMAKE_INCDIR+=/app/include/QtWebEngine --qmake-setting=QMAKE_INCDIR+=/app/include/QtWebEngineCore --qmake-setting=QMAKE_INCDIR+=/app/include/QtWebEngineWidgets"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://files.pythonhosted.org/packages/f7/ed/9af8ee0e44e110c2e5f368b6b23d9600549e70c2f74fea7f3086d682eb5e/PyQt6_WebEngine-6.2.1.tar.gz",
+        "sha256": "6f6d7cb612f20d1f1f8ea1bbe7ebb8bbaa3f7fcd56f0e9c41582851998be20c3"
+      }
+    ]
+  }
+}

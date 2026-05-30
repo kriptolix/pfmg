@@ -1,0 +1,29 @@
+{
+  "header": {
+    "id": "kdegraphics-thumbnailers",
+    "version": "25.12.3",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "kdegraphics-thumbnailers",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DBUILD_TESTING=OFF",
+      "-DDISABLE_MOBIPOCKET=ON"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.kde.org/stable/release-service/25.12.3/src/kdegraphics-thumbnailers-25.12.3.tar.xz",
+        "sha256": "05eb9e268c161d25c6899f1affdb99acaf8ec506a11083fea807e335a5de18f9",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 8763,
+          "stable-only": true,
+          "url-template": "https://download.kde.org/stable/release-service/$version/src/kdegraphics-thumbnailers-$version.tar.xz"
+        }
+      }
+    ]
+  }
+}

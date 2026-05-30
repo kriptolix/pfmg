@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "libtorrent",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libtorrent",
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "config-opts": [
+      "-DBUILD_SHARED_LIBS=OFF",
+      "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
+      "-DCMAKE_CXX_STANDARD=20",
+      "-DCMAKE_INTERPROCEDURAL_OPTIMIZATION=ON",
+      "-Ddeprecated-functions=OFF"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/arvidn/libtorrent.git",
+        "commit": "c5ff6c3186a92ddec01f6f0a8146aaedb4a1c3f9",
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://api.github.com/repos/arvidn/libtorrent/branches/RC_1_2",
+          "commit-query": ".commit.sha"
+        }
+      }
+    ]
+  }
+}

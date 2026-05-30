@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "logfault",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "logfault",
+    "buildsystem": "cmake-ninja",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/jgaa/logfault.git",
+        "tag": "v0.8.5",
+        "commit": "846e8a11abd88a6780591864fb37d182e33793b7",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^(v[0-9.]+)$"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "persist-queue",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "persist-queue",
+    "buildsystem": "simple",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/peter-wangxu/persist-queue.git",
+        "tag": "v0.5.0",
+        "commit": "f27b0ca8b52454a79de8cf4e1f7abceed6307def"
+      }
+    ],
+    "build-commands": [
+      "python3 ./setup.py install --prefix=/app"
+    ]
+  }
+}

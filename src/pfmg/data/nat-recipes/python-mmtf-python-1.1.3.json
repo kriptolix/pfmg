@@ -1,0 +1,26 @@
+{
+  "header": {
+    "id": "python-mmtf-python",
+    "version": "1.1.3",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python-mmtf-python",
+    "buildsystem": "simple",
+    "build-commands": [
+      "python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://files.pythonhosted.org/packages/d8/0f/f3c132dc9aac9a3f32a0eba7a80f07d14e7624e96f9245eeac5fe48f42cd/mmtf-python-1.1.3.tar.gz",
+        "sha256": "12a02fe1b7131f0a2b8ce45b46f1e0cdd28b9818fe4499554c26884987ea0c32",
+        "x-checker-data": {
+          "type": "pypi",
+          "name": "mmtf-python"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "librtlsdr",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "librtlsdr",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DDETACH_KERNEL_DRIVER=ON",
+      "-Wno-dev"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://gitea.osmocom.org/sdr/rtl-sdr.git",
+        "tag": "v2.0.2"
+      }
+    ]
+  }
+}

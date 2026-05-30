@@ -1,0 +1,47 @@
+{
+  "header": {
+    "id": "python3-trelby",
+    "version": "2.4.16.2",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-trelby",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"trelby\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/83/2d/5fd176ceb9b2fc619e63405525573493ca23441330fcdaee6bef9460e924/charset_normalizer-3.4.3.tar.gz",
+        "sha256": "6fce4b8500244f6fcb71465d4a4930d132ba9ab8e71a7859e6a5d59851068d14"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/aa/88/262177de60548e5a2bfc46ad28232c9e9cbde697bd94132aeb80364675cb/lxml-6.0.2.tar.gz",
+        "sha256": "cd79f3367bd74b317dda655dc8fcfa304d9eb6e4fb06b7168c5cf27f96e0cd62"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/f3/0d/d0d6dea55cd152ce3d6767bb38a8fc10e33796ba4ba210cbab9354b6d238/pillow-11.3.0.tar.gz",
+        "sha256": "3828ee7586cd0b2091b6209e5ad53e20d0649bbe87164a459d0676e035e8f523"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/57/66/e040586fe6f9ae7f3a6986186653791fb865947f0b745290ee4ab026b834/reportlab-4.4.4-py3-none-any.whl",
+        "sha256": "299b3b0534e7202bb94ed2ddcd7179b818dcda7de9d8518a57c85a58a1ebaadb"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/49/c5/7c0c7e53f866cd95b4a59ce0d02cc5a8505fb6bdbcacf3ad963c3f2fa8e5/trelby-2.4.16.2-py3-none-any.whl",
+        "sha256": "d659f7bbc7e47c7d4043d3764c9b2706331dea5ef72bdad927d335ec07af2902"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/4c/d9/4451392d3d6ba45aa23aa77a6f1a9970b43351b956bf61e10fd513a1dc38/wxPython-4.2.3.tar.gz",
+        "sha256": "20d6e0c927e27ced85643719bd63e9f7fd501df6e9a8aab1489b039897fd7c01"
+      }
+    ]
+  }
+}

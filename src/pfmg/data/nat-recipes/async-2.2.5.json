@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "async",
+    "version": "2.2.5",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "async",
+    "buildsystem": "simple",
+    "builddir": false,
+    "build-commands": [
+      "echo '#! /usr/bin/env runhaskell' >Setup.txt",
+      "echo '> import Distribution.Simple' >>Setup.txt",
+      "echo '> main = defaultMain' >>Setup.txt",
+      "ln -s Setup.txt Setup.lhs || true",
+      "runhaskell Setup configure --prefix=/app",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "sources": [
+      {
+        "sha256": "1818473ebab9212afad2ed76297aefde5fae8b5d4404daf36939aece6a8f16f7",
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/async-2.2.5/async-2.2.5.tar.gz"
+      },
+      {
+        "dest-filename": "async.cabal",
+        "sha256": "cf9e6afba8e01830ca0d32a12b98d481cf389688762c80d1870a1db2061ebf35",
+        "type": "file",
+        "url": "https://hackage.haskell.org/package/async-2.2.5/revision/2.cabal"
+      }
+    ]
+  }
+}

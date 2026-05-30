@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "python3-autopep8",
+    "version": "2.0.4",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-autopep8",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"autopep8==2.0.4\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/d8/f2/e63c9f9c485cd90df8e4e7ae90fa3be2469c9641888558c7b45fa98a76f8/autopep8-2.0.4-py2.py3-none-any.whl",
+        "sha256": "067959ca4a07b24dbd5345efa8325f5f58da4298dab0dde0443d5ed765de80cb"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/3a/d8/a211b3f85e99a0daa2ddec96c949cac6824bd305b040571b82a03dd62636/pycodestyle-2.12.1-py2.py3-none-any.whl",
+        "sha256": "46f0fb92069a7c28ab7bb558f05bfc0110dac69a0cd23c61ea0040283a9d78b3"
+      }
+    ]
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "gstqroverlay",
+    "version": "1.26.6",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "gstqroverlay",
+    "buildsystem": "meson",
+    "config-opts": [
+      "--auto-features=disabled",
+      "-Dqroverlay=enabled"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://gstreamer.freedesktop.org/src/gst-plugins-bad/gst-plugins-bad-1.26.6.tar.xz",
+        "sha256": "b3bf4b1ad3017eac1fcf1209eae8a61208f8ef43b9b1ef99b9366acf14d74a79"
+      }
+    ]
+  }
+}

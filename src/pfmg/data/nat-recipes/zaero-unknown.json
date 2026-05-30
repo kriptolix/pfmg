@@ -1,0 +1,30 @@
+{
+  "header": {
+    "id": "zaero",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "zaero",
+    "buildsystem": "cmake-ninja",
+    "no-make-install": true,
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
+      "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
+    ],
+    "build-commands": [
+      "install -D ./game.so /app/bin/zaero/game.so",
+      "install -D ./stuff/mapfixes/zdef4.ent /app/bin/zaero/maps/zdef4.ent",
+      "install -D ./stuff/mapfixes/ztomb3.ent /app/bin/zaero/maps/ztomb3.ent",
+      "install -D ./stuff/mapfixes/zwaste1.ent /app/bin/zaero"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/yquake2/zaero.git",
+        "commit": "9493623a37737d10ab3a243d7d0a1436bfc7bd89"
+      }
+    ]
+  }
+}

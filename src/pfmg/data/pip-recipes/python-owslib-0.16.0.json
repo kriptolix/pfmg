@@ -1,0 +1,42 @@
+{
+  "header": {
+    "id": "python-owslib",
+    "version": "0.16.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python-owslib",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"owslib\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://pypi.python.org/packages/4b/0d/7ed381ab4fe80b8ebf34411d14f253e1cf3e56e2820ffa1d8844b23859a2/python_dateutil-2.6.1-py2.py3-none-any.whl",
+        "sha256": "95511bae634d69bc7329ba55e646499a842bc4ec342ad54a8cdb65645a0aad3c"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/dc/83/15f7833b70d3e067ca91467ca245bae0f6fe56ddc7451aa0dc5606b120f2/pytz-2018.4-py2.py3-none-any.whl",
+        "sha256": "65ae0c8101309c45772196b21b74c46b2e5d11b6275c45d251b150d5da334555"
+      },
+      {
+        "type": "file",
+        "url": "https://pypi.python.org/packages/e4/b0/286e8a936158e5cc5791d5fa3bc4b1d5a7e1ff4e5b3f3766b63d8e97708a/requests-2.14.2-py2.py3-none-any.whl",
+        "sha256": "3b39cde35be51762885631cf586f4dc2284951b44d479a4454020758d767cc2f"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/a8/f9/e7876096af700e7987f5e5abffa09b783ab31157083f76cd88c83e3dbe95/pyproj-2.6.1.post1.tar.gz",
+        "sha256": "4f5b02b4abbd41610397c635b275a8ee4a2b5bc72a75572b98ac6ae7befa471e"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/ac/71/ff2fbfa64fca17069ce30fac324533aa686c5cb64e6b5f522faed558848f/OWSLib-0.16.0.tar.gz",
+        "sha256": "ec95a5e93c145a5d84b0074b9ea27570943486552a669151140debf08a100554"
+      }
+    ]
+  }
+}

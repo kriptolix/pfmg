@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "wyrmgus",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "wyrmgus",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DWITH_TEST=OFF",
+      "-DENABLE_STATIC=OFF",
+      "-DOpenGL_GL_PREFERENCE=GLVND",
+      "-DWITH_GEOJSON=OFF",
+      "-DGAMEDIR=/app/bin",
+      "-DENABLE_USEGAMEDIR=OFF"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/Andrettin/Wyrmgus.git",
+        "tag": "v5.3.5",
+        "commit": "281ee8d89f7786889d241de437cb00b268c6a965",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^(v[\\d.]+)$"
+        }
+      }
+    ]
+  }
+}

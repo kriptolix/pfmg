@@ -1,0 +1,38 @@
+{
+  "header": {
+    "id": "marian-lite",
+    "version": "0.2.9",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "marian-lite",
+    "buildsystem": "cmake-ninja",
+    "build-options": {
+      "arch": {
+        "aarch64": {
+          "config-opts": [
+            "-DSTATIC=OFF",
+            "-DSHARED=ON",
+            "-DARM=ON",
+            "-DBUILD_ARCH=armv8-a"
+          ]
+        },
+        "x86_64": {
+          "config-opts": [
+            "-DSTATIC=OFF",
+            "-DSHARED=ON",
+            "-DBUILD_ARCH=x86-64"
+          ]
+        }
+      }
+    },
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/terslang/marian-lite/archive/refs/tags/v0.2.9-1.tar.gz",
+        "sha256": "13a681c936f15c0d95d42fa78fc7c468aa3d08e40ee608e080b825098488c809"
+      }
+    ]
+  }
+}

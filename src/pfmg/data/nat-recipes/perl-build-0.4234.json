@@ -1,0 +1,34 @@
+{
+  "header": {
+    "id": "perl-build",
+    "version": "0.4234",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "perl-build",
+    "buildsystem": "simple",
+    "build-commands": [
+      "perl Build.PL --install_base=${FLATPAK_DEST} --install_path lib=${FLATPAK_DEST}/lib",
+      "./Build code",
+      "./Build install"
+    ],
+    "cleanup": [
+      "*"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://cpan.metacpan.org/authors/id/L/LE/LEONT/Module-Build-0.4234.tar.gz",
+        "sha256": "66aeac6127418be5e471ead3744648c766bd01482825c5b66652675f2bc86a8f",
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://fastapi.metacpan.org/v1/download_url/Module::Build",
+          "version-query": ".version",
+          "url-query": ".download_url",
+          "timestamp-query": ".date"
+        }
+      }
+    ]
+  }
+}

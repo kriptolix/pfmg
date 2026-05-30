@@ -1,0 +1,33 @@
+{
+  "header": {
+    "id": "lager",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "lager",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
+      "-Dlager_BUILD_DEBUGGER_EXAMPLES=OFF",
+      "-Dlager_BUILD_TESTS=OFF",
+      "-Dlager_BUILD_EXAMPLES=OFF",
+      "-Dlager_BUILD_DOCS=OFF"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/dimula73/lager.git",
+        "commit": "0b6ab3e0e880bc36be5da4984d768fde03b7cf19"
+      },
+      {
+        "type": "patch",
+        "paths": [
+          "patches/lager/0001-Correctly-use-global-namespace-to-resolve-lager-deta.patch",
+          "patches/lager/0002-Fix-attempt-to-use-final-specifier-with-a-non-virtua.patch"
+        ]
+      }
+    ]
+  }
+}

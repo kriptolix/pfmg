@@ -1,0 +1,33 @@
+{
+  "header": {
+    "id": "breeze-icons",
+    "version": "6.6",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "breeze-icons",
+    "builddir": true,
+    "buildsystem": "simple",
+    "build-options": {
+      "no-debuginfo": true
+    },
+    "build-commands": [
+      "mkdir -p ${FLATPAK_DEST}/share/icons/breeze-dark",
+      "cp -r icons-dark/* ${FLATPAK_DEST}/share/icons/breeze-dark"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.kde.org/stable/frameworks/6.6/breeze-icons-6.6.0.tar.xz",
+        "sha256": "2d8ccc427ec864b6417eabe3aafe9b1f6857bf2a4fdcd0dc5c006413148e66d9",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 305788,
+          "stable-only": true,
+          "url-template": "https://download.kde.org/stable/frameworks/$major.$minor/breeze-icons-$version.tar.xz"
+        }
+      }
+    ]
+  }
+}

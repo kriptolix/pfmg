@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-lib2to3",
+    "version": "3.9.9",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-lib2to3",
+    "buildsystem": "simple",
+    "build-commands": [
+      "cp -r Lib/lib2to3 ${FLATPAK_DEST}/lib/python3.9/site-packages/"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://www.python.org/ftp/python/3.9.9/Python-3.9.9.tgz",
+        "sha256": "2cc7b67c1f3f66c571acc42479cdf691d8ed6b47bee12c9b68430413a17a44ea"
+      }
+    ]
+  }
+}

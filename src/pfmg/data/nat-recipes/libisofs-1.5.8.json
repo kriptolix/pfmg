@@ -1,0 +1,26 @@
+{
+  "header": {
+    "id": "libisofs",
+    "version": "1.5.8",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libisofs",
+    "config-opts": [
+      "--disable-static"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://files.libburnia-project.org/releases/libisofs-1.5.8.pl01.tar.gz",
+        "sha512": "6dc5acf83db11c7f5ce574224bc8c58914fc749dd7582e6f69c4199225ad786ab23155f3c753b28b145cd51c6bca4dc4db285cb9b8e99f583966a6baa9284f37",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 1646,
+          "url-template": "https://files.libburnia-project.org/releases/libisofs-$version.tar.gz"
+        }
+      }
+    ]
+  }
+}

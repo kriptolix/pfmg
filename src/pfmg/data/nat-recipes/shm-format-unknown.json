@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "shm-format",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "shm_format",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DCLANG_FORMAT=OFF",
+      "-DCOMPILER_WARNINGS=OFF",
+      "-DCLANG_TIDY=OFF",
+      "-DENABLE_TEST=OFF",
+      "-DBUILD_DOC=OFF"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "tag": "v2.1.0",
+        "url": "https://github.com/SHMModbus/shm_format.git",
+        "commit": "ab82a8abf99274767eb72ff84f0347eb6052e499",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^v([\\d.]+)$"
+        }
+      }
+    ]
+  }
+}

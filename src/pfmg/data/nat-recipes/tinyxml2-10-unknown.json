@@ -1,0 +1,19 @@
+{
+  "header": {
+    "id": "tinyxml2-10",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "tinyxml2-10",
+    "buildsystem": "meson",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/leethomason/tinyxml2.git",
+        "tag": "10.0.0"
+      }
+    ]
+  }
+}

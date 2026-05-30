@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "python3-ffms2",
+    "version": "0.4.5.5",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-ffms2",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"ffms2\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/f9/29/a2a9afda2e49b4039c8e26c1090f2a8863837b97fd21fca5db097aff94b2/ffms2-0.4.5.5.tar.gz",
+        "sha256": "3dfd9b2a0078629723597cb37358795a3d3858effb4b7760f60c3a173ad50529"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/0a/88/f4f0c7a982efdf7bf22f283acf6009b29a9cc5835b684a49f8d3a4adb22f/numpy-1.23.3.tar.gz",
+        "sha256": "51bf49c0cd1d52be0a240aa66f3458afc4b95d8993d2d04f0d91fa60c10af6cd"
+      }
+    ]
+  }
+}

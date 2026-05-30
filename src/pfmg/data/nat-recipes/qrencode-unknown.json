@@ -1,0 +1,21 @@
+{
+  "header": {
+    "id": "qrencode",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "qrencode",
+    "buildsystem": "autotools",
+    "builddir": true,
+    "config-opts": [],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/fukuchi/libqrencode.git",
+        "tag": "v4.1.1"
+      }
+    ]
+  }
+}

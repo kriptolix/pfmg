@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-puremagic",
+    "version": "2.2.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-puremagic",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"puremagic\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/95/81/314320aeffd88dadeac553ff9eb10f54507ab41deccd0c69f6221d254a0a/puremagic-2.2.0-py3-none-any.whl",
+        "sha256": "c4f7ed7307f056c787199acfda839555921be1df13abba61e8e6db0c787ae1d0"
+      }
+    ]
+  }
+}

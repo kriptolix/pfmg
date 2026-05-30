@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "python3-rdbtools",
+    "version": "0.1.15",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-rdbtools",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"resp_rdbtools-0.1.15.tar.gz\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://github.com/uglide/redis-rdb-tools/archive/refs/tags/resp_rdbtools-0.1.15.tar.gz",
+        "sha256": "03cd7bc36fa0e1d1490780ed1485a861725131d704e0c59b1fcb9802ba41fd77"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/b3/17/1e567ff78c83854e16b98694411fe6e08c3426af866ad11397cddceb80d3/redis-3.5.3.tar.gz",
+        "sha256": "0e7e0cfca8660dea8b7d5cd8c4f6c5e29e11f31158c0b0ae91a397f00e5a05a2"
+      }
+    ]
+  }
+}

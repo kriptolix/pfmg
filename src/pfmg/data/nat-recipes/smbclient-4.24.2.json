@@ -1,0 +1,48 @@
+{
+  "header": {
+    "id": "smbclient",
+    "version": "4.24.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "smbclient",
+    "config-opts": [
+      "--without-json",
+      "--without-ad-dc",
+      "--without-ldap",
+      "--without-ads",
+      "--without-pam",
+      "--disable-python",
+      "--disable-cups",
+      "--disable-iprint",
+      "--without-systemd",
+      "--bindir=.",
+      "--sbindir=.",
+      "--sysconfdir=."
+    ],
+    "cleanup": [
+      "/lib/perl5"
+    ],
+    "build-options": {
+      "env": {
+        "PERL5LIB": "/app/lib/perl5"
+      }
+    },
+    "buildsystem": "autotools",
+    "sources": [
+      {
+        "type": "archive",
+        "archive-type": "tar",
+        "url": "https://download.samba.org/pub/samba/stable/samba-4.24.2.tar.gz",
+        "sha256": "ac24583f271a82ac324f7c6fad7327f65b591ad3492e1dccfee988e2c1c81dd1",
+        "x-checker-data": {
+          "type": "html",
+          "url": "https://download.samba.org/pub/samba/stable/?C=M;O=D",
+          "version-pattern": "samba-(\\d+\\.\\d+\\.\\d+).tar.gz",
+          "url-template": "https://download.samba.org/pub/samba/stable/samba-$version.tar.gz"
+        }
+      }
+    ]
+  }
+}

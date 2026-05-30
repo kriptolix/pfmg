@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "emojicpp",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "emojicpp",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DBUILD_TESTING=OFF"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/emmaexe/emojicpp.git",
+        "tag": "v3.0.0"
+      }
+    ]
+  }
+}

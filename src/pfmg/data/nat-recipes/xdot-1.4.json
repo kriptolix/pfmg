@@ -1,0 +1,47 @@
+{
+  "header": {
+    "id": "xdot",
+    "version": "1.4",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "xdot",
+    "buildsystem": "simple",
+    "build-commands": [
+      "python3 setup.py install --prefix=/app --root=/"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://files.pythonhosted.org/packages/38/76/0503dddc3100e25135d1380f89cfa5d729b7d113a851804aa98dc4f19888/xdot-1.4.tar.gz",
+        "sha256": "fb029dab92b3c188ad5479108014edccb6c7df54f689ce7f1bd1c699010b7781"
+      }
+    ],
+    "modules": [
+      {
+        "name": "numpy",
+        "buildsystem": "simple",
+        "build-commands": [
+          "./vendored-meson/meson/meson.py setup builddir --buildtype=debugoptimized --prefix=${FLATPAK_DEST}",
+          "cd builddir && ninja",
+          "cd builddir && ninja install"
+        ],
+        "sources": [
+          {
+            "type": "archive",
+            "url": "https://files.pythonhosted.org/packages/f2/a5/fdbf6a7871703df6160b5cf3dd774074b086d278172285c52c2758b76305/numpy-2.2.1.tar.gz",
+            "sha256": "45681fd7128c8ad1c379f0ca0776a8b0c6583d2f69889ddac01559dfe4390918"
+          }
+        ],
+        "cleanup": [
+          "/bin",
+          "/lib/python3.*/site-packages/numpy/core/include",
+          "/lib/python3.*/site-packages/numpy/core/lib/libnpymath.a",
+          "/lib/python3.*/site-packages/numpy/tests",
+          "/lib/python3.*/site-packages/numpy/*/tests"
+        ]
+      }
+    ]
+  }
+}

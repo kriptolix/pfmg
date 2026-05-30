@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "pyzmq",
+    "version": "unknown",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "pyzmq",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --no-build-isolation --prefix=/app ."
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/zeromq/pyzmq.git",
+        "commit": "015e616fbc50023e7c5c77db2ddd7bee2919c6c1",
+        "tag": "v23.2.1"
+      }
+    ]
+  }
+}

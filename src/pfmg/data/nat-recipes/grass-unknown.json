@@ -1,0 +1,34 @@
+{
+  "header": {
+    "id": "grass",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "grass",
+    "buildsystem": "simple",
+    "build-options": {
+      "env": {
+        "CARGO_HOME": "/run/build/grass/cargo"
+      }
+    },
+    "build-commands": [
+      "cargo build --release --locked",
+      "mkdir -p /app/bin",
+      "install -D ./target/release/grass /app/bin/"
+    ],
+    "cleanup": [
+      "*"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/connorskees/grass",
+        "tag": "0.13.4",
+        "commit": "e0bb9e2eabfc3a58e42b03089cd7b22c68d09d0b"
+      },
+      "grass-cargo-sources.json"
+    ]
+  }
+}

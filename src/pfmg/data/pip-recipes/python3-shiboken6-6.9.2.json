@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "python3-shiboken6",
+    "version": "6.9.2",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-shiboken6",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} --no-build-isolation \"shiboken6\""
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/3b/bb/72a8ed0f0542d9ea935f385b396ee6a4bbd94749c817cbf2be34e80a16d3/shiboken6-6.9.2-cp39-abi3-manylinux_2_28_x86_64.whl",
+        "sha256": "3b54c0a12ea1b03b9dc5dcfb603c366e957dc75341bf7cb1cc436d0d848308ee",
+        "only-arches": [
+          "x86_64"
+        ]
+      }
+    ]
+  }
+}

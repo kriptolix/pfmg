@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-plumbum",
+    "version": "1.6.9",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-plumbum",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"plumbum\""
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/99/0f/10be0ffe552cf422561adef1d03a303a98b2ba929191d14d5023b0514bfd/plumbum-1.6.9-py2.py3-none-any.whl",
+        "sha256": "91418dcc66b58ab9d2e3b04b3d1e0d787dc45923154fb8b4a826bd9316dba0d6"
+      }
+    ]
+  }
+}

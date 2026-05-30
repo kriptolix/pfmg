@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "libopenglrecorder",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libopenglrecorder",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DCMAKE_INSTALL_LIBDIR:PATH=/app/lib",
+      "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/Benau/libopenglrecorder.git",
+        "tag": "v0.1.0",
+        "commit": "15b1958a073b89cdd01b2532152c6be5f0b93c13"
+      }
+    ]
+  }
+}

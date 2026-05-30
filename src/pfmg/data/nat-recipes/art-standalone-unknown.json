@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "art-standalone",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "art_standalone",
+    "no-autogen": true,
+    "build-options": {
+      "make-args": [
+        "____PREFIX=/app",
+        "____LIBDIR=lib"
+      ],
+      "make-install-args": [
+        "____PREFIX=/app",
+        "____LIBDIR=lib",
+        "____INSTALL_ETC=/app/etc"
+      ],
+      "append-path": "/usr/lib/sdk/openjdk17/bin",
+      "env": {
+        "JAVA_HOME": "/usr/lib/sdk/openjdk17/jvm/openjdk-17",
+        "LIBRARY_PATH": "/app/lib"
+      }
+    },
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://gitlab.com/android_translation_layer/art_standalone.git",
+        "commit": "e78bf68917bcaaf58fef3960cd88793b3b7f39cc"
+      }
+    ]
+  }
+}

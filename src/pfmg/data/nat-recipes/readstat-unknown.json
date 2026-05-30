@@ -1,0 +1,29 @@
+{
+  "header": {
+    "id": "readstat",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "readstat",
+    "build-commands": [
+      "autoreconf -vfi",
+      "./configure --prefix /app",
+      "make",
+      "make install"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "tag": "v1.1.9",
+        "commit": "104ba03a8da116eb8c094abc18bc2530b733eda9",
+        "url": "https://github.com/WizardMac/ReadStat"
+      },
+      {
+        "type": "patch",
+        "path": "patches/readstat-fixConfigure.patch"
+      }
+    ]
+  }
+}

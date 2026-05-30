@@ -1,0 +1,38 @@
+{
+  "header": {
+    "id": "libretro-nestopia",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libretro-nestopia",
+    "no-autogen": true,
+    "subdir": "libretro",
+    "make-args": [
+      "prefix=/app",
+      "core_installdir=/app/lib/libretro"
+    ],
+    "make-install-args": [
+      "prefix=/app",
+      "core_installdir=/app/lib/libretro"
+    ],
+    "post-install": [
+      "mkdir -p /app/lib/libretro/",
+      "install -m644 -p nestopia.libretro /app/lib/libretro/"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/libretro/nestopia.git",
+        "commit": "0232076014a2cdb3c9eca29de79df0cdfebca154"
+      },
+      {
+        "type": "file",
+        "path": "nestopia.libretro",
+        "dest": "libretro",
+        "dest-filename": "nestopia.libretro"
+      }
+    ]
+  }
+}

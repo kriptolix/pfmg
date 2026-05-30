@@ -1,0 +1,29 @@
+{
+  "header": {
+    "id": "kdepim-runtime",
+    "version": "25.12.3",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "kdepim-runtime",
+    "config-opts": [
+      "-DBUILD_TESTING=OFF",
+      "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+    ],
+    "buildsystem": "cmake-ninja",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.kde.org/stable/release-service/25.12.3/src/kdepim-runtime-25.12.3.tar.xz",
+        "sha256": "9c034771cc66ed5103acf5276fd2a5f9f43b503393e3779208c4f97c4d274689",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 8763,
+          "stable-only": true,
+          "url-template": "https://download.kde.org/stable/release-service/$version/src/kdepim-runtime-$version.tar.xz"
+        }
+      }
+    ]
+  }
+}

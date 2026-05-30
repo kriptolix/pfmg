@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "hw-probe-pyqt6-gui",
+    "version": "1.6",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "hw-probe-pyqt6-gui",
+    "buildsystem": "simple",
+    "build-commands": [
+      "mkdir -p $FLATPAK_DEST/share/hw-probe-pyqt6-gui/",
+      "mv Resources Hardware\\ Probe $FLATPAK_DEST/share/hw-probe-pyqt6-gui/",
+      "ln -s $FLATPAK_DEST/share/hw-probe-pyqt6-gui/Hardware\\ Probe $FLATPAK_DEST/bin/hw-probe-pyqt6-gui",
+      "chmod 777 $FLATPAK_DEST/bin/hw-probe-pyqt6-gui"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/linuxhw/build-stuff/releases/download/1.6/hw-probe-pyqt6-gui-1.0-AI.tar.gz",
+        "sha256": "3a0a09d486a3b813397689e7de2df84b3132e7dab3d6dcda76cc19298b082c9c"
+      }
+    ]
+  }
+}

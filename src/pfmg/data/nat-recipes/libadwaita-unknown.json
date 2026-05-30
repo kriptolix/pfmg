@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "libadwaita",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libadwaita",
+    "buildsystem": "meson",
+    "config-opts": [
+      "-Dbuildtype=release",
+      "-Dvapi=false",
+      "-Dtests=false",
+      "-Dexamples=false"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://gitlab.gnome.org/GNOME/libadwaita.git",
+        "commit": "57bc21b4c51aa361609fe6f57031630589391b0b"
+      }
+    ]
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "cd-discid",
+    "version": "1.4",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "cd-discid",
+    "buildsystem": "simple",
+    "build-commands": [
+      "make",
+      "make install PREFIX=/app"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/taem/cd-discid/archive/refs/tags/1.4.tar.gz",
+        "sha256": "6f07df25ebf17b8336c17a50092ed288cc5a6b86f85705db7e1aa35ba26683cf"
+      }
+    ]
+  }
+}

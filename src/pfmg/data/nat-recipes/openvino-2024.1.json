@@ -1,0 +1,34 @@
+{
+  "header": {
+    "id": "openvino",
+    "version": "2024.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "openvino",
+    "only-arches": [
+      "x86_64"
+    ],
+    "buildsystem": "simple",
+    "build-commands": [
+      "mkdir -p ${FLATPAK_DEST}/opt/intel/openvino",
+      "cp -r runtime ${FLATPAK_DEST}/opt/intel/openvino",
+      "mkdir -p ${FLATPAK_DEST}/opt/intel/lib",
+      "set -e\ncd runtime/lib/intel64\nfor f in *.so*; do\n  if [ -f $f ]; then\n    echo \"copying $f => ${FLATPAK_DEST}/opt/intel/lib\"\n    cp -P $f ${FLATPAK_DEST}/opt/intel/lib\n  fi\ndone\n"
+    ],
+    "cleanup": [
+      "/opt/intel/openvino",
+      "/opt/intel/lib/*_paddle_*",
+      "/opt/intel/lib/*_pytorch_*",
+      "/opt/intel/lib/*_tensorflow_*"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://storage.openvinotoolkit.org/repositories/openvino/packages/2024.1/linux/l_openvino_toolkit_ubuntu22_2024.1.0.15008.f4afc983258_x86_64.tgz",
+        "sha256": "69f15878f54d7b61eb54eb5b2631741f147e85383539f5436a6672fb07c459d2"
+      }
+    ]
+  }
+}

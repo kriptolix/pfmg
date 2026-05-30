@@ -1,0 +1,51 @@
+{
+  "header": {
+    "id": "wolfenstein",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "wolfenstein",
+    "buildsystem": "simple",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/Realm667/WolfenDoom.git",
+        "tag": "v3.1",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 155422,
+          "tag-template": "v$version"
+        },
+        "commit": "fd2e51cd97360d10ceb73a172bdf7a6ce0c1aac8"
+      },
+      {
+        "type": "patch",
+        "path": "fix-appdata.patch"
+      },
+      {
+        "type": "file",
+        "path": "boa-64.png"
+      },
+      {
+        "type": "file",
+        "path": "boa-128.png"
+      },
+      {
+        "type": "file",
+        "path": "boa-256.png"
+      }
+    ],
+    "build-commands": [
+      "sed -i 's|$zipname|wolf_boa.ipk3|g' ./build.sh",
+      "sed -i 's|then mv|then true|g' ./build.sh",
+      "./build.sh --release --no-update",
+      "install -Dm 644 wolf_boa.ipk3 -t /app/share/games/doom/",
+      "sed -i 's|/usr|/app|g' dist/com.realm667.Wolfenstein_Blade_of_Agony.desktop",
+      "install -Dm 644 dist/com.realm667.Wolfenstein_Blade_of_Agony.desktop -t /app/share/applications/",
+      "install -Dm 644 dist/com.realm667.Wolfenstein_Blade_of_Agony.metainfo.xml -t /app/share/metainfo/",
+      "for size in 64 128 256; do\n  install -Dm 644 boa-${size}.png /app/share/icons/hicolor/${size}x${size}/apps/com.realm667.Wolfenstein_Blade_of_Agony.png\ndone\n"
+    ]
+  }
+}

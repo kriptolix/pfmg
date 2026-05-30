@@ -1,0 +1,64 @@
+{
+  "header": {
+    "id": "soundux",
+    "version": "0.2.7",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "soundux",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DUSE_FLATPAK=ON",
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DCMAKE_POLICY_VERSION_MINIMUM=3.5",
+      "-DCMAKE_CXX_FLAGS=-Wno-error=deprecated-declarations"
+    ],
+    "post-install": [
+      "install -Dm 644 -t /app/share/metainfo deployment/appstream/io.github.Soundux.metainfo.xml",
+      "desktop-file-edit --set-key=Exec --set-value='soundux-startup %U' deployment/appstream/io.github.Soundux.desktop",
+      "install -Dm 644 -t /app/share/applications deployment/appstream/io.github.Soundux.desktop",
+      "install -Dm 644 deployment/flatpak/icons/io.github.Soundux-256.png /app/share/icons/hicolor/256x256/apps/io.github.Soundux.png",
+      "install -Dm 755 -t /app/bin soundux-startup"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/Soundux/Soundux/releases/download/0.2.7/soundux-0.2.7.tar.gz",
+        "sha512": "e813be41d324536065a1f98d397027b98a9db504faed7abb074bd0cc6ac65a7804d120cc559c5fa509acf39ff851aa74d02c4da0f3c49ad8f01286cb81776bd3",
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://api.github.com/repos/Soundux/Soundux/releases/latest",
+          "version-query": ".tag_name",
+          "url-query": ".assets[] | select(.name|endswith(\".tar.gz\")) | .browser_download_url"
+        },
+        "strip-components": 2
+      },
+      {
+        "type": "patch",
+        "paths": [
+          "guardpp-build-fix.patch",
+          "pipewire-build-fix.patch",
+          "webviewpp-build-fix.patch"
+        ]
+      },
+      {
+        "type": "file",
+        "path": "soundux-startup"
+      },
+      {
+        "type": "archive",
+        "dest": "lib/cpp-httplib",
+        "archive-type": "tar-gzip",
+        "url": "https://api.github.com/repos/yhirose/cpp-httplib/tarball/v0.44.0",
+        "sha512": "0209587f657ba05cfa1fefb35ebf726af8fc63dd0a0822aa36956e97d41af10727c8745e3833935cd72ea17f6330b910a11e7cf4bf9a50a99e165f954a6baeaa",
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://api.github.com/repos/yhirose/cpp-httplib/releases/latest",
+          "version-query": ".tag_name",
+          "url-query": ".tarball_url"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "gme",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "gme",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DCMAKE_INSTALL_LIBDIR=lib"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/libgme/game-music-emu.git",
+        "commit": "f0d9517c5c3e0b712f553baa62e213336587d52e"
+      }
+    ]
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "header": {
+    "id": "python-vcs-versioning",
+    "version": "1.1.1",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python-vcs-versioning",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --no-index --no-build-isolation --prefix=\"${FLATPAK_DEST}\" ."
+    ],
+    "cleanup": [
+      "*"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://files.pythonhosted.org/packages/49/42/d97a7795055677961c63a1eef8e7b19d5968ed992ed3a70ab8eb012efad8/vcs_versioning-1.1.1.tar.gz",
+        "sha256": "fabd75a3cab7dd8ac02fe24a3a9ba936bf258667b5a62ed468c9a1da0f5775bc",
+        "x-checker-data": {
+          "type": "pypi",
+          "name": "vcs-versioning"
+        }
+      }
+    ]
+  }
+}

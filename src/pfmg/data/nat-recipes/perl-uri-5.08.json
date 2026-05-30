@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "perl-uri",
+    "version": "5.08",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "perl-uri",
+    "buildsystem": "simple",
+    "build-commands": [
+      "perl Makefile.PL",
+      "make install DESTDIR=`pwd`/INST INSTALLSITELIB=/SITELIB",
+      "mkdir -p $FLATPAK_DEST/share/perl5/",
+      "cp -fr ./INST/SITELIB/* $FLATPAK_DEST/share/perl5/"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://cpan.metacpan.org/authors/id/E/ET/ETHER/URI-5.08.tar.gz",
+        "sha256": "7e2c6fe3b1d5947da334fa558a96e748aaa619213b85bcdce5b5347d4d26c46e"
+      }
+    ]
+  }
+}

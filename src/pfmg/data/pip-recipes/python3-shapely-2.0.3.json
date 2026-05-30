@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "python3-shapely",
+    "version": "2.0.3",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-shapely",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"shapely==2.0.3\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/5a/62/007b63f916aca1d27f5fede933fda3315d931ff9b2c28b9c2cf388cd8edb/numpy-1.26.3-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "sha256": "f25e2811a9c932e43943a2615e65fc487a0b6b49218899e62e426e7f0a57eeda"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/0d/8f/4d3df127beac22a1fb9bcf9783d75550af805290476a29277c72494dcf73/shapely-2.0.3-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl",
+        "sha256": "13cb37d3826972a82748a450328fe02a931dcaed10e69a4d83cc20ba021bc85f"
+      }
+    ]
+  }
+}

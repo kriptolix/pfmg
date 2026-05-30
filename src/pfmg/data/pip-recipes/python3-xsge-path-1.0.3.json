@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-xsge-path",
+    "version": "1.0.3",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-xsge_path",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"xsge_path\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/88/5f/a7042f2f4e5a1793fcb9f683d2105a6dff4893bb5a990c3a32fd2960aef5/xsge_path-1.0.3.tar.gz",
+        "sha256": "09cd6da5219beea683f7f7055ac9453791b11da684d998da3582ea0df77839a3"
+      }
+    ]
+  }
+}

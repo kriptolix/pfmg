@@ -1,0 +1,40 @@
+{
+  "header": {
+    "id": "rust-nightly",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "rust-nightly",
+    "build-options": {
+      "strip": false,
+      "no-debuginfo": true
+    },
+    "buildsystem": "simple",
+    "build-commands": [
+      "./install.sh --prefix=/app --disable-ldconfig --verbose"
+    ],
+    "cleanup": [
+      "*"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "only-arches": [
+          "x86_64"
+        ],
+        "url": "https://static.rust-lang.org/dist/2025-09-08/rust-nightly-x86_64-unknown-linux-gnu.tar.xz",
+        "sha256": "9aa21da7a176371cb344886f511e743e6355d0653381331c5d0767a9035b8d1f"
+      },
+      {
+        "type": "archive",
+        "only-arches": [
+          "aarch64"
+        ],
+        "url": "https://static.rust-lang.org/dist/2025-09-08/rust-nightly-aarch64-unknown-linux-gnu.tar.xz",
+        "sha256": "f19b4221c0cb2e237780beef4b3cf89314b27d45ae0a77709a408ddc7aa2c12d"
+      }
+    ]
+  }
+}

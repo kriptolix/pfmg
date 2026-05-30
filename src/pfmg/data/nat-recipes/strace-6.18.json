@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "strace",
+    "version": "6.18",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "strace",
+    "buildsystem": "autotools",
+    "config-opts": [
+      "--disable-mpers"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://strace.io/files/6.18/strace-6.18.tar.xz",
+        "sha256": "0ad5dcba973a69e779650ef1cb335b12ee60716fc7326609895bd33e6d2a7325",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 4897,
+          "url-template": "https://strace.io/files/$version/strace-$version.tar.xz"
+        }
+      }
+    ]
+  }
+}

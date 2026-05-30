@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "elementary-theme",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "elementary-theme",
+    "buildsystem": "simple",
+    "build-commands": [
+      "install -dm755 /app/share/themes/elementary/gtk-3.0",
+      "cp -aL gtk-3.22/* /app/share/themes/elementary/gtk-3.0",
+      "cp -a index.theme /app/share/themes/elementary"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "git://github.com/elementary/stylesheet.git",
+        "branch": "5.1.1",
+        "commit": "6a96d0f3227f15533c11e136b101ee44052eb750"
+      }
+    ]
+  }
+}

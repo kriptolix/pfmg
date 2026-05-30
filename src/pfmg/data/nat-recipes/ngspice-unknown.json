@@ -1,0 +1,31 @@
+{
+  "header": {
+    "id": "ngspice",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "ngspice",
+    "cleanup": [
+      "/include",
+      "/share/man"
+    ],
+    "config-opts": [
+      "--enable-cider",
+      "--without-x"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://downloads.sourceforge.net/project/ngspice/ng-spice-rework/46/ngspice-46.tar.gz",
+        "sha256": "a0d1699af1940b06649276dcd6ff5a566c8c0cad01b2f7b5e99dedbb4d64c19b",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 20590,
+          "url-template": "https://downloads.sourceforge.net/project/ngspice/ng-spice-rework/$version/ngspice-$version.tar.gz"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "python3-nvitop",
+    "version": "1.5.1",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-nvitop",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"nvitop>=1.3.2\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/db/24/552ebea28f0570b9e65e62b50287a273804c9f997cc1c2dcd4e2d64b9e7d/nvidia_ml_py-12.575.51-py3-none-any.whl",
+        "sha256": "eb8641800d98ce40a22f479873f34b482e214a7e80349c63be51c3919845446e"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/f2/87/4640309e21860fdd17260cdec08a38ff355aaefe444515d7355ee07776b9/nvitop-1.5.1-py3-none-any.whl",
+        "sha256": "4d07b70b03f6463c483440ecaf6f9c63df771bfc66a6dc0026f68e4f31d21acc"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/2a/80/336820c1ad9286a4ded7e845b2eccfcb27851ab8ac6abece774a6ff4d3de/psutil-7.0.0.tar.gz",
+        "sha256": "7be9c3eba38beccb6495ea33afd982a44074b78f28c434a1f51cc07fd315c456"
+      }
+    ]
+  }
+}

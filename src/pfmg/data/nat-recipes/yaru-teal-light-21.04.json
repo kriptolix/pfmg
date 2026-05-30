@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "yaru-teal-light",
+    "version": "21.04",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "Yaru-Teal-light",
+    "buildsystem": "simple",
+    "build-commands": [
+      "mkdir -pm 755 /usr/share/runtime/share/themes/Yaru-Teal-light/gtk-3.0",
+      "cp -frP Themes/Yaru-Teal/gtk-3.20/assets/ /usr/share/runtime/share/themes/Yaru-Teal-light/gtk-3.0/",
+      "cp -frP Themes/Yaru-Teal-light/gtk-3.20/gtk.css /usr/share/runtime/share/themes/Yaru-Teal-light/gtk-3.0/gtk.css"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "archive-type": "tar-gzip",
+        "url": "https://api.github.com/repos/Jannomag/Yaru-Colors/tarball/21.04snap",
+        "sha256": "9068994fdf27a1ab44f8289752af67b0c6fe71ac57e0bd238d21531286554cca"
+      }
+    ]
+  }
+}

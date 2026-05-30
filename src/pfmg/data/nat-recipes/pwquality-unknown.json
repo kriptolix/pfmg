@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "pwquality",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "pwquality",
+    "buildsystem": "autotools",
+    "config-opts": [
+      "--disable-python-bindings"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "tag": "libpwquality-1.4.5",
+        "url": "https://github.com/libpwquality/libpwquality.git"
+      }
+    ]
+  }
+}

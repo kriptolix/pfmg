@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "python3-pyscroll",
+    "version": "2.30",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-pyscroll",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"pyscroll==2.30\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/9a/50/67767e5586a45e7e7b02e6f0e07853f8fcb81b54c66db6278f1a1344491f/pygame-2.1.2.tar.gz",
+        "sha256": "d6d0eca28f886f0477cd0721ac688189155a587f2bb8eae740e52ca56c3ad23c"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/dc/1c/afdab99c0dc59e7404fd00040906c011869c0996e1e015c1c8ecaabf62d2/pyscroll-2.30-py3-none-any.whl",
+        "sha256": "14e742e04cf62cef95907945315de837a74a4c1b2c85d2a0bcdeb0c92500b415"
+      }
+    ]
+  }
+}

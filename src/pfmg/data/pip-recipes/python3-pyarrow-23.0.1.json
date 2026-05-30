@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "python3-pyarrow",
+    "version": "23.0.1",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-pyarrow",
+    "buildsystem": "simple",
+    "subdir": "python",
+    "build-commands": [
+      "pip3 install . --prefix=${FLATPAK_DEST} --no-deps --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://downloads.apache.org/arrow/arrow-23.0.1/apache-arrow-23.0.1.tar.gz",
+        "sha256": "bd09adb4feac11fe49d1604f296618866702be610c86e2d513b561d877de6b18"
+      }
+    ]
+  }
+}

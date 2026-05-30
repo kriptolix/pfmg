@@ -1,0 +1,51 @@
+{
+  "header": {
+    "id": "ghc-9.6.6-x86-64",
+    "version": "9.6.6",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "ghc-9.6.6-x86_64",
+    "only-arches": [
+      "x86_64"
+    ],
+    "cleanup": [
+      "/bin/ghc",
+      "/bin/ghc-9.6.6",
+      "/bin/ghc-pkg",
+      "/bin/ghc-pkg-9.6.6",
+      "/bin/ghci",
+      "/bin/ghci-9.6.6",
+      "/bin/haddock",
+      "/bin/haddock-ghc-9.6.6",
+      "/bin/runghc",
+      "/bin/runghc-9.6.6",
+      "/bin/runhaskell",
+      "/bin/hp2ps",
+      "/bin/hpc",
+      "/bin/hsc2hs",
+      "/lib/libtinfo.so.5",
+      "/lib/debug",
+      "/lib/ghc-9.6.6",
+      "/share/man",
+      "/share/doc/ghc-9.6.6"
+    ],
+    "buildsystem": "autotools",
+    "builddir": false,
+    "sources": [
+      {
+        "sha256": "ff5b4929a4e89c536e7badb3b142e353dc4bda1f31d3ee446406ad88c3bebddf",
+        "type": "archive",
+        "url": "https://downloads.haskell.org/ghc/9.6.6/ghc-9.6.6-x86_64-deb9-linux.tar.xz"
+      }
+    ],
+    "post-install": [
+      "mkdir -p /app/lib",
+      "ln -s /usr/lib/x86_64-linux-gnu/libtinfo.so /app/lib/libtinfo.so.5"
+    ],
+    "make-args": [
+      "-i"
+    ]
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "header": {
+    "id": "libodfgen",
+    "version": "0.1.8",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libodfgen",
+    "buildsystem": "autotools",
+    "config-opts": [
+      "--disable-tests",
+      "--without-docs"
+    ],
+    "builddir": true,
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://sourceforge.net/projects/libwpd/files/libodfgen/libodfgen-0.1.8/libodfgen-0.1.8.tar.xz",
+        "sha256": "55200027fd46623b9bdddd38d275e7452d1b0ff8aeddcad6f9ae6dc25f610625",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 15131,
+          "stable-only": true,
+          "url-template": "https://sourceforge.net/projects/libwpd/files/libodfgen/libodfgen-$version/libodfgen-$version.tar.xz"
+        }
+      },
+      {
+        "type": "patch",
+        "path": "includes.patch"
+      }
+    ]
+  }
+}

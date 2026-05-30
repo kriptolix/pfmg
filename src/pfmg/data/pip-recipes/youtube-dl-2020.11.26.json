@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "youtube-dl",
+    "version": "2020.11.26",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "youtube-dl",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --prefix=/app ."
+    ],
+    "cleanup": [
+      "/etc"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://yt-dl.org/downloads/2020.11.26/youtube-dl-2020.11.26.tar.gz",
+        "sha256": "fb106cd60f94fe00afee46d4e028cdca8ebff171ddfa9d4ff2a2fd5956586f7f"
+      }
+    ]
+  }
+}

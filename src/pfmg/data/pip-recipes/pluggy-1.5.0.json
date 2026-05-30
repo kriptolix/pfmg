@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "pluggy",
+    "version": "1.5.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "pluggy",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --no-index --no-build-isolation --prefix=\"${FLATPAK_DEST}\" ."
+    ],
+    "cleanup": [
+      "*"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://files.pythonhosted.org/packages/96/2d/02d4312c973c6050a18b314a5ad0b3210edb65a906f868e31c111dede4a6/pluggy-1.5.0.tar.gz",
+        "sha256": "2cffa88e94fdc978c4c574f15f9e59b7f4201d439195c3715ca9e2486f1d0cf1"
+      }
+    ]
+  }
+}

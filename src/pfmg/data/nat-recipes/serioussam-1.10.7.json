@@ -1,0 +1,46 @@
+{
+  "header": {
+    "id": "serioussam",
+    "version": "1.10.7",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "serioussam",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+    ],
+    "post-install": [
+      "install -Dm 644 io.itch.tx00100xt.SeriousSamClassic.metainfo.xml -t /app/share/metainfo",
+      "install -Dm 644 io.itch.tx00100xt.SeriousSamClassic.png -t /app/share/icons/hicolor/256x256/apps/"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/tx00100xt/SeriousSamClassic/archive/refs/tags/1.10.7.tar.gz",
+        "sha256": "05b66c7bd929a9e0290111cbde6516b680a76a388d60584153e2b3deb72839ca"
+      },
+      {
+        "type": "patch",
+        "path": "0001-CMakeLists.txt.patch"
+      },
+      {
+        "type": "patch",
+        "path": "0002-Engine.cpp.patch"
+      },
+      {
+        "type": "patch",
+        "path": "0003-desktop-file.patch"
+      },
+      {
+        "type": "file",
+        "path": "io.itch.tx00100xt.SeriousSamClassic.metainfo.xml"
+      },
+      {
+        "type": "file",
+        "path": "io.itch.tx00100xt.SeriousSamClassic.png"
+      }
+    ]
+  }
+}

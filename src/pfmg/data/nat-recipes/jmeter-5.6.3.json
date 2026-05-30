@@ -1,0 +1,50 @@
+{
+  "header": {
+    "id": "jmeter",
+    "version": "5.6.3",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "jmeter",
+    "buildsystem": "simple",
+    "build-commands": [
+      "cp -R bin lib ${FLATPAK_DEST}/",
+      "mkdir -p ${FLATPAK_DEST}/share/doc/jmeter/printable_docs",
+      "cp -R printable_docs/usermanual ${FLATPAK_DEST}/share/doc/jmeter/printable_docs/",
+      "cp -R docs ${FLATPAK_DEST}/share/doc/jmeter/",
+      "ln -s share/doc/jmeter/{docs,printable_docs} ${FLATPAK_DEST}/"
+    ],
+    "post-install": [
+      "install -Dpm644 -T docs/images/jmeter_square.png ${FLATPAK_DEST}/share/icons/hicolor/256x256/apps/${FLATPAK_ID}.png",
+      "install -Dpm644 -T docs/images/jmeter_square.svg ${FLATPAK_DEST}/share/icons/hicolor/scalable/apps/${FLATPAK_ID}.svg"
+    ],
+    "cleanup": [
+      "/bin/*.bat",
+      "/bin/*.cmd",
+      "/bin/*.bshrc",
+      "/bin/examples",
+      "/share/doc/jmeter/docs/.htaccess",
+      "/share/doc/jmeter/docs/api",
+      "/share/doc/jmeter/docs/images/favicon.*",
+      "/share/doc/jmeter/docs/images/apple-touch-icon.png",
+      "/share/doc/jmeter/docs/images/mstile-*.png",
+      "/share/doc/jmeter/docs/images/jmeter_square.*",
+      "/share/doc/jmeter/docs/images/screenshots/changes",
+      "/share/doc/jmeter/printable_docs/usermanual/*.pdf"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://dlcdn.apache.org//jmeter/binaries/apache-jmeter-5.6.3.tgz",
+        "sha256": "f68efc17fe060f698c48a6abe2599a933927486bda2924dbe14c74895318ddde",
+        "x-checker-data": {
+          "type": "html",
+          "url": "https://jmeter.apache.org/download_jmeter.cgi",
+          "pattern": "<a href=\"(https://dlcdn.apache.org//?jmeter/binaries/apache-jmeter-([^/]+).tgz)\">",
+          "is-main-source": true
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "cm256cc",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "cm256cc",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-Wno-dev"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/f4exb/cm256cc.git",
+        "commit": "da87adbe3e583877870cb159d37e0456549b2c29"
+      }
+    ]
+  }
+}

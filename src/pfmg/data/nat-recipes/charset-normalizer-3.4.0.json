@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "charset-normalizer",
+    "version": "3.4.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "charset_normalizer",
+    "buildsystem": "simple",
+    "build-commands": [
+      "python3 setup.py install --prefix=/app"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://files.pythonhosted.org/packages/f2/4f/e1808dc01273379acc506d18f1504eb2d299bd4131743b9fc54d7be4df1e/charset_normalizer-3.4.0.tar.gz",
+        "sha256": "223217c3d4f82c3ac5e29032b3f1c2eb0fb591b72161f86d93f5719079dae93e"
+      }
+    ]
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "header": {
+    "id": "magick",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "magick",
+    "buildsystem": "autotools",
+    "config-opts": [
+      "--with-heic=yes",
+      "--with-jxl=yes",
+      "--with-rsvg=yes",
+      "--with-gslib=yes"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/ImageMagick/ImageMagick.git",
+        "tag": "7.1.2-19",
+        "commit": "9fbd2b79450e930edb95e8158d412e57a7b27e83"
+      }
+    ]
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "mcpelauncher-versiondb",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "mcpelauncher-versiondb",
+    "buildsystem": "simple",
+    "build-commands": [
+      "install -Dm644 versions.armeabi-v7a.json.min /app/share/versiondb/versions.armeabi-v7a.json.min",
+      "install -Dm644 versions.x86.json.min /app/share/versiondb/versions.x86.json.min",
+      "install -Dm644 versions.arm64-v8a.json.min /app/share/versiondb/versions.arm64-v8a.json.min",
+      "install -Dm644 versions.x86_64.json.min /app/share/versiondb/versions.x86_64.json.min"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/minecraft-linux/mcpelauncher-versiondb.git",
+        "commit": "c7c755fbbd776ac88a2e6543e406b54dca951a0a"
+      }
+    ]
+  }
+}

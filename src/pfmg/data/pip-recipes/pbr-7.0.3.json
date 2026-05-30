@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "pbr",
+    "version": "7.0.3",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "pbr",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --prefix=/app pbr-*.whl"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/c0/db/61efa0d08a99f897ef98256b03e563092d36cc38dc4ebe4a85020fe40b31/pbr-7.0.3-py2.py3-none-any.whl",
+        "sha256": "ff223894eb1cd271a98076b13d3badff3bb36c424074d26334cd25aebeecea6b",
+        "x-checker-data": {
+          "type": "pypi",
+          "name": "pbr",
+          "packagetype": "bdist_wheel"
+        }
+      }
+    ]
+  }
+}

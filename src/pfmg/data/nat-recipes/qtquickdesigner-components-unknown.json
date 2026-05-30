@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "qtquickdesigner-components",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "qtquickdesigner-components",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://code.qt.io/qt-labs/qtquickdesigner-components",
+        "tag": "qds-dev-4.7",
+        "commit": "5eb7b9257de974ef0b3a4b128c0adf5ed24517f1",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^qds-dev-(\\d+\\.\\d+\\.?\\d*)$"
+        }
+      }
+    ]
+  }
+}

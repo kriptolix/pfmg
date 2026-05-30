@@ -1,0 +1,34 @@
+{
+  "header": {
+    "id": "mesa-demos",
+    "version": "8.5.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "mesa-demos",
+    "buildsystem": "autotools",
+    "config-opts": [
+      "--without-glut",
+      "--bindir=/app/lib/mesa-demos",
+      "--enable-autotools"
+    ],
+    "no-make-install": true,
+    "build-commands": [
+      "install -D src/xdemos/glxinfo -t /app/bin/"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://archive.mesa3d.org/demos/8.5.0/mesa-demos-8.5.0.tar.bz2",
+        "sha256": "cea2df0a80f09a30f635c4eb1a672bf90c5ddee0b8e77f4d70041668ef71aac1"
+      }
+    ],
+    "cleanup": [
+      "/lib/mesa-demos"
+    ],
+    "modules": [
+      "shared-modules/glew/glew.json"
+    ]
+  }
+}

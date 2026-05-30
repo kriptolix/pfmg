@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "python-lxml",
+    "version": "4.9.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python-lxml",
+    "buildsystem": "simple",
+    "build-commands": [
+      "python3 setup.py build --with-cython",
+      "python3 setup.py install --prefix=/app --root=/"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/lxml/lxml/releases/download/lxml-4.9.1/lxml-4.9.2.tar.gz",
+        "sha256": "2455cfaeb7ac70338b3257f41e21f0724f4b5b0c0e7702da67ee6c3640835b67"
+      }
+    ]
+  }
+}

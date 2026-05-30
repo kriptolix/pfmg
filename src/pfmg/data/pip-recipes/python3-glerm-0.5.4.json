@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "python3-glerm",
+    "version": "0.5.4",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-glerm",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"glerm\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/44/36/b770bf0593cb67faed5086c23df6a22f82b5aed1c0df5301a0861325b5a9/glerm-0.5.4-py3-none-any.whl",
+        "sha256": "9a0ec616c25b0aaf8d6e3484e495423b40f6906b50fecde735253926813e295c"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/49/cc/08bba60f00541f62aaa252ce0cfbd60aebd04616c0b9574f755b583e45ae/pygame-2.6.1.tar.gz",
+        "sha256": "56fb02ead529cee00d415c3e007f75e0780c655909aaa8e8bf616ee09c9feb1f"
+      }
+    ]
+  }
+}

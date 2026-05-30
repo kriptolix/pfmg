@@ -1,0 +1,52 @@
+commit 666f4c7e22d9b533839a78b8bd972b8bd5e9c11c
+Author: Hubert Figuière <hub@figuiere.net>
+Date:   Sat Feb 1 21:19:41 2025 -0500
+
+    Jucer patch to build
+    
+    Signed-off-by: Hubert Figuière <hub@figuiere.net>
+
+diff --git a/Carve.jucer b/Carve.jucer
+index 0a74498..3a1ce5c 100644
+--- a/Carve.jucer
++++ b/Carve.jucer
+@@ -81,24 +81,25 @@
+                 vstFolder="~/SDKs/VST3 SDK">
+       <CONFIGURATIONS>
+         <CONFIGURATION name="Debug" libraryPath="/usr/X11R6/lib/" isDebug="0" optimisation="3"
+-                       targetName="Carve" headerPath="~/WEA/WECore/WECore&#10;/usr/include/freetype2"/>
++                       targetName="Carve" headerPath="../../WE-Core/WECore"/>
+         <CONFIGURATION name="Release" libraryPath="/usr/X11R6/lib/" isDebug="0" optimisation="3"
+                        targetName="Carve"/>
+       </CONFIGURATIONS>
+       <MODULEPATHS>
+-        <MODULEPATH id="juce_video" path="../JUCE/modules"/>
+-        <MODULEPATH id="juce_gui_basics" path="../JUCE/modules"/>
+-        <MODULEPATH id="juce_graphics" path="../JUCE/modules"/>
+-        <MODULEPATH id="juce_events" path="../JUCE/modules"/>
+-        <MODULEPATH id="juce_data_structures" path="../JUCE/modules"/>
+-        <MODULEPATH id="juce_cryptography" path="../JUCE/modules"/>
+-        <MODULEPATH id="juce_core" path="../JUCE/modules"/>
+-        <MODULEPATH id="juce_audio_processors" path="../JUCE/modules"/>
+-        <MODULEPATH id="juce_audio_plugin_client" path="../JUCE/modules"/>
+-        <MODULEPATH id="juce_audio_formats" path="../JUCE/modules"/>
+-        <MODULEPATH id="juce_audio_devices" path="../JUCE/modules"/>
+-        <MODULEPATH id="juce_audio_basics" path="../JUCE/modules"/>
+-        <MODULEPATH id="juce_gui_extra" path="../JUCE/modules"/>
++        <MODULEPATH id="juce_video" path="JUCE/modules"/>
++        <MODULEPATH id="juce_opengl" path="JUCE/modules"/>
++        <MODULEPATH id="juce_gui_basics" path="JUCE/modules"/>
++        <MODULEPATH id="juce_graphics" path="JUCE/modules"/>
++        <MODULEPATH id="juce_events" path="JUCE/modules"/>
++        <MODULEPATH id="juce_data_structures" path="JUCE/modules"/>
++        <MODULEPATH id="juce_cryptography" path="JUCE/modules"/>
++        <MODULEPATH id="juce_core" path="JUCE/modules"/>
++        <MODULEPATH id="juce_audio_processors" path="JUCE/modules"/>
++        <MODULEPATH id="juce_audio_plugin_client" path="JUCE/modules"/>
++        <MODULEPATH id="juce_audio_formats" path="JUCE/modules"/>
++        <MODULEPATH id="juce_audio_devices" path="JUCE/modules"/>
++        <MODULEPATH id="juce_audio_basics" path="JUCE/modules"/>
++        <MODULEPATH id="juce_gui_extra" path="JUCE/modules"/>
+       </MODULEPATHS>
+     </LINUX_MAKE>
+     <VS2019 targetFolder="Builds/VisualStudio2019">

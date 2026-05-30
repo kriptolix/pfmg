@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "kaitaistruct",
+    "version": "0.10",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "kaitaistruct",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=/app \"kaitaistruct==0.10\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/4e/bf/88ad23efc08708bda9a2647169828e3553bb2093a473801db61f75356395/kaitaistruct-0.10-py2.py3-none-any.whl",
+        "sha256": "a97350919adbf37fda881f75e9365e2fb88d04832b7a4e57106ec70119efb235"
+      }
+    ]
+  }
+}

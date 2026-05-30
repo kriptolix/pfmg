@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "fruit",
+    "version": "3.7.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "fruit",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DFRUIT_USES_BOOST=FALSE",
+      "-DBUILD_SHARED_LIBS=FALSE",
+      "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/google/fruit/archive/refs/tags/v3.7.1.tar.gz",
+        "sha256": "ed4c6b7ebfbf75e14a74e21eb74ce2703b8485bfc9e660b1c36fb7fe363172d0"
+      }
+    ]
+  }
+}

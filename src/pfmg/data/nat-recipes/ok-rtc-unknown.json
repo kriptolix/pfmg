@@ -1,0 +1,26 @@
+{
+  "header": {
+    "id": "ok-rtc",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "ok-rtc",
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=None"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/okstar-org/ok-rtc.git",
+        "commit": "ee9dc00a931fd6e1fdbf46c329950dcd404e60d3"
+      }
+    ],
+    "cleanup": [
+      "*"
+    ]
+  }
+}

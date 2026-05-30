@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "pysdl2",
+    "version": "0.9.17",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "pysdl2",
+    "buildsystem": "simple",
+    "build-commands": [
+      "python3 -m pip install --no-index --prefix=/app --no-build-isolation ."
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/py-sdl/py-sdl2/archive/refs/tags/0.9.17.tar.gz",
+        "sha256": "f3ae2232075271d997502f6c90a0c41778296248d86b6780623dc3d88efdde0f"
+      }
+    ]
+  }
+}

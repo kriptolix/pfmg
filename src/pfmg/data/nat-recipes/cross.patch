@@ -1,0 +1,19 @@
+--- eukleides-1.5.4.orig/build/Makefile
++++ eukleides-1.5.4/build/Makefile
+@@ -12,6 +12,7 @@
+ YACC = bison
+ YFLAGS = -d
+ CC = gcc
++INSTALL ?= install
+ IFLAGS = -I$(COMMON_DIR) -I$(MAIN_DIR) -I$(BUILD_DIR) 
+ ifneq ($(strip $(LOCALES)),)
+ MOFLAGS = -DMO_DIR=\"$(MO_DIR)\" 
+@@ -55,7 +56,7 @@
+ 
+ install: $(BINARY)
+ 	@echo "Installing $<"
+-	@install -s $< $(BIN_DIR)
++	@$(INSTALL) -s $< $(BIN_DIR)
+ 
+ uninstall:
+ 	@$(RM) $(addprefix $(BIN_DIR)/,$(BINARIES))

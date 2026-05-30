@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "portal-qt6",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "portal-qt6",
+    "buildsystem": "meson",
+    "config-opts": [
+      "-Dvapi=false",
+      "-Ddocs=false",
+      "-Dbackend-qt6=enabled"
+    ],
+    "cleanup": [
+      "/lib/girepository-1.0",
+      "/share/gir-1.0"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/flatpak/libportal.git",
+        "commit": "796053d2eebe4532aad6bd3fd80cdf3b197806ec"
+      }
+    ]
+  }
+}

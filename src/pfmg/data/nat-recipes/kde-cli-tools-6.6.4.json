@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "kde-cli-tools",
+    "version": "6.6.4",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "kde-cli-tools",
+    "buildsystem": "cmake-ninja",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.kde.org/stable/plasma/6.6.4/kde-cli-tools-6.6.4.tar.xz",
+        "sha256": "0d7cdd7875a970768f0a173748d6e301157adcac2ec7b6b6233f792277497704",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 8761,
+          "stable-only": true,
+          "url-template": "https://download.kde.org/stable/plasma/$version/kde-cli-tools-$version.tar.xz"
+        }
+      }
+    ]
+  }
+}

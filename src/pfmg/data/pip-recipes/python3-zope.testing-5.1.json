@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-zope.testing",
+    "version": "5.1",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-zope.testing",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"zope.testing==5.1\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/02/da/31b3429dd90bc3108b0e480e0208ab3f9261012ba3d6078f2f2c42cae9d8/zope.testing-5.1-py3-none-any.whl",
+        "sha256": "0ad71af81a66988817e74dcee02f53ed26e65ae6e88c0bbff98790e465e0d223"
+      }
+    ]
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "time-compat",
+    "version": "1.9.7",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "time-compat",
+    "buildsystem": "simple",
+    "builddir": false,
+    "build-commands": [
+      "echo '#! /usr/bin/env runhaskell' >Setup.txt",
+      "echo '> import Distribution.Simple' >>Setup.txt",
+      "echo '> main = defaultMain' >>Setup.txt",
+      "ln -s Setup.txt Setup.lhs || true",
+      "runhaskell Setup configure --prefix=/app",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "sources": [
+      {
+        "sha256": "c98fbea21d036c3263af186df0569b8425c87ad353b021353794743e4e631dcc",
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/time-compat-1.9.7/time-compat-1.9.7.tar.gz"
+      },
+      {
+        "dest-filename": "time-compat.cabal",
+        "sha256": "f0bff15af6faaeff36b679e6b810fa71534b2f85a91bf98d7541dac6a469b20f",
+        "type": "file",
+        "url": "https://hackage.haskell.org/package/time-compat-1.9.7/revision/2.cabal"
+      }
+    ]
+  }
+}

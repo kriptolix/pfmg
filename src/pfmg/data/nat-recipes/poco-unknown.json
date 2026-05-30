@@ -1,0 +1,46 @@
+{
+  "header": {
+    "id": "poco",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "poco",
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DCMAKE_POSITION_INDEPENDENT_CODE=ON",
+      "-DBUILD_SHARED_LIBS=OFF",
+      "-DENABLE_TESTS=OFF",
+      "-DENABLE_ACTIVERECORD=OFF",
+      "-DENABLE_ACTIVERECORD_COMPILER=OFF",
+      "-DENABLE_APACHECONNECTOR=OFF",
+      "-DENABLE_DATA=OFF",
+      "-DENABLE_DATA_MYSQL=OFF",
+      "-DENABLE_DATA_ODBC=OFF",
+      "-DENABLE_DATA_POSTGRESQL=OFF",
+      "-DENABLE_DATA_SQLITE=OFF",
+      "-DENABLE_ENCODINGS=OFF",
+      "-DENABLE_JWT=OFF",
+      "-DENABLE_MONGODB=OFF",
+      "-DENABLE_PAGECOMPILER=OFF",
+      "-DENABLE_PAGECOMPILER_FILE2PAGE=OFF",
+      "-DENABLE_PROMETHEUS=OFF",
+      "-DENABLE_REDIS=OFF",
+      "-DPOCO_UNBUNDLED=ON"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/pocoproject/poco.git",
+        "tag": "poco-1.12.5-release",
+        "commit": "c04dfdbc37882f298d3178b3875cd67c38ea7d78"
+      }
+    ],
+    "cleanup": [
+      "*"
+    ]
+  }
+}

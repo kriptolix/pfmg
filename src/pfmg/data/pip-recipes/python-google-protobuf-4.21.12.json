@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python-google-protobuf",
+    "version": "4.21.12",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python-google-protobuf",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --no-index --no-build-isolation --find-links=\"file://${PWD}\" --prefix=\"${FLATPAK_DEST}\" protobuf"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/ba/dd/f8a01b146bf45ac12a829bbc599e6590aa6a6849ace7d28c42d77041d6ab/protobuf-4.21.12.tar.gz",
+        "sha256": "7cd532c4566d0e6feafecc1059d04c7915aec8e182d1cf7adee8b24ef1e2e6ab"
+      }
+    ]
+  }
+}

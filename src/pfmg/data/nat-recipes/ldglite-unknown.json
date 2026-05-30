@@ -1,0 +1,33 @@
+{
+  "header": {
+    "id": "ldglite",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "ldglite",
+    "buildsystem": "qmake",
+    "config-opts": [
+      "QMAKE_LIBDIR=/app/lib",
+      "CONFIG+=release",
+      "CONFIG+=3RD_PARTY_INSTALL=build_staging",
+      "CONFIG+=BUILD_CHECK"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/trevorsandy/ldglite.git",
+        "commit": "26ee190caa49a5ab3088d962180d53d111792b6a"
+      },
+      {
+        "type": "patch",
+        "path": "patches/ldglite-build.patch"
+      }
+    ],
+    "post-install": [
+      "mv -f app/build_staging/* ${FLATPAK_DEST}/build_staging/",
+      "if test -d ${FLATPAK_DEST}/build_staging/ldglite-1.3; then echo \"LDGLite staged to ${FLATPAK_DEST}/build_staging/ldglite-1.3.\"; fi"
+    ]
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "header": {
+    "id": "libpisp",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libpisp",
+    "buildsystem": "meson",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/raspberrypi/libpisp.git",
+        "tag": "v1.3.0",
+        "commit": "9ba67e6680f03f31f2b1741a53e8fd549be82cbe"
+      }
+    ]
+  }
+}

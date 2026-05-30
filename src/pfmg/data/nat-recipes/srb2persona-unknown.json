@@ -1,0 +1,68 @@
+{
+  "header": {
+    "id": "srb2persona",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "srb2persona",
+    "buildsystem": "simple",
+    "build-options": {
+      "arch": {
+        "aarch64": {
+          "env": {
+            "ARCH_MAKE_ARGS": "LINUX64=1",
+            "CFLAGS": "-std=gnu11"
+          }
+        },
+        "x86_64": {
+          "env": {
+            "ARCH_MAKE_ARGS": "LINUX64=1 X86_64=1",
+            "CFLAGS": "-std=gnu11"
+          }
+        }
+      }
+    },
+    "build-commands": [
+      "make -C src -j $FLATPAK_BUILDER_N_JOBS NOUPX=1 SDL=1 $ARCH_MAKE_ARGS",
+      "install -D -m 755 -t $FLATPAK_DEST/bin bin/lsdl2srb2",
+      "install -D -m 644 srb2.png $FLATPAK_DEST/share/icons/hicolor/256x256/apps/$FLATPAK_ID.png",
+      "install -D -m 755 srb2persona.sh $FLATPAK_DEST/bin/srb2persona",
+      "install -D -m 644 -t $FLATPAK_DEST/share/applications $FLATPAK_ID.desktop",
+      "install -D -m 644 -t $FLATPAK_DEST/share/metainfo $FLATPAK_ID.metainfo.xml"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://git.do.srb2.org/SinnamonLat/SRB2",
+        "tag": "SRB2P-exe-1.3.6",
+        "commit": "19e6daf275933e68648265c53760de1f77c2b2b2"
+      },
+      {
+        "type": "patch",
+        "path": "srb2-gcc.patch"
+      },
+      {
+        "type": "patch",
+        "path": "sdk25-fix.patch"
+      },
+      {
+        "type": "script",
+        "commands": [
+          "export SRB2WADDIR=/app/extra",
+          "lsdl2srb2 \"$@\""
+        ],
+        "dest-filename": "srb2persona.sh"
+      },
+      {
+        "type": "file",
+        "path": "org.srb2.SRB2Persona.desktop"
+      },
+      {
+        "type": "file",
+        "path": "org.srb2.SRB2Persona.metainfo.xml"
+      }
+    ]
+  }
+}

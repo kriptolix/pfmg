@@ -1,0 +1,30 @@
+{
+  "header": {
+    "id": "colord-gtk",
+    "version": "0.3.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "colord-gtk",
+    "buildsystem": "meson",
+    "config-opts": [
+      "-Dman=false",
+      "-Dgtk4=false",
+      "-Ddocs=false"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://www.freedesktop.org/software/colord/releases/colord-gtk-0.3.1.tar.xz",
+        "sha256": "c176b889b75630a17f4e3d7ef24c09a3e12368e633496087459c8b53ac3a122d",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 331,
+          "stable-only": true,
+          "url-template": "https://www.freedesktop.org/software/colord/releases/colord-gtk-$version.tar.xz"
+        }
+      }
+    ]
+  }
+}

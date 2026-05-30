@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python-requests",
+    "version": "2.14.2",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python-requests",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --prefix=/app requests-2.14.2-py2.py3-none-any.whl"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://pypi.python.org/packages/e4/b0/286e8a936158e5cc5791d5fa3bc4b1d5a7e1ff4e5b3f3766b63d8e97708a/requests-2.14.2-py2.py3-none-any.whl#md5=a1b2f02e7ba45dff7c76f621cde042c4",
+        "sha256": "3b39cde35be51762885631cf586f4dc2284951b44d479a4454020758d767cc2f"
+      }
+    ]
+  }
+}

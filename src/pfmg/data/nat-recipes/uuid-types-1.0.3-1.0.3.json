@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "uuid-types-1.0.3",
+    "version": "1.0.3",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "build-commands": [
+      "ghc -threaded --make Setup",
+      "./Setup configure --prefix=/app",
+      "./Setup build",
+      "./Setup install"
+    ],
+    "buildsystem": "simple",
+    "cleanup": [],
+    "name": "uuid-types-1.0.3",
+    "only-arches": [],
+    "sources": [
+      {
+        "sha256": "9276517ab24a9b06f39d6e3c33c6c2b4ace1fc2126dbc1cd9806866a6551b3fd",
+        "type": "archive",
+        "url": "https://s3.amazonaws.com/hackage.fpcomplete.com/package/uuid-types-1.0.3.tar.gz"
+      },
+      {
+        "sha256": "01887ed945e74c3c361b00700bd9aeead37d1124d39c0d4f190f89fb0e909c47",
+        "type": "file",
+        "url": "https://raw.githubusercontent.com/commercialhaskell/all-cabal-files/a5f22172fce750e93afa6987320f5c5be62b5670/uuid-types/1.0.3/uuid-types.cabal"
+      }
+    ]
+  }
+}

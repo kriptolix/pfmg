@@ -1,0 +1,37 @@
+{
+  "header": {
+    "id": "cockpit-client",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "cockpit-client",
+    "buildsystem": "autotools",
+    "config-opts": [
+      "--enable-cockpit-client",
+      "--with-systemdunitdir=/invalid",
+      "CPPFLAGS=-Itools/mock-build-env",
+      "--with-admin-group=root",
+      "--disable-doc"
+    ],
+    "make-args": [
+      "build-for-flatpak"
+    ],
+    "make-install-args": [
+      "DOWNSTREAM_RELEASES_XML=org.cockpit_project.CockpitClient.releases.xml"
+    ],
+    "install-rule": "install-for-flatpak",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/cockpit-project/cockpit/releases/download/361/cockpit-361.tar.xz",
+        "sha256": "b7405e4a131723af1309456e75268afe96cbfa259432965d821a1d1a2d67fddb"
+      },
+      {
+        "type": "file",
+        "path": "org.cockpit_project.CockpitClient.releases.xml"
+      }
+    ]
+  }
+}

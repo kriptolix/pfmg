@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "timidity-instruments",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "timidity-instruments",
+    "buildsystem": "simple",
+    "build-commands": [
+      "mkdir -p /app/etc/",
+      "install timidity.cfg /app/etc/sdl_timidity.cfg",
+      "mkdir -p /app/share/timidity/",
+      "cp -r instruments /app/share/timidity/instruments"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://www.libsdl.org/projects/old/SDL_mixer/timidity/timidity.tar.gz",
+        "sha256": "ee7c59bb5d5fae206d53eef0e82b5ed739e7cbf69252a3754024f8f52ebe77aa"
+      }
+    ]
+  }
+}

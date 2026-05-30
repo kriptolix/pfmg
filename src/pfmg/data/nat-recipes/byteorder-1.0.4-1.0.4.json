@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "byteorder-1.0.4",
+    "version": "1.0.4",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "build-commands": [
+      "ghc -threaded --make Setup",
+      "./Setup configure --prefix=/app",
+      "./Setup build",
+      "./Setup install"
+    ],
+    "buildsystem": "simple",
+    "cleanup": [],
+    "name": "byteorder-1.0.4",
+    "only-arches": [],
+    "sources": [
+      {
+        "sha256": "bd20bbb586947f99c38a4c93d9d0266f49f6fc581767b51ba568f6d5d52d2919",
+        "type": "archive",
+        "url": "https://s3.amazonaws.com/hackage.fpcomplete.com/package/byteorder-1.0.4.tar.gz"
+      },
+      {
+        "sha256": "a952817dcbe20af0346fb55a28c13e95e2ddbf3e99f9b4fffdc063f150f13b20",
+        "type": "file",
+        "url": "https://raw.githubusercontent.com/commercialhaskell/all-cabal-files/a5f22172fce750e93afa6987320f5c5be62b5670/byteorder/1.0.4/byteorder.cabal"
+      }
+    ]
+  }
+}

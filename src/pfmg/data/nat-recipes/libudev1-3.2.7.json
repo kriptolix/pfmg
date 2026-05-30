@@ -1,0 +1,20 @@
+{
+  "header": {
+    "id": "libudev1",
+    "version": "3.2.7",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libudev1",
+    "buildsystem": "autotools",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/gentoo/eudev/archive/v3.2.7.tar.gz",
+        "sha512": "17c1894c6e85ddcef259e3e10c21ff7f36567dec377c279cc423c14957d3de97c88aa6eb4cab7cab5ffbdbf80cc63b52af8da592bf226affd21dd9edb74203ed",
+        "sha256": "ce2fda4dea129bbcf824c947aab23504bcd26911481b47dbaf10646f723083a4"
+      }
+    ]
+  }
+}

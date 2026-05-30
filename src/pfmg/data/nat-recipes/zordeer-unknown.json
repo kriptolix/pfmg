@@ -1,0 +1,33 @@
+{
+  "header": {
+    "id": "zordeer",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "Zordeer",
+    "buildsystem": "simple",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/Kyuyrii/Zordeer.git",
+        "tag": "7.3",
+        "commit": "fe229c82b239869cbaf95cec20f410a672940b6b"
+      }
+    ],
+    "build-commands": [
+      "install -Dm755 zordeer /app/bin/zordeer",
+      "install -Dm644 io.github.kyuyrii.zordeer.desktop /app/share/applications/io.github.kyuyrii.zordeer.desktop",
+      "install -Dm644 io.github.kyuyrii.zordeer.svg /app/share/icons/hicolor/scalable/apps/io.github.kyuyrii.zordeer.svg",
+      "install -Dm644 metainfo/io.github.kyuyrii.zordeer.metainfo.xml /app/share/metainfo/io.github.kyuyrii.zordeer.metainfo.xml",
+      "install -Dm644 translation/*.toml -t /app/share/Zordeer/translation"
+    ],
+    "modules": [
+      "modules/python3-psutil.yaml",
+      "modules/python3-PyQt6.yaml",
+      "modules/python3-requests.yaml",
+      "modules/python3-tomlkit.yaml"
+    ]
+  }
+}

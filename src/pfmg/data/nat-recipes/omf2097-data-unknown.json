@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "omf2097-data",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "omf2097-data",
+    "buildsystem": "simple",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://www.omf2097.com/pub/files/omf/openomf-assets.zip",
+        "sha256": "de472c786adf9e618bf4b71a5f2cb85bb0b090f27da2b3008f305453a8dea67d"
+      }
+    ],
+    "build-commands": [
+      "install -Dm644 -t ${FLATPAK_DEST}/share/games/openomf/ *.BK",
+      "install -Dm644 -t ${FLATPAK_DEST}/share/games/openomf/ *.TRN",
+      "install -Dm644 -t ${FLATPAK_DEST}/share/games/openomf/ *.AF",
+      "install -Dm644 -t ${FLATPAK_DEST}/share/games/openomf/ *.PIC",
+      "install -Dm644 -t ${FLATPAK_DEST}/share/games/openomf/ *.PSM",
+      "install -Dm644 -t ${FLATPAK_DEST}/share/games/openomf/ *.DAT",
+      "install -Dm644 -t ${FLATPAK_DEST}/share/games/openomf/ *.PCX"
+    ]
+  }
+}

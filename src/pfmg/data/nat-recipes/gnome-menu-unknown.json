@@ -1,0 +1,19 @@
+{
+  "header": {
+    "id": "gnome-menu",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "gnome-menu",
+    "buildsystem": "autotools",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://gitlab.gnome.org/GNOME/gnome-menus.git",
+        "tag": "3.36.0"
+      }
+    ]
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "twisted",
+    "version": "26.4.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "twisted",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --prefix=/app twisted*.whl"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/a6/57/bcf4e2370dd218c9aa68a9140a65d86729c73f1d529f7e94786c2766fc72/twisted-26.4.0-py3-none-any.whl",
+        "sha256": "dc25ea0ebf6511c24f03232ee9f4afa54b291c5d897990e3a39cc4d14a1ef4c0",
+        "x-checker-data": {
+          "type": "pypi",
+          "name": "twisted",
+          "packagetype": "bdist_wheel"
+        }
+      }
+    ]
+  }
+}

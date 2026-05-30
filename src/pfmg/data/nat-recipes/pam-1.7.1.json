@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "pam",
+    "version": "1.7.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "pam",
+    "buildsystem": "meson",
+    "config-opts": [
+      "-Dselinux=disabled"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/linux-pam/linux-pam/releases/download/v1.7.1/Linux-PAM-1.7.1.tar.xz",
+        "sha256": "21dbcec6e01dd578f14789eac9024a18941e6f2702a05cf91b28c232eeb26ab0",
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://api.github.com/repos/linux-pam/linux-pam/releases/latest",
+          "version-query": ".tag_name | sub(\"^v\"; \"\")",
+          "url-query": ".assets[] | select(.name==\"Linux-PAM-\" + $version + \".tar.gz\") | .browser_download_url"
+        }
+      }
+    ]
+  }
+}

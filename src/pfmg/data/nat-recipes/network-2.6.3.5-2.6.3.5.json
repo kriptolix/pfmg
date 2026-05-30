@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "network-2.6.3.5",
+    "version": "2.6.3.5",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "network-2.6.3.5",
+    "only-arches": [
+      "x86_64"
+    ],
+    "buildsystem": "simple",
+    "build-commands": [
+      "ghc -threaded --make Setup",
+      "./Setup configure --prefix=/app",
+      "./Setup build",
+      "./Setup install"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "sha256": "9a18f6e4c930a4c4ebb7fea7d1fd7a6046564ee007104d0b845d5f71ccbe0441",
+        "url": "https://hackage.haskell.org/package/network-2.6.3.5/network-2.6.3.5.tar.gz"
+      }
+    ]
+  }
+}

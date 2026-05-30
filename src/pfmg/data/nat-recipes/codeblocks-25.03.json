@@ -1,0 +1,43 @@
+{
+  "header": {
+    "id": "codeblocks",
+    "version": "25.03",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "codeblocks",
+    "build-options": {
+      "cxxflags": "-std=gnu++14"
+    },
+    "config-opts": [
+      "--with-boost-libdir=/app/lib",
+      "--with-contrib-plugins=all,-FileManager,-dragscroll"
+    ],
+    "post-install": [
+      "mv ${FLATPAK_DEST}/bin/codeblocks{,-bin}",
+      "install -Dm644 ${FLATPAK_ID}.metainfo.xml -t ${FLATPAK_DEST}/share/metainfo/",
+      "install -Dm644 codeblocks-256.png ${FLATPAK_DEST}/share/icons/hicolor/256x256/apps/codeblocks.png",
+      "desktop-file-edit --set-key=Keywords --set-value=\"IDE;C++;C;SDL;Fortran;SFML;wxWidgets;Raylib;FLTK;\" /app/share/applications/codeblocks.desktop"
+    ],
+    "sources": [
+      {
+        "type": "svn",
+        "url": "https://svn.code.sf.net/p/codeblocks/code/branches/release-25.03",
+        "revision": "13647"
+      },
+      {
+        "type": "file",
+        "path": "codeblocks-256.png"
+      },
+      {
+        "type": "file",
+        "path": "org.codeblocks.codeblocks.metainfo.xml"
+      },
+      {
+        "type": "patch",
+        "path": "patches/codeblocks-default-terminal.patch"
+      }
+    ]
+  }
+}

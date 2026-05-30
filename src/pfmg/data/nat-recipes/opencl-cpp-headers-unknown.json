@@ -1,0 +1,29 @@
+{
+  "header": {
+    "id": "opencl-cpp-headers",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "opencl-cpp-headers",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DBUILD_TESTING=OFF",
+      "-DBUILD_DOCS:BOOL=OFF"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/KhronosGroup/OpenCL-CLHPP.git",
+        "tag": "v2025.07.22",
+        "commit": "2a608428f725cad7903ef55e1ce5b995895838f5",
+        "disable-fsckobjects": true,
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^(v[\\d.]+)$"
+        }
+      }
+    ]
+  }
+}

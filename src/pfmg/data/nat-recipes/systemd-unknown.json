@@ -1,0 +1,89 @@
+{
+  "header": {
+    "id": "systemd",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "systemd",
+    "buildsystem": "meson",
+    "config-opts": [
+      "--libdir=lib",
+      "-Dsysconfdir=/app/etc",
+      "-Ddocdir=/app/share/doc",
+      "-Dsysvinit-path=/app/etc/init.d",
+      "-Dfdisk=disabled",
+      "-Ddbus=disabled",
+      "-Dutmp=false",
+      "-Dhibernate=false",
+      "-Dldconfig=false",
+      "-Dresolve=false",
+      "-Defi=false",
+      "-Dtpm=false",
+      "-Denvironment-d=false",
+      "-Dbinfmt=false",
+      "-Dcoredump=false",
+      "-Dlogind=false",
+      "-Dhostnamed=false",
+      "-Dlocaled=false",
+      "-Dmachined=false",
+      "-Dportabled=false",
+      "-Dnetworkd=false",
+      "-Dtimedated=false",
+      "-Dtimesyncd=false",
+      "-Dremote=disabled",
+      "-Dnss-myhostname=false",
+      "-Dnss-mymachines=disabled",
+      "-Dnss-resolve=disabled",
+      "-Dnss-systemd=false",
+      "-Dfirstboot=false",
+      "-Drandomseed=false",
+      "-Dbacklight=false",
+      "-Dvconsole=false",
+      "-Dquotacheck=false",
+      "-Dsysusers=false",
+      "-Dtmpfiles=false",
+      "-Dimportd=disabled",
+      "-Dhwdb=false",
+      "-Drfkill=false",
+      "-Dman=disabled",
+      "-Dhtml=disabled",
+      "-Dbashcompletiondir=no",
+      "-Dzshcompletiondir=no"
+    ],
+    "cleanup": [
+      "/bin",
+      "/etc",
+      "/lib/libudev*",
+      "/lib/kernel",
+      "/lib/modprobe.d",
+      "/lib/rpm",
+      "/lib/sysctl.d",
+      "/lib/systemd",
+      "/lib/udev",
+      "/app/share/doc",
+      "/share/dbus-1",
+      "/share/doc",
+      "/share/factory",
+      "/share/glib-2.0",
+      "/share/icons",
+      "/share/man",
+      "/share/pkgconfig",
+      "/share/polkit-1",
+      "/share/runtime"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/systemd/systemd.git",
+        "tag": "v260",
+        "commit": "3e52279684a53ebf84d1d73d528bf400c5fb3497",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^v([\\d.]+)$"
+        }
+      }
+    ]
+  }
+}

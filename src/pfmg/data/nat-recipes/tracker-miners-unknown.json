@@ -1,0 +1,31 @@
+{
+  "header": {
+    "id": "tracker-miners",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "tracker-miners",
+    "buildsystem": "meson",
+    "config-opts": [
+      "-Ddefault_index_single_directories=&DOWNLOADS",
+      "-Ddefault_index_recursive_directories=&DOCUMENTS",
+      "-Ddomain_prefix=org.gnome.Books",
+      "-Dman=false",
+      "-Dminer_fs=true",
+      "-Dminer_fs_cache_location=$XDG_CACHE_HOME/org.gnome.Books/miner/files",
+      "-Dminer_rss=false",
+      "-Dwriteback=false",
+      "-Dsystemd_user_services=false"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://gitlab.gnome.org/GNOME/tracker-miners.git",
+        "commit": "fc4287e213bc3568b3012433b9466d0c207e174d",
+        "tag": "3.1.0"
+      }
+    ]
+  }
+}

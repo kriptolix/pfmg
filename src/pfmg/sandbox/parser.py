@@ -2,7 +2,8 @@ from pfmg.sandbox.errors import (
     SandboxError, SandboxErrorType,
     _P_BACKEND_FAILED, _P_BACKEND_UNAVAILABLE, _P_BUILD_DEP_MISSING,
     _P_CMAKE_NOT_FOUND, _P_FLATPAK_MODULE_FAILED, _P_IMPORT_ERROR,
-    _P_LINKER_NOT_FOUND, _P_LDD_NOT_FOUND, _P_MESON_DEP, _P_MISSING_HEADER,
+    _P_LINKER_NOT_FOUND, _P_LDD_NOT_FOUND, _P_MESON_DEP,
+    _P_MESON_PROG_NOT_FOUND, _P_MISSING_HEADER,
     _P_PKGCONFIG_NOT_FOUND, _P_PIP_NOT_FOUND, _P_EXEC_NOT_FOUND)
 
 
@@ -140,6 +141,23 @@ def parse_errors(
                 error_type=SandboxErrorType.IMPORT_ERROR,
                 missing=mod,
                 source="import",
+                context=context,
+                raw_line=m.group(0).strip(),
+            ))
+
+    # Meson program not found:
+    #   "ERROR: Program 'pythran' not found or not executable"
+    # Classified as MISSING_EXECUTABLE so the prober can attempt auto-resolution
+    # via PyPI (e.g. pythran → pythran).  Must run BEFORE _P_FLATPAK_MODULE_FAILED
+    # so the specific error is recorded first and the generic catch-all is skipped
+    # by the `seen` guard.
+    for m in _P_MESON_PROG_NOT_FOUND.finditer(combined):
+        prog = m.group("prog").strip()
+        if prog:
+            _add(SandboxError(
+                error_type=SandboxErrorType.MISSING_EXECUTABLE,
+                missing=prog,
+                source="stderr",
                 context=context,
                 raw_line=m.group(0).strip(),
             ))

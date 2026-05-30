@@ -1,0 +1,33 @@
+{
+  "header": {
+    "id": "python3-pygame-ce",
+    "version": "2.5.6",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-pygame-ce",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"pygame-ce==2.5.6\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/61/28/b13cc306693e917b9a4b746ccad2615fa43d8f4f2373e28104edc33f6f8f/pygame_ce-2.5.6-cp313-cp313-manylinux2014_x86_64.manylinux_2_17_x86_64.whl",
+        "sha256": "d811bba090fbb10d6a1c4d6917350da5a6a585630605833fa91499480b72bfcf",
+        "only-arches": [
+          "x86_64"
+        ]
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/2e/fd/255b8233c690a68d3b68d299868fd51b5f6f509ae67453b6c21c3e27330a/pygame_ce-2.5.6-cp313-cp313-manylinux2014_aarch64.manylinux_2_17_aarch64.whl",
+        "sha256": "92050fd16b62b20779b6ec2fb867bc8261e5499be967ed2aa7ff6a76b7735791",
+        "only-arches": [
+          "aarch64"
+        ]
+      }
+    ]
+  }
+}

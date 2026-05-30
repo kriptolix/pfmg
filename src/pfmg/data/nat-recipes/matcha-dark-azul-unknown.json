@@ -1,0 +1,26 @@
+{
+  "header": {
+    "id": "matcha-dark-azul",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "Matcha-dark-azul",
+    "buildsystem": "simple",
+    "build-commands": [
+      "mkdir -pm 755 /usr/share/runtime/share/themes/Matcha-dark-azul/gtk-3.0/assets",
+      "cp src/gtk-3.0/gtk-dark-azul.css /usr/share/runtime/share/themes/Matcha-dark-azul/gtk-3.0/gtk.css",
+      "cp src/gtk-3.0/gtk-dark-azul.css /usr/share/runtime/share/themes/Matcha-dark-azul/gtk-3.0/gtk-dark.css",
+      "cp -fr src/gtk-3.0/assets-azul/* /usr/share/runtime/share/themes/Matcha-dark-azul/gtk-3.0/assets/",
+      "cp src/gtk-3.0/thumbnail-dark-azul.png /usr/share/runtime/share/themes/Matcha-dark-azul/gtk-3.0/thumbnail.png"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/vinceliuice/Matcha-gtk-theme/archive/2021-02-04.tar.gz",
+        "sha256": "6bc14200334bb9a559da734bf04d2e2b3f8224b08c86c2fa988e5b99af882490"
+      }
+    ]
+  }
+}

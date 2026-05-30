@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-pyuv",
+    "version": "unknown",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-pyuv",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \".\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/saghul/pyuv.git",
+        "commit": "2a3d42d44c6315ebd73899a35118380d2d5979b5"
+      }
+    ]
+  }
+}

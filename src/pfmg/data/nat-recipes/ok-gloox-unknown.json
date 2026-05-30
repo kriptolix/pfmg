@@ -1,0 +1,19 @@
+{
+  "header": {
+    "id": "ok-gloox",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "ok-gloox",
+    "buildsystem": "cmake-ninja",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/okstar-org/ok-gloox.git",
+        "commit": "f92ff222e1accd1c0dfc0d4498a4a7a8dbffe5d9"
+      }
+    ]
+  }
+}

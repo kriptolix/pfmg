@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-xmlschema",
+    "version": "4.3.1",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-xmlschema",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --prefix=/app xmlschema-4.3.1-py3-none-any.whl"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/dd/7b/3471405875d0b5fac642e9a879b2c7db63642370799b2e9eea8297ffbad0/xmlschema-4.3.1-py3-none-any.whl",
+        "sha256": "9560314d70ae87be0aecb8712cfebed636f867707ccf9758d4b0645d607f64b9"
+      }
+    ]
+  }
+}

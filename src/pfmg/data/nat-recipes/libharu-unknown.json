@@ -1,0 +1,20 @@
+{
+  "header": {
+    "id": "libharu",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libharu",
+    "buildsystem": "cmake-ninja",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/libharu/libharu.git",
+        "tag": "v2.4.5",
+        "commit": "8fe5a738541a04642885fb7a75b2b5b9c5b416fa"
+      }
+    ]
+  }
+}

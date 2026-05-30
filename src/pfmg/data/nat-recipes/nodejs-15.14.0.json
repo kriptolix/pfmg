@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "nodejs",
+    "version": "15.14.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "nodejs",
+    "buildsystem": "simple",
+    "build-commands": [
+      "install -D bin/node /app/bin/node"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://nodejs.org/dist/latest-v15.x/node-v15.14.0-linux-x64.tar.xz",
+        "sha256": "f40a52c77a5a98203d24d6e5213c1a189bfc9736d0d9f667cb61151e9431b2a8"
+      }
+    ]
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "header": {
+    "id": "vmtouch",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "vmtouch",
+    "buildsystem": "simple",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/hoytech/vmtouch",
+        "commit": "af86e27675843b3c7e4ddfee66ddbaf44eff43c4",
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://api.github.com/repos/hoytech/vmtouch/commits",
+          "commit-query": "first( .[].sha )",
+          "timestamp-query": "first( .[].commit.committer.date )"
+        }
+      }
+    ],
+    "build-commands": [
+      "make",
+      "make install PREFIX=/app"
+    ]
+  }
+}

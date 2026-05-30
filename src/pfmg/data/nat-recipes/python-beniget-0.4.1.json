@@ -1,0 +1,26 @@
+{
+  "header": {
+    "id": "python-beniget",
+    "version": "0.4.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python-beniget",
+    "buildsystem": "simple",
+    "build-commands": [
+      "python3 setup.py install --prefix=${FLATPAK_DEST} --root=/ --optimize=1"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://files.pythonhosted.org/packages/14/e7/50cbac38f77eca8efd39516be6651fdb9f3c4c0fab8cf2cf05f612578737/beniget-0.4.1.tar.gz",
+        "sha256": "75554b3b8ad0553ce2f607627dad3d95c60c441189875b98e097528f8e23ac0c",
+        "x-checker-data": {
+          "type": "pypi",
+          "name": "beniget"
+        }
+      }
+    ]
+  }
+}

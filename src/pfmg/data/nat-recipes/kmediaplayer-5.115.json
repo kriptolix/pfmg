@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "kmediaplayer",
+    "version": "5.115",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "kmediaplayer",
+    "buildsystem": "cmake-ninja",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.kde.org/stable/frameworks/5.115/portingAids/kmediaplayer-5.115.0.tar.xz",
+        "sha256": "95d274982d03ffb592cde5513cf6b4470caef599501f56eaec127611746daaf9",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 8762,
+          "stable-only": true,
+          "url-template": "https://download.kde.org/stable/frameworks/$major.$minor/portingAids/kmediaplayer-$version.tar.xz"
+        }
+      }
+    ]
+  }
+}

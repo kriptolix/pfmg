@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "flightgear-data",
+    "version": "2024.1.5",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "flightgear-data",
+    "buildsystem": "simple",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://gitlab.com/flightgear/fgdata/-/archive/2024.1.5/fgdata-2024.1.5.tar.bz2",
+        "sha256": "97974bda90dae5cccd73c760d879f38b6c3c26a4f783b072106df4d53699c690",
+        "dest": "fgdata"
+      }
+    ],
+    "build-commands": [
+      "mkdir --parents /app/share/flightgear",
+      "mv fgdata/* /app/share/flightgear/"
+    ]
+  }
+}

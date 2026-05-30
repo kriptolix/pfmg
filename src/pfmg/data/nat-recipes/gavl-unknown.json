@@ -1,0 +1,37 @@
+{
+  "header": {
+    "id": "gavl",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "gavl",
+    "config-opts": [
+      "--without-doxygen",
+      "--disable-static",
+      "--enable-shared",
+      "--with-cpuflags=none"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/bplaum/gavl.git",
+        "commit": "59f4f9c52da1eb68de4b00f172c95fbd0105ff4c"
+      },
+      {
+        "type": "shell",
+        "commands": [
+          "cp -p /usr/share/automake-*/config.{sub,guess} ."
+        ]
+      },
+      {
+        "type": "script",
+        "dest-filename": "autogen.sh",
+        "commands": [
+          "autoreconf -vfi"
+        ]
+      }
+    ]
+  }
+}

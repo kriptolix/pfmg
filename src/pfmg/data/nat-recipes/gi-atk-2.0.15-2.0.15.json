@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "gi-atk-2.0.15",
+    "version": "2.0.15",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "gi-atk-2.0.15",
+    "only-arches": [
+      "x86_64"
+    ],
+    "buildsystem": "simple",
+    "build-commands": [
+      "ghc -threaded --make Setup",
+      "./Setup configure --prefix=/app",
+      "./Setup build",
+      "./Setup install"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "sha256": "89753b4517e77ea956dcfd1294b4b98032c6e50df912e28c9a796d2b825fbfee",
+        "url": "https://hackage.haskell.org/package/gi-atk-2.0.15/gi-atk-2.0.15.tar.gz"
+      }
+    ]
+  }
+}

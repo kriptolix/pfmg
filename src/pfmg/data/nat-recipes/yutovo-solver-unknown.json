@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "yutovo-solver",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "yutovo-solver",
+    "buildsystem": "cmake",
+    "build-options": {
+      "env": {
+        "YUTOVO_DEPLOY": "/app"
+      }
+    },
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/denprog/yutovo-solver.git",
+        "tag": "v1.1.8"
+      }
+    ],
+    "config-opts": [
+      "-DCMAKE_INSTALL_PREFIX=/app",
+      "-DCMAKE_BUILD_TYPE=Release"
+    ]
+  }
+}

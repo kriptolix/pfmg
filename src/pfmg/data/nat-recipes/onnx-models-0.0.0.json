@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "onnx-models",
+    "version": "0.0.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "onnx-models",
+    "buildsystem": "simple",
+    "build-commands": [
+      "mkdir -p ${FLATPAK_DEST}/share/io.github.shonebinu.Defuse/models",
+      "mv isnet-general-use.onnx ${FLATPAK_DEST}/share/io.github.shonebinu.Defuse/models/isnet-general-use.onnx"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://github.com/danielgatis/rembg/releases/download/v0.0.0/isnet-general-use.onnx",
+        "sha256": "60920e99c45464f2ba57bee2ad08c919a52bbf852739e96947fbb4358c0d964a"
+      }
+    ]
+  }
+}

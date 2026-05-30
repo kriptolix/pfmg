@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "python3-certifi",
+    "version": "2026.4.22",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-certifi",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"certifi\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/22/30/7cd8fdcdfbc5b869528b079bfb76dcdf6056b1a2097a662e5e8c04f42965/certifi-2026.4.22-py3-none-any.whl",
+        "sha256": "3cb2210c8f88ba2318d29b0388d1023c8492ff72ecdde4ebdaddbb13a31b1c4a",
+        "x-checker-data": {
+          "type": "pypi",
+          "name": "certifi",
+          "packagetype": "bdist_wheel"
+        }
+      }
+    ]
+  }
+}

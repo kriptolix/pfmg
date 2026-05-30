@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-base58",
+    "version": "2.1.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-base58",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"base58==2.1.0\""
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/b8/a1/d9f565e9910c09fd325dc638765e8843a19fa696275c16cc08cf3b0a3c25/base58-2.1.0-py3-none-any.whl",
+        "sha256": "8225891d501b68c843ffe30b86371f844a21c6ba00da76f52f9b998ba771fb48"
+      }
+    ]
+  }
+}

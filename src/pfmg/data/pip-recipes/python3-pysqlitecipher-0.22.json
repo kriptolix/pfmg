@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-pysqlitecipher",
+    "version": "0.22",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-pysqlitecipher",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install pysqlitecipher-0.22-py3-none-any.whl"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/9c/e7/c4372b322434355c28676837927d1570b77ab6fae0784135594d7dbcecc7/pysqlitecipher-0.22-py3-none-any.whl",
+        "sha256": "a9ab8c73346559e863c5777664b32ac89ec0b04efaa469f022289e7df15a12de"
+      }
+    ]
+  }
+}

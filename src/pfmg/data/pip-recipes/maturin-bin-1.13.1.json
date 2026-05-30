@@ -1,0 +1,45 @@
+{
+  "header": {
+    "id": "maturin-bin",
+    "version": "1.13.1",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "maturin-bin",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"maturin\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/00/94/69391af5396c6aab723932240803f49e5f3de3dd7c57d32f02d237a0ce32/maturin-1.13.1-py3-none-manylinux_2_12_x86_64.manylinux2010_x86_64.musllinux_1_1_x86_64.whl",
+        "sha256": "6b1e5916a253243e8f5f9e847b62bbc98420eec48c9ce2e2e8724c6da89d359b",
+        "only-arches": [
+          "x86_64"
+        ],
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://pypi.org/pypi/maturin/json",
+          "version-query": ".info.version",
+          "url-query": ".releases | .[$version][] | select(.filename==\"maturin-\" + $version + \"-py3-none-manylinux_2_12_x86_64.manylinux2010_x86_64.musllinux_1_1_x86_64.whl\") | .url"
+        }
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/9e/bf/4edac2667b49e3733438062ae416413b8fc8d42e1bd499ba15e1fb02fc55/maturin-1.13.1-py3-none-manylinux_2_17_aarch64.manylinux2014_aarch64.musllinux_1_1_aarch64.whl",
+        "sha256": "dc91031e0619c1e28730279ef9ee5f106c9b9ec806b013f888676b242f892eb7",
+        "only-arches": [
+          "aarch64"
+        ],
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://pypi.org/pypi/maturin/json",
+          "version-query": ".info.version",
+          "url-query": ".releases | .[$version][] | select(.filename==\"maturin-\" + $version + \"-py3-none-manylinux_2_17_aarch64.manylinux2014_aarch64.musllinux_1_1_aarch64.whl\") | .url"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "header": {
+    "id": "climaxima",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "climaxima",
+    "buildsystem": "simple",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/lokedhs/maxima-client",
+        "commit": "163421fcd1d01b5dee88fd68d1d8613b501f8278"
+      },
+      {
+        "type": "file",
+        "path": "startup.lisp"
+      },
+      {
+        "type": "file",
+        "path": "build.sh"
+      }
+    ],
+    "build-options": {
+      "env": {
+        "SBCL_HOME": "/app/sbcl/usr/local/lib/sbcl"
+      }
+    },
+    "build-commands": [
+      "cp -ar . /app/maxima-client-build",
+      "ln -s /app/maxima-client-build /app/quicklisp/local-projects/maxima-client-build",
+      "cd /app/maxima-client-build && sh build.sh",
+      "mkdir /app/maxima-client",
+      "cp /app/maxima-client-build/clim-maxima /app/maxima-client",
+      "cp -ar /app/maxima-client-build/fonts /app/maxima-client-build/images /app/maxima-client",
+      "mkdir /app/maxima-client/infoparser",
+      "cp -ar /app/maxima-client-build/infoparser/docs /app/maxima-client-build/infoparser/figures /app/maxima-client/infoparser",
+      "mkdir -p /app/bin",
+      "ln -s /app/maxima-client/clim-maxima /app/bin/clim-maxima"
+    ]
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "header": {
+    "id": "qca-qt6",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "qca-qt6",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DBUILD_WITH_QT6=ON",
+      "-DBUILD_TESTS=OFF",
+      "-DBUILD_TOOLS=OFF",
+      "-DBUILD_PLUGINS=ossl"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://invent.kde.org/libraries/qca.git",
+        "tag": "v2.3.10",
+        "commit": "df5171e3c4baf346581f15af5a040e61b166a332",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^v([\\d.]+)$"
+        }
+      }
+    ]
+  }
+}

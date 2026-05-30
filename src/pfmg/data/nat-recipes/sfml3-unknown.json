@@ -1,0 +1,36 @@
+{
+  "header": {
+    "id": "sfml3",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "sfml3",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DBUILD_SHARED_LIBS=ON"
+    ],
+    "builddir": true,
+    "post-install": [
+      "install -Dm644 --target-directory=${FLATPAK_DEST}/share/metainfo ../${FLATPAK_ID}.metainfo.xml",
+      "mkdir /app/plugins/devtools/include/SFML3",
+      "mv /app/plugins/devtools/include/SFML /app/plugins/devtools/include/SFML3/",
+      "mkdir -p /app/plugins/devtools/SFML3",
+      "mv /app/plugins/devtools/lib/* /app/plugins/devtools/SFML3/",
+      "mv /app/plugins/devtools/SFML3/SFML2 /app/plugins/devtools/lib/",
+      "mv /app/plugins/devtools/SFML3 /app/plugins/devtools/lib/"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/SFML/SFML.git",
+        "tag": "3.0.2"
+      },
+      {
+        "type": "file",
+        "path": "org.codeblocks.codeblocks.Plugin.devtools.metainfo.xml"
+      }
+    ]
+  }
+}

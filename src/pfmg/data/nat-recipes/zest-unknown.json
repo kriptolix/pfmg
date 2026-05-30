@@ -1,0 +1,52 @@
+{
+  "header": {
+    "id": "zest",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "zest",
+    "buildsystem": "simple",
+    "build-commands": [
+      "ruby rebuild-fcache.rb",
+      "make clean",
+      "rm -f package/qml/*.qml",
+      "ruby rebuild-fcache.rb",
+      "make"
+    ],
+    "build-options": {
+      "cflags": "-I/app/extensions/Plugins/ZynFusion/include",
+      "env": {
+        "VERSION": "3.0.6",
+        "BUILD_MODE": "release"
+      }
+    },
+    "post-install": [
+      "install -d $FLATPAK_DEST/lib/qml",
+      "touch $FLATPAK_DEST/lib/qml/MainWindow.qml",
+      "install -d $FLATPAK_DEST/lib/schema",
+      "install src/osc-bridge/schema/test.json $FLATPAK_DEST/lib/schema",
+      "install -d $FLATPAK_DEST/lib/font",
+      "install -D deps/nanovg/example/*.ttf $FLATPAK_DEST/lib/font",
+      "strip mruby/bin/mruby",
+      "install mruby/bin/mruby $FLATPAK_DEST/lib",
+      "strip libzest.so",
+      "install libzest.so $FLATPAK_DEST/lib",
+      "strip zest",
+      "install zest $FLATPAK_DEST/lib"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/mruby-zest/mruby-zest-build",
+        "tag": "3.0.6",
+        "commit": "dd3d45ba333011f2359e86f9a758d9836e53fe5f"
+      },
+      {
+        "type": "patch",
+        "path": "patches/zest_build-fixes.patch"
+      }
+    ]
+  }
+}

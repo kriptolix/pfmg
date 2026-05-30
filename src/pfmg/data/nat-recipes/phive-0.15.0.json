@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "phive",
+    "version": "0.15.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "phive",
+    "buildsystem": "simple",
+    "build-commands": [
+      "install -Dm0755 phive.phar ${FLATPAK_DEST}/bin/phive"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://github.com/phar-io/phive/releases/download/0.15.0/phive-0.15.0.phar",
+        "sha256": "72b32bf1de67b15b7bfb3439c4f7a987f257993127ea324556da7798e832941e",
+        "dest-filename": "phive.phar"
+      }
+    ]
+  }
+}

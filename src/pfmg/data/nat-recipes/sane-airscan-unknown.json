@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "sane-airscan",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "sane-airscan",
+    "buildsystem": "meson",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/alexpevzner/sane-airscan.git",
+        "commit": "03eddd0d8058c482462bccabadad0e56e8400cb4",
+        "tag": "0.99.37",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^([\\d.]+)$"
+        }
+      }
+    ]
+  }
+}

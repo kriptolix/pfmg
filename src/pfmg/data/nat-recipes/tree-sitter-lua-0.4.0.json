@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "tree-sitter-lua",
+    "version": "0.4.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "tree-sitter-lua",
+    "buildsystem": "simple",
+    "build-commands": [
+      "mkdir -p /app/lib/nvim/parser",
+      "cc -shared -fPIC src/parser.c src/scanner.c -I src -o /app/lib/nvim/parser/lua.so"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/tree-sitter-grammars/tree-sitter-lua/archive/v0.4.0.tar.gz",
+        "sha256": "b0977aced4a63bb75f26725787e047b8f5f4a092712c840ea7070765d4049559"
+      }
+    ]
+  }
+}

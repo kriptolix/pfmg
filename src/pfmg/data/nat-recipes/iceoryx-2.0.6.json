@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "iceoryx",
+    "version": "2.0.6",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "iceoryx",
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "subdir": "iceoryx_meta/",
+    "config-opts": [
+      "-DBUILD_DOC=OFF",
+      "-DBUILD_SHARED_LIBS=ON",
+      "-DINTROSPECTION=ON",
+      "-DTOML_CONFIG=OFF"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/eclipse-iceoryx/iceoryx/archive/refs/tags/v2.0.6.tar.gz",
+        "sha256": "a2add8ffee0c3357ef985cc46c7de79ccb754ea2bed02c61f2ff805ab2c869f1"
+      }
+    ]
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "statevar",
+    "version": "1.2.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "StateVar",
+    "buildsystem": "simple",
+    "builddir": false,
+    "build-commands": [
+      "echo '#! /usr/bin/env runhaskell' >Setup.txt",
+      "echo '> import Distribution.Simple' >>Setup.txt",
+      "echo '> main = defaultMain' >>Setup.txt",
+      "ln -s Setup.txt Setup.lhs || true",
+      "runhaskell Setup configure --prefix=/app",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "sources": [
+      {
+        "sha256": "5e4b39da395656a59827b0280508aafdc70335798b50e5d6fd52596026251825",
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/StateVar-1.2.2/StateVar-1.2.2.tar.gz"
+      },
+      {
+        "dest-filename": "StateVar.cabal",
+        "sha256": "3c022c00485fe165e3080d5da6b3ca9c9b02f62c5deebc584d1b3d1309ce673e",
+        "type": "file",
+        "url": "https://hackage.haskell.org/package/StateVar-1.2.2/revision/0.cabal"
+      }
+    ]
+  }
+}

@@ -1,0 +1,5 @@
+"manifest"
+{
+  "commandline" "/bin/steamtinkerlaunch run"
+  "commandline_waitforexitandrun" "/bin/steamtinkerlaunch waitforexitandrun"
+}

@@ -1,0 +1,47 @@
+{
+  "header": {
+    "id": "python3-gi-docgen",
+    "version": "2024.1",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-gi-docgen",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"gi-docgen\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/87/5b/aae44c6655f3801e81aa3eef09dbbf012431987ba564d7231722f68df02d/MarkupSafe-2.1.5.tar.gz",
+        "sha256": "d283d37a890ba4c1ae73ffadf8046435c76e7bc2247bbb63c00bd1a709c6544b"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/77/fe/9b9017f2a833bbb067398c7c3ebaf1f7e315a5c5cd2fb76eadb4fd8650b1/gi_docgen-2024.1-py2.py3-none-any.whl",
+        "sha256": "b2088e2a5802ca56a5de861c4b998cdeba9a451b66ab69f526be23eb2301fb62"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/31/80/3a54838c3fb461f6fec263ebf3a3a41771bd05190238de3486aae8540c36/jinja2-3.1.4-py3-none-any.whl",
+        "sha256": "bc5dd2abb727a5319567b7a813e6a2e7318c39f4f487cfe6c89c6f9c7d25197d"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/08/aa/cc0199a5f0ad350994d660967a8efb233fe0416e4639146c089643407ce6/packaging-24.1-py3-none-any.whl",
+        "sha256": "5b8f2217dbdbd2f7f384c41c628544e6d52f2d0f53c6d0c3ea61aa5d1d7ff124"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/da/ed/1da76d11aa858ee23dac5b52d9ac2db7df02b89f7679d5d8970bcd44b59c/smartypants-2.0.1-py2.py3-none-any.whl",
+        "sha256": "8db97f7cbdf08d15b158a86037cd9e116b4cf37703d24e0419a0d64ca5808f0d"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/8a/bf/64959d6187d42472acb846bcf462347c9124952c05bd57e5769d5f28f9a6/typogrify-2.0.7.tar.gz",
+        "sha256": "8be4668cda434163ce229d87ca273a11922cb1614cb359970b7dc96eed13cb38"
+      }
+    ]
+  }
+}

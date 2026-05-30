@@ -1,0 +1,69 @@
+{
+  "header": {
+    "id": "libspeechd",
+    "version": "0.12.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libspeechd",
+    "config-opts": [
+      "--disable-static",
+      "--with-ibmtts=no",
+      "--with-kali=no",
+      "--with-baratinoo=no",
+      "--with-voxin=no",
+      "--without-flite",
+      "--disable-python"
+    ],
+    "no-make-install": true,
+    "post-install": [
+      "cd ./src/api/c && make install"
+    ],
+    "cleanup": [
+      "*.la",
+      "*.a",
+      "/include"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/brailcom/speechd/releases/download/0.12.1/speech-dispatcher-0.12.1.tar.gz",
+        "sha512": "f386bb25d80e85153db4907c5adece519a86084676a39f958a4f56e53bb957cb9b1232c4e648e73ef8dc5d1ab8e0cd64a5e0d151775fdd8f3b175f47f4864422",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 13411,
+          "stable-only": true,
+          "url-template": "https://github.com/brailcom/speechd/releases/download/$version/speech-dispatcher-$version.tar.gz"
+        }
+      }
+    ],
+    "modules": [
+      {
+        "name": "dotconf",
+        "sources": [
+          {
+            "type": "archive",
+            "url": "https://github.com/williamh/dotconf/archive/refs/tags/v1.4.1.tar.gz",
+            "sha512": "a6cada8621295b268d4b4fd85bc0c207e78324c9e84754ead2fdf6c1598ec8bdf626f9c24e66063d921c95d73e83b50ab50416a9b4c9a7a631392552ec46f55a",
+            "x-checker-data": {
+              "type": "anitya",
+              "project-id": 13410,
+              "url-template": "https://github.com/williamh/dotconf/archive/refs/tags/v$version.tar.gz"
+            }
+          },
+          {
+            "type": "script",
+            "commands": [
+              "autoreconf -fiv"
+            ],
+            "dest-filename": "autogen.sh"
+          }
+        ],
+        "cleanup": [
+          "*"
+        ]
+      }
+    ]
+  }
+}

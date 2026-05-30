@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "python-svgwrite",
+    "version": "unknown",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python-svgwrite",
+    "buildsystem": "simple",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/mozman/svgwrite.git",
+        "tag": "v1.4.2",
+        "commit": "e2617741ab018956e638e18aa21827405bd8edd1"
+      }
+    ],
+    "build-commands": [
+      "pip3 install --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} --no-build-isolation ."
+    ]
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "pretty-simple",
+    "version": "4.1.2.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "pretty-simple",
+    "buildsystem": "simple",
+    "builddir": false,
+    "build-commands": [
+      "echo '#! /usr/bin/env runhaskell' >Setup.txt",
+      "echo '> import Distribution.Simple' >>Setup.txt",
+      "echo '> main = defaultMain' >>Setup.txt",
+      "ln -s Setup.txt Setup.lhs || true",
+      "runhaskell Setup configure --prefix=/app",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "sources": [
+      {
+        "sha256": "3cb47c3971599cb8c0330e1a2dbd63c67bfbe570bd879524ee802e81e7b02736",
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/pretty-simple-4.1.2.0/pretty-simple-4.1.2.0.tar.gz"
+      },
+      {
+        "dest-filename": "pretty-simple.cabal",
+        "sha256": "1c0a96e4205010d704c52883c53c98258c588ce7196763b408949d9db712ba14",
+        "type": "file",
+        "url": "https://hackage.haskell.org/package/pretty-simple-4.1.2.0/revision/0.cabal"
+      }
+    ]
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "header": {
+    "id": "liquidwar6",
+    "version": "0.6.3902",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "liquidwar6",
+    "buildsystem": "autotools",
+    "config-opts": [
+      "--enable-allinone",
+      "--disable-static",
+      "--disable-rpath"
+    ],
+    "build-options": {
+      "cflags": "-Wno-error=deprecated-declarations -Wno-error=address -Wno-error=use-after-free"
+    },
+    "post-install": [
+      "install -D /app/share/pixmaps/liquidwar6.png /app/share/icons/hicolor/128x128/apps/liquidwar6.png",
+      "install -Dm644 org.gnu.liquidwar6.metainfo.xml /app/share/metainfo/org.gnu.liquidwar6.metainfo.xml"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "http://ftp.gnu.org/gnu/liquidwar6/liquidwar6-0.6.3902.tar.gz",
+        "sha256": "d605549afae403439524e572322e45ebf5b6db8ea59505e5d51cb581a8b5e6a4"
+      },
+      {
+        "type": "shell",
+        "commands": [
+          "autoreconf -ivf"
+        ]
+      },
+      {
+        "type": "file",
+        "path": "org.gnu.liquidwar6.metainfo.xml"
+      }
+    ]
+  }
+}

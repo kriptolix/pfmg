@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "python-typing-extensions",
+    "version": "4.3.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python-typing-extensions",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=file://${PWD} --prefix=${FLATPAK_DEST} typing-extensions --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/ed/d6/2afc375a8d55b8be879d6b4986d4f69f01115e795e36827fd3a40166028b/typing_extensions-4.3.0-py3-none-any.whl",
+        "sha256": "25642c956049920a5aa49edcdd6ab1e06d7e5d467fc00e0506c44ac86fbfca02",
+        "x-checker-data": {
+          "type": "pypi",
+          "name": "typing-extensions",
+          "packagetype": "bdist_wheel"
+        }
+      }
+    ]
+  }
+}

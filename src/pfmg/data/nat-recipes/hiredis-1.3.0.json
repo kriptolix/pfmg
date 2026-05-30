@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "hiredis",
+    "version": "1.3.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "hiredis",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/redis/hiredis/archive/refs/tags/v1.3.0.tar.gz",
+        "sha256": "25cee4500f359cf5cad3b51ed62059aadfc0939b05150c1f19c7e2829123631c"
+      }
+    ]
+  }
+}

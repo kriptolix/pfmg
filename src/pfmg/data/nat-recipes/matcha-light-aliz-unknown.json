@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "matcha-light-aliz",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "Matcha-light-aliz",
+    "buildsystem": "simple",
+    "build-commands": [
+      "mkdir -pm 755 /usr/share/runtime/share/themes/Matcha-light-aliz/gtk-3.0/assets",
+      "cp -fr src/gtk/assets-aliz/* /usr/share/runtime/share/themes/Matcha-light-aliz/gtk-3.0/assets/",
+      "cp src/gtk/gtk-3.0/gtk-light-aliz.css /usr/share/runtime/share/themes/Matcha-light-aliz/gtk-3.0/gtk.css"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "archive-type": "tar-gzip",
+        "url": "https://api.github.com/repos/vinceliuice/Matcha-gtk-theme/tarball/2021-12-25",
+        "sha256": "3d05c66a554f0ab2284ac78a9adb40bae585244ecac3fa9e54467db182946210"
+      }
+    ]
+  }
+}

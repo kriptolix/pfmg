@@ -1,0 +1,46 @@
+{
+  "header": {
+    "id": "gcc-i686",
+    "version": "15.2.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "gcc-i686",
+    "build-options": {
+      "config-opts": [
+        "--target=i686-w64-mingw32"
+      ]
+    },
+    "config-opts": [
+      "--disable-multilib",
+      "--enable-checking=release",
+      "--enable-languages=c,c++,lto",
+      "--with-system-zlib",
+      "--enable-shared",
+      "--enable-static",
+      "--enable-threads=posix",
+      "--enable-libstdcxx-time=yes",
+      "--enable-libstdcxx-filesystem-ts=yes",
+      "--enable-fully-dynamic-string",
+      "--enable-libgomp",
+      "--enable-lto",
+      "--with-isl",
+      "--enable-cloog-backend=isl",
+      "--disable-sjlj-exceptions",
+      "--with-dwarf2"
+    ],
+    "ensure-writable": [
+      "/lib/gcc/*/*/install-tools/*.conf"
+    ],
+    "install-rule": "install-strip",
+    "builddir": true,
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://ftp.gnu.org/gnu/gcc/gcc-15.2.0/gcc-15.2.0.tar.xz",
+        "sha256": "438fd996826b0c82485a29da03a72d71d6e3541a83ec702df4271f6fe025d24e"
+      }
+    ]
+  }
+}

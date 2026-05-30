@@ -1,0 +1,20 @@
+{
+  "header": {
+    "id": "gobject-introspection",
+    "version": "1.71",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "gobject-introspection",
+    "disabled": true,
+    "buildsystem": "meson",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.gnome.org/sources/gobject-introspection/1.71/gobject-introspection-1.71.0.tar.xz",
+        "sha256": "555dc3997c2892228543029f58610b83fc1da733e4e3d18e9363d7b5a81164dd"
+      }
+    ]
+  }
+}

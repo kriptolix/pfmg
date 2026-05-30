@@ -1,0 +1,26 @@
+{
+  "header": {
+    "id": "libreocoop",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libreocoop",
+    "buildsystem": "cmake-ninja",
+    "no-make-install": true,
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+    ],
+    "post-install": [
+      "install -Dm 755 librecoop.so /app/lib/dhewm3"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/Stradex/librecoop/",
+        "commit": "0daec5b6a7553cb4b06d65b717e2d9a411ff47ca"
+      }
+    ]
+  }
+}

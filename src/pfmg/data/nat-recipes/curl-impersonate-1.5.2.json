@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "curl-impersonate",
+    "version": "1.5.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "curl-impersonate",
+    "buildsystem": "simple",
+    "build-commands": [
+      "install -Dm755 curl* /app/bin/"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/lexiforest/curl-impersonate/releases/download/v1.5.2/curl-impersonate-v1.5.2.x86_64-linux-gnu.tar.gz",
+        "sha256": "29907d879bdc783fc46e5841585c2455d46fec5acdcfc2c65a3aa8485bb49850",
+        "strip-components": 0,
+        "only-arches": [
+          "x86_64"
+        ]
+      },
+      {
+        "type": "archive",
+        "url": "https://github.com/lexiforest/curl-impersonate/releases/download/v1.5.2/curl-impersonate-v1.5.2.aarch64-linux-gnu.tar.gz",
+        "sha256": "e7d3ef043b01caeea68246645eb43c3a55e6f7f0ac5895bc0ffd99a98b0702c5",
+        "strip-components": 0,
+        "only-arches": [
+          "aarch64"
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "header": {
+    "id": "flexdock",
+    "version": "1.2.5",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "flexdock",
+    "buildsystem": "simple",
+    "build-options": {
+      "env": {
+        "JAVA_HOME": "/usr/lib/sdk/openjdk17/jvm/openjdk-17",
+        "ANT_HOME": "/app/share/ant",
+        "PATH": "/usr/lib/sdk/openjdk17/bin:/app/share/ant/bin:/usr/bin:/bin"
+      }
+    },
+    "build-commands": [
+      "sed -i 's/source=\"1\\.5\" target=\"1\\.5\"/source=\"8\" target=\"8\"/g' build.xml",
+      "ant jar",
+      "mkdir -p /app/share/java",
+      "cp build/flexdock-[0-9]*.jar /app/share/java/"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://gitlab.com/scilab/forge/flexdock/-/archive/1.2.5/flexdock-1.2.5.tar.gz",
+        "sha256": "eb26c65b6ce347b52c02cb2bbce1ec595392baa64347ef9df8fde5acff5d8aaa",
+        "strip-components": 1
+      }
+    ]
+  }
+}

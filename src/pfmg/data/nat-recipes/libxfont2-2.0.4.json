@@ -1,0 +1,36 @@
+{
+  "header": {
+    "id": "libxfont2",
+    "version": "2.0.4",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libxfont2",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://xorg.freedesktop.org/archive/individual/lib/libXfont2-2.0.4.tar.bz2",
+        "sha256": "6d151b3368e5035efede4b6264c0fdc6662c1c99dbc2de425e3480cababc69e6"
+      }
+    ],
+    "cleanup": [
+      "*"
+    ],
+    "modules": [
+      {
+        "name": "libfontenc",
+        "sources": [
+          {
+            "type": "archive",
+            "url": "https://xorg.freedesktop.org/archive/individual/lib/libfontenc-1.1.4.tar.bz2",
+            "sha256": "2cfcce810ddd48f2e5dc658d28c1808e86dcf303eaff16728b9aa3dbc0092079"
+          }
+        ],
+        "cleanup": [
+          "*"
+        ]
+      }
+    ]
+  }
+}

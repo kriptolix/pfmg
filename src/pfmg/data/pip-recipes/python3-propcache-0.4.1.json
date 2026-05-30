@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-propcache",
+    "version": "0.4.1",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-propcache",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --prefix=/app propcache-0.4.1-py3-none-any.whl"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/5b/5a/bc7b4a4ef808fa59a816c17b20c4bef6884daebbdf627ff2a161da67da19/propcache-0.4.1-py3-none-any.whl",
+        "sha256": "af2a6052aeb6cf17d3e46ee169099044fd8224cbaf75c76a2ef596e8163e2237"
+      }
+    ]
+  }
+}

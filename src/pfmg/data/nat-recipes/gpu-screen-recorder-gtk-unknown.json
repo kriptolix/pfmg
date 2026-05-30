@@ -1,0 +1,42 @@
+{
+  "header": {
+    "id": "gpu-screen-recorder-gtk",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "gpu-screen-recorder-gtk",
+    "buildsystem": "simple",
+    "build-commands": [
+      "meson setup build",
+      "meson configure --prefix=$FLATPAK_DEST --buildtype=release -Dstrip=true build",
+      "ninja -C build",
+      "strip build/gpu-screen-recorder-gtk",
+      "install -Dm755 build/gpu-screen-recorder-gtk \"$FLATPAK_DEST/bin/gpu-screen-recorder-gtk\"",
+      "install -Dm644 com.dec05eba.gpu_screen_recorder.desktop \"$FLATPAK_DEST/share/applications/com.dec05eba.gpu_screen_recorder.desktop\"",
+      "install -Dm644 \"icons/hicolor/32x32/status/com.dec05eba.gpu_screen_recorder.tray-idle.png\" \"$FLATPAK_DEST/share/icons/hicolor/32x32/status/com.dec05eba.gpu_screen_recorder.tray-idle.png\"",
+      "install -Dm644 \"icons/hicolor/32x32/status/com.dec05eba.gpu_screen_recorder.tray-recording.png\" \"$FLATPAK_DEST/share/icons/hicolor/32x32/status/com.dec05eba.gpu_screen_recorder.tray-recording.png\"",
+      "install -Dm644 \"icons/hicolor/32x32/status/com.dec05eba.gpu_screen_recorder.tray-paused.png\" \"$FLATPAK_DEST/share/icons/hicolor/32x32/status/com.dec05eba.gpu_screen_recorder.tray-paused.png\"",
+      "install -Dm644 \"icons/hicolor/32x32/apps/com.dec05eba.gpu_screen_recorder.png\" \"$FLATPAK_DEST/share/icons/hicolor/32x32/apps/com.dec05eba.gpu_screen_recorder.png\"",
+      "install -Dm644 \"icons/hicolor/64x64/status/com.dec05eba.gpu_screen_recorder.tray-idle.png\" \"$FLATPAK_DEST/share/icons/hicolor/64x64/status/com.dec05eba.gpu_screen_recorder.tray-idle.png\"",
+      "install -Dm644 \"icons/hicolor/64x64/status/com.dec05eba.gpu_screen_recorder.tray-recording.png\" \"$FLATPAK_DEST/share/icons/hicolor/64x64/status/com.dec05eba.gpu_screen_recorder.tray-recording.png\"",
+      "install -Dm644 \"icons/hicolor/64x64/status/com.dec05eba.gpu_screen_recorder.tray-paused.png\" \"$FLATPAK_DEST/share/icons/hicolor/64x64/status/com.dec05eba.gpu_screen_recorder.tray-paused.png\"",
+      "install -Dm644 \"icons/hicolor/64x64/apps/com.dec05eba.gpu_screen_recorder.png\" \"$FLATPAK_DEST/share/icons/hicolor/64x64/apps/com.dec05eba.gpu_screen_recorder.png\"",
+      "install -Dm644 \"icons/hicolor/128x128/status/com.dec05eba.gpu_screen_recorder.tray-idle.png\" \"$FLATPAK_DEST/share/icons/hicolor/128x128/status/com.dec05eba.gpu_screen_recorder.tray-idle.png\"",
+      "install -Dm644 \"icons/hicolor/128x128/status/com.dec05eba.gpu_screen_recorder.tray-recording.png\" \"$FLATPAK_DEST/share/icons/hicolor/128x128/status/com.dec05eba.gpu_screen_recorder.tray-recording.png\"",
+      "install -Dm644 \"icons/hicolor/128x128/status/com.dec05eba.gpu_screen_recorder.tray-paused.png\" \"$FLATPAK_DEST/share/icons/hicolor/128x128/status/com.dec05eba.gpu_screen_recorder.tray-paused.png\"",
+      "install -Dm644 \"icons/hicolor/128x128/apps/com.dec05eba.gpu_screen_recorder.png\" \"$FLATPAK_DEST/share/icons/hicolor/128x128/apps/com.dec05eba.gpu_screen_recorder.png\"",
+      "gtk-update-icon-cache -q -t -f \"$FLATPAK_DEST/share/icons/hicolor\"",
+      "update-desktop-database -q \"$FLATPAK_DEST/share/applications\""
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://dec05eba.com/snapshot/gpu-screen-recorder-gtk.git.r507.d3e5d91.tar.gz",
+        "sha512": "32695ac201cc71f19421acbc4dec0e3a963a2ec3c4b31d9eb5a98b9818e333bb9a26bdfafad0c0b24812ef9e5761916ffe2809ca57822e76581176386a3e924a",
+        "strip-components": 0
+      }
+    ]
+  }
+}

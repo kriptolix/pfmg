@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "font-util",
+    "version": "1.4.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "font-util",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://xorg.freedesktop.org/archive/individual/font/font-util-1.4.1.tar.gz",
+        "sha256": "f029ae80cdd75d89bee7f7af61c21e07982adfb9f72344a158b99f91f77ef5ed",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 15055,
+          "stable-only": true,
+          "url-template": "https://xorg.freedesktop.org/archive/individual/font/font-util-$version.tar.gz"
+        }
+      }
+    ]
+  }
+}

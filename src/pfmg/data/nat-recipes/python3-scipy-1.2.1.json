@@ -1,0 +1,31 @@
+{
+  "header": {
+    "id": "python3-scipy",
+    "version": "1.2.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-scipy",
+    "buildsystem": "simple",
+    "build-commands": [
+      "python3 setup.py build -j 0",
+      "python3 setup.py install --prefix=/app --root=/ --optimize=1"
+    ],
+    "build-options": {
+      "env": {
+        "ATLAS": "None",
+        "BLAS": "/app/lib",
+        "LAPACK": "/app/lib",
+        "LDFLAGS": "-shared"
+      }
+    },
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://files.pythonhosted.org/packages/a9/b4/5598a706697d1e2929eaf7fe68898ef4bea76e4950b9efbe1ef396b8813a/scipy-1.2.1.tar.gz",
+        "sha256": "e085d1babcb419bbe58e2e805ac61924dac4ca45a07c9fa081144739e500aa3c"
+      }
+    ]
+  }
+}

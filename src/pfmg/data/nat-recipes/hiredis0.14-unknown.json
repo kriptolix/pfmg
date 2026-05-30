@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "hiredis0.14",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "hiredis0.14",
+    "buildsystem": "simple",
+    "build-commands": [
+      "make PREFIX=${FLATPAK_DEST} install"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/redis/hiredis.git",
+        "tag": "v0.14.1",
+        "commit": "f9717aed445547c8ab11a3a4117f648c06e62b56"
+      }
+    ]
+  }
+}

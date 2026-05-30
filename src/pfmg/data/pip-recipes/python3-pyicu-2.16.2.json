@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-pyicu",
+    "version": "2.16.2",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-PyICU",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"PyICU\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/b7/d5/354eb1bf84dcf4ab0bfa46f0620ecf68fe313bb082c26872ceb7a5021f94/pyicu-2.16.2.tar.gz",
+        "sha256": "006d51e24b5ec76df6ec2130f3dde269c51db8b8cfebb7d45a427dde0d10aa52"
+      }
+    ]
+  }
+}

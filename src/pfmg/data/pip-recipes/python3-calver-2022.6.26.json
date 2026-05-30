@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-calver",
+    "version": "2022.6.26",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-calver",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"calver\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/b5/00/96cbed7c019c49ee04b8a08357a981983db7698ae6de402e57097cefc9ad/calver-2022.6.26.tar.gz",
+        "sha256": "e05493a3b17517ef1748fbe610da11f10485faa7c416b9d33fd4a52d74894f8b"
+      }
+    ]
+  }
+}

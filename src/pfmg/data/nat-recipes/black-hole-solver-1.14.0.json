@@ -1,0 +1,29 @@
+{
+  "header": {
+    "id": "black-hole-solver",
+    "version": "1.14.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "black-hole-solver",
+    "buildsystem": "cmake",
+    "build-options": {
+      "env": {
+        "PERL5LIB": "/app/lib/perl5:/app/lib/perl5/arch"
+      }
+    },
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://fc-solve.shlomifish.org/downloads/fc-solve/black-hole-solver-1.14.0.tar.xz",
+        "sha256": "5c47bd093dbb160f4b090fd670ab7c12b4371d39b17b3bbd8c6c4a12975557c0",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 229362,
+          "url-template": "https://fc-solve.shlomifish.org/downloads/fc-solve/black-hole-solver-$version.tar.xz"
+        }
+      }
+    ]
+  }
+}

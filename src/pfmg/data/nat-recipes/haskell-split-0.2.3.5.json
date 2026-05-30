@@ -1,0 +1,33 @@
+{
+  "header": {
+    "id": "haskell-split",
+    "version": "0.2.3.5",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "haskell-split",
+    "buildsystem": "simple",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/split-0.2.3.5/split-0.2.3.5.tar.gz",
+        "sha256": "bf8aa8d610354a2b576946a6c838251ec5988c8374100638e6b2604513b93159",
+        "x-checker-data": {
+          "type": "html",
+          "url": "https://www.stackage.org/lts-21",
+          "version-pattern": ">split-([\\d.]+)<",
+          "url-template": "https://hackage.haskell.org/package/split-$version/split-$version.tar.gz"
+        }
+      }
+    ],
+    "build-commands": [
+      "runhaskell Setup configure --prefix=/app --extra-lib-dirs=/app/lib",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "cleanup": [
+      "*"
+    ]
+  }
+}

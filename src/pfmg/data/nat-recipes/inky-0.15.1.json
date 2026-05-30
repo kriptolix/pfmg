@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "inky",
+    "version": "0.15.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "inky",
+    "buildsystem": "simple",
+    "build-commands": [
+      "mkdir -p /app/inky",
+      "cp -r * /app/inky"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/inkle/inky/releases/download/0.15.1/Inky_linux.zip",
+        "sha256": "1356a2bc8097ffffd43bcdfce30acac6d6687c9faead71bb74842e5d0380f861",
+        "strip-components": 0,
+        "only-arches": [
+          "x86_64"
+        ]
+      }
+    ]
+  }
+}

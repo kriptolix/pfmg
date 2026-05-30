@@ -1,0 +1,39 @@
+{
+  "header": {
+    "id": "signus",
+    "version": "1.96.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "signus",
+    "buildsystem": "autotools",
+    "build-options": {
+      "cxxflags": "--std=c++03"
+    },
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/signus-game/signus/releases/download/v1.96.0/signus-1.96.0.tar.bz2",
+        "sha256": "caeb40b4d62e06039755ce84c1bf44d0eb2df975f122ce2423751d22ea9d17bd"
+      },
+      {
+        "type": "file",
+        "path": "io.github.signus_game.signus.desktop"
+      },
+      {
+        "type": "file",
+        "path": "io.github.signus_game.signus.metainfo.xml"
+      },
+      {
+        "type": "file",
+        "path": "io.github.signus_game.signus.png"
+      }
+    ],
+    "post-install": [
+      "install -Dm644 ${FLATPAK_ID}.metainfo.xml ${FLATPAK_DEST}/share/metainfo/${FLATPAK_ID}.metainfo.xml",
+      "install -Dm644 ${FLATPAK_ID}.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop",
+      "install -Dm644 ${FLATPAK_ID}.png ${FLATPAK_DEST}/share/icons/hicolor/128x128/apps/${FLATPAK_ID}.png"
+    ]
+  }
+}

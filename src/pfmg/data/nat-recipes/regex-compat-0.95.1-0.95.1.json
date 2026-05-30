@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "regex-compat-0.95.1",
+    "version": "0.95.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "regex-compat-0.95.1",
+    "only-arches": [
+      "x86_64"
+    ],
+    "buildsystem": "simple",
+    "build-commands": [
+      "ghc -threaded --make Setup",
+      "./Setup configure --prefix=/app",
+      "./Setup build",
+      "./Setup install"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "sha256": "d57cb1a5a4d66753b18eaa37a1621246f660472243b001894f970037548d953b",
+        "url": "https://hackage.haskell.org/package/regex-compat-0.95.1/regex-compat-0.95.1.tar.gz"
+      }
+    ]
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "opl3-soundfont",
+    "version": "1.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "opl3-soundfont",
+    "buildsystem": "simple",
+    "build-commands": [
+      "install -D -m 644 -t $FLATPAK_DEST/share/soundfonts OPL-3_FM_128M.sf2",
+      "ln -s $FLATPAK_DEST/share/soundfonts/{OPL-3_FM_128M,default}.sf2"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://gitlab.com/psi29a/opl3-soundfont/-/raw/1.1/OPL-3_FM_128M.sf2",
+        "sha256": "800887998e40507a774b70a3f6c07729d2584802eec82b35be33f393dceaee0b"
+      }
+    ]
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "rinutils",
+    "version": "0.10.3",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "rinutils",
+    "buildsystem": "cmake-ninja",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/shlomif/rinutils/releases/download/0.10.3/rinutils-0.10.3.tar.xz",
+        "sha256": "f9e527d37a6cc8c7b8870ada63caa24f32ab0d29fd1116df3ebb686583030955",
+        "x-checker-data": {
+          "type": "html",
+          "url": "https://github.com/shlomif/rinutils/releases/latest",
+          "version-pattern": "https://github.com/shlomif/rinutils/releases/expanded_assets/([\\d\\.]+\\d)",
+          "url-template": "https://github.com/shlomif/rinutils/releases/download/$version/rinutils-$version.tar.xz"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "header": {
+    "id": "d3-graphviz",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "d3-graphviz",
+    "buildsystem": "simple",
+    "build-options": {
+      "append-path": "/usr/lib/sdk/node20/bin"
+    },
+    "build-commands": [
+      "npm install --offline --cache=$FLATPAK_BUILDER_BUILDDIR/flatpak-node/npm-cache",
+      "npm run build",
+      "mkdir -p $FLATPAK_DEST/src/delineate/graph_view/d3-graphviz",
+      "cp -r node_modules $FLATPAK_DEST/src/delineate/graph_view/d3-graphviz",
+      "cp -r build $FLATPAK_DEST/src/delineate/graph_view/d3-graphviz"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/magjac/d3-graphviz.git",
+        "tag": "v5.6.0"
+      },
+      "generated-sources.json"
+    ]
+  }
+}

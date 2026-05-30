@@ -1,0 +1,26 @@
+{
+  "header": {
+    "id": "fonttools",
+    "version": "4.62.1",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "fonttools",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} --no-build-isolation \"fonttools\""
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/9a/08/7012b00a9a5874311b639c3920270c36ee0c445b69d9989a85e5c92ebcb0/fonttools-4.62.1.tar.gz",
+        "sha256": "e54c75fd6041f1122476776880f7c3c3295ffa31962dc6ebe2543c00dca58b5d",
+        "x-checker-data": {
+          "type": "pypi",
+          "name": "fonttools"
+        }
+      }
+    ]
+  }
+}

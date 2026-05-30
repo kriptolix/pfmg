@@ -1,0 +1,33 @@
+{
+  "header": {
+    "id": "flare-engine",
+    "version": "1.15",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "flare-engine",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DCMAKE_POLICY_VERSION_MINIMUM=3.10"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/flareteam/flare-engine/archive/v1.15.tar.gz",
+        "sha256": "642db16111487bf8a3fb7ebadcfc635909c7eaf91df7723ee22fae1caac9fe93",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 21433,
+          "url-template": "https://github.com/flareteam/flare-engine/archive/v$version.tar.gz",
+          "stable-only": true
+        }
+      }
+    ],
+    "post-install": [
+      "mkdir /app/bin",
+      "mv /app/games/flare /app/bin",
+      "for size in 16 24 32 48 64 128 256; do\n rsvg-convert -w $size -h $size -f png -o $size.png distribution/flare_logo.svg\n install -Dm644 $size.png /app/share/icons/hicolor/${size}x${size}/apps/org.flarerpg.Flare.png\n done"
+    ]
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "generically",
+    "version": "0.1.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "generically",
+    "buildsystem": "simple",
+    "builddir": false,
+    "build-commands": [
+      "echo '#! /usr/bin/env runhaskell' >Setup.txt",
+      "echo '> import Distribution.Simple' >>Setup.txt",
+      "echo '> main = defaultMain' >>Setup.txt",
+      "ln -s Setup.txt Setup.lhs || true",
+      "runhaskell Setup configure --prefix=/app",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "sources": [
+      {
+        "sha256": "04c5a436bec4b041f71a733f56a1bd7f435f63dde8d3eb5c1f48d55b4dbc43cf",
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/generically-0.1.1/generically-0.1.1.tar.gz"
+      },
+      {
+        "dest-filename": "generically.cabal",
+        "sha256": "1b1b638ac022d2404becb6c117b04bfdc2247429ba58596271ca2cdc413288c2",
+        "type": "file",
+        "url": "https://hackage.haskell.org/package/generically-0.1.1/revision/3.cabal"
+      }
+    ]
+  }
+}

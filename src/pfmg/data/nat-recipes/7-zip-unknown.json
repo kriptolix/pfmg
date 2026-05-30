@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "7-zip",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "7-zip",
+    "buildsystem": "simple",
+    "build-commands": [
+      "for bundle in Alone2 SFXCon; do pushd CPP/7zip/Bundles/${bundle}; make -j ${FLATPAK_BUILDER_N_JOBS} -f ../../cmpl_gcc.mak; popd; done",
+      "install -Dm755 CPP/7zip/Bundles/Alone2/b/g/7zz   $FLATPAK_DEST/bin/7zz"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/ip7z/7zip.git",
+        "tag": "26.00",
+        "commit": "839151eaaad24771892afaae6bac690e31e58384"
+      }
+    ]
+  }
+}

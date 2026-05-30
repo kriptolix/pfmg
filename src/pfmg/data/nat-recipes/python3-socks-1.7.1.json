@@ -1,0 +1,26 @@
+{
+  "header": {
+    "id": "python3-socks",
+    "version": "1.7.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-socks",
+    "buildsystem": "simple",
+    "build-commands": [
+      "python3 setup.py install --prefix=${FLATPAK_DEST} --root=/"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://files.pythonhosted.org/packages/bd/11/293dd436aea955d45fc4e8a35b6ae7270f5b8e00b53cf6c024c83b657a11/PySocks-1.7.1.tar.gz",
+        "sha256": "3f8804571ebe159c380ac6de37643bb4685970655d3bba243530d6558b799aa0",
+        "x-checker-data": {
+          "type": "pypi",
+          "name": "PySocks"
+        }
+      }
+    ]
+  }
+}

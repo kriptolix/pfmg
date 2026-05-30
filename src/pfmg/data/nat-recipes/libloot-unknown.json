@@ -1,0 +1,54 @@
+{
+  "header": {
+    "id": "libloot",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libloot",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DLIBLOOT_BUILD_TESTS=OFF",
+      "-DLIBLOOT_INSTALL_DOCS=OFF",
+      "-DESPLUGIN_URL=/run/build/libloot/6.1.1.tar.gz",
+      "-DLIBLOADORDER_URL=/run/build/libloot/18.2.2.tar.gz",
+      "-DLOOT_CONDITION_INTERPRETER_URL=/run/build/libloot/5.2.0.tar.gz"
+    ],
+    "build-options": {
+      "env": {
+        "CARGO_HOME": "/run/build/libloot/cargo"
+      }
+    },
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/loot/libloot.git",
+        "tag": "0.25.5"
+      },
+      {
+        "type": "patch",
+        "path": "patches/libloot/CMakeLists.txt.patch"
+      },
+      {
+        "type": "file",
+        "url": "https://github.com/Ortham/esplugin/archive/refs/tags/6.1.1.tar.gz",
+        "sha256": "8896859a6469e810c6e5430ed910fa8f8c31d39e032703b87ab090759663a240"
+      },
+      "dependencies/esplugin-sources.json",
+      {
+        "type": "file",
+        "url": "https://github.com/Ortham/libloadorder/archive/refs/tags/18.2.2.tar.gz",
+        "sha256": "5e4c12e91180abbf201be70b3073fce791bdee2d70f33f89b35942446d3b5782"
+      },
+      "dependencies/libloadorder-sources.json",
+      {
+        "type": "file",
+        "url": "https://github.com/loot/loot-condition-interpreter/archive/refs/tags/5.2.0.tar.gz",
+        "sha256": "48db9d1022c65c6ea53b5febbbb8a45d089ac8e8773f8e14b069387fab80948d"
+      },
+      "dependencies/loot-condition-interpreter-sources.json"
+    ]
+  }
+}

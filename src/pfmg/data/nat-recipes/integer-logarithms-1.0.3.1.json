@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "integer-logarithms",
+    "version": "1.0.3.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "integer-logarithms",
+    "buildsystem": "simple",
+    "builddir": false,
+    "build-commands": [
+      "echo '#! /usr/bin/env runhaskell' >Setup.txt",
+      "echo '> import Distribution.Simple' >>Setup.txt",
+      "echo '> main = defaultMain' >>Setup.txt",
+      "ln -s Setup.txt Setup.lhs || true",
+      "runhaskell Setup configure --prefix=/app",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "sources": [
+      {
+        "sha256": "9b0a9f9fab609b15cd015865721fb05f744a1bc77ae92fd133872de528bbea7f",
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/integer-logarithms-1.0.3.1/integer-logarithms-1.0.3.1.tar.gz"
+      },
+      {
+        "dest-filename": "integer-logarithms.cabal",
+        "sha256": "0595a16d458c9c5caa425dc8ebbeb5d9adffb0c8daf4720c1d93dfcfc31dd690",
+        "type": "file",
+        "url": "https://hackage.haskell.org/package/integer-logarithms-1.0.3.1/revision/6.cabal"
+      }
+    ]
+  }
+}

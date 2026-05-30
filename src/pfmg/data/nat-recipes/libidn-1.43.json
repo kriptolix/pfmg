@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "libidn",
+    "version": "1.43",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libidn",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://ftp.gnu.org/gnu/libidn/libidn-1.43.tar.gz",
+        "sha256": "bdc662c12d041b2539d0e638f3a6e741130cdb33a644ef3496963a443482d164",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 1639,
+          "stable-only": true,
+          "url-template": "https://ftp.gnu.org/gnu/libidn/libidn-$version.tar.gz"
+        }
+      }
+    ]
+  }
+}

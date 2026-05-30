@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "netcdfcxx",
+    "version": "4.3.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "netcdfcxx",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/Unidata/netcdf-cxx4/archive/refs/tags/v4.3.1.tar.gz",
+        "sha256": "e3fe3d2ec06c1c2772555bf1208d220aab5fee186d04bd265219b0bc7a978edc",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 13548,
+          "url-template": "https://github.com/Unidata/netcdf-cxx4/archive/refs/tags/v$version.tar.gz"
+        }
+      },
+      {
+        "type": "patch",
+        "path": "netcdf-cxx4-logging.patch"
+      }
+    ]
+  }
+}

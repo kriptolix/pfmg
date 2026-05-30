@@ -1,0 +1,49 @@
+{
+  "header": {
+    "id": "lirc",
+    "version": "0.10.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "lirc",
+    "rm-configure": true,
+    "config-opts": [
+      "--with-systemdsystemunitdir=/app/lib/systemd"
+    ],
+    "cleanup": [
+      "/bin",
+      "/sbin",
+      "/share"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://downloads.sourceforge.net/project/lirc/LIRC/0.10.2/lirc-0.10.2.tar.bz2",
+        "sha256": "3d44ec8274881cf262f160805641f0827ffcc20ade0d85e7e6f3b90e0d3d222a",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 10762,
+          "url-template": "https://downloads.sourceforge.net/project/lirc/LIRC/$version/lirc-$version.tar.bz2"
+        }
+      },
+      {
+        "type": "shell",
+        "commands": [
+          "sed -i s/Ubuntu/ignoreme/g configure.ac"
+        ]
+      },
+      {
+        "type": "patch",
+        "path": "patches/lirc-dont-build-docs.patch"
+      },
+      {
+        "type": "script",
+        "dest-filename": "autogen.sh",
+        "commands": [
+          "autoreconf -vfi"
+        ]
+      }
+    ]
+  }
+}

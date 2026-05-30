@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-python-vlc",
+    "version": "3.0.20123",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-python-vlc",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"python-vlc>=3.0.18121\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/31/c0/00eb4c1ac241835224e34b7005143a0788353b8b56286660317cb82cdf94/python_vlc-3.0.20123-py3-none-any.whl",
+        "sha256": "903b3dc3602804958837c69907f3d3485921ef8424c254c7314db3d6037f8d62"
+      }
+    ]
+  }
+}

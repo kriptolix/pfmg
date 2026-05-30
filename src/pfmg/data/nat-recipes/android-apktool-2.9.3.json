@@ -1,0 +1,30 @@
+{
+  "header": {
+    "id": "android-apktool",
+    "version": "2.9.3",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "android-apktool",
+    "buildsystem": "simple",
+    "build-commands": [
+      "install -Dm0644 apktool_2.9.3.jar \"/app/share/android-apktool/apktool.jar\"",
+      "tar xf apktool-install-linux-r04-brut1.tar.bz2",
+      "sed -i 's/libdir=.*progdir/libdir=\"\\/app\\/share\\/'android-apktool'/' apktool",
+      "install -pDm 0755 apktool -t \"/app/bin/\""
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://github.com/iBotPeaches/Apktool/releases/download/v2.9.3/apktool_2.9.3.jar",
+        "sha256": "7956eb04194300ce0d0a84ad18771eebc94b89fb8d1ddcce8ea4c056818646f4"
+      },
+      {
+        "type": "file",
+        "url": "http://connortumbleson.com/apktool/googlecode/apktool-install-linux-r04-brut1.tar.bz2",
+        "sha256": "cffa5c0a46bab9c66da02cc5db651c3a8321bee98580815e44c802d62a696dfa"
+      }
+    ]
+  }
+}

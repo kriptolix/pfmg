@@ -1,0 +1,29 @@
+{
+  "header": {
+    "id": "dictes-aspell",
+    "version": "1.11",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "dictEs-aspell",
+    "buildsystem": "simple",
+    "build-commands": [
+      "./configure",
+      "make datadir=/app/share/dicts dictdir=/app/share/dicts",
+      "make datadir=/app/share/dicts dictdir=/app/share/dicts install"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://ftp.gnu.org/gnu/aspell/dict/es/aspell6-es-1.11-2.tar.bz2",
+        "sha256": "ad367fa1e7069c72eb7ae37e4d39c30a44d32a6aa73cedccbd0d06a69018afcc",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 16361,
+          "url-template": "https://ftp.gnu.org/gnu/aspell/dict/es/aspell6-es-$version.tar.bz2"
+        }
+      }
+    ]
+  }
+}

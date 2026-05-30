@@ -1,0 +1,45 @@
+{
+  "header": {
+    "id": "tsmn1n3",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "tsmn1n3",
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "no-make-install": true,
+    "make-args": [
+      "TS-M1N3_VST3"
+    ],
+    "config-opts": [
+      "-DCMAKE_AR=/usr/bin/gcc-ar",
+      "-DCMAKE_NM=/usr/bin/gcc-nm",
+      "-DCMAKE_RANLIB=/usr/bin/gcc-ranlib",
+      "-DCMAKE_BUILD_TYPE=Release"
+    ],
+    "post-install": [
+      "install -d ${FLATPAK_DEST}/vst3",
+      "strip TS-M1N3_artefacts/Release/VST3/*.vst3/Contents/*-linux/*.so",
+      "cp -a TS-M1N3_artefacts/Release/VST3/*.vst3 ${FLATPAK_DEST}/vst3/"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/GuitarML/TS-M1N3.git",
+        "tag": "v1.2.0",
+        "commit": "d3e8e0d1f90953464b831493bd9360ee7553a8a7",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^v([\\d.]+)$"
+        }
+      },
+      {
+        "//": "https://github.com/GuitarML/TS-M1N3/pull/16",
+        "type": "patch",
+        "path": "patches/tsn1n3-aax.patch"
+      }
+    ]
+  }
+}

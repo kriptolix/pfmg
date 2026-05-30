@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-libusb1",
+    "version": "1.9.2",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-libusb1",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"libusb1==1.9.2\""
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/14/bd/29515a44719569aa0942551571d89539a1c0633eb78a6d695b462145827f/libusb1-1.9.2-py3-none-any.whl",
+        "sha256": "c3dd4df43b5c38f65bf599413810d021f5f98396c4b6f66765fb98193aca11b0"
+      }
+    ]
+  }
+}

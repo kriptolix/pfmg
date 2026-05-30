@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "netcat",
+    "version": "0.7.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "netcat",
+    "buildsystem": "autotools",
+    "post-install": [
+      "rm -rf $FLATPAK_DEST/share/locale/it",
+      "rm -rf $FLATPAK_DEST/share/locale/sk"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "http://sourceforge.net/projects/netcat/files/netcat/0.7.1/netcat-0.7.1.tar.gz",
+        "sha256": "30719c9a4ffbcf15676b8f528233ccc54ee6cba96cb4590975f5fd60c68a066f",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 21535,
+          "url-template": "http://sourceforge.net/projects/netcat/files/netcat/$version/netcat-$version.tar.gz"
+        }
+      }
+    ],
+    "cleanup": [
+      "/man",
+      "/info"
+    ]
+  }
+}

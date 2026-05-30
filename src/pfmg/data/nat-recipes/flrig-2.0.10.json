@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "flrig",
+    "version": "2.0.10",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "flrig",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://www.w1hkj.org/files/flrig/flrig-2.0.10.tar.gz",
+        "sha256": "6a5f2b87d4fffed410a35b3a176b5d04e60ed4de3fda545079f3656e42ef42bd",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 9624,
+          "url-template": "https://www.w1hkj.org/files/flrig/flrig-$version.tar.gz"
+        }
+      }
+    ]
+  }
+}

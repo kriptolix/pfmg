@@ -1,0 +1,31 @@
+{
+  "header": {
+    "id": "cimguisdl2cross",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "CimguiSDL2Cross",
+    "buildsystem": "cmake-ninja",
+    "no-make-install": true,
+    "subdir": "cimgui",
+    "post-install": [
+      "install -Dm644 cimgui.so /app/lib/cimgui.so"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/exelix11/CimguiSDL2Cross.git",
+        "tag": "r2",
+        "commit": "f878bb6680baf17d36a0f0cf21cdfeb091a77ec1",
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://api.github.com/repos/exelix11/CimguiSDL2Cross/tags",
+          "tag-query": "first | .name",
+          "version-query": "$tag"
+        }
+      }
+    ]
+  }
+}

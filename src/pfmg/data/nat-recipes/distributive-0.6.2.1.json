@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "distributive",
+    "version": "0.6.2.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "distributive",
+    "buildsystem": "simple",
+    "builddir": false,
+    "build-commands": [
+      "echo '#! /usr/bin/env runhaskell' >Setup.txt",
+      "echo '> import Distribution.Simple' >>Setup.txt",
+      "echo '> main = defaultMain' >>Setup.txt",
+      "ln -s Setup.txt Setup.lhs || true",
+      "runhaskell Setup configure --prefix=/app",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "sources": [
+      {
+        "sha256": "d7351392e078f58caa46630a4b9c643e1e2e9dddee45848c5c8358e7b1316b91",
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/distributive-0.6.2.1/distributive-0.6.2.1.tar.gz"
+      },
+      {
+        "dest-filename": "distributive.cabal",
+        "sha256": "0f99f5541cca04acf89b64432b03422b6408e830a8dff30e6c4334ef1a48680c",
+        "type": "file",
+        "url": "https://hackage.haskell.org/package/distributive-0.6.2.1/revision/1.cabal"
+      }
+    ]
+  }
+}

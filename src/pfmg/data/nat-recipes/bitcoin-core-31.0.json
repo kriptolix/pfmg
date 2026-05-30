@@ -1,0 +1,52 @@
+{
+  "header": {
+    "id": "bitcoin-core",
+    "version": "31.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "bitcoin-core",
+    "buildsystem": "simple",
+    "build-commands": [
+      "install -m 0744 -D -t /app/bin/internal bin/bitcoind",
+      "install -m 0744 -D -t /app/bin/internal bin/bitcoin-qt",
+      "install -m 0744 -D -t /app/bin/internal bin/bitcoin-cli",
+      "install -m 0744 -D -t /app/bin/internal libexec/test_bitcoin"
+    ],
+    "post-install": [
+      "/app/bin/internal/test_bitcoin"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "only-arches": [
+          "x86_64"
+        ],
+        "url": "https://bitcoincore.org/bin/bitcoin-core-31.0/bitcoin-31.0-x86_64-linux-gnu.tar.gz",
+        "sha256": "d3e4c58a35b1d0a97a457462c94f55501ad167c660c245cb1ffa565641c65074",
+        "x-checker-data": {
+          "type": "html",
+          "url": "https://bitcoincore.org/en/releasesrss.xml",
+          "version-pattern": "<title>Bitcoin Core ([\\d\\.]+)</title>",
+          "is-main-source": true,
+          "url-template": "https://bitcoincore.org/bin/bitcoin-core-$version/bitcoin-$version-x86_64-linux-gnu.tar.gz"
+        }
+      },
+      {
+        "type": "archive",
+        "only-arches": [
+          "aarch64"
+        ],
+        "url": "https://bitcoincore.org/bin/bitcoin-core-31.0/bitcoin-31.0-aarch64-linux-gnu.tar.gz",
+        "sha256": "4de1d568dedd48604f75132421bc0abeca432639589b49a3909c81db3a813112",
+        "x-checker-data": {
+          "type": "html",
+          "url": "https://bitcoincore.org/en/releasesrss.xml",
+          "version-pattern": "<title>Bitcoin Core ([\\d\\.]+)</title>",
+          "url-template": "https://bitcoincore.org/bin/bitcoin-core-$version/bitcoin-$version-aarch64-linux-gnu.tar.gz"
+        }
+      }
+    ]
+  }
+}

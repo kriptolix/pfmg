@@ -31,29 +31,24 @@ def cmd_search(
       pfmg search numpy --kind pip
       pfmg search libz  --kind nat
       pfmg search clang --kind ext --module
+      pfmg search absl  --kind ext
     """
-    from pfmg.resolution.resolvers import ProfileIndex, ProviderKind
+    from pfmg.resolution.profiles import ProfileIndex, ProviderKind
+    from pfmg.resolution.matchers import sdk_matches_query, ext_matches_query
 
     index = ProfileIndex()
     found = False
-    q = query.lower()
 
     # --- SDK profiles ---
     if kind in (None, "sdk"):
         hits = []
         for sdk in index.sdks:
-            for field, items in [
-                ("library",    sdk.libraries),
-                ("pkgconfig",  sdk.pkgconfig),
-                ("executable", sdk.executables),
-            ]:
-                matched = [i for i in items if q in i.lower()]
-                for m in matched:
-                    hits.append((sdk.sdk_id, sdk.sdk_version, f"{field}: {m}"))
+            for field_label, matched_value in sdk_matches_query(query, sdk):
+                hits.append((sdk.sdk_id, sdk.sdk_version, f"{field_label}: {matched_value}"))
         if hits:
             found = True
             t = Table(title=f"SDK profiles — [cyan]{query}[/cyan]", show_header=True)
-            t.add_column("SDK",     style="cyan")
+            t.add_column("SDK",        style="cyan")
             t.add_column("Version")
             t.add_column("Matched on", style="dim")
             for row in hits:
@@ -64,20 +59,14 @@ def cmd_search(
     if kind in (None, "ext"):
         hits = []
         for ext in index.extensions:
-            for field, items in [
-                ("executable", ext.executables),
-                ("pkgconfig",  ext.pkgconfig),
-                ("library",    ext.libraries),
-            ]:
-                matched = [i for i in items if q in i.lower()]
-                for m in matched:
-                    hits.append((ext.extension_id, ext.version, f"{field}: {m}"))
+            for field_label, matched_value in ext_matches_query(query, ext):
+                hits.append((ext.extension_id, ext.version, f"{field_label}: {matched_value}"))
         if hits:
             found = True
             t = Table(title=f"Extensions — [cyan]{query}[/cyan]", show_header=True)
             t.add_column("Extension ID", style="magenta")
             t.add_column("Version")
-            t.add_column("Matched on", style="dim")
+            t.add_column("Matched on",   style="dim")
             for row in hits:
                 t.add_row(*row)
             console.print(t)

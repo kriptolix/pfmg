@@ -1,0 +1,113 @@
+{
+  "header": {
+    "id": "libosinfo",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libosinfo",
+    "buildsystem": "meson",
+    "config-opts": [
+      "-Dwith-pci-ids-path=/app/share/hwdata/pci.ids",
+      "-Dwith-usb-ids-path=/app/share/hwdata/usb.ids"
+    ],
+    "post-install": [
+      "install -Dm644 ../pci.ids /app/share/hwdata/pci.ids",
+      "install -Dm644 ../usb.ids /app/share/hwdata/usb.ids"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://gitlab.com/libosinfo/libosinfo.git",
+        "tag": "v1.12.0",
+        "commit": "b505ef5161d2552102a743acd4ad83298d3d8f99",
+        "x-checker-data": {
+          "type": "git",
+          "url": "https://gitlab.com/libosinfo/libosinfo.git",
+          "tag-pattern": "^(v[\\d.]+)$"
+        }
+      },
+      {
+        "type": "file",
+        "path": "pci.ids"
+      },
+      {
+        "type": "file",
+        "path": "usb.ids"
+      },
+      {
+        "type": "patch",
+        "path": "libosinfo-osinfo-db-loader-workaround.patch"
+      },
+      {
+        "type": "patch",
+        "path": "libosinfo-dont-use-deprecated-libxml2-api.patch"
+      }
+    ],
+    "modules": [
+      {
+        "name": "cdrkit",
+        "buildsystem": "cmake-ninja",
+        "sources": [
+          {
+            "type": "git",
+            "url": "https://github.com/Distrotech/cdrkit",
+            "commit": "7b4bb72389ea5ea3ecc94545036dcff4728ec38a"
+          },
+          {
+            "type": "patch",
+            "path": "genisoimage-extern.patch"
+          },
+          {
+            "type": "patch",
+            "path": "cdrkit-build-fix.patch"
+          },
+          {
+            "type": "patch",
+            "path": "cdrkit-add-cmake_minimum_required.patch"
+          }
+        ]
+      },
+      {
+        "name": "osinfo-db-tools",
+        "buildsystem": "meson",
+        "sources": [
+          {
+            "type": "git",
+            "url": "https://gitlab.com/libosinfo/osinfo-db-tools.git",
+            "tag": "v1.12.0",
+            "commit": "e5564be303bfac49cc3490bd0fada342cd65566f",
+            "x-checker-data": {
+              "type": "git",
+              "url": "https://gitlab.com/libosinfo/osinfo-db-tools.git",
+              "tag-pattern": "^(v[\\d.]+)$"
+            }
+          }
+        ]
+      },
+      {
+        "name": "osinfo-db",
+        "buildsystem": "simple",
+        "builddir": true,
+        "build-commands": [
+          "make",
+          "osinfo-db-import --dir /app/share/osinfo/ osinfo-db-*.tar.xz"
+        ],
+        "sources": [
+          {
+            "type": "git",
+            "url": "https://gitlab.com/libosinfo/osinfo-db.git",
+            "tag": "v20251212",
+            "commit": "70fe571c605541e7be76b50f430c1cd13959c5b9",
+            "x-checker-data": {
+              "type": "git",
+              "url": "https://gitlab.com/libosinfo/osinfo-db.git",
+              "tag-pattern": "^(v\\d+)$"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

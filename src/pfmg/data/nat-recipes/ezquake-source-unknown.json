@@ -1,0 +1,33 @@
+{
+  "header": {
+    "id": "ezquake-source",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "ezquake-source",
+    "buildsystem": "simple",
+    "build-commands": [
+      "cmake --preset dynamic",
+      "cmake --build build-dynamic --config Release",
+      "install -Dm 744 build-dynamic/Release/ezquake-linux-${FLATPAK_ARCH} /app/bin/ezquake-linux",
+      "install -Dm 644 dist/linux/io.github.ezQuake.desktop -t /app/share/applications",
+      "install -Dm 644 dist/linux/io.github.ezQuake.48.png /app/share/icons/hicolor/48x48/apps/io.github.ezQuake.png",
+      "install -Dm 644 dist/linux/io.github.ezQuake.64.png /app/share/icons/hicolor/64x64/apps/io.github.ezQuake.png",
+      "install -Dm 644 dist/linux/io.github.ezQuake.128.png /app/share/icons/hicolor/128x128/apps/io.github.ezQuake.png"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/QW-Group/ezquake-source",
+        "tag": "3.6.9",
+        "commit": "b2d448f2c5ac4be4ec40c03dcc9a018c1f837deb",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^([\\d.]+)$"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-hpack",
+    "version": "4.1.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-hpack",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install hpack-4.1.0-py3-none-any.whl"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/07/c6/80c95b1b2b94682a72cbdbfb85b81ae2daffa4291fbfa1b1464502ede10d/hpack-4.1.0-py3-none-any.whl",
+        "sha256": "157ac792668d995c657d93111f46b4535ed114f0c9c8d672271bbec7eae1b496"
+      }
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "header": {
+    "id": "livevent",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "livevent",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/libevent/libevent.git",
+        "tag": "release-2.1.12-stable"
+      }
+    ]
+  }
+}

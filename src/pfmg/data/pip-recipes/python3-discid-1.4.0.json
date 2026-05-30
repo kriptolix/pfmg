@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-discid",
+    "version": "1.4.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-discid",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"discid\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/29/64/ca6cb42642108af91af780913b97765c9ef0c19c7e603b1eb50746659780/discid-1.4.0.tar.gz",
+        "sha256": "50fd3db445caeb44b9f7763777ed49688c3cf4633da99d340c25b919496ba8b5"
+      }
+    ]
+  }
+}

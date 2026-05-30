@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "patch",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "patch",
+    "buildsystem": "simple",
+    "build-options": {
+      "no-debuginfo": true
+    },
+    "build-commands": [
+      "./bootstrap",
+      "./configure",
+      "make",
+      "install -d /app/km",
+      "install -d /app/km/app/",
+      "install -d /app/km/app/bin",
+      "mv src/patch /app/km/app/bin/patch"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://git.savannah.gnu.org/git/patch.git",
+        "commit": "48ceda8200aaf30c3ce42c31cd70ff6087db2425",
+        "tag": "v2.8"
+      }
+    ]
+  }
+}

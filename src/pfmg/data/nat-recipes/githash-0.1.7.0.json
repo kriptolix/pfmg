@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "githash",
+    "version": "0.1.7.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "githash",
+    "buildsystem": "simple",
+    "builddir": false,
+    "build-commands": [
+      "echo '#! /usr/bin/env runhaskell' >Setup.txt",
+      "echo '> import Distribution.Simple' >>Setup.txt",
+      "echo '> main = defaultMain' >>Setup.txt",
+      "ln -s Setup.txt Setup.lhs || true",
+      "runhaskell Setup configure --prefix=/app",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "sources": [
+      {
+        "sha256": "1ad5e7c26bd9c9c4e4c3232206694b153845fe11f227e39d214eef0d95f330d4",
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/githash-0.1.7.0/githash-0.1.7.0.tar.gz"
+      },
+      {
+        "dest-filename": "githash.cabal",
+        "sha256": "cb405aed03e1da9a5ea7601e4d7eea3739104a8a6e47ac4970e079d616326836",
+        "type": "file",
+        "url": "https://hackage.haskell.org/package/githash-0.1.7.0/revision/0.cabal"
+      }
+    ]
+  }
+}

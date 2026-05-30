@@ -1,0 +1,34 @@
+{
+  "header": {
+    "id": "patch-electron-desktop-filename",
+    "version": "1.3",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "patch-electron-desktop-filename",
+    "buildsystem": "simple",
+    "build-options": {
+      "append-path": "/usr/lib/sdk/golang/bin"
+    },
+    "build-commands": [
+      "go build -mod=vendor .",
+      "install -Dm755 patch-electron-desktop-filename -t ${FLATPAK_DEST}/bin"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://codeberg.org/JakobDev/patch-electron-desktop-filename/archive/1.3.tar.gz",
+        "sha256": "9428cd446071139ebe1b1132ae8803f28dd46efdc50ea2dd5621e8f6f4962052",
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://codeberg.org/api/v1/repos/JakobDev/patch-electron-desktop-filename/releases/latest",
+          "timestamp-query": ".published_at",
+          "version-query": ".tag_name",
+          "url-query": ".tarball_url"
+        }
+      },
+      "go.mod.yml"
+    ]
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "glob",
+    "version": "0.10.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "Glob",
+    "buildsystem": "simple",
+    "builddir": false,
+    "build-commands": [
+      "echo '#! /usr/bin/env runhaskell' >Setup.txt",
+      "echo '> import Distribution.Simple' >>Setup.txt",
+      "echo '> main = defaultMain' >>Setup.txt",
+      "ln -s Setup.txt Setup.lhs || true",
+      "runhaskell Setup configure --prefix=/app",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "sources": [
+      {
+        "sha256": "6af672ac8427d35cbd42d64142dc288feab266f0be92dae3c696e8860d8173c0",
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/Glob-0.10.2/Glob-0.10.2.tar.gz"
+      },
+      {
+        "dest-filename": "Glob.cabal",
+        "sha256": "dd2ddbecae8f84e8f4cacb5b856901a19c25ceaa11f2525d3ee88d034acb0081",
+        "type": "file",
+        "url": "https://hackage.haskell.org/package/Glob-0.10.2/revision/3.cabal"
+      }
+    ]
+  }
+}

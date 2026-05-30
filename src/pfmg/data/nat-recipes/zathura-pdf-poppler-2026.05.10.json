@@ -1,0 +1,74 @@
+{
+  "header": {
+    "id": "zathura-pdf-poppler",
+    "version": "2026.05.10",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "zathura-pdf-poppler",
+    "buildsystem": "meson",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://pwmt.org/projects/zathura-pdf-poppler/download/zathura-pdf-poppler-2026.05.10.tar.xz",
+        "sha256": "364c38634273c06252087324bf01dbde2885b932795265aee44006aa2701fe23",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 14847,
+          "url-template": "https://pwmt.org/projects/zathura-pdf-poppler/download/zathura-pdf-poppler-$version.tar.xz"
+        }
+      }
+    ],
+    "modules": [
+      {
+        "name": "popplerdata",
+        "buildsystem": "cmake-ninja",
+        "sources": [
+          {
+            "type": "archive",
+            "url": "https://poppler.freedesktop.org/poppler-data-0.4.12.tar.gz",
+            "sha256": "c835b640a40ce357e1b83666aabd95edffa24ddddd49b8daff63adb851cdab74",
+            "x-checker-data": {
+              "type": "anitya",
+              "project-id": 3687,
+              "url-template": "https://poppler.freedesktop.org/poppler-data-$version.tar.xz"
+            }
+          }
+        ]
+      },
+      {
+        "name": "poppler",
+        "buildsystem": "cmake-ninja",
+        "config-opts": [
+          "-DCMAKE_INSTALL_LIBDIR=/app/lib",
+          "-DCMAKE_INSTALL_INCLUDEDIR=/app/include",
+          "-DBUILD_GTK_TESTS=OFF",
+          "-DBUILD_CPP_TESTS=OFF",
+          "-DENABLE_CPP=OFF",
+          "-DENABLE_BOOST=OFF",
+          "-DENABLE_GOBJECT_INTROSPECTION=OFF",
+          "-DENABLE_LIBOPENJPEG=openjpeg2",
+          "-DENABLE_QT5=OFF",
+          "-DENABLE_QT6=OFF"
+        ],
+        "cleanup": [
+          "/bin",
+          "/share"
+        ],
+        "sources": [
+          {
+            "type": "archive",
+            "url": "https://poppler.freedesktop.org/poppler-26.05.0.tar.xz",
+            "sha256": "6fef27ff04f37db43054c86bcdff6128c9fb1f6af4ef3c8b369a7e9abd68d0bb",
+            "x-checker-data": {
+              "type": "anitya",
+              "project-id": 3686,
+              "url-template": "https://poppler.freedesktop.org/poppler-$version.tar.xz"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

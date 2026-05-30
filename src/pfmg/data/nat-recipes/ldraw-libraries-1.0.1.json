@@ -1,0 +1,52 @@
+{
+  "header": {
+    "id": "ldraw-libraries",
+    "version": "1.0.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "ldraw-libraries",
+    "buildsystem": "simple",
+    "build-commands": [
+      "install -d ${FLATPAK_DEST}/build_staging/",
+      "mv -f complete.zip ${FLATPAK_DEST}/build_staging/",
+      "mv -f lpub3dldrawunf.zip ${FLATPAK_DEST}/build_staging/",
+      "mv -f tenteparts.zip ${FLATPAK_DEST}/build_staging/",
+      "mv -f vexiqparts.zip ${FLATPAK_DEST}/build_staging/",
+      "unzip -d ${FLATPAK_DEST}/build_staging -q ${FLATPAK_DEST}/build_staging/complete.zip"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "dest-filename": "complete.zip",
+        "url": "https://github.com/trevorsandy/lpub3d_libs/releases/download/v1.0.1/complete-25-09.zip",
+        "sha256": "13703b0eb55575b88b6a677c7b33c394246010af31d74adbc38ea74abc839633"
+      },
+      {
+        "type": "file",
+        "dest-filename": "lpub3dldrawunf.zip",
+        "url": "https://github.com/trevorsandy/lpub3d_libs/releases/download/v1.0.1/lpub3dldrawunf-25-09-04.zip",
+        "sha256": "43875f5b31f9f1bb309f36b0349eb823d50ef771f4283e792283bae32b7389d9"
+      },
+      {
+        "type": "file",
+        "url": "https://github.com/trevorsandy/lpub3d_libs/releases/download/v1.0.1/tenteparts.zip",
+        "sha256": "95b65664c455f4895f480ab8e3ed9e96046ca69ee1b296922d76a369e2cf2846"
+      },
+      {
+        "type": "file",
+        "url": "https://github.com/trevorsandy/lpub3d_libs/releases/download/v1.0.1/vexiqparts.zip",
+        "sha256": "e2f4114c8ff6bfe7e5a43b6c88fb47f32328ddb147578456ec0825aa76803b20"
+      }
+    ],
+    "post-install": [
+      "if test -d ${FLATPAK_DEST}/build_staging; then echo \"Staging directory ${FLATPAK_DEST}/build_staging/ created.\"; fi",
+      "if test -f ${FLATPAK_DEST}/build_staging/complete.zip; then echo \"Official LDraw library staged to ${FLATPAK_DEST}/build_staging/complete.zip.\"; fi",
+      "if test -f ${FLATPAK_DEST}/build_staging/lpub3dldrawunf.zip; then echo \"Unofficial LDraw library staged to ${FLATPAK_DEST}/build_staging/lpub3dldrawunf.zip.\"; fi",
+      "if test -f ${FLATPAK_DEST}/build_staging/tenteparts.zip; then echo \"TENTE LDraw library staged to ${FLATPAK_DEST}/build_staging/tenteparts.zip.\"; fi",
+      "if test -f ${FLATPAK_DEST}/build_staging/vexiqparts.zip; then echo \"VEX LDraw library staged to ${FLATPAK_DEST}/build_staging/vexiqparts.zip.\"; fi",
+      "if test -d ${FLATPAK_DEST}/build_staging/ldraw; then echo \"LDraw library extracted to ${FLATPAK_DEST}/build_staging/ldraw.\"; fi"
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "isl",
+    "version": "0.27",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "isl",
+    "config-opts": [
+      "--disable-shared",
+      "--enable-static"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://libisl.sourceforge.io/isl-0.27.tar.gz",
+        "sha256": "7a1a3f04d57c7c72fee5a6148cd3b02b05db6a6dd9a58def7bdc00972a6301c3"
+      }
+    ]
+  }
+}

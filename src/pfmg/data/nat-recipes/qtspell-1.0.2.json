@@ -1,0 +1,34 @@
+{
+  "header": {
+    "id": "qtspell",
+    "version": "1.0.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "qtspell",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DQT_VER:STRING=6"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/manisandro/qtspell/archive/refs/tags/1.0.2.tar.gz",
+        "sha256": "faa7add9d771350a63e66bb6c9b91b130097c2399f6f85c2a9a0ea8e0ceb79d8",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 11246,
+          "stable-only": true,
+          "url-template": "https://github.com/manisandro/qtspell/archive/refs/tags/$version.tar.gz"
+        }
+      }
+    ],
+    "cleanup": [
+      "*.a",
+      "*.la",
+      "/bin",
+      "/include"
+    ]
+  }
+}

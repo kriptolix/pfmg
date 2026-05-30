@@ -1,0 +1,19 @@
+{
+  "header": {
+    "id": "mutest",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "mutest",
+    "buildsystem": "meson",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/ebassi/mutest.git",
+        "commit": "f0dcb2a48a4a8ef3dc1f7327bb0d4056a798c1a7"
+      }
+    ]
+  }
+}

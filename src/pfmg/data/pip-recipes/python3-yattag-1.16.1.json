@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-yattag",
+    "version": "1.16.1",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-yattag",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"yattag\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/1c/1a/d3b2a2b8f843f5e7138471c4a5c9172ef62bb41239aa4371784b7448110c/yattag-1.16.1.tar.gz",
+        "sha256": "baa8f254e7ea5d3e0618281ad2ff5610e0e5360b3608e695c29bfb3b29d051f4"
+      }
+    ]
+  }
+}

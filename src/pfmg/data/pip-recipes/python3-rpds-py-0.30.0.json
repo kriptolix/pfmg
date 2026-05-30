@@ -1,0 +1,29 @@
+{
+  "header": {
+    "id": "python3-rpds-py",
+    "version": "0.30.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-rpds-py",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"rpds-py\" --no-build-isolation"
+    ],
+    "build-options": {
+      "append-path": "/usr/lib/sdk/rust-stable/bin",
+      "env": {
+        "CARGO_HOME": "/run/build/python3-rpds-py/cargo"
+      }
+    },
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/20/af/3f2f423103f1113b36230496629986e0ef7e199d2aa8392452b484b38ced/rpds_py-0.30.0.tar.gz",
+        "sha256": "dd8ff7cf90014af0c0f787eea34794ebf6415242ee1d6fa91eaba725cc441e84"
+      },
+      "cargo-sources-rpds-py.json"
+    ]
+  }
+}

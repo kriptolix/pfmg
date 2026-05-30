@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "osinfo-db-tools",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "osinfo-db-tools",
+    "buildsystem": "meson",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://gitlab.com/libosinfo/osinfo-db-tools.git",
+        "tag": "v1.12.0",
+        "commit": "e5564be303bfac49cc3490bd0fada342cd65566f",
+        "x-checker-data": {
+          "type": "git",
+          "url": "https://gitlab.com/libosinfo/osinfo-db-tools.git",
+          "tag-pattern": "^(v[\\d.]+)$"
+        }
+      }
+    ]
+  }
+}

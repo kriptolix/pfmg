@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "base-orphans-0.7",
+    "version": "0.7",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "base-orphans-0.7",
+    "only-arches": [
+      "x86_64"
+    ],
+    "buildsystem": "simple",
+    "build-commands": [
+      "ghc -threaded --make Setup",
+      "./Setup configure --prefix=/app",
+      "./Setup build",
+      "./Setup install"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "sha256": "0aaddc39e3d0bba13acfcf0009ef57bf91d2ee74b295041d63e14c6caf4dee14",
+        "url": "https://hackage.haskell.org/package/base-orphans-0.7/base-orphans-0.7.tar.gz"
+      }
+    ]
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "matio",
+    "version": "1.5.30",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "matio",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/tbeu/matio/archive/v1.5.30.tar.gz",
+        "sha256": "cd514c42e13bb39477e7d8fdeaa1502014c552a6a53f0678809cce6951db2bc1",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 1893,
+          "stable-only": true,
+          "url-template": "https://github.com/tbeu/matio/archive/v$version.tar.gz"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-zc.lockfile",
+    "version": "3.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-zc.lockfile",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"zc.lockfile==3.0.post1\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/a7/aa/47f00f32605177a945f3a1b36a1b2bb9a39260566541280fcee27cbff5cf/zc.lockfile-3.0.post1-py3-none-any.whl",
+        "sha256": "ddb2d71088c061dc8a5edbaa346b637d742ca1e1564be75cb98e7dcae715de19"
+      }
+    ]
+  }
+}

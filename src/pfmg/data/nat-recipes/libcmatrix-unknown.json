@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "libcmatrix",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libcmatrix",
+    "buildsystem": "meson",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://source.puri.sm/Librem5/libcmatrix.git",
+        "tag": "v0.0.4",
+        "commit": "5999b7afcb02b459fe13a2b93ab018f3af6d2b05",
+        "x-checker-data": {
+          "type": "git",
+          "version-scheme": "semantic"
+        }
+      }
+    ]
+  }
+}

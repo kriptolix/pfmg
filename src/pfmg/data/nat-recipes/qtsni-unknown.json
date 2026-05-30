@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "qtsni",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "qtsni",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DQT_PLUGINS_DIR=/usr/share/runtime/lib/plugins/QtSNI"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/ilya-fedin/qtsni-theme",
+        "tag": "v1.0.3",
+        "commit": "8c01f375936a4b0869f418a0d75a40fa6d16c727"
+      }
+    ]
+  }
+}

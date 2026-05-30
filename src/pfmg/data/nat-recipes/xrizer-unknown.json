@@ -1,0 +1,52 @@
+{
+  "header": {
+    "id": "xrizer",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "xrizer",
+    "buildsystem": "simple",
+    "build-options": {
+      "append-path": "/usr/lib/sdk/rust-stable/bin:/usr/lib/sdk/llvm18/bin",
+      "cflags": "-idirafter/usr/include",
+      "cxxflags": "-idirafter/usr/include",
+      "env": {
+        "CARGO_HOME": "/run/build/xrizer/cargo"
+      },
+      "arch": {
+        "aarch64": {
+          "ldflags": "-L/usr/lib/aarch64-linux-gnu -Wl,--warn-unresolved-symbols",
+          "env": {
+            "CC": "/app/aarch64-unknown-linux-gnu/bin/aarch64-unknown-linux-gnu-gcc",
+            "CXX": "/app/aarch64-unknown-linux-gnu/bin/aarch64-unknown-linux-gnu-g++",
+            "RUSTFLAGS": "-C linker=/app/aarch64-unknown-linux-gnu/bin/aarch64-unknown-linux-gnu-gcc"
+          }
+        },
+        "x86_64": {
+          "ldflags": "-L/usr/lib/x86_64-linux-gnu -Wl,--warn-unresolved-symbols",
+          "env": {
+            "CC": "/app/x86_64-unknown-linux-gnu/bin/x86_64-unknown-linux-gnu-gcc",
+            "CXX": "/app/x86_64-unknown-linux-gnu/bin/x86_64-unknown-linux-gnu-g++",
+            "RUSTFLAGS": "-C linker=/app/x86_64-unknown-linux-gnu/bin/x86_64-unknown-linux-gnu-gcc"
+          }
+        }
+      }
+    },
+    "build-commands": [
+      "cargo --offline fetch --manifest-path Cargo.toml --verbose",
+      "cargo xbuild --release",
+      "mkdir /app/xrizer",
+      "cp -rL target/release/bin/ /app/xrizer/"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/Supreeeme/xrizer.git",
+        "tag": "be664bb93eebdd82336d00230154bacc6f8b9765"
+      },
+      "xrizer-gen-src.json"
+    ]
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "header": {
+    "id": "c-stdaux",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "c-stdaux",
+    "buildsystem": "simple",
+    "build-options": {
+      "env": {
+        "PKG_CONFIG_PATH": "/app/lib"
+      }
+    },
+    "build-commands": [
+      "mkdir build",
+      "meson setup build -Dprefix=$FLATPAK_DEST",
+      "ninja -C build",
+      "ninja -C build install"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/c-util/c-stdaux.git",
+        "commit": "6bc45c0f6e14df97bb4869d8202cf5d020c97fa8"
+      }
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "cherrytree",
+    "version": "0.99.47.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "cherrytree",
+    "buildsystem": "cmake-ninja",
+    "build-options": {
+      "cxxflags": "-D_FLATPAK_BUILD=1"
+    },
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://www.giuspen.net/software/cherrytree_0.99.47.2.tar.xz",
+        "sha256": "ca22f0ec6a02ed79a403d38e10c5c1630c493976111bc4e7532877e33f6981b7"
+      }
+    ]
+  }
+}

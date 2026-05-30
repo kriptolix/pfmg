@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "resourcet-1.2.1",
+    "version": "1.2.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "resourcet-1.2.1",
+    "only-arches": [
+      "x86_64"
+    ],
+    "buildsystem": "simple",
+    "build-commands": [
+      "ghc -threaded --make Setup",
+      "./Setup configure --prefix=/app",
+      "./Setup build",
+      "./Setup install"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "sha256": "e765c12a6ec0f70efc3c938750060bc17569b99578aa635fd4da0c4d06fcf267",
+        "url": "https://hackage.haskell.org/package/resourcet-1.2.1/resourcet-1.2.1.tar.gz"
+      }
+    ]
+  }
+}

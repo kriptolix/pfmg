@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "librm",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "librm",
+    "buildsystem": "meson",
+    "config-opts": [
+      "--libdir=/app/lib",
+      "--buildtype=release"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://gitlab.com/tabos/librm.git",
+        "commit": "8517ef7e6c530952b71636296da290afab60e4c5"
+      }
+    ]
+  }
+}

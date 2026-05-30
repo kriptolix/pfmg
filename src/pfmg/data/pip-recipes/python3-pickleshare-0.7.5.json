@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-pickleshare",
+    "version": "0.7.5",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-pickleshare",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"pickleshare==0.7.5\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/9a/41/220f49aaea88bc6fa6cba8d05ecf24676326156c23b991e80b3f2fc24c77/pickleshare-0.7.5-py2.py3-none-any.whl",
+        "sha256": "9649af414d74d4df115d5d718f82acb59c9d418196b7b4290ed47a12ce62df56"
+      }
+    ]
+  }
+}

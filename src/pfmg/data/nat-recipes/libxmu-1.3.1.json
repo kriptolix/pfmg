@@ -1,0 +1,19 @@
+{
+  "header": {
+    "id": "libxmu",
+    "version": "1.3.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libXmu",
+    "buildsystem": "autotools",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://xorg.freedesktop.org/archive/individual/lib/libXmu-1.3.1.tar.gz",
+        "sha256": "5c8f44e26ccc9b14188599524e67ce788a205b38e297834babdeb12090be835b"
+      }
+    ]
+  }
+}

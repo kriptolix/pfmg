@@ -1,0 +1,26 @@
+{
+  "header": {
+    "id": "xdelta3",
+    "version": "3.1.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "xdelta3",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/jmacd/xdelta/archive/refs/tags/v3.1.0.tar.gz",
+        "sha256": "7515cf5378fca287a57f4e2fee1094aabc79569cfe60d91e06021a8fd7bae29d"
+      },
+      {
+        "type": "shell",
+        "commands": [
+          "autoreconf -si ./xdelta3"
+        ]
+      }
+    ],
+    "buildsystem": "autotools",
+    "subdir": "xdelta3"
+  }
+}

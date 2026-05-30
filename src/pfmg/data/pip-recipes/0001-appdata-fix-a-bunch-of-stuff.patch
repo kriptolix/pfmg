@@ -1,0 +1,42 @@
+From 1dce62745b84e4b611eafb07ed719d6522889d09 Mon Sep 17 00:00:00 2001
+From: Link Mauve <linkmauve@linkmauve.fr>
+Date: Sat, 2 May 2026 03:48:09 +0200
+Subject: [PATCH] appdata: fix a bunch of stuff
+
+Everything is upstream already.
+---
+ data/io.poez.Poezio.appdata.xml | 9 ++++++++-
+ 1 file changed, 8 insertions(+), 1 deletion(-)
+
+diff --git a/data/io.poez.Poezio.appdata.xml b/data/io.poez.Poezio.appdata.xml
+index bd23bb62..458275fa 100644
+--- a/data/io.poez.Poezio.appdata.xml
++++ b/data/io.poez.Poezio.appdata.xml
+@@ -7,9 +7,11 @@
+   <project_license>GPL-3.0+</project_license>
+   <metadata_license>CC0-1.0</metadata_license>
+   <developer_name>Poezio Team</developer_name>
+-  <icon type="remote">https://poez.io/img/logo.svg</icon>
++  <icon type="stock">io.poez.Poezio</icon>
++  <launchable type="desktop-id">io.poez.Poezio.desktop</launchable>
+ 
+   <url type="homepage">https://poez.io</url>
++  <url type="vcs-browser">https://codeberg.org/poezio/poezio</url>
+   <url type="bugtracker">https://codeberg.org/poezio/poezio/issues</url>
+   <url type="help">https://doc.poez.io</url>
+ 
+@@ -68,6 +70,11 @@
+   </provides>
+ 
+   <releases>
++    <release version="0.17" date="2026-04-21"/>
++    <release version="0.16.1" date="2026-04-07"/>
++    <release version="0.16" date="2026-03-24"/>
++    <release version="0.15.1" date="2025-03-28"/>
++    <release version="0.15" date="2025-03-27"/>
+     <release version="0.14" date="2022-04-10"/>
+     <release version="0.13.1" date="2020-05-31"/>
+     <release version="0.13" date="2020-05-24"/>
+-- 
+2.54.0
+

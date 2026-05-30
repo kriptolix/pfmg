@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "gfan",
+    "version": "0.7",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "gfan",
+    "buildsystem": "simple",
+    "build-commands": [
+      "ln -s /app/plugins/pack1/include/cddlib /app/plugins/pack1/include/cdd",
+      "make -j$FLATPAK_BUILDER_N_JOBS",
+      "make install BINDIR=/app/plugins/pack1/bin"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "http://deb.debian.org/debian/pool/main/g/gfan/gfan_0.7.orig.tar.gz",
+        "sha256": "ab833757e1e4d4a98662f4aa691394013ea9a226f6416b8f8565356d6fcc989e"
+      },
+      {
+        "type": "patch",
+        "paths": [
+          "patches/gfan/fix-build.patch",
+          "patches/gfan/gcc-14.patch",
+          "patches/gfan/gfan-cflags.patch"
+        ]
+      }
+    ]
+  }
+}

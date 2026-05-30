@@ -1,0 +1,43 @@
+{
+  "header": {
+    "id": "muezzin",
+    "version": "2.6.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "muezzin",
+    "buildsystem": "simple",
+    "build-options": {
+      "env": {
+        "XDG_CACHE_HOME": "/run/build/muezzin/flatpak-node/cache",
+        "npm_config_cache": "/run/build/muezzin/flatpak-node/npm-cache",
+        "npm_config_nodedir": "/usr/lib/sdk/node14",
+        "npm_config_offline": "true"
+      }
+    },
+    "subdir": "main",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/DBChoco/Muezzin/archive/refs/tags/v2.6.0.tar.gz",
+        "sha256": "66c3bed5458894be04a05ef5aec54623598e963c2dcfb01e34e1b99a4573ce00",
+        "dest": "main"
+      },
+      "generated-sources.json",
+      {
+        "type": "script",
+        "dest-filename": "muezzin-run",
+        "commands": [
+          "zypak-wrapper.sh /app/main/muezzin \"$@\""
+        ]
+      }
+    ],
+    "build-commands": [
+      "npm install --offline",
+      ". ../flatpak-node/electron-builder-arch-args.sh\njq '.build.linux.target=\"dir\"' <<<$(<package.json) > package.json\nnpm run dist -- $ELECTRON_BUILDER_ARCH_ARGS  --linux --dir\n",
+      "cp -a dist/linux*unpacked /app/main",
+      "install -Dm755 -t /app/bin/ ../muezzin-run"
+    ]
+  }
+}

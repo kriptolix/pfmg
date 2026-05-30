@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "contemporary-icons",
+    "version": "1.11",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "contemporary-icons",
+    "buildsystem": "simple",
+    "build-commands": [
+      "mkdir -p /app/share/icons/contemporary",
+      "cp -r * /app/share/icons/contemporary/"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/theCheeseboard/contemporary-icons/archive/v1.11.tar.gz",
+        "sha256": "217c7bf429954400ac1d20aa2bd2c2fe07263b1ce29d3dd55f49d75ced159140"
+      }
+    ]
+  }
+}

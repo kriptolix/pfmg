@@ -1,0 +1,29 @@
+{
+  "header": {
+    "id": "simde",
+    "version": "0.7.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "simde",
+    "buildsystem": "meson",
+    "only-arches": [
+      "aarch64"
+    ],
+    "config-opts": [
+      "-Dbuildtype=release",
+      "-Dtests=false"
+    ],
+    "cleanup": [
+      "*"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/simd-everywhere/simde/archive/v0.7.0.tar.gz",
+        "sha256": "b6737978c8f9969115f122861c094d2dcb0f720268670d9b37a70af7ef8f4268"
+      }
+    ]
+  }
+}

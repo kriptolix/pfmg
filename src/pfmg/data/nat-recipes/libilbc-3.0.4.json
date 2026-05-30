@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "libilbc",
+    "version": "3.0.4",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libilbc",
+    "buildsystem": "cmake-ninja",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/TimothyGu/libilbc/releases/download/v3.0.4/libilbc-3.0.4.tar.gz",
+        "sha256": "6820081a5fc58f86c119890f62cac53f957adb40d580761947a0871cea5e728f",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 18775,
+          "url-template": "https://github.com/TimothyGu/libilbc/releases/download/v$version/libilbc-$version.tar.gz"
+        }
+      }
+    ]
+  }
+}

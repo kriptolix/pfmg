@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "libgd",
+    "version": "2.3.3",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libgd",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DBUILD_SHARED_LIBS=ON"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/libgd/libgd/releases/download/gd-2.3.3/libgd-2.3.3.tar.gz",
+        "sha256": "dd3f1f0bb016edcc0b2d082e8229c822ad1d02223511997c80461481759b1ed2",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 880,
+          "stable-only": true,
+          "url-template": "https://github.com/libgd/libgd/releases/download/gd-$version/libgd-$version.tar.gz"
+        }
+      }
+    ]
+  }
+}

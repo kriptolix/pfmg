@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "chocolate-doom",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "chocolate-doom",
+    "buildsystem": "autotools",
+    "build-options": {
+      "cflags": "-fcommon"
+    },
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/chocolate-doom/chocolate-doom.git",
+        "tag": "chocolate-doom-3.1.0",
+        "commit": "35fb1372d10756ca27eca05665bd8a7cebc71c05"
+      },
+      {
+        "type": "patch",
+        "path": "appstream.patch"
+      }
+    ]
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "header": {
+    "id": "srb2",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "srb2",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/STJr/SRB2.git",
+        "tag": "SRB2_release_2.2.15",
+        "commit": "8701ef41f617c06e23a7b8ccd2199c160c5d1dd1"
+      }
+    ],
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
+      "-DSRB2_CONFIG_USE_GME=ON",
+      "-DSRB2_CONFIG_DEV_BUILD=OFF",
+      "-DSRB2_SDL2_EXE_NAME=lsdlsrb2"
+    ],
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "build-options": {
+      "cflags": "-g -O3 -std=gnu17"
+    },
+    "build-commands": [
+      "install -D -m 644 $FLATPAK_BUILDER_BUILDDIR/srb2.png $FLATPAK_DEST/share/icons/hicolor/256x256/apps/$FLATPAK_ID.png"
+    ],
+    "post-install": [
+      "rm $FLATPAK_DEST/lsdlsrb2",
+      "install -D bin/lsdlsrb2.debug -T $FLATPAK_DEST/bin/lsdlsrb2"
+    ]
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "header": {
+    "id": "ykpers",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "ykpers",
+    "buildsystem": "autotools",
+    "config-opts": [
+      "--disable-static",
+      "--disable-documentation"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/Yubico/yubikey-personalization.git",
+        "commit": "db0c0d641d47ee52e43af94dcee603d76186b6d3"
+      },
+      {
+        "type": "shell",
+        "commands": [
+          "autoreconf --install"
+        ]
+      }
+    ]
+  }
+}

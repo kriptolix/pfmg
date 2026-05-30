@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "safe-0.3.17",
+    "version": "0.3.17",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "safe-0.3.17",
+    "only-arches": [
+      "x86_64"
+    ],
+    "buildsystem": "simple",
+    "build-commands": [
+      "ghc -threaded --make Setup",
+      "./Setup configure --prefix=/app",
+      "./Setup build",
+      "./Setup install"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "sha256": "79c5c41e7151906969133ea21af9f7e8d25c18315886e23d0bdf6faa8b537e5c",
+        "url": "https://hackage.haskell.org/package/safe-0.3.17/safe-0.3.17.tar.gz"
+      }
+    ]
+  }
+}

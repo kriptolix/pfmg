@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-aiodns",
+    "version": "4.0.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-aiodns",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --prefix=/app aiodns-4.0.0-py3-none-any.whl"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/d0/60/14ac40c03e8a26216e4f2642497b776e52f9e3214e4fd537628829bbb082/aiodns-4.0.0-py3-none-any.whl",
+        "sha256": "a188a75fb8b2b7862ac8f84811a231402fb74f5b4e6f10766dc8a4544b0cf989"
+      }
+    ]
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "header": {
+    "id": "kweathercore",
+    "version": "26.04.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "kweathercore",
+    "config-opts": [
+      "-DBUILD_TESTING=OFF",
+      "-DCMAKE_BUILD_TYPE=RelWithDebInfo"
+    ],
+    "buildsystem": "cmake-ninja",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.kde.org/stable/release-service/26.04.1/src/kweathercore-26.04.1.tar.xz",
+        "sha256": "fc3ac8c0c5f0ae5a2a43f9587d7e811d53d4ffafba1de3ee02ab55105a0a536c",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 8763,
+          "stable-only": true,
+          "url-template": "https://download.kde.org/stable/release-service/$version/src/kweathercore-$version.tar.xz"
+        }
+      }
+    ]
+  }
+}

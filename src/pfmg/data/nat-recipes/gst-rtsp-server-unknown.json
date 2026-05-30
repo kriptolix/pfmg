@@ -1,0 +1,21 @@
+{
+  "header": {
+    "id": "gst-rtsp-server",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "gst-rtsp-server",
+    "buildsystem": "meson",
+    "subdir": "subprojects/gst-rtsp-server",
+    "sources": [
+      {
+        "type": "git",
+        "disable-submodules": true,
+        "url": "https://gitlab.freedesktop.org/gstreamer/gstreamer.git",
+        "tag": "1.22.11"
+      }
+    ]
+  }
+}

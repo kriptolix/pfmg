@@ -1,0 +1,42 @@
+{
+  "header": {
+    "id": "python-nacl",
+    "version": "1.3.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python-nacl",
+    "buildsystem": "simple",
+    "build-options": {
+      "arch": {
+        "i386": {
+          "env": {
+            "MAX_CONCURRENCY": "1"
+          }
+        },
+        "arm": {
+          "env": {
+            "MAX_CONCURRENCY": "1"
+          }
+        }
+      }
+    },
+    "ensure-writable": [
+      "/lib/python*/site-packages/easy-install.pth",
+      "/lib/python*/site-packages/setuptools.pth",
+      "/app/lib/python*/site-packages/easy-install.pth",
+      "/app/lib/python*/site-packages/setuptools.pth"
+    ],
+    "build-commands": [
+      "python3 setup.py install --prefix=/app --root=/"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/pyca/pynacl/archive/1.3.0.tar.gz",
+        "sha256": "205adb2804eed4bc3780584e368ef2e9b8b22a7aae85323068cadd59f3c8a584"
+      }
+    ]
+  }
+}

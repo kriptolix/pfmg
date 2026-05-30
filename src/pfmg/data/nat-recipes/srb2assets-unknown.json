@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "srb2assets",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "srb2assets",
+    "disabled": false,
+    "buildsystem": "simple",
+    "build-commands": [
+      "mkdir --parents $FLATPAK_DEST/share/games/srb2",
+      "cp --recursive --target-directory=$FLATPAK_DEST/share/games/srb2 *"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://git.do.srb2.org/STJr/srb2assets-public.git/",
+        "tag": "SRB2_release_2.2.15",
+        "commit": "f9651218133f1001df39265bb53ac80ff19762a4"
+      }
+    ]
+  }
+}

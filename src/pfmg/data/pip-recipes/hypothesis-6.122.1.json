@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "hypothesis",
+    "version": "6.122.1",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "hypothesis",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=/app \"hypothesis==6.122.1\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/28/93/aec17891c56dbf038da6ed4f8b3bcfd4f0cc706ac4af0084a7eefad9080d/hypothesis-6.122.1-py3-none-any.whl",
+        "sha256": "59e52da0f2529b40f0b7bd0c3c61d8b3fe3337102800bf3534c53d4a8bdf8a6d"
+      }
+    ]
+  }
+}

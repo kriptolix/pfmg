@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "gpu-screen-recorder-ui",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "gpu-screen-recorder-ui",
+    "buildsystem": "simple",
+    "build-commands": [
+      "meson setup build",
+      "meson configure --prefix=$FLATPAK_DEST --buildtype=release -Dstrip=true -Ddesktop-files=false -Dcapabilities=false build",
+      "ninja -C build install",
+      "/usr/lib/sdk/ziglang/zig cc -target \"$(uname -m)\"-linux-musl tools/gsr-global-hotkeys/*.c -O2 -g0 -s -fstack-protector-all -o gsr-global-hotkeys",
+      "/usr/lib/sdk/ziglang/zig cc -target \"$(uname -m)\"-linux-musl tools/gsr-game-tracker/*.c -O2 -g0 -s -o gsr-game-tracker",
+      "install -Dm755 gsr-global-hotkeys \"$FLATPAK_DEST/bin/gsr-global-hotkeys\"",
+      "install -Dm755 gsr-game-tracker \"$FLATPAK_DEST/bin/gsr-game-helper\"",
+      "strip \"$FLATPAK_DEST/bin/gsr-ui\"",
+      "strip \"$FLATPAK_DEST/bin/gsr-global-hotkeys\"",
+      "strip \"$FLATPAK_DEST/bin/gsr-game-tracker\""
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://dec05eba.com/snapshot/gpu-screen-recorder-ui.git.r656.2544249.tar.gz",
+        "sha512": "c9c68fa183c4f5e04266f7342e89526c40eeae6555956fb1570e6a10e1883f5e1dd1c077d7f041f0c93938f823822d114d13f966228be668fa44d71d5915a1ad",
+        "strip-components": 0
+      }
+    ]
+  }
+}

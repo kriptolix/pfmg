@@ -1,0 +1,48 @@
+{
+  "header": {
+    "id": "ultrastardx",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "ultrastardx",
+    "buildsystem": "autotools",
+    "config-opts": [
+      "--with-libprojectM",
+      "--with-opencv-cxx-api"
+    ],
+    "post-install": [
+      "cd ${FLATPAK_DEST}/share/ultrastardx/fonts ; fc-scan -f '%{file} :fullname=%{fullname}\n' . | while read a b ; do a=${a#./} c=$(fc-list -f '%{file}\n' \"$b\" | head -n 1) ; if [ -n \"$c\" ] ; then sed -i \"s:=$a:=$c:\" fonts.ini ; rm \"$a\" ; fi ; done",
+      "for i in ${FLATPAK_DEST}/share/ultrastardx/fonts/*/ ; do [ -n \"$(fc-scan -f '%{file}' \"$i\" | head -n 1)\" ] || rm -Rf \"$i\" ; done",
+      "mkdir ${FLATPAK_DEST}/lib/ffmpeg"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/UltraStar-Deluxe/USDX.git",
+        "tag": "v2026.5.0",
+        "commit": "2903032b947929a305c621ff579c782ef0de4190",
+        "disable-submodules": true
+      },
+      {
+        "type": "patch",
+        "paths": [
+          "patches/install-data.patch",
+          "patches/instructions.patch",
+          "patches/ldflags.patch",
+          "patches/debinfo.patch",
+          "patches/find-debinfo.patch"
+        ]
+      },
+      {
+        "type": "shell",
+        "commands": [
+          "cp /usr/lib/sdk/freepascal/etc/fpc.cfg fpc.cfg",
+          "ln -s ../fpc.cfg src/",
+          "set -- `gcc -print-file-name=crtbegin.o` ; echo -Fl${1%/*} >> fpc.cfg"
+        ]
+      }
+    ]
+  }
+}

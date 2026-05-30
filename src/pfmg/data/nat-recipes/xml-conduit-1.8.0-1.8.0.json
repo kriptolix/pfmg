@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "xml-conduit-1.8.0",
+    "version": "1.8.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "xml-conduit-1.8.0",
+    "only-arches": [
+      "x86_64"
+    ],
+    "buildsystem": "simple",
+    "build-commands": [
+      "ghc -threaded --make Setup",
+      "./Setup configure --prefix=/app",
+      "./Setup build",
+      "./Setup install"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "sha256": "0382bfd3627be4970b11228948274faef51ca9a2590a7723b5787a7205a52036",
+        "url": "https://hackage.haskell.org/package/xml-conduit-1.8.0/xml-conduit-1.8.0.tar.gz"
+      }
+    ]
+  }
+}

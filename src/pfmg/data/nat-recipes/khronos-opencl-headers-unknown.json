@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "khronos-opencl-headers",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "khronos-opencl-headers",
+    "buildsystem": "cmake-ninja",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/KhronosGroup/OpenCL-Headers.git",
+        "commit": "8a97ebc88daa3495d6f57ec10bb515224400186f",
+        "tag": "v2025.07.22",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^v([\\d.]+)$"
+        }
+      }
+    ]
+  }
+}

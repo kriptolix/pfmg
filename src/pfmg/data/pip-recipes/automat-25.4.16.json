@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "automat",
+    "version": "25.4.16",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "automat",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --prefix=/app automat*.whl"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/02/ff/1175b0b7371e46244032d43a56862d0af455823b5280a50c63d99cc50f18/automat-25.4.16-py3-none-any.whl",
+        "sha256": "04e9bce696a8d5671ee698005af6e5a9fa15354140a87f4870744604dcdd3ba1",
+        "x-checker-data": {
+          "type": "pypi",
+          "name": "automat",
+          "packagetype": "bdist_wheel"
+        }
+      }
+    ]
+  }
+}

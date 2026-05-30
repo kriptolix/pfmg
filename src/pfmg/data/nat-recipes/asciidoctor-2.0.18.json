@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "asciidoctor",
+    "version": "2.0.18",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "asciidoctor",
+    "buildsystem": "simple",
+    "build-commands": [
+      "gem install --local asciidoctor-2.0.18.gem"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://rubygems.org/downloads/asciidoctor-2.0.18.gem",
+        "sha256": "bbd1e1d16deed8db94bf9624b9f4474fac32d9ca7225d377f076c08d9adde387"
+      }
+    ]
+  }
+}

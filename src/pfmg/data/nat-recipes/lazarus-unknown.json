@@ -1,0 +1,33 @@
+{
+  "header": {
+    "id": "lazarus",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "lazarus",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://gitlab.com/freepascal.org/lazarus/lazarus/-/archive/lazarus_4_2/lazarus-lazarus_4_2.tar.gz",
+        "sha256": "3e3b037ffb81a479db54abb94242d7f42fe9dd6d1a431a914336a99e211162a8"
+      }
+    ],
+    "buildsystem": "simple",
+    "build-options": {
+      "append-path": "/app/lib/sdk/freepascal/bin",
+      "env": [
+        "INSTALL_PREFIX=/app/lib/sdk/freepascal"
+      ]
+    },
+    "build-commands": [
+      "find . -type f -iname makefile.fpc -exec fpcmake -Tall '{}' ';'",
+      "make lazbuild OPT='-gl'",
+      "touch lazarus startlazarus",
+      "make install",
+      "sed -i -e \"s#__LAZARUSDIR__#$LAZARUSDIR/#\" -e \"s#__FPCSRCDIR__#$FPCDIR/#\" -e \"s#/app/bin/fpc#$INSTALL_PREFIX/bin/fpc#\" tools/install/linux/environmentoptions.xml",
+      "install -Dm644 -t $LAZARUSDIR tools/install/linux/environmentoptions.xml"
+    ]
+  }
+}

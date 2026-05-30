@@ -1,0 +1,38 @@
+{
+  "header": {
+    "id": "dhewm3",
+    "version": "1.5.4",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "dhewm3",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=RelWithDebInfo",
+      "-DREPRODUCIBLE_BUILD=ON"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/dhewm/dhewm3/archive/refs/tags/1.5.4.tar.gz",
+        "sha256": "d460d55f7912e220f4d209b66f47e31aad6c2a833af6236a3679096a51f21858",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 9154,
+          "url-template": "https://github.com/dhewm/dhewm3/archive/refs/tags/$version.tar.gz"
+        }
+      },
+      {
+        "type": "shell",
+        "commands": [
+          "install -Dm 644 dist/linux/share/icons/hicolor/128x128/apps/org.dhewm3.Dhewm3.png -t /app/share/icons/hicolor/128x128/apps/",
+          "install -Dm 644 dist/linux/share/icons/hicolor/256x256/apps/org.dhewm3.Dhewm3.png -t /app/share/icons/hicolor/256x256/apps/",
+          "install -Dm 644 dist/linux/share/icons/hicolor/scalable/apps/org.dhewm3.Dhewm3.svg -t /app/share/icons/hicolor/scalable/apps/",
+          "mv ./neo/* ./",
+          "mkdir -p /app/share/dhewm3"
+        ]
+      }
+    ]
+  }
+}

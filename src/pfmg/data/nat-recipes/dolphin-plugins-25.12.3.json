@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "dolphin-plugins",
+    "version": "25.12.3",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "dolphin-plugins",
+    "buildsystem": "cmake-ninja",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://download.kde.org/stable/release-service/25.12.3/src/dolphin-plugins-25.12.3.tar.xz",
+        "sha256": "a738d4f9f1148283ff0552ffc5a440cabc5f216aa2473c22e699593b3b01a7c0",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 8763,
+          "stable-only": true,
+          "url-template": "https://download.kde.org/stable/release-service/$version/src/dolphin-plugins-$version.tar.xz"
+        }
+      }
+    ]
+  }
+}

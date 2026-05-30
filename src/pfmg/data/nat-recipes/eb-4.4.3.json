@@ -1,0 +1,40 @@
+{
+  "header": {
+    "id": "eb",
+    "version": "4.4.3",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "eb",
+    "config-opts": [
+      "--enable-shared",
+      "--disable-static"
+    ],
+    "cleanup": [
+      "/bin",
+      "/share/doc"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://salsa.debian.org/debian/eb/-/archive/debian/4.4.3-14.4/eb-debian-4.4.3-14.4.tar.gz",
+        "sha256": "7c907e159d735aaaa5b270abb9f8baaf3d0bb32591f23bd1fe39f76d79c60e77",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 155542,
+          "stable-only": false,
+          "url-template": "https://salsa.debian.org/debian/eb/-/archive/debian/$version/eb-debian-$version.tar.gz"
+        }
+      },
+      {
+        "type": "shell",
+        "commands": [
+          "git apply debian/patches/0002-gcc14-fix.patch",
+          "find . -name getopt.c -exec sed -i '/extern char \\*getenv();/d' {} +",
+          "cp -p /usr/share/automake-*/config.{sub,guess} ."
+        ]
+      }
+    ]
+  }
+}

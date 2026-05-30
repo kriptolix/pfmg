@@ -1,0 +1,62 @@
+{
+  "header": {
+    "id": "peazip",
+    "version": "11.1.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "peazip",
+    "buildsystem": "simple",
+    "build-commands": [
+      ". /usr/lib/sdk/freepascal/enable.sh\nlazbuild --add-package dev/metadarkstyle/metadarkstyle.lpk\nlazbuild --widgetset=qt6 --build-all --max-process-count=1 dev/project_pea.lpi dev/project_peach.lpi\n"
+    ],
+    "post-install": [
+      "mkdir -p $FLATPAK_DEST/bin",
+      "install -Dm755 -t $PEA_DIR dev/{peazip,pea}",
+      "rm -r res/{conf,portable} && cp -r res $PEA_DIR/res",
+      "install -Dm755 install2dolphin.sh $FLATPAK_DEST/bin/install2dolphin",
+      "install -Dm644 -t $FLATPAK_DEST/share/metainfo                   ${FLATPAK_ID}.appdata.xml",
+      "cd res/share/batch/freedesktop_integration\nsed -i \"s/Icon=peazip_/Icon=${FLATPAK_ID}./g\"                    peazip.desktop\ndesktop-file-install --dir=$FLATPAK_DEST/share/applications      peazip.desktop\ninstall -Dm644 -t $FLATPAK_DEST/share/icons/hicolor/256x256/apps peazip.png peazip_add.png peazip_extract.png\n",
+      "rename \"peazip_\" \"${FLATPAK_ID}.\" $FLATPAK_DEST/share/icons/hicolor/*/*/*.png",
+      "mkdir /app/share/licenses/io.github.peazip.PeaZip/peazip/",
+      "mv /app/peazip/res/share/copying -t /app/share/licenses/io.github.peazip.PeaZip/peazip/"
+    ],
+    "cleanup": [
+      "/share/lazarus"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/peazip/PeaZip/releases/download/11.1.0/peazip-11.1.0.src.zip",
+        "sha256": "b17b0415c6dbc8077392b816acbbbffe5638257b2332bd046aeea23fbdbad9ba",
+        "x-checker-data": {
+          "type": "json",
+          "is-main-source": true,
+          "url": "https://api.github.com/repos/peazip/PeaZip/releases/latest",
+          "version-query": ".tag_name",
+          "url-query": ".assets[] | select(.name==\"peazip-\" + $version + \".src.zip\") | .browser_download_url"
+        }
+      },
+      {
+        "type": "file",
+        "path": "io.github.peazip.PeaZip.appdata.xml"
+      },
+      {
+        "type": "script",
+        "dest-filename": "install2dolphin.sh",
+        "commands": [
+          "PEA_DIR=/app/peazip",
+          "cd $PEA_DIR/res/share/batch/freedesktop_integration/KDE-servicemenus/KDE5-dolphin",
+          "install -Dvm755 peazip*.desktop -t \"${HOME}/.local/share/kio/servicemenus\""
+        ]
+      },
+      {
+        "type": "shell",
+        "commands": [
+          "cd res/share/batch/freedesktop_integration/KDE-servicemenus/KDE5-dolphin\nsed -i  \"s/Exec=peazip/Exec=flatpak run --file-forwarding $FLATPAK_ID/g\" *.desktop\nsed -Ei \"s/ (%.)/ @@ \\1 @@/g\"                                            *.desktop\nsed -i  \"s/Icon=peazip/Icon=$FLATPAK_ID/g\"                               *.desktop\n"
+        ]
+      }
+    ]
+  }
+}

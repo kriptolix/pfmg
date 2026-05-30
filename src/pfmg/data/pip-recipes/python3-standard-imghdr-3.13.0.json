@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-standard-imghdr",
+    "version": "3.13.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-standard-imghdr",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"standard-imghdr\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/df/cb/e1da7e340586a078404c7e4328bfefc930867ace8a9a55916fd220cf9547/standard_imghdr-3.13.0-py3-none-any.whl",
+        "sha256": "30a1bff5465605bb496f842a6ac3cc1f2131bf3025b0da28d4877d6d4b7cc8e9"
+      }
+    ]
+  }
+}

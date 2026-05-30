@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "semigroupoids",
+    "version": "6.0.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "semigroupoids",
+    "buildsystem": "simple",
+    "builddir": false,
+    "build-commands": [
+      "echo '#! /usr/bin/env runhaskell' >Setup.txt",
+      "echo '> import Distribution.Simple' >>Setup.txt",
+      "echo '> main = defaultMain' >>Setup.txt",
+      "ln -s Setup.txt Setup.lhs || true",
+      "runhaskell Setup configure --prefix=/app",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "sources": [
+      {
+        "sha256": "1d532030862414f5d4f2f6f001783f77aa14e5f05ee8e3c4a2d2129fca29cc1f",
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/semigroupoids-6.0.1/semigroupoids-6.0.1.tar.gz"
+      },
+      {
+        "dest-filename": "semigroupoids.cabal",
+        "sha256": "f65892f65f941c7368334bdfdcdb9db2ad3952502e94e88785a5a428fa2f3f4e",
+        "type": "file",
+        "url": "https://hackage.haskell.org/package/semigroupoids-6.0.1/revision/1.cabal"
+      }
+    ]
+  }
+}

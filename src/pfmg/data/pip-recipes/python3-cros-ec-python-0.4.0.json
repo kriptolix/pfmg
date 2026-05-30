@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "python3-cros-ec-python",
+    "version": "0.4.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-cros_ec_python",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"cros_ec_python\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/ee/9e/4d10360c6d69f6623c44fba91467a099eede456e6f3ac5e66bc362260416/cros_ec_python-0.4.0.tar.gz",
+        "sha256": "a6836903da1e8c0b2c74a538da845058b6db8264ca8213f052c7f2bde3007453",
+        "x-checker-data": {
+          "type": "pypi",
+          "name": "cros_ec_python",
+          "packagetype": "sdist"
+        }
+      }
+    ]
+  }
+}

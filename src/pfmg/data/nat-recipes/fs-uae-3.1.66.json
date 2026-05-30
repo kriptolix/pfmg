@@ -1,0 +1,45 @@
+{
+  "header": {
+    "id": "fs-uae",
+    "version": "3.1.66",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "fs-uae",
+    "build-options": {
+      "arch": {
+        "aarch64": {
+          "config-opts": [
+            "--disable-jit"
+          ]
+        }
+      }
+    },
+    "no-autogen": true,
+    "post-install": [
+      "desktop-file-edit --set-key=NoDisplay --set-value=false /app/share/applications/fs-uae.desktop"
+    ],
+    "cleanup": [
+      "/share/man",
+      "/share/doc"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://fs-uae.net/files/FS-UAE/Stable/3.1.66/fs-uae-3.1.66.tar.xz",
+        "sha256": "606e1868b500413d69bd33bb469f8fd08d6c08988801f17b7dd022f3fbe23832"
+      },
+      {
+        "type": "patch",
+        "path": "fs-uae-install.patch"
+      },
+      {
+        "type": "shell",
+        "commands": [
+          "autoreconf -vfi"
+        ]
+      }
+    ]
+  }
+}

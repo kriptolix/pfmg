@@ -1,0 +1,26 @@
+{
+  "header": {
+    "id": "python3-peewee",
+    "version": "4.0.5",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-peewee",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"peewee\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/21/04/8b1f0388389c0595ccf69fec8723983e598edb0303f6227a08bc5d8cd013/peewee-4.0.5.tar.gz",
+        "sha256": "b43a21493f19f205a016cb4a9e29c7eca3500576d29447a89732022d193450ba",
+        "x-checker-data": {
+          "type": "pypi",
+          "name": "peewee"
+        }
+      }
+    ]
+  }
+}

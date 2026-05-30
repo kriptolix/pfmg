@@ -1,0 +1,34 @@
+{
+  "header": {
+    "id": "flann",
+    "version": "1.9.2",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "FLANN",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/flann-lib/flann/archive/refs/tags/1.9.2.tar.gz",
+        "sha256": "e26829bb0017f317d9cc45ab83ddcb8b16d75ada1ae07157006c1e7d601c8824",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 21432,
+          "stable-only": true,
+          "url-template": "https://github.com/flann-lib/flann/archive/refs/tags/$version.tar.gz"
+        }
+      }
+    ],
+    "builddir": true,
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release",
+      "-DBUILD_SHARED_LIBS=OFF",
+      "-DBUILD_C_BINDINGS=OFF",
+      "-DBUILD_EXAMPLES=OFF",
+      "-DBUILD_TESTS=OFF",
+      "-DBUILD_DOC=OFF"
+    ]
+  }
+}

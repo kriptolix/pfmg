@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "gwenhywfar",
+    "version": "5.14.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "gwenhywfar",
+    "config-opts": [
+      "--with-guis='gtk3'",
+      "GPGRT_CONFIG=/usr/bin/gpgrt-config"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://www.aquamaniac.de/rdm/attachments/download/630/gwenhywfar-5.14.1.tar.gz",
+        "sha256": "8916feaa99cb954f963f2cba8dd2dffe57cacf7f284daf00eab071aad6fe2ab3"
+      }
+    ]
+  }
+}

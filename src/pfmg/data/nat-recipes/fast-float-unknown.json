@@ -1,0 +1,25 @@
+{
+  "header": {
+    "id": "fast-float",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "fast_float",
+    "buildsystem": "cmake-ninja",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/fastfloat/fast_float.git",
+        "tag": "v8.2.3",
+        "commit": "01ce95dfe46abccf3264fbccf9f5139ea9016cd2",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 214353,
+          "tag-template": "v$version"
+        }
+      }
+    ]
+  }
+}

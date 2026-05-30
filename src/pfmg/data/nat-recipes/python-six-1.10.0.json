@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python-six",
+    "version": "1.10.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python-six",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip2 install --no-index --find-links=\"file://${PWD}\" --install-option=\"--prefix=${FLATPAK_DEST}\" six"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/b3/b2/238e2590826bfdd113244a40d9d3eb26918bd798fc187e2360a8367068db/six-1.10.0.tar.gz",
+        "sha256": "105f8d68616f8248e24bf0e9372ef04d3cc10104f1980f54d57b2ce73a5ad56a"
+      }
+    ]
+  }
+}

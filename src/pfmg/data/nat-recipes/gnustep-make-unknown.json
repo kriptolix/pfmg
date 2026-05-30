@@ -1,0 +1,29 @@
+{
+  "header": {
+    "id": "gnustep-make",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "gnustep-make",
+    "buildsystem": "simple",
+    "build-commands": [
+      "./configure --prefix=/app",
+      "make -j $FLATPAK_BUILDER_N_JOBS install"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/gnustep/tools-make/archive/make-2_9_3.tar.gz",
+        "sha256": "aad12caecb0398b099f3b8b0282cecc3f01a9f371200641b2e1e535ae6ee2543",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 1220,
+          "stable-only": true,
+          "url-template": "https://github.com/gnustep/tools-make/archive/make-$version.tar.gz"
+        }
+      }
+    ]
+  }
+}

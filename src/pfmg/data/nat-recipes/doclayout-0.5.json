@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "doclayout",
+    "version": "0.5",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "doclayout",
+    "buildsystem": "simple",
+    "builddir": false,
+    "build-commands": [
+      "echo '#! /usr/bin/env runhaskell' >Setup.txt",
+      "echo '> import Distribution.Simple' >>Setup.txt",
+      "echo '> main = defaultMain' >>Setup.txt",
+      "ln -s Setup.txt Setup.lhs || true",
+      "runhaskell Setup configure --prefix=/app",
+      "runhaskell Setup build",
+      "runhaskell Setup install"
+    ],
+    "sources": [
+      {
+        "sha256": "b030410245d9dea721e5bd75511b95bc0380efe159066f3914916e3ad2af2496",
+        "type": "archive",
+        "url": "https://hackage.haskell.org/package/doclayout-0.5/doclayout-0.5.tar.gz"
+      },
+      {
+        "dest-filename": "doclayout.cabal",
+        "sha256": "36c81aa3849049588d46c3fb51cf23177e8cc08efab4bf0d0ed2fb0df764cc0e",
+        "type": "file",
+        "url": "https://hackage.haskell.org/package/doclayout-0.5/revision/0.cabal"
+      }
+    ]
+  }
+}

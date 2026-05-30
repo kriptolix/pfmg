@@ -1,0 +1,31 @@
+{
+  "header": {
+    "id": "metadata",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "metadata",
+    "buildsystem": "simple",
+    "subdir": "src/github.com/nanu-c/axolotl",
+    "build-commands": [
+      "install -Dm 644 flatpak/org.nanuc.Axolotl.png ${FLATPAK_DEST}/share/icons/hicolor/128x128/apps/${FLATPAK_ID}.png",
+      "install -Dm 644 flatpak/org.nanuc.Axolotl.appdata.xml ${FLATPAK_DEST}/share/metainfo/${FLATPAK_ID}.metainfo.xml",
+      "install -Dm 644 flatpak/web/org.nanuc.Axolotl.desktop ${FLATPAK_DEST}/share/applications/${FLATPAK_ID}.desktop"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/nanu-c/axolotl",
+        "tag": "v1.6.0",
+        "commit": "e521ab32b5bf315866a17f6844e5339abbc41e79",
+        "dest": "src/github.com/nanu-c/axolotl",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^v([\\d.]+)$"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,82 @@
+{
+  "header": {
+    "id": "scratch-desktop",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "scratch-desktop",
+    "buildsystem": "simple",
+    "build-options": {
+      "append-path": "/usr/lib/sdk/node16/bin:/run/build/scratch-desktop/flatpak-node/chromedriver",
+      "env": {
+        "XDG_CACHE_HOME": "/run/build/scratch-desktop/flatpak-node/cache",
+        "npm_config_cache": "/run/build/scratch-desktop/flatpak-node/npm-cache",
+        "npm_config_nodedir": "/usr/lib/sdk/node16",
+        "npm_config_offline": "true",
+        "CHROMEDRIVER_SKIP_DOWNLOAD": "true",
+        "NODE_OPTIONS": "--max-old-space-size=4096 --openssl-legacy-provider",
+        "npm_config_ignore_scripts": "true"
+      }
+    },
+    "build-commands": [
+      "sed -i '/\\/src/d' flatpak-node/git-packages/scratch-gui-*/.npmignore\n",
+      "flatpak-node/patch.sh",
+      "npm install --offline",
+      "cp scratch-gui-package-lock.json node_modules/scratch-gui/package-lock.json",
+      "cp -R scratch-gui-src-generated node_modules/scratch-gui/src/generated",
+      "flatpak-node/patch/node_modules/scratch-gui.sh",
+      "cd node_modules/scratch-gui; npm install --offline",
+      "cd node_modules/scratch-gui && BUILD_MODE=dist npm run build",
+      ". flatpak-node/electron-builder-arch-args.sh; npm run build:dir -- $ELECTRON_BUILDER_ARCH_ARGS",
+      "cp -r dist/linux*unpacked /app/scratch",
+      "install -Dm 755 flatpak-node/libffmpeg.so -t /app/scratch",
+      "mkdir -p /app/share/icons/hicolor/scalable/apps",
+      "rsvg-convert -f svg -w 512 -h 512 -o /app/share/icons/hicolor/scalable/apps/edu.mit.Scratch.svg src/icon/ScratchDesktop.svg",
+      "install -Dm 755 scratch-desktop.sh /app/bin/scratch-desktop"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/scratchfoundation/scratch-desktop.git",
+        "tag": "v3.30.5"
+      },
+      {
+        "type": "patch",
+        "paths": [
+          "patches/no-fetch.patch",
+          "patches/no-run-electron.patch",
+          "patches/add-linux-platform.patch"
+        ]
+      },
+      {
+        "type": "file",
+        "path": "scratch-desktop/node_modules/scratch-gui/package-lock.json",
+        "dest-filename": "scratch-gui-package-lock.json"
+      },
+      {
+        "type": "archive",
+        "url": "https://downloads.scratch.mit.edu/microbit/scratch-microbit-1.2.0.hex.zip",
+        "dest": "scratch-gui-src-generated",
+        "sha256": "dfd574b709307fe76c44dbb6b0ac8942e7908f4d5c18359fae25fbda3c9f4399"
+      },
+      {
+        "type": "inline",
+        "dest": "scratch-gui-src-generated",
+        "dest-filename": "microbit-hex-url.cjs",
+        "contents": "module.exports = require('./scratch-microbit-1.2.0.hex');\n"
+      },
+      "generated-sources.json",
+      "asset-sources.json",
+      {
+        "type": "script",
+        "dest-filename": "scratch-desktop.sh",
+        "commands": [
+          "cd /app/scratch",
+          "zypak-wrapper ./scratch-desktop \"$@\""
+        ]
+      }
+    ]
+  }
+}

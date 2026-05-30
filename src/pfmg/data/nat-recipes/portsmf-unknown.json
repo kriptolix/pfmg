@@ -1,0 +1,24 @@
+{
+  "header": {
+    "id": "portsmf",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "portsmf",
+    "buildsystem": "cmake-ninja",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://codeberg.org/tenacityteam/portsmf.git",
+        "tag": "239",
+        "commit": "951b636f7d0cba370d483a91f1897c71f3d98530",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^([\\d.]+)$"
+        }
+      }
+    ]
+  }
+}

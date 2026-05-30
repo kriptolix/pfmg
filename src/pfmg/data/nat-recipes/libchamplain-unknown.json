@@ -1,0 +1,20 @@
+{
+  "header": {
+    "id": "libchamplain",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libchamplain",
+    "buildsystem": "meson",
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://codeberg.org/dburgess/libchamplain-wms.git",
+        "tag": "v1.0.0",
+        "commit": "ec6cc2f9d85a2295df7684aa1ed28d077e36cdeb"
+      }
+    ]
+  }
+}

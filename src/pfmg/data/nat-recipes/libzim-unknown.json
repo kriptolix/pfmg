@@ -1,0 +1,35 @@
+{
+  "header": {
+    "id": "libzim",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libzim",
+    "buildsystem": "meson",
+    "builddir": true,
+    "config-opts": [
+      "--wrap-mode=nodownload",
+      "-Dtest_data_dir=none"
+    ],
+    "cleanup": [
+      "/bin",
+      "/include",
+      "/lib/pkgconfig"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/openzim/libzim.git",
+        "tag": "9.7.0",
+        "commit": "92bf64eb9c79fa44d9baeeb80786d2ae3775fce7",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 20193,
+          "tag-template": "$version"
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "python3-plotly",
+    "version": "6.3.1",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-plotly",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"plotly\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/50/3b/0e2c535c3e6970cfc5763b67f6cc31accaab35a7aa3e322fb6a12830450f/narwhals-2.6.0-py3-none-any.whl",
+        "sha256": "3215ea42afb452c6c8527e79cefbe542b674aa08d7e2e99d46b2c9708870e0d4"
+      },
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/3f/93/023955c26b0ce614342d11cc0652f1e45e32393b6ab9d11a664a60e9b7b7/plotly-6.3.1-py3-none-any.whl",
+        "sha256": "8b4420d1dcf2b040f5983eed433f95732ed24930e496d36eb70d211923532e64"
+      }
+    ]
+  }
+}

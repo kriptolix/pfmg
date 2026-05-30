@@ -1,0 +1,30 @@
+{
+  "header": {
+    "id": "mtxclient",
+    "version": "3.2.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "config-opts": [
+      "-DBUILD_LIB_TESTS=OFF",
+      "-DBUILD_LIB_EXAMPLES=OFF",
+      "-DCMAKE_BUILD_TYPE=Release"
+    ],
+    "buildsystem": "cmake",
+    "name": "mtxclient",
+    "sources": [
+      {
+        "sha256": "e7638d4a8233c0c763d48111fd13e8ad1dcd5f34e3e641b46eaf1bb920b73482",
+        "type": "archive",
+        "url": "https://github.com/mujx/mtxclient/archive/v0.2.0.tar.gz"
+      },
+      {
+        "dest": "include",
+        "sha256": "ce6b5610a051ec6795fa11c33854abebb086f0fd67c311f5921c3c07f9531b44",
+        "type": "file",
+        "url": "https://github.com/nlohmann/json/releases/download/v3.2.0/json.hpp"
+      }
+    ]
+  }
+}

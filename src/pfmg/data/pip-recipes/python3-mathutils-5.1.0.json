@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-mathutils",
+    "version": "5.1.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-mathutils",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"mathutils\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/74/57/1b9ca6d44e0a79bac7702cd433191b58b6071d4b5167064c28a0e74e0402/mathutils-5.1.0.tar.gz",
+        "sha256": "b171af9d6b54a12138c9dead4f5930a3faaf92387cc5ffaa82f18fbee1554168"
+      }
+    ]
+  }
+}

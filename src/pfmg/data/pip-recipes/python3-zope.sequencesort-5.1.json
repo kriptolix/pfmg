@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-zope.sequencesort",
+    "version": "5.1",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-zope.sequencesort",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"zope.sequencesort==5.1\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/41/1a/ba88bec876ecec5ec98e48197bbe9118243de6a6efaabe27687e9a0fc376/zope.sequencesort-5.1-py3-none-any.whl",
+        "sha256": "1ad64e803ea8ba798e259e95382cf3d0f0d44ec328a3e7bb5dedafdf3016c68d"
+      }
+    ]
+  }
+}

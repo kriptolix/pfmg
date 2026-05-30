@@ -1,0 +1,65 @@
+{
+  "header": {
+    "id": "scite",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "SciTE",
+    "buildsystem": "simple",
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://www.scintilla.org/scite558.tgz",
+        "strip-components": 0,
+        "sha256": "abd5eec4f97de9d746bca0f719b89ccb84a1c7ee5bd37fecc4b8c913b6968d21"
+      },
+      {
+        "type": "file",
+        "path": "org.scintilla.SciTE.metainfo.xml"
+      },
+      {
+        "type": "file",
+        "path": "org.scintilla.SciTE.png"
+      },
+      {
+        "type": "file",
+        "path": "SciTEGlobal.properties"
+      },
+      {
+        "type": "file",
+        "path": "cpp.build.run.properties"
+      },
+      {
+        "type": "archive",
+        "path": "toolbar-icons.tar.xz"
+      }
+    ],
+    "build-commands": [
+      "cd scintilla/gtk && make GTK3=1 -j $FLATPAK_BUILDER_N_JOBS prefix=\"${FLATPAK_DEST}\"",
+      "cd lexilla/src && make GTK3=1 -j $FLATPAK_BUILDER_N_JOBS prefix=\"${FLATPAK_DEST}\"",
+      "cd scite/gtk && make GTK3=1 -j $FLATPAK_BUILDER_N_JOBS prefix=\"${FLATPAK_DEST}\" && make GTK3=1 install prefix=\"${FLATPAK_DEST}\"",
+      "mkdir -p /app/share/metainfo",
+      "install -Dm644 org.scintilla.SciTE.metainfo.xml /app/share/metainfo/",
+      "mkdir -p ${FLATPAK_DEST}/share/icons/hicolor/128x128/apps/",
+      "install -Dm644 org.scintilla.SciTE.png ${FLATPAK_DEST}/share/icons/hicolor/128x128/apps/",
+      "mkdir -p ${FLATPAK_DEST}/share/scite",
+      "install -Dm644 SciTEGlobal.properties ${FLATPAK_DEST}/share/scite",
+      "cat cpp.build.run.properties >> ${FLATPAK_DEST}/share/scite/cpp.properties",
+      "ln -sf ${FLATPAK_DEST}/lib/scite/*.so ${FLATPAK_DEST}/lib",
+      "sed 's/Icon=Sci48M/Icon=org.scintilla.SciTE/g' -i ${FLATPAK_DEST}/share/applications/SciTE.desktop",
+      "mkdir -p ${FLATPAK_DEST}/share/icons/Adwaita/{22x22,24x24}/ ${FLATPAK_DEST}/share/icons/hicolor/22x22/actions",
+      "install -Dm644 *.png ${FLATPAK_DEST}/share/icons/hicolor/22x22/actions",
+      "ln -sf ${FLATPAK_DEST}/share/icons/hicolor/22x22/actions ${FLATPAK_DEST}/share/icons/Adwaita/22x22/actions",
+      "ln -sf ${FLATPAK_DEST}/share/icons/hicolor/22x22/actions ${FLATPAK_DEST}/share/icons/Adwaita/22x22/legacy",
+      "ln -sf ${FLATPAK_DEST}/share/icons/hicolor/22x22/actions ${FLATPAK_DEST}/share/icons/Adwaita/24x24/legacy",
+      "ln -sf ${FLATPAK_DEST}/share/icons/hicolor/22x22/actions ${FLATPAK_DEST}/share/icons/Adwaita/24x24/actions"
+    ],
+    "cleanup": [
+      "*.a",
+      "/share/man",
+      "/include"
+    ]
+  }
+}

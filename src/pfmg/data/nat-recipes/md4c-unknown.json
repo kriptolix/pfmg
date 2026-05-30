@@ -1,0 +1,27 @@
+{
+  "header": {
+    "id": "md4c",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "md4c",
+    "buildsystem": "cmake",
+    "config-opts": [
+      "-DBUILD_MD2HTML_EXECUTABLE=Off"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/mity/md4c.git",
+        "commit": "729e6b8b320caa96328968ab27d7db2235e4fb47",
+        "tag": "release-0.5.2",
+        "x-checker-data": {
+          "type": "git",
+          "tag-pattern": "^release-([\\d.]+)$"
+        }
+      }
+    ]
+  }
+}

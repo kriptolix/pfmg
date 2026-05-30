@@ -1,0 +1,46 @@
+{
+  "header": {
+    "id": "mania",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "mania",
+    "no-autogen": true,
+    "no-make-install": true,
+    "buildsystem": "cmake-ninja",
+    "builddir": true,
+    "build-options": {
+      "cxxflags": "-Wp,-U_FORTIFY_SOURCE"
+    },
+    "config-opts": [
+      "-DRETRO_DISABLE_PLUS=ON",
+      "-DRETRO_SUBSYSTEM=SDL2"
+    ],
+    "post-install": [
+      "install -Dp -m 755 \"$FLATPAK_BUILDER_BUILDDIR/_flatpak_build/dependencies/RSDKv5/libGame.so\" /app/lib/Game.so",
+      "install -Dp -m 755 \"$FLATPAK_BUILDER_BUILDDIR/_flatpak_build/dependencies/RSDKv5/RSDKv5U\" /app/bin/RSDKv5U",
+      "install -Dp -m 644 \"$FLATPAK_BUILDER_BUILDDIR/dependencies/RSDKv5/RSDKv5/Shaders/OGL/\"* -t /app/share/OpenGL-Shaders/Data/Shaders/OGL",
+      "install -Dp -m 644 \"$FLATPAK_BUILDER_BUILDDIR/ogl-shader-mod.ini\" /app/share/OpenGL-Shaders/mod.ini"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/Rubberduckycooly/Sonic-Mania-Decompilation.git",
+        "commit": "06219bec3e6b23e6eae48589fa19cea26baf8065",
+        "disable-submodules": true
+      },
+      {
+        "type": "git",
+        "url": "https://github.com/Rubberduckycooly/RSDKv5-Decompilation.git",
+        "commit": "2473e838aba7cee4a881b6d94224f5f02f93d51c",
+        "dest": "dependencies/RSDKv5"
+      },
+      {
+        "type": "file",
+        "path": "ogl-shader-mod.ini"
+      }
+    ]
+  }
+}

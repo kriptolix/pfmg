@@ -1,0 +1,37 @@
+{
+  "header": {
+    "id": "zoxide",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "zoxide",
+    "buildsystem": "simple",
+    "build-options": {
+      "env": [
+        "CARGO_HOME=/run/build/zoxide/cargo"
+      ]
+    },
+    "build-commands": [
+      "cargo --offline fetch --manifest-path Cargo.toml",
+      "cargo --offline build --release",
+      "install -Dm00755 target/release/zoxide /app/bin/zoxide"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://github.com/ajeetdsouza/zoxide.git",
+        "tag": "v0.9.8",
+        "commit": "859268aec873465b6707f73001003a76adcafabd",
+        "x-checker-data": {
+          "type": "anitya",
+          "project-id": 98400,
+          "stable-only": true,
+          "tag-template": "v$version"
+        }
+      },
+      "modules/zoxide/cargo-sources.json"
+    ]
+  }
+}

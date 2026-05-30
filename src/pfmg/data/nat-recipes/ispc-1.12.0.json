@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "ispc",
+    "version": "1.12.0",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "ISPC",
+    "buildsystem": "simple",
+    "build-commands": [
+      "cp bin/ispc /app/bin/"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/ispc/ispc/releases/download/v1.12.0/ispc-v1.12.0b-linux.tar.gz",
+        "sha256": "7a2bdd5fff5c1882639cfbd66bca31dbb68c7177f3013e80b0813a37fe0fdc23"
+      }
+    ]
+  }
+}

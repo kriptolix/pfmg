@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "shmdata",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "shmdata",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DWITH_PYTHON=OFF"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://gitlab.com/sat-mtl/tools/shmdata.git",
+        "tag": "1.3.68",
+        "commit": "66513e5fef0a6fdad986455370a80f272f1745c2"
+      }
+    ]
+  }
+}

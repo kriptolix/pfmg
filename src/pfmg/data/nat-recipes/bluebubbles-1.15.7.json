@@ -1,0 +1,60 @@
+{
+  "header": {
+    "id": "bluebubbles",
+    "version": "1.15.7",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "bluebubbles",
+    "buildsystem": "simple",
+    "build-commands": [
+      "cp -r bluebubbles /app/",
+      "mkdir -p /app/bin",
+      "ln -s /app/bluebubbles/bluebubbles /app/bin/bluebubbles",
+      "install -Dm644 app.bluebubbles.BlueBubbles.metainfo.xml -t /app/share/metainfo/",
+      "install -Dm644 128x128.png /app/share/icons/hicolor/128x128/apps/${FLATPAK_ID}.png",
+      "install -Dm644 app.bluebubbles.BlueBubbles.desktop -t /app/share/applications/"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "only_arches": [
+          "x86_64"
+        ],
+        "dest": "bluebubbles",
+        "url": "https://github.com/BlueBubblesApp/bluebubbles-app/releases/download/v1.15.7%2B76-desktop/bluebubbles-linux-x86_64.tar.gz",
+        "sha256": "80e421d77e463cad75fa0fc73577fdbf6a99d7c1c80d9dc939bdbba4053a9bd4"
+      },
+      {
+        "type": "archive",
+        "only_arches": [
+          "aarch64"
+        ],
+        "dest": "bluebubbles",
+        "url": "https://github.com/BlueBubblesApp/bluebubbles-app/releases/download/v1.15.7%2B76-desktop/bluebubbles-linux-aarch64.tar.gz",
+        "sha256": "c850cf686c449c6f6c1628a7ed01e47761f4d1dfd5275904716a4c63f56a3396"
+      },
+      {
+        "type": "file",
+        "url": "https://raw.githubusercontent.com/BlueBubblesApp/bluebubbles-app/refs/tags/v1.15.7%2B76-desktop/flatpak/app.bluebubbles.BlueBubbles.metainfo.xml",
+        "sha256": "cffeb7d6baf2e230847b659449d9decbc1685f79637e63a1509c100189a46e37"
+      },
+      {
+        "type": "file",
+        "url": "https://raw.githubusercontent.com/BlueBubblesApp/bluebubbles-app/refs/tags/v1.15.7%2B76-desktop/flatpak/icon/128x128.png",
+        "sha256": "9fc90e23472662301346fa83255c4288c76e723464a2ed2896a46ead19cf320b"
+      },
+      {
+        "type": "file",
+        "url": "https://raw.githubusercontent.com/BlueBubblesApp/bluebubbles-app/refs/tags/v1.15.7%2B76-desktop/flatpak/app.bluebubbles.BlueBubbles.desktop",
+        "sha256": "28f10e1c68a5e27da72cb29619678d3dfdd4b38a753a2815a80d87972a380eda"
+      }
+    ],
+    "cleanup": [
+      "/bluebubbles/data/flutter_assets/packages/media_kit/",
+      "/bluebubbles/data/flutter_assets/packages/record_web/",
+      "/bluebubbles/data/flutter_assets/packages/wakelock_plus/"
+    ]
+  }
+}

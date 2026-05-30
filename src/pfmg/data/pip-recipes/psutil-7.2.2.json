@@ -1,0 +1,28 @@
+{
+  "header": {
+    "id": "psutil",
+    "version": "7.2.2",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "psutil",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --no-build-isolation --prefix=/app ."
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/giampaolo/psutil/archive/refs/tags/v7.2.2.tar.gz",
+        "sha256": "fb49da760f2eda16205830653768fc8027fc86c68996d88b57134122aa08f7a1",
+        "x-checker-data": {
+          "type": "json",
+          "url": "https://api.github.com/repos/giampaolo/psutil/tags",
+          "version-query": "[.[].name | select(test(\"^v[0-9.]+$\"))] | sort_by(sub(\"^v\"; \"\") | split(\".\") | map(tonumber))[-1]",
+          "url-query": "\"https://github.com/giampaolo/psutil/archive/refs/tags/\" + $version + \".tar.gz\""
+        }
+      }
+    ]
+  }
+}

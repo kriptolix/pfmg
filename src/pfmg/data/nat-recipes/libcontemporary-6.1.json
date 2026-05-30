@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "libcontemporary",
+    "version": "6.1",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libcontemporary",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DCMAKE_BUILD_TYPE=Release"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/theCheeseboard/libcontemporary/archive/v6.1.tar.gz",
+        "sha256": "a9b8ca64237f85c2e2cad0f46ecbe2cc4caf605ff5296bb562e629d9d852be82"
+      }
+    ]
+  }
+}

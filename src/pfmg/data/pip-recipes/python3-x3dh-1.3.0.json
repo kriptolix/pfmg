@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-x3dh",
+    "version": "1.3.0",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-x3dh",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --prefix=/app x3dh-1.3.0-py3-none-any.whl"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/bb/f5/c18d9e408a3cf4eb4c7c568b1ef0507cf3a5938325aed8c1684084a3313a/x3dh-1.3.0-py3-none-any.whl",
+        "sha256": "92548974e0cd9eccf19315f59014e5796ee4c5440b6fe753a9168fb92dd6c914"
+      }
+    ]
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "header": {
+    "id": "http-date-0.0.8",
+    "version": "0.0.8",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "build-commands": [
+      "ghc -threaded --make Setup",
+      "./Setup configure --prefix=/app",
+      "./Setup build",
+      "./Setup install"
+    ],
+    "buildsystem": "simple",
+    "cleanup": [],
+    "name": "http-date-0.0.8",
+    "only-arches": [],
+    "sources": [
+      {
+        "sha256": "0f4c6348487abe4f9d58e43d3c23bdefc7fd1fd5672effd3c7d84aaff05f5427",
+        "type": "archive",
+        "url": "https://s3.amazonaws.com/hackage.fpcomplete.com/package/http-date-0.0.8.tar.gz"
+      },
+      {
+        "sha256": "0551a9433d5ce29ad98f2839f025204c566b69aa1ab45d8488042fe8cde9ceff",
+        "type": "file",
+        "url": "https://raw.githubusercontent.com/commercialhaskell/all-cabal-files/a5f22172fce750e93afa6987320f5c5be62b5670/http-date/0.0.8/http-date.cabal"
+      }
+    ]
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "header": {
+    "id": "libcprime",
+    "version": "unknown",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "libcprime",
+    "buildsystem": "cmake-ninja",
+    "config-opts": [
+      "-DCMAKE_POLICY_VERSION_MINIMUM=3.5"
+    ],
+    "sources": [
+      {
+        "type": "git",
+        "url": "https://gitlab.com/cubocore/libcprime.git",
+        "commit": "17d4c94f3be2c7f67dc757cf852f0144945c2c69",
+        "tag": "v5.0.1"
+      }
+    ]
+  }
+}

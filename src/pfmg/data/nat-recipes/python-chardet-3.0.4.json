@@ -1,0 +1,48 @@
+{
+  "header": {
+    "id": "python-chardet",
+    "version": "3.0.4",
+    "type": "native",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python-chardet",
+    "buildsystem": "simple",
+    "build-options": {
+      "arch": {
+        "i386": {
+          "env": {
+            "MAX_CONCURRENCY": "1"
+          }
+        },
+        "arm": {
+          "env": {
+            "MAX_CONCURRENCY": "1"
+          }
+        }
+      }
+    },
+    "ensure-writable": [
+      "/lib/python*/site-packages/easy-install.pth",
+      "/lib/python*/site-packages/setuptools.pth",
+      "/app/lib/python*/site-packages/easy-install.pth",
+      "/app/lib/python*/site-packages/setuptools.pth"
+    ],
+    "build-commands": [
+      "python3 setup.py install --prefix=/app --root=/"
+    ],
+    "sources": [
+      {
+        "type": "archive",
+        "url": "https://github.com/chardet/chardet/archive/3.0.4.tar.gz",
+        "sha256": "d5620025cfca430f6c2e28ddbc87c3c66a5c82fa65570ae975c92911c2190189"
+      },
+      {
+        "type": "shell",
+        "commands": [
+          "sed -i 's/if not platform_/if not dirs/' setup.py"
+        ]
+      }
+    ]
+  }
+}

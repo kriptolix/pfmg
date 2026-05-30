@@ -1,0 +1,22 @@
+{
+  "header": {
+    "id": "python3-fastjsonschema",
+    "version": "2.21.2",
+    "type": "python",
+    "build_requires": []
+  },
+  "module": {
+    "name": "python3-fastjsonschema",
+    "buildsystem": "simple",
+    "build-commands": [
+      "pip3 install --verbose --exists-action=i --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} \"fastjsonschema==2.21.2\" --no-build-isolation"
+    ],
+    "sources": [
+      {
+        "type": "file",
+        "url": "https://files.pythonhosted.org/packages/cb/a8/20d0723294217e47de6d9e2e40fd4a9d2f7c4b6ef974babd482a59743694/fastjsonschema-2.21.2-py3-none-any.whl",
+        "sha256": "1c797122d0a86c5cace2e54bf4e819c36223b552017172f32c5c024a6b77e463"
+      }
+    ]
+  }
+}
